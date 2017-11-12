@@ -53,7 +53,7 @@ class ProfileTableViewController: UITableViewController {
         let u = ProfileManager.users[indexPath.row]
         cell.cellName.text = u.username
         if (u.profileImageUrl != "") {
-            // u.getProfileIamge()
+            cell.cellImage.image = u.getProfileImage()
         } else {
             cell.cellImage.image = #imageLiteral(resourceName: "profile")
         }
@@ -108,11 +108,10 @@ class ProfileTableViewController: UITableViewController {
         if segue.identifier == "showChatView",
         let destinationViewController = segue.destination as? ChatViewController {
             destinationViewController.selectedUser = selectedUser
-        } else if segue.identifier == "showSettingsView",
-            let destinationViewController = segue.destination as? SettingsViewController {
-//            destinationViewController.selectedUser = selectedUser
+        } else if segue.identifier == "showSettingsView" {
+            if let destinationViewController = segue.destination as? SettingsViewController {
+                destinationViewController.selectedUser = ProfileManager.getCurrentUser(uid: FirebaseManager.currentUserId)
+            }
         }
     }
-    
-
 }
