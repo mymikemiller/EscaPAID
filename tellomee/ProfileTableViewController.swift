@@ -55,7 +55,7 @@ class ProfileTableViewController: UITableViewController {
         if (u.profileImageUrl != "") {
             // u.getProfileIamge()
         } else {
-            cell.cellImage.image = #imageLiteral(resourceName: "faceSquare")
+            cell.cellImage.image = #imageLiteral(resourceName: "profile")
         }
         return cell
     }
