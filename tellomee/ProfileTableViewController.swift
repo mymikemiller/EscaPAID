@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileTableViewController: UITableViewController {
 
-    var selectedUser: TellomeeUser?
+    var selectedUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()

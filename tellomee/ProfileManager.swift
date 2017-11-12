@@ -15,9 +15,9 @@ class ProfileManager: NSObject {
     static let databaseRef = Database.database().reference()
     static let uid = Auth.auth().currentUser?.uid
     
-    static var users = [TellomeeUser]()
+    static var users = [User]()
     
-    static func getCurrentUser(uid:String) -> TellomeeUser? {
+    static func getCurrentUser(uid:String) -> User? {
         if let i = users.index(where: {$0.uid == uid}) {
             return users[i]
         }
@@ -34,7 +34,7 @@ class ProfileManager: NSObject {
                 let email = result["email"]! as! String
                 let profileImageUrl = result["profileImageUrl"]! as! String
                 
-                let u = TellomeeUser(uid: uid, username: username, email: email, profileImageUrl: profileImageUrl)
+                let u = User(uid: uid, username: username, email: email, profileImageUrl: profileImageUrl)
                 ProfileManager.users.append(u)
                 completion()
             }

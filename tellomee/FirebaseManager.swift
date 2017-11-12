@@ -14,7 +14,7 @@ import FirebaseAuth
 class FirebaseManager: NSObject {
     static let databaseRef = Database.database().reference()
     static var currentUserId = ""
-    static var currentUser:User? = nil
+    static var currentUser:FirebaseAuth.User? = nil
     
     
     static func LogIn(email:String, password:String, completion:

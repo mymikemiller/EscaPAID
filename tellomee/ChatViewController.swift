@@ -10,7 +10,7 @@ import UIKit
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var selectedUser:TellomeeUser?
+    var selectedUser:User?
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var userInput: UITextField!

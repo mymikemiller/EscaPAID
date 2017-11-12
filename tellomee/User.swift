@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TellomeeUser: NSObject {
+class User: NSObject {
     var username:String
     var email:String
     var uid:String
