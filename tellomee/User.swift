@@ -43,10 +43,10 @@ class User: NSObject {
                 } else {
                     print(metadata)
                     if let downloadUrl = metadata?.downloadURL()?.absoluteString {
-                        if (self.profileImageUrl == "") {
-                            self.profileImageUrl = downloadUrl
-                        FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":downloadUrl])
-                        }
+//                        if (self.profileImageUrl == "") {
+                        self.profileImageUrl = downloadUrl
+                    FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":downloadUrl])
+    //                        }
                     }
                 }
             }

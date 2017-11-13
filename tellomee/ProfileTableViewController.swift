@@ -21,13 +21,17 @@ class ProfileTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-//        tableView.reloadData()
         ProfileManager.fillUsers {
             () in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // If we came back from the settings page, we need to refresh the image
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
