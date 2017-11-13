@@ -28,28 +28,19 @@ class PostManager: NSObject {
     }    
     
     static func fillPosts(uid:String?, toId:String, completion: @escaping(_ result:String) -> Void) {
-        posts = []
-//        let allPosts = databaseRef.child("posts")
-//        print(allPosts)
-//        let post = databaseRef.child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseManager.currentUser?.uid).observe(.childAdded, with: {
-//            snapshot in
-//            print(snapshot)
-//        })
         
-        
-        databaseRef.child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseManager.currentUser?.uid).observe(.childAdded) { (snapshot) in
-//            print(snapshot)
-            if let result = snapshot.value as? [String:AnyObject] {
+        databaseRef.child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseManager.currentUser?.uid).observe(.childAdded, with:{
+            snapshot in
+            print(snapshot)
+            if let result = snapshot.value as? [String:AnyObject]{
                 let toIdCloud = result["toId"]! as! String
-                if (toIdCloud == toId) {
-                    let p = Post(username: result["username"] as! String,
-                                 text: result["text"] as! String,
-                                 toId: result["toId"] as! String)
+                if(toIdCloud == toId){
+                    let p = Post(username: result["username"]! as! String, text: result["text"]! as! String, toId: result["toId"]! as! String)
                     PostManager.posts.append(p)
-                    completion("")
                 }
             }
-        }
+            completion("")
+        })
     }
 }
 

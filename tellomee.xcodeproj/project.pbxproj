@@ -117,8 +117,8 @@
 				E7B9F7511FB6CC5D0058CE61 /* GoogleService-Info.plist */,
 				E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */,
 				E745498F1FB7543A00A6A32C /* PostManager.swift */,
-				E74549931FB78AE200A6A32C /* User.swift */,
 				E74549951FB78F4500A6A32C /* ProfileManager.swift */,
+				E74549931FB78AE200A6A32C /* User.swift */,
 			);
 			path = tellomee;
 			sourceTree = "<group>";
