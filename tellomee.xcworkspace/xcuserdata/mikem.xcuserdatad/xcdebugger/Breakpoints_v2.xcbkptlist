@@ -19,53 +19,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tellomee/PostManager.swift"
-            timestampString = "532291172.654328"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "fillPosts(uid:toId:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static tellomee.PostManager.fillPosts(uid: Swift.Optional&lt;Swift.String&gt;, toId: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "tellomee"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikem/OneDrive/Projects/iOS/tellomee/tellomee/PostManager.swift"
-                  timestampString = "532291173.135515"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "77">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in static tellomee.PostManager.fillPosts(uid: Swift.Optional&lt;Swift.String&gt;, toId: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "tellomee"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikem/OneDrive/Projects/iOS/tellomee/tellomee/PostManager.swift"
-                  timestampString = "532291173.137236"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "46">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
