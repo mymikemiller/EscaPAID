@@ -26,6 +26,8 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Start with an empty message list. It shows for a split second.
+        PostManager.clearPosts()
         
         senderId = FirebaseManager.currentUser?.uid
         senderDisplayName = ""

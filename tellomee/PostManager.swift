@@ -29,6 +29,13 @@ class PostManager: NSObject {
     
     static func fillPosts(uid:String?, toId:String, completion: @escaping(_ result:String) -> Void) {
         messages = [JSQMessage]()
+        
+        if (uid == toId) {
+            // Users can't send messages to themselves
+            completion("")
+            return
+        }
+        
         let chatName = getChatName(fromId: uid!, toId: toId)
         
         databaseRef.child("posts").child(chatName).observe(.childAdded, with:{
@@ -38,7 +45,7 @@ class PostManager: NSObject {
                 let message = JSQMessage(senderId: result["uid"]! as! String,
                                          displayName: result["username"]! as! String,
                                          text: result["text"]! as! String)
-                PostManager.messages.append(message!)
+                messages.append(message!)
             }
             completion("")
         })
@@ -51,5 +58,9 @@ class PostManager: NSObject {
             return fromId + " - " + toId
         }
         return toId + " - " + fromId
+    }
+    
+    static func clearPosts() {
+        messages = [JSQMessage]()
     }
 }
