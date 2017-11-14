@@ -13,6 +13,7 @@
         <!--Chat-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController title="Chat" id="BYZ-38-t0r" customClass="ChatViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -79,9 +80,23 @@
                         <outlet property="userInput" destination="If5-0o-XCa" id="TDL-JR-U4l"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="118.29085457271366"/>
+            <point key="canvasLocation" x="874" y="-322"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="BPP-Jz-gBm">
+            <objects>
+                <viewController id="1xS-zx-OmY" customClass="ChatViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WIv-Th-zeq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="8M7-UH-e8E"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RVi-gk-XoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="347"/>
         </scene>
         <!--Settings-->
         <scene sceneID="XTg-nb-WwH">
@@ -239,12 +254,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showChatView" id="sZx-qX-e17"/>
+                        <segue destination="1xS-zx-OmY" kind="show" identifier="showChatView" id="ZR2-Np-OGf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YfO-s5-Qya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-367.19999999999999" y="117.39130434782609"/>
+            <point key="canvasLocation" x="-265" y="20"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zYC-KM-WxH">

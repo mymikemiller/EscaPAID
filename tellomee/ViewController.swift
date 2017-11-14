@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Log in immediately as test1
+//        loginButton_click("")
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +30,7 @@ class ViewController: UIViewController {
     @IBAction func loginButton_click(_ sender: Any) {
         FirebaseManager.LogIn(email: email.text!, password: password.text!) { (success:Bool) in
             if (success) {
-            self.performSegue(withIdentifier: "showProfile", sender: sender)
+                self.performSegue(withIdentifier: "showProfile", sender: sender)
             }
         }
     }

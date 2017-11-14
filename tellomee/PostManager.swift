@@ -10,10 +10,12 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import JSQMessagesViewController
 
 class PostManager: NSObject {
     static let databaseRef = Database.database().reference()
     static var posts = [Post]()
+    static var messages = [JSQMessage]()
     
     static func addPost(username:String, text:String, toId:String, fromId:String) {
         let p = Post(username: username, text: text, toId: toId)
@@ -36,6 +38,11 @@ class PostManager: NSObject {
             if let result = snapshot.value as? [String:AnyObject]{
                 let p = Post(username: result["username"]! as! String, text: result["text"]! as! String, toId: result["toId"]! as! String)
                 PostManager.posts.append(p)
+                
+                let message = JSQMessage(senderId: uid!,
+                                         displayName: result["username"]! as! String,
+                                         text: result["text"]! as! String)
+                messages.append(message!)
             }
             completion("")
         })

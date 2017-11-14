@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "916588379B36B394058BA3ABC154F13B"
+               BlueprintIdentifier = "48F6AB171B5BE305FA26B9B2B14E2F1F"
                BuildableName = "Pods_tellomee.framework"
                BlueprintName = "Pods-tellomee"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "916588379B36B394058BA3ABC154F13B"
+            BlueprintIdentifier = "48F6AB171B5BE305FA26B9B2B14E2F1F"
             BuildableName = "Pods_tellomee.framework"
             BlueprintName = "Pods-tellomee"
             ReferencedContainer = "container:Pods.xcodeproj">
