@@ -14,35 +14,31 @@ import JSQMessagesViewController
 
 class PostManager: NSObject {
     static let databaseRef = Database.database().reference()
-    static var posts = [Post]()
     static var messages = [JSQMessage]()
     
     static func addPost(username:String, text:String, toId:String, fromId:String) {
-        let p = Post(username: username, text: text, toId: toId)
-        if (p.text != "") {
+        if (text != "") {
             let chatName = getChatName(fromId: fromId, toId: toId)
             let post = ["uid":fromId,
-                        "username":p.username,
-                        "text":p.text,
-                        "toId":p.toId]
+                        "username":username,
+                        "text":text,
+                        "toId":toId]
             databaseRef.child("posts").child(chatName).childByAutoId().setValue(post)
         }
     }
     
     static func fillPosts(uid:String?, toId:String, completion: @escaping(_ result:String) -> Void) {
+        messages = [JSQMessage]()
         let chatName = getChatName(fromId: uid!, toId: toId)
         
         databaseRef.child("posts").child(chatName).observe(.childAdded, with:{
             snapshot in
             print(snapshot)
             if let result = snapshot.value as? [String:AnyObject]{
-                let p = Post(username: result["username"]! as! String, text: result["text"]! as! String, toId: result["toId"]! as! String)
-                PostManager.posts.append(p)
-                
-                let message = JSQMessage(senderId: uid!,
+                let message = JSQMessage(senderId: result["uid"]! as! String,
                                          displayName: result["username"]! as! String,
                                          text: result["text"]! as! String)
-                messages.append(message!)
+                PostManager.messages.append(message!)
             }
             completion("")
         })
@@ -55,17 +51,5 @@ class PostManager: NSObject {
             return fromId + " - " + toId
         }
         return toId + " - " + fromId
-    }
-}
-
-class Post {
-    var username = ""
-    var text = ""
-    var toId = ""
-    
-    init(username:String, text:String, toId:String) {
-        self.username = username
-        self.text = text
-        self.toId = toId
     }
 }
