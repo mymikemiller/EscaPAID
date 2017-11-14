@@ -31,6 +31,14 @@ class FirebaseManager: NSObject {
         })
     }
     
+    static func LogOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            
+        }
+    }
+    
     static func CreateAccount(email:String, password:String, username:String, completion: @escaping(_ result:String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password, completion: {
             (user, error) in
