@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		118295641A78DD980B0DB3E4 /* Pods_tellomee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */; };
+		E72F64471FBBB22B0023489D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E72F64461FBBB22B0023489D /* Podfile */; };
 		E74549901FB7543A00A6A32C /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745498F1FB7543A00A6A32C /* PostManager.swift */; };
 		E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549911FB758B300A6A32C /* ChatTableViewCell.swift */; };
 		E74549941FB78AE200A6A32C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549931FB78AE200A6A32C /* User.swift */; };
@@ -30,6 +31,7 @@
 		0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tellomee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		251D563A81D847CBC43D4CB4 /* Pods-tellomee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.release.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.release.xcconfig"; sourceTree = "<group>"; };
 		DBB7A88E7F3AD611397092DE /* Pods-tellomee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.debug.xcconfig"; sourceTree = "<group>"; };
+		E72F64461FBBB22B0023489D /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; };
 		E745498F1FB7543A00A6A32C /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		E74549911FB758B300A6A32C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		E74549931FB78AE200A6A32C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		E7B9F7301FB6CAAE0058CE61 = {
 			isa = PBXGroup;
 			children = (
+				E72F64461FBBB22B0023489D /* Podfile */,
 				E7B9F73B1FB6CAAE0058CE61 /* tellomee */,
 				E7B9F73A1FB6CAAE0058CE61 /* Products */,
 				96EA7856FF54ABD748851FF8 /* Pods */,
@@ -190,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E72F64471FBBB22B0023489D /* Podfile in Resources */,
 				E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */,
 				E7B9F7521FB6CC5D0058CE61 /* GoogleService-Info.plist in Resources */,
 				E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */,
