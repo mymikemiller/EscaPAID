@@ -25,6 +25,7 @@ class ProfileManager: NSObject {
     }
     
     static func fillUsers(completion: @escaping () -> Void) {
+        ProfileManager.users = [User]()
         databaseRef.child("users").observe(.childAdded, with: {
             snapshot in
             print(snapshot)
