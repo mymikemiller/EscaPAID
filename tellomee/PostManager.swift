@@ -15,6 +15,7 @@ import JSQMessagesViewController
 class PostManager: NSObject {
     static let databaseRef = Database.database().reference()
     static var messages = [JSQMessage]()
+    static var observeHandle: DatabaseHandle? = nil
     
     static func addPost(username:String, text:String, toId:String, fromId:String) {
         if (text != "") {
@@ -38,7 +39,11 @@ class PostManager: NSObject {
         
         let chatName = getChatName(fromId: uid!, toId: toId)
         
-        databaseRef.child("posts").child(chatName).observe(.childAdded, with:{
+        // If we've previously registered an observer, remove it so we don't end up with duplicate messages showing up
+        if (observeHandle != nil) {
+            databaseRef.child("posts").child(chatName).removeObserver(withHandle: observeHandle!)
+        }
+        observeHandle = databaseRef.child("posts").child(chatName).observe(.childAdded, with:{
             snapshot in
             print(snapshot)
             if let result = snapshot.value as? [String:AnyObject]{
