@@ -28,7 +28,7 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction func loginButton_click(_ sender: Any) {
-        FirebaseManager.LogIn(email: email.text!, password: password.text!) { (success:Bool) in
+        FirebaseManager.logInWithEmail(email: email.text!, password: password.text!) { (success:Bool) in
             if (success) {
                 self.performSegue(withIdentifier: "showProfile", sender: sender)
             }
@@ -36,12 +36,28 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func createAccountButton_click(_ sender: Any) {
-        FirebaseManager.CreateAccount(email: email.text!, password: password.text!, username: username.text!) {
+        FirebaseManager.createAccountWithEmail(email: email.text!, password: password.text!, username: username.text!) {
             (result:String) in
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "showProfile", sender: sender)
             }
         }
+        
+    }
+    
+    @IBAction func facebookLogin(sender: UIButton) {
+        FirebaseManager.logInWithFacebook(from: self) { (success:Bool) in
+            if (success) {
+                self.performSegue(withIdentifier: "showProfile", sender: sender)
+                
+                // Present the main view (or do it the above way)
+                //                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
+                //                    UIApplication.shared.keyWindow?.rootViewController = viewController
+                //                    self.dismiss(animated: true, completion: nil)
+                //                }
+            }
+        }
+        
         
     }
     

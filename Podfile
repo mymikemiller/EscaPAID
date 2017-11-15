@@ -12,5 +12,9 @@ target 'tellomee' do
   pod 'Firebase/Storage'
   pod 'JSQMessagesViewController'
 
+  # Pods for Facebook
+  pod 'Bolts'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
 
 end
