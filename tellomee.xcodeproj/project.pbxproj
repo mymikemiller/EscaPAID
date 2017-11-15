@@ -16,7 +16,7 @@
 		E74549981FB79AE200A6A32C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549971FB79AE200A6A32C /* SettingsViewController.swift */; };
 		E745499A1FB8B1BE00A6A32C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549991FB8B1BE00A6A32C /* ProfileTableViewCell.swift */; };
 		E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
-		E7B9F73F1FB6CAAF0058CE61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73E1FB6CAAE0058CE61 /* ViewController.swift */; };
+		E7B9F73F1FB6CAAF0058CE61 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73E1FB6CAAE0058CE61 /* LogInViewController.swift */; };
 		E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
 		E7B9F7451FB6CAAF0058CE61 /* tellomee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F7431FB6CAAF0058CE61 /* tellomee.xcdatamodeld */; };
 		E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */; };
@@ -40,7 +40,7 @@
 		E74549991FB8B1BE00A6A32C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E7B9F7391FB6CAAE0058CE61 /* tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7B9F73E1FB6CAAE0058CE61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E7B9F73E1FB6CAAE0058CE61 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E7B9F7411FB6CAAF0058CE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7B9F7441FB6CAAF0058CE61 /* tellomee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tellomee.xcdatamodel; sourceTree = "<group>"; };
 		E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */,
 				E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */,
 				E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */,
-				E7B9F73E1FB6CAAE0058CE61 /* ViewController.swift */,
+				E7B9F73E1FB6CAAE0058CE61 /* LogInViewController.swift */,
 				E7F9A07F1FB6E1C900916FBA /* ProfileTableViewController.swift */,
 				E74549991FB8B1BE00A6A32C /* ProfileTableViewCell.swift */,
 				E74549971FB79AE200A6A32C /* SettingsViewController.swift */,
@@ -272,7 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7B9F73F1FB6CAAF0058CE61 /* ViewController.swift in Sources */,
+				E7B9F73F1FB6CAAF0058CE61 /* LogInViewController.swift in Sources */,
 				E74549961FB78F4500A6A32C /* ProfileManager.swift in Sources */,
 				E74549981FB79AE200A6A32C /* SettingsViewController.swift in Sources */,
 				E7B9F7451FB6CAAF0058CE61 /* tellomee.xcdatamodeld in Sources */,

@@ -57,6 +57,10 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBAction func logOut_click(_ sender: Any) {
         FirebaseManager.LogOut()
+       
+        let logInVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "logInViewController")
+        self.present(logInVC!, animated: true, completion: nil)
+
     }
     
 

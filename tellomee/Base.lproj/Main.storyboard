@@ -66,7 +66,6 @@
                                 <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logOut_click:" destination="wAB-zh-iLn" eventType="touchUpInside" id="Muh-QP-Tlm"/>
-                                    <segue destination="sRa-QP-2l8" kind="show" id="dPw-Ed-11F"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -85,7 +84,7 @@
         <!--Login-->
         <scene sceneID="nzL-xi-KJA">
             <objects>
-                <viewController title="Login" id="sRa-QP-2l8" customClass="ViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logInViewController" title="Login" id="sRa-QP-2l8" customClass="LogInViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AqM-k8-zji">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
