@@ -80,6 +80,13 @@ class ChatViewController: JSQMessagesViewController {
         PostManager.addPost(username: senderDisplayName, text: text, toId: (selectedUser?.uid)!, fromId: senderId)
         finishSendingMessage()
     }
+    override func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            self.didPressSend(nil, withMessageText:self.keyboardController.textView?.text , senderId:self.senderId , senderDisplayName: self.senderDisplayName, date: NSDate() as Date!)
+        }
+        
+        return true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
