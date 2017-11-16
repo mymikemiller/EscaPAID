@@ -35,7 +35,7 @@
 		251D563A81D847CBC43D4CB4 /* Pods-tellomee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.release.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.release.xcconfig"; sourceTree = "<group>"; };
 		DBB7A88E7F3AD611397092DE /* Pods-tellomee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.debug.xcconfig"; sourceTree = "<group>"; };
 		E72D8E521FBCC5C1001026D6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E72F64461FBBB22B0023489D /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; };
+		E72F64461FBBB22B0023489D /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E745498F1FB7543A00A6A32C /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		E74549911FB758B300A6A32C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		E74549931FB78AE200A6A32C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
