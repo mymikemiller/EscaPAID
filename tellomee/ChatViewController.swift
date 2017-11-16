@@ -41,6 +41,7 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         PostManager.fillPosts(uid: FirebaseManager.currentUser?.uid, toId:(selectedUser?.uid)!, completion: {_ in
             print("Completed filling posts")
             self.finishReceivingMessage()

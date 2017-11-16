@@ -17,7 +17,7 @@
 		E74549981FB79AE200A6A32C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549971FB79AE200A6A32C /* SettingsViewController.swift */; };
 		E745499A1FB8B1BE00A6A32C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549991FB8B1BE00A6A32C /* ProfileTableViewCell.swift */; };
 		E77077321FBD0F7F00B3F2E1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountViewController.swift */; };
-		E77077341FBD179C00B3F2E1 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* LaunchScreenViewController.swift */; };
+		E77077341FBD179C00B3F2E1 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* SplashScreenViewController.swift */; };
 		E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
 		E7B9F73F1FB6CAAF0058CE61 /* LogInViewController_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73E1FB6CAAE0058CE61 /* LogInViewController_old.swift */; };
 		E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
@@ -43,7 +43,7 @@
 		E74549971FB79AE200A6A32C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E74549991FB8B1BE00A6A32C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E77077311FBD0F7F00B3F2E1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		E77077331FBD179C00B3F2E1 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		E77077331FBD179C00B3F2E1 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		E7B9F7391FB6CAAE0058CE61 /* tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7B9F73E1FB6CAAE0058CE61 /* LogInViewController_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController_old.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */,
 				E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */,
 				E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */,
-				E77077331FBD179C00B3F2E1 /* LaunchScreenViewController.swift */,
+				E77077331FBD179C00B3F2E1 /* SplashScreenViewController.swift */,
 				E77077311FBD0F7F00B3F2E1 /* CreateAccountViewController.swift */,
 				E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */,
 				E7B9F73E1FB6CAAE0058CE61 /* LogInViewController_old.swift */,
@@ -294,7 +294,7 @@
 				E745499A1FB8B1BE00A6A32C /* ProfileTableViewCell.swift in Sources */,
 				E7F9A0821FB7378B00916FBA /* ChatViewController.swift in Sources */,
 				E72D8E531FBCC5C1001026D6 /* LoginViewController.swift in Sources */,
-				E77077341FBD179C00B3F2E1 /* LaunchScreenViewController.swift in Sources */,
+				E77077341FBD179C00B3F2E1 /* SplashScreenViewController.swift in Sources */,
 				E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
