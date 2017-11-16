@@ -112,9 +112,9 @@
 			children = (
 				E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */,
 				E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */,
+				E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */,
 				E77077331FBD179C00B3F2E1 /* LaunchScreenViewController.swift */,
 				E77077311FBD0F7F00B3F2E1 /* CreateAccountViewController.swift */,
-				E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */,
 				E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */,
 				E7B9F73E1FB6CAAE0058CE61 /* LogInViewController_old.swift */,
 				E72D8E521FBCC5C1001026D6 /* LoginViewController.swift */,

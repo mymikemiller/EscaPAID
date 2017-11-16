@@ -33,6 +33,8 @@ class ChatViewController: JSQMessagesViewController {
         // Remove the "attachment" button
         inputToolbar.contentView.leftBarButtonItem = nil
         
+        inputToolbar.contentView!.textView.returnKeyType = UIReturnKeyType.send
+        
         // Remove avatars
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
