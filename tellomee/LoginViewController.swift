@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    var initEmail: String = ""
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
@@ -17,6 +18,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        email.text = initEmail
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,11 +26,21 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func loginButton_click(_ sender: Any) {
-        FirebaseManager.logInWithEmail(email: email.text!, password: password.text!) { (success:Bool) in
-            if (success) {
+        FirebaseManager.logInWithEmail(email: email.text!, password: password.text!) { (result:FirebaseManager.EmailLogInResult) in
+            if (result == FirebaseManager.EmailLogInResult.Success) {
                 self.performSegue(withIdentifier: "login_ShowProfile", sender: sender)
+            } else if (result == FirebaseManager.EmailLogInResult.EmailNotVerified) {
+                let alertVC = UIAlertController(title: "Error", message: "Sorry. Your email address has not yet been verified. Do you want us to send another verification email to \(self.email.text ?? "your email")?", preferredStyle: .alert)
+                let alertActionOkay = UIAlertAction(title: "Okay", style: .default) {
+                    (_) in
+                    FirebaseManager.currentUser?.sendEmailVerification(completion: nil)
+                }
+                let alertActionCancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+                
+                alertVC.addAction(alertActionOkay)
+                alertVC.addAction(alertActionCancel)
+                self.present(alertVC, animated: true, completion: nil)
             }
         }
     }

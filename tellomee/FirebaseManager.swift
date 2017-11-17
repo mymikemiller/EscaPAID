@@ -17,16 +17,36 @@ class FirebaseManager: NSObject {
     static var currentUserId = ""
     static var currentUser:FirebaseAuth.User? = nil
     
+    enum EmailLogInResult {
+        case Success
+        case Error
+        case EmailNotVerified
+    }
+    
+    static func sendVerificationEmail() {
+        if (currentUser == nil) {
+            assertionFailure("Unable to send verification email. User is nil.")
+        }
+        currentUser?.sendEmailVerification(completion: nil)
+    }
+    
     static func logInWithEmail(email:String, password:String, completion:
-        @escaping (_ success:Bool) -> Void) {
+        @escaping (_ result:EmailLogInResult) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if let error = error {
                 print(error.localizedDescription)
-                completion(false)
+                completion(EmailLogInResult.Error)
             } else {
-                currentUser = user
-                currentUserId = (user?.uid)!
-                completion(true)
+                if let user = user {
+                    currentUser = user
+                    currentUserId = user.uid
+                    if (user.isEmailVerified) {
+                        print ("Email verified. Signing in...")
+                        completion(EmailLogInResult.Success)
+                    } else {
+                        completion(EmailLogInResult.EmailNotVerified)
+                    }
+                }
             }
         })
     }
@@ -39,7 +59,7 @@ class FirebaseManager: NSObject {
         }
     }
     
-    static func createAccountWithEmail(email:String, password:String, username:String, completion: @escaping(_ result:String) -> Void) {
+    static func createAccountWithEmail(email:String, password:String, username:String, completion: @escaping() -> Void) {
         Auth.auth().createUser(withEmail: email, password: password, completion: {
             (user, error) in
             if let error = error {
@@ -47,17 +67,13 @@ class FirebaseManager: NSObject {
                 return
             }
             
+            // Add the user to our database so we can associate information with the user.
             addUser(username: username, email: email)
             
-            logInWithEmail(email: email, password: password) {
-                (success:Bool) in
-                if (success) {
-                    print ("login successful after account creation")
-                } else {
-                    print ("login unsuccessful after account creation")
-                }
-            }
-            completion("")
+            // Send the verification email. We'll need to verify it before logging in fully.
+            user?.sendEmailVerification(completion: nil)
+            
+            completion()
         })
     }
     
