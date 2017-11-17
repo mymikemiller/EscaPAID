@@ -21,6 +21,9 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        imageView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.imageView_click)))
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +39,8 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func getPhotoButton_click(_ sender: Any) {
+    // This has to be an @objc func so it can be used as a selector for the TapGestureRecognizer
+    @objc func imageView_click(sender: AnyObject?) {
         let image = UIImagePickerController()
         image.delegate = self
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
