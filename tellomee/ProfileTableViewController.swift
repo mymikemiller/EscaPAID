@@ -56,11 +56,7 @@ class ProfileTableViewController: UITableViewController {
 
         let u = ProfileManager.users[indexPath.row]
         cell.cellName.text = u.displayName
-        if (u.profileImageUrl != "") {
-            cell.cellImage.image = u.getProfileImage()
-        } else {
-            cell.cellImage.image = #imageLiteral(resourceName: "profile")
-        }
+        cell.cellImage.image = u.getProfileImage()
         return cell
     }
     

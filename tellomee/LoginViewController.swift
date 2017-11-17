@@ -18,7 +18,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        email.text = initEmail
+        // We set initEmail when coming here after creating a new account
+        if (!initEmail.isEmpty) { email.text = initEmail }
     }
 
     override func didReceiveMemoryWarning() {

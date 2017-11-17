@@ -11,8 +11,8 @@ import UIKit
 class SettingsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
-    
-    @IBOutlet weak var displayName: UILabel!
+    @IBOutlet weak var displayName: UITextField!
+    @IBOutlet weak var phone: UITextField!
     
     var selectedUser:User?
     
@@ -26,6 +26,9 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         displayName.text = selectedUser?.displayName
+        phone.text = selectedUser?.phone
+        
+        imageView.image = selectedUser?.getProfileImage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,17 +43,21 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         self.present(image, animated: true, completion: nil)
     }
     
-    @IBAction func uploadButton_click(_ sender: Any) {
-        uploadPhoto()
+    @IBAction func submitButton_click(_ sender: Any) {
+        if (imageView.image != nil) {
+            selectedUser?.uploadProfilePhoto(profileImage: imageView.image!)
+        }
+        selectedUser?.update(displayName: displayName.text!, phone: phone.text!)
+        
+        navigationController?.popViewController(animated: true)
     }
     
-    func uploadPhoto() {
-        selectedUser?.uploadProfilelPhoto(profileImage: imageView.image!)
-    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let pickerInfo:NSDictionary = info as NSDictionary
         let img:UIImage = pickerInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
-        imageView.image = img
+        DispatchQueue.main.async { [unowned self] in
+            self.imageView.image = img
+        }
         self.dismiss(animated: true, completion: nil)
         
     }

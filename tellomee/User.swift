@@ -30,10 +30,10 @@ class User: NSObject {
                 return UIImage(data: data as Data)!
             }
         }
-        return UIImage()
+        return #imageLiteral(resourceName: "profile")
     }
 
-    func uploadProfilelPhoto(profileImage:UIImage) {
+    func uploadProfilePhoto(profileImage:UIImage) {
         let profileImageRef = Storage.storage().reference().child("profileImages").child("\(NSUUID().uuidString).jpg")
         if let imageData = UIImageJPEGRepresentation(profileImage, 0.25) {
             profileImageRef.putData(imageData, metadata:nil) {
@@ -45,10 +45,15 @@ class User: NSObject {
                     print(metadata)
                     if let downloadUrl = metadata?.downloadURL()?.absoluteString {
                         self.profileImageUrl = downloadUrl
-                    FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":downloadUrl])
+                        FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":downloadUrl])
                     }
                 }
             }
         }
+    }
+    
+    func update(displayName:String, phone:String) {
+        FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["displayName":displayName,
+                                                                                      "phone":phone])
     }
 }
