@@ -10,17 +10,18 @@ import UIKit
 import FirebaseStorage
 
 class User: NSObject {
-    var username:String
-    var email:String
     var uid:String
+    var email:String
+    var phone:String
+    var displayName:String
     var profileImageUrl:String
     
-    init(uid:String, username:String, email:String, profileImageUrl:String) {
+    init(uid:String, email:String, displayName:String, phone:String, profileImageUrl:String) {
         self.uid = uid
-        self.username = username
+        self.displayName = displayName
         self.email = email
+        self.phone = phone
         self.profileImageUrl = profileImageUrl
-        
     }
     
     func getProfileImage() -> UIImage {
@@ -43,10 +44,8 @@ class User: NSObject {
                 } else {
                     print(metadata)
                     if let downloadUrl = metadata?.downloadURL()?.absoluteString {
-//                        if (self.profileImageUrl == "") {
                         self.profileImageUrl = downloadUrl
                     FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":downloadUrl])
-    //                        }
                     }
                 }
             }

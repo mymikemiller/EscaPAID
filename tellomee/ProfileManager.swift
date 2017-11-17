@@ -31,11 +31,12 @@ class ProfileManager: NSObject {
             print(snapshot)
             if let result = snapshot.value as? [String:AnyObject] {
                 let uid = result["uid"]! as! String
-                let username = result["username"]! as! String
                 let email = result["email"]! as! String
+                let displayName = result["displayName"]! as! String
+                let phone = result["phone"]! as! String
                 let profileImageUrl = result["profileImageUrl"]! as! String
                 
-                let u = User(uid: uid, username: username, email: email, profileImageUrl: profileImageUrl)
+                let u = User(uid: uid, email: email, displayName: displayName, phone: phone, profileImageUrl: profileImageUrl)
                 ProfileManager.users.append(u)
                 completion()
             }

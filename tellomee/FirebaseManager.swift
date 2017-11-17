@@ -59,7 +59,7 @@ class FirebaseManager: NSObject {
         }
     }
     
-    static func createAccountWithEmail(email:String, password:String, username:String, completion: @escaping() -> Void) {
+    static func createAccountWithEmail(email:String, phone:String, displayName:String, password:String, completion: @escaping() -> Void) {
         Auth.auth().createUser(withEmail: email, password: password, completion: {
             (user, error) in
             if let error = error {
@@ -67,21 +67,22 @@ class FirebaseManager: NSObject {
                 return
             }
             
-            // Add the user to our database so we can associate information with the user.
-            addUser(username: username, email: email)
-            
             // Send the verification email. We'll need to verify it before logging in fully.
             user?.sendEmailVerification(completion: nil)
+            
+            // Add the user to our database (even if they're not verified) so we can associate information with the user.
+            addUser(email: email, phone: phone, displayName: displayName)
             
             completion()
         })
     }
     
-    static func addUser(username: String, email:String) {
+    static func addUser(email:String, phone:String, displayName: String) {
         let uid = Auth.auth().currentUser?.uid
         let post = ["uid":uid!,
-                    "username":username,
                     "email":email,
+                    "phone":phone,
+                    "displayName":displayName,
                     "profileImageUrl":""]
         
         databaseRef.child("users").child(uid!).setValue(post)
@@ -120,7 +121,12 @@ class FirebaseManager: NSObject {
                 
                 currentUser = user
                 currentUserId = user!.uid
-                addUser(username: (user?.displayName!)!, email: (user?.email!)!)
+                
+                let phone = user?.phoneNumber ?? ""
+                
+                addUser(email: (user?.email!)!,
+                        phone: phone,
+                        displayName: (user?.displayName!)!)
                 completion(true)
                 
             })

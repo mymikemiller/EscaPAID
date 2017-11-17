@@ -10,9 +10,12 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
 
-    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var phone: UITextField!
+    
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var verifyPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +24,24 @@ class CreateAccountViewController: UIViewController {
     }
     
     @IBAction func createAccountButton_click(_ sender: Any) {
-        FirebaseManager.createAccountWithEmail(email: email.text!, password: password.text!, username: username.text!) {
+        
+        if ((name.text?.isEmpty)! || (email.text?.isEmpty)! || (password.text?.isEmpty)!) {
+            let alertVC = UIAlertController(title: "Error", message: "Please fill in all required fields.", preferredStyle: .alert)
+            let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
+            alertVC.addAction(alertActionOkay)
+            self.present(alertVC, animated: true, completion: nil)
+            return
+        }
+        
+        if (password.text != verifyPassword.text) {
+            let alertVC = UIAlertController(title: "Error", message: "Passwords don't match.", preferredStyle: .alert)
+            let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
+            alertVC.addAction(alertActionOkay)
+            self.present(alertVC, animated: true, completion: nil)
+            return
+        }
+        
+        FirebaseManager.createAccountWithEmail(email: email.text!, phone: phone.text!, displayName: name.text!, password: password.text!) {
             DispatchQueue.main.async {
                 // FirebaseManager.createAccountWithEmail sent a verification email. Notify the user that they need to address the email then log in.
                 let alertVC = UIAlertController(title: "Verify your email", message: "Please verify your email address to continue.", preferredStyle: .alert)

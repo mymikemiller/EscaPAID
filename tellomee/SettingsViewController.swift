@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        displayName.text = selectedUser?.username
+        displayName.text = selectedUser?.displayName
     }
 
     override func didReceiveMemoryWarning() {

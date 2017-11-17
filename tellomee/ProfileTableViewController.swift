@@ -55,7 +55,7 @@ class ProfileTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileTableViewCell
 
         let u = ProfileManager.users[indexPath.row]
-        cell.cellName.text = u.username
+        cell.cellName.text = u.displayName
         if (u.profileImageUrl != "") {
             cell.cellImage.image = u.getProfileImage()
         } else {

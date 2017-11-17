@@ -38,8 +38,8 @@ class LoginViewController: UIViewController {
                 }
                 let alertActionCancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                 
-                alertVC.addAction(alertActionOkay)
                 alertVC.addAction(alertActionCancel)
+                alertVC.addAction(alertActionOkay)
                 self.present(alertVC, animated: true, completion: nil)
             }
         }
