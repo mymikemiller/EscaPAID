@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
         // We set initEmail when coming here after creating a new account
         if (!initEmail.isEmpty) { email.text = initEmail }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,8 +51,12 @@ class LoginViewController: UIViewController {
         }
     }
 
-    
+    @IBAction func backButton_clicked(_ sender: Any) {
+        let originVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "originViewController")
+        self.present(originVC!, animated: true, completion: nil)
 
+    }
+    
     /*
     // MARK: - Navigation
 
