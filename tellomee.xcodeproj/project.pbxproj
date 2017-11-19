@@ -86,6 +86,55 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E720AC031FC20FC700E9C2EF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */,
+				E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E720AC041FC20FE500E9C2EF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E77077331FBD179C00B3F2E1 /* OriginScreenViewController.swift */,
+				E77077311FBD0F7F00B3F2E1 /* CreateAccountViewController.swift */,
+				E72D8E521FBCC5C1001026D6 /* LoginViewController.swift */,
+				E7F9A07F1FB6E1C900916FBA /* ProfileTableViewController.swift */,
+				E74549971FB79AE200A6A32C /* SettingsViewController.swift */,
+				E7F9A0811FB7378B00916FBA /* ChatViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E720AC051FC2100800E9C2EF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */,
+				E745498F1FB7543A00A6A32C /* PostManager.swift */,
+				E74549951FB78F4500A6A32C /* ProfileManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E720AC061FC2108B00E9C2EF /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				E74549991FB8B1BE00A6A32C /* ProfileTableViewCell.swift */,
+				E74549911FB758B300A6A32C /* ChatTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		E720AC071FC210AB00E9C2EF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E74549931FB78AE200A6A32C /* User.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		E7B9F7301FB6CAAE0058CE61 = {
 			isa = PBXGroup;
 			children = (
@@ -108,26 +157,17 @@
 		E7B9F73B1FB6CAAE0058CE61 /* tellomee */ = {
 			isa = PBXGroup;
 			children = (
+				E720AC031FC20FC700E9C2EF /* Storyboards */,
+				E720AC041FC20FE500E9C2EF /* View Controllers */,
+				E720AC061FC2108B00E9C2EF /* TableViewCells */,
+				E720AC071FC210AB00E9C2EF /* Classes */,
+				E720AC051FC2100800E9C2EF /* Managers */,
 				E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */,
-				E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */,
-				E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */,
-				E77077331FBD179C00B3F2E1 /* OriginScreenViewController.swift */,
-				E77077311FBD0F7F00B3F2E1 /* CreateAccountViewController.swift */,
-				E72D8E521FBCC5C1001026D6 /* LoginViewController.swift */,
 				E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */,
-				E7F9A07F1FB6E1C900916FBA /* ProfileTableViewController.swift */,
-				E74549991FB8B1BE00A6A32C /* ProfileTableViewCell.swift */,
-				E74549971FB79AE200A6A32C /* SettingsViewController.swift */,
-				E7F9A0811FB7378B00916FBA /* ChatViewController.swift */,
-				E74549911FB758B300A6A32C /* ChatTableViewCell.swift */,
 				E7B9F74B1FB6CAAF0058CE61 /* Info.plist */,
 				E7F9A07E1FB6D1DC00916FBA /* tellomee.entitlements */,
 				E7B9F7431FB6CAAF0058CE61 /* tellomee.xcdatamodeld */,
 				E7B9F7511FB6CC5D0058CE61 /* GoogleService-Info.plist */,
-				E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */,
-				E745498F1FB7543A00A6A32C /* PostManager.swift */,
-				E74549951FB78F4500A6A32C /* ProfileManager.swift */,
-				E74549931FB78AE200A6A32C /* User.swift */,
 			);
 			path = tellomee;
 			sourceTree = "<group>";
