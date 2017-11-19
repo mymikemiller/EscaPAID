@@ -42,6 +42,11 @@ class LoginViewController: UIViewController {
                 alertVC.addAction(alertActionCancel)
                 alertVC.addAction(alertActionOkay)
                 self.present(alertVC, animated: true, completion: nil)
+            } else {
+                // Either the user put in the wrong password, or they signed up using facebook and are now trying to log in with a password (which was never set up)
+                let alertVC = UIAlertController(title: "Log in error", message: "Check that your password is correct and that you're using the correct log in method.", preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                self.present(alertVC, animated: true, completion: nil)
             }
         }
     }
