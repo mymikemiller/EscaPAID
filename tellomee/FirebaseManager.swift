@@ -71,19 +71,19 @@ class FirebaseManager: NSObject {
             user?.sendEmailVerification(completion: nil)
             
             // Add the user to our database (even if they're not verified) so we can associate information with the user.
-            addUser(email: email, phone: phone, displayName: displayName)
+            addUser(email: email, phone: phone, displayName: displayName, profileImageUrl: "")
             
             completion()
         })
     }
     
-    static func addUser(email:String, phone:String, displayName: String) {
+    static func addUser(email:String, phone:String, displayName: String, profileImageUrl:String) {
         let uid = Auth.auth().currentUser?.uid
         let post = ["uid":uid!,
                     "email":email,
                     "phone":phone,
                     "displayName":displayName,
-                    "profileImageUrl":""]
+                    "profileImageUrl":profileImageUrl]
         
         databaseRef.child("users").child(uid!).setValue(post)
     }
@@ -126,7 +126,8 @@ class FirebaseManager: NSObject {
                 
                 addUser(email: (user?.email!)!,
                         phone: phone,
-                        displayName: (user?.displayName!)!)
+                        displayName: (user?.displayName!)!,
+                        profileImageUrl: (Auth.auth().currentUser?.photoURL?.absoluteString)!)
                 completion(true)
                 
             })
