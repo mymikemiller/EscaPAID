@@ -63,18 +63,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="tel"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KZp-qk-lp6">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KZp-qk-lp6">
                                 <rect key="frame" x="59" y="202" width="240" height="127.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nd8-SG-Fag">
-                                <rect key="frame" x="16" y="338" width="343" height="19"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Get Photo"/>
-                                <connections>
-                                    <action selector="getPhotoButton_click:" destination="wAB-zh-iLn" eventType="touchUpInside" id="4ns-hP-jeg"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="8D3-zF-8JS"/>
@@ -82,6 +74,7 @@
                     <connections>
                         <outlet property="displayName" destination="SmY-h2-KHg" id="f5L-Lk-rvp"/>
                         <outlet property="imageView" destination="KZp-qk-lp6" id="6E6-ZE-jbz"/>
+                        <outlet property="phone" destination="z6d-cQ-nfY" id="vJM-Bn-sx1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9PW-mx-Xfy" userLabel="First Responder" sceneMemberID="firstResponder"/>

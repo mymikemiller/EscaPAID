@@ -39,7 +39,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    // This has to be an @objc func so it can be used as a selector for the TapGestureRecognizer
+    // This has to be an @objc func so it can be used as a selector for the TapGestureRecognizer, which we need to use because it's an imageView not a button.
     @objc func imageView_click(sender: AnyObject?) {
         let image = UIImagePickerController()
         image.delegate = self
