@@ -33,6 +33,14 @@ class CreateAccountViewController: UIViewController {
             return
         }
         
+        if ((password.text?.count)! < 6) {
+            let alertVC = UIAlertController(title: "Error", message: "Password must have at least 6 characters.", preferredStyle: .alert)
+            let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
+            alertVC.addAction(alertActionOkay)
+            self.present(alertVC, animated: true, completion: nil)
+            return
+        }
+        
         if (password.text != verifyPassword.text) {
             let alertVC = UIAlertController(title: "Error", message: "Passwords don't match.", preferredStyle: .alert)
             let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
