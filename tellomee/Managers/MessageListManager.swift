@@ -1,5 +1,5 @@
 //
-//  ProfileManager.swift
+//  MessageListManager.swift
 //  tellomee
 //
 //  Created by Michael Miller on 11/11/17.
@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class ProfileManager: NSObject {
+class MessageListManager: NSObject {
     static let databaseRef = Database.database().reference()
     static let uid = Auth.auth().currentUser?.uid
     
@@ -25,7 +25,7 @@ class ProfileManager: NSObject {
     }
     
     static func fillUsers(completion: @escaping () -> Void) {
-        ProfileManager.users = [User]()
+        MessageListManager.users = [User]()
         databaseRef.child("users").observe(.childAdded, with: {
             snapshot in
             print(snapshot)
@@ -37,7 +37,7 @@ class ProfileManager: NSObject {
                 let profileImageUrl = result["profileImageUrl"]! as! String
                 
                 let u = User(uid: uid, email: email, displayName: displayName, phone: phone, profileImageUrl: profileImageUrl)
-                ProfileManager.users.append(u)
+                MessageListManager.users.append(u)
                 completion()
             }
         })

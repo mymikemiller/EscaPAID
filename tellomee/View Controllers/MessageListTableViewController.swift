@@ -1,5 +1,5 @@
 //
-//  ProfileTableViewController.swift
+//  MessageListTableViewController.swift
 //  tellomee
 //
 //  Created by Michael Miller on 11/11/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileTableViewController: UITableViewController {
+class MessageListTableViewController: UITableViewController {
 
     var selectedUser: User?
     
@@ -21,7 +21,7 @@ class ProfileTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        ProfileManager.fillUsers {
+        MessageListManager.fillUsers {
             () in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -48,20 +48,20 @@ class ProfileTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return ProfileManager.users.count
+        return MessageListManager.users.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileTableViewCell
 
-        let u = ProfileManager.users[indexPath.row]
+        let u = MessageListManager.users[indexPath.row]
         cell.cellName.text = u.displayName
         cell.cellImage.image = u.getProfileImage()
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedUser = ProfileManager.users[indexPath.row]
+        selectedUser = MessageListManager.users[indexPath.row]
         self.performSegue(withIdentifier: "showChatView", sender: self)
     }
 
@@ -110,7 +110,7 @@ class ProfileTableViewController: UITableViewController {
             destinationViewController.selectedUser = selectedUser
         } else if segue.identifier == "showSettingsView" {
             if let destinationViewController = segue.destination as? SettingsViewController {
-                destinationViewController.selectedUser = ProfileManager.getCurrentUser(uid: FirebaseManager.currentUserId)
+                destinationViewController.selectedUser = MessageListManager.getCurrentUser(uid: FirebaseManager.currentUserId)
             }
         }
     }
