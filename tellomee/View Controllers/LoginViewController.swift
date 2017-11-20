@@ -10,6 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    // autoLogin is sent in by OriginScreenViewController
+    var autoLogin = false
+    
     var initEmail: String = ""
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -20,6 +23,13 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         // We set initEmail when coming here after creating a new account
         if (!initEmail.isEmpty) { email.text = initEmail }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (autoLogin) {
+            // Automatically log the user in
+            loginButton_click(self)
+        }
     }
     
     override func didReceiveMemoryWarning() {

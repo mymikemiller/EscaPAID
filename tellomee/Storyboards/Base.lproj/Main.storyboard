@@ -105,7 +105,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PJy-Cc-a7I" kind="show" id="iFh-d8-UgR"/>
+                                    <segue destination="PJy-Cc-a7I" kind="show" identifier="origin_login" id="iFh-d8-UgR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isu-g8-ghk">
@@ -133,7 +133,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="LdF-T5-Jqo"/>
                     <connections>
-                        <segue destination="vrC-SP-5pb" kind="show" identifier="facebook_ShowProfile" id="S39-yv-HHd"/>
+                        <segue destination="vrC-SP-5pb" kind="show" identifier="facebook_showProfile" id="S39-yv-HHd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYo-KF-j0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -360,6 +360,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Sci-ue-JJI"/>
-        <segue reference="glL-vf-AZJ"/>
+        <segue reference="iFh-d8-UgR"/>
     </inferredMetricsTieBreakers>
 </document>
