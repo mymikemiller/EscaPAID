@@ -61,11 +61,11 @@ class LoginViewController: UIViewController {
         }
     }
 
-    @IBAction func backButton_clicked(_ sender: Any) {
-        let originVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "originViewController")
-        self.present(originVC!, animated: true, completion: nil)
-
-    }
+//    @IBAction func backButton_clicked(_ sender: Any) {
+//        let originVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "originViewController")
+//        self.present(originVC!, animated: true, completion: nil)
+//
+//    }
     
     /*
     // MARK: - Navigation

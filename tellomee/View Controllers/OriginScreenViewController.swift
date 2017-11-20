@@ -10,9 +10,6 @@ import UIKit
 
 class OriginScreenViewController: UIViewController {
 
-    // If true, the user will automatically be logged in based on what's in the input fields.
-    var autoLogin = true
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +17,7 @@ class OriginScreenViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if (autoLogin) {
+        if ((navigationController as! OriginNavigationController).autoLogin) {
             performSegue(withIdentifier: "origin_login", sender: self)
         }
     }
@@ -46,6 +43,9 @@ class OriginScreenViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "origin_login") {
+            let originNavigationController = navigationController as! OriginNavigationController
+            let autoLogin:Bool = originNavigationController.autoLogin
+            
             (segue.destination as! LoginViewController).autoLogin = autoLogin
         }
     }

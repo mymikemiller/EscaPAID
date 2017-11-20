@@ -69,8 +69,10 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     @IBAction func logOut_click(_ sender: Any) {
         FirebaseManager.logOut()
        
-        let logInVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "originViewController")
-        self.present(logInVC!, animated: true, completion: nil)
+        let originVC: OriginNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "originNavigationController") as! OriginNavigationController
+        // Prevent auto-login once we log out or we'll immediately be logged back in
+        originVC.autoLogin = false
+        self.present(originVC, animated: true, completion: nil)
 
     }
     
