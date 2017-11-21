@@ -1,5 +1,5 @@
 //
-//  ProfileTableViewCell.swift
+//  ThreadTableViewCell.swift
 //  tellomee
 //
 //  Created by Michael Miller on 11/12/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileTableViewCell: UITableViewCell {
+class ThreadTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cellImage: UIImageView!
     
