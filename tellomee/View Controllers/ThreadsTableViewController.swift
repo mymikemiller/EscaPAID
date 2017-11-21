@@ -110,9 +110,5 @@ class ThreadsTableViewController: UITableViewController {
         let destinationViewController = segue.destination as? ChatViewController {
             destinationViewController.thread = selectedThread
         }
-//        else if segue.identifier == "showSettingsView" {
-//            if let destinationViewController = segue.destination as? SettingsViewController {
-//            }
-//        }
     }
 }

@@ -64,10 +64,6 @@ class CreateAccountViewController: UIViewController {
             }
         }
     }
-//    @IBAction func backButton_clicked(_ sender: Any) {
-//        let originVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "originViewController")
-//        self.present(originVC!, animated: true, completion: nil)
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

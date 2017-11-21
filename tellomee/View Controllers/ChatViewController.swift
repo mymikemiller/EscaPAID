@@ -88,6 +88,7 @@ class ChatViewController: JSQMessagesViewController {
     override func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             self.didPressSend(nil, withMessageText:self.keyboardController.textView?.text , senderId:self.senderId , senderDisplayName: self.senderDisplayName, date: NSDate() as Date!)
+            return false // Don't add the "/n" to the textview
         }
         
         return true
