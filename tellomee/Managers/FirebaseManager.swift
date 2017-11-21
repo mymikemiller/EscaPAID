@@ -88,6 +88,24 @@ class FirebaseManager: NSObject {
         databaseRef.child("users").child(uid!).setValue(post)
     }
     
+    static func getUser(uid:String, completion: @escaping (User) -> Void) {
+        databaseRef.child("users").queryOrdered(byChild: "uid").queryEqual(toValue: uid).observeSingleEvent(of: DataEventType.value, with: { (snap) in
+            print(snap)
+            
+            // There should be only one user with the specified uid so we use nextObject to get the first (only)
+            let item = snap.children.nextObject() as! DataSnapshot
+            let value = item.value as! NSDictionary
+            let uid = value["uid"] as! String
+            let email = value["email"] as! String
+            let displayName = value["displayName"] as! String
+            let phone = value["phone"] as! String
+            let profileImageUrl = value["profileImageUrl"] as! String
+            
+            let user = User(uid: uid, email: email, displayName: displayName, phone: phone, profileImageUrl: profileImageUrl)
+            completion(user)
+        })
+    }
+    
     
     
     static func logInWithFacebook(from:UIViewController, completion:

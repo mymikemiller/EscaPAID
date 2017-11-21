@@ -256,7 +256,7 @@
         <!--Profile-->
         <scene sceneID="bpN-0b-Ziq">
             <objects>
-                <tableViewController storyboardIdentifier="MainView" title="Profile" id="Nbh-kZ-Mp4" customClass="MessageListTableViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainView" title="Profile" id="Nbh-kZ-Mp4" customClass="ThreadsTableViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ybL-3M-enA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

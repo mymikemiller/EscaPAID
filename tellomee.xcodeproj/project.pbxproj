@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		118295641A78DD980B0DB3E4 /* Pods_tellomee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */; };
 		E720AC091FC2805F00E9C2EF /* OriginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E720AC081FC2805F00E9C2EF /* OriginNavigationController.swift */; };
+		E723DD871FC3E17800B4345E /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723DD861FC3E17800B4345E /* Thread.swift */; };
 		E72D8E531FBCC5C1001026D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D8E521FBCC5C1001026D6 /* LoginViewController.swift */; };
 		E72F64471FBBB22B0023489D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E72F64461FBBB22B0023489D /* Podfile */; };
 		E74549901FB7543A00A6A32C /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745498F1FB7543A00A6A32C /* PostManager.swift */; };
 		E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549911FB758B300A6A32C /* ChatTableViewCell.swift */; };
 		E74549941FB78AE200A6A32C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549931FB78AE200A6A32C /* User.swift */; };
-		E74549961FB78F4500A6A32C /* MessageListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549951FB78F4500A6A32C /* MessageListManager.swift */; };
+		E74549961FB78F4500A6A32C /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549951FB78F4500A6A32C /* ThreadManager.swift */; };
 		E74549981FB79AE200A6A32C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549971FB79AE200A6A32C /* SettingsViewController.swift */; };
 		E745499A1FB8B1BE00A6A32C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549991FB8B1BE00A6A32C /* ProfileTableViewCell.swift */; };
 		E77077321FBD0F7F00B3F2E1 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountViewController.swift */; };
@@ -25,7 +26,7 @@
 		E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */; };
 		E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */; };
 		E7B9F7521FB6CC5D0058CE61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7511FB6CC5D0058CE61 /* GoogleService-Info.plist */; };
-		E7F9A0801FB6E1C900916FBA /* MessageListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A07F1FB6E1C900916FBA /* MessageListTableViewController.swift */; };
+		E7F9A0801FB6E1C900916FBA /* ThreadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A07F1FB6E1C900916FBA /* ThreadsTableViewController.swift */; };
 		E7F9A0821FB7378B00916FBA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0811FB7378B00916FBA /* ChatViewController.swift */; };
 		E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */; };
 /* End PBXBuildFile section */
@@ -35,12 +36,13 @@
 		251D563A81D847CBC43D4CB4 /* Pods-tellomee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.release.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.release.xcconfig"; sourceTree = "<group>"; };
 		DBB7A88E7F3AD611397092DE /* Pods-tellomee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.debug.xcconfig"; sourceTree = "<group>"; };
 		E720AC081FC2805F00E9C2EF /* OriginNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginNavigationController.swift; sourceTree = "<group>"; };
+		E723DD861FC3E17800B4345E /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		E72D8E521FBCC5C1001026D6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E72F64461FBBB22B0023489D /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E745498F1FB7543A00A6A32C /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		E74549911FB758B300A6A32C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		E74549931FB78AE200A6A32C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E74549951FB78F4500A6A32C /* MessageListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListManager.swift; sourceTree = "<group>"; };
+		E74549951FB78F4500A6A32C /* ThreadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadManager.swift; sourceTree = "<group>"; };
 		E74549971FB79AE200A6A32C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E74549991FB8B1BE00A6A32C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E77077311FBD0F7F00B3F2E1 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 		E7B9F74B1FB6CAAF0058CE61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7B9F7511FB6CC5D0058CE61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7F9A07E1FB6D1DC00916FBA /* tellomee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tellomee.entitlements; sourceTree = "<group>"; };
-		E7F9A07F1FB6E1C900916FBA /* MessageListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListTableViewController.swift; sourceTree = "<group>"; };
+		E7F9A07F1FB6E1C900916FBA /* ThreadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableViewController.swift; sourceTree = "<group>"; };
 		E7F9A0811FB7378B00916FBA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +106,7 @@
 				E720AC081FC2805F00E9C2EF /* OriginNavigationController.swift */,
 				E77077311FBD0F7F00B3F2E1 /* CreateAccountViewController.swift */,
 				E72D8E521FBCC5C1001026D6 /* LoginViewController.swift */,
-				E7F9A07F1FB6E1C900916FBA /* MessageListTableViewController.swift */,
+				E7F9A07F1FB6E1C900916FBA /* ThreadsTableViewController.swift */,
 				E74549971FB79AE200A6A32C /* SettingsViewController.swift */,
 				E7F9A0811FB7378B00916FBA /* ChatViewController.swift */,
 			);
@@ -116,7 +118,7 @@
 			children = (
 				E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */,
 				E745498F1FB7543A00A6A32C /* PostManager.swift */,
-				E74549951FB78F4500A6A32C /* MessageListManager.swift */,
+				E74549951FB78F4500A6A32C /* ThreadManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				E74549931FB78AE200A6A32C /* User.swift */,
+				E723DD861FC3E17800B4345E /* Thread.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -322,11 +325,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E77077321FBD0F7F00B3F2E1 /* CreateAccountViewController.swift in Sources */,
-				E74549961FB78F4500A6A32C /* MessageListManager.swift in Sources */,
+				E74549961FB78F4500A6A32C /* ThreadManager.swift in Sources */,
 				E74549981FB79AE200A6A32C /* SettingsViewController.swift in Sources */,
 				E7B9F7451FB6CAAF0058CE61 /* tellomee.xcdatamodeld in Sources */,
 				E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */,
-				E7F9A0801FB6E1C900916FBA /* MessageListTableViewController.swift in Sources */,
+				E7F9A0801FB6E1C900916FBA /* ThreadsTableViewController.swift in Sources */,
 				E74549901FB7543A00A6A32C /* PostManager.swift in Sources */,
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,
 				E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */,
@@ -336,6 +339,7 @@
 				E77077341FBD179C00B3F2E1 /* OriginScreenViewController.swift in Sources */,
 				E720AC091FC2805F00E9C2EF /* OriginNavigationController.swift in Sources */,
 				E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */,
+				E723DD871FC3E17800B4345E /* Thread.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@ import JSQMessagesViewController
 
 class ChatViewController: JSQMessagesViewController {
     
-    var selectedUser:User?
+    var thread:Thread?
     
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
         return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
@@ -42,7 +42,7 @@ class ChatViewController: JSQMessagesViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        PostManager.fillPosts(uid: FirebaseManager.currentUser?.uid, toId:(selectedUser?.uid)!, completion: {_ in
+        PostManager.fillPosts(uid: FirebaseManager.currentUser?.uid, toId:(thread?.user.uid)!, threadId: (thread?.threadId)!, completion: {_ in
             print("Completed filling posts")
             self.finishReceivingMessage()
         })
@@ -80,7 +80,7 @@ class ChatViewController: JSQMessagesViewController {
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!)
     {
-        PostManager.addPost(username: senderDisplayName, text: text, toId: (selectedUser?.uid)!, fromId: senderId)
+        PostManager.addPost(threadId: (thread?.threadId)!, text: text, toId: (thread?.user.uid)!, fromId: senderId)
         finishSendingMessage()
     }
     

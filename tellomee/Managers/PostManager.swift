@@ -17,18 +17,23 @@ class PostManager: NSObject {
     static var messages = [JSQMessage]()
     static var observeHandle: DatabaseHandle? = nil
     
-    static func addPost(username:String, text:String, toId:String, fromId:String) {
+    static func addPost(threadId:String, text:String, toId:String, fromId:String) {
         if (text != "") {
-            let chatName = getChatName(fromId: fromId, toId: toId)
-            let post = ["uid":fromId,
-                        "username":username,
-                        "text":text,
-                        "toId":toId]
-            databaseRef.child("posts").child(chatName).childByAutoId().setValue(post)
+            // Store the timestamp (todo: or somehow use Firebase.ServerValue.timestamp())
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let dateString = dateFormatter.string(from: Date())
+            
+            let post = ["fromId":fromId,
+                        "toId":toId,
+                        "date":dateString,
+                        "text":text]
+            
+            databaseRef.child("threadPosts").child(threadId).childByAutoId().setValue(post)
         }
     }
     
-    static func fillPosts(uid:String?, toId:String, completion: @escaping(_ result:String) -> Void) {
+    static func fillPosts(uid:String?, toId:String, threadId:String, completion: @escaping(_ result:String) -> Void) {
         messages = [JSQMessage]()
         
         if (uid == toId) {
@@ -37,18 +42,16 @@ class PostManager: NSObject {
             return
         }
         
-        let chatName = getChatName(fromId: uid!, toId: toId)
-        
         // If we've previously registered an observer, remove it so we don't end up with duplicate messages showing up
         if (observeHandle != nil) {
-            databaseRef.child("posts").child(chatName).removeObserver(withHandle: observeHandle!)
+            databaseRef.child("threadPosts").child(threadId).removeObserver(withHandle: observeHandle!)
         }
-        observeHandle = databaseRef.child("posts").child(chatName).observe(.childAdded, with:{
+        observeHandle = databaseRef.child("threadPosts").child(threadId).observe(.childAdded, with:{
             snapshot in
             print(snapshot)
             if let result = snapshot.value as? [String:AnyObject]{
-                let message = JSQMessage(senderId: result["uid"]! as! String,
-                                         displayName: result["username"]! as! String,
+                let message = JSQMessage(senderId: result["fromId"]! as! String,
+                                         displayName: "", // We don't display the display name, so we don't need one
                                          text: result["text"]! as! String)
                 messages.append(message!)
             }
@@ -56,16 +59,17 @@ class PostManager: NSObject {
         })
     }
     
-    private static func getChatName(fromId:String, toId:String) -> String {
-        // The chat name is what groups chats between two people together.
-        // The name is the alphabetical string "fromId - toId" or "toId - fromId"
-        if (fromId < toId) {
-            return fromId + " - " + toId
-        }
-        return toId + " - " + fromId
-    }
-    
     static func clearPosts() {
         messages = [JSQMessage]()
     }
+    
+//    static func getMostRecentMessageDate(fromId:String, toId:String) -> Date {
+//        let chatName = getChatName(fromId: fromId, toId: toId)
+//        let lastItemQuery = databaseRef.child("posts").child(chatName).queryOrderedByKey().queryLimited(toLast: 1)
+//
+//        lastItemQuery.observeSingleEvent(of: DataEventType.childAdded) { (snapshot) in
+//            print(snapshot)
+//        }
+//        return Date()
+//    }
 }

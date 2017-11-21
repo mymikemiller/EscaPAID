@@ -1,5 +1,5 @@
 //
-//  MessageListTableViewController.swift
+//  ThreadsTableViewController.swift
 //  tellomee
 //
 //  Created by Michael Miller on 11/11/17.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class MessageListTableViewController: UITableViewController {
+class ThreadsTableViewController: UITableViewController {
 
-    var selectedUser: User?
+    // This is set to the selected thread when the user selects a row. This is used to prepare for the segue.
+    var selectedThread: Thread?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class MessageListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        MessageListManager.fillUsers {
+        ThreadManager.fillThreads {
             () in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -48,20 +49,20 @@ class MessageListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return MessageListManager.users.count
+        return ThreadManager.threads.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileTableViewCell
 
-        let u = MessageListManager.users[indexPath.row]
-        cell.cellName.text = u.displayName
-        cell.cellImage.image = u.getProfileImage()
+        let u = ThreadManager.threads[indexPath.row]
+        cell.cellName.text = u.user.displayName
+        cell.cellImage.image = u.user.getProfileImage()
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedUser = MessageListManager.users[indexPath.row]
+        selectedThread = ThreadManager.threads[indexPath.row]
         self.performSegue(withIdentifier: "showChatView", sender: self)
     }
 
@@ -107,10 +108,11 @@ class MessageListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showChatView",
         let destinationViewController = segue.destination as? ChatViewController {
-            destinationViewController.selectedUser = selectedUser
+            destinationViewController.thread = selectedThread
         } else if segue.identifier == "showSettingsView" {
             if let destinationViewController = segue.destination as? SettingsViewController {
-                destinationViewController.selectedUser = MessageListManager.getCurrentUser(uid: FirebaseManager.currentUserId)
+                //todo: obviously, fix this to send in the correct user
+                destinationViewController.selectedUser = nil // ThreadManager.getCurrentUser(uid: FirebaseManager.currentUserId)
             }
         }
     }
