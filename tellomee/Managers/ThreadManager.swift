@@ -45,8 +45,6 @@ class ThreadManager: NSObject {
                             ThreadManager.threads.append(thread)
                             completion()
                         })
-                        
-                        
                     }
                 })
             }

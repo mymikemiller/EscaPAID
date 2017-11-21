@@ -14,8 +14,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var displayName: UITextField!
     @IBOutlet weak var phone: UITextField!
     
-    var selectedUser:User?
-    
+    var user:User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +22,19 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
         // Do any additional setup after loading the view.
         imageView.addGestureRecognizer(
             UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.imageView_click)))
+        
+        FirebaseManager.getUser(uid: FirebaseManager.currentUserId) { (user) in
+            self.user = user
+            self.displayName.text = user.displayName
+            self.phone.text = user.phone
+            
+            self.imageView.image = user.getProfileImage()
+        }
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        displayName.text = selectedUser?.displayName
-        phone.text = selectedUser?.phone
-        
-        imageView.image = selectedUser?.getProfileImage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,12 +51,14 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     }
     
     @IBAction func submitButton_click(_ sender: Any) {
-        if (imageView.image != nil) {
-            selectedUser?.uploadProfilePhoto(profileImage: imageView.image!)
+        if (user != nil) {
+            if (imageView.image != nil) {
+                user?.uploadProfilePhoto(profileImage: imageView.image!)
+            }
+            user?.update(displayName: displayName.text!, phone: phone.text!)
+            
+            navigationController?.popViewController(animated: true)
         }
-        selectedUser?.update(displayName: displayName.text!, phone: phone.text!)
-        
-        navigationController?.popViewController(animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

@@ -60,7 +60,25 @@ class LoginViewController: UIViewController {
             }
         }
     }
-
+    
+    @IBAction func mikem_click(_ sender: Any) {
+        email.text = "mikem.exe@gmail.com"
+        password.text = "testpass"
+        loginButton_click(self)
+    }
+    
+    @IBAction func tellomee_a_click(_ sender: Any) {
+        email.text = "tellomee.a@gmail.com"
+        password.text = "testpass"
+        loginButton_click(self)
+    }
+    
+    @IBAction func tellomee_b_click(_ sender: Any) {
+        email.text = "tellomee.b@gmail.com"
+        password.text = "testpass"
+        loginButton_click(self)
+    }
+    
 //    @IBAction func backButton_clicked(_ sender: Any) {
 //        let originVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "originViewController")
 //        self.present(originVC!, animated: true, completion: nil)

@@ -109,11 +109,10 @@ class ThreadsTableViewController: UITableViewController {
         if segue.identifier == "showChatView",
         let destinationViewController = segue.destination as? ChatViewController {
             destinationViewController.thread = selectedThread
-        } else if segue.identifier == "showSettingsView" {
-            if let destinationViewController = segue.destination as? SettingsViewController {
-                //todo: obviously, fix this to send in the correct user
-                destinationViewController.selectedUser = nil // ThreadManager.getCurrentUser(uid: FirebaseManager.currentUserId)
-            }
         }
+//        else if segue.identifier == "showSettingsView" {
+//            if let destinationViewController = segue.destination as? SettingsViewController {
+//            }
+//        }
     }
 }
