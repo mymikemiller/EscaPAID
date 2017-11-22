@@ -79,11 +79,12 @@ class LoginViewController: UIViewController {
         loginButton_click(self)
     }
     
-//    @IBAction func backButton_clicked(_ sender: Any) {
-//        let originVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "originViewController")
-//        self.present(originVC!, animated: true, completion: nil)
-//
-//    }
+    @IBAction func cancelButton_click(_ sender: Any) {
+        let originVC: OriginScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenViewController
+        // Prevent auto-login once we log out or we'll immediately be logged back in
+        originVC.autoLogin = false
+        self.present(originVC, animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
