@@ -1,20 +1,19 @@
 //
-//  OriginNavigationController.swift
+//  MainTabBarController.swift
 //  tellomee
 //
-//  Created by Michael Miller on 11/19/17.
+//  Created by Michael Miller on 11/21/17.
 //  Copyright © 2017 Michael Miller. All rights reserved.
 //
 
 import UIKit
 
-class OriginNavigationController: UINavigationController {
+class MainTabBarController: UITabBarController {
 
-    // If true, the user will automatically be logged in based on what's in the input fields.
-    var autoLogin = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.hidesBackButton = true;
 
         // Do any additional setup after loading the view.
     }
