@@ -26,10 +26,15 @@ class PostManager: NSObject {
             
             let post = ["fromId":fromId,
                         "toId":toId,
-                        "date":dateString,
+                        "timestamp":dateString,
                         "text":text]
             
+            // Add the thread post
             databaseRef.child("threadPosts").child(threadId).childByAutoId().setValue(post)
+            
+            
+            // Update the thread with the latest message timestamp
+            databaseRef.child("threads").child(threadId).updateChildValues(["lastMessageTimestamp":dateString])
         }
     }
     
@@ -48,12 +53,16 @@ class PostManager: NSObject {
         }
         observeHandle = databaseRef.child("threadPosts").child(threadId).observe(.childAdded, with:{
             snapshot in
-            print(snapshot)
+            
             if let result = snapshot.value as? [String:AnyObject]{
+                // Add the message to our message list
                 let message = JSQMessage(senderId: result["fromId"]! as! String,
                                          displayName: "", // We don't display the display name, so we don't need one
                                          text: result["text"]! as! String)
                 messages.append(message!)
+                
+                // Also bump up the thread in our thread list
+                ThreadManager.bump(threadId: threadId)
             }
             completion("")
         })

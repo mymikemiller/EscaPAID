@@ -11,7 +11,7 @@ import UIKit
 class OriginScreenViewController: UIViewController {
 
     // If true, the user will automatically be logged in based on what's in the input fields.
-    var autoLogin = false
+    var autoLogin = true
     
     override func viewDidLoad() {
         super.viewDidLoad()

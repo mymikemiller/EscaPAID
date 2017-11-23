@@ -16,6 +16,25 @@ class ThreadManager: NSObject {
     
     static var threads = [Thread]()
     
+    // Add a thread and keep them sorted in descending order by timestamp of last message
+    static func add(thread:Thread) {
+        threads.append(thread)
+        threads.sort { (one, two) -> Bool in
+            one.lastMessageTimestamp > two.lastMessageTimestamp
+        }
+    }
+    
+    // Bump up the specified thread to the front of the list
+    static func bump(threadId:String) {
+        let index = threads.index { (thread) -> Bool in
+            thread.threadId == threadId
+        }
+        if (index != nil) {
+            let thread = threads.remove(at: index!)
+            threads.insert(thread, at: 0)
+        }
+    }
+    
     static func fillThreads(completion: @escaping () -> Void) {
         let currentUid = Auth.auth().currentUser?.uid
         ThreadManager.threads = [Thread]()
@@ -27,7 +46,7 @@ class ThreadManager: NSObject {
             for userThread in userThreadSnapshot.children {
                 let threadId = (userThread as! DataSnapshot).key
                 
-                // To find the uid of the other user in the thread, we need to find the thrad in the threads tree
+                // To find the uid of the other user in the thread, we need to find the thread in the threads tree
                 databaseRef.child("threads").queryOrderedByKey().queryEqual(toValue: threadId).observeSingleEvent(of: DataEventType.value, with: { (threadSnapshot) in
                     
                     // For each item in the thread object
@@ -37,12 +56,19 @@ class ThreadManager: NSObject {
                         let user1 = value["user1"] as! String
                         let user2 = value["user2"] as! String
                         let otherUserUid = currentUid == user1 ? user2 : user1
+                        
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                        let lastMessageTimestampString = value["lastMessageTimestamp"] as! String
+                        let lastMessageTimestamp = dateFormatter.date(from: lastMessageTimestampString)
                     
                         // Get the other user object
                         FirebaseManager.getUser(uid: otherUserUid, completion: { user
                             in
-                            let thread = Thread(with: user, threadId: threadId)
-                            ThreadManager.threads.append(thread)
+                            
+                            // Create the thread object and add it to our list
+                            let thread = Thread(with: user, threadId: threadId, lastMessageTimestamp: lastMessageTimestamp!)
+                            ThreadManager.add(thread: thread)
                             completion()
                         })
                     }

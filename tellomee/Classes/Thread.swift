@@ -17,9 +17,11 @@ class Thread: NSObject {
     var user:User
     
     var threadId:String
+    var lastMessageTimestamp:Date
     
-    init(with:User, threadId:String) {
+    init(with:User, threadId:String, lastMessageTimestamp: Date) {
         self.user = with
         self.threadId = threadId
+        self.lastMessageTimestamp = lastMessageTimestamp
     }
 }

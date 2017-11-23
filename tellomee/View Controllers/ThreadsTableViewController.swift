@@ -31,7 +31,7 @@ class ThreadsTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // If we came back from the settings page, we need to refresh the image
+        // If we came back from the settings page, we need to refresh the image. Also refresh when coming back from a message so the threads appear in the correct order.
         tableView.reloadData()
     }
 
