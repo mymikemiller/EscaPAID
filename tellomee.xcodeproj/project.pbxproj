@@ -29,6 +29,7 @@
 		E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */; };
 		E7B9F7521FB6CC5D0058CE61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7511FB6CC5D0058CE61 /* GoogleService-Info.plist */; };
 		E7E22E8F1FC7463800FD88FF /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */; };
+		E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */; };
 		E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */; };
 		E7F9A0821FB7378B00916FBA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0811FB7378B00916FBA /* ChatVC.swift */; };
 		E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */; };
@@ -61,6 +62,7 @@
 		E7B9F74B1FB6CAAF0058CE61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7B9F7511FB6CC5D0058CE61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
+		E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceVC.swift; sourceTree = "<group>"; };
 		E7F9A07E1FB6D1DC00916FBA /* tellomee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tellomee.entitlements; sourceTree = "<group>"; };
 		E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableVC.swift; sourceTree = "<group>"; };
 		E7F9A0811FB7378B00916FBA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				E74549971FB79AE200A6A32C /* SettingsVC.swift */,
 				E7F9A0811FB7378B00916FBA /* ChatVC.swift */,
 				E72B24881FC6539A00DE0897 /* ExperiencesTableVC.swift */,
+				E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			files = (
 				E7E22E8F1FC7463800FD88FF /* ExperienceTableViewCell.swift in Sources */,
 				E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */,
+				E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */,
 				E74549961FB78F4500A6A32C /* ThreadManager.swift in Sources */,
 				E74549981FB79AE200A6A32C /* SettingsVC.swift in Sources */,
 				E72B248F1FC65B3800DE0897 /* Experience.swift in Sources */,

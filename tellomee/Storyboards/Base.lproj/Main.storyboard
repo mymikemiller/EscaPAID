@@ -82,7 +82,7 @@
             </objects>
             <point key="canvasLocation" x="-148" y="871"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Experiences-->
         <scene sceneID="yCB-ke-k6Q">
             <objects>
                 <tableViewController id="Ebu-P0-ATe" customClass="ExperiencesTableVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,11 +117,57 @@
                             <outlet property="delegate" destination="Ebu-P0-ATe" id="YCW-jT-WiF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="TiX-rM-DTQ"/>
+                    <navigationItem key="navigationItem" title="Experiences" id="TiX-rM-DTQ"/>
+                    <connections>
+                        <segue destination="8jk-U6-0pk" kind="show" identifier="showExperience" id="Coh-dY-y7X"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAa-TT-cmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1433" y="-1155"/>
+        </scene>
+        <!--ExperienceVC-->
+        <scene sceneID="AeC-4a-ib9">
+            <objects>
+                <viewController id="8jk-U6-0pk" customClass="ExperienceVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pPZ-Uq-KIb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEs-RE-VP4">
+                                <rect key="frame" x="16" y="195" width="343" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-Mp-ygU">
+                                <rect key="frame" x="16" y="294" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Message"/>
+                                <connections>
+                                    <action selector="messageButton_click:" destination="8jk-U6-0pk" eventType="touchUpInside" id="a2X-Ig-lTX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By: Curator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgx-KJ-7VR">
+                                <rect key="frame" x="16" y="247" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Hm2-GJ-RyP"/>
+                    </view>
+                    <connections>
+                        <outlet property="curator" destination="Sgx-KJ-7VR" id="SMx-br-uDD"/>
+                        <outlet property="experienceTitle" destination="pEs-RE-VP4" id="9vB-fG-6FX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hwo-ee-WbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2141.5999999999999" y="-1155.472263868066"/>
         </scene>
         <!--Browse-->
         <scene sceneID="lnn-yD-aGa">

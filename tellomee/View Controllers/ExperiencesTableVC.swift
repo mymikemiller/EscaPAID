@@ -10,6 +10,10 @@ import UIKit
 
 class ExperiencesTableVC: UITableViewController {
 
+    
+    // This is set to the selected experience when the user selects a row. This is used to prepare for the segue.
+    var selectedExperience: Experience?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,6 +56,11 @@ class ExperiencesTableVC: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedExperience = ExperienceManager.experiences[indexPath.row]
+        self.performSegue(withIdentifier: "showExperience", sender: self)
+    }
  
     /*
     // Override to support conditional editing of the table view.
@@ -88,14 +97,17 @@ class ExperiencesTableVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "showExperience") {
+            (segue.destination as! ExperienceVC).experience = selectedExperience
+        }
     }
-    */
+    
 
 }

@@ -12,9 +12,11 @@ class Experience: NSObject {
     
     var title:String
     var photoUrl:String = ""
+    var curator:User
     
-    init(title:String) {
+    init(title:String, curator:User) {
         self.title = title
+        self.curator = curator
     }
 }
 
