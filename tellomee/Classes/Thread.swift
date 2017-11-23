@@ -13,7 +13,7 @@ import FirebaseStorage
 
 class Thread: NSObject {
     
-    // The user this is a thread between (between this user and firebase's current authorized user)
+    // The user this is a thread between (between this user and firebase's current authenticated user)
     var user:User
     
     var threadId:String
