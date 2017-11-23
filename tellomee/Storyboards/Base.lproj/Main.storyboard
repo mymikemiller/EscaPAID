@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Chat View Controller-->
+        <!--ChatVC-->
         <scene sceneID="BPP-Jz-gBm">
             <objects>
-                <viewController id="1xS-zx-OmY" customClass="ChatViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1xS-zx-OmY" customClass="ChatVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WIv-Th-zeq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
         <!--Settings-->
         <scene sceneID="g2V-3P-jFH">
             <objects>
-                <viewController id="bvB-9H-x5B" customClass="SettingsViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bvB-9H-x5B" customClass="SettingsVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MtO-PM-nHw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
         <!--Browse-->
         <scene sceneID="6SC-mq-OXn">
             <objects>
-                <tableViewController id="hHS-jf-2KW" customClass="ExperiencesTableViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hHS-jf-2KW" customClass="ExperiencesTableVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ocq-9H-wXt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="688.79999999999995" y="-425.03748125937034"/>
         </scene>
-        <!--Main Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="Q6g-n5-jHl">
             <objects>
-                <tabBarController id="F22-Gu-X0h" customClass="MainTabBarController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="F22-Gu-X0h" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="EvZ-Cz-G58">
@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="-148" y="112"/>
         </scene>
-        <!--Origin Screen View Controller-->
+        <!--Origin ScreenVC-->
         <scene sceneID="uvC-ad-aiV">
             <objects>
-                <viewController storyboardIdentifier="originViewController" id="9jn-rB-nLW" customClass="OriginScreenViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="originViewController" id="9jn-rB-nLW" customClass="OriginScreenVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EeQ-RO-xed">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,12 +224,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYo-KF-j0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1856.8" y="87.706146926536732"/>
+            <point key="canvasLocation" x="-1687" y="85"/>
         </scene>
-        <!--Create Account View Controller-->
+        <!--Create AccountVC-->
         <scene sceneID="vWt-Jc-oT9">
             <objects>
-                <viewController storyboardIdentifier="create_ShowLogin" id="KHk-ef-tzw" customClass="CreateAccountViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="create_ShowLogin" id="KHk-ef-tzw" customClass="CreateAccountVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c87-D0-FvY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,10 +303,10 @@
             </objects>
             <point key="canvasLocation" x="-908" y="-251.42428785607197"/>
         </scene>
-        <!--Login View Controller-->
+        <!--LoginVC-->
         <scene sceneID="2Br-tJ-XL1">
             <objects>
-                <viewController id="PJy-Cc-a7I" customClass="LoginViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PJy-Cc-a7I" customClass="LoginVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="65O-PT-ovs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,7 +400,7 @@
         <!--Inbox-->
         <scene sceneID="bpN-0b-Ziq">
             <objects>
-                <tableViewController storyboardIdentifier="MainView" title="Inbox" id="Nbh-kZ-Mp4" customClass="ThreadsTableViewController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainView" title="Inbox" id="Nbh-kZ-Mp4" customClass="ThreadsTableVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ybL-3M-enA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,7 +454,7 @@
         <image name="logotypeX_white" width="850" height="212"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="glL-vf-AZJ"/>
-        <segue reference="d0w-Z2-aun"/>
+        <segue reference="iFh-d8-UgR"/>
+        <segue reference="OIa-MV-TGK"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,7 +9,7 @@
 import UIKit
 import JSQMessagesViewController
 
-class ChatViewController: JSQMessagesViewController {
+class ChatVC: JSQMessagesViewController {
     
     var thread:Thread?
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OriginScreenViewController: UIViewController {
+class OriginScreenVC: UIViewController {
 
     // If true, the user will automatically be logged in based on what's in the input fields.
     var autoLogin = true
@@ -46,7 +46,7 @@ class OriginScreenViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "origin_login") {
-            (segue.destination as! LoginViewController).autoLogin = autoLogin
+            (segue.destination as! LoginVC).autoLogin = autoLogin
         }
     }
     

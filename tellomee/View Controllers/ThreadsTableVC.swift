@@ -1,15 +1,18 @@
 //
-//  ExperiencesTableViewController.swift
+//  ThreadsTableViewController.swift
 //  tellomee
 //
-//  Created by Michael Miller on 11/22/17.
+//  Created by Michael Miller on 11/11/17.
 //  Copyright © 2017 Michael Miller. All rights reserved.
 //
 
 import UIKit
 
-class ExperiencesTableViewController: UITableViewController {
+class ThreadsTableVC: UITableViewController {
 
+    // This is set to the selected thread when the user selects a row. This is used to prepare for the segue.
+    var selectedThread: Thread?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +21,18 @@ class ExperiencesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        ThreadManager.fillThreads {
+            () in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // If we came back from the settings page, we need to refresh the image. Also refresh when coming back from a message so the threads appear in the correct order.
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +44,27 @@ class ExperiencesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return ThreadManager.threads.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ThreadTableViewCell
 
-        // Configure the cell...
-
+        let u = ThreadManager.threads[indexPath.row]
+        cell.cellName.text = u.user.displayName
+        cell.cellImage.image = u.user.getProfileImage()
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedThread = ThreadManager.threads[indexPath.row]
+        self.performSegue(withIdentifier: "showChatView", sender: self)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +101,14 @@ class ExperiencesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showChatView",
+        let destinationViewController = segue.destination as? ChatVC {
+            destinationViewController.thread = selectedThread
+        }
     }
-    */
-
 }

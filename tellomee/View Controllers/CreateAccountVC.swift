@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateAccountViewController: UIViewController {
+class CreateAccountVC: UIViewController {
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -72,7 +72,7 @@ class CreateAccountViewController: UIViewController {
     
     
     @IBAction func cancelButton_click(_ sender: Any) {
-        let originVC: OriginScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenViewController
+        let originVC: OriginScreenVC = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
         // Prevent auto-login or we'll immediately be logged back in
         originVC.autoLogin = false
         self.present(originVC, animated: true, completion: nil)
@@ -87,7 +87,7 @@ class CreateAccountViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "create_ShowLogin") {
-            (segue.destination as! LoginViewController).initEmail = email.text!
+            (segue.destination as! LoginVC).initEmail = email.text!
         }
     }
 

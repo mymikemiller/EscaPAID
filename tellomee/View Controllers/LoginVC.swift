@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginVC: UIViewController {
 
     // autoLogin is sent in by OriginScreenViewController
     var autoLogin = false
@@ -80,7 +80,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func cancelButton_click(_ sender: Any) {
-        let originVC: OriginScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenViewController
+        let originVC: OriginScreenVC = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
         // Prevent auto-login once we log out or we'll immediately be logged back in
         originVC.autoLogin = false
         self.present(originVC, animated: true, completion: nil)

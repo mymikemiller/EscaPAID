@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class SettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var displayName: UITextField!
@@ -21,7 +21,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
 
         // Do any additional setup after loading the view.
         imageView.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.imageView_click)))
+            UITapGestureRecognizer(target: self, action: #selector(SettingsVC.imageView_click)))
         
         FirebaseManager.getUser(uid: FirebaseManager.currentUserId) { (user) in
             self.user = user
@@ -74,7 +74,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate, 
     @IBAction func logOut_click(_ sender: Any) {
         FirebaseManager.logOut()
        
-        let originVC: OriginScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenViewController
+        let originVC: OriginScreenVC = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
         // Prevent auto-login once we log out or we'll immediately be logged back in
         originVC.autoLogin = false
         self.present(originVC, animated: true, completion: nil)
