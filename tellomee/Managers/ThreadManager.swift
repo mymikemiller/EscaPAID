@@ -41,26 +41,15 @@ class ThreadManager: NSObject {
             (snap) in
             
             var threadId:String? = nil
-            let enumerator = snap.children
-            while threadId == nil, let rest = enumerator.nextObject() as? DataSnapshot {
-                let existingThreadId = rest.key
-                
-                // See if this threadId refers to one between the user and the curator
-                // Get the actual thread
-                databaseRef.child("threads").queryOrderedByKey().queryEqual(toValue: existingThreadId).observeSingleEvent(of: .value, with: { (threadSnap) in
-                    
-                    // For each item in the thread object
-                    for item in threadSnap.children.allObjects as! [DataSnapshot] {
-                        let value = item.value as! NSDictionary
-                        // ...get the other user's uid
-                        let user1 = value["user1"] as! String
-                        let user2 = value["user2"] as! String
-                        if (user1 == curator.uid || user2 == curator.uid) {
-                            threadId = existingThreadId
-                            break
-                        }
-                    }
-                })
+            
+            let userThreads = snap.value as! [String:AnyObject]
+            for userThreadId in userThreads.keys {
+                let otherUserUid = (userThreads[userThreadId] as! [String:AnyObject])["with"] as! String
+                if (otherUserUid == curator.uid) {
+                    // We found the thread
+                    threadId = userThreadId
+                    break
+                }
             }
             
             if (threadId == nil) {
@@ -68,17 +57,17 @@ class ThreadManager: NSObject {
                 // todo: move dateFormatter to a static constant
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                let newThread = ["user1":user.uid,
-                        "user2":curator.uid,
+                let newThread = [
+                        "with":curator.uid,
                         "lastMessageTimestamp":dateFormatter.string(from:Date())]
             
-                threadId = databaseRef.child("threads").childByAutoId().key
-                databaseRef.child("threads").child(threadId!).setValue(newThread)
+                threadId = databaseRef.child("userThreads").child(user.uid).childByAutoId().key
+                databaseRef.child("userThreads").child(user.uid).child(threadId!).setValue(newThread)
             }
             
-            // Add this new thread to both users' userThreads so it shows up in their inbox
-            databaseRef.child("userThreads").child(user.uid).child(threadId!).setValue(true)
-            databaseRef.child("userThreads").child(curator.uid).child(threadId!).setValue(true)
+//            // Add this new thread to both users' userThreads so it shows up in their inbox
+//            databaseRef.child("userThreads").child(user.uid).child(threadId!).setValue(true)
+//            databaseRef.child("userThreads").child(curator.uid).child(threadId!).setValue(true)
             
             let thread = Thread(with: curator, threadId: threadId!, lastMessageTimestamp: Date())
             completion(thread)
@@ -94,34 +83,24 @@ class ThreadManager: NSObject {
             
             // For each of the user's threads...
             for userThread in userThreadSnapshot.children {
-                let threadId = (userThread as! DataSnapshot).key
                 
-                // To find the uid of the other user in the thread, we need to find the thread in the threads tree
-                databaseRef.child("threads").queryOrderedByKey().queryEqual(toValue: threadId).observeSingleEvent(of: DataEventType.value, with: { (threadSnapshot) in
+                let threadId = (userThread as! DataSnapshot).key
+                let results = (userThread as! DataSnapshot).value as! [String:AnyObject]
+                let otherUserUid = results["with"] as! String
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let lastMessageTimestampString = results["lastMessageTimestamp"] as! String
+                let lastMessageTimestamp = dateFormatter.date(from: lastMessageTimestampString)
+            
+                // Get the other user object
+                FirebaseManager.getUser(uid: otherUserUid, completion: { user
+                    in
                     
-                    // For each item in the thread object
-                    for item in threadSnapshot.children.allObjects as! [DataSnapshot] {
-                        let value = item.value as! NSDictionary
-                        // ...get the other user's uid
-                        let user1 = value["user1"] as! String
-                        let user2 = value["user2"] as! String
-                        let otherUserUid = currentUid == user1 ? user2 : user1
-                        
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                        let lastMessageTimestampString = value["lastMessageTimestamp"] as! String
-                        let lastMessageTimestamp = dateFormatter.date(from: lastMessageTimestampString)
-                    
-                        // Get the other user object
-                        FirebaseManager.getUser(uid: otherUserUid, completion: { user
-                            in
-                            
-                            // Create the thread object and add it to our list
-                            let thread = Thread(with: user, threadId: threadId, lastMessageTimestamp: lastMessageTimestamp!)
-                            ThreadManager.add(thread: thread)
-                            completion()
-                        })
-                    }
+                    // Create the thread object and add it to our list
+                    let thread = Thread(with: user, threadId: threadId, lastMessageTimestamp: lastMessageTimestamp!)
+                    ThreadManager.add(thread: thread)
+                    completion()
                 })
             }
         })
