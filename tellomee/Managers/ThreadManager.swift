@@ -61,12 +61,16 @@ class ThreadManager: NSObject {
                 // todo: move dateFormatter to a static constant
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                let newThread = [
+                var newThread = [
                         "with":curator.uid,
                         "lastMessageTimestamp":dateFormatter.string(from:Date())]
             
                 threadId = databaseRef.child("userThreads").child(user.uid).childByAutoId().key
                 databaseRef.child("userThreads").child(user.uid).child(threadId!).setValue(newThread)
+                
+                // Also add the same threadId to the curator's userThreads so the thread appears in their inbox
+                newThread["with"] = user.uid
+                databaseRef.child("userThreads").child(curator.uid).child(threadId!).setValue(newThread)
             }
             
             let thread = Thread(with: curator, threadId: threadId!, lastMessageTimestamp: Date())
