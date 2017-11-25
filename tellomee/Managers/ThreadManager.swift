@@ -35,6 +35,56 @@ class ThreadManager: NSObject {
         }
     }
     
+    static func getOrCreateThread(between user:User, and curator:User, completion: @escaping (Thread) -> ()) {
+        // Try to find a thread that exists. Look in the user's threads and see if any thread exists that contains the curator as the other user
+        databaseRef.child("userThreads").child(user.uid).observeSingleEvent(of: .value) {
+            (snap) in
+            
+            var threadId:String? = nil
+            let enumerator = snap.children
+            while threadId == nil, let rest = enumerator.nextObject() as? DataSnapshot {
+                let existingThreadId = rest.key
+                
+                // See if this threadId refers to one between the user and the curator
+                // Get the actual thread
+                databaseRef.child("threads").queryOrderedByKey().queryEqual(toValue: existingThreadId).observeSingleEvent(of: .value, with: { (threadSnap) in
+                    
+                    // For each item in the thread object
+                    for item in threadSnap.children.allObjects as! [DataSnapshot] {
+                        let value = item.value as! NSDictionary
+                        // ...get the other user's uid
+                        let user1 = value["user1"] as! String
+                        let user2 = value["user2"] as! String
+                        if (user1 == curator.uid || user2 == curator.uid) {
+                            threadId = existingThreadId
+                            break
+                        }
+                    }
+                })
+            }
+            
+            if (threadId == nil) {
+                // Create a thread
+                // todo: move dateFormatter to a static constant
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let newThread = ["user1":user.uid,
+                        "user2":curator.uid,
+                        "lastMessageTimestamp":dateFormatter.string(from:Date())]
+            
+                threadId = databaseRef.child("threads").childByAutoId().key
+                databaseRef.child("threads").child(threadId!).setValue(newThread)
+            }
+            
+            // Add this new thread to both users' userThreads so it shows up in their inbox
+            databaseRef.child("userThreads").child(user.uid).child(threadId!).setValue(true)
+            databaseRef.child("userThreads").child(curator.uid).child(threadId!).setValue(true)
+            
+            let thread = Thread(with: curator, threadId: threadId!, lastMessageTimestamp: Date())
+            completion(thread)
+        }
+    }
+    
     static func fillThreads(completion: @escaping () -> Void) {
         let currentUid = Auth.auth().currentUser?.uid
         ThreadManager.threads = [Thread]()

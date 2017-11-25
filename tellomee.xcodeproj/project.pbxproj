@@ -14,6 +14,7 @@
 		E72B248F1FC65B3800DE0897 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B248E1FC65B3800DE0897 /* Experience.swift */; };
 		E72D8E531FBCC5C1001026D6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D8E521FBCC5C1001026D6 /* LoginVC.swift */; };
 		E72F64471FBBB22B0023489D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E72F64461FBBB22B0023489D /* Podfile */; };
+		E732DA931FC8DCC400BCF691 /* ThreadsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */; };
 		E74549901FB7543A00A6A32C /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745498F1FB7543A00A6A32C /* PostManager.swift */; };
 		E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549911FB758B300A6A32C /* ChatTableViewCell.swift */; };
 		E74549941FB78AE200A6A32C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549931FB78AE200A6A32C /* User.swift */; };
@@ -45,6 +46,7 @@
 		E72B248E1FC65B3800DE0897 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		E72D8E521FBCC5C1001026D6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E72F64461FBBB22B0023489D /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsNavigationController.swift; sourceTree = "<group>"; };
 		E745498F1FB7543A00A6A32C /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		E74549911FB758B300A6A32C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		E74549931FB78AE200A6A32C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				E7F9A0811FB7378B00916FBA /* ChatVC.swift */,
 				E72B24881FC6539A00DE0897 /* ExperiencesTableVC.swift */,
 				E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */,
+				E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */,
 				E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */,
 				E723DD871FC3E17800B4345E /* Thread.swift in Sources */,
+				E732DA931FC8DCC400BCF691 /* ThreadsNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,8 +32,15 @@ class ExperienceVC: UIViewController {
     }
     
     @IBAction func messageButton_click(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 2 // inbox tab
-        
+        FirebaseManager.getUser(uid: FirebaseManager.currentUserId) { (user) in
+    
+            ThreadManager.getOrCreateThread(between: user, and: (self.experience?.curator)!, completion: {thread in
+                
+                let threadsNavigationController: ThreadsNavigationController = self.tabBarController?.viewControllers![2] as! ThreadsNavigationController
+                threadsNavigationController.initialThread = thread
+                self.tabBarController?.selectedViewController = threadsNavigationController
+            })
+        }
     }
     
 

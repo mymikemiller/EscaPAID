@@ -34,6 +34,12 @@ class ThreadsTableVC: UITableViewController {
         // If we came back from the settings page, we need to refresh the image. Also refresh when coming back from a message so the threads appear in the correct order.
         tableView.reloadData()
     }
+    
+    func startChat(thread:Thread) {
+        selectedThread = thread
+        self.performSegue(withIdentifier: "showChatView", sender: self)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
