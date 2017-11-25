@@ -32,7 +32,6 @@ class PostManager: NSObject {
             // Add the thread post
             databaseRef.child("threadPosts").child(threadId).childByAutoId().setValue(post)
             
-            
             // Update the thread with the latest message timestamp
             databaseRef.child("threads").child(threadId).updateChildValues(["lastMessageTimestamp":dateString])
         }

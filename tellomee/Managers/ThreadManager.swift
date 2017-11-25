@@ -36,19 +36,23 @@ class ThreadManager: NSObject {
     }
     
     static func getOrCreateThread(between user:User, and curator:User, completion: @escaping (Thread) -> ()) {
+        
         // Try to find a thread that exists. Look in the user's threads and see if any thread exists that contains the curator as the other user
         databaseRef.child("userThreads").child(user.uid).observeSingleEvent(of: .value) {
             (snap) in
             
             var threadId:String? = nil
             
-            let userThreads = snap.value as! [String:AnyObject]
-            for userThreadId in userThreads.keys {
-                let otherUserUid = (userThreads[userThreadId] as! [String:AnyObject])["with"] as! String
-                if (otherUserUid == curator.uid) {
-                    // We found the thread
-                    threadId = userThreadId
-                    break
+            // Only try to find the thread if we have any children
+            if (snap.childrenCount > 0) {
+                let userThreads = snap.value as! [String:AnyObject]
+                for userThreadId in userThreads.keys {
+                    let otherUserUid = (userThreads[userThreadId] as! [String:AnyObject])["with"] as! String
+                    if (otherUserUid == curator.uid) {
+                        // We found the thread
+                        threadId = userThreadId
+                        break
+                    }
                 }
             }
             
@@ -64,10 +68,6 @@ class ThreadManager: NSObject {
                 threadId = databaseRef.child("userThreads").child(user.uid).childByAutoId().key
                 databaseRef.child("userThreads").child(user.uid).child(threadId!).setValue(newThread)
             }
-            
-//            // Add this new thread to both users' userThreads so it shows up in their inbox
-//            databaseRef.child("userThreads").child(user.uid).child(threadId!).setValue(true)
-//            databaseRef.child("userThreads").child(curator.uid).child(threadId!).setValue(true)
             
             let thread = Thread(with: curator, threadId: threadId!, lastMessageTimestamp: Date())
             completion(thread)
