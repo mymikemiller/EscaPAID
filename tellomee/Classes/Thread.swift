@@ -18,10 +18,18 @@ class Thread: NSObject {
     
     var threadId:String
     var lastMessageTimestamp:Date
+    var read:Bool
     
-    init(with:User, threadId:String, lastMessageTimestamp: Date) {
+    init(with:User, threadId:String, lastMessageTimestamp: Date, read: Bool) {
         self.user = with
         self.threadId = threadId
         self.lastMessageTimestamp = lastMessageTimestamp
+        self.read = read
+    }
+    
+    func setRead(read: Bool) {
+        self.read = read
+        // Write it to the database
+        FirebaseManager.databaseRef.child("userThreads").child(FirebaseManager.currentUserId).child(threadId).updateChildValues(["read":read])
     }
 }

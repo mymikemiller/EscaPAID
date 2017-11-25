@@ -61,9 +61,17 @@ class ThreadsTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ThreadTableViewCell
 
-        let u = ThreadManager.threads[indexPath.row]
-        cell.cellName.text = u.user.displayName
-        cell.cellImage.image = u.user.getProfileImage()
+        let thread = ThreadManager.threads[indexPath.row]
+        cell.cellImage.image = thread.user.getProfileImage()
+        
+        cell.cellName.text = thread.user.displayName
+        // Display the name in bold if the thread hasn't been read
+        if (thread.read) {
+            cell.cellName.font = UIFont.systemFont(ofSize: 16.0)
+        } else {
+            cell.cellName.font = UIFont.boldSystemFont(ofSize: 16.0)
+        }
+        
         return cell
     }
     

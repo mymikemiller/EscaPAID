@@ -63,17 +63,19 @@ class ThreadManager: NSObject {
                 dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 var newThread = [
                         "with":curator.uid,
-                        "lastMessageTimestamp":dateFormatter.string(from:Date())]
+                        "read":true,
+                        "lastMessageTimestamp":dateFormatter.string(from:Date())] as [String : Any]
             
                 threadId = databaseRef.child("userThreads").child(user.uid).childByAutoId().key
                 databaseRef.child("userThreads").child(user.uid).child(threadId!).setValue(newThread)
                 
-                // Also add the same threadId to the curator's userThreads so the thread appears in their inbox
+                // Also add the same threadId (unread) to the curator's userThreads so the thread appears in their inbox
                 newThread["with"] = user.uid
+                newThread["read"] = false
                 databaseRef.child("userThreads").child(curator.uid).child(threadId!).setValue(newThread)
             }
             
-            let thread = Thread(with: curator, threadId: threadId!, lastMessageTimestamp: Date())
+            let thread = Thread(with: curator, threadId: threadId!, lastMessageTimestamp: Date(), read: true)
             completion(thread)
         }
     }
@@ -96,13 +98,15 @@ class ThreadManager: NSObject {
                 dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let lastMessageTimestampString = results["lastMessageTimestamp"] as! String
                 let lastMessageTimestamp = dateFormatter.date(from: lastMessageTimestampString)
+                
+                let read = results["read"] as! Bool
             
                 // Get the other user object
                 FirebaseManager.getUser(uid: otherUserUid, completion: { user
                     in
                     
                     // Create the thread object and add it to our list
-                    let thread = Thread(with: user, threadId: threadId, lastMessageTimestamp: lastMessageTimestamp!)
+                    let thread = Thread(with: user, threadId: threadId, lastMessageTimestamp: lastMessageTimestamp!, read: read)
                     ThreadManager.add(thread: thread)
                     completion()
                 })

@@ -43,7 +43,8 @@ class ChatVC: JSQMessagesViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         PostManager.fillPosts(uid: FirebaseManager.currentUser?.uid, toId:(thread?.user.uid)!, threadId: (thread?.threadId)!, completion: {_ in
-            print("Completed filling posts")
+            // Now that it's been loaded, set the thread as read
+            self.thread?.setRead(read: true)
             self.finishReceivingMessage()
         })
     }
