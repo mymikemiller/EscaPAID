@@ -10,15 +10,22 @@ import UIKit
 
 class ThreadsNavigationController: UINavigationController {
     
-    var initialThread:Thread?
+    var threadToShowOnLoad:Thread?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        if (initialThread != nil) {
-            (viewControllers.first as! ThreadsTableVC).startChat(thread: initialThread!)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // If we have a thread set, go directly to that thread
+        if (threadToShowOnLoad != nil) {
+            (viewControllers.first as! ThreadsTableVC).startChat(thread: threadToShowOnLoad!)
+            
+            // Clear the thread to show so we don't go there automatically next time we appear
+            threadToShowOnLoad = nil
         }
     }
 

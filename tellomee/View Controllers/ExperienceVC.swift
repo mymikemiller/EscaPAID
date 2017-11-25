@@ -47,7 +47,7 @@ class ExperienceVC: UIViewController {
             ThreadManager.getOrCreateThread(between: user, and: (self.experience?.curator)!, completion: {thread in
                 
                 let threadsNavigationController: ThreadsNavigationController = self.tabBarController?.viewControllers![2] as! ThreadsNavigationController
-                threadsNavigationController.initialThread = thread
+                threadsNavigationController.threadToShowOnLoad = thread
                 self.tabBarController?.selectedViewController = threadsNavigationController
             })
         }
