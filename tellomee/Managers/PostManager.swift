@@ -32,8 +32,11 @@ class PostManager: NSObject {
             // Add the thread post
             databaseRef.child("threadPosts").child(threadId).childByAutoId().setValue(post)
             
-            // Mark the thread as unread for the receiver
-            databaseRef.child("userThreads").child(toId).setValue(false, forKey: "read")
+            // Make sure the threads exist as unread
+            let thread = ["lastMessageTimestamp": dateString,
+                          "read": false,
+                          "with": fromId] as [String : Any]
+            databaseRef.child("userThreads").child(toId).child(threadId).setValue(thread)
         }
     }
     
