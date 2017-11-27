@@ -15,7 +15,7 @@ import JSQMessagesViewController
 class PostManager: NSObject {
     static let databaseRef = Database.database().reference()
     static var messages = [JSQMessage]()
-    static var observeHandle: DatabaseHandle? = nil
+    static var observeHandleMap = [String:DatabaseHandle]()
     
     static func addPost(threadId:String, text:String, toId:String, fromId:String) {
         if (text != "") {
@@ -58,11 +58,7 @@ class PostManager: NSObject {
             return
         }
         
-        // If we've previously registered an observer, remove it so we don't end up with duplicate messages showing up
-        if (observeHandle != nil) {
-            databaseRef.child("threadPosts").child(threadId).removeObserver(withHandle: observeHandle!)
-        }
-        observeHandle = databaseRef.child("threadPosts").child(threadId).observe(.childAdded, with:{
+        let observeHandle = databaseRef.child("threadPosts").child(threadId).observe(.childAdded, with:{
             snapshot in
             
             if let result = snapshot.value as? [String:AnyObject]{
@@ -74,6 +70,24 @@ class PostManager: NSObject {
             }
             completion("")
         })
+        
+        observeHandleMap[threadId] = observeHandle
+        
+        return
+    }
+    
+    static func removeObserver(threadId:String) {
+        let observeHandle = observeHandleMap[threadId]
+        if (observeHandle != nil) {
+            databaseRef.child("threadPosts").child(threadId).removeObserver(withHandle: observeHandle!)
+        }
+    }
+    
+    static func removeObserver(threadId:String, observeHandle:DatabaseHandle?) {
+        // If we've previously registered an observer, remove it so we don't end up with duplicate messages showing up
+        if (observeHandle != nil) {
+            databaseRef.child("threadPosts").child(threadId).removeObserver(withHandle: observeHandle!)
+        }
     }
     
     static func clearPosts() {

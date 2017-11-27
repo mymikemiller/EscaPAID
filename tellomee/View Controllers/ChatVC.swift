@@ -9,6 +9,7 @@
 import UIKit
 import JSQMessagesViewController
 
+
 class ChatVC: JSQMessagesViewController {
     
     var thread:Thread?
@@ -55,8 +56,13 @@ class ChatVC: JSQMessagesViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        // Mark the thread as having been read
-        self.thread?.setRead(read: true)
+        if (thread != nil) {
+            // Mark the thread as having been read
+            self.thread!.setRead(read: true)
+            
+            // Remove PostManager's observer so we don't keep listening for new messages
+            PostManager.removeObserver(threadId: thread!.threadId)
+        }
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData!
