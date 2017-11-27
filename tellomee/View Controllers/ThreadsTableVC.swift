@@ -22,12 +22,17 @@ class ThreadsTableVC: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        ThreadManager.fillThreads {
+        ThreadManager.fillThreads(onThreadUpdate: onThreadUpdate) {
             () in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    func onThreadUpdate(thread: Thread) {
+        ThreadManager.bump(threadId: thread.threadId)
+        self.tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {

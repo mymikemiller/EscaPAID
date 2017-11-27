@@ -44,9 +44,12 @@ class ChatVC: JSQMessagesViewController {
         super.viewDidAppear(animated)
         PostManager.fillPosts(uid: FirebaseManager.currentUser?.uid, toId:(thread?.user.uid)!, threadId: (thread?.threadId)!, completion: {_ in
             // Now that it's been loaded, set the thread as read
-            self.thread?.setRead(read: true)
             self.finishReceivingMessage()
         })
+        
+        // Mark the thread as having been read
+        self.thread?.setRead(read: true)
+
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData!
