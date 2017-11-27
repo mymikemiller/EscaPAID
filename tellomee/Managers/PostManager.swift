@@ -62,9 +62,6 @@ class PostManager: NSObject {
                                          displayName: "", // We don't display the display name, so we don't need one
                                          text: result["text"]! as! String)
                 messages.append(message!)
-                
-                // Also bump up the thread in our thread list
-                ThreadManager.bump(threadId: threadId)
             }
             completion("")
         })

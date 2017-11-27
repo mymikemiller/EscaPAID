@@ -52,6 +52,13 @@ class ChatVC: JSQMessagesViewController {
 
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        // Mark the thread as having been read
+        self.thread?.setRead(read: true)
+    }
+    
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData!
     {
         return PostManager.messages[indexPath.item]
