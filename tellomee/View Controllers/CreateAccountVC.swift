@@ -50,7 +50,18 @@ class CreateAccountVC: UIViewController {
         }
         
         FirebaseManager.createAccountWithEmail(email: email.text!, phone: phone.text!, displayName: name.text!, password: password.text!) {
+            errorString in
+            
             DispatchQueue.main.async {
+                
+                if (errorString != nil) {
+                    let alertVC = UIAlertController(title: "Error", message: errorString, preferredStyle: .alert)
+                    let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
+                    alertVC.addAction(alertActionOkay)
+                    self.present(alertVC, animated: true, completion: nil)
+                    return
+                }
+                
                 // FirebaseManager.createAccountWithEmail sent a verification email. Notify the user that they need to address the email then log in.
                 let alertVC = UIAlertController(title: "Verify your email", message: "Please verify your email address to continue.", preferredStyle: .alert)
                 let alertActionOkay = UIAlertAction(title: "Okay", style: .default) {

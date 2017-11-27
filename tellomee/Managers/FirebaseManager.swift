@@ -59,11 +59,11 @@ class FirebaseManager: NSObject {
         }
     }
     
-    static func createAccountWithEmail(email:String, phone:String, displayName:String, password:String, completion: @escaping() -> Void) {
+    static func createAccountWithEmail(email:String, phone:String, displayName:String, password:String, completion: @escaping(String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password, completion: {
             (user, error) in
             if let error = error {
-                print(error.localizedDescription)
+                completion(error.localizedDescription)
                 return
             }
             
@@ -73,7 +73,7 @@ class FirebaseManager: NSObject {
             // Add the user to our database (even if they're not verified) so we can associate information with the user.
             addUser(email: email, phone: phone, displayName: displayName, profileImageUrl: "")
             
-            completion()
+            completion(nil)
         })
     }
     
