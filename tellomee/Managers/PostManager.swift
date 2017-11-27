@@ -32,11 +32,20 @@ class PostManager: NSObject {
             // Add the thread post
             databaseRef.child("threadPosts").child(threadId).childByAutoId().setValue(post)
             
-            // Make sure the threads exist as unread
-            let thread = ["lastMessageTimestamp": dateString,
+            // Make sure the threads exists for the recipient as unread
+            let toThread = ["lastMessageTimestamp": dateString,
                           "read": false,
                           "with": fromId] as [String : Any]
-            databaseRef.child("userThreads").child(toId).child(threadId).setValue(thread)
+            databaseRef.child("userThreads").child(toId).child(threadId).setValue(toThread)
+            
+            // Make sure the threads exists for the sender as unread
+            let fromThread = ["lastMessageTimestamp": dateString,
+                            "read": true,
+                            "with": toId] as [String : Any]
+            databaseRef.child("userThreads").child(fromId).child(threadId).setValue(fromThread)
+            
+            // Bump the thread to the top of the list after sending a message
+            ThreadManager.bump(threadId: threadId)
         }
     }
     
