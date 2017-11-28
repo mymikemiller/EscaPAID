@@ -13,14 +13,17 @@ class ExperienceEditorVC: UIViewController {
     var experience:Experience?
     
     @IBOutlet weak var experienceTitle: UITextField!
+    @IBOutlet weak var experienceIncludes: UITextField!
+    @IBOutlet weak var experienceDescription: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         // Do any additional setup after loading the view.
         if let experience = experience {
             experienceTitle.text = experience.title
+            experienceIncludes.text = experience.includes
+            experienceDescription.text = experience.experienceDescription
         }
     }
     @IBAction func cancelButton_click(_ sender: Any) {
@@ -29,6 +32,8 @@ class ExperienceEditorVC: UIViewController {
     
     @IBAction func saveButton_click(_ sender: Any) {
         experience?.title = (experienceTitle?.text)!
+        experience?.includes = (experienceIncludes?.text)!
+        experience?.experienceDescription = (experienceDescription?.text)!
         experience?.save()
         self.dismiss(animated: true, completion:nil)
     }

@@ -15,12 +15,14 @@ class User: NSObject {
     var phone:String
     var displayName:String
     var profileImageUrl:String
+    var aboutMe:String
     
-    init(uid:String, email:String, displayName:String, phone:String, profileImageUrl:String) {
+    init(uid:String, email:String, displayName:String, phone:String, aboutMe:String, profileImageUrl:String) {
         self.uid = uid
         self.displayName = displayName
         self.email = email
         self.phone = phone
+        self.aboutMe = aboutMe
         self.profileImageUrl = profileImageUrl
     }
     
@@ -52,8 +54,10 @@ class User: NSObject {
         }
     }
     
-    func update(displayName:String, phone:String) {
-        FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["displayName":displayName,
-                                                                                      "phone":phone])
+    func update(displayName:String, phone:String, aboutMe:String) {
+        FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues([
+            "displayName":displayName,
+            "phone":phone,
+            "aboutMe":aboutMe])
     }
 }

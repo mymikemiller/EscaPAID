@@ -16,6 +16,9 @@ class ExperienceVC: UIViewController {
     
     @IBOutlet weak var curator: UILabel!
     
+    @IBOutlet weak var info: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +26,11 @@ class ExperienceVC: UIViewController {
         if let experience = experience {
             experienceTitle.text = experience.title
             curator.text = "By: \(experience.curator.displayName)"
+            
+            info.text = experience.experienceDescription + "\n\n" +
+            "INCLUDES: " + experience.includes + "\n\n" +
+            "ABOUT ME: " + experience.curator.aboutMe
+            
         }
     }
 

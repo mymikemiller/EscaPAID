@@ -30,6 +30,8 @@ class MyExperienceManager: NSObject {
                     let experience = Experience(
                         id: snap.key,
                         title: result["title"] as! String,
+                        includes: result["includes"] as! String,
+                        description: result["description"] as! String,
                         curator: curator)
                     
                     experiences.append(experience)

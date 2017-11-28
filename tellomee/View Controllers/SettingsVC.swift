@@ -13,6 +13,7 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var displayName: UITextField!
     @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var aboutMe: UITextView!
     
     var user:User?
     
@@ -27,10 +28,10 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
             self.user = user
             self.displayName.text = user.displayName
             self.phone.text = user.phone
+            self.aboutMe.text = user.aboutMe
             
             self.imageView.image = user.getProfileImage()
         }
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +56,7 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
             if (imageView.image != nil) {
                 user?.uploadProfilePhoto(profileImage: imageView.image!)
             }
-            user?.update(displayName: displayName.text!, phone: phone.text!)
+            user?.update(displayName: displayName.text!, phone: phone.text!, aboutMe: aboutMe.text!)
             
             navigationController?.popViewController(animated: true)
         }

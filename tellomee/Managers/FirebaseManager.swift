@@ -99,9 +99,10 @@ class FirebaseManager: NSObject {
             let email = value["email"] as! String
             let displayName = value["displayName"] as! String
             let phone = value["phone"] as! String
+            let aboutMe = value["aboutMe"] as! String
             let profileImageUrl = value["profileImageUrl"] as! String
             
-            let user = User(uid: uid, email: email, displayName: displayName, phone: phone, profileImageUrl: profileImageUrl)
+            let user = User(uid: uid, email: email, displayName: displayName, phone: phone, aboutMe: aboutMe, profileImageUrl: profileImageUrl)
             completion(user)
         })
     }
