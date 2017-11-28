@@ -108,7 +108,12 @@ class MyExperiencesTableVC: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "showExperienceEditor") {
-            (segue.destination as! ExperienceEditorVC).experience = selectedExperience
+            
+            let navVC = segue.destination as? UINavigationController
+            
+            let editExperienceVC = navVC?.viewControllers.first as! ExperienceEditorVC
+            
+            editExperienceVC.experience = selectedExperience
         }
     }
     
