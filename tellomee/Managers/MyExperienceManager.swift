@@ -28,6 +28,7 @@ class MyExperienceManager: NSObject {
                 FirebaseManager.getUser(uid: result["uid"] as! String) { (curator) in
                     
                     let experience = Experience(
+                        id: snap.key,
                         title: result["title"] as! String,
                         curator: curator)
                     
