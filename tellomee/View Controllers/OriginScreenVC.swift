@@ -20,6 +20,7 @@ class OriginScreenVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if (autoLogin) {
             performSegue(withIdentifier: "origin_login", sender: self)
         }

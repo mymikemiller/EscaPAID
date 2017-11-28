@@ -31,9 +31,14 @@
 		E7B9F7521FB6CC5D0058CE61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7511FB6CC5D0058CE61 /* GoogleService-Info.plist */; };
 		E7E22E8F1FC7463800FD88FF /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */; };
 		E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */; };
+		E7F585F81FCCDECE00536EF5 /* CuratorSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */; };
 		E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */; };
 		E7F9A0821FB7378B00916FBA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0811FB7378B00916FBA /* ChatVC.swift */; };
 		E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */; };
+		E7FE89F61FCCF284008ADCEF /* MyExperiencesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */; };
+		E7FE89FA1FCD0180008ADCEF /* MyExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F91FCD0180008ADCEF /* MyExperienceManager.swift */; };
+		E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */; };
+		E7FE8A021FCDE66C008ADCEF /* ExperienceEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,10 +70,15 @@
 		E7B9F7511FB6CC5D0058CE61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceVC.swift; sourceTree = "<group>"; };
+		E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuratorSettingsVC.swift; sourceTree = "<group>"; };
 		E7F9A07E1FB6D1DC00916FBA /* tellomee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tellomee.entitlements; sourceTree = "<group>"; };
 		E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableVC.swift; sourceTree = "<group>"; };
 		E7F9A0811FB7378B00916FBA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExperiencesTableVC.swift; sourceTree = "<group>"; };
+		E7FE89F91FCD0180008ADCEF /* MyExperienceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExperienceManager.swift; sourceTree = "<group>"; };
+		E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCell.xib; sourceTree = "<group>"; };
+		E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceEditorVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,7 @@
 			children = (
 				E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */,
 				E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */,
+				E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -120,7 +131,10 @@
 				E7F9A0811FB7378B00916FBA /* ChatVC.swift */,
 				E72B24881FC6539A00DE0897 /* ExperiencesTableVC.swift */,
 				E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */,
+				E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */,
 				E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */,
+				E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */,
+				E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -132,6 +146,7 @@
 				E745498F1FB7543A00A6A32C /* PostManager.swift */,
 				E74549951FB78F4500A6A32C /* ThreadManager.swift */,
 				E72B248A1FC656F400DE0897 /* ExperienceManager.swift */,
+				E7FE89F91FCD0180008ADCEF /* MyExperienceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -263,6 +278,7 @@
 				E72F64471FBBB22B0023489D /* Podfile in Resources */,
 				E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */,
 				E7B9F7521FB6CC5D0058CE61 /* GoogleService-Info.plist in Resources */,
+				E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */,
 				E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */,
 				E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */,
 			);
@@ -339,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7FE8A021FCDE66C008ADCEF /* ExperienceEditorVC.swift in Sources */,
 				E7E22E8F1FC7463800FD88FF /* ExperienceTableViewCell.swift in Sources */,
 				E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */,
 				E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */,
@@ -353,12 +370,15 @@
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,
 				E72B24891FC6539A00DE0897 /* ExperiencesTableVC.swift in Sources */,
 				E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */,
+				E7FE89F61FCCF284008ADCEF /* MyExperiencesTableVC.swift in Sources */,
 				E745499A1FB8B1BE00A6A32C /* ThreadTableViewCell.swift in Sources */,
 				E7F9A0821FB7378B00916FBA /* ChatVC.swift in Sources */,
 				E72D8E531FBCC5C1001026D6 /* LoginVC.swift in Sources */,
 				E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */,
 				E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */,
 				E723DD871FC3E17800B4345E /* Thread.swift in Sources */,
+				E7FE89FA1FCD0180008ADCEF /* MyExperienceManager.swift in Sources */,
+				E7F585F81FCCDECE00536EF5 /* CuratorSettingsVC.swift in Sources */,
 				E732DA931FC8DCC400BCF691 /* ThreadsNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

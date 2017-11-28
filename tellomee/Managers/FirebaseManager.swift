@@ -19,7 +19,7 @@ class FirebaseManager: NSObject {
     
     enum EmailLogInResult {
         case Success
-        case Error
+        case Error  
         case EmailNotVerified
     }
     

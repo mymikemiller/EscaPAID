@@ -71,6 +71,8 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
         
     }
     
+    
+    
     @IBAction func logOut_click(_ sender: Any) {
         FirebaseManager.logOut()
        
