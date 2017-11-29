@@ -32,6 +32,7 @@ class MyExperienceManager: NSObject {
                         title: result["title"] as! String,
                         includes: result["includes"] as! String,
                         description: result["description"] as! String,
+                        imageUrls: result["images"] as! [String],
                         curator: curator)
                     
                     experiences.append(experience)

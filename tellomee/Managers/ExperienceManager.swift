@@ -22,21 +22,20 @@ class ExperienceManager: NSObject {
         databaseRef.child("experiences").queryOrdered(byChild: "city").queryEqual(toValue: "SF").observe(.childAdded, with: {
             snap in
             
-            if let result = snap.value as? [String:AnyObject]{
+            let result = snap.value as! [String:AnyObject]
             
-                FirebaseManager.getUser(uid: result["uid"] as! String) { (curator) in
+            FirebaseManager.getUser(uid: result["uid"] as! String) { (curator) in
+            
+                let experience = Experience(
+                    id: snap.key,
+                    title: result["title"] as! String,
+                    includes: result["includes"] as! String,
+                    description: result["description"] as! String,
+                    imageUrls: result["images"] as! [String],
+                    curator: curator)
                 
-                    let experience = Experience(
-                        id: snap.key,
-                        title: result["title"] as! String,
-                        includes: result["includes"] as! String,
-                        description: result["description"] as! String,
-                        curator: curator)
-                    
-                    experiences.append(experience)
-                    completion()
-                }
-                
+                experiences.append(experience)
+                completion()
             }
             
         })

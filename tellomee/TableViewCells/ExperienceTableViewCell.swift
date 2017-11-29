@@ -23,7 +23,10 @@ class ExperienceTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-        title?.text = experience?.title
+        if let experience = experience {
+            title?.text = experience.title
+            theImage.image = experience.uiImages[0]
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
