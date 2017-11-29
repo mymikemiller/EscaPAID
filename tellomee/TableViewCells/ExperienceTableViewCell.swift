@@ -14,7 +14,6 @@ class ExperienceTableViewCell: UITableViewCell {
     
     @IBOutlet weak var theImage: UIImageView!
     
-    
     @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {

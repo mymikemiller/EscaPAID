@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExperienceVC: UIViewController {
+class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     var experience:Experience?
 
@@ -18,11 +18,13 @@ class ExperienceVC: UIViewController {
     
     @IBOutlet weak var info: UITextView!
     
+    @IBOutlet weak var pagerContainer: UIView!
+    
+    var imagePageViewController:UIPageViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         if let experience = experience {
             experienceTitle.text = experience.title
             curator.text = "By: \(experience.curator.displayName)"
@@ -30,8 +32,13 @@ class ExperienceVC: UIViewController {
             info.text = experience.experienceDescription + "\n\n" +
             "INCLUDES: " + experience.includes + "\n\n" +
             "ABOUT ME: " + experience.curator.aboutMe
-            
         }
+        
+        imagePageViewController?.dataSource = self
+        
+        let startingViewController:ExperienceImageVC = viewControllerAtIndex(index: 0)!
+        let viewControllers = [startingViewController]
+        imagePageViewController?.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,15 +68,55 @@ class ExperienceVC: UIViewController {
         }
     }
     
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        
+        var index = (viewController as! ExperienceImageVC).pageIndex
+        if (index == 0) { return nil }
+        index -= 1
+        return viewControllerAtIndex(index: index)
+        
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        
+        var index = (viewController as! ExperienceImageVC).pageIndex
+        index += 1
+        if (index == experience?.imageUrls.count) {
+            return nil
+        }
+        return viewControllerAtIndex(index: index)
+    }
+    
+    func viewControllerAtIndex(index: Int) -> ExperienceImageVC? {
+        if ((experience?.imageUrls.count == 0) || index >= (experience?.imageUrls.count)!) {
+            return nil
+        }
+        
+        let experienceImageVC: ExperienceImageVC = self.storyboard?.instantiateViewController(withIdentifier: "ExperienceImageVC") as! ExperienceImageVC
+        experienceImageVC.pageIndex = index
+        experienceImageVC.imageUrl = (experience?.imageUrls[index])!
+        
+        return experienceImageVC;
+    }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return (experience?.imageUrls.count)!
+    }
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        // Start at index 0
+        return 0
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "pageViewController_embed") {
+            imagePageViewController = segue.destination as! UIPageViewController
+        }
     }
-    */
+    
 
 }
