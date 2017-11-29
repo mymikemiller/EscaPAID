@@ -55,7 +55,7 @@ class ExperiencesTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell", for: indexPath) as! ExperienceTableViewCell
 
         let experience = ExperienceManager.experiences[indexPath.row]
-        cell.title?.text = experience.title
+        cell.experience = experience
 
         return cell
     }

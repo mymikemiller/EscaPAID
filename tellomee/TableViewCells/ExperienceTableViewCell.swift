@@ -10,11 +10,20 @@ import UIKit
 
 class ExperienceTableViewCell: UITableViewCell {
     
+    var experience:Experience?
+    
+    @IBOutlet weak var theImage: UIImageView!
+    
+    
     @IBOutlet weak var title: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func layoutSubviews() {
+        title?.text = experience?.title
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
