@@ -24,7 +24,12 @@ class ExperienceTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         if let experience = experience {
             title?.text = experience.title
-            theImage.image = experience.uiImages[0]
+            if let url = NSURL(string: experience.imageUrls[0]) {
+                if let data = NSData(contentsOf: url as URL) {
+                    // TODO: What if the data is not an image or the URL isn't valid?
+                    theImage.image = UIImage(data: data as Data)
+                }
+            }
         }
     }
 

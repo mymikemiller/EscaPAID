@@ -17,20 +17,6 @@ class Experience: NSObject {
     var imageUrls:[String]
     var curator:User
     
-    var uiImages: [UIImage] {
-        var uiImages = [UIImage]()
-        for imageUrlString in imageUrls {
-            if let url = NSURL(string: imageUrlString) {
-                if let data = NSData(contentsOf: url as URL) {
-                    // TODO: What if the data is not an image or the URL isn't valid?
-                    let uiImage = UIImage(data: data as Data)
-                    uiImages.append(uiImage!)
-                }
-            }
-        }
-        return uiImages
-    }
-    
     init(id:String,
          title:String,
          includes:String,
