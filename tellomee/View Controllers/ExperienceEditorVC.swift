@@ -9,8 +9,12 @@
 import UIKit
 
 class ExperienceEditorVC: UIViewController {
+    
+    fileprivate let itemsPerRow: CGFloat = 3
 
     var experience:Experience?
+    fileprivate let reuseIdentifier = "ExperienceImageUploadCell"
+    fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
     @IBOutlet weak var experienceTitle: UITextField!
     @IBOutlet weak var experienceIncludes: UITextField!
@@ -44,6 +48,20 @@ class ExperienceEditorVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func imageForIndexPath(indexPath: IndexPath) -> UIImage {
+        if (indexPath.row >= 0 && indexPath.row < (experience?.imageUrls.count)!) {
+            
+            if let url = NSURL(string: (experience?.imageUrls[indexPath.row])!) {
+                if let data = NSData(contentsOf: url as URL) {
+                    return UIImage(data: data as Data)!
+                }
+            }
+        }
+        return UIImage()
+    }
+    
+    
 
     /*
     // MARK: - Navigation
@@ -55,4 +73,57 @@ class ExperienceEditorVC: UIViewController {
     }
     */
 
+}
+
+
+// MARK: - UICollectionViewDataSource
+extension ExperienceEditorVC: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return (experience?.imageUrls.count)!
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ExperienceImageCell
+        
+        let image = imageForIndexPath(indexPath: indexPath)
+        cell.backgroundColor = UIColor.white
+        
+        cell.imageView.image = image
+        
+        return cell
+    }
+}
+
+
+extension ExperienceEditorVC : UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //2
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
+    }
 }

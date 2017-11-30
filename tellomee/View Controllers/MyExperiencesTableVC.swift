@@ -56,7 +56,6 @@ class MyExperiencesTableVC: UITableViewController {
         return MyExperienceManager.experiences.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell", for: indexPath) as! ExperienceTableViewCell
         
