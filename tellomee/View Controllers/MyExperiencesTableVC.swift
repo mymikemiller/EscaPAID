@@ -37,6 +37,8 @@ class MyExperiencesTableVC: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        // Reload the table right away so it'll appear empty while wait to we fill it
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
