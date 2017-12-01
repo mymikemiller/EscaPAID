@@ -11,10 +11,10 @@ import FirebaseStorage
 
 class StorageManager: NSObject {
     
-    static func storeImage(folder:String, image:UIImage, completion: @escaping (String) -> Void) {
+    static func storeImage(folder:String, image:UIImage, completion: @escaping (String) -> Void) -> StorageUploadTask? {
         let imageRef = Storage.storage().reference().child(folder).child("\(NSUUID().uuidString).jpg")
         if let imageData = UIImageJPEGRepresentation(image, 0.25) {
-            imageRef.putData(imageData, metadata:nil) {
+            return imageRef.putData(imageData, metadata:nil) {
                 metadata, error in
                 if error != nil {
                     print(error?.localizedDescription)
@@ -28,6 +28,7 @@ class StorageManager: NSObject {
                 }
             }
         }
+        return nil
     }
 }
 

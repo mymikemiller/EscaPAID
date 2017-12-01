@@ -16,6 +16,7 @@ class ExperienceEditorVC: UIViewController {
     var imageUrls: [String] = []
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
+    @IBOutlet weak var uploadProgressBar: UIProgressView!
     
     fileprivate let reuseIdentifier = "ExperienceImageUploadCell"
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
@@ -175,10 +176,20 @@ extension ExperienceEditorVC : UINavigationControllerDelegate, UIImagePickerCont
         let img:UIImage = pickerInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
         DispatchQueue.main.async { [unowned self] in
             
-            StorageManager.storeImage(folder: "experienceImages", image: img) { (url) in
-                
+            let uploadTask = StorageManager.storeImage(folder: "experienceImages", image: img) { (url) in
+                // After the image is uploaded, add the url to our list and refresh the view to show the new image
                 self.imageUrls.append(url)
                 self.imageCollectionView.reloadData()
+                // Hide the progress bar
+                self.uploadProgressBar.isHidden = true
+            }
+            uploadTask?.observe(.progress) { snapshot in
+                print("Upload progress: ")
+                print(snapshot.progress)
+               
+                self.uploadProgressBar.isHidden = false
+                self.uploadProgressBar.setProgress(Float((snapshot.progress?.fractionCompleted)!), animated: true)
+                
             }
         }
         self.dismiss(animated: true, completion: nil)
