@@ -21,6 +21,7 @@
 		E74549961FB78F4500A6A32C /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549951FB78F4500A6A32C /* ThreadManager.swift */; };
 		E74549981FB79AE200A6A32C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549971FB79AE200A6A32C /* SettingsVC.swift */; };
 		E745499A1FB8B1BE00A6A32C /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */; };
+		E751E0E11FD1CDA500CBB416 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E01FD1CDA500CBB416 /* StorageManager.swift */; };
 		E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */; };
 		E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
 		E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
@@ -60,6 +61,7 @@
 		E74549951FB78F4500A6A32C /* ThreadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadManager.swift; sourceTree = "<group>"; };
 		E74549971FB79AE200A6A32C /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
+		E751E0E01FD1CDA500CBB416 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginScreenVC.swift; sourceTree = "<group>"; };
 		E7B9F7391FB6CAAE0058CE61 /* tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 				E74549951FB78F4500A6A32C /* ThreadManager.swift */,
 				E72B248A1FC656F400DE0897 /* ExperienceManager.swift */,
 				E7FE89F91FCD0180008ADCEF /* MyExperienceManager.swift */,
+				E751E0E01FD1CDA500CBB416 /* StorageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				E7FE8A021FCDE66C008ADCEF /* ExperienceEditorVC.swift in Sources */,
 				E7D316AA1FD08EF60062E178 /* ExperienceImageCell.swift in Sources */,
 				E7E22E8F1FC7463800FD88FF /* ExperienceTableViewCell.swift in Sources */,
+				E751E0E11FD1CDA500CBB416 /* StorageManager.swift in Sources */,
 				E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */,
 				E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */,
 				E74549961FB78F4500A6A32C /* ThreadManager.swift in Sources */,

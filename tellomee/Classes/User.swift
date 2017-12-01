@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseStorage
 
 class User: NSObject {
     var uid:String
@@ -36,21 +35,12 @@ class User: NSObject {
     }
 
     func uploadProfilePhoto(profileImage:UIImage) {
-        let profileImageRef = Storage.storage().reference().child("profileImages").child("\(NSUUID().uuidString).jpg")
-        if let imageData = UIImageJPEGRepresentation(profileImage, 0.25) {
-            profileImageRef.putData(imageData, metadata:nil) {
-                metadata, error in
-                if error != nil {
-                    print(error?.localizedDescription)
-                    return
-                } else {
-                    print(metadata)
-                    if let downloadUrl = metadata?.downloadURL()?.absoluteString {
-                        self.profileImageUrl = downloadUrl
-                        FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":downloadUrl])
-                    }
-                }
-            }
+        
+        StorageManager.storeImage(folder: "profileImages", image: profileImage) { (url) in
+            
+            self.profileImageUrl = url
+            FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":url])
+            
         }
     }
     
