@@ -13,7 +13,9 @@ class ExperienceEditorVC: UIViewController {
     fileprivate let itemsPerRow: CGFloat = 3
 
     var experience:Experience?
-    var imageUrls:[String] = []
+    var imageUrls: [String] = []
+    
+    @IBOutlet weak var imageCollectionView: UICollectionView!
     
     fileprivate let reuseIdentifier = "ExperienceImageUploadCell"
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
@@ -54,13 +56,12 @@ class ExperienceEditorVC: UIViewController {
     
     
     func imageForIndexPath(indexPath: IndexPath) -> UIImage {
-        if (indexPath.row == experience?.imageUrls.count) {
+        if (indexPath.row == imageUrls.count) {
             // Return the "add image" icon for the last image
             return #imageLiteral(resourceName: "ic_library_add")
-        }
-        if (indexPath.row >= 0 && indexPath.row < (experience?.imageUrls.count)!) {
+        } else if (indexPath.row < imageUrls.count) {
             
-            if let url = NSURL(string: (experience?.imageUrls[indexPath.row])!) {
+            if let url = NSURL(string: imageUrls[indexPath.row]) {
                 if let data = NSData(contentsOf: url as URL) {
                     return UIImage(data: data as Data)!
                 }
@@ -93,7 +94,7 @@ extension ExperienceEditorVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         // Add one for the "add image" button
-        return (experience?.imageUrls.count)! + 1
+        return imageUrls.count + 1
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -110,14 +111,31 @@ extension ExperienceEditorVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // If the user clicks the "add image" icon
-        if (indexPath.row == experience?.imageUrls.count) {
-        
+        if (indexPath.row == imageUrls.count) {
+            // If the user clicks the "add image" icon
             // Let the user pick an image
             let image = UIImagePickerController()
             image.delegate = self
             image.sourceType = UIImagePickerControllerSourceType.photoLibrary
             self.present(image, animated: true, completion: nil)
+        } else {
+            // If the uer clicks on any other image, offer to delete it
+            let alertVC = UIAlertController(title: "Confirm", message: "Remove this image?", preferredStyle: .alert)
+            
+            let alertActionRemove = UIAlertAction(title: "Remove", style: .default) {
+                (_) in
+                
+                // Remove the image
+                self.imageUrls.remove(at: indexPath.row)
+                
+                // Reload the collection view
+                self.imageCollectionView.reloadData()
+            }
+            let alertActionCancel = UIAlertAction(title: "Cancel", style: .default)
+            
+            alertVC.addAction(alertActionRemove)
+            alertVC.addAction(alertActionCancel)
+            self.present(alertVC, animated: true, completion: nil)
         }
     }
 }
@@ -128,7 +146,7 @@ extension ExperienceEditorVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //2
+        
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
@@ -153,12 +171,16 @@ extension ExperienceEditorVC : UICollectionViewDelegateFlowLayout {
 extension ExperienceEditorVC : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        let pickerInfo:NSDictionary = info as NSDictionary
-//        let img:UIImage = pickerInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
-//        DispatchQueue.main.async { [unowned self] in
-//            self.imageView.image = img
-//        }
+        let pickerInfo:NSDictionary = info as NSDictionary
+        let img:UIImage = pickerInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
+        DispatchQueue.main.async { [unowned self] in
+            
+            StorageManager.storeImage(folder: "experienceImages", image: img) { (url) in
+                
+                self.imageUrls.append(url)
+                self.imageCollectionView.reloadData()
+            }
+        }
         self.dismiss(animated: true, completion: nil)
-        
     }
 }

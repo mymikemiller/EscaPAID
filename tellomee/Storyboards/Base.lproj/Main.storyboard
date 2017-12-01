@@ -646,6 +646,7 @@
                         <outlet property="experienceDescription" destination="tu4-lD-AMA" id="aDX-LQ-0VZ"/>
                         <outlet property="experienceIncludes" destination="wJC-0A-CEL" id="pkk-am-jtu"/>
                         <outlet property="experienceTitle" destination="Kr9-Er-2ib" id="tGc-HW-blM"/>
+                        <outlet property="imageCollectionView" destination="iE7-rI-tcM" id="Ewd-7o-Gjl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8I-kE-mys" userLabel="First Responder" sceneMemberID="firstResponder"/>

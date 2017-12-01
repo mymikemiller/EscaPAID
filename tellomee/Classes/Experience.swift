@@ -32,16 +32,6 @@ class Experience: NSObject {
         self.curator = curator
     }
     
-    func addImage(image:UIImage) {
-        
-        // TODO: Use storageManager
-//        imageUrls.append(url)
-    }
-    
-    func removeImageUrl(url:String) {
-        
-    }
-    
     func save() {
         FirebaseManager.databaseRef.child("experiences").child(id).updateChildValues([
             "title":title,
