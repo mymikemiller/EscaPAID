@@ -51,16 +51,6 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
         self.present(image, animated: true, completion: nil)
     }
     
-    @IBAction func submitButton_click(_ sender: Any) {
-        if (user != nil) {
-            if (imageView.image != nil) {
-                user?.uploadProfilePhoto(profileImage: imageView.image!)
-            }
-            user?.update(displayName: displayName.text!, phone: phone.text!, aboutMe: aboutMe.text!)
-            
-            navigationController?.popViewController(animated: true)
-        }
-    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let pickerInfo:NSDictionary = info as NSDictionary
@@ -73,16 +63,20 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
     }
     
     
-    
-    @IBAction func logOut_click(_ sender: Any) {
-        FirebaseManager.logOut()
-       
-        let originVC: OriginScreenVC = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
-        // Prevent auto-login once we log out or we'll immediately be logged back in
-        originVC.autoLogin = false
-        self.present(originVC, animated: true, completion: nil)
-
+    @IBAction func saveButton_click(_ sender: Any) {
+        if (user != nil) {
+            if (imageView.image != nil) {
+                user?.uploadProfilePhoto(profileImage: imageView.image!)
+            }
+            user?.update(displayName: displayName.text!, phone: phone.text!, aboutMe: aboutMe.text!)
+            
+            self.dismiss(animated: true, completion:nil)        }
     }
+    
+    @IBAction func cancelButton_click(_ sender: Any) {
+        self.dismiss(animated: true, completion:nil)
+    }
+
     
 
     /*
