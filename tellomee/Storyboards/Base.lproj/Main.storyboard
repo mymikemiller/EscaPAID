@@ -58,6 +58,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r9y-qB-MsJ">
+                                <rect key="frame" x="16" y="645" width="343" height="2"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="PVe-vs-xmu"/>
@@ -79,11 +83,12 @@
                         <outlet property="displayName" destination="5Va-bQ-e7L" id="Dox-Z8-StT"/>
                         <outlet property="imageView" destination="iY9-ag-JRu" id="LDL-4I-oBn"/>
                         <outlet property="phone" destination="w5n-dm-5qU" id="pKm-jE-wpn"/>
+                        <outlet property="uploadProgressView" destination="r9y-qB-MsJ" id="OAv-lm-cFK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDT-hN-RPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1433" y="1715"/>
+            <point key="canvasLocation" x="1432.8" y="1714.9925037481262"/>
         </scene>
         <!--Experiences-->
         <scene sceneID="yCB-ke-k6Q">
@@ -633,7 +638,7 @@
                         <outlet property="experienceIncludes" destination="wJC-0A-CEL" id="pkk-am-jtu"/>
                         <outlet property="experienceTitle" destination="Kr9-Er-2ib" id="tGc-HW-blM"/>
                         <outlet property="imageCollectionView" destination="iE7-rI-tcM" id="Ewd-7o-Gjl"/>
-                        <outlet property="uploadProgressBar" destination="ZY8-Kd-Qhf" id="Ex9-72-sDr"/>
+                        <outlet property="uploadProgressView" destination="ZY8-Kd-Qhf" id="Ex9-72-sDr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8I-kE-mys" userLabel="First Responder" sceneMemberID="firstResponder"/>

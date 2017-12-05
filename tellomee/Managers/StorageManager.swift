@@ -30,5 +30,24 @@ class StorageManager: NSObject {
         }
         return nil
     }
+    
+    static func removeImageFromStorage(folder:String, imageUrl:String) {
+        // Remove the .jpg from the file name
+        let url = imageUrl.prefix(imageUrl.count - 3)
+        
+        print(url)
+        
+        let start = imageUrl.range(of: "profileImages%2F")?.upperBound
+        let end = imageUrl.range(of: ".jpg")?.upperBound
+        let range = Range(uncheckedBounds: (lower: start!, upper: end!))
+        let imageName = String(imageUrl[range])
+        
+        print("Deleting " + imageName)
+        Storage.storage().reference().child(folder).child(imageName).delete() {
+            error in
+            
+            print(error)
+        }
+    }
 }
 

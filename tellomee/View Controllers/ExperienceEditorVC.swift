@@ -16,7 +16,7 @@ class ExperienceEditorVC: UIViewController {
     var imageUrls: [String] = []
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
-    @IBOutlet weak var uploadProgressBar: UIProgressView!
+    @IBOutlet weak var uploadProgressView: UIProgressView!
     
     fileprivate let reuseIdentifier = "ExperienceImageUploadCell"
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
@@ -181,14 +181,11 @@ extension ExperienceEditorVC : UINavigationControllerDelegate, UIImagePickerCont
                 self.imageUrls.append(url)
                 self.imageCollectionView.reloadData()
                 // Hide the progress bar
-                self.uploadProgressBar.isHidden = true
+                self.uploadProgressView.isHidden = true
             }
             uploadTask?.observe(.progress) { snapshot in
-                print("Upload progress: ")
-                print(snapshot.progress)
-               
-                self.uploadProgressBar.isHidden = false
-                self.uploadProgressBar.setProgress(Float((snapshot.progress?.fractionCompleted)!), animated: true)
+                self.uploadProgressView.isHidden = false
+                self.uploadProgressView.setProgress(Float((snapshot.progress?.fractionCompleted)!), animated: true)
                 
             }
         }

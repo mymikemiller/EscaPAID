@@ -15,6 +15,8 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var aboutMe: UITextView!
     
+    @IBOutlet weak var uploadProgressView: UIProgressView!
+    
     var user:User?
     
     override func viewDidLoad() {
@@ -56,21 +58,40 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
         let pickerInfo:NSDictionary = info as NSDictionary
         let img:UIImage = pickerInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
         DispatchQueue.main.async { [unowned self] in
+        
             self.imageView.image = img
+            
+            let uploadTask = StorageManager.storeImage(folder: "profileImages", image: img) { (url) in
+                
+                if (self.user?.profileImageUrl != nil) {
+                   // Delete the previous picture from storage
+                    StorageManager.removeImageFromStorage(folder: "profileImages", imageUrl: (self.user?.profileImageUrl)!)
+                }
+                
+                // Hide the progress bar
+                self.uploadProgressView.isHidden = true
+                
+                // Save the URL to the database. Note that we don't have to press "Save" to make this happen. It saves automatically when the image is finished uploading.
+                self.user?.updateProfileImageUrl(url)
+                
+            }
+            uploadTask?.observe(.progress) { snapshot in
+                self.uploadProgressView.isHidden = false
+                self.uploadProgressView.setProgress(Float((snapshot.progress?.fractionCompleted)!), animated: true)
+                
+            }
+            
         }
         self.dismiss(animated: true, completion: nil)
         
     }
-    
-    
+
     @IBAction func saveButton_click(_ sender: Any) {
         if (user != nil) {
-            if (imageView.image != nil) {
-                user?.uploadProfilePhoto(profileImage: imageView.image!)
-            }
             user?.update(displayName: displayName.text!, phone: phone.text!, aboutMe: aboutMe.text!)
             
-            self.dismiss(animated: true, completion:nil)        }
+            self.dismiss(animated: true, completion:nil)
+        }
     }
     
     @IBAction func cancelButton_click(_ sender: Any) {

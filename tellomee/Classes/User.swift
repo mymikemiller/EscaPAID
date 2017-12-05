@@ -33,21 +33,16 @@ class User: NSObject {
         }
         return #imageLiteral(resourceName: "profile")
     }
-
-    func uploadProfilePhoto(profileImage:UIImage) {
-        
-        StorageManager.storeImage(folder: "profileImages", image: profileImage) { (url) in
-            
-            self.profileImageUrl = url
-            FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":url])
-            
-        }
+    
+    func updateProfileImageUrl(_ url:String) {
+         FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":url])
     }
     
     func update(displayName:String, phone:String, aboutMe:String) {
         FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues([
             "displayName":displayName,
             "phone":phone,
-            "aboutMe":aboutMe])
+            "aboutMe":aboutMe,
+            "profileImageUrl":profileImageUrl])
     }
 }
