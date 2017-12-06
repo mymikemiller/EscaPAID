@@ -30,6 +30,7 @@ class MyExperienceManager: NSObject {
                     let experience = Experience(
                         id: snap.key,
                         title: result["title"] as! String,
+                        category: result["category"] as! String,
                         includes: result["includes"] as! String,
                         description: result["description"] as! String,
                         imageUrls: result["images"] as! [String],

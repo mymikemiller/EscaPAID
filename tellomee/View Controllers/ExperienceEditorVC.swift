@@ -21,6 +21,7 @@ class ExperienceEditorVC: UIViewController {
     fileprivate let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
     @IBOutlet weak var experienceTitle: UITextField!
+    @IBOutlet weak var experienceCategory: UITextField!
     @IBOutlet weak var experienceIncludes: UITextField!
     @IBOutlet weak var experienceDescription: UITextView!
     
@@ -30,6 +31,7 @@ class ExperienceEditorVC: UIViewController {
         // Do any additional setup after loading the view.
         if let experience = experience {
             experienceTitle.text = experience.title
+            experienceCategory.text = experience.category
             experienceIncludes.text = experience.includes
             experienceDescription.text = experience.experienceDescription
         }
@@ -40,6 +42,7 @@ class ExperienceEditorVC: UIViewController {
     
     @IBAction func saveButton_click(_ sender: Any) {
         experience?.title = (experienceTitle?.text)!
+        experience?.category = (experienceCategory?.text)!
         experience?.includes = (experienceIncludes?.text)!
         experience?.experienceDescription = (experienceDescription?.text)!
         experience?.save()
@@ -123,11 +126,11 @@ extension ExperienceEditorVC: UICollectionViewDataSource {
             let alertActionRemove = UIAlertAction(title: "Remove", style: .default) {
                 (_) in
                 
-                // Remove the image from storage. Not that this doesn't require you to click "Save"
+                // Remove the image from storage. Note that this doesn't require you to click "Save"
                 let url = self.experience?.imageUrls[indexPath.row]
                 StorageManager.removeImageFromStorage(folder: StorageManager.EXPERIENCE_IMAGES, imageUrl: url!)
                 
-                // Remove the image from the experience
+                // Remove the image from the experience. Note that this commits to the database and also doesn't require you to click "Save"
                 self.experience?.removeImageUrl(url!)
                 
                 // Reload the collection view

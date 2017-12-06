@@ -14,11 +14,14 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
 
     @IBOutlet weak var experienceTitle: UILabel!
     
+    @IBOutlet weak var category: UILabel!
+    
     @IBOutlet weak var curator: UILabel!
     
     @IBOutlet weak var info: UITextView!
     
     @IBOutlet weak var pagerContainer: UIView!
+    
     
     var imagePageViewController:UIPageViewController?
     
@@ -27,6 +30,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
 
         if let experience = experience {
             experienceTitle.text = experience.title
+            category.text = experience.category
             curator.text = "By: \(experience.curator.displayName)"
             
             info.text = experience.experienceDescription + "\n\n" +

@@ -12,6 +12,7 @@ class Experience: NSObject {
     
     var id:String
     var title:String
+    var category:String
     var includes:String
     var experienceDescription:String
     var imageUrls:[String]
@@ -19,6 +20,7 @@ class Experience: NSObject {
     
     init(id:String,
          title:String,
+         category:String,
          includes:String,
          description:String,
          imageUrls:[String],
@@ -26,6 +28,7 @@ class Experience: NSObject {
         
         self.id = id
         self.title = title
+        self.category = category
         self.includes = includes
         self.experienceDescription = description
         self.imageUrls = imageUrls
@@ -51,6 +54,7 @@ class Experience: NSObject {
     func save() {
         FirebaseManager.databaseRef.child("experiences").child(id).updateChildValues([
             "title":title,
+            "category":category,
             "includes":includes,
             "description":experienceDescription,
             "images":imageUrls])
