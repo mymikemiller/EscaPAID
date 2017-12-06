@@ -46,7 +46,10 @@ class StorageManager: NSObject {
         Storage.storage().reference().child(folder).child(imageName).delete() {
             error in
             
-            print(error)
+            if let error = error {
+                print("There was an error deleting an image from storage.")
+                print(error)
+            }
         }
     }
 }

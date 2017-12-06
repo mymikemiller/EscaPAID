@@ -35,6 +35,8 @@ class User: NSObject {
     }
     
     func updateProfileImageUrl(_ url:String) {
+        
+        profileImageUrl = url
          FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":url])
     }
     
