@@ -10,6 +10,8 @@ import UIKit
 import FirebaseStorage
 
 class StorageManager: NSObject {
+    static let PROFILE_IMAGES = "profileImages"
+    static let EXPERIENCE_IMAGES = "experienceImages"
     
     static func storeImage(folder:String, image:UIImage, completion: @escaping (String) -> Void) -> StorageUploadTask? {
         let imageRef = Storage.storage().reference().child(folder).child("\(NSUUID().uuidString).jpg")
@@ -37,7 +39,7 @@ class StorageManager: NSObject {
         
         print(url)
         
-        let start = imageUrl.range(of: "profileImages%2F")?.upperBound
+        let start = imageUrl.range(of: folder + "%2F")?.upperBound
         let end = imageUrl.range(of: ".jpg")?.upperBound
         let range = Range(uncheckedBounds: (lower: start!, upper: end!))
         let imageName = String(imageUrl[range])

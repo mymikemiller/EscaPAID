@@ -13,7 +13,6 @@ class ExperienceEditorVC: UIViewController {
     fileprivate let itemsPerRow: CGFloat = 3
 
     var experience:Experience?
-    var imageUrls: [String] = []
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var uploadProgressView: UIProgressView!
@@ -33,7 +32,6 @@ class ExperienceEditorVC: UIViewController {
             experienceTitle.text = experience.title
             experienceIncludes.text = experience.includes
             experienceDescription.text = experience.experienceDescription
-            imageUrls = experience.imageUrls
         }
     }
     @IBAction func cancelButton_click(_ sender: Any) {
@@ -44,7 +42,6 @@ class ExperienceEditorVC: UIViewController {
         experience?.title = (experienceTitle?.text)!
         experience?.includes = (experienceIncludes?.text)!
         experience?.experienceDescription = (experienceDescription?.text)!
-        experience?.imageUrls = imageUrls
         experience?.save()
         self.dismiss(animated: true, completion:nil)
     }
@@ -57,12 +54,12 @@ class ExperienceEditorVC: UIViewController {
     
     
     func imageForIndexPath(indexPath: IndexPath) -> UIImage {
-        if (indexPath.row == imageUrls.count) {
+        if (indexPath.row == experience?.imageUrls.count) {
             // Return the "add image" icon for the last image
             return #imageLiteral(resourceName: "ic_library_add")
-        } else if (indexPath.row < imageUrls.count) {
+        } else if (indexPath.row < (experience?.imageUrls.count)!) {
             
-            if let url = NSURL(string: imageUrls[indexPath.row]) {
+            if let url = NSURL(string: (experience?.imageUrls[indexPath.row])!) {
                 if let data = NSData(contentsOf: url as URL) {
                     return UIImage(data: data as Data)!
                 }
@@ -95,7 +92,7 @@ extension ExperienceEditorVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         // Add one for the "add image" button
-        return imageUrls.count + 1
+        return (experience?.imageUrls.count)! + 1
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -112,7 +109,7 @@ extension ExperienceEditorVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if (indexPath.row == imageUrls.count) {
+        if (indexPath.row == experience?.imageUrls.count) {
             // If the user clicks the "add image" icon
             // Let the user pick an image
             let image = UIImagePickerController()
@@ -126,8 +123,12 @@ extension ExperienceEditorVC: UICollectionViewDataSource {
             let alertActionRemove = UIAlertAction(title: "Remove", style: .default) {
                 (_) in
                 
-                // Remove the image
-                self.imageUrls.remove(at: indexPath.row)
+                // Remove the image from storage. Not that this doesn't require you to click "Save"
+                let url = self.experience?.imageUrls[indexPath.row]
+                StorageManager.removeImageFromStorage(folder: StorageManager.EXPERIENCE_IMAGES, imageUrl: url!)
+                
+                // Remove the image from the experience
+                self.experience?.removeImageUrl(url!)
                 
                 // Reload the collection view
                 self.imageCollectionView.reloadData()
@@ -176,10 +177,14 @@ extension ExperienceEditorVC : UINavigationControllerDelegate, UIImagePickerCont
         let img:UIImage = pickerInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
         DispatchQueue.main.async { [unowned self] in
             
-            let uploadTask = StorageManager.storeImage(folder: "experienceImages", image: img) { (url) in
-                // After the image is uploaded, add the url to our list and refresh the view to show the new image
-                self.imageUrls.append(url)
+            let uploadTask = StorageManager.storeImage(folder: StorageManager.EXPERIENCE_IMAGES, image: img) { (url) in
+                
+                // After the image is uploaded, add the url to our list. Note that this gets saved immediately to the database and doens't require us to click the "Save" button"
+                self.experience?.addImageUrl(url)
+                
+                // Refresh the view to show the new image
                 self.imageCollectionView.reloadData()
+                
                 // Hide the progress bar
                 self.uploadProgressView.isHidden = true
             }

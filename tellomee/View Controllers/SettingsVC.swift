@@ -61,11 +61,11 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
         
             self.imageView.image = img
             
-            let uploadTask = StorageManager.storeImage(folder: "profileImages", image: img) { (url) in
+            let uploadTask = StorageManager.storeImage(folder: StorageManager.PROFILE_IMAGES, image: img) { (url) in
                 
                 if (self.user?.profileImageUrl != nil) {
                    // Delete the previous picture from storage
-                    StorageManager.removeImageFromStorage(folder: "profileImages", imageUrl: (self.user?.profileImageUrl)!)
+                    StorageManager.removeImageFromStorage(folder: StorageManager.PROFILE_IMAGES, imageUrl: (self.user?.profileImageUrl)!)
                 }
                 
                 // Hide the progress bar

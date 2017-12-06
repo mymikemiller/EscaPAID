@@ -32,6 +32,22 @@ class Experience: NSObject {
         self.curator = curator
     }
     
+    func addImageUrl(_ url:String) {
+        imageUrls.append(url)
+        updateImageUrls()
+    }
+    
+    func removeImageUrl(_ url:String) {
+        if let index = imageUrls.index(of: url) {
+            imageUrls.remove(at: index)
+            updateImageUrls()
+        }
+    }
+    
+    private func updateImageUrls() {
+        FirebaseManager.databaseRef.child("experiences").child(self.id).updateChildValues(["images":imageUrls])
+    }
+    
     func save() {
         FirebaseManager.databaseRef.child("experiences").child(id).updateChildValues([
             "title":title,
