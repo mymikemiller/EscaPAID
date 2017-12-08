@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ExperiencesTableVC: UITableViewController {
+class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
     
     // This is set to the selected experience when the user selects a row. This is used to prepare for the segue.
     var selectedExperience: Experience?
@@ -41,17 +42,16 @@ class ExperiencesTableVC: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ExperienceManager.experiences.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell", for: indexPath) as! ExperienceTableViewCell
 
         let experience = ExperienceManager.experiences[indexPath.row]
@@ -59,8 +59,8 @@ class ExperiencesTableVC: UITableViewController {
 
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedExperience = ExperienceManager.experiences[indexPath.row]
         self.performSegue(withIdentifier: "showExperience", sender: self)
     }
