@@ -20,7 +20,7 @@ class MyExperienceManager: NSObject {
     static func fillExperiences(completion: @escaping () -> Void) {
         experiences = [Experience]()
         
-        databaseRef.child("experiences").queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseManager.currentUserId).observe(.childAdded, with: {
+        databaseRef.child("experiences").queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseManager.user?.uid).observe(.childAdded, with: {
             snap in
             
             if let result = snap.value as? [String:AnyObject]{

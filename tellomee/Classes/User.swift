@@ -10,14 +10,16 @@ import UIKit
 
 class User: NSObject {
     var uid:String
+    var city:String
     var email:String
     var phone:String
     var displayName:String
     var profileImageUrl:String
     var aboutMe:String
     
-    init(uid:String, email:String, displayName:String, phone:String, aboutMe:String, profileImageUrl:String) {
+    init(uid:String, city:String, email:String, displayName:String, phone:String, aboutMe:String, profileImageUrl:String) {
         self.uid = uid
+        self.city = city
         self.displayName = displayName
         self.email = email
         self.phone = phone
@@ -37,11 +39,14 @@ class User: NSObject {
     func updateProfileImageUrl(_ url:String) {
         
         profileImageUrl = url
-         FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":url])
+        
+        // Immediately save it to the database
+        FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":url])
     }
     
-    func update(displayName:String, phone:String, aboutMe:String) {
+    func update() {
         FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues([
+            "city":city,
             "displayName":displayName,
             "phone":phone,
             "aboutMe":aboutMe,

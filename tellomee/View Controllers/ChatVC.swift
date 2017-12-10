@@ -28,7 +28,7 @@ class ChatVC: JSQMessagesViewController {
         // Start with an empty message list. It shows for a split second.
         PostManager.clearPosts()
         
-        senderId = FirebaseManager.currentUser?.uid
+        senderId = FirebaseManager.currentFirebaseUser?.uid
         senderDisplayName = ""
         
         // Remove the "attachment" button
@@ -43,7 +43,7 @@ class ChatVC: JSQMessagesViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        PostManager.fillPosts(uid: FirebaseManager.currentUser?.uid, toId:(thread?.user.uid)!, threadId: (thread?.threadId)!, completion: {_ in
+        PostManager.fillPosts(uid: FirebaseManager.currentFirebaseUser?.uid, toId:(thread?.user.uid)!, threadId: (thread?.threadId)!, completion: {_ in
             // Now that it's been loaded, set the thread as read
             self.finishReceivingMessage()
         })

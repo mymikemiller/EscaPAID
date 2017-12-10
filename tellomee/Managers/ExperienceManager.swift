@@ -19,7 +19,7 @@ class ExperienceManager: NSObject {
     static func fillExperiences(completion: @escaping () -> Void) {
         experiences = [Experience]()
         
-        databaseRef.child("experiences").queryOrdered(byChild: "city").queryEqual(toValue: "SF").observe(.childAdded, with: {
+        databaseRef.child("experiences").queryOrdered(byChild: "city").queryEqual(toValue: FirebaseManager.user?.city).observe(.childAdded, with: {
             snap in
             
             let result = snap.value as! [String:AnyObject]

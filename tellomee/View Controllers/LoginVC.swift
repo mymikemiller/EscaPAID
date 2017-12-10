@@ -45,7 +45,7 @@ class LoginVC: UIViewController {
                 let alertVC = UIAlertController(title: "Error", message: "Sorry. Your email address has not yet been verified. Do you want us to send another verification email to \(self.email.text ?? "your email")?", preferredStyle: .alert)
                 let alertActionOkay = UIAlertAction(title: "Okay", style: .default) {
                     (_) in
-                    FirebaseManager.currentUser?.sendEmailVerification(completion: nil)
+                    FirebaseManager.currentFirebaseUser?.sendEmailVerification(completion: nil)
                 }
                 let alertActionCancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                 

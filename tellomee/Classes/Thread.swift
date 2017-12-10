@@ -30,6 +30,6 @@ class Thread: NSObject {
     func setRead(read: Bool) {
         self.read = read
         // Write it to the database
-        FirebaseManager.databaseRef.child("userThreads").child(FirebaseManager.currentUserId).child(threadId).updateChildValues(["read":read])
+        FirebaseManager.databaseRef.child("userThreads").child((FirebaseManager.user?.uid)!).child(threadId).updateChildValues(["read":read])
     }
 }

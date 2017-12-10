@@ -52,24 +52,21 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     @IBAction func messageButton_click(_ sender: Any) {
         
-        FirebaseManager.getUser(uid: FirebaseManager.currentUserId) { (user) in
-    
-            if (user.uid == self.experience?.curator.uid) {
-                let alertVC = UIAlertController(title: "Error", message: "You can't send a message to yourself.", preferredStyle: .alert)
-                let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
-                alertVC.addAction(alertActionOkay)
-                self.present(alertVC, animated: true, completion: nil)
-                
-                return
-            }
+        if (FirebaseManager.user?.uid == self.experience?.curator.uid) {
+            let alertVC = UIAlertController(title: "Error", message: "You can't send a message to yourself.", preferredStyle: .alert)
+            let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
+            alertVC.addAction(alertActionOkay)
+            self.present(alertVC, animated: true, completion: nil)
             
-            ThreadManager.getOrCreateThread(between: user, and: (self.experience?.curator)!, completion: {thread in
-                
-                let threadsNavigationController: ThreadsNavigationController = self.tabBarController?.viewControllers![2] as! ThreadsNavigationController
-                threadsNavigationController.threadToShowOnLoad = thread
-                self.tabBarController?.selectedViewController = threadsNavigationController
-            })
+            return
         }
+        
+        ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: (self.experience?.curator)!, completion: {thread in
+            
+            let threadsNavigationController: ThreadsNavigationController = self.tabBarController?.viewControllers![2] as! ThreadsNavigationController
+            threadsNavigationController.threadToShowOnLoad = thread
+            self.tabBarController?.selectedViewController = threadsNavigationController
+        })
     }
     
     
