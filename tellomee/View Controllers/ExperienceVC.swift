@@ -33,8 +33,14 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             category.text = experience.category
             curator.text = "By: \(experience.curator.displayName)"
             
+            let includesArray = experience.includes.split(separator: ",")
+            var includesText = ""
+            for str in includesArray {
+                includesText += str.trimmingCharacters(in: .whitespacesAndNewlines) + "\n"
+            }
+            
             info.text = experience.experienceDescription + "\n\n" +
-            "INCLUDES: " + experience.includes + "\n\n" +
+            "INCLUDES: \n" + includesText + "\n\n" +
             "ABOUT ME: " + experience.curator.aboutMe
         }
         

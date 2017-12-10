@@ -36,8 +36,10 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         searchController.searchBar.placeholder = "Search Experiences"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Refresh the experiences every time the view appears (in case the user changed his city)
         ExperienceManager.fillExperiences {
             () in
             DispatchQueue.main.async {
@@ -113,12 +115,6 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-//        if (segue.identifier == "showExperience") {
-//            (segue.destination as! ExperienceVC).experience = selectedExperience
-//        }
-        
         if segue.identifier == "showExperience" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let experience: Experience
