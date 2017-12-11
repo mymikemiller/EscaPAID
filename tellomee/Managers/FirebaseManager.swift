@@ -88,13 +88,14 @@ class FirebaseManager: NSObject {
     
     static func addUser(email:String, phone:String, displayName: String, profileImageUrl:String, completion: @escaping (_ user:User) -> Void) {
         let uid = Auth.auth().currentUser?.uid
-        let post = ["uid":uid!,
+        let newUser = ["uid":uid!,
                     "email":email,
+                    "city": "", // Start with a blank city. The user will fill it in later
                     "phone":phone,
                     "displayName":displayName,
                     "profileImageUrl":profileImageUrl]
         
-        databaseRef.child("users").child(uid!).setValue(post) { (error, ref) -> Void in
+        databaseRef.child("users").child(uid!).setValue(newUser) { (error, ref) -> Void in
             getUser(uid: uid!, completion: { (user) in
                 
                 completion(user)

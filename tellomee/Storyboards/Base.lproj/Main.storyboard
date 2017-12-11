@@ -61,6 +61,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bvB-9H-x5B" id="JRa-1C-kGh"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JgC-wk-x4s">
                                 <rect key="frame" x="16" y="212" width="343" height="164"/>
@@ -230,12 +233,29 @@
                                     <outlet property="delegate" destination="UTm-xN-gxT" id="oTy-6l-dUg"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please select a city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0e-Vb-VMB">
+                                <rect key="frame" x="16" y="299" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m18-SP-hF0">
+                                <rect key="frame" x="0.0" y="397" width="375" height="221"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="UTm-xN-gxT" id="72d-6j-6V8"/>
+                                    <outlet property="delegate" destination="UTm-xN-gxT" id="vMe-Qk-gZU"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="KiE-dc-RWx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Discover" id="5eI-JB-p8R"/>
                     <connections>
+                        <outlet property="cityPicker" destination="m18-SP-hF0" id="dIC-SC-uWc"/>
+                        <outlet property="selectACityLabel" destination="S0e-Vb-VMB" id="LeW-g8-3qE"/>
                         <outlet property="tableView" destination="IA5-3G-3Ue" id="9jp-6w-wDl"/>
                         <segue destination="8jk-U6-0pk" kind="show" identifier="showExperience" id="PcZ-ta-p7D"/>
                     </connections>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsVC: UIViewController, UINavigationControllerDelegate {
+class SettingsVC: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var displayName: UITextField!
@@ -52,6 +52,10 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
     }
     
     // This has to be an @objc func so it can be used as a selector for the TapGestureRecognizer, which we need to use because it's an imageView not a button.
@@ -143,3 +147,4 @@ extension SettingsVC: UIPickerViewDelegate, UIPickerViewDataSource {
         city.resignFirstResponder()
     }
 }
+
