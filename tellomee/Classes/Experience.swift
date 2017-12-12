@@ -35,6 +35,16 @@ class Experience: NSObject {
         self.curator = curator
     }
     
+    static func createNewExperience() -> Experience {
+        let newRef = FirebaseManager.databaseRef.child("experiences").childByAutoId()
+        newRef.child("title").setValue("")
+        return Experience(id: newRef.key, title: "", category: "", includes: "", description: "", imageUrls: [], curator: FirebaseManager.user!)
+    }
+    
+    func deleteSelf() {
+        FirebaseManager.databaseRef.child("experiences").child(id).removeValue()
+    }
+
     func addImageUrl(_ url:String) {
         imageUrls.append(url)
         updateImageUrls()
@@ -59,5 +69,7 @@ class Experience: NSObject {
             "description":experienceDescription,
             "images":imageUrls])
     }
+    
+    
 }
 

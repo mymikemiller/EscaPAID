@@ -106,7 +106,10 @@ class MyExperiencesTableVC: UITableViewController {
      return true
      }
      */
-    
+    @IBAction func addButton_click(_ sender: Any) {
+        selectedExperience = nil
+        self.performSegue(withIdentifier: "showExperienceEditor", sender: self)
+    }
     
     // MARK: - Navigation
     

@@ -11,6 +11,8 @@ import UIKit
 class ExperienceEditorVC: UIViewController {
     
     fileprivate let itemsPerRow: CGFloat = 3
+    
+    var newExperience = false
 
     var experience:Experience?
     
@@ -28,15 +30,27 @@ class ExperienceEditorVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         if let experience = experience {
+            newExperience = false
             experienceTitle.text = experience.title
             experienceCategory.text = experience.category
             experienceIncludes.text = experience.includes
             experienceDescription.text = experience.experienceDescription
+        } else {
+            newExperience = true
+            experience = Experience.createNewExperience()
         }
     }
     @IBAction func cancelButton_click(_ sender: Any) {
+        if (newExperience) {
+            // Remove the new experience from the database if we canceled out of the page when creating a new experience. But first delete all the experience's images.
+            for url in (experience?.imageUrls)! {
+                StorageManager.removeImageFromStorage(folder: StorageManager.EXPERIENCE_IMAGES, imageUrl: url)
+            }
+            experience!.deleteSelf()
+        }
+        
+        //Cancel does nothing if editing an existing experience.
         self.dismiss(animated: true, completion:nil)
     }
     
