@@ -610,14 +610,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tu4-lD-AMA">
-                                <rect key="frame" x="16" y="211" width="343" height="143"/>
+                                <rect key="frame" x="16" y="249" width="343" height="174"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iE7-rI-tcM">
-                                <rect key="frame" x="16" y="362" width="343" height="233"/>
+                                <rect key="frame" x="16" y="431" width="343" height="164"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gWW-Vk-TY1">
@@ -628,7 +628,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExperienceImageUploadCell" id="7Vw-hL-yvh" customClass="ExperienceImageCell" customModule="tellomee" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50.5" width="132" height="132"/>
+                                        <rect key="frame" x="0.0" y="16" width="132" height="132"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
@@ -668,6 +668,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QET-n5-g46">
+                                <rect key="frame" x="16" y="211" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YW5-jC-vGQ" id="wdc-4h-fbS"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="sb9-iX-0ZK"/>
@@ -686,6 +696,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="experienceCategory" destination="QoW-PP-3TE" id="pqg-MG-8xb"/>
+                        <outlet property="experienceCity" destination="QET-n5-g46" id="7FA-FA-h29"/>
                         <outlet property="experienceDescription" destination="tu4-lD-AMA" id="aDX-LQ-0VZ"/>
                         <outlet property="experienceIncludes" destination="wJC-0A-CEL" id="pkk-am-jtu"/>
                         <outlet property="experienceTitle" destination="Kr9-Er-2ib" id="tGc-HW-blM"/>
@@ -695,7 +706,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8I-kE-mys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2974" y="994"/>
+            <point key="canvasLocation" x="2973.5999999999999" y="993.55322338830592"/>
         </scene>
         <!--Settings-->
         <scene sceneID="GVs-36-IB2">
@@ -749,12 +760,32 @@
                                             <segue destination="Jjz-5s-811" kind="show" id="s6N-86-dlE"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="g1c-7A-FAN">
+                                        <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g1c-7A-FAN" id="wHb-Nd-m0R">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Experience" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ns-h1-1zf">
+                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="UTF-yx-EJE" kind="show" id="7JA-Tk-dfY"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Log Out" id="ruM-b3-rvb">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ll6-jS-ez9">
-                                        <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="299.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ll6-jS-ez9" id="r0b-MJ-2Fg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -880,6 +911,7 @@
         <image name="logotypeX_white" width="850" height="212"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="LsR-YK-KqR"/>
         <segue reference="glL-vf-AZJ"/>
         <segue reference="OIa-MV-TGK"/>
     </inferredMetricsTieBreakers>

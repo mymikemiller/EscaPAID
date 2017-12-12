@@ -25,6 +25,7 @@ class ExperienceEditorVC: UIViewController {
     @IBOutlet weak var experienceTitle: UITextField!
     @IBOutlet weak var experienceCategory: UITextField!
     @IBOutlet weak var experienceIncludes: UITextField!
+    @IBOutlet weak var experienceCity: UITextField!
     @IBOutlet weak var experienceDescription: UITextView!
     
     override func viewDidLoad() {
@@ -39,6 +40,20 @@ class ExperienceEditorVC: UIViewController {
         } else {
             newExperience = true
             experience = Experience.createNewExperience()
+        }
+        
+        // Set up the city picker
+        let picker = UIPickerView()
+        picker.dataSource = self
+        picker.delegate = self
+        experienceCity.inputView = picker
+        experienceCity.text = FirebaseManager.user?.city
+        // Set the default for the city picker for when it is shown
+        for (index, element) in Constants.cities.enumerated() {
+            if (element == FirebaseManager.user?.city) {
+                picker.selectRow(index, inComponent: 0, animated: false)
+                break
+            }
         }
     }
     @IBAction func cancelButton_click(_ sender: Any) {
@@ -58,6 +73,7 @@ class ExperienceEditorVC: UIViewController {
         experience?.title = (experienceTitle?.text)!
         experience?.category = (experienceCategory?.text)!
         experience?.includes = (experienceIncludes?.text)!
+        experience?.city = (experienceCity?.text)!
         experience?.experienceDescription = (experienceDescription?.text)!
         experience?.save()
         self.dismiss(animated: true, completion:nil)
@@ -186,6 +202,12 @@ extension ExperienceEditorVC : UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension ExperienceEditorVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
+}
+
 // MARK: - UIImagePickerControllerDelegate
 extension ExperienceEditorVC : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -214,3 +236,25 @@ extension ExperienceEditorVC : UINavigationControllerDelegate, UIImagePickerCont
         self.dismiss(animated: true, completion: nil)
     }
 }
+
+
+extension ExperienceEditorVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Constants.cities.count
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Constants.cities[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        experienceCity.text = Constants.cities[row]
+        experienceCity.resignFirstResponder()
+    }
+}
+
+

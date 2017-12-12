@@ -31,6 +31,7 @@ class MyExperienceManager: NSObject {
                         id: snap.key,
                         title: result["title"] as! String,
                         category: result["category"] as! String,
+                        city: result["city"] as! String,
                         includes: result["includes"] as! String,
                         description: result["description"] as! String,
                         imageUrls: result["images"] as! [String],

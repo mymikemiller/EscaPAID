@@ -34,8 +34,7 @@ class SettingsTableVC: UITableViewController {
             // Edit Profile
             self.performSegue(withIdentifier: "showProfileEditor", sender: self)
         } else if (indexPath.section == 1) {
-            // Manage Curated Experiences
-            
+            // Manage Curated Experiences and Add Experience are hooked up to "show" segues
         } else if (indexPath.section == 2) {
             // Log Out
             
