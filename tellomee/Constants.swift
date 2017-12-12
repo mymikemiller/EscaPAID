@@ -12,4 +12,9 @@ class Constants: NSObject {
     static let cities = ["San Francisco",
                   "Seattle",
                   "Salt Lake City"]
+    
+    static let categories = ["Adventure",
+                         "Lifestlye",
+                         "Cullinary"]
+
 }

@@ -28,6 +28,9 @@ class ExperienceEditorVC: UIViewController {
     @IBOutlet weak var experienceCity: UITextField!
     @IBOutlet weak var experienceDescription: UITextView!
     
+    let cityPicker:UIPickerView = UIPickerView()
+    let categoryPicker:UIPickerView = UIPickerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,16 +45,28 @@ class ExperienceEditorVC: UIViewController {
             experience = Experience.createNewExperience()
         }
         
+        // Set up the category picker
+        categoryPicker.dataSource = self
+        categoryPicker.delegate = self
+        experienceCategory.inputView = categoryPicker
+        experienceCategory.text = experience?.category
+        // Set the default for the category picker for when it is shown
+        for (index, element) in Constants.categories.enumerated() {
+            if (element == experience?.category) {
+                categoryPicker.selectRow(index, inComponent: 0, animated: false)
+                break
+            }
+        }
+        
         // Set up the city picker
-        let picker = UIPickerView()
-        picker.dataSource = self
-        picker.delegate = self
-        experienceCity.inputView = picker
+        cityPicker.dataSource = self
+        cityPicker.delegate = self
+        experienceCity.inputView = cityPicker
         experienceCity.text = FirebaseManager.user?.city
         // Set the default for the city picker for when it is shown
         for (index, element) in Constants.cities.enumerated() {
             if (element == FirebaseManager.user?.city) {
-                picker.selectRow(index, inComponent: 0, animated: false)
+                cityPicker.selectRow(index, inComponent: 0, animated: false)
                 break
             }
         }
@@ -241,19 +256,32 @@ extension ExperienceEditorVC : UINavigationControllerDelegate, UIImagePickerCont
 extension ExperienceEditorVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Constants.cities.count
+        if (pickerView == cityPicker) {
+            return Constants.cities.count
+        } else { //if (pickerView == categoryPicker) {
+            return Constants.categories.count
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Constants.cities[row]
+        if (pickerView == cityPicker) {
+            return Constants.cities[row]
+        } else { //if (pickerView == categoryPicker) {
+            return Constants.categories[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        experienceCity.text = Constants.cities[row]
-        experienceCity.resignFirstResponder()
+        if (pickerView == cityPicker) {
+            experienceCity.text = Constants.cities[row]
+            experienceCity.resignFirstResponder()
+        } else if (pickerView == categoryPicker) {
+            experienceCategory.text = Constants.categories[row]
+            experienceCategory.resignFirstResponder()
+        }
     }
 }
 
