@@ -16,7 +16,10 @@ class ThreadTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        // Crop to a circle
+        self.cellImage.layer.cornerRadius = self.cellImage.frame.width / 2
+        self.cellImage.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

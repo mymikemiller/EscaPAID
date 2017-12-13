@@ -42,6 +42,9 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate {
         self.phone.text = FirebaseManager.user?.phone
         self.aboutMe.text = FirebaseManager.user?.aboutMe
         
+        // Crop to a circle
+        self.imageView.layer.cornerRadius = self.imageView.frame.width / 2
+        self.imageView.layer.masksToBounds = true
         self.imageView.image = FirebaseManager.user?.getProfileImage()
     }
     
@@ -101,7 +104,8 @@ extension SettingsVC: UIImagePickerControllerDelegate {
             
             let uploadTask = StorageManager.storeImage(folder: StorageManager.PROFILE_IMAGES, image: img) { (url) in
                 
-                if (FirebaseManager.user?.profileImageUrl != nil) {
+                if (FirebaseManager.user?.profileImageUrl != nil &&
+                    FirebaseManager.user?.profileImageUrl != "") {
                     // Delete the previous picture from storage
                     StorageManager.removeImageFromStorage(folder: StorageManager.PROFILE_IMAGES, imageUrl: (FirebaseManager.user?.profileImageUrl)!)
                 }
@@ -149,4 +153,3 @@ extension SettingsVC: UIPickerViewDelegate, UIPickerViewDataSource {
         city.resignFirstResponder()
     }
 }
-
