@@ -93,6 +93,7 @@ class FirebaseManager: NSObject {
                     "city": "", // Start with a blank city. The user will fill it in later
                     "phone":phone,
                     "displayName":displayName,
+                    "aboutMe":"",
                     "profileImageUrl":profileImageUrl]
         
         databaseRef.child("users").child(uid!).setValue(newUser) { (error, ref) -> Void in
