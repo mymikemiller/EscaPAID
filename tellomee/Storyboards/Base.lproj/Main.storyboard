@@ -609,8 +609,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tu4-lD-AMA">
-                                <rect key="frame" x="16" y="249" width="343" height="174"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tu4-lD-AMA">
+                                <rect key="frame" x="16" y="316" width="343" height="107"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -681,6 +681,27 @@
                                     <outlet property="delegate" destination="YW5-jC-vGQ" id="GLf-4E-5WG"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P7d-U9-jk5">
+                                <rect key="frame" x="39" y="249" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLs-cO-HEd">
+                                <rect key="frame" x="16" y="287" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7k-hf-0Pv">
+                                <rect key="frame" x="16" y="254" width="15" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="sb9-iX-0ZK"/>
@@ -702,6 +723,7 @@
                         <outlet property="experienceCity" destination="QET-n5-g46" id="7FA-FA-h29"/>
                         <outlet property="experienceDescription" destination="tu4-lD-AMA" id="aDX-LQ-0VZ"/>
                         <outlet property="experienceIncludes" destination="wJC-0A-CEL" id="pkk-am-jtu"/>
+                        <outlet property="experiencePrice" destination="P7d-U9-jk5" id="Aih-Me-4fZ"/>
                         <outlet property="experienceTitle" destination="Kr9-Er-2ib" id="tGc-HW-blM"/>
                         <outlet property="imageCollectionView" destination="iE7-rI-tcM" id="Ewd-7o-Gjl"/>
                         <outlet property="uploadProgressView" destination="ZY8-Kd-Qhf" id="Ex9-72-sDr"/>

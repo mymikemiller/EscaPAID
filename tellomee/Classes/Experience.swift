@@ -15,6 +15,7 @@ class Experience: NSObject {
     var category:String
     var city:String
     var includes:String
+    var price:Double
     var experienceDescription:String
     var imageUrls:[String]
     var curator:User
@@ -24,6 +25,7 @@ class Experience: NSObject {
          category:String,
          city:String,
          includes:String,
+         price:Double,
          description:String,
          imageUrls:[String],
          curator:User) {
@@ -33,6 +35,7 @@ class Experience: NSObject {
         self.category = category
         self.city = city
         self.includes = includes
+        self.price = price
         self.experienceDescription = description
         self.imageUrls = imageUrls
         self.curator = curator
@@ -46,6 +49,7 @@ class Experience: NSObject {
                           category: "",
                           city: (FirebaseManager.user?.city)!,
                           includes: "",
+                          price: 0,
                           description: "",
                           imageUrls: [],
                           curator: FirebaseManager.user!)
@@ -77,10 +81,10 @@ class Experience: NSObject {
             "category":category,
             "city": city,
             "includes":includes,
+            "price":price,
             "description":experienceDescription,
-            "images":imageUrls])
+            "images":imageUrls,
+            "uid":curator.uid])
     }
-    
-    
 }
 

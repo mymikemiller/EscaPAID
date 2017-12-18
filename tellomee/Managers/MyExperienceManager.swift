@@ -33,6 +33,7 @@ class MyExperienceManager: NSObject {
                         category: result["category"] as! String,
                         city: result["city"] as! String,
                         includes: result["includes"] as! String,
+                        price: Double(result["price"]! as! Double),
                         description: result["description"] as! String,
                         imageUrls: result["images"] as! [String],
                         curator: curator)

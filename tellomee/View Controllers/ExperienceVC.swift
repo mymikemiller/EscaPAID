@@ -41,7 +41,8 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             
             info.text = experience.experienceDescription + "\n\n" +
             "INCLUDES: \n" + includesText + "\n\n" +
-            "ABOUT ME: " + experience.curator.aboutMe
+            "ABOUT ME: " + experience.curator.aboutMe + "\n\n" +
+            String(format: "PRICE: $%.02f", experience.price)
         }
         
         imagePageViewController?.dataSource = self

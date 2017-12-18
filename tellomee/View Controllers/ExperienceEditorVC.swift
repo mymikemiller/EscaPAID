@@ -26,6 +26,7 @@ class ExperienceEditorVC: UIViewController {
     @IBOutlet weak var experienceCategory: UITextField!
     @IBOutlet weak var experienceIncludes: UITextField!
     @IBOutlet weak var experienceCity: UITextField!
+    @IBOutlet weak var experiencePrice: UITextField!
     @IBOutlet weak var experienceDescription: UITextView!
     
     let cityPicker:UIPickerView = UIPickerView()
@@ -39,6 +40,7 @@ class ExperienceEditorVC: UIViewController {
             experienceTitle.text = experience.title
             experienceCategory.text = experience.category
             experienceIncludes.text = experience.includes
+            experiencePrice.text = String(format: "%.02f", experience.price)
             experienceDescription.text = experience.experienceDescription
         } else {
             newExperience = true
@@ -85,10 +87,29 @@ class ExperienceEditorVC: UIViewController {
     }
     
     @IBAction func saveButton_click(_ sender: Any) {
+        let price = Double((experiencePrice?.text)!)
+        
+        if ((experienceTitle?.text?.isEmpty)! ||
+            (experienceCategory?.text?.isEmpty)! ||
+            (experienceIncludes?.text?.isEmpty)! ||
+            (experienceCity?.text?.isEmpty)! ||
+            (experiencePrice?.text?.isEmpty)! ||
+            price == nil ||
+            (experienceDescription?.text?.isEmpty)! ||
+            (experience?.imageUrls.isEmpty)! ) {
+            
+            let alertVC = UIAlertController(title: "Error", message: "Please fill in all required fields and upload at least one image.", preferredStyle: .alert)
+            let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
+            alertVC.addAction(alertActionOkay)
+            self.present(alertVC, animated: true, completion: nil)
+            return
+        }
+
         experience?.title = (experienceTitle?.text)!
         experience?.category = (experienceCategory?.text)!
         experience?.includes = (experienceIncludes?.text)!
         experience?.city = (experienceCity?.text)!
+        experience?.price = price!
         experience?.experienceDescription = (experienceDescription?.text)!
         experience?.save()
         self.dismiss(animated: true, completion:nil)
