@@ -14,7 +14,7 @@ class Constants: NSObject {
                   "Salt Lake City"]
     
     static let categories = ["Adventure",
-                         "Lifestlye",
+                         "Lifestyle",
                          "Cullinary"]
 
 }

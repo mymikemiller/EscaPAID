@@ -12,7 +12,8 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var cityPicker: UIPickerView!
+    @IBOutlet weak var cityPickerToolbar: UIToolbar!
+    @IBOutlet weak var cityPicker: SelfContainedPickerView!
     @IBOutlet weak var selectACityLabel: UILabel!
     
     var filteredExperiences = [Experience]()
@@ -25,9 +26,11 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set up the city picker
+        cityPicker.setUp(textField: nil, strings: Constants.cities)
+        
         let nib = UINib(nibName: "ExperienceCell",bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "experienceCell")
-
         
         // Setup the Scope Bar
         searchController.searchBar.scopeButtonTitles = ["All"]
@@ -46,15 +49,24 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         setViewVisibility()
     }
     
+    @IBAction func cityPickerDone_click(_ sender: Any) {
+        FirebaseManager.user?.city = cityPicker.selectedString
+        FirebaseManager.user?.update()
+        setViewVisibility()
+        refreshTable()
+    }
+    
     func setViewVisibility() {
         if (FirebaseManager.user?.city.isEmpty)! {
             tableView.isHidden = true
             cityPicker.isHidden = false
             selectACityLabel.isHidden = false
+            cityPickerToolbar.isHidden = false
         } else {
             tableView.isHidden = false
             cityPicker.isHidden = true
             selectACityLabel.isHidden = true
+            cityPickerToolbar.isHidden = true
         }
     }
     
@@ -172,28 +184,6 @@ extension DiscoverVC: UISearchBarDelegate {
     // MARK: - UISearchBar Delegate
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
-    }
-}
-
-extension DiscoverVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Constants.cities.count
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Constants.cities[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        FirebaseManager.user?.city = Constants.cities[row]
-        FirebaseManager.user?.update()
-        setViewVisibility()
-        refreshTable()
     }
 }
 

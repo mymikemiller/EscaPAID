@@ -240,7 +240,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m18-SP-hF0">
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m18-SP-hF0" customClass="SelfContainedPickerView" customModule="tellomee" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="397" width="375" height="221"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
@@ -248,6 +248,17 @@
                                     <outlet property="delegate" destination="UTm-xN-gxT" id="vMe-Qk-gZU"/>
                                 </connections>
                             </pickerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1KJ-yx-U68">
+                                <rect key="frame" x="0.0" y="379" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Done" id="D0I-4G-Huw">
+                                        <connections>
+                                            <action selector="cityPickerDone_click:" destination="UTm-xN-gxT" id="WZV-Db-Rza"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="KiE-dc-RWx"/>
@@ -255,6 +266,7 @@
                     <navigationItem key="navigationItem" title="Discover" id="5eI-JB-p8R"/>
                     <connections>
                         <outlet property="cityPicker" destination="m18-SP-hF0" id="dIC-SC-uWc"/>
+                        <outlet property="cityPickerToolbar" destination="1KJ-yx-U68" id="KC3-PU-uDA"/>
                         <outlet property="selectACityLabel" destination="S0e-Vb-VMB" id="LeW-g8-3qE"/>
                         <outlet property="tableView" destination="IA5-3G-3Ue" id="9jp-6w-wDl"/>
                         <segue destination="8jk-U6-0pk" kind="show" identifier="showExperience" id="PcZ-ta-p7D"/>
@@ -719,8 +731,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="experienceCategory" destination="QoW-PP-3TE" id="pqg-MG-8xb"/>
-                        <outlet property="experienceCity" destination="QET-n5-g46" id="7FA-FA-h29"/>
+                        <outlet property="experienceCategory" destination="QoW-PP-3TE" id="77d-Uu-x0G"/>
+                        <outlet property="experienceCity" destination="QET-n5-g46" id="O8d-CP-tdN"/>
                         <outlet property="experienceDescription" destination="tu4-lD-AMA" id="aDX-LQ-0VZ"/>
                         <outlet property="experienceIncludes" destination="wJC-0A-CEL" id="pkk-am-jtu"/>
                         <outlet property="experiencePrice" destination="P7d-U9-jk5" id="Aih-Me-4fZ"/>

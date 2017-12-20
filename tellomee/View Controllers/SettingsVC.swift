@@ -22,18 +22,9 @@ class SettingsVC: UIViewController, UINavigationControllerDelegate {
         super.viewDidLoad()
         
         // Set up the city picker
-        let picker = UIPickerView()
-        picker.dataSource = self
-        picker.delegate = self
-        city.inputView = picker
         city.text = FirebaseManager.user?.city
-        // Set the default for the city picker for when it is shown
-        for (index, element) in Constants.cities.enumerated() {
-            if (element == FirebaseManager.user?.city) {
-                picker.selectRow(index, inComponent: 0, animated: false)
-                break
-            }
-        }
+        let cityPicker = SelfContainedPickerView()
+        cityPicker.setUp(textField: city, strings: Constants.cities)
 
         imageView.addGestureRecognizer(
             UITapGestureRecognizer(target: self, action: #selector(SettingsVC.imageView_click)))
@@ -132,24 +123,5 @@ extension SettingsVC: UIImagePickerControllerDelegate {
 extension SettingsVC: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
-    }
-}
-
-extension SettingsVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Constants.cities.count
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Constants.cities[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        city.text = Constants.cities[row]
-        city.resignFirstResponder()
     }
 }

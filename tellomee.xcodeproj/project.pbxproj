@@ -25,6 +25,7 @@
 		E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */; };
 		E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */; };
 		E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
+		E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
 		E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
 		E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
 		E7B9F7451FB6CAAF0058CE61 /* tellomee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F7431FB6CAAF0058CE61 /* tellomee.xcdatamodeld */; };
@@ -67,6 +68,7 @@
 		E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableVC.swift; sourceTree = "<group>"; };
 		E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginScreenVC.swift; sourceTree = "<group>"; };
+		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
 		E7B9F7391FB6CAAE0058CE61 /* tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7B9F7411FB6CAAF0058CE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				E720AC051FC2100800E9C2EF /* Managers */,
 				E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */,
 				E7D0A7831FDB573D008319CF /* Constants.swift */,
+				E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */,
 				E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */,
 				E7B9F74B1FB6CAAF0058CE61 /* Info.plist */,
 				E7F9A07E1FB6D1DC00916FBA /* tellomee.entitlements */,
@@ -386,6 +389,7 @@
 				E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */,
 				E72B248B1FC656F400DE0897 /* ExperienceManager.swift in Sources */,
 				E74549901FB7543A00A6A32C /* PostManager.swift in Sources */,
+				E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */,
 				E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */,
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,
 				E72B24891FC6539A00DE0897 /* DiscoverVC.swift in Sources */,

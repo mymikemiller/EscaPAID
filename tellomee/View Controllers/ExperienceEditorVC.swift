@@ -29,50 +29,33 @@ class ExperienceEditorVC: UIViewController {
     @IBOutlet weak var experiencePrice: UITextField!
     @IBOutlet weak var experienceDescription: UITextView!
     
-    let cityPicker:UIPickerView = UIPickerView()
-    let categoryPicker:UIPickerView = UIPickerView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Default to the first category if we are creating a new experience
         if let experience = experience {
             newExperience = false
             experienceTitle.text = experience.title
             experienceCategory.text = experience.category
             experienceIncludes.text = experience.includes
+            experienceCity.text = experience.city
             experiencePrice.text = String(format: "%.02f", experience.price)
             experienceDescription.text = experience.experienceDescription
+            experienceCategory.text = experience.category
         } else {
             newExperience = true
             experience = Experience.createNewExperience()
+            experienceCategory.text = Constants.categories[0]
+            experienceCity.text = FirebaseManager.user?.city
         }
         
-        // Set up the category picker
-        categoryPicker.dataSource = self
-        categoryPicker.delegate = self
-        experienceCategory.inputView = categoryPicker
-        experienceCategory.text = experience?.category
-        // Set the default for the category picker for when it is shown
-        for (index, element) in Constants.categories.enumerated() {
-            if (element == experience?.category) {
-                categoryPicker.selectRow(index, inComponent: 0, animated: false)
-                break
-            }
-        }
+        let categoryPicker:SelfContainedPickerView = SelfContainedPickerView()
+        categoryPicker.setUp(textField: experienceCategory, strings: Constants.categories)
         
-        // Set up the city picker
-        cityPicker.dataSource = self
-        cityPicker.delegate = self
-        experienceCity.inputView = cityPicker
-        experienceCity.text = FirebaseManager.user?.city
-        // Set the default for the city picker for when it is shown
-        for (index, element) in Constants.cities.enumerated() {
-            if (element == FirebaseManager.user?.city) {
-                cityPicker.selectRow(index, inComponent: 0, animated: false)
-                break
-            }
-        }
+        let cityPicker:SelfContainedPickerView = SelfContainedPickerView()
+        cityPicker.setUp(textField: experienceCity, strings: Constants.cities)
     }
+    
     @IBAction func cancelButton_click(_ sender: Any) {
         if (newExperience) {
             // Remove the new experience from the database if we canceled out of the page when creating a new experience. But first delete all the experience's images.
@@ -272,38 +255,4 @@ extension ExperienceEditorVC : UINavigationControllerDelegate, UIImagePickerCont
         self.dismiss(animated: true, completion: nil)
     }
 }
-
-
-extension ExperienceEditorVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if (pickerView == cityPicker) {
-            return Constants.cities.count
-        } else { //if (pickerView == categoryPicker) {
-            return Constants.categories.count
-        }
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if (pickerView == cityPicker) {
-            return Constants.cities[row]
-        } else { //if (pickerView == categoryPicker) {
-            return Constants.categories[row]
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if (pickerView == cityPicker) {
-            experienceCity.text = Constants.cities[row]
-            experienceCity.resignFirstResponder()
-        } else if (pickerView == categoryPicker) {
-            experienceCategory.text = Constants.categories[row]
-            experienceCategory.resignFirstResponder()
-        }
-    }
-}
-
 
