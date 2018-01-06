@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		118295641A78DD980B0DB3E4 /* Pods_tellomee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */; };
+		E71F33A0200028D400312B91 /* TextModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F339F200028D400312B91 /* TextModalVC.swift */; };
 		E723DD871FC3E17800B4345E /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723DD861FC3E17800B4345E /* Thread.swift */; };
 		E72B24891FC6539A00DE0897 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B24881FC6539A00DE0897 /* DiscoverVC.swift */; };
 		E72B248B1FC656F400DE0897 /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B248A1FC656F400DE0897 /* ExperienceManager.swift */; };
@@ -15,6 +16,7 @@
 		E72D8E531FBCC5C1001026D6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D8E521FBCC5C1001026D6 /* LoginVC.swift */; };
 		E72F64471FBBB22B0023489D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E72F64461FBBB22B0023489D /* Podfile */; };
 		E732DA931FC8DCC400BCF691 /* ThreadsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */; };
+		E73BDABF1FFD52D800D1F209 /* ProfileEditorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */; };
 		E74549901FB7543A00A6A32C /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745498F1FB7543A00A6A32C /* PostManager.swift */; };
 		E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549911FB758B300A6A32C /* ChatTableViewCell.swift */; };
 		E74549941FB78AE200A6A32C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549931FB78AE200A6A32C /* User.swift */; };
@@ -51,6 +53,7 @@
 		0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tellomee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		251D563A81D847CBC43D4CB4 /* Pods-tellomee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.release.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.release.xcconfig"; sourceTree = "<group>"; };
 		DBB7A88E7F3AD611397092DE /* Pods-tellomee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.debug.xcconfig"; sourceTree = "<group>"; };
+		E71F339F200028D400312B91 /* TextModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModalVC.swift; sourceTree = "<group>"; };
 		E723DD861FC3E17800B4345E /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		E72B24881FC6539A00DE0897 /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		E72B248A1FC656F400DE0897 /* ExperienceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceManager.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		E72D8E521FBCC5C1001026D6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E72F64461FBBB22B0023489D /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsNavigationController.swift; sourceTree = "<group>"; };
+		E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorTableVC.swift; sourceTree = "<group>"; };
 		E745498F1FB7543A00A6A32C /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		E74549911FB758B300A6A32C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		E74549931FB78AE200A6A32C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC.swift */,
 				E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */,
 				E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */,
+				E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				E7F9A07E1FB6D1DC00916FBA /* tellomee.entitlements */,
 				E7B9F7431FB6CAAF0058CE61 /* tellomee.xcdatamodeld */,
 				E7B9F7511FB6CC5D0058CE61 /* GoogleService-Info.plist */,
+				E71F339F200028D400312B91 /* TextModalVC.swift */,
 			);
 			path = tellomee;
 			sourceTree = "<group>";
@@ -387,10 +393,12 @@
 				E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */,
 				E7D316881FCF246A0062E178 /* ExperienceImageVC.swift in Sources */,
 				E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */,
+				E73BDABF1FFD52D800D1F209 /* ProfileEditorTableVC.swift in Sources */,
 				E72B248B1FC656F400DE0897 /* ExperienceManager.swift in Sources */,
 				E74549901FB7543A00A6A32C /* PostManager.swift in Sources */,
 				E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */,
 				E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */,
+				E71F33A0200028D400312B91 /* TextModalVC.swift in Sources */,
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,
 				E72B24891FC6539A00DE0897 /* DiscoverVC.swift in Sources */,
 				E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */,
