@@ -16,6 +16,7 @@ class ProfileEditorTableVC: UITableViewController, UINavigationControllerDelegat
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var aboutMe: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,15 @@ class ProfileEditorTableVC: UITableViewController, UINavigationControllerDelegat
         city.text = FirebaseManager.user?.city
         let cityPicker = SelfContainedPickerView()
         cityPicker.setUp(textField: city, strings: Constants.cities)
+        
+        // Set up the About Me text
+        aboutMe.adjustsFontSizeToFitWidth = false
+        aboutMe.lineBreakMode = NSLineBreakMode.byTruncatingTail
+        
+        // Set initial values
+        name.text = FirebaseManager.user?.displayName
+        phone.text = FirebaseManager.user?.phone
+        aboutMe.text = FirebaseManager.user?.aboutMe
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,12 +57,19 @@ class ProfileEditorTableVC: UITableViewController, UINavigationControllerDelegat
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
         self.present(image, animated: true, completion: nil)
     }
+    @IBAction func aboutMeEdit_click(_ sender: Any) {
+        let getter = TextGetterController()
+        getter.setTitle("About Me")
+        getter.setText(aboutMe.text!)
+        getter.delegate = self
+        self.present(getter, animated: true, completion: nil)
+    }
     
     @IBAction func saveButton_click(_ sender: Any) {
         FirebaseManager.user?.displayName = name.text!
         FirebaseManager.user?.city = city.text!
         FirebaseManager.user?.phone = phone.text!
-//        FirebaseManager.user?.aboutMe = aboutMe.text!
+        FirebaseManager.user?.aboutMe = aboutMe.text!
         FirebaseManager.user?.update()
         
         self.dismiss(animated: true, completion:nil)
@@ -110,4 +127,12 @@ extension ProfileEditorTableVC: UIImagePickerControllerDelegate {
         self.dismiss(animated: true, completion: nil)
         
     }
+}
+
+extension ProfileEditorTableVC: TextGetterDelegate {
+    func didGetText(_ text: String) {
+        aboutMe.text = text
+    }
+    
+    
 }
