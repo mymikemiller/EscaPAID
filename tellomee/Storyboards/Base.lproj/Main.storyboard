@@ -373,7 +373,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Q6g-n5-jHl">
             <objects>
-                <tabBarController id="F22-Gu-X0h" sceneMemberID="viewController">
+                <tabBarController id="F22-Gu-X0h" customClass="TabBarController" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="EvZ-Cz-G58">
