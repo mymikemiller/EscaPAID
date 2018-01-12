@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExperienceEditorVC: UIViewController {
+class ExperienceEditorVC_old: UIViewController {
     
     fileprivate let itemsPerRow: CGFloat = 3
     
@@ -136,7 +136,7 @@ class ExperienceEditorVC: UIViewController {
 
 
 // MARK: - UICollectionViewDataSource
-extension ExperienceEditorVC: UICollectionViewDataSource {
+extension ExperienceEditorVC_old: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -195,7 +195,7 @@ extension ExperienceEditorVC: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension ExperienceEditorVC : UICollectionViewDelegateFlowLayout {
+extension ExperienceEditorVC_old : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -221,14 +221,14 @@ extension ExperienceEditorVC : UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension ExperienceEditorVC: UITextFieldDelegate {
+extension ExperienceEditorVC_old: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
     }
 }
 
 // MARK: - UIImagePickerControllerDelegate
-extension ExperienceEditorVC : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+extension ExperienceEditorVC_old : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let pickerInfo:NSDictionary = info as NSDictionary

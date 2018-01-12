@@ -1,5 +1,5 @@
 //
-//  ExperiencesTableViewController.swift
+//  MyExperiencesTableVC
 //  tellomee
 //
 //  Created by Michael Miller on 11/22/17.
@@ -121,7 +121,7 @@ class MyExperiencesTableVC: UITableViewController {
             
             let navVC = segue.destination as? UINavigationController
             
-            let editExperienceVC = navVC?.viewControllers.first as! ExperienceEditorVC
+            let editExperienceVC = navVC?.viewControllers.first as! ExperienceEditorTableVC
             
             editExperienceVC.experience = selectedExperience
         }

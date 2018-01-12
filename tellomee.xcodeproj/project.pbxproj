@@ -11,6 +11,7 @@
 		E71F33A520017CAA00312B91 /* TextGetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A320017CAA00312B91 /* TextGetterController.swift */; };
 		E71F33A620017CAA00312B91 /* TextGetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71F33A420017CAA00312B91 /* TextGetter.xib */; };
 		E71F33A82004509800312B91 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A72004509800312B91 /* TabBarController.swift */; };
+		E71F33AA2004650800312B91 /* ExperienceEditorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A92004650800312B91 /* ExperienceEditorTableVC.swift */; };
 		E723DD871FC3E17800B4345E /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723DD861FC3E17800B4345E /* Thread.swift */; };
 		E72B24891FC6539A00DE0897 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B24881FC6539A00DE0897 /* DiscoverVC.swift */; };
 		E72B248B1FC656F400DE0897 /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B248A1FC656F400DE0897 /* ExperienceManager.swift */; };
@@ -48,7 +49,7 @@
 		E7FE89F61FCCF284008ADCEF /* MyExperiencesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */; };
 		E7FE89FA1FCD0180008ADCEF /* MyExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F91FCD0180008ADCEF /* MyExperienceManager.swift */; };
 		E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */; };
-		E7FE8A021FCDE66C008ADCEF /* ExperienceEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC.swift */; };
+		E7FE8A021FCDE66C008ADCEF /* ExperienceEditorVC_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC_old.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		E71F33A320017CAA00312B91 /* TextGetterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextGetterController.swift; sourceTree = "<group>"; };
 		E71F33A420017CAA00312B91 /* TextGetter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextGetter.xib; sourceTree = "<group>"; };
 		E71F33A72004509800312B91 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E71F33A92004650800312B91 /* ExperienceEditorTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceEditorTableVC.swift; sourceTree = "<group>"; };
 		E723DD861FC3E17800B4345E /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		E72B24881FC6539A00DE0897 /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		E72B248A1FC656F400DE0897 /* ExperienceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceManager.swift; sourceTree = "<group>"; };
@@ -98,7 +100,7 @@
 		E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExperiencesTableVC.swift; sourceTree = "<group>"; };
 		E7FE89F91FCD0180008ADCEF /* MyExperienceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExperienceManager.swift; sourceTree = "<group>"; };
 		E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCell.xib; sourceTree = "<group>"; };
-		E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceEditorVC.swift; sourceTree = "<group>"; };
+		E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceEditorVC_old.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,11 +158,12 @@
 				E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */,
 				E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */,
 				E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */,
-				E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC.swift */,
+				E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC_old.swift */,
 				E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */,
 				E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */,
 				E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */,
 				E71F33A72004509800312B91 /* TabBarController.swift */,
+				E71F33A92004650800312B91 /* ExperienceEditorTableVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -386,7 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7FE8A021FCDE66C008ADCEF /* ExperienceEditorVC.swift in Sources */,
+				E7FE8A021FCDE66C008ADCEF /* ExperienceEditorVC_old.swift in Sources */,
 				E7D316AA1FD08EF60062E178 /* ExperienceImageCell.swift in Sources */,
 				E7E22E8F1FC7463800FD88FF /* ExperienceTableViewCell.swift in Sources */,
 				E751E0E11FD1CDA500CBB416 /* StorageManager.swift in Sources */,
@@ -400,6 +403,7 @@
 				E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */,
 				E7D316881FCF246A0062E178 /* ExperienceImageVC.swift in Sources */,
 				E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */,
+				E71F33AA2004650800312B91 /* ExperienceEditorTableVC.swift in Sources */,
 				E73BDABF1FFD52D800D1F209 /* ProfileEditorTableVC.swift in Sources */,
 				E72B248B1FC656F400DE0897 /* ExperienceManager.swift in Sources */,
 				E74549901FB7543A00A6A32C /* PostManager.swift in Sources */,
