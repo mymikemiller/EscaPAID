@@ -27,6 +27,17 @@ class MyExperienceManager: NSObject {
                 
                 FirebaseManager.getUser(uid: result["uid"] as! String) { (curator) in
                     
+                    var days = Days.All
+                    if (result["days"] != nil) {
+                        days = Days(Monday: result["days"]!["monday"] as! Bool,
+                                    Tuesday: result["days"]!["tuesday"] as! Bool,
+                                    Wednesday: result["days"]!["wednesday"] as! Bool,
+                                    Thursday: result["days"]!["thursday"] as! Bool,
+                                    Friday: result["days"]!["friday"] as! Bool,
+                                    Saturday: result["days"]!["saturday"] as! Bool,
+                                    Sunday: result["days"]!["sunday"] as! Bool)
+                    }
+                    
                     let experience = Experience(
                         id: snap.key,
                         title: result["title"] as! String,
@@ -34,6 +45,7 @@ class MyExperienceManager: NSObject {
                         city: result["city"] as! String,
                         includes: result["includes"] as! String,
                         price: Double(result["price"]! as! Double),
+                        days: days,
                         description: result["description"] as! String,
                         imageUrls: result["images"] as! [String],
                         curator: curator)

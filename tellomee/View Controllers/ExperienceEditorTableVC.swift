@@ -20,19 +20,12 @@ class ExperienceEditorTableVC: UITableViewController {
     @IBOutlet weak var experienceDescription: UILabel!
     @IBOutlet weak var experienceIncludes: UITextField!
     
-    var experienceDays: Days = Days(Monday: true,
-                                    Tuesday: true,
-                                    Wednesday: true,
-                                    Thursday: true,
-                                    Friday: true,
-                                    Saturday: true,
-                                    Sunday: true) {
+    var experienceDays: Days = Days.All {
         didSet {
             experienceDaysLabel.text = experienceDays.toString()
         }
     }
 
-    
     var newExperience = false
     var experience:Experience?
     
@@ -68,9 +61,12 @@ class ExperienceEditorTableVC: UITableViewController {
             experiencePrice.text = String(format: "%.02f", experience.price)
             experienceDescription.text = experience.experienceDescription
             experienceCategory.text = experience.category
+            experienceDays = experience.days
         } else {
             newExperience = true
             experience = Experience.createNewExperience()
+            
+            // Set the default values.
             // Default to the first category if we are creating a new experience
             experienceCategory.text = Constants.categories[0]
             experienceCity.text = FirebaseManager.user?.city
@@ -98,6 +94,7 @@ class ExperienceEditorTableVC: UITableViewController {
     @IBAction func saveButton_click(_ sender: Any) {
         let price = Double((experiencePrice?.text)!)
         
+        // Only allow the user to save if they're filled in all the required information
         if ((experienceTitle?.text?.isEmpty)! ||
             (experienceCategory?.text?.isEmpty)! ||
             (experienceIncludes?.text?.isEmpty)! ||
@@ -119,6 +116,7 @@ class ExperienceEditorTableVC: UITableViewController {
         experience?.includes = (experienceIncludes?.text)!
         experience?.city = (experienceCity?.text)!
         experience?.price = price!
+        experience?.days = experienceDays
         experience?.experienceDescription = (experienceDescription?.text)!
         experience?.save()
         self.dismiss(animated: true, completion:nil)

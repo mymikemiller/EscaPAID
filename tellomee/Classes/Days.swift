@@ -30,6 +30,12 @@ struct Days {
         // Remove the trailing comma and space
         result = String(result.dropLast().dropLast())
         
+        if (result.isEmpty) {
+            result = "None"
+        }
+        
         return result
     }
+    
+    static let All: Days = Days(Monday: true, Tuesday: true, Wednesday: true, Thursday: true, Friday: true, Saturday: true, Sunday: true)
 }

@@ -16,6 +16,7 @@ class Experience: NSObject {
     var city:String
     var includes:String
     var price:Double
+    var days:Days
     var experienceDescription:String
     var imageUrls:[String]
     var curator:User
@@ -26,6 +27,7 @@ class Experience: NSObject {
          city:String,
          includes:String,
          price:Double,
+         days:Days,
          description:String,
          imageUrls:[String],
          curator:User) {
@@ -36,6 +38,7 @@ class Experience: NSObject {
         self.city = city
         self.includes = includes
         self.price = price
+        self.days = days
         self.experienceDescription = description
         self.imageUrls = imageUrls
         self.curator = curator
@@ -50,6 +53,7 @@ class Experience: NSObject {
                           city: (FirebaseManager.user?.city)!,
                           includes: "",
                           price: 0,
+                          days: Days.All,
                           description: "",
                           imageUrls: [],
                           curator: FirebaseManager.user!)
@@ -85,6 +89,15 @@ class Experience: NSObject {
             "description":experienceDescription,
             "images":imageUrls,
             "uid":curator.uid])
+        
+        FirebaseManager.databaseRef.child("experiences").child(id).child("days").updateChildValues([
+            "monday":days.Monday,
+            "tuesday":days.Tuesday,
+            "wednesday":days.Wednesday,
+            "thursday":days.Thursday,
+            "friday":days.Friday,
+            "saturday":days.Saturday,
+            "sunday":days.Sunday])
     }
 }
 
