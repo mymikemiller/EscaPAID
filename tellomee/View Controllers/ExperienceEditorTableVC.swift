@@ -20,8 +20,24 @@ class ExperienceEditorTableVC: UITableViewController {
     @IBOutlet weak var experienceDescription: UILabel!
     @IBOutlet weak var experienceIncludes: UITextField!
     
+    var experienceDays: Days = Days(Monday: true,
+                                    Tuesday: true,
+                                    Wednesday: true,
+                                    Thursday: true,
+                                    Friday: true,
+                                    Saturday: true,
+                                    Sunday: true) {
+        didSet {
+            experienceDaysLabel.text = experienceDays.toString()
+        }
+    }
+
+    
     var newExperience = false
     var experience:Experience?
+    
+    @IBOutlet weak var experienceDaysLabel: UILabel!
+    
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var uploadProgressView: UIProgressView!
@@ -131,17 +147,15 @@ class ExperienceEditorTableVC: UITableViewController {
         return UIImage()
     }
     
-    
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "EditDaysSegue") {
+            (segue.destination as! DaySelectorTableVC).days = experienceDays
+        }
     }
-    */
-
 }
 
 extension ExperienceEditorTableVC: TextGetterDelegate {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		118295641A78DD980B0DB3E4 /* Pods_tellomee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */; };
+		E712DE4420154F1C00661DE7 /* DaySelectorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */; };
+		E712DE462015622500661DE7 /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE452015622500661DE7 /* Days.swift */; };
 		E71F33A520017CAA00312B91 /* TextGetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A320017CAA00312B91 /* TextGetterController.swift */; };
 		E71F33A620017CAA00312B91 /* TextGetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71F33A420017CAA00312B91 /* TextGetter.xib */; };
 		E71F33A82004509800312B91 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A72004509800312B91 /* TabBarController.swift */; };
@@ -49,13 +51,14 @@
 		E7FE89F61FCCF284008ADCEF /* MyExperiencesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */; };
 		E7FE89FA1FCD0180008ADCEF /* MyExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F91FCD0180008ADCEF /* MyExperienceManager.swift */; };
 		E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */; };
-		E7FE8A021FCDE66C008ADCEF /* ExperienceEditorVC_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC_old.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tellomee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		251D563A81D847CBC43D4CB4 /* Pods-tellomee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.release.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.release.xcconfig"; sourceTree = "<group>"; };
 		DBB7A88E7F3AD611397092DE /* Pods-tellomee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.debug.xcconfig"; sourceTree = "<group>"; };
+		E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectorTableVC.swift; sourceTree = "<group>"; };
+		E712DE452015622500661DE7 /* Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
 		E71F33A320017CAA00312B91 /* TextGetterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextGetterController.swift; sourceTree = "<group>"; };
 		E71F33A420017CAA00312B91 /* TextGetter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextGetter.xib; sourceTree = "<group>"; };
 		E71F33A72004509800312B91 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -100,7 +103,6 @@
 		E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExperiencesTableVC.swift; sourceTree = "<group>"; };
 		E7FE89F91FCD0180008ADCEF /* MyExperienceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExperienceManager.swift; sourceTree = "<group>"; };
 		E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCell.xib; sourceTree = "<group>"; };
-		E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceEditorVC_old.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,12 +160,12 @@
 				E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */,
 				E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */,
 				E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */,
-				E7FE8A011FCDE66C008ADCEF /* ExperienceEditorVC_old.swift */,
 				E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */,
 				E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */,
 				E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */,
 				E71F33A72004509800312B91 /* TabBarController.swift */,
 				E71F33A92004650800312B91 /* ExperienceEditorTableVC.swift */,
+				E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -198,6 +200,7 @@
 				E74549931FB78AE200A6A32C /* User.swift */,
 				E723DD861FC3E17800B4345E /* Thread.swift */,
 				E72B248E1FC65B3800DE0897 /* Experience.swift */,
+				E712DE452015622500661DE7 /* Days.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -389,7 +392,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7FE8A021FCDE66C008ADCEF /* ExperienceEditorVC_old.swift in Sources */,
 				E7D316AA1FD08EF60062E178 /* ExperienceImageCell.swift in Sources */,
 				E7E22E8F1FC7463800FD88FF /* ExperienceTableViewCell.swift in Sources */,
 				E751E0E11FD1CDA500CBB416 /* StorageManager.swift in Sources */,
@@ -400,6 +402,7 @@
 				E74549981FB79AE200A6A32C /* SettingsVC.swift in Sources */,
 				E72B248F1FC65B3800DE0897 /* Experience.swift in Sources */,
 				E7B9F7451FB6CAAF0058CE61 /* tellomee.xcdatamodeld in Sources */,
+				E712DE4420154F1C00661DE7 /* DaySelectorTableVC.swift in Sources */,
 				E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */,
 				E7D316881FCF246A0062E178 /* ExperienceImageVC.swift in Sources */,
 				E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */,
@@ -423,6 +426,7 @@
 				E723DD871FC3E17800B4345E /* Thread.swift in Sources */,
 				E7FE89FA1FCD0180008ADCEF /* MyExperienceManager.swift in Sources */,
 				E7F585F81FCCDECE00536EF5 /* CuratorSettingsVC.swift in Sources */,
+				E712DE462015622500661DE7 /* Days.swift in Sources */,
 				E732DA931FC8DCC400BCF691 /* ThreadsNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,6 +569,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
 				INFOPLIST_FILE = tellomee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mymikemiller.tellomee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -582,6 +587,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
 				INFOPLIST_FILE = tellomee/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mymikemiller.tellomee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
