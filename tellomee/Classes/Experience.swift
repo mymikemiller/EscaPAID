@@ -14,6 +14,8 @@ class Experience: NSObject {
     var title:String
     var category:String
     var city:String
+    var startTime:String
+    var endTime:String
     var includes:String
     var price:Double
     var days:Days
@@ -25,6 +27,8 @@ class Experience: NSObject {
          title:String,
          category:String,
          city:String,
+         startTime:String,
+         endTime:String,
          includes:String,
          price:Double,
          days:Days,
@@ -36,6 +40,8 @@ class Experience: NSObject {
         self.title = title
         self.category = category
         self.city = city
+        self.startTime = startTime
+        self.endTime = endTime
         self.includes = includes
         self.price = price
         self.days = days
@@ -51,6 +57,8 @@ class Experience: NSObject {
                           title: "",
                           category: "",
                           city: (FirebaseManager.user?.city)!,
+                          startTime: "7:00 PM",
+                          endTime: "8:00 PM",
                           includes: "",
                           price: 0,
                           days: Days.All,
@@ -84,6 +92,8 @@ class Experience: NSObject {
             "title":title,
             "category":category,
             "city": city,
+            "startTime": startTime,
+            "endTime": endTime,
             "includes":includes,
             "price":price,
             "description":experienceDescription,

@@ -43,6 +43,8 @@ class MyExperienceManager: NSObject {
                         title: result["title"] as! String,
                         category: result["category"] as! String,
                         city: result["city"] as! String,
+                        startTime: result["startTime"] as! String,
+                        endTime: result["endTime"] as! String,
                         includes: result["includes"] as! String,
                         price: Double(result["price"]! as! Double),
                         days: days,

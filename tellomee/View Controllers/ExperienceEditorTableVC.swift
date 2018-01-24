@@ -10,6 +10,8 @@ import UIKit
 
 class ExperienceEditorTableVC: UITableViewController {
 
+    let dateFormat = "h:mm a"
+    
     // Images per row in the collection view
     fileprivate let itemsPerRow: CGFloat = 3
     
@@ -31,6 +33,17 @@ class ExperienceEditorTableVC: UITableViewController {
     
     @IBOutlet weak var experienceDaysLabel: UILabel!
     
+    @IBOutlet weak var startTimePicker: UIDatePicker!
+    @IBOutlet weak var endTimePicker: UIDatePicker!
+    private var startTimePickerVisible = false
+    private var endTimePickerVisible = false
+    @IBOutlet weak var startTimeCell: UITableViewCell!
+    @IBOutlet weak var endTimeCell: UITableViewCell!
+    @IBOutlet weak var startTimePickerCell: UITableViewCell!
+    @IBOutlet weak var endTimePickerCell: UITableViewCell!
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
+    
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var uploadProgressView: UIProgressView!
@@ -40,7 +53,6 @@ class ExperienceEditorTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // Set up the category picker
         experienceCategory.text = Constants.categories[0]
@@ -62,6 +74,11 @@ class ExperienceEditorTableVC: UITableViewController {
             experienceDescription.text = experience.experienceDescription
             experienceCategory.text = experience.category
             experienceDays = experience.days
+            
+            // Set up the start and end time pickers
+            startTimePicker.setDate(from: experience.startTime, format: dateFormat)
+            endTimePicker.setDate(from: experience.endTime, format: dateFormat)
+            syncTimeText()
         } else {
             newExperience = true
             experience = Experience.createNewExperience()
@@ -69,10 +86,23 @@ class ExperienceEditorTableVC: UITableViewController {
             // Set the default values.
             // Default to the first category if we are creating a new experience
             experienceCategory.text = Constants.categories[0]
+            
+            // Default to the curator's city
             experienceCity.text = FirebaseManager.user?.city
+            
+            // Set up the start and end time pickers
+            startTimePicker.setDate(from: experience!.startTime, format: dateFormat)
+            endTimePicker.setDate(from: experience!.endTime, format: dateFormat)
+            syncTimeText()
         }
-    }
+        
 
+        
+        // Refresh the table layout to hide the time pickers
+        tableView.setNeedsLayout()
+        tableView.layoutIfNeeded()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -94,7 +124,7 @@ class ExperienceEditorTableVC: UITableViewController {
     @IBAction func saveButton_click(_ sender: Any) {
         let price = Double((experiencePrice?.text)!)
         
-        // Only allow the user to save if they're filled in all the required information
+        // Only allow the user to save if they've filled in all the required information
         if ((experienceTitle?.text?.isEmpty)! ||
             (experienceCategory?.text?.isEmpty)! ||
             (experienceIncludes?.text?.isEmpty)! ||
@@ -115,6 +145,8 @@ class ExperienceEditorTableVC: UITableViewController {
         experience?.category = (experienceCategory?.text)!
         experience?.includes = (experienceIncludes?.text)!
         experience?.city = (experienceCity?.text)!
+        experience?.startTime = startTimeLabel.text!
+        experience?.endTime = endTimeLabel.text!
         experience?.price = price!
         experience?.days = experienceDays
         experience?.experienceDescription = (experienceDescription?.text)!
@@ -144,6 +176,67 @@ class ExperienceEditorTableVC: UITableViewController {
         }
         return UIImage()
     }
+    
+    // MARK: - Time Pickers
+    private func toggleStartTimePickerVisible () {
+        startTimePickerVisible = !startTimePickerVisible
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    private func toggleEndTimePickerVisible () {
+        endTimePickerVisible = !endTimePickerVisible
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        if (cell == startTimeCell) {
+            
+            toggleStartTimePickerVisible()
+        } else if (cell == endTimeCell) {
+            toggleEndTimePickerVisible()
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        if (cell == startTimePickerCell && !startTimePickerVisible) {
+            
+            return 0
+        } else if (cell == endTimePickerCell && !endTimePickerVisible) {
+            
+            return 0
+        }
+        
+        return super.tableView(tableView, heightForRowAt: indexPath)
+    }
+    
+    @IBAction func startTimePicker_valueChanged(_ sender: Any) {
+        syncTimeText()
+    }
+    
+    @IBAction func endTimePicker_valueChanged(_ sender: Any) {
+        syncTimeText()
+    }
+    
+    func syncTimeText() {
+        let outputFormatter = DateFormatter()
+        outputFormatter.setLocalizedDateFormatFromTemplate(dateFormat)
+        
+        startTimeLabel.text = outputFormatter.string(from: startTimePicker.date)
+        endTimeLabel.text = outputFormatter.string(from: endTimePicker.date)
+    }
+    
     
     // MARK: - Navigation
 
@@ -281,5 +374,14 @@ extension ExperienceEditorTableVC : UINavigationControllerDelegate, UIImagePicke
             }
         }
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension UIDatePicker {
+    func setDate(from string: String, format: String, animated: Bool = true) {
+        let formater = DateFormatter()
+        formater.dateFormat = format
+        let date = formater.date(from: string) ?? Date()
+        setDate(date, animated: animated)
     }
 }
