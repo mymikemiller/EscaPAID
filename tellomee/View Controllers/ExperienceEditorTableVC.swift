@@ -44,6 +44,8 @@ class ExperienceEditorTableVC: UITableViewController {
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     
+    @IBOutlet weak var experienceMaxGuestsSlider: UISlider!
+    @IBOutlet weak var experienceMaxGuests: UILabel!
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var uploadProgressView: UIProgressView!
@@ -63,40 +65,30 @@ class ExperienceEditorTableVC: UITableViewController {
         let cityPicker:SelfContainedPickerView = SelfContainedPickerView()
         cityPicker.setUp(textField: experienceCity, strings: Constants.cities)
         
-        // Set the default values
-        if let experience = experience {
-            newExperience = false
-            experienceTitle.text = experience.title
-            experienceCategory.text = experience.category
-            experienceIncludes.text = experience.includes
-            experienceCity.text = experience.city
-            experiencePrice.text = String(format: "%.02f", experience.price)
-            experienceDescription.text = experience.experienceDescription
-            experienceCategory.text = experience.category
-            experienceDays = experience.days
-            
-            // Set up the start and end time pickers
-            startTimePicker.setDate(from: experience.startTime, format: dateFormat)
-            endTimePicker.setDate(from: experience.endTime, format: dateFormat)
-            syncTimeText()
-        } else {
+        // Create a new experience if necessary
+        if experience == nil {
             newExperience = true
             experience = Experience.createNewExperience()
-            
-            // Set the default values.
-            // Default to the first category if we are creating a new experience
-            experienceCategory.text = Constants.categories[0]
-            
-            // Default to the curator's city
-            experienceCity.text = FirebaseManager.user?.city
-            
-            // Set up the start and end time pickers
-            startTimePicker.setDate(from: experience!.startTime, format: dateFormat)
-            endTimePicker.setDate(from: experience!.endTime, format: dateFormat)
-            syncTimeText()
         }
         
-
+        // Set the default values
+        experienceTitle.text = experience!.title
+        experienceCategory.text = experience!.category
+        experienceIncludes.text = experience!.includes
+        experienceCity.text = experience!.city
+        experiencePrice.text = String(format: "%.02f", experience!.price)
+        experienceDescription.text = experience!.description
+        experienceCategory.text = experience!.category
+        experienceDays = experience!.days
+        experienceMaxGuestsSlider.value = Float(experience!.maxGuests)
+        experienceMaxGuests.text = String(experience!.maxGuests)
+        
+        // Set up the start and end time pickers
+        startTimePicker.setDate(from: experience!.startTime, format: dateFormat)
+        endTimePicker.setDate(from: experience!.endTime, format: dateFormat)
+        
+        // Make sure the displayed times match the pickers
+        syncTimeText()
         
         // Refresh the table layout to hide the time pickers
         tableView.setNeedsLayout()
@@ -149,6 +141,7 @@ class ExperienceEditorTableVC: UITableViewController {
         experience?.endTime = endTimeLabel.text!
         experience?.price = price!
         experience?.days = experienceDays
+        experience?.maxGuests = Int(experienceMaxGuests.text!)!
         experience?.experienceDescription = (experienceDescription?.text)!
         experience?.save()
         self.dismiss(animated: true, completion:nil)
@@ -236,6 +229,14 @@ class ExperienceEditorTableVC: UITableViewController {
         startTimeLabel.text = outputFormatter.string(from: startTimePicker.date)
         endTimeLabel.text = outputFormatter.string(from: endTimePicker.date)
     }
+    
+    @IBAction func maxGuestsSlider_valueChanged(_ sender: Any) {
+        let val = Int(experienceMaxGuestsSlider.value)
+        // Snap the slider to the selected integer
+        experienceMaxGuestsSlider.value = Float(val)
+        experienceMaxGuests.text = String(val)
+    }
+    
     
     
     // MARK: - Navigation

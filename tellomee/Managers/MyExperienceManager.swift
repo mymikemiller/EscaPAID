@@ -48,6 +48,7 @@ class MyExperienceManager: NSObject {
                         includes: result["includes"] as! String,
                         price: Double(result["price"]! as! Double),
                         days: days,
+                        maxGuests: result["maxGuests"] as! Int,
                         description: result["description"] as! String,
                         imageUrls: result["images"] as! [String],
                         curator: curator)

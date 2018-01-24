@@ -19,6 +19,7 @@ class Experience: NSObject {
     var includes:String
     var price:Double
     var days:Days
+    var maxGuests:Int
     var experienceDescription:String
     var imageUrls:[String]
     var curator:User
@@ -32,6 +33,7 @@ class Experience: NSObject {
          includes:String,
          price:Double,
          days:Days,
+         maxGuests:Int,
          description:String,
          imageUrls:[String],
          curator:User) {
@@ -45,6 +47,7 @@ class Experience: NSObject {
         self.includes = includes
         self.price = price
         self.days = days
+        self.maxGuests = maxGuests
         self.experienceDescription = description
         self.imageUrls = imageUrls
         self.curator = curator
@@ -55,13 +58,14 @@ class Experience: NSObject {
         newRef.child("title").setValue("")
         return Experience(id: newRef.key,
                           title: "",
-                          category: "",
+                          category: Constants.categories[0],
                           city: (FirebaseManager.user?.city)!,
                           startTime: "7:00 PM",
                           endTime: "8:00 PM",
                           includes: "",
                           price: 0,
                           days: Days.All,
+                          maxGuests: 1,
                           description: "",
                           imageUrls: [],
                           curator: FirebaseManager.user!)
@@ -94,6 +98,7 @@ class Experience: NSObject {
             "city": city,
             "startTime": startTime,
             "endTime": endTime,
+            "maxGuests": maxGuests,
             "includes":includes,
             "price":price,
             "description":experienceDescription,
