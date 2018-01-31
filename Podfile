@@ -11,6 +11,7 @@ target 'tellomee' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'JSQMessagesViewController'
+  pod 'JTAppleCalendar', '~> 7.0'
 
   # Pods for Facebook
   pod 'Bolts'

@@ -77,7 +77,7 @@ class ExperienceEditorTableVC: UITableViewController {
         experienceIncludes.text = experience!.includes
         experienceCity.text = experience!.city
         experiencePrice.text = String(format: "%.02f", experience!.price)
-        experienceDescription.text = experience!.description
+        experienceDescription.text = experience!.experienceDescription
         experienceCategory.text = experience!.category
         experienceDays = experience!.days
         experienceMaxGuestsSlider.value = Float(experience!.maxGuests)

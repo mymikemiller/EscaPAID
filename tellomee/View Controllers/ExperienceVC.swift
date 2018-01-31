@@ -39,7 +39,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
                 includesText += str.trimmingCharacters(in: .whitespacesAndNewlines) + "\n"
             }
             
-            info.text = experience.description + "\n\n" +
+            info.text = experience.experienceDescription + "\n\n" +
             "INCLUDES: \n" + includesText + "\n\n" +
             "ABOUT ME: " + experience.curator.aboutMe + "\n\n" +
             String(format: "PRICE: $%.02f", experience.price)
@@ -122,7 +122,10 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "pageViewController_embed") {
+            // Handle embedding the experience images
             imagePageViewController = segue.destination as! UIPageViewController
+        } else if (segue.identifier == "showReservationVC") {
+            (segue.destination as! ReservationVC).experience = experience
         }
     }
     
