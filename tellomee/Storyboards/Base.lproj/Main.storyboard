@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1417,7 +1418,7 @@
             </objects>
             <point key="canvasLocation" x="2876" y="-1329"/>
         </scene>
-        <!--ReservationVC-->
+        <!--Delegate-->
         <scene sceneID="CNd-lc-GBW">
             <objects>
                 <viewController id="RXj-YQ-jXV" customClass="ReservationVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
@@ -1431,23 +1432,66 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="vTI-Sh-PR7"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="RXj-YQ-jXV" id="5g1-T2-QOp"/>
+                                </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select a date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZY-Ge-udh">
+                                <rect key="frame" x="16" y="372" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cm6-Ye-N2G">
+                                <rect key="frame" x="62" y="481" width="251" height="31"/>
+                                <connections>
+                                    <action selector="guestsSlider_valueChanged:" destination="RXj-YQ-jXV" eventType="valueChanged" id="qtf-ZC-4mX"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Guests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ml-yQ-njW">
+                                <rect key="frame" x="16" y="452" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXr-fZ-5hW">
+                                <rect key="frame" x="16" y="549" width="343" height="30"/>
+                                <state key="normal" title="Reserve"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HXr-fZ-5hW" firstAttribute="top" secondItem="Cm6-Ye-N2G" secondAttribute="bottom" constant="38" id="1Af-MH-xmW"/>
+                            <constraint firstItem="8Ml-yQ-njW" firstAttribute="top" secondItem="nZY-Ge-udh" secondAttribute="bottom" constant="59" id="5tv-mv-Xu5"/>
                             <constraint firstAttribute="trailing" secondItem="YhB-ch-p5d" secondAttribute="trailing" id="7Vp-q7-qwN"/>
+                            <constraint firstItem="nZY-Ge-udh" firstAttribute="trailing" secondItem="HXr-fZ-5hW" secondAttribute="trailing" id="8B5-w8-0UR"/>
+                            <constraint firstItem="nZY-Ge-udh" firstAttribute="centerX" secondItem="YhB-ch-p5d" secondAttribute="centerX" id="C8R-vV-cXu"/>
+                            <constraint firstItem="nZY-Ge-udh" firstAttribute="leading" secondItem="NTs-Az-GYR" secondAttribute="leadingMargin" id="HGX-b2-tmM"/>
+                            <constraint firstItem="nZY-Ge-udh" firstAttribute="centerX" secondItem="Cm6-Ye-N2G" secondAttribute="centerX" id="HHu-tn-e9m"/>
+                            <constraint firstItem="nZY-Ge-udh" firstAttribute="leading" secondItem="8Ml-yQ-njW" secondAttribute="leading" id="Kc3-LX-xB5"/>
+                            <constraint firstItem="Cm6-Ye-N2G" firstAttribute="top" secondItem="8Ml-yQ-njW" secondAttribute="bottom" constant="8" id="NrY-Bx-lVt"/>
                             <constraint firstItem="YhB-ch-p5d" firstAttribute="leading" secondItem="NTs-Az-GYR" secondAttribute="leading" id="QaS-rG-PcV"/>
+                            <constraint firstItem="nZY-Ge-udh" firstAttribute="trailing" secondItem="8Ml-yQ-njW" secondAttribute="trailing" id="UfC-hZ-sKe"/>
+                            <constraint firstItem="nZY-Ge-udh" firstAttribute="leading" secondItem="HXr-fZ-5hW" secondAttribute="leading" id="Vap-lc-ceK"/>
+                            <constraint firstItem="Cm6-Ye-N2G" firstAttribute="leading" secondItem="Pdq-oo-yaI" secondAttribute="leading" constant="64" id="dCn-To-tUv"/>
+                            <constraint firstItem="Pdq-oo-yaI" firstAttribute="bottom" secondItem="HXr-fZ-5hW" secondAttribute="bottom" constant="39" id="gJb-Fd-ArZ"/>
+                            <constraint firstItem="nZY-Ge-udh" firstAttribute="top" secondItem="YhB-ch-p5d" secondAttribute="bottom" constant="8" id="tyb-vj-HHT"/>
+                            <constraint firstItem="HXr-fZ-5hW" firstAttribute="centerX" secondItem="Cm6-Ye-N2G" secondAttribute="centerX" id="u5b-O7-hvK"/>
                             <constraint firstItem="YhB-ch-p5d" firstAttribute="top" secondItem="Pdq-oo-yaI" secondAttribute="top" id="uCo-wG-KV6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pdq-oo-yaI"/>
                     </view>
                     <connections>
                         <outlet property="calendarView" destination="YhB-ch-p5d" id="7jM-co-bfN"/>
+                        <outlet property="dateAndTimeLabel" destination="nZY-Ge-udh" id="5Vu-NH-dho"/>
+                        <outlet property="guestsLabel" destination="8Ml-yQ-njW" id="S51-55-rKA"/>
+                        <outlet property="guestsSlider" destination="Cm6-Ye-N2G" id="3nJ-mp-RC5"/>
+                        <outlet property="reserveButton" destination="HXr-fZ-5hW" id="reU-Yh-wzN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LZy-gf-QeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3529" y="-1121"/>
+            <point key="canvasLocation" x="3528.8000000000002" y="-1121.2893553223389"/>
         </scene>
         <!--Experience ImageVC-->
         <scene sceneID="iTN-fi-8hd">
