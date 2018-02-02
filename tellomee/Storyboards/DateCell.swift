@@ -12,10 +12,10 @@ import JTAppleCalendar
 class DateCell: JTAppleCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var selectedView: UIView!
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.selectedView.layer.cornerRadius = self.selectedView.bounds.size.width / 2.0;
-    }
+//
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//        self.selectedView.layer.cornerRadius = self.selectedView.bounds.size.width / 2.0;
+//    }
 }

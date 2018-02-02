@@ -14,6 +14,9 @@
 		E71F33A620017CAA00312B91 /* TextGetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71F33A420017CAA00312B91 /* TextGetter.xib */; };
 		E71F33A82004509800312B91 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A72004509800312B91 /* TabBarController.swift */; };
 		E71F33AA2004650800312B91 /* ExperienceEditorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A92004650800312B91 /* ExperienceEditorTableVC.swift */; };
+		E7238A642022521400496FBC /* UICalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7238A632022521400496FBC /* UICalendar.xib */; };
+		E7238A662022524300496FBC /* UICalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7238A652022524300496FBC /* UICalendar.swift */; };
+		E7238A682022699C00496FBC /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7238A672022699C00496FBC /* DateCell.xib */; };
 		E723DD871FC3E17800B4345E /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723DD861FC3E17800B4345E /* Thread.swift */; };
 		E72B24891FC6539A00DE0897 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B24881FC6539A00DE0897 /* DiscoverVC.swift */; };
 		E72B248B1FC656F400DE0897 /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B248A1FC656F400DE0897 /* ExperienceManager.swift */; };
@@ -65,6 +68,9 @@
 		E71F33A420017CAA00312B91 /* TextGetter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextGetter.xib; sourceTree = "<group>"; };
 		E71F33A72004509800312B91 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E71F33A92004650800312B91 /* ExperienceEditorTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceEditorTableVC.swift; sourceTree = "<group>"; };
+		E7238A632022521400496FBC /* UICalendar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UICalendar.xib; sourceTree = "<group>"; };
+		E7238A652022524300496FBC /* UICalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICalendar.swift; sourceTree = "<group>"; };
+		E7238A672022699C00496FBC /* DateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
 		E723DD861FC3E17800B4345E /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		E72B24881FC6539A00DE0897 /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		E72B248A1FC656F400DE0897 /* ExperienceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceManager.swift; sourceTree = "<group>"; };
@@ -146,6 +152,10 @@
 				E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */,
 				E71F33A320017CAA00312B91 /* TextGetterController.swift */,
 				E71F33A420017CAA00312B91 /* TextGetter.xib */,
+				E7238A652022524300496FBC /* UICalendar.swift */,
+				E7238A632022521400496FBC /* UICalendar.xib */,
+				E7B94FA620195F4D00C5FBCB /* DateCell.swift */,
+				E7238A672022699C00496FBC /* DateCell.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -240,7 +250,6 @@
 				E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */,
 				E7D0A7831FDB573D008319CF /* Constants.swift */,
 				E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */,
-				E7B94FA620195F4D00C5FBCB /* DateCell.swift */,
 				E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */,
 				E7B9F74B1FB6CAAF0058CE61 /* Info.plist */,
 				E7F9A07E1FB6D1DC00916FBA /* tellomee.entitlements */,
@@ -320,10 +329,12 @@
 				E71F33A620017CAA00312B91 /* TextGetter.xib in Resources */,
 				E72F64471FBBB22B0023489D /* Podfile in Resources */,
 				E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */,
+				E7238A682022699C00496FBC /* DateCell.xib in Resources */,
 				E7B9F7521FB6CC5D0058CE61 /* GoogleService-Info.plist in Resources */,
 				E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */,
 				E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */,
 				E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */,
+				E7238A642022521400496FBC /* UICalendar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +441,7 @@
 				E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */,
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,
 				E72B24891FC6539A00DE0897 /* DiscoverVC.swift in Sources */,
+				E7238A662022524300496FBC /* UICalendar.swift in Sources */,
 				E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */,
 				E7FE89F61FCCF284008ADCEF /* MyExperiencesTableVC.swift in Sources */,
 				E71F33A82004509800312B91 /* TabBarController.swift in Sources */,
