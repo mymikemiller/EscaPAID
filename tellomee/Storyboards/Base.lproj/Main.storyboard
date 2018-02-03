@@ -1579,28 +1579,34 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="6q6-3j-HV9" detailTextLabel="MqP-Vv-bW3" style="IBUITableViewCellStyleValue1" id="oiv-yQ-jfO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oiv-yQ-jfO">
                                         <rect key="frame" x="0.0" y="132" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oiv-yQ-jfO" id="Wcx-8f-yfJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Provider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6q6-3j-HV9">
-                                                    <rect key="frame" x="16" y="12" width="64" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hp-iF-hIW">
+                                                    <rect key="frame" x="16" y="11" width="64" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MqP-Vv-bW3">
-                                                    <rect key="frame" x="315" y="12" width="44" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRo-Pe-6H6">
+                                                    <rect key="frame" x="321" y="7" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="messageButton_click:" destination="Oab-Oo-qV8" eventType="touchUpInside" id="9ac-Ai-BQ1"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5hp-iF-hIW" firstAttribute="centerY" secondItem="Wcx-8f-yfJ" secondAttribute="centerY" id="0ly-vu-zNd"/>
+                                                <constraint firstItem="CRo-Pe-6H6" firstAttribute="trailing" secondItem="Wcx-8f-yfJ" secondAttribute="trailing" constant="-8" id="3h8-ce-afa"/>
+                                                <constraint firstItem="CRo-Pe-6H6" firstAttribute="centerY" secondItem="Wcx-8f-yfJ" secondAttribute="centerY" id="TII-Is-lLp"/>
+                                                <constraint firstItem="CRo-Pe-6H6" firstAttribute="baseline" secondItem="5hp-iF-hIW" secondAttribute="baseline" id="e47-VK-9uL"/>
+                                                <constraint firstItem="5hp-iF-hIW" firstAttribute="leading" secondItem="Wcx-8f-yfJ" secondAttribute="leadingMargin" id="eX2-AI-9xL"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="QNj-h0-AUx" detailTextLabel="xft-lJ-ngo" style="IBUITableViewCellStyleValue1" id="kuy-Eu-L9s">
@@ -1677,7 +1683,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="jNR-g7-nSJ" id="H2e-hJ-AVS"/>
                         <outlet property="numGuestsLabel" destination="xft-lJ-ngo" id="NGK-Vo-u6N"/>
-                        <outlet property="providerLabel" destination="MqP-Vv-bW3" id="J3K-GY-Zba"/>
+                        <outlet property="providerButton" destination="CRo-Pe-6H6" id="A2n-Yk-Wzc"/>
                         <outlet property="timeLabel" destination="qKO-tq-CzM" id="rZs-nT-5CQ"/>
                         <outlet property="titleLabel" destination="Ysh-Rz-RhY" id="Enp-tT-fv7"/>
                         <outlet property="totalLabel" destination="2qq-7l-Ba0" id="UNH-hN-PWa"/>
@@ -1685,7 +1691,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Dr-e8-Lcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4269" y="-1147"/>
+            <point key="canvasLocation" x="4268" y="-1147.3763118440781"/>
         </scene>
         <!--Experience ImageVC-->
         <scene sceneID="iTN-fi-8hd">
