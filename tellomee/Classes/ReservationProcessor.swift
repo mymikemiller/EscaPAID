@@ -19,6 +19,8 @@ class ReservationProcessor {
     static func reserve(_ reservation: Reservation) {
         // Post a confirmation message to the curator
         postReservationConfirmationMessage(for: reservation)
+        
+        // Save the reservation to the database
     }
     
     static func postReservationConfirmationMessage(for reservation: Reservation) {
