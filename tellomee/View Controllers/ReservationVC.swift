@@ -46,11 +46,7 @@ class ReservationVC: UIViewController {
         if (segue.identifier == "showConfirmationVC") {
             let confirmationVC = (segue.destination as! ConfirmationTableVC)
             
-            
-            confirmationVC.experience = self.experience
-            confirmationVC.date = dateFormatter.string(from: calendarView.selectedDate!)
-            confirmationVC.time = experience?.startTime
-            confirmationVC.numGuests = Int(self.guestsSlider.value)
+            confirmationVC.reservation = Reservation(experience: experience!, date: calendarView.selectedDate!, numGuests: Int(self.guestsSlider.value))
         }
     }
     

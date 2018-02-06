@@ -37,6 +37,8 @@
 		E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
 		E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
 		E79FA5912025398C0060B44D /* ConfirmationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */; };
+		E79FA59520290E3D0060B44D /* ReservationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59420290E3D0060B44D /* ReservationProcessor.swift */; };
+		E79FA59720290EA50060B44D /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59620290EA50060B44D /* Reservation.swift */; };
 		E7B94FA520195C1E00C5FBCB /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */; };
 		E7B94FA720195F4D00C5FBCB /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
 		E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
@@ -92,6 +94,8 @@
 		E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginScreenVC.swift; sourceTree = "<group>"; };
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
 		E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTableVC.swift; sourceTree = "<group>"; };
+		E79FA59420290E3D0060B44D /* ReservationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationProcessor.swift; sourceTree = "<group>"; };
+		E79FA59620290EA50060B44D /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
 		E7B94FA620195F4D00C5FBCB /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		E7B9F7391FB6CAAE0058CE61 /* tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +223,8 @@
 				E723DD861FC3E17800B4345E /* Thread.swift */,
 				E72B248E1FC65B3800DE0897 /* Experience.swift */,
 				E712DE452015622500661DE7 /* Days.swift */,
+				E79FA59420290E3D0060B44D /* ReservationProcessor.swift */,
+				E79FA59620290EA50060B44D /* Reservation.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 				E72B248F1FC65B3800DE0897 /* Experience.swift in Sources */,
 				E7B9F7451FB6CAAF0058CE61 /* tellomee.xcdatamodeld in Sources */,
 				E712DE4420154F1C00661DE7 /* DaySelectorTableVC.swift in Sources */,
+				E79FA59520290E3D0060B44D /* ReservationProcessor.swift in Sources */,
 				E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */,
 				E7D316881FCF246A0062E178 /* ExperienceImageVC.swift in Sources */,
 				E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */,
@@ -445,6 +452,7 @@
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,
 				E72B24891FC6539A00DE0897 /* DiscoverVC.swift in Sources */,
 				E7238A662022524300496FBC /* UICalendar.swift in Sources */,
+				E79FA59720290EA50060B44D /* Reservation.swift in Sources */,
 				E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */,
 				E7FE89F61FCCF284008ADCEF /* MyExperiencesTableVC.swift in Sources */,
 				E71F33A82004509800312B91 /* TabBarController.swift in Sources */,

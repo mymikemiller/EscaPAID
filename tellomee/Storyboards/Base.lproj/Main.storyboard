@@ -1668,6 +1668,9 @@
                                                     <rect key="frame" x="164" y="6" width="46" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Pay"/>
+                                                    <connections>
+                                                        <action selector="payButton_click:" destination="Oab-Oo-qV8" eventType="touchUpInside" id="jHv-E9-JRX"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
