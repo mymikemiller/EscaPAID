@@ -42,6 +42,7 @@
 		E79FA59D202A53390060B44D /* ReservationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59C202A53390060B44D /* ReservationManager.swift */; };
 		E79FA59F202A69050060B44D /* ReservationsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59E202A69050060B44D /* ReservationsTableVC.swift */; };
 		E79FA5A3202A6AB90060B44D /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */; };
+		E79FA5A5202B6C0E0060B44D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5A4202B6C0E0060B44D /* Helper.swift */; };
 		E7B94FA520195C1E00C5FBCB /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */; };
 		E7B94FA720195F4D00C5FBCB /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
 		E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
@@ -102,6 +103,7 @@
 		E79FA59C202A53390060B44D /* ReservationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationManager.swift; sourceTree = "<group>"; };
 		E79FA59E202A69050060B44D /* ReservationsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsTableVC.swift; sourceTree = "<group>"; };
 		E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
+		E79FA5A4202B6C0E0060B44D /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
 		E7B94FA620195F4D00C5FBCB /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		E7B9F7391FB6CAAE0058CE61 /* tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -266,6 +268,7 @@
 				E720AC071FC210AB00E9C2EF /* Classes */,
 				E720AC051FC2100800E9C2EF /* Managers */,
 				E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */,
+				E79FA5A4202B6C0E0060B44D /* Helper.swift */,
 				E7D0A7831FDB573D008319CF /* Constants.swift */,
 				E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */,
 				E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */,
@@ -478,6 +481,7 @@
 				E723DD871FC3E17800B4345E /* Thread.swift in Sources */,
 				E7FE89FA1FCD0180008ADCEF /* MyExperienceManager.swift in Sources */,
 				E7F585F81FCCDECE00536EF5 /* CuratorSettingsVC.swift in Sources */,
+				E79FA5A5202B6C0E0060B44D /* Helper.swift in Sources */,
 				E712DE462015622500661DE7 /* Days.swift in Sources */,
 				E732DA931FC8DCC400BCF691 /* ThreadsNavigationController.swift in Sources */,
 			);
