@@ -36,7 +36,10 @@ class ThreadsTableVC: UITableViewController {
     
     func startChat(thread:Thread) {
         selectedThread = thread
-        navigationController?.popToRootViewController(animated: true)
+        // If we're on a different view (e.g. already in a thread, and the user loaded a new thread by clicking on the user in Receipts), move back to the thread list before segueing into a new thread
+        if (navigationController?.visibleViewController != self) {
+            navigationController?.popToRootViewController(animated: true)
+        }
         self.performSegue(withIdentifier: "showChatView", sender: self)
     }
 
