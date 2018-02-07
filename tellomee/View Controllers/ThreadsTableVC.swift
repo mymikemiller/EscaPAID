@@ -15,12 +15,6 @@ class ThreadsTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         ThreadManager.fillThreads(onThreadUpdate: onThreadUpdate) {
             () in
@@ -42,9 +36,9 @@ class ThreadsTableVC: UITableViewController {
     
     func startChat(thread:Thread) {
         selectedThread = thread
+        navigationController?.popToRootViewController(animated: true)
         self.performSegue(withIdentifier: "showChatView", sender: self)
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,8 +73,7 @@ class ThreadsTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedThread = ThreadManager.threads[indexPath.row]
-        self.performSegue(withIdentifier: "showChatView", sender: self)
+        startChat(thread: ThreadManager.threads[indexPath.row])
     }
 
     /*
