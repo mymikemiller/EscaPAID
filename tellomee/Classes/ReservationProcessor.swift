@@ -15,6 +15,7 @@ class ReservationProcessor {
         postReservationConfirmationMessage(for: reservation)
         
         // Save the reservation to the database
+        ReservationManager.saveNew(reservation: reservation)
     }
     
     static func postReservationConfirmationMessage(for reservation: Reservation) {

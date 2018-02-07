@@ -58,4 +58,13 @@ class ReservationManager: NSObject {
             }
         }
     }
+    
+    static func saveNew(reservation: Reservation) {
+     FirebaseManager.databaseRef.child("reservations").childByAutoId().updateChildValues([
+            "experienceId":reservation.experience.id,
+            "curator":reservation.experience.curator.uid,
+            "user": reservation.user.uid,
+            "date": Reservation.databaseDateFormatter.string(from: reservation.date),
+            "numGuests": reservation.numGuests])
+    }
 }
