@@ -46,7 +46,7 @@ class ReservationVC: UIViewController {
         if (segue.identifier == "showConfirmationVC") {
             let confirmationVC = (segue.destination as! ConfirmationTableVC)
             
-            confirmationVC.reservation = Reservation(experience: experience!, date: calendarView.selectedDate!, numGuests: Int(self.guestsSlider.value))
+            confirmationVC.reservation = Reservation(experience: experience!, user: FirebaseManager.user!, date: calendarView.selectedDate!, numGuests: Int(self.guestsSlider.value))
         }
     }
     

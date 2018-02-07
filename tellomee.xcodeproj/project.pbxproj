@@ -40,6 +40,8 @@
 		E79FA59520290E3D0060B44D /* ReservationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59420290E3D0060B44D /* ReservationProcessor.swift */; };
 		E79FA59720290EA50060B44D /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59620290EA50060B44D /* Reservation.swift */; };
 		E79FA59D202A53390060B44D /* ReservationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59C202A53390060B44D /* ReservationManager.swift */; };
+		E79FA59F202A69050060B44D /* ReservationsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59E202A69050060B44D /* ReservationsTableVC.swift */; };
+		E79FA5A3202A6AB90060B44D /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */; };
 		E7B94FA520195C1E00C5FBCB /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */; };
 		E7B94FA720195F4D00C5FBCB /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
 		E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
@@ -98,6 +100,8 @@
 		E79FA59420290E3D0060B44D /* ReservationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationProcessor.swift; sourceTree = "<group>"; };
 		E79FA59620290EA50060B44D /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		E79FA59C202A53390060B44D /* ReservationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationManager.swift; sourceTree = "<group>"; };
+		E79FA59E202A69050060B44D /* ReservationsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsTableVC.swift; sourceTree = "<group>"; };
+		E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
 		E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
 		E7B94FA620195F4D00C5FBCB /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		E7B9F7391FB6CAAE0058CE61 /* tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +194,7 @@
 				E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */,
 				E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */,
 				E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */,
+				E79FA59E202A69050060B44D /* ReservationsTableVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 				E74549911FB758B300A6A32C /* ChatTableViewCell.swift */,
 				E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */,
 				E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */,
+				E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 				E7D0A7841FDB573D008319CF /* Constants.swift in Sources */,
 				E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */,
 				E74549961FB78F4500A6A32C /* ThreadManager.swift in Sources */,
+				E79FA59F202A69050060B44D /* ReservationsTableVC.swift in Sources */,
 				E74549981FB79AE200A6A32C /* SettingsVC.swift in Sources */,
 				E72B248F1FC65B3800DE0897 /* Experience.swift in Sources */,
 				E7B9F7451FB6CAAF0058CE61 /* tellomee.xcdatamodeld in Sources */,
@@ -465,6 +472,7 @@
 				E7F9A0821FB7378B00916FBA /* ChatVC.swift in Sources */,
 				E72D8E531FBCC5C1001026D6 /* LoginVC.swift in Sources */,
 				E71F33A520017CAA00312B91 /* TextGetterController.swift in Sources */,
+				E79FA5A3202A6AB90060B44D /* ReservationTableViewCell.swift in Sources */,
 				E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */,
 				E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */,
 				E723DD871FC3E17800B4345E /* Thread.swift in Sources */,

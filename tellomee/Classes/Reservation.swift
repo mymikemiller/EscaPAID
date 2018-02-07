@@ -9,7 +9,19 @@
 import Foundation
 
 class Reservation {
+    static let databaseDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        return df
+    }()
+    static let prettyDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "EEEE, MMMM dd, yyyy"
+        return df
+    }()
+    
     let experience: Experience
+    let user: User
     let date: Date
     let numGuests: Int
     
@@ -19,9 +31,14 @@ class Reservation {
         }
     }
     
-    init(experience: Experience, date: Date, numGuests: Int) {
+    init(experience: Experience, user: User, date: Date, numGuests: Int) {
         self.experience = experience
+        self.user = user
         self.date = date
         self.numGuests = numGuests
+    }
+    
+    var dateAsString: String {
+        get { return "\(Reservation.prettyDateFormatter.string(from: (date))) at \(experience.startTime)" }
     }
 }

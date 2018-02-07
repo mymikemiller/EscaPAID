@@ -10,6 +10,9 @@ import UIKit
 
 class SettingsTableVC: UITableViewController {
 
+    @IBOutlet weak var editProfileCell: UITableViewCell!
+    @IBOutlet weak var logOutCell: UITableViewCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,12 +33,12 @@ class SettingsTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if (indexPath.section == 0) {
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        if (cell == editProfileCell) {
             // Edit Profile
             self.performSegue(withIdentifier: "showProfileEditor", sender: self)
-        } else if (indexPath.section == 1) {
-            // Manage Curated Experiences and Add Experience are hooked up to "show" segues
-        } else if (indexPath.section == 2) {
+        } else if (cell == logOutCell) {
             // Log Out
             
             FirebaseManager.logOut()
@@ -45,6 +48,8 @@ class SettingsTableVC: UITableViewController {
             originVC.autoLogin = false
             self.present(originVC, animated: true, completion: nil)
 
+        } else {
+            // All other cells are hooked up to "show" segues
         }
     }
 
@@ -95,14 +100,14 @@ class SettingsTableVC: UITableViewController {
     
     
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "showReceipts" || segue.identifier == "showReservations") {
+            
+            let controller = segue.destination as! ReservationsTableVC
+            
+            controller.displayType = (segue.identifier == "showReceipts") ? .ReservationsAttended : .ReservationsCurated
+        }
     }
-    */
 
 }

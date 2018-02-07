@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 
-class ReservationsManager: NSObject {
+class ReservationManager: NSObject {
     
     static let databaseRef = Database.database().reference()
     
@@ -21,59 +21,41 @@ class ReservationsManager: NSObject {
     func fillReservations(forUser user: User, completion: @escaping () -> Void) {
         reservations = [Reservation]()
         
-        ReservationsManager.databaseRef.child("reservations").queryOrdered(byChild: "user").queryEqual(toValue: user.uid).observe(.childAdded, with: {
+        ReservationManager.databaseRef.child("reservations").queryOrdered(byChild: "user").queryEqual(toValue: user.uid).observe(.childAdded, with: {
             snap in
             
-            self.processReservationSnapshot(snap)
+            self.processReservationSnapshot(snap, completion: completion)
         })
     }
     
     func fillReservations(forCurator curator: User, completion: @escaping () -> Void) {
         reservations = [Reservation]()
         
-        ReservationsManager.databaseRef.child("reservations").queryOrdered(byChild: "curator").queryEqual(toValue: curator.uid).observe(.childAdded, with: {
+        ReservationManager.databaseRef.child("reservations").queryOrdered(byChild: "curator").queryEqual(toValue: curator.uid).observe(.childAdded, with: {
             snap in
             
-            self.processReservationSnapshot(snap)
+            self.processReservationSnapshot(snap, completion: completion)
         })
     }
     
-    func processReservationSnapshot(_ snap: DataSnapshot) {
+    func processReservationSnapshot(_ snap: DataSnapshot, completion: @escaping () -> Void) {
         
         if let result = snap.value as? [String:AnyObject]{
             
-//            FirebaseManager.getUser(uid: result["uid"] as! String) { (curator) in
-//
-//                var days = Days.All
-//                if (result["days"] != nil) {
-//                    days = Days(Monday: result["days"]!["monday"] as! Bool,
-//                                Tuesday: result["days"]!["tuesday"] as! Bool,
-//                                Wednesday: result["days"]!["wednesday"] as! Bool,
-//                                Thursday: result["days"]!["thursday"] as! Bool,
-//                                Friday: result["days"]!["friday"] as! Bool,
-//                                Saturday: result["days"]!["saturday"] as! Bool,
-//                                Sunday: result["days"]!["sunday"] as! Bool)
-//                }
-//
-//                let experience = Experience(
-//                    id: snap.key,
-//                    title: result["title"] as! String,
-//                    category: result["category"] as! String,
-//                    city: result["city"] as! String,
-//                    startTime: result["startTime"] as! String,
-//                    endTime: result["endTime"] as! String,
-//                    includes: result["includes"] as! String,
-//                    price: Double(result["price"]! as! Double),
-//                    days: days,
-//                    maxGuests: result["maxGuests"] as! Int,
-//                    description: result["description"] as! String,
-//                    imageUrls: result["images"] as! [String],
-//                    curator: curator)
-//
-//                experiences.append(experience)
-//                completion()
-//            }
-            
+            // Get the user first
+            FirebaseManager.getUser(uid: result["user"] as! String) { (user) in
+                    
+                ExperienceManager.getExperience(experienceId: result["experienceId"] as! String) {
+                    (experience) in
+                    
+                    let date = Reservation.databaseDateFormatter.date(from: result["date"] as! String)
+                    
+                    let reservation = Reservation(experience: experience, user: user, date: date!, numGuests: result["numGuests"] as! Int)
+                    
+                    self.reservations.append(reservation)
+                    completion()
+                }
+            }
         }
     }
 }
