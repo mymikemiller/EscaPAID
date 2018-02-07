@@ -13,6 +13,7 @@ import JSQMessagesViewController
 class ChatVC: JSQMessagesViewController {
     
     var thread:Thread?
+    let postManager = PostManager()
     
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
         return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
@@ -24,9 +25,6 @@ class ChatVC: JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Start with an empty message list. It shows for a split second.
-        PostManager.clearPosts()
         
         senderId = FirebaseManager.currentFirebaseUser?.uid
         senderDisplayName = ""
@@ -43,7 +41,7 @@ class ChatVC: JSQMessagesViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        PostManager.fillPosts(uid: FirebaseManager.currentFirebaseUser?.uid, toId:(thread?.user.uid)!, threadId: (thread?.threadId)!, completion: {_ in
+        postManager.fillPosts(uid: FirebaseManager.currentFirebaseUser?.uid, toId:(thread?.user.uid)!, threadId: (thread?.threadId)!, completion: {_ in
             // Now that it's been loaded, show the messages immediately (no animation)
             self.finishReceivingMessage(animated: false)
         })
@@ -60,23 +58,23 @@ class ChatVC: JSQMessagesViewController {
             self.thread!.setRead(read: true)
             
             // Remove PostManager's observer so we don't keep listening for new messages
-            PostManager.removeObserver(threadId: thread!.threadId)
+            postManager.removeObserver(threadId: thread!.threadId)
         }
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData!
     {
-        return PostManager.messages[indexPath.item]
+        return postManager.messages[indexPath.item]
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return PostManager.messages.count
+        return postManager.messages.count
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource!
     {
-        return PostManager.messages[(indexPath?.item)!].senderId == senderId ? outgoingBubble : incomingBubble
+        return postManager.messages[(indexPath?.item)!].senderId == senderId ? outgoingBubble : incomingBubble
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource!
