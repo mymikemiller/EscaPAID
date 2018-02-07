@@ -56,8 +56,22 @@ class ReservationsTableVC: UITableViewController {
         
         // Configure the cell...
         cell.title.text = reservation.experience.title
-        cell.date.text = reservation.dateAsString
+        cell.date.text = reservation.dateAsPrettyString
         cell.with.setTitle("With \(getWhoWith(reservation: reservation).displayName)", for: .normal)
+        
+        switch reservation.status {
+        case "pending":
+            cell.status.text = "Pending Acceptance"
+            cell.status.textColor = UIColor.blue
+        case "accepted":
+            cell.status.text = "Accepted!"
+            cell.status.textColor = UIColor.green
+        case "declined":
+            cell.status.text = "Declined"
+            cell.status.textColor = UIColor.red
+        default:
+            cell.status.text = ""
+        }
 
         return cell
     }

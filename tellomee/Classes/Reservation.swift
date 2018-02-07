@@ -24,6 +24,7 @@ class Reservation {
     let user: User
     let date: Date
     let numGuests: Int
+    let status: String // "accepted", "declined", or "pending"
     
     var total: Double {
         get {
@@ -31,14 +32,15 @@ class Reservation {
         }
     }
     
-    init(experience: Experience, user: User, date: Date, numGuests: Int) {
+    init(experience: Experience, user: User, date: Date, numGuests: Int, status: String) {
         self.experience = experience
         self.user = user
         self.date = date
         self.numGuests = numGuests
+        self.status = status
     }
     
-    var dateAsString: String {
+    var dateAsPrettyString: String {
         get { return "\(Reservation.prettyDateFormatter.string(from: (date))) at \(experience.startTime)" }
     }
 }

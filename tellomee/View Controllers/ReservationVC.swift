@@ -46,7 +46,13 @@ class ReservationVC: UIViewController {
         if (segue.identifier == "showConfirmationVC") {
             let confirmationVC = (segue.destination as! ConfirmationTableVC)
             
-            confirmationVC.reservation = Reservation(experience: experience!, user: FirebaseManager.user!, date: calendarView.selectedDate!, numGuests: Int(self.guestsSlider.value))
+            // Create a new, pending reservation with the specified information
+            confirmationVC.reservation =
+                Reservation(experience: experience!,
+                            user: FirebaseManager.user!,
+                            date: calendarView.selectedDate!,
+                            numGuests: Int(self.guestsSlider.value),
+                            status: "pending")
         }
     }
     

@@ -50,7 +50,12 @@ class ReservationManager: NSObject {
                     
                     let date = Reservation.databaseDateFormatter.date(from: result["date"] as! String)
                     
-                    let reservation = Reservation(experience: experience, user: user, date: date!, numGuests: result["numGuests"] as! Int)
+                    let reservation =
+                        Reservation(experience: experience,
+                                    user: user,
+                                    date: date!,
+                                    numGuests: result["numGuests"] as! Int,
+                                    status: result["status"] as! String)
                     
                     self.reservations.append(reservation)
                     completion()
@@ -65,6 +70,7 @@ class ReservationManager: NSObject {
             "curator":reservation.experience.curator.uid,
             "user": reservation.user.uid,
             "date": Reservation.databaseDateFormatter.string(from: reservation.date),
-            "numGuests": reservation.numGuests])
+            "numGuests": reservation.numGuests,
+            "status": reservation.status])
     }
 }

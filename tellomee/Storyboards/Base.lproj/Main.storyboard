@@ -743,26 +743,38 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKI-8K-XhD">
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMM-KR-l0N">
                                             <rect key="frame" x="16" y="70" width="343" height="30"/>
-                                            <state key="normal" title="Button"/>
-                                        </button>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKI-8K-XhD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="293.5" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFY-GQ-Yhc">
+                                                    <rect key="frame" x="293.5" y="0.0" width="49.5" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="uKI-8K-XhD" firstAttribute="top" secondItem="ibd-jl-NKT" secondAttribute="bottom" constant="8" symbolic="YES" id="0oS-aA-eoG"/>
                                         <constraint firstItem="daI-4F-MOM" firstAttribute="trailing" secondItem="Thz-Jm-IaY" secondAttribute="trailingMargin" id="3kG-jA-9dO"/>
+                                        <constraint firstItem="XMM-KR-l0N" firstAttribute="top" secondItem="ibd-jl-NKT" secondAttribute="bottom" constant="8" symbolic="YES" id="60I-hw-zeI"/>
                                         <constraint firstItem="ibd-jl-NKT" firstAttribute="top" secondItem="daI-4F-MOM" secondAttribute="bottom" constant="8" symbolic="YES" id="7YC-LK-FJL"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="XMM-KR-l0N" secondAttribute="bottom" constant="1" id="9rh-W4-5Mj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="XMM-KR-l0N" secondAttribute="trailing" id="APa-X9-Jmq"/>
                                         <constraint firstItem="daI-4F-MOM" firstAttribute="top" secondItem="Thz-Jm-IaY" secondAttribute="topMargin" constant="1" id="Er1-cG-Rjn"/>
-                                        <constraint firstItem="ibd-jl-NKT" firstAttribute="trailing" secondItem="uKI-8K-XhD" secondAttribute="trailing" id="I3h-NI-3cu"/>
-                                        <constraint firstItem="ibd-jl-NKT" firstAttribute="leading" secondItem="uKI-8K-XhD" secondAttribute="leading" id="IPF-Zb-ytJ"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="uKI-8K-XhD" secondAttribute="bottom" constant="1" id="L5W-cN-UHo"/>
                                         <constraint firstItem="daI-4F-MOM" firstAttribute="leading" secondItem="Thz-Jm-IaY" secondAttribute="leadingMargin" id="S9x-aZ-IMG"/>
+                                        <constraint firstItem="XMM-KR-l0N" firstAttribute="leading" secondItem="Thz-Jm-IaY" secondAttribute="leadingMargin" id="evg-ch-fvY"/>
                                         <constraint firstItem="daI-4F-MOM" firstAttribute="leading" secondItem="ibd-jl-NKT" secondAttribute="leading" id="fHG-Ne-rji"/>
                                         <constraint firstItem="daI-4F-MOM" firstAttribute="trailing" secondItem="ibd-jl-NKT" secondAttribute="trailing" id="gdW-Dq-0EK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="date" destination="ibd-jl-NKT" id="6YG-fH-VhF"/>
+                                    <outlet property="status" destination="lFY-GQ-Yhc" id="sbm-1O-Mnu"/>
                                     <outlet property="title" destination="daI-4F-MOM" id="xac-Qf-4P1"/>
                                     <outlet property="with" destination="uKI-8K-XhD" id="Geg-IG-f0l"/>
                                 </connections>
