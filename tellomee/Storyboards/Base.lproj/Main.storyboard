@@ -851,6 +851,9 @@
                                                     <rect key="frame" x="16" y="6" width="343" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="User"/>
+                                                    <connections>
+                                                        <action selector="userButton_click:" destination="uQM-xH-bxG" eventType="touchUpInside" id="QZS-dO-YaK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>

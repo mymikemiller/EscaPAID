@@ -98,16 +98,38 @@ class ReceiptTableVC: UITableViewController {
         }
         return super.tableView(tableView, heightForHeaderInSection: section)
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        // Add the checkmark to the clicked cell
+        if cell == acceptCell {
+            acceptCell.accessoryType = .checkmark
+            declineCell.accessoryType = .none
+        } else if cell == declineCell {
+            acceptCell.accessoryType = .none
+            declineCell.accessoryType = .checkmark
+        }
+        
+        // Deselect the row. Adding the checkmark was enough.
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     
-    // Go to the chat for the shown user
-//    ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: getWhoWith(reservation: reservation), completion: {thread in
-//
-//    let threadsNavigationController: ThreadsNavigationController = self.tabBarController?.viewControllers![2] as! ThreadsNavigationController
-//    threadsNavigationController.threadToShowOnLoad = thread
-//    self.tabBarController?.selectedViewController = threadsNavigationController
-//    })
+    @IBAction func userButton_click(_ sender: Any) {
+        
+        // Go to the chat for the shown user
+        ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: otherUser, completion: {thread in
+    
+            let threadsNavigationController: ThreadsNavigationController = self.tabBarController?.viewControllers![2] as! ThreadsNavigationController
+            threadsNavigationController.threadToShowOnLoad = thread
+            self.tabBarController?.selectedViewController = threadsNavigationController
+        })
+    }
+    
+    
+    
 
     /*
     // MARK: - Navigation
