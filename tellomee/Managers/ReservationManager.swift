@@ -50,6 +50,8 @@ class ReservationManager: NSObject {
                     
                     let date = Reservation.databaseDateFormatter.date(from: result["date"] as! String)
                     
+                    let status = Reservation.Status(rawValue: result["status"] as! String)!
+                    
                     let reservation =
                         Reservation(experience: experience,
                                     user: user,
@@ -57,7 +59,7 @@ class ReservationManager: NSObject {
                                     numGuests: result["numGuests"] as! Int,
                                     totalCharge: result["totalCharge"] as! Double,
                                     fee: result["fee"] as! Double,
-                                    status: result["status"] as! String)
+                                    status: status)
                     
                     self.reservations.append(reservation)
                     completion()
@@ -76,5 +78,9 @@ class ReservationManager: NSObject {
             "totalCharge": reservation.totalCharge,
             "fee": reservation.fee,
             "status": reservation.status])
+    }
+    
+    static func setStatus(for reservation: Reservation!, status: String) {
+        // Figure out how to set a variable in the database. Need to use an Id like experiences, I guess
     }
 }

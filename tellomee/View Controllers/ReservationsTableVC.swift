@@ -62,13 +62,13 @@ class ReservationsTableVC: UITableViewController {
         cell.with.text = "With \(getWhoWith(reservation: reservation).displayName)"
         
         switch reservation.status {
-        case "pending":
+        case .pending:
             cell.status.text = "Pending Acceptance"
             cell.status.textColor = UIColor.blue
-        case "accepted":
+        case .accepted:
             cell.status.text = "Accepted!"
             cell.status.textColor = UIColor.green
-        case "declined":
+        case .declined:
             cell.status.text = "Declined"
             cell.status.textColor = UIColor.red
         default:

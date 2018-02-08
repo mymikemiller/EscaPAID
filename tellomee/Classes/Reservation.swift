@@ -9,6 +9,13 @@
 import Foundation
 
 class Reservation {
+    
+    enum Status: String {
+        case pending = "pending"
+        case accepted = "accepted"
+        case declined = "declined"
+    }
+    
     static let databaseDateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
@@ -26,9 +33,9 @@ class Reservation {
     let numGuests: Int
     let totalCharge: Double
     let fee: Double
-    let status: String // "accepted", "declined", or "pending"
+    let status: Status
     
-    init(experience: Experience, user: User, date: Date, numGuests: Int, totalCharge: Double, fee: Double, status: String) {
+    init(experience: Experience, user: User, date: Date, numGuests: Int, totalCharge: Double, fee: Double, status: Status) {
         self.experience = experience
         self.user = user
         self.date = date

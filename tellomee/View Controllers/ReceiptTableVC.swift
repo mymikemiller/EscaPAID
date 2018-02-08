@@ -128,6 +128,13 @@ class ReceiptTableVC: UITableViewController {
         })
     }
     
+    @IBAction func sendButton_click(_ sender: Any) {
+        let accepted = acceptCell.accessoryType == .checkmark
+        let newStatus = accepted ? "accepted" : "declined"
+        ReservationManager.setStatus(for: reservation!, status: newStatus)
+    }
+    
+    
     
     
 

@@ -58,7 +58,7 @@ class ReservationVC: UIViewController {
                             numGuests: Int(numGuests),
                             totalCharge: totalCharge,
                             fee: fee,
-                            status: "pending")
+                            status: .pending)
         }
     }
     
