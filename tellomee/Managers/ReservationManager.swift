@@ -55,6 +55,8 @@ class ReservationManager: NSObject {
                                     user: user,
                                     date: date!,
                                     numGuests: result["numGuests"] as! Int,
+                                    totalCharge: result["totalCharge"] as! Double,
+                                    fee: result["fee"] as! Double,
                                     status: result["status"] as! String)
                     
                     self.reservations.append(reservation)
@@ -71,6 +73,8 @@ class ReservationManager: NSObject {
             "user": reservation.user.uid,
             "date": Reservation.databaseDateFormatter.string(from: reservation.date),
             "numGuests": reservation.numGuests,
+            "totalCharge": reservation.totalCharge,
+            "fee": reservation.fee,
             "status": reservation.status])
     }
 }

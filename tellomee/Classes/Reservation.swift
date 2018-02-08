@@ -24,19 +24,17 @@ class Reservation {
     let user: User
     let date: Date
     let numGuests: Int
+    let totalCharge: Double
+    let fee: Double
     let status: String // "accepted", "declined", or "pending"
     
-    var total: Double {
-        get {
-            return Double(numGuests) * (experience.price)
-        }
-    }
-    
-    init(experience: Experience, user: User, date: Date, numGuests: Int, status: String) {
+    init(experience: Experience, user: User, date: Date, numGuests: Int, totalCharge: Double, fee: Double, status: String) {
         self.experience = experience
         self.user = user
         self.date = date
         self.numGuests = numGuests
+        self.totalCharge = totalCharge
+        self.fee = fee
         self.status = status
     }
     

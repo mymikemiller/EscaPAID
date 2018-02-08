@@ -33,7 +33,8 @@ class ConfirmationTableVC: UITableViewController {
         providerButton.setTitle(reservation?.experience.curator.displayName, for: UIControlState.normal)
         numGuestsLabel.text = String((reservation?.numGuests)!)
         totalLabel.text =
-            String(format: "$%.02f", (reservation?.total)!)
+            String(format: "$%.02f", (reservation?.totalCharge)!
+            )
     }
     
     func goToMessageThread() {

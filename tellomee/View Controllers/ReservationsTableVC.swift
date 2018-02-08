@@ -17,6 +17,8 @@ class ReservationsTableVC: UITableViewController {
     
     var displayType: ReservationsDisplayed = .ReservationsAttended
     
+    var selectedReservation: Reservation?
+    
     let reservationManager = ReservationManager()
 
     override func viewDidLoad() {
@@ -57,7 +59,7 @@ class ReservationsTableVC: UITableViewController {
         // Configure the cell...
         cell.title.text = reservation.experience.title
         cell.date.text = reservation.dateAsPrettyString
-        cell.with.setTitle("With \(getWhoWith(reservation: reservation).displayName)", for: .normal)
+        cell.with.text = "With \(getWhoWith(reservation: reservation).displayName)"
         
         switch reservation.status {
         case "pending":
@@ -78,17 +80,12 @@ class ReservationsTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let reservation = reservationManager.reservations[indexPath.row]
+        selectedReservation = reservationManager.reservations[indexPath.row]
         
-        // Go to the chat for the shown user
-        ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: getWhoWith(reservation: reservation), completion: {thread in
-            
-            let threadsNavigationController: ThreadsNavigationController = self.tabBarController?.viewControllers![2] as! ThreadsNavigationController
-            threadsNavigationController.threadToShowOnLoad = thread
-            self.tabBarController?.selectedViewController = threadsNavigationController
-        })
-
+        self.performSegue(withIdentifier: "showReceipt", sender: self)
     }
+    
+    
     
     // Show the curator when we're displaying the reservations we attend, otherwise show the user who booked the reservation
     private func getWhoWith(reservation: Reservation) -> User {
@@ -97,14 +94,13 @@ class ReservationsTableVC: UITableViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "showReceipt") {
+            (segue.destination as! ReceiptTableVC).reservation = selectedReservation
+        }
     }
-    */
 
 }

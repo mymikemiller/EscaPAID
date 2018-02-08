@@ -47,11 +47,17 @@ class ReservationVC: UIViewController {
             let confirmationVC = (segue.destination as! ConfirmationTableVC)
             
             // Create a new, pending reservation with the specified information
+            let numGuests = Double(self.guestsSlider.value)
+            let totalCharge = numGuests * experience!.price
+            let fee = totalCharge * Constants.feePercent
+            
             confirmationVC.reservation =
                 Reservation(experience: experience!,
                             user: FirebaseManager.user!,
                             date: calendarView.selectedDate!,
-                            numGuests: Int(self.guestsSlider.value),
+                            numGuests: Int(numGuests),
+                            totalCharge: totalCharge,
+                            fee: fee,
                             status: "pending")
         }
     }
