@@ -10,12 +10,15 @@ import UIKit
 
 class ReceiptTableVC: UITableViewController {
     
+    let RESPONSE_SECTION = 2
+    
     var reservation: Reservation?
     
     @IBOutlet weak var experienceTitle: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var user: UIButton!
     @IBOutlet weak var guests: UILabel!
+    
     
     @IBOutlet weak var curatorSubtotal: UILabel!
     @IBOutlet weak var fee: UILabel!
@@ -79,6 +82,23 @@ class ReceiptTableVC: UITableViewController {
         // Calling super will use the height set in your storyboard, avoiding hardcoded values
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
+    
+    // Hide the rows for the Response section if the customer is viewing the receipt
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (!isViewedByCurator && section == RESPONSE_SECTION) {
+            return 0
+        }
+        return super.tableView(tableView, numberOfRowsInSection: section)
+    }
+    
+    // Hide the header for the Response section if the customer is viewing the receipt
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (!isViewedByCurator && section == RESPONSE_SECTION) {
+            return 0
+        }
+        return super.tableView(tableView, heightForHeaderInSection: section)
+    }
+
     
     
     // Go to the chat for the shown user
