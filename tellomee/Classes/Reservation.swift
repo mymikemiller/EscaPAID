@@ -27,6 +27,8 @@ class Reservation {
         return df
     }()
     
+    // Id is only assigned once the reservation is saved for the first time, or when it's loaded from the database
+    var id: String?
     let experience: Experience
     let user: User
     let date: Date

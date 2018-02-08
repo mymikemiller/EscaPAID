@@ -20,7 +20,6 @@ class ReservationManager: NSObject {
     
     func fillReservations(forUser user: User, completion: @escaping () -> Void) {
         reservations = [Reservation]()
-        
         ReservationManager.databaseRef.child("reservations").queryOrdered(byChild: "user").queryEqual(toValue: user.uid).observe(.childAdded, with: {
             snap in
             
@@ -61,6 +60,9 @@ class ReservationManager: NSObject {
                                     fee: result["fee"] as! Double,
                                     status: status)
                     
+                    // The id isn't stored as a value, it's the snapthot's key
+                    reservation.id = snap.key
+                    
                     self.reservations.append(reservation)
                     completion()
                 }
@@ -68,8 +70,13 @@ class ReservationManager: NSObject {
         }
     }
     
+    // Saves to database and assigns an id
     static func saveNew(reservation: Reservation) {
-     FirebaseManager.databaseRef.child("reservations").childByAutoId().updateChildValues([
+        let newRef = FirebaseManager.databaseRef.child("reservations").childByAutoId()
+        
+        // Set the key so we can edit the reservation later
+        reservation.id = newRef.key
+        FirebaseManager.databaseRef.child("reservations").childByAutoId().updateChildValues([
             "experienceId":reservation.experience.id,
             "curator":reservation.experience.curator.uid,
             "user": reservation.user.uid,
@@ -80,7 +87,14 @@ class ReservationManager: NSObject {
             "status": reservation.status])
     }
     
-    static func setStatus(for reservation: Reservation!, status: String) {
-        // Figure out how to set a variable in the database. Need to use an Id like experiences, I guess
+    static func setStatus(for reservation: Reservation!, status: Reservation.Status) {
+        
+        if let id = reservation.id {
+            FirebaseManager.databaseRef.child("reservations").child(id).updateChildValues([
+                "status":status.rawValue])
+        } else {
+            NSException(name:NSExceptionName(rawValue: "SetStatusOnUnsavedReservation"), reason:"You must use ReservationManager.saveNew on a new Reservation before calling setStatus").raise()
+        }
+       
     }
 }
