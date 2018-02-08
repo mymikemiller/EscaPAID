@@ -129,9 +129,16 @@ class ReceiptTableVC: UITableViewController {
     }
     
     @IBAction func sendButton_click(_ sender: Any) {
+        // Mark the reservation as accepted / declined
         let accepted = acceptCell.accessoryType == .checkmark
         let newStatus = accepted ? Reservation.Status.accepted : Reservation.Status.declined
         ReservationManager.setStatus(for: reservation!, status: newStatus)
+        
+        // send a message to the user notifying of the new status
+        
+        
+        // Go back to the reservations screen
+        navigationController?.popViewController(animated: true)
     }
     
     

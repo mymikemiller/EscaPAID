@@ -18,6 +18,10 @@ class ReservationManager: NSObject {
     
     var reservations = [Reservation]()
     
+    func clear() {
+        reservations = [Reservation]()
+    }
+    
     func fillReservations(forUser user: User, completion: @escaping () -> Void) {
         reservations = [Reservation]()
         ReservationManager.databaseRef.child("reservations").queryOrdered(byChild: "user").queryEqual(toValue: user.uid).observe(.childAdded, with: {

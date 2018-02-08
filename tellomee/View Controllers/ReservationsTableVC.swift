@@ -24,6 +24,13 @@ class ReservationsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        reservationManager.clear()
+        
         if (displayType == .ReservationsAttended) {
             reservationManager.fillReservations(forUser: FirebaseManager.user!, completion: {
                 
@@ -35,9 +42,6 @@ class ReservationsTableVC: UITableViewController {
                 self.tableView.reloadData()
             })
         }
-        
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
     }
 
     // MARK: - Table view data source
