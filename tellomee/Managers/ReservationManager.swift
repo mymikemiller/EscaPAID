@@ -93,6 +93,8 @@ class ReservationManager: NSObject {
     
     static func setStatus(for reservation: Reservation!, status: Reservation.Status) {
         
+        reservation.status = status
+        
         if let id = reservation.id {
             FirebaseManager.databaseRef.child("reservations").child(id).updateChildValues([
                 "status":status.rawValue])

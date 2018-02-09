@@ -132,13 +132,27 @@ class ReceiptTableVC: UITableViewController {
         // Mark the reservation as accepted / declined
         let accepted = acceptCell.accessoryType == .checkmark
         let newStatus = accepted ? Reservation.Status.accepted : Reservation.Status.declined
-        ReservationManager.setStatus(for: reservation!, status: newStatus)
         
-        // send a message to the user notifying of the new status
-        
-        
-        // Go back to the reservations screen
-        navigationController?.popViewController(animated: true)
+        if let reservation = reservation {
+            ReservationManager.setStatus(for: reservation, status: newStatus)
+            
+            // send a message to the user notifying of the new status
+            let includingMessage = message.text?.count == 0 ? "" : "with the following message "
+            
+            let text = "*** \(FirebaseManager.user!.displayName) \(newStatus.rawValue) your reservation for \(reservation.experience.title) on \(reservation.dateAsPrettyString) \(includingMessage)***"
+            
+            ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: reservation.user, completion: {thread in
+                
+                // Send the notice
+                PostManager.addPost(threadId: (thread.threadId), text: text, toId: thread.user.uid, fromId: (FirebaseManager.user?.uid)!)
+                
+                // Also send the optional message if one was supplied
+                PostManager.addPost(threadId: (thread.threadId), text: self.message.text!, toId: thread.user.uid, fromId: (FirebaseManager.user?.uid)!)
+                
+                // Go back to the reservations screen
+                self.navigationController?.popViewController(animated: true)
+            })
+        }
     }
     
     

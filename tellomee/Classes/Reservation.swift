@@ -35,7 +35,9 @@ class Reservation {
     let numGuests: Int
     let totalCharge: Double
     let fee: Double
-    let status: Status
+    
+    // Status can be changed via the ReservatinManager, which also saves the change to the database
+    var status: Status
     
     init(experience: Experience, user: User, date: Date, numGuests: Int, totalCharge: Double, fee: Double, status: Status) {
         self.experience = experience
