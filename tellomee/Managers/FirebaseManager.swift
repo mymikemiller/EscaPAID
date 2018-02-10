@@ -59,6 +59,8 @@ class FirebaseManager: NSObject {
     }
     
     static func logOut() {
+        // Make sure we also remove the thread observer so it's not listening when we log back in
+        ThreadManager.removeObserver()
         do {
             try Auth.auth().signOut()
         } catch {
@@ -106,7 +108,6 @@ class FirebaseManager: NSObject {
     
     static func getUser(uid:String, completion: @escaping (User) -> Void) {
         databaseRef.child("users").queryOrdered(byChild: "uid").queryEqual(toValue: uid).observeSingleEvent(of: DataEventType.value, with: { (snap) in
-            print(snap)
             
             // There should be only one user with the specified uid so we use nextObject to get the first (only)
             let item = snap.children.nextObject() as! DataSnapshot

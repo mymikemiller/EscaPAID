@@ -16,6 +16,8 @@ class ThreadManager: NSObject {
     
     static var threads = [Thread]()
     
+    static var observeHandle: DatabaseHandle?
+    
     // Add a thread and keep them sorted in descending order by timestamp of last message
     static func add(thread:Thread) {
         threads.append(thread)
@@ -81,10 +83,13 @@ class ThreadManager: NSObject {
     }
     
     static func fillThreads(onThreadUpdate: @escaping (Thread) -> Void, completion: @escaping () -> Void) {
-        let currentUid = Auth.auth().currentUser?.uid
+        let currentUid = FirebaseManager.user?.uid
+        
+        // Empty the thread list
         ThreadManager.threads = [Thread]()
+        
         // Get the current user's threads
-        databaseRef.child("userThreads").queryOrderedByKey().queryEqual(toValue: currentUid).observe(DataEventType.value, with: {
+        observeHandle = databaseRef.child("userThreads").queryOrderedByKey().queryEqual(toValue: currentUid).observe(DataEventType.value, with: {
             userThreadsSnapshot in
             
             // If the user has a thread...
@@ -130,5 +135,12 @@ class ThreadManager: NSObject {
                 }
             }
         })
+    }
+    
+    
+    static func removeObserver() {
+        if ThreadManager.observeHandle != nil {
+            ThreadManager.databaseRef.child("userThreads").child(FirebaseManager.user!.uid).removeObserver(withHandle: observeHandle!)
+        }
     }
 }
