@@ -7,6 +7,7 @@ target 'tellomee' do
 
   # Pods for tellomee
   pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
