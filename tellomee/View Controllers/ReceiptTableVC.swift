@@ -120,12 +120,10 @@ class ReceiptTableVC: UITableViewController {
     @IBAction func userButton_click(_ sender: Any) {
         
         // Go to the chat for the shown user
-        ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: otherUser, completion: {thread in
-    
-            let threadsNavigationController: ThreadsNavigationController = self.tabBarController?.viewControllers![2] as! ThreadsNavigationController
-            threadsNavigationController.threadToShowOnLoad = thread
-            self.tabBarController?.selectedViewController = threadsNavigationController
-        })
+        let data = ["user" : otherUser]
+        
+        // Send a broadcast notification to let the inbox know which thread to show
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ThreadsNavigationController.SHOW_THREAD_POST), object: data)
     }
     
     @IBAction func sendButton_click(_ sender: Any) {

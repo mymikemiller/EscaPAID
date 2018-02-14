@@ -19,6 +19,7 @@ exports.sendThreadPostNotification = functions.database.ref('/threadPosts/{threa
   var tokensSnapshot = {}
   var recipientId = ""
   var senderName = ""
+  var senderUid = ""
 
   // Get the recepient's Uid (/threadPosts/{threadId}/{postId}/toId)
   admin.database().ref(`/threadPosts/${threadId}/${postId}`).once('value').then(function(snapshot) {
@@ -29,6 +30,7 @@ exports.sendThreadPostNotification = functions.database.ref('/threadPosts/{threa
     return admin.database().ref(`/users/${senderId}`).once('value');
   }).then(function(snapshot) {
     senderName = snapshot.val().displayName
+    senderUid = snapshot.val().uid
 
     // Get the recipient's list of device notification tokens
     return admin.database().ref(`/users/${recipientId}/notificationTokens`).once('value');
@@ -42,14 +44,18 @@ exports.sendThreadPostNotification = functions.database.ref('/threadPosts/{threa
     console.log('There are', tokensSnapshot.numChildren(), 'tokens to send notifications to.');
 
     console.log("Sender name: " + senderName)
+    console.log("Sender uid: " + senderUid)
 
     // Notification details.
     const payload = {
         notification: {
           title: 'You have a new message!',
           body: `${senderName} sent you a message`,
-          icon: "https://www.blossom.co/wp-content/uploads/2015/02/10-prod-mgmt-lessons-tod-sacerdoti.jpg"
+          //icon: "https://www.blossom.co/wp-content/uploads/2015/02/10-prod-mgmt-lessons-tod-sacerdoti.jpg"
         },
+        data: {
+            uid: senderUid
+        }
       };
   
       // Listing all tokens.

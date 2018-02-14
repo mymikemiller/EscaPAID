@@ -18,19 +18,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        setUpPageControl()
+        registerForPushNotifications(application)
+        
+        // Check if launched from notification
+        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
+            // Don't do respondToPushNotification because it causes the app to crash unless the user is already logged in (which they aren't if we're just launching the app)
+            
+            //let aps = notification["aps"] as! [String: AnyObject]
+            //respondToPushNotification(aps)
+        }
+
+        return true
+    }
+    
+    func setUpPageControl() {
         // Make the PageController indicator dots show up
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.backgroundColor = UIColor.white
-        
-        // Register for push notifications
+    }
+    
+    func registerForPushNotifications(_ application: UIApplication) {
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
@@ -47,9 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         application.registerForRemoteNotifications()
         Messaging.messaging().delegate = self
-
-        
-        return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -126,7 +138,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
     }
-
+    
+    func application(
+        _ application: UIApplication,
+        didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+        fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        respondToPushNotification(userInfo)
+    }
+    
+    func respondToPushNotification(_ userInfo: [AnyHashable : Any]) {
+        
+        // Get the specified user
+        let uid = userInfo["uid"] as! String
+        FirebaseManager.getUser(uid: uid) { (user) in
+            let data = ["user" : user]
+            
+            // Send a broadcast notification to let the inbox know which thread to show
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: ThreadsNavigationController.SHOW_THREAD_POST), object: data)
+        }
+    }
 }
 
 extension AppDelegate : MessagingDelegate {
@@ -142,4 +173,3 @@ extension AppDelegate : MessagingDelegate {
         print("Received data message: \(remoteMessage.appData)")
     }
 }
-

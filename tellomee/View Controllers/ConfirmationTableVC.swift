@@ -38,23 +38,11 @@ class ConfirmationTableVC: UITableViewController {
     }
     
     func goToMessageThread() {
-        // Don't allow sending messages to self
-        if (FirebaseManager.user?.uid == self.reservation?.experience.curator.uid) {
-            let alertVC = UIAlertController(title: "Error", message: "You can't send a message to yourself.", preferredStyle: .alert)
-            let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
-            alertVC.addAction(alertActionOkay)
-            self.present(alertVC, animated: true, completion: nil)
-            
-            return
-        }
         
-        // Go to the message thread between the user and the experience curator
-        ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: (self.reservation?.experience.curator)!, completion: {thread in
-            
-            let threadsNavigationController: ThreadsNavigationController = self.tabBarController?.viewControllers![2] as! ThreadsNavigationController
-            threadsNavigationController.threadToShowOnLoad = thread
-            self.tabBarController?.selectedViewController = threadsNavigationController
-        })
+        let data = ["user" : (self.reservation?.experience.curator)!]
+        
+        // Send a broadcast notification to let the inbox know which thread to show
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ThreadsNavigationController.SHOW_THREAD_POST), object: data)
     }
     
     @IBAction func messageButton_click(_ sender: Any) {

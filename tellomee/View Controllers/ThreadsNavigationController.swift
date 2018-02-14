@@ -10,23 +10,53 @@ import UIKit
 
 class ThreadsNavigationController: UINavigationController {
     
-    var threadToShowOnLoad:Thread?
+    var userToShowOnLoad:User?
+    
+    static let SHOW_THREAD_POST = "ShowThreadPost"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
+        // Listen for internal broadcast notifications specifying that the user tapped on a push notification specifying they got a new message
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showThreadFromNotification(notification:)),
+                                               name: Notification.Name(rawValue: ThreadsNavigationController.SHOW_THREAD_POST),
+                                               object: nil)
+        
+        // If we have a user set, go directly to that thread
+        if let userToShowOnLoad = userToShowOnLoad {
+            ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: userToShowOnLoad, completion: {thread in
+                
+                self.showThread(thread)
+            })
+        }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        // If we have a thread set, go directly to that thread
-        if (threadToShowOnLoad != nil) {
-            (viewControllers.first as! ThreadsTableVC).startChat(thread: threadToShowOnLoad!)
+    @objc func showThreadFromNotification(notification: Notification) {
+        let user = (notification.object as! [String : User])["user"]!
+        self.goToMessageThread(user: user)
+    }
+    
+    private func goToMessageThread(user: User) {
+        // Don't allow sending messages to self
+        if (FirebaseManager.user?.uid == user.uid) {
+            let alertVC = UIAlertController(title: "Error", message: "You can't send a message to yourself.", preferredStyle: .alert)
+            let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
+            alertVC.addAction(alertActionOkay)
+            self.present(alertVC, animated: true, completion: nil)
             
-            // Clear the thread to show so we don't go there automatically next time we appear
-            threadToShowOnLoad = nil
+            return
         }
+        
+        // Go to the message thread between the current user and the specified user
+        ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: user, completion: {thread in
+            
+            self.showThread(thread)
+        })
+    }
+    
+    private func showThread(_ thread: Thread) {
+        (self.viewControllers.first as! ThreadsTableVC).startChat(thread: thread)
     }
 
     override func didReceiveMemoryWarning() {
