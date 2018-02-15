@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RSKImageCropper
 
 class ProfileEditorTableVC: UITableViewController, UINavigationControllerDelegate {
     
@@ -100,33 +101,61 @@ extension ProfileEditorTableVC: UIImagePickerControllerDelegate {
         let img:UIImage = pickerInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
         DispatchQueue.main.async { [unowned self] in
             
-            self.imageView.image = img
+            // Pop up the image cropper loaded with the chosen image
             
-            let uploadTask = StorageManager.storeImage(folder: StorageManager.PROFILE_IMAGES, image: img) { (url) in
-                
-                if (FirebaseManager.user?.profileImageUrl != nil &&
-                    FirebaseManager.user?.profileImageUrl != "") {
-                    // Delete the previous picture from storage
-                    StorageManager.removeImageFromStorage(folder: StorageManager.PROFILE_IMAGES, imageUrl: (FirebaseManager.user?.profileImageUrl)!)
-                }
-                
-                // Hide the progress bar
-                self.uploadProgressView.isHidden = true
-                
-                // Save the URL to the database. Note that we don't have to press "Save" to make this happen. It saves automatically when the image is finished uploading.
-                FirebaseManager.user?.updateProfileImageUrl(url)
-                
-            }
-            uploadTask?.observe(.progress) { snapshot in
-                self.uploadProgressView.isHidden = false
-                self.uploadProgressView.setProgress(Float((snapshot.progress?.fractionCompleted)!), animated: true)
-                
-            }
+            
+            let cropper = RSKImageCropViewController.init(image: img)
+            cropper.delegate = self
+            self.navigationController?.pushViewController(cropper, animated: true)
             
         }
         self.dismiss(animated: true, completion: nil)
         
     }
+    
+    func updateProfileImage(_ image: UIImage) {
+        let uploadTask = StorageManager.storeImage(folder: StorageManager.PROFILE_IMAGES, image: image) { (url) in
+
+            if (FirebaseManager.user?.profileImageUrl != nil &&
+                FirebaseManager.user?.profileImageUrl != "") {
+                // Delete the previous picture from storage
+                StorageManager.removeImageFromStorage(folder: StorageManager.PROFILE_IMAGES, imageUrl: (FirebaseManager.user?.profileImageUrl)!)
+            }
+
+            // Hide the progress bar
+            self.uploadProgressView.isHidden = true
+
+            // Save the URL to the database. Note that we don't have to press "Save" to make this happen. It saves automatically when the image is finished uploading.
+            FirebaseManager.user?.updateProfileImageUrl(url)
+
+        }
+        uploadTask?.observe(.progress) { snapshot in
+            self.uploadProgressView.isHidden = false
+            self.uploadProgressView.setProgress(Float((snapshot.progress?.fractionCompleted)!), animated: true)
+
+        }
+    }
+}
+
+extension ProfileEditorTableVC: RSKImageCropViewControllerDelegate {
+    func imageCropViewControllerDidCancelCrop(_ controller: RSKImageCropViewController) {
+        // Close the cropper
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func imageCropViewController(_ controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect, rotationAngle: CGFloat) {
+        
+        // Close the cropper
+        navigationController?.popViewController(animated: true)
+
+        // Set the newly cropped image
+        self.imageView.image = croppedImage
+        
+        // save the image to the database
+        updateProfileImage(croppedImage)
+    }
+    
+    
 }
 
 extension ProfileEditorTableVC: TextGetterDelegate {

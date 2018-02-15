@@ -14,6 +14,7 @@ target 'tellomee' do
   pod 'JSQMessagesViewController'
   pod 'JTAppleCalendar', '~> 7.0'
   pod 'SDWebImage', '~> 4.0'
+  pod 'RSKImageCropper'
 
   # Pods for Facebook
   pod 'Bolts'
