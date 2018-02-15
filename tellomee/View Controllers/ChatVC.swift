@@ -82,6 +82,19 @@ class ChatVC: JSQMessagesViewController {
         return nil
     }
     
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = super.collectionView(collectionView, cellForItemAt: indexPath)
+            as! JSQMessagesCollectionViewCell
+        
+        let message = postManager.messages[indexPath.item]
+        
+        // Change the color of the text because the background changes from light grey (needs black text) and blue (needs white text)
+        cell.textView.textColor = message.senderId == self.senderId ? UIColor.white : UIColor.black
+        
+        return cell
+    }
+    
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString!
     {
         return NSAttributedString()
