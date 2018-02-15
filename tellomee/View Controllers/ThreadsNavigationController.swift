@@ -48,11 +48,22 @@ class ThreadsNavigationController: UINavigationController {
             return
         }
         
-        // Go to the message thread between the current user and the specified user
-        ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: user, completion: {thread in
-            
-            self.showThread(thread)
-        })
+        // The uid of the childmost chat view
+        var currentlyDisplayedUid = ""
+        if self.childViewControllers.count > 1 {
+            let chatVC = self.childViewControllers[1] as! ChatVC
+            currentlyDisplayedUid = (chatVC.thread?.user.uid)!
+        }
+        
+        // Only show the thread if we're not currently on that thread
+        if user.uid != currentlyDisplayedUid {
+        
+            // Go to the message thread between the current user and the specified user
+            ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: user, completion: {thread in
+                
+                self.showThread(thread)
+            })
+        }
     }
     
     private func showThread(_ thread: Thread) {
