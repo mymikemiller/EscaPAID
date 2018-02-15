@@ -101,6 +101,7 @@ class ThreadManager: NSObject {
                     let threadId = threadSnapshot.key
                     let values = threadSnapshot.value as! [String:AnyObject]
                     
+                    // If there's no "with" in the database, check that the user wasn't somehow able to send a message to himself and went in to the chat and called Thread.setRead
                     let otherUserId = values["with"] as! String
 
                     let dateFormatter = DateFormatter()

@@ -18,6 +18,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         // tell our UITabBarController subclass to handle its own delegate methods
         self.delegate = self
         
+        // The user logged in successfully so register the token
         registerFCMToken()
         
         // Listen for internal broadcast notifications specifying that the user tapped on a push notification specifying they got a new message
@@ -27,11 +28,30 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
                                                object: nil)
     }
     
+    // Registers the current token and unregisters the token of the previously logged in user
     private func registerFCMToken() {
-        // Might not be set by this time
         if let token = TabBarController.firebaseCloudMessagingToken {
+            
+            let uidKey = "uid"
+            let tokenKey = "token"
+            
+            // Unregister the token for the previous user. We don't do this immediately when we log out because we want to continue sending notifications to that user (even when logged out) until a new user logs in (i.e. until we reach this function)
+            let defaults = UserDefaults.standard
+            if let uid = defaults.string(forKey: uidKey),
+                let token = defaults.string(forKey: tokenKey) {
+                
+                // Only remove the token if the previous user wasn't the one who just logged in
+                if (uid != FirebaseManager.user?.uid) {
+                    User.removeFCMToken(uid: uid, token: token)
+                }
+            }
+            
+            // Register the new user's token
             FirebaseManager.user?.addFCMToken(token: token)
             
+            // Cache the current user so we can unregister if another user logs in
+            defaults.set(FirebaseManager.user?.uid, forKey: uidKey)
+            defaults.set(token, forKey: tokenKey)
         }
     }
     

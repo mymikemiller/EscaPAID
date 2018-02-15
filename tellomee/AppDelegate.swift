@@ -145,7 +145,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         didReceiveRemoteNotification userInfo: [AnyHashable : Any],
         fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
-        // Only respond to the notifications when the user actually clicked the Notification Center popup
+        // Only respond to the notifications when the user actually clicked the Notification Center popup (not if the app is already running)
         if application.applicationState == UIApplicationState.inactive {
             
             respondToPushNotification(userInfo)

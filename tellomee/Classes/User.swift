@@ -48,6 +48,11 @@ class User: NSObject {
         FirebaseManager.databaseRef.child("users").child(self.uid).child("notificationTokens").child(token).setValue(true)
     }
     
+    // This function is static so the we don't need to create a user just to remove its FCM token
+    static func removeFCMToken(uid: String, token: String) {
+         FirebaseManager.databaseRef.child("users").child(uid).child("notificationTokens").child(token).removeValue()
+    }
+    
     func update() {
         FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues([
             "city":city,
