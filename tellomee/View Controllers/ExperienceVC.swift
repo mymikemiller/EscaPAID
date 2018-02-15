@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
@@ -92,7 +93,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         
         let experienceImageVC: ExperienceImageVC = self.storyboard?.instantiateViewController(withIdentifier: "ExperienceImageVC") as! ExperienceImageVC
         experienceImageVC.pageIndex = index
-        experienceImageVC.imageUrl = (experience?.imageUrls[index])!
+        experienceImageVC.imageURL = (experience?.imageUrls[index])!
         
         return experienceImageVC;
     }

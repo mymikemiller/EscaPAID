@@ -7,23 +7,22 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ExperienceImageVC: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
     var pageIndex: Int = -1
-    var imageUrl: String = ""
+    var imageURL: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        if let url = NSURL(string: imageUrl) {
-            if let data = NSData(contentsOf: url as URL) {
-                imageView.image = UIImage(data: data as Data)!
-            }
-        }
+        
+        let placeholder = UIImage(named: "loading")!
+        let url = URL(string: imageURL)
+        
+        imageView.sd_setImage(with: url, placeholderImage:placeholder)
     }
 
     override func didReceiveMemoryWarning() {

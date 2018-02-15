@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ExperienceTableViewCell: UITableViewCell {
     
@@ -24,12 +25,10 @@ class ExperienceTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         if let experience = experience {
             title?.text = experience.title
-            if let url = NSURL(string: experience.imageUrls[0]) {
-                if let data = NSData(contentsOf: url as URL) {
-                    // TODO: What if the data is not an image or the URL isn't valid?
-                    theImage.image = UIImage(data: data as Data)
-                }
-            }
+            let placeholder = UIImage(named: "loading")
+            let imageURL = URL(string: experience.imageUrls[0])
+            
+            theImage.sd_setImage(with: imageURL, placeholderImage:placeholder)
         }
     }
 

@@ -79,6 +79,7 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         ExperienceManager.fillExperiences {
             () in
             DispatchQueue.main.async {
+                // This is too big a hammer
                 self.tableView.reloadData()
             }
         }
