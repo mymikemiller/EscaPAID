@@ -9,6 +9,8 @@
 import UIKit
 
 class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let experienceManager = ExperienceManager()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -76,7 +78,7 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func refreshTable() {
         // Refresh the experiences every time the view appears (in case the user changed his city)
-        ExperienceManager.fillExperiences {
+        experienceManager.fillExperiences(forCity: (FirebaseManager.user?.city)!) {
             () in
             DispatchQueue.main.async {
                 // This is too big a hammer
@@ -101,7 +103,7 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if (isFiltering()) {
             return filteredExperiences.count
         } else {
-            return ExperienceManager.experiences.count
+            return experienceManager.experiences.count
         }
     }
 
@@ -112,7 +114,7 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if isFiltering() {
             experience = filteredExperiences[indexPath.row]
         } else {
-            experience = ExperienceManager.experiences[indexPath.row]
+            experience = experienceManager.experiences[indexPath.row]
         }
         
         cell.experience = experience
@@ -131,7 +133,7 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredExperiences = ExperienceManager.experiences.filter({( experience : Experience) -> Bool in
+        filteredExperiences = experienceManager.experiences.filter({( experience : Experience) -> Bool in
             let doesCategoryMatch = (scope == "All") || (experience.category == scope)
             
             if searchBarIsEmpty() {
@@ -158,7 +160,7 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if isFiltering() {
                     experience = filteredExperiences[indexPath.row]
                 } else {
-                    experience = ExperienceManager.experiences[indexPath.row]
+                    experience = experienceManager.experiences[indexPath.row]
                 }
                 let controller = segue.destination as! ExperienceVC
                 controller.experience = experience

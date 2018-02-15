@@ -13,6 +13,8 @@ class MyExperiencesTableVC: UITableViewController {
     // This is set to the selected experience when the user selects a row. This is used to prepare for the segue.
     var selectedExperience: Experience?
     
+    let experienceManager = ExperienceManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,9 +33,11 @@ class MyExperiencesTableVC: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        MyExperienceManager.fillExperiences {
+        // Should this be happening every time we appear?
+        experienceManager.fillExperiences(forUser: FirebaseManager.user!) {
             () in
             DispatchQueue.main.async {
+                // This is a bit of a heavy hammer
                 self.tableView.reloadData()
             }
         }
@@ -55,20 +59,20 @@ class MyExperiencesTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return MyExperienceManager.experiences.count
+        return experienceManager.experiences.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell", for: indexPath) as! ExperienceTableViewCell
         
-        let experience = MyExperienceManager.experiences[indexPath.row]
+        let experience = experienceManager.experiences[indexPath.row]
         cell.experience = experience
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedExperience = MyExperienceManager.experiences[indexPath.row]
+        selectedExperience = experienceManager.experiences[indexPath.row]
         self.performSegue(withIdentifier: "showExperienceEditor", sender: self)
     }
     

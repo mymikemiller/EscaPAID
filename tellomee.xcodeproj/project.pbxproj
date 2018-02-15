@@ -61,7 +61,6 @@
 		E7F9A0821FB7378B00916FBA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0811FB7378B00916FBA /* ChatVC.swift */; };
 		E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */; };
 		E7FE89F61FCCF284008ADCEF /* MyExperiencesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */; };
-		E7FE89FA1FCD0180008ADCEF /* MyExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F91FCD0180008ADCEF /* MyExperienceManager.swift */; };
 		E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -125,7 +124,6 @@
 		E7F9A0811FB7378B00916FBA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExperiencesTableVC.swift; sourceTree = "<group>"; };
-		E7FE89F91FCD0180008ADCEF /* MyExperienceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExperienceManager.swift; sourceTree = "<group>"; };
 		E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,7 +207,6 @@
 				E745498F1FB7543A00A6A32C /* PostManager.swift */,
 				E74549951FB78F4500A6A32C /* ThreadManager.swift */,
 				E72B248A1FC656F400DE0897 /* ExperienceManager.swift */,
-				E7FE89F91FCD0180008ADCEF /* MyExperienceManager.swift */,
 				E79FA59C202A53390060B44D /* ReservationManager.swift */,
 				E751E0E01FD1CDA500CBB416 /* StorageManager.swift */,
 			);
@@ -487,7 +484,6 @@
 				E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */,
 				E723DD871FC3E17800B4345E /* Thread.swift in Sources */,
 				E728EA35202BB6C30041F6AC /* ReceiptTableVC.swift in Sources */,
-				E7FE89FA1FCD0180008ADCEF /* MyExperienceManager.swift in Sources */,
 				E7F585F81FCCDECE00536EF5 /* CuratorSettingsVC.swift in Sources */,
 				E712DE462015622500661DE7 /* Days.swift in Sources */,
 				E732DA931FC8DCC400BCF691 /* ThreadsNavigationController.swift in Sources */,

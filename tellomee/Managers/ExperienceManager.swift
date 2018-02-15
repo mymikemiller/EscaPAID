@@ -14,17 +14,31 @@ import FirebaseAuth
 class ExperienceManager: NSObject {
     static let databaseRef = Database.database().reference()
     
-    static var experiences = [Experience]()
+    var experiences = [Experience]()
     
-    static func fillExperiences(completion: @escaping () -> Void) {
+    func fillExperiences(forCity city: String, completion: @escaping () -> Void) {
         experiences = [Experience]()
         
-        databaseRef.child("experiences").queryOrdered(byChild: "city").queryEqual(toValue: FirebaseManager.user?.city).observe(.childAdded, with: {
+        ExperienceManager.databaseRef.child("experiences").queryOrdered(byChild: "city").queryEqual(toValue: city).observe(.childAdded, with: {
             snap in
             
             
-            getExperience(snap: snap, completion: { (experience) in
-                experiences.append(experience)
+            ExperienceManager.getExperience(snap: snap, completion: { (experience) in
+                self.experiences.append(experience)
+                completion()
+            })
+        })
+    }
+    
+    
+    func fillExperiences(forUser user: User, completion: @escaping () -> Void) {
+        experiences = [Experience]()
+        
+        ExperienceManager.databaseRef.child("experiences").queryOrdered(byChild: "uid").queryEqual(toValue: user.uid).observe(.childAdded, with: {
+            snap in
+            
+            ExperienceManager.getExperience(snap: snap, completion: { (experience) in
+                self.experiences.append(experience)
                 completion()
             })
         })
