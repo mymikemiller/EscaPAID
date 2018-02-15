@@ -59,8 +59,6 @@ class FirebaseManager: NSObject {
     }
     
     static func logOut() {
-        // Make sure we also remove the thread observer so it's not listening when we log back in
-        ThreadManager.removeObserver()
         do {
             try Auth.auth().signOut()
         } catch {

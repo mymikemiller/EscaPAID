@@ -13,13 +13,30 @@ import FirebaseAuth
 
 class ThreadManager: NSObject {
     static let databaseRef = Database.database().reference()
+    static let THREAD_UPDATED = "THREAD_UPDATED"
     
-    static var threads = [Thread]()
+    var threads = [Thread]()
     
-    static var observeHandle: DatabaseHandle?
+    var observeHandle: DatabaseHandle?
+    
+    override init() {
+        super.init()
+        
+        // Listen for internal broadcast notifications specifying that the user tapped on a push notification specifying they got a new message
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onThreadUpdated(notification:)),
+                                               name: Notification.Name(rawValue: ThreadManager.THREAD_UPDATED),
+                                               object: nil)
+    }
+    
+    @objc func onThreadUpdated(notification: Notification) {
+        let threadId = (notification.object as! [String : String])["threadId"]!
+        bump(threadId: threadId)
+    }
+
     
     // Add a thread and keep them sorted in descending order by timestamp of last message
-    static func add(thread:Thread) {
+    func add(thread:Thread) {
         threads.append(thread)
         threads.sort { (one, two) -> Bool in
             one.lastMessageTimestamp > two.lastMessageTimestamp
@@ -27,7 +44,7 @@ class ThreadManager: NSObject {
     }
     
     // Bump up the specified thread to the front of the list
-    static func bump(threadId:String) {
+    func bump(threadId:String) {
         let index = threads.index { (thread) -> Bool in
             thread.threadId == threadId
         }
@@ -82,14 +99,14 @@ class ThreadManager: NSObject {
         }
     }
     
-    static func fillThreads(onThreadUpdate: @escaping (Thread) -> Void, completion: @escaping () -> Void) {
+    func fillThreads(onThreadUpdate: @escaping (Thread) -> Void, completion: @escaping () -> Void) {
         let currentUid = FirebaseManager.user?.uid
         
         // Empty the thread list
-        ThreadManager.threads = [Thread]()
+        threads = [Thread]()
         
         // Get the current user's threads
-        observeHandle = databaseRef.child("userThreads").queryOrderedByKey().queryEqual(toValue: currentUid).observe(DataEventType.value, with: {
+        observeHandle = ThreadManager.databaseRef.child("userThreads").queryOrderedByKey().queryEqual(toValue: currentUid).observe(DataEventType.value, with: {
             userThreadsSnapshot in
             
             // If the user has a thread...
@@ -112,13 +129,13 @@ class ThreadManager: NSObject {
                     let read = values["read"] as! Bool
                     
                     // See if we already have the thread object
-                    let thread = threads.first(where:{$0.threadId == threadId})
+                    let thread = self.threads.first(where:{$0.threadId == threadId})
                     
                     if (thread != nil) {
                         thread!.read = read
                         // We already have the thread in our list. Bump it to the top if it's not read.
                         if (!read) {
-                            bump(threadId: threadId)
+                            self.bump(threadId: threadId)
                             completion()
                         }
                     } else {
@@ -128,7 +145,7 @@ class ThreadManager: NSObject {
                             
                             // Create the thread object and add it to our list
                             let thread = Thread(with: user, threadId: threadId, lastMessageTimestamp: lastMessageTimestamp!, read: read)
-                            ThreadManager.add(thread: thread)
+                            self.add(thread: thread)
                             
                             completion()
                         })
@@ -139,8 +156,8 @@ class ThreadManager: NSObject {
     }
     
     
-    static func removeObserver() {
-        if ThreadManager.observeHandle != nil {
+    func removeObserver() {
+        if observeHandle != nil {
             ThreadManager.databaseRef.child("userThreads").child(FirebaseManager.user!.uid).removeObserver(withHandle: observeHandle!)
         }
     }

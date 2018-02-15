@@ -46,7 +46,10 @@ class PostManager: NSObject {
             PostManager.databaseRef.child("userThreads").child(fromId).child(threadId).setValue(fromThread)
             
             // Bump the thread to the top of the list after sending a message
-            ThreadManager.bump(threadId: threadId)
+            // Send a broadcast notification to let the thread manager know which thread to bump to the top
+            let data = ["threadId" : threadId]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: ThreadManager.THREAD_UPDATED), object: data)
+
         }
     }
     

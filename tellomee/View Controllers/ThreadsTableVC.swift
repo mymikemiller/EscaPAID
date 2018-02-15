@@ -13,10 +13,12 @@ class ThreadsTableVC: UITableViewController {
     // This is set to the selected thread when the user selects a row. This is used to prepare for the segue.
     var selectedThread: Thread?
     
+    let threadManager = ThreadManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ThreadManager.fillThreads(onThreadUpdate: onThreadUpdate) {
+        threadManager.fillThreads(onThreadUpdate: onThreadUpdate) {
             () in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -25,7 +27,8 @@ class ThreadsTableVC: UITableViewController {
     }
     
     func onThreadUpdate(thread: Thread) {
-        ThreadManager.bump(threadId: thread.threadId)
+        threadManager.bump(threadId: thread.threadId)
+        // This is quite a heavy hammer
         self.tableView.reloadData()
     }
     
@@ -55,13 +58,13 @@ class ThreadsTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ThreadManager.threads.count
+        return threadManager.threads.count
     }
 
     override func tableView(_ tableViewS: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ThreadTableViewCell
 
-        let thread = ThreadManager.threads[indexPath.row]
+        let thread = threadManager.threads[indexPath.row]
         cell.cellImage.image = thread.user.getProfileImage()
         
         cell.cellName.text = thread.user.displayName
@@ -76,7 +79,7 @@ class ThreadsTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        startChat(thread: ThreadManager.threads[indexPath.row])
+        startChat(thread: threadManager.threads[indexPath.row])
     }
 
     /*
