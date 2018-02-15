@@ -53,6 +53,13 @@
 		E7D0A7841FDB573D008319CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A7831FDB573D008319CF /* Constants.swift */; };
 		E7D316881FCF246A0062E178 /* ExperienceImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */; };
 		E7D316AA1FD08EF60062E178 /* ExperienceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */; };
+		E7D3D78D2036265E00F91CC4 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D78C203625D200F91CC4 /* Favorites.storyboard */; };
+		E7D3D78F2036279C00F91CC4 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D78E2036271C00F91CC4 /* Discover.storyboard */; };
+		E7D3D79220362C3400F91CC4 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79020362BF500F91CC4 /* Settings.storyboard */; };
+		E7D3D79420362DB600F91CC4 /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79120362BF500F91CC4 /* Inbox.storyboard */; };
+		E7D3D79720362E0E00F91CC4 /* ProfileEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79520362E0E00F91CC4 /* ProfileEditor.storyboard */; };
+		E7D3D79A20362EF400F91CC4 /* Reservations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79820362EF400F91CC4 /* Reservations.storyboard */; };
+		E7D3D79D20362FCC00F91CC4 /* ExperienceEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79B20362FCC00F91CC4 /* ExperienceEditor.storyboard */; };
 		E7E22E8F1FC7463800FD88FF /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */; };
 		E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */; };
 		E7F585F81FCCDECE00536EF5 /* CuratorSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */; };
@@ -114,6 +121,13 @@
 		E7D0A7831FDB573D008319CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceImageVC.swift; sourceTree = "<group>"; };
 		E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceImageCell.swift; sourceTree = "<group>"; };
+		E7D3D78C203625D200F91CC4 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Favorites.storyboard; path = /Users/mikem/OneDrive/Projects/iOS/tellomee/tellomee/Storyboards/Favorites.storyboard; sourceTree = "<absolute>"; };
+		E7D3D78E2036271C00F91CC4 /* Discover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Discover.storyboard; path = /Users/mikem/OneDrive/Projects/iOS/tellomee/tellomee/Storyboards/Discover.storyboard; sourceTree = "<absolute>"; };
+		E7D3D79020362BF500F91CC4 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = /Users/mikem/OneDrive/Projects/iOS/tellomee/tellomee/Storyboards/Settings.storyboard; sourceTree = "<absolute>"; };
+		E7D3D79120362BF500F91CC4 /* Inbox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Inbox.storyboard; path = /Users/mikem/OneDrive/Projects/iOS/tellomee/tellomee/Storyboards/Inbox.storyboard; sourceTree = "<absolute>"; };
+		E7D3D79620362E0E00F91CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProfileEditor.storyboard; sourceTree = "<group>"; };
+		E7D3D79920362EF400F91CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Reservations.storyboard; sourceTree = "<group>"; };
+		E7D3D79C20362FCC00F91CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExperienceEditor.storyboard; sourceTree = "<group>"; };
 		E7E152A020360DA800033BEB /* tellomee-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tellomee-Bridging-Header.h"; sourceTree = "<group>"; };
 		E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceVC.swift; sourceTree = "<group>"; };
@@ -158,15 +172,15 @@
 		E720AC031FC20FC700E9C2EF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */,
 				E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */,
-				E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */,
-				E71F33A320017CAA00312B91 /* TextGetterController.swift */,
-				E71F33A420017CAA00312B91 /* TextGetter.xib */,
-				E7238A652022524300496FBC /* UICalendar.swift */,
-				E7238A632022521400496FBC /* UICalendar.xib */,
-				E7B94FA620195F4D00C5FBCB /* DateCell.swift */,
-				E7238A672022699C00496FBC /* DateCell.xib */,
+				E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */,
+				E7D3D78E2036271C00F91CC4 /* Discover.storyboard */,
+				E7D3D78C203625D200F91CC4 /* Favorites.storyboard */,
+				E7D3D79120362BF500F91CC4 /* Inbox.storyboard */,
+				E7D3D79020362BF500F91CC4 /* Settings.storyboard */,
+				E7D3D79520362E0E00F91CC4 /* ProfileEditor.storyboard */,
+				E7D3D79820362EF400F91CC4 /* Reservations.storyboard */,
+				E7D3D79B20362FCC00F91CC4 /* ExperienceEditor.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -259,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				E720AC031FC20FC700E9C2EF /* Storyboards */,
+				E7D3D79320362D6100F91CC4 /* UI */,
 				E720AC041FC20FE500E9C2EF /* View Controllers */,
 				E720AC061FC2108B00E9C2EF /* TableViewCells */,
 				E720AC071FC210AB00E9C2EF /* Classes */,
@@ -274,6 +289,20 @@
 				E7E152A020360DA800033BEB /* tellomee-Bridging-Header.h */,
 			);
 			path = tellomee;
+			sourceTree = "<group>";
+		};
+		E7D3D79320362D6100F91CC4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */,
+				E71F33A320017CAA00312B91 /* TextGetterController.swift */,
+				E71F33A420017CAA00312B91 /* TextGetter.xib */,
+				E7238A652022524300496FBC /* UICalendar.swift */,
+				E7238A632022521400496FBC /* UICalendar.xib */,
+				E7B94FA620195F4D00C5FBCB /* DateCell.swift */,
+				E7238A672022699C00496FBC /* DateCell.xib */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,10 +377,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E71F33A620017CAA00312B91 /* TextGetter.xib in Resources */,
+				E7D3D79D20362FCC00F91CC4 /* ExperienceEditor.storyboard in Resources */,
 				E72F64471FBBB22B0023489D /* Podfile in Resources */,
 				E7CBD4FD203368A000480774 /* GoogleService-Info.plist in Resources */,
+				E7D3D79720362E0E00F91CC4 /* ProfileEditor.storyboard in Resources */,
+				E7D3D79220362C3400F91CC4 /* Settings.storyboard in Resources */,
+				E7D3D78F2036279C00F91CC4 /* Discover.storyboard in Resources */,
 				E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */,
+				E7D3D78D2036265E00F91CC4 /* Favorites.storyboard in Resources */,
+				E7D3D79A20362EF400F91CC4 /* Reservations.storyboard in Resources */,
 				E7238A682022699C00496FBC /* DateCell.xib in Resources */,
+				E7D3D79420362DB600F91CC4 /* Inbox.storyboard in Resources */,
 				E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */,
 				E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */,
 				E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */,
@@ -508,6 +544,30 @@
 				E7B9F7491FB6CAAF0058CE61 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E7D3D79520362E0E00F91CC4 /* ProfileEditor.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7D3D79620362E0E00F91CC4 /* Base */,
+			);
+			name = ProfileEditor.storyboard;
+			sourceTree = "<group>";
+		};
+		E7D3D79820362EF400F91CC4 /* Reservations.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7D3D79920362EF400F91CC4 /* Base */,
+			);
+			name = Reservations.storyboard;
+			sourceTree = "<group>";
+		};
+		E7D3D79B20362FCC00F91CC4 /* ExperienceEditor.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7D3D79C20362FCC00F91CC4 /* Base */,
+			);
+			name = ExperienceEditor.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
