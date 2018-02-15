@@ -139,12 +139,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
+    // This happens when the app is backgrounded, so we're able to call Firebase functions because we're already logged in
     func application(
         _ application: UIApplication,
         didReceiveRemoteNotification userInfo: [AnyHashable : Any],
         fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
-        respondToPushNotification(userInfo)
+        // Only respond to the notifications when the user actually clicked the Notification Center popup
+        if application.applicationState == UIApplicationState.inactive {
+            
+            respondToPushNotification(userInfo)
+        }
     }
     
     func respondToPushNotification(_ userInfo: [AnyHashable : Any]) {
@@ -161,15 +166,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 }
 
 extension AppDelegate : MessagingDelegate {
+    // This callback is fired at each app startup and whenever a new token is generated.
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
         
-        // TODO: If necessary send token to application server.
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
-    }
-    // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
-    // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print("Received data message: \(remoteMessage.appData)")
+        // Store the token so we can write it to the database once we're logged in
+        TabBarController.firebaseCloudMessagingToken = fcmToken
+        
+        // Add the token to the firebase database so we know which devices to notify when messages are received
+        
     }
 }

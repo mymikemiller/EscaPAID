@@ -10,17 +10,29 @@ import UIKit
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
+    static var firebaseCloudMessagingToken: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // tell our UITabBarController subclass to handle its own delegate methods
         self.delegate = self
         
+        registerFCMToken()
+        
         // Listen for internal broadcast notifications specifying that the user tapped on a push notification specifying they got a new message
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(showThreadFromNotification(notification:)),
                                                name: Notification.Name(rawValue: ThreadsNavigationController.SHOW_THREAD_POST),
                                                object: nil)
+    }
+    
+    private func registerFCMToken() {
+        // Might not be set by this time
+        if let token = TabBarController.firebaseCloudMessagingToken {
+            FirebaseManager.user?.addFCMToken(token: token)
+            
+        }
     }
     
     @objc func showThreadFromNotification(notification: Notification) {

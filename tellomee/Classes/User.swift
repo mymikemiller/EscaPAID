@@ -44,6 +44,10 @@ class User: NSObject {
         FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues(["profileImageUrl":url])
     }
     
+    func addFCMToken(token: String) {
+        FirebaseManager.databaseRef.child("users").child(self.uid).child("notificationTokens").child(token).setValue(true)
+    }
+    
     func update() {
         FirebaseManager.databaseRef.child("users").child(self.uid).updateChildValues([
             "city":city,
