@@ -93,6 +93,9 @@ class ExperienceEditorTableVC: UITableViewController {
         // Refresh the table layout to hide the time pickers
         tableView.setNeedsLayout()
         tableView.layoutIfNeeded()
+        
+        // Setting a footer removes the separator lines for empty rows at the bottom
+        tableView.tableFooterView = UIView()
     }
     
     override func didReceiveMemoryWarning() {
