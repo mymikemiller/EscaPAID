@@ -38,6 +38,8 @@ class SelfContainedPickerView: UIPickerView {
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         textField?.inputAccessoryView = toolBar
+        
+        setSelection()
     }
     
     @objc func cancel() {
@@ -51,6 +53,15 @@ class SelfContainedPickerView: UIPickerView {
     var selectedString: String {
         get {
             return strings[selectedRow(inComponent: 0)]
+        }
+    }
+    
+    // Selects the row corresponding to the text in the text box, if there's a match
+    private func setSelection() {
+        for (index, str) in strings.enumerated() {
+            if (textField?.text == str) {
+                selectRow(index, inComponent: 0, animated: true)
+            }
         }
     }
 }

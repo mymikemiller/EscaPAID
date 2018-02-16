@@ -17,6 +17,15 @@ class Constants: NSObject {
                          "Lifestyle",
                          "Cullinary"]
     
+    static let numGuests = ["1",
+                             "2",
+                             "3",
+                             "4",
+                             "5",
+                             "6",
+                             "7",
+                             "8"]
+    
     static let feePercent = 0.1 // 10% fee deducted from the total charge for reservations
 
 }

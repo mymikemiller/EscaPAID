@@ -44,8 +44,7 @@ class ExperienceEditorTableVC: UITableViewController {
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
     
-    @IBOutlet weak var experienceMaxGuestsSlider: UISlider!
-    @IBOutlet weak var experienceMaxGuests: UILabel!
+    @IBOutlet weak var experienceMaxGuests: UITextField!
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var uploadProgressView: UIProgressView!
@@ -55,15 +54,6 @@ class ExperienceEditorTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set up the category picker
-        experienceCategory.text = Constants.categories[0]
-        let categoryPicker = SelfContainedPickerView()
-        categoryPicker.setUp(textField: experienceCategory, strings: Constants.categories)
-        
-        // Set up the city picker
-        let cityPicker:SelfContainedPickerView = SelfContainedPickerView()
-        cityPicker.setUp(textField: experienceCity, strings: Constants.cities)
         
         // Create a new experience if necessary
         if experience == nil {
@@ -78,10 +68,21 @@ class ExperienceEditorTableVC: UITableViewController {
         experienceCity.text = experience!.city
         experiencePrice.text = String(format: "%.02f", experience!.price)
         experienceDescription.text = experience!.experienceDescription
-        experienceCategory.text = experience!.category
         experienceDays = experience!.days
-        experienceMaxGuestsSlider.value = Float(experience!.maxGuests)
         experienceMaxGuests.text = String(experience!.maxGuests)
+        
+        
+        // Set up the category picker
+        let categoryPicker = SelfContainedPickerView()
+        categoryPicker.setUp(textField: experienceCategory, strings: Constants.categories)
+        
+        // Set up the city picker
+        let cityPicker:SelfContainedPickerView = SelfContainedPickerView()
+        cityPicker.setUp(textField: experienceCity, strings: Constants.cities)
+        
+        // Set up the number of guests picker
+        let numGuestsPicker = SelfContainedPickerView()
+        numGuestsPicker.setUp(textField: experienceMaxGuests, strings: Constants.numGuests)
         
         // Set up the start and end time pickers
         startTimePicker.setDate(from: experience!.startTime, format: dateFormat)
@@ -232,14 +233,6 @@ class ExperienceEditorTableVC: UITableViewController {
         startTimeLabel.text = outputFormatter.string(from: startTimePicker.date)
         endTimeLabel.text = outputFormatter.string(from: endTimePicker.date)
     }
-    
-    @IBAction func maxGuestsSlider_valueChanged(_ sender: Any) {
-        let val = Int(experienceMaxGuestsSlider.value)
-        // Snap the slider to the selected integer
-        experienceMaxGuestsSlider.value = Float(val)
-        experienceMaxGuests.text = String(val)
-    }
-    
     
     
     // MARK: - Navigation
