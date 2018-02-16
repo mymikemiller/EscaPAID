@@ -73,9 +73,10 @@ exports.sendThreadPostNotification = functions.database.ref('/threadPosts/{threa
         console.error('Failure sending notification to', tokensSentTo[index], error);
         // Cleanup the tokens who are not registered anymore.
         if (error.code === 'messaging/invalid-registration-token' || error.code === 'messaging/registration-token-not-registered') {
-          //tokensToRemove.push(tokensSnapshot.ref.child(tokensSentTo[index]).remove());
-          // Uncomment above to remove expired/invalid tokens
-          console.log("NOT REMOVING EXPIRED TOKENS!")
+            
+            console.log("Removing token", tokensSentTo[index])
+            tokensToRemove.push(tokensSnapshot.ref.child(tokensSentTo[index]).remove());
+          
         }
       }
     });
