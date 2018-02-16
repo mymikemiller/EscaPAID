@@ -32,7 +32,8 @@ class SettingsTableVC: UITableViewController {
             
             FirebaseManager.logOut()
             
-            let originVC: OriginScreenVC = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let originVC: OriginScreenVC = storyboard.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
             // Prevent auto-login once we log out or we'll immediately be logged back in
             originVC.autoLogin = false
             self.present(originVC, animated: true, completion: nil)
