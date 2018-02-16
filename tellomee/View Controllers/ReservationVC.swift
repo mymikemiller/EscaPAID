@@ -13,8 +13,7 @@ class ReservationVC: UIViewController {
     
     @IBOutlet weak var calendarView: UICalendar!
     @IBOutlet weak var dateAndTimeLabel: UILabel!
-    @IBOutlet weak var guestsLabel: UILabel!
-    @IBOutlet weak var guestsSlider: UISlider!
+    @IBOutlet weak var maxGuests: UITextField!
     @IBOutlet weak var reserveButton: UIButton!
     
     var experience:Experience?
@@ -25,16 +24,12 @@ class ReservationVC: UIViewController {
         super.viewDidLoad()
         
         calendarView.enabledDays = (experience?.days)!
-        refreshGuestsLabel()
-        guestsLabel.text = "1 guest"
-        
         dateFormatter.dateFormat = "MMM dd, yyyy"
         
-    }
-    
-    func refreshGuestsLabel() {
-        let val = Int(guestsSlider.value)
-        guestsLabel.text = String(val) + (val == 1 ? " guest" : " guests")
+        let picker = SelfContainedPickerView()
+        picker.setUp(textField: maxGuests, strings: Constants.numGuests)
+        maxGuests.inputView = picker
+        
     }
     
     
@@ -47,7 +42,7 @@ class ReservationVC: UIViewController {
             let confirmationVC = (segue.destination as! ConfirmationTableVC)
             
             // Create a new, pending reservation with the specified information
-            let numGuests = Double(self.guestsSlider.value)
+            let numGuests = Double(self.maxGuests.text!)!
             let totalCharge = numGuests * experience!.price
             let fee = totalCharge * Constants.feePercent
             
@@ -60,15 +55,6 @@ class ReservationVC: UIViewController {
                             fee: fee,
                             status: .pending)
         }
-    }
-    
-
-    @IBAction func guestsSlider_valueChanged(_ sender: Any) {
-        
-        let val = Int(guestsSlider.value)
-        // Snap the slider to the selected integer
-        guestsSlider.value = Float(val)
-        refreshGuestsLabel()
     }
 }
 
