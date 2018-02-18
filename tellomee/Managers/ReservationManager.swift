@@ -88,7 +88,7 @@ class ReservationManager: NSObject {
             "numGuests": reservation.numGuests,
             "totalCharge": reservation.totalCharge,
             "fee": reservation.fee,
-            "status": reservation.status])
+            "status": reservation.status.rawValue])
     }
     
     static func setStatus(for reservation: Reservation!, status: Reservation.Status) {

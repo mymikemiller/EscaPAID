@@ -1,35 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dwy-My-wpH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nkb-5i-hrn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Favorites-->
-        <scene sceneID="giw-c0-QDa">
+        <scene sceneID="n9j-e2-enc">
             <objects>
-                <viewController id="dwy-My-wpH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uhR-Qi-Y9D">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableViewController storyboardIdentifier="MyExperiences" title="Favorites" id="RY8-e9-X9i" customClass="FavoritesTableVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TKE-79-nVN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0P-zt-Rjp">
-                                <rect key="frame" x="88" y="295" width="264" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="h4B-3r-ZOp"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="Wkz-gz-5pF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aSS-dV-04r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <connections>
+                            <outlet property="dataSource" destination="RY8-e9-X9i" id="Ytg-fd-BMs"/>
+                            <outlet property="delegate" destination="RY8-e9-X9i" id="wIF-DK-3WZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Favorites" id="viS-pI-4bb"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="Pne-Wr-slf" kind="show" identifier="showExperience" id="OjX-Kb-vg2"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5rW-M0-sOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688.79999999999995" y="-425.61576354679806"/>
+            <point key="canvasLocation" x="1020" y="1012.4437781109445"/>
+        </scene>
+        <!--Book-->
+        <scene sceneID="kgN-QF-OUa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Book" id="Pne-Wr-slf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8G3-hV-hcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1544.8" y="1011.9940029985008"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="M71-5T-epN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nkb-5i-hrn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" id="lLG-DN-3wg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i4V-CQ-YKD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RY8-e9-X9i" kind="relationship" relationship="rootViewController" id="sy5-sf-FeW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G3g-Z7-Sgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="322" y="1012"/>
         </scene>
     </scenes>
 </document>

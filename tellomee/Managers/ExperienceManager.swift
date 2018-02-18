@@ -31,7 +31,7 @@ class ExperienceManager: NSObject {
     }
     
     
-    func fillExperiences(forUser user: User, completion: @escaping () -> Void) {
+    func fillExperiences(forCurator user: User, completion: @escaping () -> Void) {
         experiences = [Experience]()
         
         ExperienceManager.databaseRef.child("experiences").queryOrdered(byChild: "uid").queryEqual(toValue: user.uid).observe(.childAdded, with: {
@@ -41,6 +41,32 @@ class ExperienceManager: NSObject {
                 self.experiences.append(experience)
                 completion()
             })
+        })
+    }
+    
+    func fillExperiences(forFavoritesOf user: User, completion: @escaping () -> Void) {
+        experiences = [Experience]()
+        
+        ExperienceManager.databaseRef.child("userFavorites").queryOrderedByKey().queryEqual(toValue: user.uid).observe(.childAdded, with: {
+            snap in
+            
+            let enumerator = snap.children
+            while let child = enumerator.nextObject() as? DataSnapshot {
+                let experienceId = child.key
+                
+                ExperienceManager.databaseRef.child("experiences").queryOrderedByKey().queryEqual(toValue: experienceId).observe(.value, with: {
+                    snap in
+                    
+                    if (snap.hasChild(experienceId)) {
+                        let experienceSnap = snap.childSnapshot(forPath: experienceId)
+                        
+                        ExperienceManager.getExperience(snap: experienceSnap, completion: { (experience) in
+                            self.experiences.append(experience)
+                            completion()
+                        })
+                    }
+                })
+            }
         })
     }
     

@@ -35,6 +35,8 @@
 		E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */; };
 		E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */; };
 		E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
+		E774C83C2037877E00F98EB2 /* FavoritesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774C83B2037877E00F98EB2 /* FavoritesTableVC.swift */; };
+		E774C83E203A1B4E00F98EB2 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774C83D203A1B4E00F98EB2 /* Book.storyboard */; };
 		E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
 		E79FA5912025398C0060B44D /* ConfirmationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */; };
 		E79FA59520290E3D0060B44D /* ReservationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59420290E3D0060B44D /* ReservationProcessor.swift */; };
@@ -101,6 +103,8 @@
 		E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableVC.swift; sourceTree = "<group>"; };
 		E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginScreenVC.swift; sourceTree = "<group>"; };
+		E774C83B2037877E00F98EB2 /* FavoritesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableVC.swift; sourceTree = "<group>"; };
+		E774C83D203A1B4E00F98EB2 /* Book.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
 		E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTableVC.swift; sourceTree = "<group>"; };
 		E79FA59420290E3D0060B44D /* ReservationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationProcessor.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */,
 				E7D3D78E2036271C00F91CC4 /* Discover.storyboard */,
 				E7D3D78C203625D200F91CC4 /* Favorites.storyboard */,
+				E774C83D203A1B4E00F98EB2 /* Book.storyboard */,
 				E7D3D79120362BF500F91CC4 /* Inbox.storyboard */,
 				E7D3D79020362BF500F91CC4 /* Settings.storyboard */,
 				E7D3D79520362E0E00F91CC4 /* ProfileEditor.storyboard */,
@@ -193,6 +198,7 @@
 				E72D8E521FBCC5C1001026D6 /* LoginVC.swift */,
 				E71F33A72004509800312B91 /* TabBarController.swift */,
 				E72B24881FC6539A00DE0897 /* DiscoverVC.swift */,
+				E774C83B2037877E00F98EB2 /* FavoritesTableVC.swift */,
 				E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */,
 				E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */,
 				E7F9A0811FB7378B00916FBA /* ChatVC.swift */,
@@ -387,6 +393,7 @@
 				E7D3D78D2036265E00F91CC4 /* Favorites.storyboard in Resources */,
 				E7D3D79A20362EF400F91CC4 /* Reservations.storyboard in Resources */,
 				E7238A682022699C00496FBC /* DateCell.xib in Resources */,
+				E774C83E203A1B4E00F98EB2 /* Book.storyboard in Resources */,
 				E7D3D79420362DB600F91CC4 /* Inbox.storyboard in Resources */,
 				E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */,
 				E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */,
@@ -517,6 +524,7 @@
 				E72D8E531FBCC5C1001026D6 /* LoginVC.swift in Sources */,
 				E71F33A520017CAA00312B91 /* TextGetterController.swift in Sources */,
 				E79FA5A3202A6AB90060B44D /* ReservationTableViewCell.swift in Sources */,
+				E774C83C2037877E00F98EB2 /* FavoritesTableVC.swift in Sources */,
 				E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */,
 				E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */,
 				E723DD871FC3E17800B4345E /* Thread.swift in Sources */,

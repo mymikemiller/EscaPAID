@@ -1,17 +1,14 @@
 //
-//  MyExperiencesTableVC
+//  FavoritesTableVC.swift
 //  tellomee
 //
-//  Created by Michael Miller on 11/22/17.
-//  Copyright © 2017 Michael Miller. All rights reserved.
+//  Created by Michael Miller on 2/16/18.
+//  Copyright © 2018 Michael Miller. All rights reserved.
 //
 
 import UIKit
 
-class MyExperiencesTableVC: UITableViewController {
-    
-    // This is set to the selected experience when the user selects a row. This is used to prepare for the segue.
-    var selectedExperience: Experience?
+class FavoritesTableVC: UITableViewController {
     
     let experienceManager = ExperienceManager()
     
@@ -26,7 +23,7 @@ class MyExperiencesTableVC: UITableViewController {
         super.viewDidAppear(animated)
         
         // Should this be happening every time we appear?
-        experienceManager.fillExperiences(forCurator: FirebaseManager.user!) {
+        experienceManager.fillExperiences(forFavoritesOf: FirebaseManager.user!) {
             () in
             DispatchQueue.main.async {
                 // This is a bit of a heavy hammer
@@ -35,11 +32,6 @@ class MyExperiencesTableVC: UITableViewController {
         }
         // Reload the table right away so it'll appear empty while wait to we fill it
         self.tableView.reloadData()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
@@ -64,12 +56,7 @@ class MyExperiencesTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedExperience = experienceManager.experiences[indexPath.row]
-        self.performSegue(withIdentifier: "showExperienceEditor", sender: self)
-    }
-    @IBAction func addButton_click(_ sender: Any) {
-        selectedExperience = nil
-        self.performSegue(withIdentifier: "showExperienceEditor", sender: self)
+        self.performSegue(withIdentifier: "showExperience", sender: self)
     }
     
     // MARK: - Navigation
@@ -78,16 +65,15 @@ class MyExperiencesTableVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if (segue.identifier == "showExperienceEditor") {
+        if (segue.identifier == "showExperience") {
             
-            let navVC = segue.destination as? UINavigationController
-            
-            let editExperienceVC = navVC?.viewControllers.first as! ExperienceEditorTableVC
-            
-            editExperienceVC.experience = selectedExperience
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let experience: Experience = experienceManager.experiences[indexPath.row]
+                let controller = segue.destination as! ExperienceVC
+                controller.experience = experience
+            }
         }
     }
-    
-    
 }
+
 
