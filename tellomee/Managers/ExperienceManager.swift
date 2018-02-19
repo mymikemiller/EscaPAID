@@ -111,6 +111,8 @@ class ExperienceManager: NSObject {
                 imageUrls: result["images"] as! [String],
                 curator: curator)
             
+           
+            
             completion(experience)
         }
     }

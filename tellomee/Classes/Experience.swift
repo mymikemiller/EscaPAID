@@ -113,6 +113,7 @@ class Experience: NSObject {
             "friday":days.Friday,
             "saturday":days.Saturday,
             "sunday":days.Sunday])
+        
     }
 }
 

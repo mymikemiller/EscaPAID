@@ -23,6 +23,9 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     @IBOutlet weak var pagerContainer: UIView!
     
+    @IBOutlet weak var favoritesButton: UIButton!
+    
+    var isFavorite: Bool = false
     
     var imagePageViewController:UIPageViewController?
     
@@ -44,6 +47,8 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             "INCLUDES: \n" + includesText + "\n\n" +
             "ABOUT ME: " + experience.curator.aboutMe + "\n\n" +
             String(format: "PRICE: $%.02f", experience.price)
+            
+            setFavoritesText()
         }
         
         imagePageViewController?.dataSource = self
@@ -52,11 +57,33 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         let viewControllers = [startingViewController]
         imagePageViewController?.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func setFavoritesText() {
+        if let experience = experience {
+            
+            // Find out whether or not the experience is a favorite of the current user.
+            FirebaseManager.databaseRef.child("userFavorites").child((FirebaseManager.user?.uid)!).child(experience.id).observe(.value, with: { (snap) in
+                
+                // If it's a favorite, snap.value won't be nil because there is a child at that address
+                self.isFavorite = snap.exists()
+                
+                if self.isFavorite {
+                    self.favoritesButton.setTitle("Remove from Favorites", for: .normal)
+                } else {
+                    self.favoritesButton.setTitle("Add to Favorites", for: .normal)
+                }
+            })
+        }
     }
+    
+    @IBAction func favoritesButton_click(_ sender: Any) {
+        if (isFavorite) {
+            FirebaseManager.databaseRef.child("userFavorites").child((FirebaseManager.user?.uid)!).child((experience?.id)!).removeValue()
+        } else {
+            FirebaseManager.databaseRef.child("userFavorites").child((FirebaseManager.user?.uid)!).child((experience?.id)!).setValue(true)
+        }
+    }
+    
     
     @IBAction func messageButton_click(_ sender: Any) {
         
