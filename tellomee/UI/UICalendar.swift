@@ -82,7 +82,10 @@ class UICalendar: UIView {
         if cellState.isSelected {
             validCell.dateLabel.textColor = selectedMonthColor
         } else {
-            if cellState.dateBelongsTo ==  .thisMonth {
+            if cellState.dateBelongsTo != .thisMonth || dateIsPast(cellState.date) {
+                
+                validCell.dateLabel.textColor = outsideMonthColor
+            } else {
                 
                 formatter.dateFormat = "yyyy MM dd"
                 let todaysDateString = formatter.string(from: todaysDate)
@@ -99,8 +102,6 @@ class UICalendar: UIView {
                     }
                 }
                 
-            } else {
-                validCell.dateLabel.textColor = outsideMonthColor
             }
         }
     }
@@ -196,7 +197,17 @@ extension UICalendar : JTAppleCalendarViewDelegate {
         setupViewsOfCalendar(from: visibleDates)
     }
     
+    private func dateIsPast(_ date: Date) -> Bool {
+        // Subtract a day so we can leave today open to booking
+        return date < Date().yesterday
+    }
+    
     func calendar(_ calendar: JTAppleCalendarView, shouldSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) -> Bool {
+        
+        // Don't allow selection of dates in the past
+        if dateIsPast(cellState.date) {
+            return false
+        }
         
         // Only allow selection of dates with a day enabled in the "enabledDates" object
         return (cellState.day == DaysOfWeek.monday && enabledDays.Monday) ||
@@ -221,5 +232,23 @@ extension UIView {
                        animations: {
                         self.transform = CGAffineTransform(scaleX: 1, y: 1)
         })
+    }
+}
+
+extension Date {
+    var yesterday: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+    }
+    var tomorrow: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+    }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
+    var month: Int {
+        return Calendar.current.component(.month,  from: self)
+    }
+    var isLastDayOfMonth: Bool {
+        return tomorrow.month != month
     }
 }
