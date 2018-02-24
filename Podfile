@@ -20,5 +20,8 @@ target 'tellomee' do
   pod 'Bolts'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+  
+  # Stripe
+  pod 'Alamofire'
 
 end

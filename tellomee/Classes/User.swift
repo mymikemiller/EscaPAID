@@ -16,6 +16,7 @@ class User: NSObject {
     var displayName:String
     var profileImageUrl:String
     var aboutMe:String
+    var stripeUserId:String? // nil when the user is not a connected curator
     
     init(uid:String, city:String, email:String, displayName:String, phone:String, aboutMe:String, profileImageUrl:String) {
         self.uid = uid
@@ -59,6 +60,7 @@ class User: NSObject {
             "displayName":displayName,
             "phone":phone,
             "aboutMe":aboutMe,
-            "profileImageUrl":profileImageUrl])
+            "profileImageUrl":profileImageUrl,
+            "stripeUserId":stripeUserId ?? NSNull()]) // null out the stripeUserId if the user doesn't have one
     }
 }

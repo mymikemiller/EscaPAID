@@ -119,6 +119,10 @@ class FirebaseManager: NSObject {
             let profileImageUrl = value["profileImageUrl"] as! String
             
             let user = User(uid: uid, city: city, email: email, displayName: displayName, phone: phone, aboutMe: aboutMe, profileImageUrl: profileImageUrl)
+            
+            // Set the stripe ID if we have one (if we're a curator)
+            user.stripeUserId = value["stripeUserId"] as? String
+            
             completion(user)
         })
     }

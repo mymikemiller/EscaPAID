@@ -28,4 +28,6 @@ class Constants: NSObject {
     
     static let feePercent = 0.1 // 10% fee deducted from the total charge for reservations
 
+    static let stripeApiVersion =  "2018-02-06"
+    static let stripeClientId = "ca_AbsKVVP7BmIJFntfSkToXhxtLSAvbIUM"
 }

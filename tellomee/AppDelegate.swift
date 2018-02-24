@@ -163,6 +163,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: ThreadsNavigationController.SHOW_THREAD_POST), object: data)
         }
     }
+    
+    // Handle app links for the redirect URI from Stripe
+    func application(_ application: UIApplication,
+                     continue userActivity: NSUserActivity,
+                     restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+            let url = userActivity.webpageURL,
+            let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
+                return false
+        }
+        
+        let code = url.getQueryStringParameter(param: "code")
+        
+        FirebaseManager.user?.stripeUserId = code
+        FirebaseManager.user?.update()
+        
+        print("Got the callback!")
+        
+        return true
+    }
 }
 
 extension AppDelegate : MessagingDelegate {
@@ -175,5 +196,16 @@ extension AppDelegate : MessagingDelegate {
         
         // Add the token to the firebase database so we know which devices to notify when messages are received
         
+    }
+}
+
+extension URL {
+    func getQueryStringParameter(param: String) -> String? {
+        guard let urlComponents = NSURLComponents(url: self, resolvingAgainstBaseURL: false),
+            let queryItems = urlComponents.queryItems else {
+                return nil
+        }
+        
+        return queryItems.first(where: { $0.name == param })?.value
     }
 }
