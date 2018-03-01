@@ -23,5 +23,6 @@ target 'tellomee' do
   
   # Stripe
   pod 'Alamofire'
+  pod 'Stripe'
 
 end

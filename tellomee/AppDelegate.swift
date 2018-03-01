@@ -12,6 +12,8 @@ import Firebase
 import FBSDKCoreKit
 import Firebase
 import UserNotifications
+import Alamofire
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -35,6 +37,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
 
         return true
+    }
+    
+    override init() {
+        super.init()
+        
+        // Stripe payment configuration
+        STPPaymentConfiguration.shared().companyName = "Tellomee"
+        
+        if !Constants.stripePublishableKey.isEmpty {
+            STPPaymentConfiguration.shared().publishableKey = Constants.stripePublishableKey
+        }
     }
     
     func setUpPageControl() {
@@ -164,7 +177,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    // Handle app links for the redirect URI from Stripe
+    // Handle app links for the redirect URI from Stripe. We are coming back from onboarding a user and now have the authorization code, but there is one more step. We have to call into https://connect.stripe.com/oauth/token, but that happens on our server because it needs the Stripe secret key (client secret).
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
@@ -175,12 +188,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 return false
         }
         
-        let code = url.getQueryStringParameter(param: "code")
+        let authorization_code = url.getQueryStringParameter(param: "code")!
         
-        FirebaseManager.user?.stripeUserId = code
-        FirebaseManager.user?.update()
+        MainAPIClient.shared.redeemOnboardingAuthorizationCode(authCode: authorization_code) { (curatorId) in
+            
+            // We received the code (user id) from Stripe. Store it for the user.
+            FirebaseManager.user?.stripeCuratorId = curatorId
+            FirebaseManager.user?.update()
+            
+            // The app refocused, so we need to refresh the settings page. We accomplish that by sending out a "became curator" notification
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: SettingsTableVC.BECAME_CURATOR), object: nil)
+        }
         
-        print("Got the callback!")
         
         return true
     }

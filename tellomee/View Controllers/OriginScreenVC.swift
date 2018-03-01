@@ -9,9 +9,6 @@
 import UIKit
 
 class OriginScreenVC: UIViewController {
-
-    // If true, the user will automatically be logged in based on what's in the input fields.
-    var autoLogin = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +18,7 @@ class OriginScreenVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if (autoLogin) {
+        if (Constants.autoLogin) {
             performSegue(withIdentifier: "origin_login", sender: self)
         }
     }
@@ -45,10 +42,6 @@ class OriginScreenVC: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if (segue.identifier == "origin_login") {
-            (segue.destination as! LoginVC).autoLogin = autoLogin
-        }
     }
     
 

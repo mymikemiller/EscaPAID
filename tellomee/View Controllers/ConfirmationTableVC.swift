@@ -1,5 +1,5 @@
 //
-//  ReceiptVCTableViewController.swift
+//  ConfirmationTableVC
 //  tellomee
 //
 //  Created by Michael Miller on 2/2/18.
@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stripe
 
 class ConfirmationTableVC: UITableViewController {
     
@@ -20,6 +21,19 @@ class ConfirmationTableVC: UITableViewController {
     @IBOutlet weak var totalLabel: UILabel!
     
     let dateFormatter = DateFormatter()
+    
+    private let customerContext: STPCustomerContext
+    private let paymentContext: STPPaymentContext
+    
+    required init?(coder aDecoder: NSCoder) {
+        customerContext = STPCustomerContext(keyProvider: MainAPIClient.shared)
+        paymentContext = STPPaymentContext(customerContext: customerContext)
+        
+        super.init(coder: aDecoder)
+        
+        paymentContext.delegate = self
+        paymentContext.hostViewController = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +49,16 @@ class ConfirmationTableVC: UITableViewController {
         totalLabel.text =
             String(format: "$%.02f", (reservation?.totalCharge)!
             )
+        
+        // set the price for the Stripe charge
+        price = Int((reservation?.totalCharge)! * 100)
+    }
+    
+    private var price = 0 {
+        didSet {
+            // Forward value to payment context
+            paymentContext.paymentAmount = price
+        }
     }
     
     func goToMessageThread() {
@@ -65,6 +89,9 @@ class ConfirmationTableVC: UITableViewController {
         // Reserve the experience.
         ReservationProcessor.reserve(reservation!)
         
+        // Perform payment request
+        paymentContext.requestPayment()
+        
         // Go to the message thread so the user can follow up
         goToMessageThread()
     }
@@ -79,4 +106,96 @@ class ConfirmationTableVC: UITableViewController {
     }
     */
 
+}
+
+extension ConfirmationTableVC : STPPaymentContextDelegate {
+
+    func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
+        if let customerKeyError = error as? MainAPIClient.CustomerKeyError {
+            switch customerKeyError {
+            case .missingBaseURL:
+                // Fail silently until base url string is set
+                print("[ERROR]: Please assign a value to `MainAPIClient.shared.baseURLString` before continuing. See `AppDelegate.swift`.")
+            case .invalidResponse:
+                // Use customer key specific error message
+                print("[ERROR]: Missing or malformed response when attempting to `MainAPIClient.shared.createCustomerKey`. Please check internet connection and backend response formatting.");
+                
+                present(UIAlertController(message: "Could not retrieve customer information", retryHandler: { (action) in
+                    // Retry payment context loading
+                    paymentContext.retryLoading()
+                }), animated: true)
+            }
+        }
+        else {
+            // Use generic error message
+            print("[ERROR]: Unrecognized error while loading payment context: \(error)");
+            
+            present(UIAlertController(message: "Could not retrieve payment information", retryHandler: { (action) in
+                // Retry payment context loading
+                paymentContext.retryLoading()
+            }), animated: true)
+        }
+    }
+
+    func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
+        // Reload related components
+        print("paymentContextDidChange")
+    }
+
+    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
+        // Create charge using payment result
+        let source = paymentResult.source.stripeID
+        
+        // Convert price (double) to price (int) by multiplying by 100
+        let amountForCurator = price - Int((reservation?.fee)! * 100)
+        
+        MainAPIClient.shared.bookReservation(source: source, amount: price, amountForCurator: amountForCurator, currency: "usd", reservation: reservation!) { [weak self] (error) in
+            guard let strongSelf = self else {
+                // View controller was deallocated
+                return
+            }
+            
+            guard error == nil else {
+                // Error while requesting ride
+                completion(error)
+                return
+            }
+            
+            completion(nil)
+        }
+    }
+
+    func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
+        switch status {
+        case .success:
+            // Animate active ride
+            //animateActiveRide()
+            print("success!")
+        case .error:
+            // Present error to user
+            if let reservationError = error as? MainAPIClient.ReservationError {
+                switch reservationError {
+                case .missingBaseURL:
+                    // Fail silently until base url string is set
+                    print("[ERROR]: Please assign a value to `MainAPIClient.shared.baseURLString` before continuing. See `AppDelegate.swift`.")
+                case .invalidResponse:
+                    // Missing response from backend
+                    print("[ERROR]: Missing or malformed response when attempting to `MainAPIClient.shared.bookReservation`. Please check internet connection and backend response formatting.");
+                    present(UIAlertController(message: "Could not book reservation"), animated: true)
+                }
+            }
+            else {
+                // Use generic error message
+                print("[ERROR]: Unrecognized error while finishing payment: \(String(describing: error))");
+                present(UIAlertController(message: "Could not book reservation"), animated: true)
+            }
+            
+            // Reset ride request state
+//            rideRequestState = .none
+        case .userCancellation:
+            // Reset ride request state
+//            rideRequestState = .none
+            print("user cancelled")
+        }
+    }
 }

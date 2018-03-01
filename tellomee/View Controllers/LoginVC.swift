@@ -9,24 +9,23 @@
 import UIKit
 
 class LoginVC: UIViewController {
-
-    // autoLogin is sent in by OriginScreenViewController
-    var autoLogin = false
     
     var initEmail: String = ""
+    var initPassword:String = ""
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         // We set initEmail when coming here after creating a new account
         if (!initEmail.isEmpty) { email.text = initEmail }
+        if (!initPassword.isEmpty) { password.text = initPassword }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if (autoLogin) {
+        if (Constants.autoLogin) {
             // Automatically log the user in
             loginButton_click(self)
         }
@@ -63,26 +62,26 @@ class LoginVC: UIViewController {
     
     @IBAction func mikem_click(_ sender: Any) {
         email.text = "mikem.exe@gmail.com"
-        password.text = "testpass"
+        password.text = "testtest"
         loginButton_click(self)
     }
     
     @IBAction func tellomee_a_click(_ sender: Any) {
         email.text = "tellomee.a@gmail.com"
-        password.text = "testpass"
+        password.text = "testtest"
         loginButton_click(self)
     }
     
     @IBAction func tellomee_b_click(_ sender: Any) {
         email.text = "tellomee.b@gmail.com"
-        password.text = "testpass"
+        password.text = "testtest"
         loginButton_click(self)
     }
     
     @IBAction func cancelButton_click(_ sender: Any) {
         let originVC: OriginScreenVC = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
         // Prevent auto-login once we log out or we'll immediately be logged back in
-        originVC.autoLogin = false
+        Constants.autoLogin = false
         self.present(originVC, animated: true, completion: nil)
     }
     

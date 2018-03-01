@@ -79,6 +79,13 @@ class FirebaseManager: NSObject {
             
             // Add the user to our database (even if they're not verified) so we can associate information with the user.
             addUser(email: email, phone: phone, displayName: displayName, profileImageUrl: "") {user in
+                
+                guard (user != nil) else {
+                    // Couldn't create the user. The server may be down.
+                    completion("Error creating user")
+                    return
+                }
+                
                 print("user added")
                 
                 completion(nil)
@@ -86,22 +93,33 @@ class FirebaseManager: NSObject {
         })
     }
     
-    static func addUser(email:String, phone:String, displayName: String, profileImageUrl:String, completion: @escaping (_ user:User) -> Void) {
+    static func addUser(email:String, phone:String, displayName: String, profileImageUrl:String, completion: @escaping (_ user:User?) -> Void) {
         let uid = Auth.auth().currentUser?.uid
-        let newUser = ["uid":uid!,
-                    "email":email,
-                    "city": "", // Start with a blank city. The user will fill it in later
-                    "phone":phone,
-                    "displayName":displayName,
-                    "aboutMe":"",
-                    "profileImageUrl":profileImageUrl]
         
-        databaseRef.child("users").child(uid!).setValue(newUser) { (error, ref) -> Void in
-            getUser(uid: uid!, completion: { (user) in
-                
-                completion(user)
-            })
-        }
+        // Get the server to create a stripe customer, and set the returned stripeCustomerId
+        MainAPIClient.shared.createCustomer(email: email, description: displayName, completion: { (customerId) in
+            
+            guard (customerId != nil) else {
+                // Couldn't create the user (possibly because we can't connect to our server).
+                completion(nil)
+                return
+            }
+            
+            let newUser = ["uid":uid!,
+                           "email":email,
+                           "city": "", // Start with a blank city. The user will fill it in later
+                           "phone":phone,
+                           "displayName":displayName,
+                           "aboutMe":"",
+                           "profileImageUrl":profileImageUrl,
+                           "stripeCustomerId": customerId]
+            
+            databaseRef.child("users").child(uid!).setValue(newUser) { (error, ref) -> Void in
+                getUser(uid: uid!, completion: { (user) in
+                    completion(user)
+                })
+            }
+        })
     }
     
     static func getUser(uid:String, completion: @escaping (User) -> Void) {
@@ -121,7 +139,11 @@ class FirebaseManager: NSObject {
             let user = User(uid: uid, city: city, email: email, displayName: displayName, phone: phone, aboutMe: aboutMe, profileImageUrl: profileImageUrl)
             
             // Set the stripe ID if we have one (if we're a curator)
-            user.stripeUserId = value["stripeUserId"] as? String
+            user.stripeCuratorId = value["stripeCuratorId"] as? String
+            
+            // Set the stripe ID if we have one (we should have one - only for a brief period in customer creation do we not have one)
+            user.stripeCustomerId = value["stripeCustomerId"] as? String
+
             
             completion(user)
         })
@@ -165,6 +187,13 @@ class FirebaseManager: NSObject {
                         phone: phone,
                         displayName: (firebaseUser?.displayName!)!,
                         profileImageUrl: (Auth.auth().currentUser?.photoURL?.absoluteString)!) { user in
+                            
+                            guard (user != nil) else {
+                                // Couldn't create the user. The server may be down
+                                fatalError("Error creating account")
+                                completion(false)
+                                return
+                            }
                             
                             //Save the logged in user
                             self.user = user

@@ -16,7 +16,8 @@ class User: NSObject {
     var displayName:String
     var profileImageUrl:String
     var aboutMe:String
-    var stripeUserId:String? // nil when the user is not a connected curator
+    var stripeCuratorId:String? // nil when the user is not a connected curator
+    var stripeCustomerId:String? // nil when the user has not yet been given a stripe customer ID, which happens right when the user is created so this shouldn't be nil for long
     
     init(uid:String, city:String, email:String, displayName:String, phone:String, aboutMe:String, profileImageUrl:String) {
         self.uid = uid
@@ -61,6 +62,7 @@ class User: NSObject {
             "phone":phone,
             "aboutMe":aboutMe,
             "profileImageUrl":profileImageUrl,
-            "stripeUserId":stripeUserId ?? NSNull()]) // null out the stripeUserId if the user doesn't have one
+            "stripeCuratorId":stripeCuratorId ?? NSNull(), // null out the stripeCuratorId if the user doesn't have one
+            "stripeCustomerId":stripeCustomerId ?? NSNull()]) // null out the stripeCustomerId if the user doesn't have one
     }
 }

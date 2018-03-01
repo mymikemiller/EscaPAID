@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 
 class SettingsTableVC: UITableViewController {
+    
+    static let BECAME_CURATOR = "BECAME_CURATOR"
 
     @IBOutlet weak var editProfileCell: UITableViewCell!
     @IBOutlet weak var logOutCell: UITableViewCell!
@@ -23,11 +25,19 @@ class SettingsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let isCurator = FirebaseManager.user?.stripeUserId != nil
-        setCuratorSettingsVisibility(isCurator: isCurator)
+        setCuratorSettingsVisibility()
+        
+        // Listen for internal broadcast notifications specifying that the user became a curator, in which case we need to update the visibility of the curator related settings
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(setCuratorSettingsVisibility),
+                                               name: Notification.Name(rawValue: SettingsTableVC.BECAME_CURATOR),
+                                               object: nil)
     }
     
-    func setCuratorSettingsVisibility(isCurator: Bool) {
+    
+    @objc func setCuratorSettingsVisibility() {
+        let isCurator = FirebaseManager.user?.stripeCuratorId != nil
+        
         becomeACuratorCell.enable(on: !isCurator)
         manageCuratedExperiencesCell.enable(on: isCurator)
         viewReservationsCell.enable(on: isCurator)
@@ -56,7 +66,7 @@ class SettingsTableVC: UITableViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let originVC: OriginScreenVC = storyboard.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
             // Prevent auto-login once we log out or we'll immediately be logged back in
-            originVC.autoLogin = false
+            Constants.autoLogin = false
             self.present(originVC, animated: true, completion: nil)
 
         } else {

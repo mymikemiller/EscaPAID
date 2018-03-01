@@ -85,7 +85,7 @@ class CreateAccountVC: UIViewController {
     @IBAction func cancelButton_click(_ sender: Any) {
         let originVC: OriginScreenVC = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
         // Prevent auto-login or we'll immediately be logged back in
-        originVC.autoLogin = false
+        Constants.autoLogin = false
         self.present(originVC, animated: true, completion: nil)
 
     }
@@ -99,6 +99,7 @@ class CreateAccountVC: UIViewController {
         // Pass the selected object to the new view controller.
         if (segue.identifier == "create_ShowLogin") {
             (segue.destination as! LoginVC).initEmail = email.text!
+            (segue.destination as! LoginVC).initPassword = password.text!
         }
     }
 

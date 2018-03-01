@@ -80,6 +80,7 @@ PODS:
   - SDWebImage (4.3.0):
     - SDWebImage/Core (= 4.3.0)
   - SDWebImage/Core (4.3.0)
+  - Stripe (12.1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -95,6 +96,7 @@ DEPENDENCIES:
   - JTAppleCalendar (~> 7.0)
   - RSKImageCropper
   - SDWebImage (~> 4.0)
+  - Stripe
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -119,7 +121,8 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   RSKImageCropper: d9a1acbc0600bf8decc8f0d21895872c99a9e4cf
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
+  Stripe: de8bffa8e6813f678d526c52f416fe224141fa09
 
-PODFILE CHECKSUM: 3e0ab2a11daa1a12df5ce5f5f0d54494da9fb0e7
+PODFILE CHECKSUM: 7e905f3e03a6e39492258c4386bf50750154933a
 
 COCOAPODS: 1.4.0

@@ -37,6 +37,8 @@
 		E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
 		E774C83C2037877E00F98EB2 /* FavoritesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774C83B2037877E00F98EB2 /* FavoritesTableVC.swift */; };
 		E774C83E203A1B4E00F98EB2 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774C83D203A1B4E00F98EB2 /* Book.storyboard */; };
+		E79770E52043816700B2206C /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E42043816700B2206C /* MainAPIClient.swift */; };
+		E79770E82044774100B2206C /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E72044774000B2206C /* UIAlertController+Utility.swift */; };
 		E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
 		E79FA5912025398C0060B44D /* ConfirmationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */; };
 		E79FA59520290E3D0060B44D /* ReservationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59420290E3D0060B44D /* ReservationProcessor.swift */; };
@@ -105,6 +107,8 @@
 		E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginScreenVC.swift; sourceTree = "<group>"; };
 		E774C83B2037877E00F98EB2 /* FavoritesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableVC.swift; sourceTree = "<group>"; };
 		E774C83D203A1B4E00F98EB2 /* Book.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
+		E79770E42043816700B2206C /* MainAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIClient.swift; sourceTree = "<group>"; };
+		E79770E72044774000B2206C /* UIAlertController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utility.swift"; sourceTree = "<group>"; };
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
 		E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTableVC.swift; sourceTree = "<group>"; };
 		E79FA59420290E3D0060B44D /* ReservationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationProcessor.swift; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 		E720AC071FC210AB00E9C2EF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E720AC051FC2100800E9C2EF /* Managers */,
 				E74549931FB78AE200A6A32C /* User.swift */,
 				E723DD861FC3E17800B4345E /* Thread.swift */,
 				E72B248E1FC65B3800DE0897 /* Experience.swift */,
@@ -254,6 +259,14 @@
 				E79FA59620290EA50060B44D /* Reservation.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		E79770E62044772200B2206C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E79770E72044774000B2206C /* UIAlertController+Utility.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		E7B9F7301FB6CAAE0058CE61 = {
@@ -283,7 +296,7 @@
 				E720AC041FC20FE500E9C2EF /* View Controllers */,
 				E720AC061FC2108B00E9C2EF /* TableViewCells */,
 				E720AC071FC210AB00E9C2EF /* Classes */,
-				E720AC051FC2100800E9C2EF /* Managers */,
+				E79770E62044772200B2206C /* Utility */,
 				E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */,
 				E7D0A7831FDB573D008319CF /* Constants.swift */,
 				E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */,
@@ -293,6 +306,7 @@
 				E7B9F7431FB6CAAF0058CE61 /* tellomee.xcdatamodeld */,
 				E7CBD4FC203368A000480774 /* GoogleService-Info.plist */,
 				E7E152A020360DA800033BEB /* tellomee-Bridging-Header.h */,
+				E79770E42043816700B2206C /* MainAPIClient.swift */,
 			);
 			path = tellomee;
 			sourceTree = "<group>";
@@ -427,6 +441,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -444,6 +459,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -494,10 +510,12 @@
 			files = (
 				E7D316AA1FD08EF60062E178 /* ExperienceImageCell.swift in Sources */,
 				E7B94FA720195F4D00C5FBCB /* DateCell.swift in Sources */,
+				E79770E52043816700B2206C /* MainAPIClient.swift in Sources */,
 				E79FA59D202A53390060B44D /* ReservationManager.swift in Sources */,
 				E7B94FA520195C1E00C5FBCB /* ReservationVC.swift in Sources */,
 				E7E22E8F1FC7463800FD88FF /* ExperienceTableViewCell.swift in Sources */,
 				E751E0E11FD1CDA500CBB416 /* StorageManager.swift in Sources */,
+				E79770E82044774100B2206C /* UIAlertController+Utility.swift in Sources */,
 				E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */,
 				E7D0A7841FDB573D008319CF /* Constants.swift in Sources */,
 				E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */,
