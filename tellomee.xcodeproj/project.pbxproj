@@ -20,30 +20,30 @@
 		E723DD871FC3E17800B4345E /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723DD861FC3E17800B4345E /* Thread.swift */; };
 		E728EA35202BB6C30041F6AC /* ReceiptTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728EA34202BB6C30041F6AC /* ReceiptTableVC.swift */; };
 		E72B24891FC6539A00DE0897 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B24881FC6539A00DE0897 /* DiscoverVC.swift */; };
-		E72B248B1FC656F400DE0897 /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B248A1FC656F400DE0897 /* ExperienceManager.swift */; };
 		E72B248F1FC65B3800DE0897 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B248E1FC65B3800DE0897 /* Experience.swift */; };
 		E72D8E531FBCC5C1001026D6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D8E521FBCC5C1001026D6 /* LoginVC.swift */; };
 		E72F64471FBBB22B0023489D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E72F64461FBBB22B0023489D /* Podfile */; };
 		E732DA931FC8DCC400BCF691 /* ThreadsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */; };
 		E73BDABF1FFD52D800D1F209 /* ProfileEditorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */; };
-		E74549901FB7543A00A6A32C /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745498F1FB7543A00A6A32C /* PostManager.swift */; };
 		E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549911FB758B300A6A32C /* ChatTableViewCell.swift */; };
 		E74549941FB78AE200A6A32C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549931FB78AE200A6A32C /* User.swift */; };
-		E74549961FB78F4500A6A32C /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549951FB78F4500A6A32C /* ThreadManager.swift */; };
 		E745499A1FB8B1BE00A6A32C /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */; };
-		E751E0E11FD1CDA500CBB416 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E01FD1CDA500CBB416 /* StorageManager.swift */; };
 		E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */; };
 		E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */; };
 		E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
 		E774C83C2037877E00F98EB2 /* FavoritesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774C83B2037877E00F98EB2 /* FavoritesTableVC.swift */; };
 		E774C83E203A1B4E00F98EB2 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774C83D203A1B4E00F98EB2 /* Book.storyboard */; };
+		E77A7369204875A200AE0DE4 /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7363204875A100AE0DE4 /* ThreadManager.swift */; };
+		E77A736A204875A200AE0DE4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7364204875A100AE0DE4 /* StorageManager.swift */; };
+		E77A736B204875A200AE0DE4 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7365204875A100AE0DE4 /* PostManager.swift */; };
+		E77A736D204875A200AE0DE4 /* ReservationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7367204875A200AE0DE4 /* ReservationManager.swift */; };
+		E77A736E204875A200AE0DE4 /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7368204875A200AE0DE4 /* ExperienceManager.swift */; };
 		E79770E52043816700B2206C /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E42043816700B2206C /* MainAPIClient.swift */; };
 		E79770E82044774100B2206C /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E72044774000B2206C /* UIAlertController+Utility.swift */; };
 		E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
 		E79FA5912025398C0060B44D /* ConfirmationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */; };
 		E79FA59520290E3D0060B44D /* ReservationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59420290E3D0060B44D /* ReservationProcessor.swift */; };
 		E79FA59720290EA50060B44D /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59620290EA50060B44D /* Reservation.swift */; };
-		E79FA59D202A53390060B44D /* ReservationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59C202A53390060B44D /* ReservationManager.swift */; };
 		E79FA59F202A69050060B44D /* ReservationsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59E202A69050060B44D /* ReservationsTableVC.swift */; };
 		E79FA5A3202A6AB90060B44D /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */; };
 		E7B94FA520195C1E00C5FBCB /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */; };
@@ -90,30 +90,30 @@
 		E723DD861FC3E17800B4345E /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		E728EA34202BB6C30041F6AC /* ReceiptTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptTableVC.swift; sourceTree = "<group>"; };
 		E72B24881FC6539A00DE0897 /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
-		E72B248A1FC656F400DE0897 /* ExperienceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceManager.swift; sourceTree = "<group>"; };
 		E72B248E1FC65B3800DE0897 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		E72D8E521FBCC5C1001026D6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E72F64461FBBB22B0023489D /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsNavigationController.swift; sourceTree = "<group>"; };
 		E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorTableVC.swift; sourceTree = "<group>"; };
-		E745498F1FB7543A00A6A32C /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		E74549911FB758B300A6A32C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		E74549931FB78AE200A6A32C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E74549951FB78F4500A6A32C /* ThreadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadManager.swift; sourceTree = "<group>"; };
 		E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
-		E751E0E01FD1CDA500CBB416 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableVC.swift; sourceTree = "<group>"; };
 		E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginScreenVC.swift; sourceTree = "<group>"; };
 		E774C83B2037877E00F98EB2 /* FavoritesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableVC.swift; sourceTree = "<group>"; };
 		E774C83D203A1B4E00F98EB2 /* Book.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
+		E77A7363204875A100AE0DE4 /* ThreadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadManager.swift; sourceTree = "<group>"; };
+		E77A7364204875A100AE0DE4 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		E77A7365204875A100AE0DE4 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		E77A7367204875A200AE0DE4 /* ReservationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationManager.swift; sourceTree = "<group>"; };
+		E77A7368204875A200AE0DE4 /* ExperienceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceManager.swift; sourceTree = "<group>"; };
 		E79770E42043816700B2206C /* MainAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIClient.swift; sourceTree = "<group>"; };
 		E79770E72044774000B2206C /* UIAlertController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utility.swift"; sourceTree = "<group>"; };
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
 		E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTableVC.swift; sourceTree = "<group>"; };
 		E79FA59420290E3D0060B44D /* ReservationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationProcessor.swift; sourceTree = "<group>"; };
 		E79FA59620290EA50060B44D /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
-		E79FA59C202A53390060B44D /* ReservationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationManager.swift; sourceTree = "<group>"; };
 		E79FA59E202A69050060B44D /* ReservationsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsTableVC.swift; sourceTree = "<group>"; };
 		E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
 		E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
@@ -225,12 +225,12 @@
 		E720AC051FC2100800E9C2EF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E77A7368204875A200AE0DE4 /* ExperienceManager.swift */,
+				E77A7365204875A100AE0DE4 /* PostManager.swift */,
+				E77A7367204875A200AE0DE4 /* ReservationManager.swift */,
+				E77A7364204875A100AE0DE4 /* StorageManager.swift */,
+				E77A7363204875A100AE0DE4 /* ThreadManager.swift */,
 				E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */,
-				E745498F1FB7543A00A6A32C /* PostManager.swift */,
-				E74549951FB78F4500A6A32C /* ThreadManager.swift */,
-				E72B248A1FC656F400DE0897 /* ExperienceManager.swift */,
-				E79FA59C202A53390060B44D /* ReservationManager.swift */,
-				E751E0E01FD1CDA500CBB416 /* StorageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -511,15 +511,13 @@
 				E7D316AA1FD08EF60062E178 /* ExperienceImageCell.swift in Sources */,
 				E7B94FA720195F4D00C5FBCB /* DateCell.swift in Sources */,
 				E79770E52043816700B2206C /* MainAPIClient.swift in Sources */,
-				E79FA59D202A53390060B44D /* ReservationManager.swift in Sources */,
 				E7B94FA520195C1E00C5FBCB /* ReservationVC.swift in Sources */,
 				E7E22E8F1FC7463800FD88FF /* ExperienceTableViewCell.swift in Sources */,
-				E751E0E11FD1CDA500CBB416 /* StorageManager.swift in Sources */,
+				E77A736E204875A200AE0DE4 /* ExperienceManager.swift in Sources */,
 				E79770E82044774100B2206C /* UIAlertController+Utility.swift in Sources */,
 				E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */,
 				E7D0A7841FDB573D008319CF /* Constants.swift in Sources */,
 				E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */,
-				E74549961FB78F4500A6A32C /* ThreadManager.swift in Sources */,
 				E79FA59F202A69050060B44D /* ReservationsTableVC.swift in Sources */,
 				E72B248F1FC65B3800DE0897 /* Experience.swift in Sources */,
 				E7B9F7451FB6CAAF0058CE61 /* tellomee.xcdatamodeld in Sources */,
@@ -527,11 +525,10 @@
 				E79FA59520290E3D0060B44D /* ReservationProcessor.swift in Sources */,
 				E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */,
 				E7D316881FCF246A0062E178 /* ExperienceImageVC.swift in Sources */,
+				E77A7369204875A200AE0DE4 /* ThreadManager.swift in Sources */,
 				E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */,
 				E71F33AA2004650800312B91 /* ExperienceEditorTableVC.swift in Sources */,
 				E73BDABF1FFD52D800D1F209 /* ProfileEditorTableVC.swift in Sources */,
-				E72B248B1FC656F400DE0897 /* ExperienceManager.swift in Sources */,
-				E74549901FB7543A00A6A32C /* PostManager.swift in Sources */,
 				E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */,
 				E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */,
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,
@@ -544,10 +541,13 @@
 				E745499A1FB8B1BE00A6A32C /* ThreadTableViewCell.swift in Sources */,
 				E79FA5912025398C0060B44D /* ConfirmationTableVC.swift in Sources */,
 				E7F9A0821FB7378B00916FBA /* ChatVC.swift in Sources */,
+				E77A736B204875A200AE0DE4 /* PostManager.swift in Sources */,
 				E72D8E531FBCC5C1001026D6 /* LoginVC.swift in Sources */,
 				E71F33A520017CAA00312B91 /* TextGetterController.swift in Sources */,
 				E79FA5A3202A6AB90060B44D /* ReservationTableViewCell.swift in Sources */,
+				E77A736A204875A200AE0DE4 /* StorageManager.swift in Sources */,
 				E774C83C2037877E00F98EB2 /* FavoritesTableVC.swift in Sources */,
+				E77A736D204875A200AE0DE4 /* ReservationManager.swift in Sources */,
 				E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */,
 				E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */,
 				E723DD871FC3E17800B4345E /* Thread.swift in Sources */,
