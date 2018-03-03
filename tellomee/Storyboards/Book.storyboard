@@ -405,6 +405,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="jNR-g7-nSJ" id="H2e-hJ-AVS"/>
                         <outlet property="numGuestsLabel" destination="xft-lJ-ngo" id="NGK-Vo-u6N"/>
+                        <outlet property="payButton" destination="7Uo-pg-OBR" id="PxA-M4-E3r"/>
                         <outlet property="providerButton" destination="CRo-Pe-6H6" id="A2n-Yk-Wzc"/>
                         <outlet property="timeLabel" destination="qKO-tq-CzM" id="rZs-nT-5CQ"/>
                         <outlet property="titleLabel" destination="Ysh-Rz-RhY" id="Enp-tT-fv7"/>

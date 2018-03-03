@@ -19,6 +19,7 @@ class ConfirmationTableVC: UITableViewController {
     @IBOutlet weak var providerButton: UIButton!
     @IBOutlet weak var numGuestsLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var payButton: UIButton!
     
     let dateFormatter = DateFormatter()
     
@@ -52,6 +53,19 @@ class ConfirmationTableVC: UITableViewController {
         
         // set the price for the Stripe charge
         price = Int((reservation?.totalCharge)! * 100)
+        
+        refreshPayButton()
+    }
+    
+    private func refreshPayButton() {
+        if reservation?.stripeChargeId == nil {
+            // The reservation hasn't been paid for yet
+            payButton.setTitle("Pay", for: .normal)
+        } else {
+            // Already paid
+            payButton.setTitle("Paid", for: .disabled)
+            payButton.isEnabled = false
+        }
     }
     
     private var price = 0 {
@@ -91,9 +105,6 @@ class ConfirmationTableVC: UITableViewController {
             
             // Perform payment request
             self.paymentContext.requestPayment()
-            
-            // Go to the message thread so the user can follow up
-            self.goToMessageThread()
         })
         
     }
@@ -152,7 +163,7 @@ extension ConfirmationTableVC : STPPaymentContextDelegate {
         // Convert price (double) to price (int) by multiplying by 100
         let amountForCurator = price - Int((reservation?.fee)! * 100)
         
-        MainAPIClient.shared.bookReservation(source: source, amount: price, amountForCurator: amountForCurator, currency: "usd", reservation: reservation!) { [weak self] (error) in
+        MainAPIClient.shared.bookReservation(source: source, amount: price, amountForCurator: amountForCurator, currency: "usd", reservation: reservation!) { [weak self] (error, stripeChargeId) in
             guard let strongSelf = self else {
                 // View controller was deallocated
                 return
@@ -163,6 +174,18 @@ extension ConfirmationTableVC : STPPaymentContextDelegate {
                 completion(error)
                 return
             }
+            
+            // Set the stripe charge id on the reservation
+            strongSelf.reservation?.stripeChargeId = stripeChargeId
+            
+            // Disable the pay button
+            strongSelf.refreshPayButton()
+            
+            // Send a message to the curator letting them know we've booked
+            ReservationProcessor.postReservationConfirmationMessage(for: strongSelf.reservation!)
+            
+            // Go to the message thread so the user can follow up
+            strongSelf.goToMessageThread()
             
             completion(nil)
         }

@@ -35,6 +35,8 @@ class Reservation {
     let numGuests: Int
     let totalCharge: Double
     let fee: Double
+    // The stripe charge id is only set after the charge goes through
+    var stripeChargeId: String?
     
     // Status can be changed via the ReservationManager, which also saves the change to the database
     var status: Status

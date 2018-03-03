@@ -164,10 +164,11 @@ app.post('/api/book', async (req, res, next) => {
 
                 // Add the Stripe charge reference to the reservation and save it.
                 reservationsDatabaseRef.child(reservationId).update({ stripeChargeId: chargeId })
-        
+                  
+                // Return the new stripe charge id
+                res.send({stripeChargeId: chargeId});
             });
-                                                          
-            res.send({});
+                                                
         }, function (errorObject) {
             console.log("Cannot find reservation " + reservationId + ": " + errorObject.code);
         });

@@ -55,7 +55,6 @@ class PostManager: NSObject {
     
     func fillPosts(uid:String?, toId:String, threadId:String, completion: @escaping(_ result:String) -> Void) {
         messages = [JSQMessage]()
-        
         if (uid == toId) {
             // Users can't send messages to themselves
             completion("")
@@ -70,6 +69,7 @@ class PostManager: NSObject {
                 let message = JSQMessage(senderId: result["fromId"]! as! String,
                                          displayName: "", // We don't display the display name, so we don't need one
                                          text: result["text"]! as! String)
+        
                 self.messages.append(message!)
             }
             completion("")

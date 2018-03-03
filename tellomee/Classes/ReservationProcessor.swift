@@ -15,7 +15,7 @@ class ReservationProcessor {
         postReservationConfirmationMessage(for: reservation)
         
         // Save the reservation to the database
-        ReservationManager.saveNew(reservation: reservation, completion: {
+        ReservationManager.save(reservation: reservation, completion: {
             completion()
         })
     }

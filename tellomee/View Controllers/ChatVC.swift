@@ -64,6 +64,12 @@ class ChatVC: JSQMessagesViewController {
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData!
     {
+        // We sometimes get here even though the message count is 0. Make up a fake message because we have to return something.
+        if (postManager.messages.count == 0) {
+            return JSQMessage(senderId: "",
+                                 displayName: "",
+                                 text:"")
+        }
         return postManager.messages[indexPath.item]
     }
     
@@ -74,6 +80,10 @@ class ChatVC: JSQMessagesViewController {
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource!
     {
+        // We sometimes get here even though the message count is 0.
+        if (postManager.messages.count == 0) {
+            return incomingBubble
+        }
         return postManager.messages[(indexPath?.item)!].senderId == senderId ? outgoingBubble : incomingBubble
     }
     
@@ -83,9 +93,13 @@ class ChatVC: JSQMessagesViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath)
             as! JSQMessagesCollectionViewCell
+        
+        // We sometimes get here even though the message count is 0.
+        if (postManager.messages.count == 0) {
+            return cell
+        }
         
         let message = postManager.messages[indexPath.item]
         
@@ -93,6 +107,15 @@ class ChatVC: JSQMessagesViewController {
         cell.textView.textColor = message.senderId == self.senderId ? UIColor.white : UIColor.black
         
         return cell
+    }
+        
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // We sometimes get here even though the message count is 0.
+        if postManager.messages.count == 0 {
+            return CGSize()
+        } else {
+            return super.collectionView(collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath)
+        }
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString!

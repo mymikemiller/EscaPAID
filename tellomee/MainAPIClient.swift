@@ -23,7 +23,7 @@ class MainAPIClient: NSObject {
         case invalidResponse
     }
     
-    func bookReservation(source: String, amount: Int, amountForCurator: Int, currency: String, reservation: Reservation, completion: @escaping (ReservationError?) -> Void) {
+    func bookReservation(source: String, amount: Int, amountForCurator: Int, currency: String, reservation: Reservation, completion: @escaping (ReservationError?, String?) -> Void) {
         print("in bookReservation")
         let url = self.baseURL.appendingPathComponent("book")
         
@@ -34,11 +34,13 @@ class MainAPIClient: NSObject {
                 
         Alamofire.request(url, method: .post, parameters: parameters).responseJSON { (response) in
             guard let json = response.result.value as? [String: Any] else {
-                completion(.invalidResponse)
+                completion(.invalidResponse, nil)
                 return
             }
             
-            completion(nil)
+            let stripeChargeId = json["stripeChargeId"] as! String
+            
+            completion(nil, stripeChargeId)
         }
     }
     
