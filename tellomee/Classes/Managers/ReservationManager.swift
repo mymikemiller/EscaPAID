@@ -75,20 +75,27 @@ class ReservationManager: NSObject {
     }
     
     // Saves to database and assigns an id
-    static func saveNew(reservation: Reservation) {
+    static func saveNew(reservation: Reservation, completion: @escaping () -> Void) {
         let newRef = FirebaseManager.databaseRef.child("reservations").childByAutoId()
         
         // Set the key so we can edit the reservation later
         reservation.id = newRef.key
-        FirebaseManager.databaseRef.child("reservations").childByAutoId().updateChildValues([
+        
+        let update = [
             "experienceId":reservation.experience.id,
             "curator":reservation.experience.curator.uid,
+            "curatorStripeId": reservation.experience.curator.stripeCuratorId,
             "user": reservation.user.uid,
+            "userStripeId": reservation.user.stripeCustomerId,
             "date": Reservation.databaseDateFormatter.string(from: reservation.date),
             "numGuests": reservation.numGuests,
             "totalCharge": reservation.totalCharge,
             "fee": reservation.fee,
-            "status": reservation.status.rawValue])
+            "status": reservation.status.rawValue] as [String : Any]
+    
+        newRef.updateChildValues(update) { (error, ref) in
+            completion()
+        }
     }
     
     static func setStatus(for reservation: Reservation!, status: Reservation.Status) {

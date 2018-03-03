@@ -10,12 +10,14 @@ import Foundation
 
 class ReservationProcessor {
     
-    static func reserve(_ reservation: Reservation) {
+    static func reserve(_ reservation: Reservation, completion: @escaping () -> Void) {
         // Post a confirmation message to the curator
         postReservationConfirmationMessage(for: reservation)
         
         // Save the reservation to the database
-        ReservationManager.saveNew(reservation: reservation)
+        ReservationManager.saveNew(reservation: reservation, completion: {
+            completion()
+        })
     }
     
     static func postReservationConfirmationMessage(for reservation: Reservation) {

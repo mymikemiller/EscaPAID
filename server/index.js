@@ -2,6 +2,9 @@
 const client_secret = 'sk_test_x9nLe8uLGzarVgMEUSuylguX'
 const express = require('express');
 var stripe = require('stripe')(client_secret);
+var admin = require('firebase-admin');
+// Generate the service account key at https://console.firebase.google.com/project/tellomee-x/settings/serviceaccounts/adminsdk
+var serviceAccount = require('./tellomee-x-firebase-service-account-private-key.json');
 var bodyParser = require('body-parser')
 var request = require('request');
 const path = require('path')
@@ -14,10 +17,19 @@ app.use(bodyParser.urlencoded({
 
 const PORT = process.env.PORT || 5000
 
+// This firebase stuff might need to move into /book
+// Initialize firebase for booking reservations
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://tellomee-x.firebaseio.com"
+});
+// Get a database reference to our posts
+var db = admin.database();
+var reservationsDatabaseRef = db.ref("reservations");
+
+
 // The methods below are required by the Stripe iOS SDK
 // See [STPEphemeralKeyProvider](https://github.com/stripe/stripe-ios/blob/master/Stripe/PublicHeaders/STPEphemeralKeyProvider.h)
-
-
 app.post("/api/create_customer", (req, res) => {
     console.log("at /api/create_customer post")
 
@@ -51,7 +63,7 @@ app.post("/api/ephemeral_keys", (req, res) => {
         {customer : customerId},
         {stripe_version : api_version}
         ).then((key) => {
-            console.log("Success!")
+            console.log("Ephemeral key created")
             res.status(200).send(key)
     }).catch((err) => {
         console.log(err, req.body);
@@ -104,59 +116,89 @@ app.post("/api/redeem_auth_code", (req, res) => {
  */
 app.post('/api/book', async (req, res, next) => {
     console.log("at /api/book post")
-    // Important: For this demo, we're trusting the `amount` and `currency`
-    // coming from the client request.
-    // A real application should absolutely have the `amount` and `currency`
-    // securely computed on the backend to make sure the user can't change
-    // the payment amount from their web browser or client-side environment.
-    const { source, amount, amountForCurator, currency, customerId, curatorId } = req.body;
+
+    const { source, reservationId } = req.body;
   
+    let currency = "USD"
+
     try {
-      // For the purpose of this demo, let's assume we are automatically
-      // matching with the first fully onboarded pilot rather than using their location.
-    //   const pilot = await Pilot.getFirstOnboarded();
-    //   // Find the latest passenger (see note above).
-    //   const passenger = await Passenger.getLatest();
-    //   // Create a new ride.
-    //   const ride = new Ride({
-    //     pilot: pilot.id,
-    //     passenger: passenger.id,
-    //     amount: amount,
-    //     currency: currency
-    //   });
-    //   // Save the ride.
-    //   await ride.save();
-  
-      // Create a charge and set its destination to the pilot's account.
-      const charge = await stripe.charges.create({
-        source: source,
-        amount: amount,
-        currency: currency,
-        customer: customerId,
-        description: "Tellomee",
-        statement_descriptor: "Tellomee",
-        destination: {
-          // Send the amount for the pilot after collecting 20% platform fees.
-          // Typically, the `amountForPilot` method simply computes `ride.amount * 0.8`.
-          amount: amountForCurator,
-          // The destination of this charge is the curator's Stripe account.
-          account: curatorId
-        }
-      });
-      // Add the Stripe charge reference to the ride and save it.
-    //   ride.stripeChargeId = charge.id;
-    //   ride.save();
-  
-      // Return the ride info.
-      res.send({
-        // pilot_name: pilot.displayName(),
-        // pilot_vehicle: pilot.rocket.model,
-        // pilot_license: pilot.rocket.license,
-      });
+        console.log("reservationId:", reservationId)
+
+        reservationsDatabaseRef.child(reservationId).once("value", function(snapshot) {
+
+            let reservation = snapshot.val();
+
+            // Don't double charge a reservation
+            if (reservation.hasOwnProperty("stripeChargeId")) {
+                let message = "Cannot process charge. Stripe charge" + reservation.stripeChargeId + " already exists for reservation " + reservation.id
+                res.status(400).send({error: message});
+                return
+            }
+
+            // Round the amount up to the nearest penny (it shouldn't have more than two decimal places anyway, just in case it does)
+            // Remember Stripe expects numbers in pennies, and we were given the amount in dollars
+            let amount = Math.ceil(reservation.totalCharge * 100);
+            console.log("amount", amount);
+            let fee = reservation.fee
+            let curatorPercent = 100.0 - fee
+            let amountForCuratorDouble = amount * curatorPercent / 100;
+
+            let customerStripeId = reservation.userStripeId
+            let curatorStripeId = reservation.curatorStripeId
+            
+            // Round up when giving to customers
+            let amountForCurator = Math.ceil(amountForCuratorDouble)
+            console.log("amountForCurator", amountForCurator);
+
+            createCharge({
+                source: source, 
+                amount: amount, 
+                currency: currency, 
+                customer: customerStripeId, 
+                description: "Tellomee", 
+                statement_description: "Tellomee", 
+                amountForCurator: amountForCurator, 
+                account: curatorStripeId},
+            function(chargeId) {
+                 console.log("Created charge. ChargeId:", chargeId)
+
+                // Add the Stripe charge reference to the reservation and save it.
+                reservationsDatabaseRef.child(reservationId).update({ stripeChargeId: chargeId })
+        
+            });
+                                                          
+            res.send({});
+        }, function (errorObject) {
+            console.log("Cannot find reservation " + reservationId + ": " + errorObject.code);
+        });
     } catch (err) {
       res.sendStatus(500);
       next(`Error adding token to customer: ${err.message}`);
     }
-  });
+
+});
+
+async function createCharge(chargeParams, callback) {
+
+    
+    // Create a charge and set its destination to the pilot's account.
+    const charge = await stripe.charges.create({
+        source: chargeParams.source,
+        amount: chargeParams.amount,
+        currency: chargeParams.currency,
+        customer: chargeParams.customer,
+        description: chargeParams.description,
+        statement_descriptor: chargeParams.statement_description,
+        destination: {
+            amount: chargeParams.amountForCurator,
+            account: chargeParams.account
+        }
+    });
+
+    callback(charge.id)
+
+    return charge
+
+}
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))

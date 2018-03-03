@@ -27,16 +27,9 @@ class MainAPIClient: NSObject {
         print("in bookReservation")
         let url = self.baseURL.appendingPathComponent("book")
         
-        // Important: For this demo, we're trusting the `amount` and `currency` coming from the client request.
-        // A real application should absolutely have the `amount` and `currency` securely computed on the backend
-        // to make sure the user can't change the payment amount from their web browser or client-side environment.
         let parameters: [String: Any] = [
             "source": source,
-            "amount": amount,
-            "amountForCurator": amountForCurator,
-            "currency": currency,
-            "customerId": (FirebaseManager.user?.stripeCustomerId)!,
-            "curatorId": (reservation.experience.curator.stripeCuratorId)!,
+            "reservationId": reservation.id!
             ]
                 
         Alamofire.request(url, method: .post, parameters: parameters).responseJSON { (response) in

@@ -87,13 +87,15 @@ class ConfirmationTableVC: UITableViewController {
         }
         
         // Reserve the experience.
-        ReservationProcessor.reserve(reservation!)
+        ReservationProcessor.reserve(reservation!, completion: {
+            
+            // Perform payment request
+            self.paymentContext.requestPayment()
+            
+            // Go to the message thread so the user can follow up
+            self.goToMessageThread()
+        })
         
-        // Perform payment request
-        paymentContext.requestPayment()
-        
-        // Go to the message thread so the user can follow up
-        goToMessageThread()
     }
     
     /*
@@ -143,6 +145,7 @@ extension ConfirmationTableVC : STPPaymentContextDelegate {
     }
 
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
+        
         // Create charge using payment result
         let source = paymentResult.source.stripeID
         
