@@ -181,9 +181,6 @@ extension ConfirmationTableVC : STPPaymentContextDelegate {
             // Disable the pay button
             strongSelf.refreshPayButton()
             
-            // Send a message to the curator letting them know we've booked
-            ReservationProcessor.postReservationConfirmationMessage(for: strongSelf.reservation!)
-            
             // Go to the message thread so the user can follow up
             strongSelf.goToMessageThread()
             
