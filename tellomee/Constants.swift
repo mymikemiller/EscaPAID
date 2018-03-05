@@ -11,7 +11,7 @@ import UIKit
 class Constants: NSObject {
     
     // If true, the user will automatically be logged in based on what's hardcoded in the input fields.
-    static var autoLogin = true
+    static var autoLogin = false
     
     static let cities = ["San Francisco",
                   "Seattle",
