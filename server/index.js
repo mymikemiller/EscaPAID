@@ -3,8 +3,6 @@ const client_secret = 'sk_test_x9nLe8uLGzarVgMEUSuylguX'
 const express = require('express');
 var stripe = require('stripe')(client_secret);
 var admin = require('firebase-admin');
-// Generate the service account key at https://console.firebase.google.com/project/tellomee-x/settings/serviceaccounts/adminsdk
-var serviceAccount = require('./tellomee-x-firebase-service-account-private-key.json');
 var bodyParser = require('body-parser')
 var request = require('request');
 const path = require('path')
@@ -14,6 +12,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+/* Generate the service account key at https://console.firebase.google.com/project/tellomee-x/settings/serviceaccounts/adminsdk
+    We would like to do the following:
+    var serviceAccount = require('./tellomee-x-firebase-service-account-private-key.json');
+    But we can't require the service account key file when we have to deploy the git repo on Heroku, 
+    so instead we use environment variables and create the serviceAccount object using the values
+    from the service account file from firebase.
+*/
+var serviceAccount = {
+    // The \n's in the private key string cause a failure to parse the private key when initializing, so we fix it up here according to:
+    // https://stackoverflow.com/questions/41287108/deploying-firebase-app-with-service-account-to-heroku-environment-variables-wit
+    "private_key": process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    "client_email": process.env.FIREBASE_CLIENT_EMAIL,
+}
+console.log(serviceAccount)
+
 
 const PORT = process.env.PORT || 5000
 

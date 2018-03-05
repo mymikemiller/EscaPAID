@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "The servet component for tellomee",
+  "description": "The server component for tellomee",
   "main": "index.js",
   "dependencies": {
     "express": "^4.16.2",

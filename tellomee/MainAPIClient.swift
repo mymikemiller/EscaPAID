@@ -13,7 +13,7 @@ class MainAPIClient: NSObject {
     
     static let shared = MainAPIClient()
     
-    var baseURLString = "http://localhost:5000/api"
+    var baseURLString = "http://tellomee-x.herokuapp.com/api"
     var baseURL: URL {
         return URL(string: baseURLString)!
     }
