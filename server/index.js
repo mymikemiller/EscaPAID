@@ -26,8 +26,6 @@ var serviceAccount = {
     "private_key": process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
     "client_email": process.env.FIREBASE_CLIENT_EMAIL,
 }
-console.log(serviceAccount)
-
 
 const PORT = process.env.PORT || 5000
 
