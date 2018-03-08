@@ -1,11 +1,15 @@
 'use strict';
+
+const PORT = process.env.PORT || 5000
+
 const client_secret = 'sk_test_x9nLe8uLGzarVgMEUSuylguX'
 const express = require('express');
 var stripe = require('stripe')(client_secret);
 var admin = require('firebase-admin');
 var bodyParser = require('body-parser')
 var request = require('request');
-const path = require('path')
+const path = require('path');
+var fs = require('fs');
 var app = express();
 
 app.use(bodyParser.json());
@@ -17,17 +21,23 @@ app.use(bodyParser.urlencoded({
     We would like to do the following:
     var serviceAccount = require('./tellomee-x-firebase-service-account-private-key.json');
     But we can't require the service account key file when we have to deploy the git repo on Heroku, 
-    so instead we use environment variables and create the serviceAccount object using the values
+    so instead (if the file doesn't exist, which it shouldn't on the server (it's in .gitignore), 
+    we use environment variables and create the serviceAccount object using the values
     from the service account file from firebase.
 */
-var serviceAccount = {
-    // The \n's in the private key string cause a failure to parse the private key when initializing, so we fix it up here according to:
-    // https://stackoverflow.com/questions/41287108/deploying-firebase-app-with-service-account-to-heroku-environment-variables-wit
-    "private_key": process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-    "client_email": process.env.FIREBASE_CLIENT_EMAIL,
+let serviceAccountFilePath = "./tellomee-x-firebase-service-account-private-key.json"
+var serviceAccount
+if (fs.existsSync(serviceAccountFilePath)) {
+    serviceAccount = require(serviceAccountFilePath);
+} else {
+    serviceAccount = {
+        // The \n's in the private key string cause a failure to parse the private key when initializing, so we fix it up here according to:
+        // https://stackoverflow.com/questions/41287108/deploying-firebase-app-with-service-account-to-heroku-environment-variables-wit
+        "private_key": process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+        "client_email": process.env.FIREBASE_CLIENT_EMAIL,
+    }
 }
 
-const PORT = process.env.PORT || 5000
 
 // This firebase stuff might need to move into /book
 // Initialize firebase for booking reservations
@@ -151,17 +161,15 @@ app.post('/api/book', async (req, res, next) => {
             // Remember Stripe expects numbers in pennies, and we were given the amount in dollars
             let amount = Math.ceil(reservation.totalCharge * 100);
             console.log("amount", amount);
-            let fee = reservation.fee
-            let curatorPercent = 100.0 - fee
-            let amountForCuratorDouble = amount * curatorPercent / 100;
+            let fee = Math.ceil(reservation.fee * 100)
+            let amountForCurator = Math.ceil(amount - fee)
+            // Round up when giving to customers
+            console.log("amountForCurator", amountForCurator);
+
 
             let customerStripeId = reservation.userStripeId
             let curatorStripeId = reservation.curatorStripeId
             
-            // Round up when giving to customers
-            let amountForCurator = Math.ceil(amountForCuratorDouble)
-            console.log("amountForCurator", amountForCurator);
-
             createCharge({
                 source: source, 
                 amount: amount, 
