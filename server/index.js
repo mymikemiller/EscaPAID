@@ -159,11 +159,10 @@ app.post('/api/book', async (req, res, next) => {
 
             // Round the amount up to the nearest penny (it shouldn't have more than two decimal places anyway, just in case it does)
             // Remember Stripe expects numbers in pennies, and we were given the amount in dollars
-            let amount = Math.ceil(reservation.totalCharge * 100);
+            let amount = reservation.totalCharge;
             console.log("amount", amount);
-            let fee = Math.ceil(reservation.fee * 100)
-            let amountForCurator = Math.ceil(amount - fee)
-            // Round up when giving to customers
+            let fee = reservation.fee;
+            let amountForCurator = amount - fees
             console.log("amountForCurator", amountForCurator);
 
 

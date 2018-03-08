@@ -42,9 +42,10 @@ class ReservationVC: UIViewController {
             let confirmationVC = (segue.destination as! ConfirmationTableVC)
             
             // Create a new, pending reservation with the specified information
-            let numGuests = Double(self.maxGuests.text!)!
+            let numGuests = Int(self.maxGuests.text!)!
             let totalCharge = numGuests * experience!.price
-            let fee = totalCharge * Constants.feePercent
+            // Round the fee down so the curator gets that extra penny
+            let fee = Int((Double(totalCharge) * Constants.feePercent).rounded(.down))
             
             confirmationVC.reservation =
                 Reservation(experience: experience!,

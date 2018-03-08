@@ -60,8 +60,8 @@ class ReservationManager: NSObject {
                                     user: user,
                                     date: date!,
                                     numGuests: result["numGuests"] as! Int,
-                                    totalCharge: result["totalCharge"] as! Double,
-                                    fee: result["fee"] as! Double,
+                                    totalCharge: result["totalCharge"] as! Int,
+                                    fee: result["fee"] as! Int,
                                     status: status)
                     
                     // The id isn't stored as a value, it's the snapthot's key

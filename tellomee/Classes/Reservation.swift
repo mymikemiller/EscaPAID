@@ -33,15 +33,16 @@ class Reservation {
     let user: User
     let date: Date
     let numGuests: Int
-    let totalCharge: Double
-    let fee: Double
+    // Like on Stripe, totalCharge and fee are stored in pennies
+    let totalCharge: Int
+    let fee: Int
     // The stripe charge id is only set after the charge goes through
     var stripeChargeId: String?
     
     // Status can be changed via the ReservationManager, which also saves the change to the database
     var status: Status
     
-    init(experience: Experience, user: User, date: Date, numGuests: Int, totalCharge: Double, fee: Double, status: Status) {
+    init(experience: Experience, user: User, date: Date, numGuests: Int, totalCharge: Int, fee: Int, status: Status) {
         self.experience = experience
         self.user = user
         self.date = date

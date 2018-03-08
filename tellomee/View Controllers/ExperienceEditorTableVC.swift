@@ -66,7 +66,8 @@ class ExperienceEditorTableVC: UITableViewController {
         experienceCategory.text = experience!.category
         experienceIncludes.text = experience!.includes
         experienceCity.text = experience!.city
-        experiencePrice.text = String(format: "%.02f", experience!.price)
+        // Convert price from pennies to dollars with two decimal places
+        experiencePrice.text = String(format: "%.2f", Double(experience!.price) / 100.0)
         experienceDescription.text = experience!.experienceDescription
         experienceDays = experience!.days
         experienceMaxGuests.text = String(experience!.maxGuests)
@@ -143,7 +144,7 @@ class ExperienceEditorTableVC: UITableViewController {
         experience?.city = (experienceCity?.text)!
         experience?.startTime = startTimeLabel.text!
         experience?.endTime = endTimeLabel.text!
-        experience?.price = price!
+        experience?.price = Int(price! * 100)
         experience?.days = experienceDays
         experience?.maxGuests = Int(experienceMaxGuests.text!)!
         experience?.experienceDescription = (experienceDescription?.text)!

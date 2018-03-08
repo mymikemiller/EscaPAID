@@ -47,14 +47,23 @@ class ConfirmationTableVC: UITableViewController {
         timeLabel.text = reservation?.experience.startTime
         providerButton.setTitle(reservation?.experience.curator.displayName, for: UIControlState.normal)
         numGuestsLabel.text = String((reservation?.numGuests)!)
-        totalLabel.text =
-            String(format: "$%.02f", (reservation?.totalCharge)!
-            )
         
         // set the price for the Stripe charge
-        price = Int((reservation?.totalCharge)! * 100)
+        price = reservation!.totalCharge
+        
+        totalLabel.text = formatAsCurrency(pennies: price)
+        
         
         refreshPayButton()
+    }
+    
+    private func formatAsCurrency(pennies: Int) -> String{
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = NumberFormatter.Style.currency
+        // localize to your grouping and decimal separator
+        currencyFormatter.locale = Locale.current
+        return currencyFormatter.string(from: NSNumber(value: Double(pennies) / 100.0))!
     }
     
     private func refreshPayButton() {
@@ -68,6 +77,7 @@ class ConfirmationTableVC: UITableViewController {
         }
     }
     
+    // in pennies
     private var price = 0 {
         didSet {
             // Forward value to payment context
@@ -160,10 +170,7 @@ extension ConfirmationTableVC : STPPaymentContextDelegate {
         // Create charge using payment result
         let source = paymentResult.source.stripeID
         
-        // Convert price (double) to price (int) by multiplying by 100
-        let amountForCurator = price - Int((reservation?.fee)! * 100)
-        
-        MainAPIClient.shared.bookReservation(source: source, amount: price, amountForCurator: amountForCurator, currency: "usd", reservation: reservation!) { [weak self] (error, stripeChargeId) in
+        MainAPIClient.shared.bookReservation(source: source, reservation: reservation!) { [weak self] (error, stripeChargeId) in
             guard let strongSelf = self else {
                 // View controller was deallocated
                 return

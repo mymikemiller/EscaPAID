@@ -24,7 +24,7 @@ class MainAPIClient: NSObject {
         case invalidResponse
     }
     
-    func bookReservation(source: String, amount: Int, amountForCurator: Int, currency: String, reservation: Reservation, completion: @escaping (ReservationError?, String?) -> Void) {
+    func bookReservation(source: String, reservation: Reservation, completion: @escaping (ReservationError?, String?) -> Void) {
         print("in bookReservation")
         let url = self.baseURL.appendingPathComponent("book")
         

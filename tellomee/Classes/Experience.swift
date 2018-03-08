@@ -17,7 +17,8 @@ class Experience: NSObject {
     var startTime:String
     var endTime:String
     var includes:String
-    var price:Double
+    // Like on Stripe, price is stored in pennies
+    var price:Int
     var days:Days
     var maxGuests:Int
     var experienceDescription:String
@@ -31,7 +32,7 @@ class Experience: NSObject {
          startTime:String,
          endTime:String,
          includes:String,
-         price:Double,
+         price:Int,
          days:Days,
          maxGuests:Int,
          description:String,

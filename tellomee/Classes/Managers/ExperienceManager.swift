@@ -117,7 +117,7 @@ class ExperienceManager: NSObject {
                 startTime: result["startTime"] as! String,
                 endTime: result["endTime"] as! String,
                 includes: result["includes"] as! String,
-                price: Double(result["price"]! as! Double),
+                price: result["price"]! as! Int,
                 days: days,
                 maxGuests: result["maxGuests"] as! Int,
                 description: result["description"] as! String,
