@@ -16,6 +16,9 @@ class ExperienceManager: NSObject {
     
     var experiences = [Experience]()
     
+    // Keep track of when Experiences were favorited. Values here are only used for sorting favorites, therefore there may be irrelevant values here for Experiences that are not currently favorited.
+    static var favoritedTimestamps = [Experience : Int]()
+    
     func fillExperiences(forCity city: String, completion: @escaping () -> Void) {
         experiences = [Experience]()
         
@@ -50,7 +53,7 @@ class ExperienceManager: NSObject {
         // Get the favorites for the user, in order of the timestamp saved as the value
         ExperienceManager.databaseRef.child("userFavorites/\(user.uid)").queryOrderedByValue().observe(.childAdded, with: { snapshot in
             let experienceId = snapshot.key
-            let timestamp = snapshot.value!
+            let timestamp = snapshot.value! as! Int
             
             // Get the actual experience
             ExperienceManager.databaseRef.child("experiences/\(experienceId)").observeSingleEvent(of: .value, with: {
@@ -58,9 +61,11 @@ class ExperienceManager: NSObject {
                 
                 ExperienceManager.getExperience(snap, completion: { (experience) in
                     self.experiences.append(experience)
+                    // Cache the time the Experience was favorited so we can sort
+                    ExperienceManager.favoritedTimestamps[experience] = timestamp
                     // Sort by experience.dateFavorited, which every experience here should have
                     self.experiences = self.experiences.sorted(by: { (a, b) -> Bool in
-                        a.favoritedTimestamp! > b.favoritedTimestamp!
+                        ExperienceManager.favoritedTimestamps[a]! > ExperienceManager.favoritedTimestamps[b]!
                     })
                     
                     completion()
@@ -119,19 +124,7 @@ class ExperienceManager: NSObject {
                 imageUrls: result["images"] as! [String],
                 curator: curator)
             
-            databaseRef.child("userFavorites/\(FirebaseManager.user!.uid)/\(experience.id)").observeSingleEvent(of: .value, with: {
-                snap in
-                
-                if (snap.exists()) {
-                
-                    let timestamp:Int = snap.value! as! Int
-                    experience.favoritedTimestamp = timestamp
-                }
-                
-                completion(experience)
-                
-            })
-           
+            completion(experience)
         }
     }
     
@@ -139,7 +132,7 @@ class ExperienceManager: NSObject {
         // Find out whether or not the experience is a favorite of the current user.
         databaseRef.child("userFavorites/\((FirebaseManager.user?.uid)!)/\(experience.id)").observe(.value, with: { (snap) in
             
-            // If it's a favorite, snap.value won't be nil because there is a child at that address
+            // If it's a favorite, snap will exist because there is a child at that address
             let isFavorite = snap.exists()
             completion(isFavorite)
             
