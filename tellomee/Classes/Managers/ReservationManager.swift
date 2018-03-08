@@ -67,7 +67,8 @@ class ReservationManager: NSObject {
                     // The id isn't stored as a value, it's the snapthot's key
                     reservation.id = snap.key
                     
-                    self.reservations.append(reservation)
+                    // Insert the reservation at the beginning of the list so new Reservations appear at the top of the list
+                    self.reservations.insert(reservation, at: 0)
                     completion()
                 }
             }
