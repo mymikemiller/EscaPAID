@@ -61,11 +61,8 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     private func setFavoritesText() {
         if let experience = experience {
             
-            // Find out whether or not the experience is a favorite of the current user.
-            FirebaseManager.databaseRef.child("userFavorites").child((FirebaseManager.user?.uid)!).child(experience.id).observe(.value, with: { (snap) in
-                
-                // If it's a favorite, snap.value won't be nil because there is a child at that address
-                self.isFavorite = snap.exists()
+            ExperienceManager.onIsFavoriteChanged(experience: experience, completion: { (isFavorite) in
+                self.isFavorite = isFavorite
                 
                 if self.isFavorite {
                     self.favoritesButton.setTitle("Remove from Favorites", for: .normal)
@@ -78,9 +75,9 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     @IBAction func favoritesButton_click(_ sender: Any) {
         if (isFavorite) {
-            FirebaseManager.databaseRef.child("userFavorites").child((FirebaseManager.user?.uid)!).child((experience?.id)!).removeValue()
+            ExperienceManager.unFavorite(experience: experience!)
         } else {
-            FirebaseManager.databaseRef.child("userFavorites").child((FirebaseManager.user?.uid)!).child((experience?.id)!).setValue(true)
+            ExperienceManager.favorite(experience: experience!)
         }
     }
     

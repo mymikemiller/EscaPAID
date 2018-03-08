@@ -17,12 +17,8 @@ class FavoritesTableVC: UITableViewController {
         
         let nib = UINib(nibName: "ExperienceCell",bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "experienceCell")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        // Should this be happening every time we appear?
+        // Fill the table once. New objects will appear here as they're added to the database (when the user favorites them) and removed when they're removed from the database (when the user unfavorites them)
         experienceManager.fillExperiences(forFavoritesOf: FirebaseManager.user!) {
             () in
             DispatchQueue.main.async {

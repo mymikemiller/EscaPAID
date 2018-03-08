@@ -24,6 +24,9 @@ class Experience: NSObject {
     var imageUrls:[String]
     var curator:User
     
+    // This value only matters for Experiences that have been favorited (i.e. the timestamp is in the userFavorites table). This value should not be set and is not written to the database; it's set by ExperienceManager.favorite(). It exists only to sort favorites, and may be occasionally be set for Experiences that are not currently favorited.
+    var favoritedTimestamp:Int?
+    
     init(id:String,
          title:String,
          category:String,
