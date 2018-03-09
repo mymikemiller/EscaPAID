@@ -27,7 +27,7 @@ class ReservationManager: NSObject {
         ReservationManager.databaseRef.child("reservations").queryOrdered(byChild: "user").queryEqual(toValue: user.uid).observe(.childAdded, with: {
             snap in
             
-            self.processReservationSnapshot(snap, completion: completion)
+            self.insertReservationFromSnapshot(snap, completion: completion)
         })
     }
     
@@ -37,16 +37,23 @@ class ReservationManager: NSObject {
         ReservationManager.databaseRef.child("reservations").queryOrdered(byChild: "curator").queryEqual(toValue: curator.uid).observe(.childAdded, with: {
             snap in
             
-            self.processReservationSnapshot(snap, completion: completion)
+            self.insertReservationFromSnapshot(snap, completion: completion)
         })
     }
     
-    func processReservationSnapshot(_ snap: DataSnapshot, completion: @escaping () -> Void) {
+    func insertReservationFromSnapshot(_ snap: DataSnapshot, completion: @escaping () -> Void) {
         
         if let result = snap.value as? [String:AnyObject]{
             
+            let uid = result["user"] as! String
+            
             // Get the user first
-            FirebaseManager.getUser(uid: result["user"] as! String) { (user) in
+            FirebaseManager.getUser(uid: uid) { (user) in
+                
+                guard let user = user else {
+                    print("Error initialization reservation from snapshot. No user at the specified uid: /\(uid)")
+                    return
+                }
                     
                 ExperienceManager.getExperience(experienceId: result["experienceId"] as! String) {
                     (experience) in

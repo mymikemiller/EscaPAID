@@ -44,10 +44,16 @@ class FirebaseManager: NSObject {
                         
                         getUser(uid: firebaseUser.uid, completion: { (user) in
                             
-                            //Save the logged in user
-                            self.user = user
+                            if let user = user {
+                                //Save the logged in user
+                                self.user = user
+                                
+                                completion(EmailLogInResult.Success)
+                            } else {
+                                print("No user information found for \(firebaseUser.uid)")
+                                completion(EmailLogInResult.Error)
+                            }
                             
-                            completion(EmailLogInResult.Success)
                         })
                         
                     } else {
@@ -116,36 +122,43 @@ class FirebaseManager: NSObject {
             
             databaseRef.child("users").child(uid!).setValue(newUser) { (error, ref) -> Void in
                 getUser(uid: uid!, completion: { (user) in
-                    completion(user)
+                    if let user = user {
+                        completion(user)
+                    } else {
+                        print("Failed to add user. No user information found for \(uid!)")
+                    }
                 })
             }
         })
     }
     
-    static func getUser(uid:String, completion: @escaping (User) -> Void) {
+    static func getUser(uid:String, completion: @escaping (User?) -> Void) {
         databaseRef.child("users").queryOrdered(byChild: "uid").queryEqual(toValue: uid).observeSingleEvent(of: DataEventType.value, with: { (snap) in
             
-            // There should be only one user with the specified uid so we use nextObject to get the first (only)
-            let item = snap.children.nextObject() as! DataSnapshot
-            let value = item.value as! NSDictionary
-            let uid = value["uid"] as! String
-            let city = value["city"] as! String
-            let email = value["email"] as! String
-            let displayName = value["displayName"] as! String
-            let phone = value["phone"] as! String
-            let aboutMe = value["aboutMe"] as! String
-            let profileImageUrl = value["profileImageUrl"] as! String
-            
-            let user = User(uid: uid, city: city, email: email, displayName: displayName, phone: phone, aboutMe: aboutMe, profileImageUrl: profileImageUrl)
-            
-            // Set the stripe ID if we have one (if we're a curator)
-            user.stripeCuratorId = value["stripeCuratorId"] as? String
-            
-            // Set the stripe ID if we have one (we should have one - only for a brief period in customer creation do we not have one)
-            user.stripeCustomerId = value["stripeCustomerId"] as? String
+            if (snap.exists()) {
+                let item = snap.children.nextObject() as! DataSnapshot
+                let value = item.value as! NSDictionary
+                let uid = value["uid"] as! String
+                let city = value["city"] as! String
+                let email = value["email"] as! String
+                let displayName = value["displayName"] as! String
+                let phone = value["phone"] as! String
+                let aboutMe = value["aboutMe"] as! String
+                let profileImageUrl = value["profileImageUrl"] as! String
+                
+                let user = User(uid: uid, city: city, email: email, displayName: displayName, phone: phone, aboutMe: aboutMe, profileImageUrl: profileImageUrl)
+                
+                // Set the stripe ID if we have one (if we're a curator)
+                user.stripeCuratorId = value["stripeCuratorId"] as? String
+                
+                // Set the stripe ID if we have one (we should have one - only for a brief period in customer creation do we not have one)
+                user.stripeCustomerId = value["stripeCustomerId"] as? String
 
-            
-            completion(user)
+                
+                completion(user)
+            } else {
+                completion(nil)
+            }
         })
     }
     

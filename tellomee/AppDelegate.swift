@@ -170,6 +170,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Get the specified user
         let uid = userInfo["uid"] as! String
         FirebaseManager.getUser(uid: uid) { (user) in
+            guard let user = user else {
+                print("Error responding to push notification. No user at uid /\(uid)")
+                return
+            }
+            
             let data = ["user" : user]
             
             // Send a broadcast notification to let the inbox know which thread to show

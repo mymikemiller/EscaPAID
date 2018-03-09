@@ -95,8 +95,15 @@ class ExperienceManager: NSObject {
     private static func getExperience(_ snap: DataSnapshot, completion: @escaping (_ experience: Experience) -> Void) {
         
         let result = snap.value as! [String:AnyObject]
+        let uid = result["uid"] as! String
+        let experienceId = snap.key
         
-        FirebaseManager.getUser(uid: result["uid"] as! String) { (curator) in
+        FirebaseManager.getUser(uid: uid) { (curator) in
+            
+            guard let curator = curator else {
+                print("When getting experience \(experienceId), failed to retrieve curator at uid \(uid)")
+                return
+            }
             
             var days = Days.All
             if (result["days"] != nil) {
@@ -110,7 +117,7 @@ class ExperienceManager: NSObject {
             }
             
             let experience = Experience(
-                id: snap.key,
+                id: experienceId,
                 title: result["title"] as! String,
                 category: result["category"] as! String,
                 city: result["city"] as! String,

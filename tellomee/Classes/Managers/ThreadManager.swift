@@ -143,6 +143,11 @@ class ThreadManager: NSObject {
                         FirebaseManager.getUser(uid: otherUserId, completion: { user
                             in
                             
+                            guard let user = user else {
+                                print("Error filling threads. No user at the specified uid: /\(otherUserId)")
+                                return
+                            }
+                            
                             // Create the thread object and add it to our list
                             let thread = Thread(with: user, threadId: threadId, lastMessageTimestamp: lastMessageTimestamp!, read: read)
                             self.add(thread: thread)
