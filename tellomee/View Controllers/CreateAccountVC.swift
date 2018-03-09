@@ -49,7 +49,9 @@ class CreateAccountVC: UIViewController {
             return
         }
         
-        FirebaseManager.createAccountWithEmail(email: email.text!, phone: phone.text!, displayName: name.text!, password: password.text!) {
+        let emailAddress = self.email.text!.trimmingCharacters(in: .whitespaces)
+        
+        FirebaseManager.createAccountWithEmail(email: emailAddress, phone: phone.text!, displayName: name.text!, password: password.text!) {
             errorString in
             
             DispatchQueue.main.async {

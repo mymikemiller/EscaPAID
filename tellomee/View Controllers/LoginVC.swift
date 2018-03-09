@@ -37,7 +37,8 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginButton_click(_ sender: Any) {
-        FirebaseManager.logInWithEmail(email: email.text!, password: password.text!) { (result:FirebaseManager.EmailLogInResult) in
+        let email = self.email.text!.trimmingCharacters(in: .whitespaces)
+        FirebaseManager.logInWithEmail(email: email, password: password.text!) { (result:FirebaseManager.EmailLogInResult) in
             if (result == FirebaseManager.EmailLogInResult.Success) {
                 self.performSegue(withIdentifier: "login_ShowProfile", sender: sender)
             } else if (result == FirebaseManager.EmailLogInResult.EmailNotVerified) {
