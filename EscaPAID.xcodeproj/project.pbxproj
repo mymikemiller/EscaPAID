@@ -122,7 +122,7 @@
 		E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
 		E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
 		E7B94FA620195F4D00C5FBCB /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
-		E7B9F7391FB6CAAE0058CE61 /* EscaPAID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EscaPAID.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B9F7391FB6CAAE0058CE61 /* Tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7B9F7411FB6CAAF0058CE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7B9F7441FB6CAAF0058CE61 /* tellomee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tellomee.xcdatamodel; sourceTree = "<group>"; };
@@ -291,7 +291,7 @@
 		E7B9F73A1FB6CAAE0058CE61 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E7B9F7391FB6CAAE0058CE61 /* EscaPAID.app */,
+				E7B9F7391FB6CAAE0058CE61 /* Tellomee.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,9 +336,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E7B9F7381FB6CAAE0058CE61 /* EscaPAID */ = {
+		E7B9F7381FB6CAAE0058CE61 /* Tellomee */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E7B9F74E1FB6CAAF0058CE61 /* Build configuration list for PBXNativeTarget "EscaPAID" */;
+			buildConfigurationList = E7B9F74E1FB6CAAF0058CE61 /* Build configuration list for PBXNativeTarget "Tellomee" */;
 			buildPhases = (
 				F7B7DD79B824C815CF36EE12 /* [CP] Check Pods Manifest.lock */,
 				E7B9F7351FB6CAAE0058CE61 /* Sources */,
@@ -351,9 +351,9 @@
 			);
 			dependencies = (
 			);
-			name = EscaPAID;
+			name = Tellomee;
 			productName = tellomee;
-			productReference = E7B9F7391FB6CAAE0058CE61 /* EscaPAID.app */;
+			productReference = E7B9F7391FB6CAAE0058CE61 /* Tellomee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -397,7 +397,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E7B9F7381FB6CAAE0058CE61 /* EscaPAID */,
+				E7B9F7381FB6CAAE0058CE61 /* Tellomee */,
 			);
 		};
 /* End PBXProject section */
@@ -775,7 +775,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E7B9F74E1FB6CAAF0058CE61 /* Build configuration list for PBXNativeTarget "EscaPAID" */ = {
+		E7B9F74E1FB6CAAF0058CE61 /* Build configuration list for PBXNativeTarget "Tellomee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E7B9F74F1FB6CAAF0058CE61 /* Debug */,
