@@ -51,7 +51,6 @@
 		E7B94FA720195F4D00C5FBCB /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
 		E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
 		E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
-		E7B9F7451FB6CAAF0058CE61 /* tellomee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F7431FB6CAAF0058CE61 /* tellomee.xcdatamodeld */; };
 		E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */; };
 		E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */; };
 		E7CBD4FD203368A000480774 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7CBD4FC203368A000480774 /* GoogleService-Info.plist */; };
@@ -125,7 +124,6 @@
 		E7B9F7391FB6CAAE0058CE61 /* Tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7B9F7411FB6CAAF0058CE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E7B9F7441FB6CAAF0058CE61 /* tellomee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tellomee.xcdatamodel; sourceTree = "<group>"; };
 		E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7B9F7491FB6CAAF0058CE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7B9F74B1FB6CAAF0058CE61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -311,7 +309,6 @@
 				E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */,
 				E7B9F74B1FB6CAAF0058CE61 /* Info.plist */,
 				E7F9A07E1FB6D1DC00916FBA /* tellomee.entitlements */,
-				E7B9F7431FB6CAAF0058CE61 /* tellomee.xcdatamodeld */,
 				E7CBD4FC203368A000480774 /* GoogleService-Info.plist */,
 				E7E152A020360DA800033BEB /* tellomee-Bridging-Header.h */,
 				E79770E42043816700B2206C /* MainAPIClient.swift */,
@@ -528,7 +525,6 @@
 				E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */,
 				E79FA59F202A69050060B44D /* ReservationsTableVC.swift in Sources */,
 				E72B248F1FC65B3800DE0897 /* Experience.swift in Sources */,
-				E7B9F7451FB6CAAF0058CE61 /* tellomee.xcdatamodeld in Sources */,
 				E712DE4420154F1C00661DE7 /* DaySelectorTableVC.swift in Sources */,
 				E79FA59520290E3D0060B44D /* ReservationProcessor.swift in Sources */,
 				E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */,
@@ -785,19 +781,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E7B9F7431FB6CAAF0058CE61 /* tellomee.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E7B9F7441FB6CAAF0058CE61 /* tellomee.xcdatamodel */,
-			);
-			currentVersion = E7B9F7441FB6CAAF0058CE61 /* tellomee.xcdatamodel */;
-			path = tellomee.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E7B9F7311FB6CAAE0058CE61 /* Project object */;
 }
