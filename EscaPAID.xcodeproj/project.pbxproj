@@ -42,6 +42,74 @@
 		E79770E52043816700B2206C /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E42043816700B2206C /* MainAPIClient.swift */; };
 		E79770E82044774100B2206C /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E72044774000B2206C /* UIAlertController+Utility.swift */; };
 		E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
+		E79F05702059679000889D14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E79F056F2059679000889D14 /* GoogleService-Info.plist */; };
+		E79F0572205969F200889D14 /* GoogleService-Info in Resources */ = {isa = PBXBuildFile; fileRef = E79F0571205969F200889D14 /* GoogleService-Info */; };
+		E79F05C42059700400889D14 /* ExperienceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */; };
+		E79F05C52059700400889D14 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
+		E79F05C62059700400889D14 /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E42043816700B2206C /* MainAPIClient.swift */; };
+		E79F05C72059700400889D14 /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */; };
+		E79F05C82059700400889D14 /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */; };
+		E79F05C92059700400889D14 /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7368204875A200AE0DE4 /* ExperienceManager.swift */; };
+		E79F05CA2059700400889D14 /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E72044774000B2206C /* UIAlertController+Utility.swift */; };
+		E79F05CB2059700400889D14 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */; };
+		E79F05CC2059700400889D14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A7831FDB573D008319CF /* Constants.swift */; };
+		E79F05CD2059700400889D14 /* ExperienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */; };
+		E79F05CE2059700400889D14 /* ReservationsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59E202A69050060B44D /* ReservationsTableVC.swift */; };
+		E79F05CF2059700400889D14 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B248E1FC65B3800DE0897 /* Experience.swift */; };
+		E79F05D02059700400889D14 /* DaySelectorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */; };
+		E79F05D12059700400889D14 /* ReservationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59420290E3D0060B44D /* ReservationProcessor.swift */; };
+		E79F05D22059700400889D14 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */; };
+		E79F05D32059700400889D14 /* ExperienceImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */; };
+		E79F05D42059700400889D14 /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7363204875A100AE0DE4 /* ThreadManager.swift */; };
+		E79F05D52059700400889D14 /* ThreadsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */; };
+		E79F05D62059700400889D14 /* ExperienceEditorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A92004650800312B91 /* ExperienceEditorTableVC.swift */; };
+		E79F05D72059700400889D14 /* ProfileEditorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */; };
+		E79F05D82059700400889D14 /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
+		E79F05D92059700400889D14 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */; };
+		E79F05DA2059700400889D14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549931FB78AE200A6A32C /* User.swift */; };
+		E79F05DB2059700400889D14 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B24881FC6539A00DE0897 /* DiscoverVC.swift */; };
+		E79F05DC2059700400889D14 /* UICalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7238A652022524300496FBC /* UICalendar.swift */; };
+		E79F05DD2059700400889D14 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59620290EA50060B44D /* Reservation.swift */; };
+		E79F05DE2059700400889D14 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549911FB758B300A6A32C /* ChatTableViewCell.swift */; };
+		E79F05DF2059700400889D14 /* MyExperiencesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */; };
+		E79F05E02059700400889D14 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A72004509800312B91 /* TabBarController.swift */; };
+		E79F05E12059700400889D14 /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */; };
+		E79F05E22059700400889D14 /* ConfirmationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */; };
+		E79F05E32059700400889D14 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0811FB7378B00916FBA /* ChatVC.swift */; };
+		E79F05E42059700400889D14 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7365204875A100AE0DE4 /* PostManager.swift */; };
+		E79F05E52059700400889D14 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D8E521FBCC5C1001026D6 /* LoginVC.swift */; };
+		E79F05E62059700400889D14 /* TextGetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A320017CAA00312B91 /* TextGetterController.swift */; };
+		E79F05E72059700400889D14 /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */; };
+		E79F05E82059700400889D14 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7364204875A100AE0DE4 /* StorageManager.swift */; };
+		E79F05E92059700400889D14 /* FavoritesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774C83B2037877E00F98EB2 /* FavoritesTableVC.swift */; };
+		E79F05EA2059700400889D14 /* ReservationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7367204875A200AE0DE4 /* ReservationManager.swift */; };
+		E79F05EB2059700400889D14 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
+		E79F05EC2059700400889D14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
+		E79F05ED2059700400889D14 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723DD861FC3E17800B4345E /* Thread.swift */; };
+		E79F05EE2059700400889D14 /* ReceiptTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728EA34202BB6C30041F6AC /* ReceiptTableVC.swift */; };
+		E79F05EF2059700400889D14 /* CuratorSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */; };
+		E79F05F02059700400889D14 /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE452015622500661DE7 /* Days.swift */; };
+		E79F05F12059700400889D14 /* ThreadsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */; };
+		E79F05F32059700400889D14 /* Pods_tellomee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */; };
+		E79F05F42059700400889D14 /* Pods_EscaPAID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BE45C4ECF7139113E48822 /* Pods_EscaPAID.framework */; };
+		E79F05F62059700400889D14 /* GoogleService-Info in Resources */ = {isa = PBXBuildFile; fileRef = E79F0571205969F200889D14 /* GoogleService-Info */; };
+		E79F05F72059700400889D14 /* TextGetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71F33A420017CAA00312B91 /* TextGetter.xib */; };
+		E79F05F82059700400889D14 /* ExperienceEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79B20362FCC00F91CC4 /* ExperienceEditor.storyboard */; };
+		E79F05F92059700400889D14 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E72F64461FBBB22B0023489D /* Podfile */; };
+		E79F05FA2059700400889D14 /* ProfileEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79520362E0E00F91CC4 /* ProfileEditor.storyboard */; };
+		E79F05FB2059700400889D14 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79020362BF500F91CC4 /* Settings.storyboard */; };
+		E79F05FC2059700400889D14 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D78E2036271C00F91CC4 /* Discover.storyboard */; };
+		E79F05FD2059700400889D14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */; };
+		E79F05FE2059700400889D14 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D78C203625D200F91CC4 /* Favorites.storyboard */; };
+		E79F05FF2059700400889D14 /* Reservations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79820362EF400F91CC4 /* Reservations.storyboard */; };
+		E79F06002059700400889D14 /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7238A672022699C00496FBC /* DateCell.xib */; };
+		E79F06012059700400889D14 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774C83D203A1B4E00F98EB2 /* Book.storyboard */; };
+		E79F06022059700400889D14 /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79120362BF500F91CC4 /* Inbox.storyboard */; };
+		E79F06032059700400889D14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E79F056F2059679000889D14 /* GoogleService-Info.plist */; };
+		E79F06042059700400889D14 /* ExperienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */; };
+		E79F06052059700400889D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */; };
+		E79F06062059700400889D14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
+		E79F06072059700400889D14 /* UICalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7238A632022521400496FBC /* UICalendar.xib */; };
 		E79FA5912025398C0060B44D /* ConfirmationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */; };
 		E79FA59520290E3D0060B44D /* ReservationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59420290E3D0060B44D /* ReservationProcessor.swift */; };
 		E79FA59720290EA50060B44D /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59620290EA50060B44D /* Reservation.swift */; };
@@ -53,7 +121,6 @@
 		E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
 		E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */; };
 		E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */; };
-		E7CBD4FD203368A000480774 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7CBD4FC203368A000480774 /* GoogleService-Info.plist */; };
 		E7D0A7841FDB573D008319CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A7831FDB573D008319CF /* Constants.swift */; };
 		E7D316881FCF246A0062E178 /* ExperienceImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */; };
 		E7D316AA1FD08EF60062E178 /* ExperienceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */; };
@@ -115,6 +182,10 @@
 		E79770E72044774000B2206C /* UIAlertController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utility.swift"; sourceTree = "<group>"; };
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
 		E79F056C205960B400889D14 /* Tellomee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tellomee.entitlements; sourceTree = "<group>"; };
+		E79F056F2059679000889D14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E79F0571205969F200889D14 /* GoogleService-Info */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "GoogleService-Info"; path = "EscaPAID/GoogleService-Info"; sourceTree = "<group>"; };
+		E79F05C020596AF500889D14 /* Renaissance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Renaissance-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/Renaissance-Info.plist"; sourceTree = "<absolute>"; };
+		E79F060D2059700400889D14 /* Renaissance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renaissance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTableVC.swift; sourceTree = "<group>"; };
 		E79FA59420290E3D0060B44D /* ReservationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationProcessor.swift; sourceTree = "<group>"; };
 		E79FA59620290EA50060B44D /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
@@ -127,8 +198,7 @@
 		E7B9F7411FB6CAAF0058CE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7B9F7491FB6CAAF0058CE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E7B9F74B1FB6CAAF0058CE61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7CBD4FC203368A000480774 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E7B9F74B1FB6CAAF0058CE61 /* Tellomee-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tellomee-Info.plist"; sourceTree = "<group>"; };
 		E7D0A7831FDB573D008319CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceImageVC.swift; sourceTree = "<group>"; };
 		E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceImageCell.swift; sourceTree = "<group>"; };
@@ -151,6 +221,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E79F05F22059700400889D14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E79F05F32059700400889D14 /* Pods_tellomee.framework in Frameworks */,
+				E79F05F42059700400889D14 /* Pods_EscaPAID.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7B9F7361FB6CAAE0058CE61 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,15 +354,34 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		E79F056D2059664800889D14 /* GoogleService-Info */ = {
+			isa = PBXGroup;
+			children = (
+				E79F056E205966E000889D14 /* Tellomee */,
+			);
+			path = "GoogleService-Info";
+			sourceTree = "<group>";
+		};
+		E79F056E205966E000889D14 /* Tellomee */ = {
+			isa = PBXGroup;
+			children = (
+				E79F056F2059679000889D14 /* GoogleService-Info.plist */,
+			);
+			path = Tellomee;
+			sourceTree = "<group>";
+		};
 		E7B9F7301FB6CAAE0058CE61 = {
 			isa = PBXGroup;
 			children = (
+				E79F0571205969F200889D14 /* GoogleService-Info */,
 				E79F056C205960B400889D14 /* Tellomee.entitlements */,
 				E72F64461FBBB22B0023489D /* Podfile */,
 				E7B9F73B1FB6CAAE0058CE61 /* EscaPAID */,
 				E7B9F73A1FB6CAAE0058CE61 /* Products */,
 				96EA7856FF54ABD748851FF8 /* Pods */,
 				1DE9252FF35D1611CFB7E4CB /* Frameworks */,
+				E79F05C020596AF500889D14 /* Renaissance-Info.plist */,
+				E7B9F74B1FB6CAAF0058CE61 /* Tellomee-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				E7B9F7391FB6CAAE0058CE61 /* Tellomee.app */,
+				E79F060D2059700400889D14 /* Renaissance.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -298,6 +397,7 @@
 		E7B9F73B1FB6CAAE0058CE61 /* EscaPAID */ = {
 			isa = PBXGroup;
 			children = (
+				E79F056D2059664800889D14 /* GoogleService-Info */,
 				E720AC031FC20FC700E9C2EF /* Storyboards */,
 				E7D3D79320362D6100F91CC4 /* UI */,
 				E720AC041FC20FE500E9C2EF /* View Controllers */,
@@ -308,8 +408,6 @@
 				E7D0A7831FDB573D008319CF /* Constants.swift */,
 				E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */,
 				E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */,
-				E7B9F74B1FB6CAAF0058CE61 /* Info.plist */,
-				E7CBD4FC203368A000480774 /* GoogleService-Info.plist */,
 				E7E152A020360DA800033BEB /* EscaPAID-Bridging-Header.h */,
 				E79770E42043816700B2206C /* MainAPIClient.swift */,
 			);
@@ -333,6 +431,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E79F05C12059700400889D14 /* Renaissance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E79F060A2059700400889D14 /* Build configuration list for PBXNativeTarget "Renaissance" */;
+			buildPhases = (
+				E79F05C22059700400889D14 /* [CP] Check Pods Manifest.lock */,
+				E79F05C32059700400889D14 /* Sources */,
+				E79F05F22059700400889D14 /* Frameworks */,
+				E79F05F52059700400889D14 /* Resources */,
+				E79F06082059700400889D14 /* [CP] Embed Pods Frameworks */,
+				E79F06092059700400889D14 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Renaissance;
+			productName = tellomee;
+			productReference = E79F060D2059700400889D14 /* Renaissance.app */;
+			productType = "com.apple.product-type.application";
+		};
 		E7B9F7381FB6CAAE0058CE61 /* Tellomee */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7B9F74E1FB6CAAF0058CE61 /* Build configuration list for PBXNativeTarget "Tellomee" */;
@@ -363,6 +481,9 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Michael Miller";
 				TargetAttributes = {
+					E79F05C12059700400889D14 = {
+						ProvisioningStyle = Automatic;
+					};
 					E7B9F7381FB6CAAE0058CE61 = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0920;
@@ -395,19 +516,45 @@
 			projectRoot = "";
 			targets = (
 				E7B9F7381FB6CAAE0058CE61 /* Tellomee */,
+				E79F05C12059700400889D14 /* Renaissance */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E79F05F52059700400889D14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E79F05F62059700400889D14 /* GoogleService-Info in Resources */,
+				E79F05F72059700400889D14 /* TextGetter.xib in Resources */,
+				E79F05F82059700400889D14 /* ExperienceEditor.storyboard in Resources */,
+				E79F05F92059700400889D14 /* Podfile in Resources */,
+				E79F05FA2059700400889D14 /* ProfileEditor.storyboard in Resources */,
+				E79F05FB2059700400889D14 /* Settings.storyboard in Resources */,
+				E79F05FC2059700400889D14 /* Discover.storyboard in Resources */,
+				E79F05FD2059700400889D14 /* LaunchScreen.storyboard in Resources */,
+				E79F05FE2059700400889D14 /* Favorites.storyboard in Resources */,
+				E79F05FF2059700400889D14 /* Reservations.storyboard in Resources */,
+				E79F06002059700400889D14 /* DateCell.xib in Resources */,
+				E79F06012059700400889D14 /* Book.storyboard in Resources */,
+				E79F06022059700400889D14 /* Inbox.storyboard in Resources */,
+				E79F06032059700400889D14 /* GoogleService-Info.plist in Resources */,
+				E79F06042059700400889D14 /* ExperienceCell.xib in Resources */,
+				E79F06052059700400889D14 /* Assets.xcassets in Resources */,
+				E79F06062059700400889D14 /* Main.storyboard in Resources */,
+				E79F06072059700400889D14 /* UICalendar.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7B9F7371FB6CAAE0058CE61 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79F0572205969F200889D14 /* GoogleService-Info in Resources */,
 				E71F33A620017CAA00312B91 /* TextGetter.xib in Resources */,
 				E7D3D79D20362FCC00F91CC4 /* ExperienceEditor.storyboard in Resources */,
 				E72F64471FBBB22B0023489D /* Podfile in Resources */,
-				E7CBD4FD203368A000480774 /* GoogleService-Info.plist in Resources */,
 				E7D3D79720362E0E00F91CC4 /* ProfileEditor.storyboard in Resources */,
 				E7D3D79220362C3400F91CC4 /* Settings.storyboard in Resources */,
 				E7D3D78F2036279C00F91CC4 /* Discover.storyboard in Resources */,
@@ -417,6 +564,7 @@
 				E7238A682022699C00496FBC /* DateCell.xib in Resources */,
 				E774C83E203A1B4E00F98EB2 /* Book.storyboard in Resources */,
 				E7D3D79420362DB600F91CC4 /* Inbox.storyboard in Resources */,
+				E79F05702059679000889D14 /* GoogleService-Info.plist in Resources */,
 				E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */,
 				E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */,
 				E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */,
@@ -488,6 +636,85 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID/Pods-EscaPAID-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E79F05C22059700400889D14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E79F06082059700400889D14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID/Pods-EscaPAID-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID/Pods-EscaPAID-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E79F06092059700400889D14 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID/Pods-EscaPAID-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F7B7DD79B824C815CF36EE12 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,6 +736,59 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E79F05C32059700400889D14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E79F05C42059700400889D14 /* ExperienceImageCell.swift in Sources */,
+				E79F05C52059700400889D14 /* DateCell.swift in Sources */,
+				E79F05C62059700400889D14 /* MainAPIClient.swift in Sources */,
+				E79F05C72059700400889D14 /* ReservationVC.swift in Sources */,
+				E79F05C82059700400889D14 /* ExperienceTableViewCell.swift in Sources */,
+				E79F05C92059700400889D14 /* ExperienceManager.swift in Sources */,
+				E79F05CA2059700400889D14 /* UIAlertController+Utility.swift in Sources */,
+				E79F05CB2059700400889D14 /* CreateAccountVC.swift in Sources */,
+				E79F05CC2059700400889D14 /* Constants.swift in Sources */,
+				E79F05CD2059700400889D14 /* ExperienceVC.swift in Sources */,
+				E79F05CE2059700400889D14 /* ReservationsTableVC.swift in Sources */,
+				E79F05CF2059700400889D14 /* Experience.swift in Sources */,
+				E79F05D02059700400889D14 /* DaySelectorTableVC.swift in Sources */,
+				E79F05D12059700400889D14 /* ReservationProcessor.swift in Sources */,
+				E79F05D22059700400889D14 /* FirebaseManager.swift in Sources */,
+				E79F05D32059700400889D14 /* ExperienceImageVC.swift in Sources */,
+				E79F05D42059700400889D14 /* ThreadManager.swift in Sources */,
+				E79F05D52059700400889D14 /* ThreadsTableVC.swift in Sources */,
+				E79F05D62059700400889D14 /* ExperienceEditorTableVC.swift in Sources */,
+				E79F05D72059700400889D14 /* ProfileEditorTableVC.swift in Sources */,
+				E79F05D82059700400889D14 /* SelfContainedPickerView.swift in Sources */,
+				E79F05D92059700400889D14 /* SettingsTableVC.swift in Sources */,
+				E79F05DA2059700400889D14 /* User.swift in Sources */,
+				E79F05DB2059700400889D14 /* DiscoverVC.swift in Sources */,
+				E79F05DC2059700400889D14 /* UICalendar.swift in Sources */,
+				E79F05DD2059700400889D14 /* Reservation.swift in Sources */,
+				E79F05DE2059700400889D14 /* ChatTableViewCell.swift in Sources */,
+				E79F05DF2059700400889D14 /* MyExperiencesTableVC.swift in Sources */,
+				E79F05E02059700400889D14 /* TabBarController.swift in Sources */,
+				E79F05E12059700400889D14 /* ThreadTableViewCell.swift in Sources */,
+				E79F05E22059700400889D14 /* ConfirmationTableVC.swift in Sources */,
+				E79F05E32059700400889D14 /* ChatVC.swift in Sources */,
+				E79F05E42059700400889D14 /* PostManager.swift in Sources */,
+				E79F05E52059700400889D14 /* LoginVC.swift in Sources */,
+				E79F05E62059700400889D14 /* TextGetterController.swift in Sources */,
+				E79F05E72059700400889D14 /* ReservationTableViewCell.swift in Sources */,
+				E79F05E82059700400889D14 /* StorageManager.swift in Sources */,
+				E79F05E92059700400889D14 /* FavoritesTableVC.swift in Sources */,
+				E79F05EA2059700400889D14 /* ReservationManager.swift in Sources */,
+				E79F05EB2059700400889D14 /* OriginScreenVC.swift in Sources */,
+				E79F05EC2059700400889D14 /* AppDelegate.swift in Sources */,
+				E79F05ED2059700400889D14 /* Thread.swift in Sources */,
+				E79F05EE2059700400889D14 /* ReceiptTableVC.swift in Sources */,
+				E79F05EF2059700400889D14 /* CuratorSettingsVC.swift in Sources */,
+				E79F05F02059700400889D14 /* Days.swift in Sources */,
+				E79F05F12059700400889D14 /* ThreadsNavigationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7B9F7351FB6CAAE0058CE61 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -608,6 +888,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E79F060B2059700400889D14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DF6BF93B04D399CC6A1AE75 /* Pods-EscaPAID.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Tellomee.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Y8K76T269;
+				INFOPLIST_FILE = "Renaissance-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.Renaissance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E79F060C2059700400889D14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB9480AA82F4080F2C478C35 /* Pods-EscaPAID.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Tellomee.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Y8K76T269;
+				INFOPLIST_FILE = "Renaissance-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.Renaissance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E7B9F74C1FB6CAAF0058CE61 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -719,16 +1043,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2DF6BF93B04D399CC6A1AE75 /* Pods-EscaPAID.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Tellomee";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Tellomee.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = EscaPAID/Info.plist;
+				INFOPLIST_FILE = "Tellomee-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mymikemiller.tellomee;
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.Tellomee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -741,17 +1065,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB9480AA82F4080F2C478C35 /* Pods-EscaPAID.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Tellomee";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Tellomee.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = EscaPAID/Info.plist;
+				INFOPLIST_FILE = "Tellomee-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mymikemiller.tellomee;
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.Tellomee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -762,6 +1086,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E79F060A2059700400889D14 /* Build configuration list for PBXNativeTarget "Renaissance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E79F060B2059700400889D14 /* Debug */,
+				E79F060C2059700400889D14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E7B9F7341FB6CAAE0058CE61 /* Build configuration list for PBXProject "EscaPAID" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
