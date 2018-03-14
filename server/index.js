@@ -1,7 +1,9 @@
 'use strict';
+var argv = require('minimist')(process.argv.slice(2));
 
 const PORT = process.env.PORT || 5000
-
+// The service account file path should not be set on heroku. The file should only exist locally. See below.
+const SERVICE_ACCOUNT_FILE_PATH = argv["firebase-adminsdk-path"] || "";
 const client_secret = 'sk_test_x9nLe8uLGzarVgMEUSuylguX'
 const express = require('express');
 var stripe = require('stripe')(client_secret);
@@ -18,18 +20,24 @@ app.use(bodyParser.urlencoded({
 }));
 
 /* Generate the service account key at https://console.firebase.google.com/project/tellomee-x/settings/serviceaccounts/adminsdk
-    We would like to do the following:
-    var serviceAccount = require('./tellomee-x-firebase-service-account-private-key.json');
+    We would like to do the following, for example:
+    var serviceAccount = require('./tellomee-x-firebase-adminsdk.json');
     But we can't require the service account key file when we have to deploy the git repo on Heroku, 
-    so instead (if the file doesn't exist, which it shouldn't on the server (it's in .gitignore), 
+    so instead (if the file doesn't exist, which it shouldn't on the server (it's in .gitignore)), 
     we use environment variables and create the serviceAccount object using the values
     from the service account file from firebase.
 */
-let serviceAccountFilePath = "./tellomee-x-firebase-service-account-private-key.json"
+let serviceAccountFilePath = SERVICE_ACCOUNT_FILE_PATH
 var serviceAccount
 if (fs.existsSync(serviceAccountFilePath)) {
-    serviceAccount = require(serviceAccountFilePath);
+    serviceAccount = require("./" + serviceAccountFilePath);
 } else {
+    if (!process.env.FIREBASE_PRIVATE_KEY ||
+        !process.env.FIREBASE_CLIENT_EMAIL) {
+            console.error("There is no service account file at path: " + serviceAccountFilePath + ". This is expected on the server. In that case, then, you must define FIREBASE_PRIVATE_KEY and FIREBASE_CLIENT_EMAIL with values from the file.")
+            process.exit(1)
+    }
+
     serviceAccount = {
         // The \n's in the private key string cause a failure to parse the private key when initializing, so we fix it up here according to:
         // https://stackoverflow.com/questions/41287108/deploying-firebase-app-with-service-account-to-heroku-environment-variables-wit
@@ -162,7 +170,7 @@ app.post('/api/book', async (req, res, next) => {
             let amount = reservation.totalCharge;
             console.log("amount", amount);
             let fee = reservation.fee;
-            let amountForCurator = amount - fees
+            let amountForCurator = amount - fee
             console.log("amountForCurator", amountForCurator);
 
 

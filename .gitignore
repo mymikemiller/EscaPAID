@@ -43,4 +43,4 @@ xcuserdata/
 # End of https://www.gitignore.io/api/xcode
 
 # Private keys
-tellomee-x-firebase-service-account-private-key.json
+*firebase-adminsdk.json
