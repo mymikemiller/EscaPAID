@@ -19,7 +19,6 @@ import Stripe
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-    var configuration: NSDictionary
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -52,22 +51,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
-    override init() {
-        
-        // Configure the app based on the target. Look in the main.infoDictionary (which will be {AppName}-Info.plist) for the Configuration property (which should match the app name). This will be a key for a dictionary in Configuration.plist with all the app-specific values such as server addresses.
-        let configPath = Bundle.main.path(forResource: "Configuration", ofType: "plist")
-        configuration = NSDictionary(contentsOfFile: configPath!)?[Bundle.main.infoDictionary!["Configuration"]] as! NSDictionary
-        
-        // Grab an example config variable
-        let name = configuration["Name"]
-        print(name)
-        
+    override init() {        
         // Stripe payment configuration
-        STPPaymentConfiguration.shared().companyName = "Tellomee"
-        
-        if !Constants.stripePublishableKey.isEmpty {
-            STPPaymentConfiguration.shared().publishableKey = Constants.stripePublishableKey
-        }
+        STPPaymentConfiguration.shared().companyName = Config.current.stripeCompanyName
+        STPPaymentConfiguration.shared().publishableKey = Config.current.stripePublishableKey
         
         super.init()
     }

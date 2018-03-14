@@ -211,7 +211,7 @@ extension ConfirmationTableVC : STPPaymentContextDelegate {
                 case .invalidResponse:
                     // Missing response from backend
                     print("[ERROR]: Missing or malformed response when attempting to `MainAPIClient.shared.bookReservation`. Please check internet connection and backend response formatting.");
-                    present(UIAlertController(message: "Could not book reservation"), animated: true)
+                    present(UIAlertController(message: "Could not book reservation."), animated: true)
                 }
             }
             else {

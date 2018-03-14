@@ -45,7 +45,7 @@ class ReservationVC: UIViewController {
             let numGuests = Int(self.maxGuests.text!)!
             let totalCharge = numGuests * experience!.price
             // Round the fee down so the curator gets that extra penny
-            let fee = Int((Double(totalCharge) * Constants.feePercent).rounded(.down))
+            let fee = Int((Double(totalCharge) * Config.current.feePercent).rounded(.down))
             
             confirmationVC.reservation =
                 Reservation(experience: experience!,

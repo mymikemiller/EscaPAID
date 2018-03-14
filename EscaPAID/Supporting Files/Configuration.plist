@@ -4,13 +4,21 @@
 <dict>
 	<key>Renaissance</key>
 	<dict>
-		<key>Name</key>
+		<key>Stripe Company Name</key>
 		<string>Renaissance</string>
+		<key>Stripe Publishable Key</key>
+		<string>pk_test_Qw7nfjZOYT8EyoLpE51Dm9fw</string>
+		<key>Fee Percent</key>
+		<real>0.1</real>
 	</dict>
 	<key>Tellomee</key>
 	<dict>
-		<key>Name</key>
+		<key>Stripe Company Name</key>
 		<string>Tellomee</string>
+		<key>Stripe Publishable Key</key>
+		<string>pk_test_Qw7nfjZOYT8EyoLpE51Dm9fw</string>
+		<key>Fee Percent</key>
+		<real>0.1</real>
 	</dict>
 </dict>
 </plist>

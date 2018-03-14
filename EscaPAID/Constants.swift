@@ -8,10 +8,15 @@
 
 import UIKit
 
+// Constants that don't depend on the target. See Config.swift for config settings varying per target.
 class Constants: NSObject {
     
     // If true, the user will automatically be logged in based on what's hardcoded in the input fields.
     static var autoLogin = true
+    
+    static let stripeApiVersion =  "2018-02-06"
+    
+    static let stripeClientId = "ca_AbsKVVP7BmIJFntfSkToXhxtLSAvbIUM"
     
     static let numGuests = ["1",
                             "2",
@@ -22,10 +27,6 @@ class Constants: NSObject {
                             "7",
                             "8"]
     
-    static let stripeApiVersion =  "2018-02-06"
-    
-    
-    
     static let cities = ["San Francisco",
                   "Seattle",
                   "Salt Lake City"]
@@ -33,9 +34,5 @@ class Constants: NSObject {
     static let categories = ["Adventure",
                          "Lifestyle",
                          "Cullinary"]
-    
-    static let feePercent = 0.1 // 10% fee deducted from the total charge for reservations
 
-    static let stripePublishableKey = "pk_test_Qw7nfjZOYT8EyoLpE51Dm9fw"
-    static let stripeClientId = "ca_AbsKVVP7BmIJFntfSkToXhxtLSAvbIUM"
 }
