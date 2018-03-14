@@ -43,7 +43,6 @@
 		E79770E82044774100B2206C /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E72044774000B2206C /* UIAlertController+Utility.swift */; };
 		E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
 		E79F05702059679000889D14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E79F056F2059679000889D14 /* GoogleService-Info.plist */; };
-		E79F0572205969F200889D14 /* GoogleService-Info in Resources */ = {isa = PBXBuildFile; fileRef = E79F0571205969F200889D14 /* GoogleService-Info */; };
 		E79F05C42059700400889D14 /* ExperienceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */; };
 		E79F05C52059700400889D14 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
 		E79F05C62059700400889D14 /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E42043816700B2206C /* MainAPIClient.swift */; };
@@ -92,7 +91,6 @@
 		E79F05F12059700400889D14 /* ThreadsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */; };
 		E79F05F32059700400889D14 /* Pods_tellomee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */; };
 		E79F05F42059700400889D14 /* Pods_EscaPAID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BE45C4ECF7139113E48822 /* Pods_EscaPAID.framework */; };
-		E79F05F62059700400889D14 /* GoogleService-Info in Resources */ = {isa = PBXBuildFile; fileRef = E79F0571205969F200889D14 /* GoogleService-Info */; };
 		E79F05F72059700400889D14 /* TextGetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71F33A420017CAA00312B91 /* TextGetter.xib */; };
 		E79F05F82059700400889D14 /* ExperienceEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79B20362FCC00F91CC4 /* ExperienceEditor.storyboard */; };
 		E79F05F92059700400889D14 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E72F64461FBBB22B0023489D /* Podfile */; };
@@ -133,6 +131,8 @@
 		E7D3D79D20362FCC00F91CC4 /* ExperienceEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79B20362FCC00F91CC4 /* ExperienceEditor.storyboard */; };
 		E7E22E8F1FC7463800FD88FF /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */; };
 		E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */; };
+		E7E45982205977820077C1DE /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E45981205977820077C1DE /* Configuration.plist */; };
+		E7E45983205977820077C1DE /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E45981205977820077C1DE /* Configuration.plist */; };
 		E7F585F81FCCDECE00536EF5 /* CuratorSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */; };
 		E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */; };
 		E7F9A0821FB7378B00916FBA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0811FB7378B00916FBA /* ChatVC.swift */; };
@@ -183,8 +183,7 @@
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
 		E79F056C205960B400889D14 /* Tellomee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tellomee.entitlements; sourceTree = "<group>"; };
 		E79F056F2059679000889D14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E79F0571205969F200889D14 /* GoogleService-Info */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "GoogleService-Info"; path = "EscaPAID/GoogleService-Info"; sourceTree = "<group>"; };
-		E79F05C020596AF500889D14 /* Renaissance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Renaissance-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/Renaissance-Info.plist"; sourceTree = "<absolute>"; };
+		E79F05C020596AF500889D14 /* Renaissance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Renaissance-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/EscaPAID/Supporting Files/Renaissance-Info.plist"; sourceTree = "<absolute>"; };
 		E79F060D2059700400889D14 /* Renaissance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renaissance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTableVC.swift; sourceTree = "<group>"; };
 		E79FA59420290E3D0060B44D /* ReservationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationProcessor.swift; sourceTree = "<group>"; };
@@ -212,6 +211,7 @@
 		E7E152A020360DA800033BEB /* EscaPAID-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EscaPAID-Bridging-Header.h"; sourceTree = "<group>"; };
 		E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceVC.swift; sourceTree = "<group>"; };
+		E7E45981205977820077C1DE /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuratorSettingsVC.swift; sourceTree = "<group>"; };
 		E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableVC.swift; sourceTree = "<group>"; };
 		E7F9A0811FB7378B00916FBA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
@@ -373,15 +373,12 @@
 		E7B9F7301FB6CAAE0058CE61 = {
 			isa = PBXGroup;
 			children = (
-				E79F0571205969F200889D14 /* GoogleService-Info */,
 				E79F056C205960B400889D14 /* Tellomee.entitlements */,
 				E72F64461FBBB22B0023489D /* Podfile */,
 				E7B9F73B1FB6CAAE0058CE61 /* EscaPAID */,
 				E7B9F73A1FB6CAAE0058CE61 /* Products */,
 				96EA7856FF54ABD748851FF8 /* Pods */,
 				1DE9252FF35D1611CFB7E4CB /* Frameworks */,
-				E79F05C020596AF500889D14 /* Renaissance-Info.plist */,
-				E7B9F74B1FB6CAAF0058CE61 /* Tellomee-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -397,7 +394,7 @@
 		E7B9F73B1FB6CAAE0058CE61 /* EscaPAID */ = {
 			isa = PBXGroup;
 			children = (
-				E79F056D2059664800889D14 /* GoogleService-Info */,
+				E7E45980205975C90077C1DE /* Supporting Files */,
 				E720AC031FC20FC700E9C2EF /* Storyboards */,
 				E7D3D79320362D6100F91CC4 /* UI */,
 				E720AC041FC20FE500E9C2EF /* View Controllers */,
@@ -426,6 +423,17 @@
 				E7238A672022699C00496FBC /* DateCell.xib */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E7E45980205975C90077C1DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E79F05C020596AF500889D14 /* Renaissance-Info.plist */,
+				E7B9F74B1FB6CAAF0058CE61 /* Tellomee-Info.plist */,
+				E7E45981205977820077C1DE /* Configuration.plist */,
+				E79F056D2059664800889D14 /* GoogleService-Info */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,7 +534,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E79F05F62059700400889D14 /* GoogleService-Info in Resources */,
 				E79F05F72059700400889D14 /* TextGetter.xib in Resources */,
 				E79F05F82059700400889D14 /* ExperienceEditor.storyboard in Resources */,
 				E79F05F92059700400889D14 /* Podfile in Resources */,
@@ -542,6 +549,7 @@
 				E79F06032059700400889D14 /* GoogleService-Info.plist in Resources */,
 				E79F06042059700400889D14 /* ExperienceCell.xib in Resources */,
 				E79F06052059700400889D14 /* Assets.xcassets in Resources */,
+				E7E45983205977820077C1DE /* Configuration.plist in Resources */,
 				E79F06062059700400889D14 /* Main.storyboard in Resources */,
 				E79F06072059700400889D14 /* UICalendar.xib in Resources */,
 			);
@@ -551,7 +559,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E79F0572205969F200889D14 /* GoogleService-Info in Resources */,
 				E71F33A620017CAA00312B91 /* TextGetter.xib in Resources */,
 				E7D3D79D20362FCC00F91CC4 /* ExperienceEditor.storyboard in Resources */,
 				E72F64471FBBB22B0023489D /* Podfile in Resources */,
@@ -567,6 +574,7 @@
 				E79F05702059679000889D14 /* GoogleService-Info.plist in Resources */,
 				E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */,
 				E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */,
+				E7E45982205977820077C1DE /* Configuration.plist in Resources */,
 				E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */,
 				E7238A642022521400496FBC /* UICalendar.xib in Resources */,
 			);
@@ -897,7 +905,7 @@
 				CODE_SIGN_ENTITLEMENTS = Tellomee.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "Renaissance-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/Renaissance-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
@@ -920,7 +928,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "Renaissance-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/Renaissance-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
@@ -1048,7 +1056,7 @@
 				CODE_SIGN_ENTITLEMENTS = Tellomee.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "Tellomee-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/Tellomee-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
@@ -1071,7 +1079,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "Tellomee-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/Tellomee-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
