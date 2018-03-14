@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		118295641A78DD980B0DB3E4 /* Pods_tellomee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */; };
+		E03B080913B8855347476468 /* Pods_EscaPAID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BE45C4ECF7139113E48822 /* Pods_EscaPAID.framework */; };
 		E712DE4420154F1C00661DE7 /* DaySelectorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */; };
 		E712DE462015622500661DE7 /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE452015622500661DE7 /* Days.swift */; };
 		E71F33A520017CAA00312B91 /* TextGetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A320017CAA00312B91 /* TextGetterController.swift */; };
@@ -75,8 +76,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05BE45C4ECF7139113E48822 /* Pods_EscaPAID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tellomee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		251D563A81D847CBC43D4CB4 /* Pods-tellomee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.release.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.release.xcconfig"; sourceTree = "<group>"; };
+		2DF6BF93B04D399CC6A1AE75 /* Pods-EscaPAID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID/Pods-EscaPAID.debug.xcconfig"; sourceTree = "<group>"; };
+		AB9480AA82F4080F2C478C35 /* Pods-EscaPAID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID/Pods-EscaPAID.release.xcconfig"; sourceTree = "<group>"; };
 		DBB7A88E7F3AD611397092DE /* Pods-tellomee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tellomee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tellomee/Pods-tellomee.debug.xcconfig"; sourceTree = "<group>"; };
 		E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectorTableVC.swift; sourceTree = "<group>"; };
 		E712DE452015622500661DE7 /* Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				118295641A78DD980B0DB3E4 /* Pods_tellomee.framework in Frameworks */,
+				E03B080913B8855347476468 /* Pods_EscaPAID.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				0935C524D166A3D17DD462D2 /* Pods_tellomee.framework */,
+				05BE45C4ECF7139113E48822 /* Pods_EscaPAID.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,6 +179,8 @@
 			children = (
 				DBB7A88E7F3AD611397092DE /* Pods-tellomee.debug.xcconfig */,
 				251D563A81D847CBC43D4CB4 /* Pods-tellomee.release.xcconfig */,
+				2DF6BF93B04D399CC6A1AE75 /* Pods-EscaPAID.debug.xcconfig */,
+				AB9480AA82F4080F2C478C35 /* Pods-EscaPAID.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -428,7 +436,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-tellomee/Pods-tellomee-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID/Pods-EscaPAID-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
@@ -465,7 +473,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tellomee/Pods-tellomee-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID/Pods-EscaPAID-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0AA32FCD63AA1B30690C4D34 /* [CP] Copy Pods Resources */ = {
@@ -480,7 +488,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tellomee/Pods-tellomee-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID/Pods-EscaPAID-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F7B7DD79B824C815CF36EE12 /* [CP] Check Pods Manifest.lock */ = {
@@ -494,7 +502,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-tellomee-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -713,7 +721,7 @@
 		};
 		E7B9F74F1FB6CAAF0058CE61 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBB7A88E7F3AD611397092DE /* Pods-tellomee.debug.xcconfig */;
+			baseConfigurationReference = 2DF6BF93B04D399CC6A1AE75 /* Pods-EscaPAID.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -735,7 +743,7 @@
 		};
 		E7B9F7501FB6CAAF0058CE61 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 251D563A81D847CBC43D4CB4 /* Pods-tellomee.release.xcconfig */;
+			baseConfigurationReference = AB9480AA82F4080F2C478C35 /* Pods-EscaPAID.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
