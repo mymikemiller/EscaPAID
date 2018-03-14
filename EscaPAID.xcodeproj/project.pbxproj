@@ -138,7 +138,7 @@
 		E7D3D79620362E0E00F91CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProfileEditor.storyboard; sourceTree = "<group>"; };
 		E7D3D79920362EF400F91CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Reservations.storyboard; sourceTree = "<group>"; };
 		E7D3D79C20362FCC00F91CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExperienceEditor.storyboard; sourceTree = "<group>"; };
-		E7E152A020360DA800033BEB /* tellomee-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tellomee-Bridging-Header.h"; sourceTree = "<group>"; };
+		E7E152A020360DA800033BEB /* EscaPAID-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EscaPAID-Bridging-Header.h"; sourceTree = "<group>"; };
 		E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceVC.swift; sourceTree = "<group>"; };
 		E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuratorSettingsVC.swift; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 				E7B9F74B1FB6CAAF0058CE61 /* Info.plist */,
 				E7F9A07E1FB6D1DC00916FBA /* tellomee.entitlements */,
 				E7CBD4FC203368A000480774 /* GoogleService-Info.plist */,
-				E7E152A020360DA800033BEB /* tellomee-Bridging-Header.h */,
+				E7E152A020360DA800033BEB /* EscaPAID-Bridging-Header.h */,
 				E79770E42043816700B2206C /* MainAPIClient.swift */,
 			);
 			path = EscaPAID;
@@ -730,7 +730,7 @@
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mymikemiller.tellomee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/tellomee-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -753,7 +753,7 @@
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mymikemiller.tellomee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/tellomee-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
