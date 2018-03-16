@@ -106,14 +106,15 @@ class ExperienceManager: NSObject {
             }
             
             var days = Days.All
+            let resultDays = result["days"]! as! [String:AnyObject]
             if (result["days"] != nil) {
-                days = Days(Monday: result["days"]!["monday"] as! Bool,
-                            Tuesday: result["days"]!["tuesday"] as! Bool,
-                            Wednesday: result["days"]!["wednesday"] as! Bool,
-                            Thursday: result["days"]!["thursday"] as! Bool,
-                            Friday: result["days"]!["friday"] as! Bool,
-                            Saturday: result["days"]!["saturday"] as! Bool,
-                            Sunday: result["days"]!["sunday"] as! Bool)
+                days = Days(Monday: resultDays["monday"] as! Bool,
+                            Tuesday: resultDays["tuesday"] as! Bool,
+                            Wednesday: resultDays["wednesday"] as! Bool,
+                            Thursday: resultDays["thursday"] as! Bool,
+                            Friday: resultDays["friday"] as! Bool,
+                            Saturday: resultDays["saturday"] as! Bool,
+                            Sunday: resultDays["sunday"] as! Bool)
             }
             
             let experience = Experience(
