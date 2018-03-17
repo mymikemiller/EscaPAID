@@ -1,6 +1,6 @@
 //
 //  Days.swift
-//  tellomee
+//  EscaPAID
 //
 //  Created by Michael Miller on 1/21/18.
 //  Copyright © 2018 Michael Miller. All rights reserved.

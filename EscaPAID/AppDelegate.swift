@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  tellomee
+//  EscaPAID
 //
 //  Created by Michael Miller on 11/10/17.
 //  Copyright © 2017 Michael Miller. All rights reserved.

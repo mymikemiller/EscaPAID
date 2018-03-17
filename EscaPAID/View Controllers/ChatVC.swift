@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Tellomee
+//  EscaPAID
 //
 //  Created by Michael Miller on 11/13/17.
 //  Copyright © 2017 Tellomee. All rights reserved.
