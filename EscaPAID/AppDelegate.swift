@@ -22,18 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Use Firebase library to configure APIs
-//        var filePath:String!
-//        #if DEBUG
-//            print("[FIREBASE] Development mode.")
-//            filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "Debug")
-//        #else
-//            print("[FIREBASE] Production mode.")
-//            filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "Release")
-//        #endif
-//
-//        let options = FirebaseOptions.init(contentsOfFile: filePath)!
-//        FirebaseApp.configure(options: options)
+        // FirebaseApp.configure() looks in the project for a GoogleService-Info.plist. We have two multiple, but that's ok because only one is included with each target. If this ever requires specifying which file to use for the options when configuring, see this post:
+        // https://medium.com/@brunolemos/how-to-setup-a-different-firebase-project-for-debug-and-release-environments-157b40512164
         FirebaseApp.configure()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         

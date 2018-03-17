@@ -21,10 +21,14 @@ class Config {
     }
     
     // Config variables defined in Configuration.plist (i.e. they depend on the target).
+    
+    var appName: String { return dictionary.value(forKey: "App Name") as! String }
+    
     var stripeCompanyName: String { return dictionary.value(forKey: "Stripe Company Name") as! String }
     
     var stripePublishableKey: String { return dictionary.value(forKey: "Stripe Publishable Key") as! String }
     
-    var feePercent: Double { return dictionary.value(forKey: "Fee Percent") as! Double }    
+    var feePercent: Double { return dictionary.value(forKey: "Fee Percent") as! Double }
+    
     
 }
