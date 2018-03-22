@@ -16,8 +16,6 @@ class Constants: NSObject {
     
     static let stripeApiVersion =  "2018-02-06"
     
-    static let stripeClientId = "ca_AbsKVVP7BmIJFntfSkToXhxtLSAvbIUM"
-    
     static let numGuests = ["1",
                             "2",
                             "3",

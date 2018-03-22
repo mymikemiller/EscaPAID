@@ -1,14 +1,38 @@
 'use strict';
 var argv = require('minimist')(process.argv.slice(2));
 
-const PORT = process.env.PORT || 5000
-// The service account file path should not be set on heroku. The file should only exist locally. See below.
-const SERVICE_ACCOUNT_FILE_PATH = argv["firebase-adminsdk-path"] || "";
-const client_secret = 'sk_test_x9nLe8uLGzarVgMEUSuylguX'
+const PORT = process.env.PORT || 6000
+
+// This should never be set on the server. The target argument specifies which environment variables to use on the local machine. See README.md.
+const target = argv["target"]
+if (target) {
+    console.log("Running with target: " + target + ". This is expected on a local machine and the associated environment variables will be used.")
+} else {
+    console.log("Running without a target. This is epected on the server and the default environment variables will be used.")
+}
+
+const STRIPE_SECRET_KEY = getConfig(target, "STRIPE_SECRET_KEY")
+const DATABASE_URL = getConfig(target, "DATABASE_URL")
+const FIREBASE_PRIVATE_KEY = getConfig(target, "FIREBASE_PRIVATE_KEY")
+const FIREBASE_CLIENT_EMAIL = getConfig(target, "FIREBASE_CLIENT_EMAIL")
+
+// Returns the specified argument, or if none is found, specified environment variable
+function getConfig(target, varName) {
+    if (target) {
+        varName = target.toUpperCase() + "_" + varName
+    }
+    var variable = process.env[varName]
+    if (!variable) {
+        console.error("The following environment variable must be specified: " + varName + ". Make sure you specify the correct target parameter if running the script on a local machine.")
+        process.exit(1)
+    }
+    return variable
+}
+
 const express = require('express');
-var stripe = require('stripe')(client_secret);
+var stripe = require('stripe')(STRIPE_SECRET_KEY);
 var admin = require('firebase-admin');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var request = require('request');
 const path = require('path');
 var fs = require('fs');
@@ -19,43 +43,30 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-/* Generate the service account key at https://console.firebase.google.com/project/tellomee-x/settings/serviceaccounts/adminsdk
+/* Generate the firebase service account key at https://console.firebase.google.com/project/tellomee-x/settings/serviceaccounts/adminsdk
     We would like to do the following, for example:
     var serviceAccount = require('./tellomee-x-firebase-adminsdk.json');
     But we can't require the service account key file when we have to deploy the git repo on Heroku, 
-    so instead (if the file doesn't exist, which it shouldn't on the server (it's in .gitignore)), 
-    we use environment variables and create the serviceAccount object using the values
+    so instead, we use environment variables and create the serviceAccount object using the values
     from the service account file from firebase.
 */
-let serviceAccountFilePath = SERVICE_ACCOUNT_FILE_PATH
-var serviceAccount
-if (fs.existsSync(serviceAccountFilePath)) {
-    serviceAccount = require("./" + serviceAccountFilePath);
-} else {
-    if (!process.env.FIREBASE_PRIVATE_KEY ||
-        !process.env.FIREBASE_CLIENT_EMAIL) {
-            console.error("There is no service account file at path: " + serviceAccountFilePath + ". This is expected on the server. In that case, then, you must define FIREBASE_PRIVATE_KEY and FIREBASE_CLIENT_EMAIL with values from the file.")
-            process.exit(1)
-    }
-
-    serviceAccount = {
-        // The \n's in the private key string cause a failure to parse the private key when initializing, so we fix it up here according to:
-        // https://stackoverflow.com/questions/41287108/deploying-firebase-app-with-service-account-to-heroku-environment-variables-wit
-        "private_key": process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-        "client_email": process.env.FIREBASE_CLIENT_EMAIL,
-    }
+var serviceAccount = {
+    // The \n's in the private key string cause a failure to parse the private key when initializing, so we fix it up here according to:
+    // https://stackoverflow.com/questions/41287108/deploying-firebase-app-with-service-account-to-heroku-environment-variables-wit
+    "private_key": FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    "client_email": FIREBASE_CLIENT_EMAIL,
 }
-
 
 // This firebase stuff might need to move into /book
 // Initialize firebase for booking reservations
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://tellomee-x.firebaseio.com"
+    databaseURL: DATABASE_URL
 });
 // Get a database reference to our posts
 var db = admin.database();
 var reservationsDatabaseRef = db.ref("reservations");
+
 
 
 // The methods below are required by the Stripe iOS SDK

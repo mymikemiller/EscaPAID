@@ -78,7 +78,7 @@ class SettingsTableVC: UITableViewController {
         var components = URLComponents(string: "https://connect.stripe.com/express/oauth/authorize")!
         components.queryItems = [
             URLQueryItem(name: "api_version", value:Constants.stripeApiVersion),
-            URLQueryItem(name: "client_id", value:Constants.stripeClientId),
+            URLQueryItem(name: "client_id", value:Config.current.stripeClientId),
             URLQueryItem(name: "stripe_user[email]", value:FirebaseManager.user?.email)]
         
         if let url = components.url {

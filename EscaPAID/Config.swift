@@ -28,7 +28,11 @@ class Config {
     
     var stripePublishableKey: String { return dictionary.value(forKey: "Stripe Publishable Key") as! String }
     
+    var stripeClientId: String { return dictionary.value(forKey: "Stripe Client Id") as! String }
+    
     var feePercent: Double { return dictionary.value(forKey: "Fee Percent") as! Double }
+    
+    var serverURL: String { return dictionary.value(forKey: "Server URL") as! String }
     
     
 }
