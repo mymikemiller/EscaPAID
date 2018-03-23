@@ -16,6 +16,12 @@
 		<string>ca_CWtSFxBQZl3nygQsSSKJJtbD8mOxNyFZ</string>
 		<key>Server URL</key>
 		<string>http://renaissance-x.herokuapp.com/api</string>
+		<key>Categories</key>
+		<array>
+			<string>Arts</string>
+			<string>Crafts</string>
+			<string>Hobbies</string>
+		</array>
 	</dict>
 	<key>Tellomee</key>
 	<dict>
@@ -31,6 +37,12 @@
 		<string>ca_AbsKVVP7BmIJFntfSkToXhxtLSAvbIUM</string>
 		<key>Server URL</key>
 		<string>http://tellomee-x.herokuapp.com/api</string>
+		<key>Categories</key>
+		<array>
+			<string>Lifestyle</string>
+			<string>Adventure</string>
+			<string>Cillinary</string>
+		</array>
 	</dict>
 </dict>
 </plist>

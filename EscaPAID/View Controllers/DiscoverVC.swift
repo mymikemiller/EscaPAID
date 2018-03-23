@@ -36,7 +36,7 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         // Setup the Scope Bar
         searchController.searchBar.scopeButtonTitles = ["All"]
-        searchController.searchBar.scopeButtonTitles?.append(contentsOf: Constants.categories
+        searchController.searchBar.scopeButtonTitles?.append(contentsOf: Config.current.categories
         )
         searchController.searchBar.delegate = self
         

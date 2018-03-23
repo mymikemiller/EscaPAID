@@ -34,5 +34,6 @@ class Config {
     
     var serverURL: String { return dictionary.value(forKey: "Server URL") as! String }
     
+    var categories: [String] { return dictionary.value(forKey:"Categories") as! [String] }
     
 }

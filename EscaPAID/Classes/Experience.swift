@@ -59,7 +59,7 @@ class Experience: NSObject {
         newRef.child("title").setValue("")
         return Experience(id: newRef.key,
                           title: "",
-                          category: Constants.categories[0],
+                          category: Config.current.categories[0],
                           city: (FirebaseManager.user?.city)!,
                           startTime: "7:00 PM",
                           endTime: "8:00 PM",
@@ -93,10 +93,20 @@ class Experience: NSObject {
     }
     
     func save() {
+        
+        let daysDict = ["monday": days.Monday,
+                        "tuesday": days.Tuesday,
+                        "wednesday": days.Wednesday,
+                        "thursday": days.Thursday,
+                        "friday": days.Friday,
+                        "saturday": days.Saturday,
+                        "sunday": days.Sunday]
+        
         FirebaseManager.databaseRef.child("experiences").child(id).updateChildValues([
             "title":title,
             "category":category,
             "city": city,
+            "days": daysDict,
             "startTime": startTime,
             "endTime": endTime,
             "maxGuests": maxGuests,
@@ -105,15 +115,6 @@ class Experience: NSObject {
             "description":experienceDescription,
             "images":imageUrls,
             "uid":curator.uid])
-        
-        FirebaseManager.databaseRef.child("experiences").child(id).child("days").updateChildValues([
-            "monday":days.Monday,
-            "tuesday":days.Tuesday,
-            "wednesday":days.Wednesday,
-            "thursday":days.Thursday,
-            "friday":days.Friday,
-            "saturday":days.Saturday,
-            "sunday":days.Sunday])
         
     }
 }

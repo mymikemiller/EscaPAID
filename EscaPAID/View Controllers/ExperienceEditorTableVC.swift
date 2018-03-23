@@ -75,7 +75,7 @@ class ExperienceEditorTableVC: UITableViewController {
         
         // Set up the category picker
         let categoryPicker = SelfContainedPickerView()
-        categoryPicker.setUp(textField: experienceCategory, strings: Constants.categories)
+        categoryPicker.setUp(textField: experienceCategory, strings: Config.current.categories)
         
         // Set up the city picker
         let cityPicker:SelfContainedPickerView = SelfContainedPickerView()
