@@ -25,11 +25,11 @@
   * Download the service account file from the appropriate firebase admin sdk console, for example:
     * https://console.firebase.google.com/project/tellomee-x/settings/serviceaccounts/adminsdk
   * Open the file and copy the values for private_key and client_email into environment variables locally 
-    * export TELLOMEE_FIREBASE_PRIVATE_KEY="{key string from file here}"
-    * export TELLOMEE_FIREBASE_CLIENT_EMAIL="{email string from file here}"
+    * export {{TARGET}}_FIREBASE_PRIVATE_KEY="{key string from file here}"
+    * export {{TARGET}}_FIREBASE_CLIENT_EMAIL="{email string from file here}"
 
 * To deploy just the server folder to Heroku ({{target}} is the heroku remote for the app target, for example, "tellomee" or "renaissance"):
   * cd to root folder
   * git subtree push --prefix server {{target}} master
   * To set the environment variables on heroku (e.g. for the tellomee app):
-    * heroku config:set DATABASE_URL=$TELLOMEE_DATABASE_URL -a {{target}}
+    * heroku config:set DATABASE_URL="${{TARGET}}_DATABASE_URL" -a {{app name (e.g. tellomee-x)}}

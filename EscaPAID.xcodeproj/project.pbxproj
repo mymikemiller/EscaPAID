@@ -188,7 +188,6 @@
 		E79770E42043816700B2206C /* MainAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIClient.swift; sourceTree = "<group>"; };
 		E79770E72044774000B2206C /* UIAlertController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utility.swift"; sourceTree = "<group>"; };
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
-		E79F056C205960B400889D14 /* Tellomee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tellomee.entitlements; sourceTree = "<group>"; };
 		E79F05C020596AF500889D14 /* Renaissance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Renaissance-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/EscaPAID/Supporting Files/Renaissance-Info.plist"; sourceTree = "<absolute>"; };
 		E79F060D2059700400889D14 /* Renaissance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renaissance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTableVC.swift; sourceTree = "<group>"; };
@@ -221,6 +220,8 @@
 		E7E4598A2059BC3D0077C1DE /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		E7E4599C205DCEFC0077C1DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7E4599E205DCF0E0077C1DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E7E459A120644E650077C1DE /* Renaissance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Renaissance.entitlements; sourceTree = "<group>"; };
+		E7E459A220644E740077C1DE /* Tellomee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tellomee.entitlements; sourceTree = "<group>"; };
 		E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuratorSettingsVC.swift; sourceTree = "<group>"; };
 		E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableVC.swift; sourceTree = "<group>"; };
 		E7F9A0811FB7378B00916FBA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
@@ -379,7 +380,8 @@
 		E7B9F7301FB6CAAE0058CE61 = {
 			isa = PBXGroup;
 			children = (
-				E79F056C205960B400889D14 /* Tellomee.entitlements */,
+				E7E459A220644E740077C1DE /* Tellomee.entitlements */,
+				E7E459A120644E650077C1DE /* Renaissance.entitlements */,
 				E72F64461FBBB22B0023489D /* Podfile */,
 				E7B9F73B1FB6CAAE0058CE61 /* EscaPAID */,
 				E7B9F73A1FB6CAAE0058CE61 /* Products */,
@@ -507,6 +509,14 @@
 				TargetAttributes = {
 					E79F05C12059700400889D14 = {
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					E7B9F7381FB6CAAE0058CE61 = {
 						CreatedOnToolsVersion = 9.1;
@@ -514,7 +524,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -986,7 +996,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Tellomee.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Renaissance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
 				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/Renaissance-Info.plist";
@@ -1008,7 +1018,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Tellomee.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Renaissance.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
