@@ -6,15 +6,16 @@ const PORT = process.env.PORT || 6000
 // This should never be set on the server. The target argument specifies which environment variables to use on the local machine. See README.md.
 const target = argv["target"]
 if (target) {
-    console.log("Running with target: " + target + ". This is expected on a local machine and the associated environment variables will be used.")
+    console.log("Running with target: " + target + ". This should only be done on localhost.")
 } else {
-    console.log("Running without a target. This is epected on the server and the default environment variables will be used.")
+    console.log("Running without a target. This is expected on the server and the default environment variables will be used. If you're running on localhost and meant to specify a target, use, e.g. npm start -- --target=renaissance.")
 }
 
 const STRIPE_SECRET_KEY = getConfig(target, "STRIPE_SECRET_KEY")
 const DATABASE_URL = getConfig(target, "DATABASE_URL")
 const FIREBASE_PRIVATE_KEY = getConfig(target, "FIREBASE_PRIVATE_KEY")
 const FIREBASE_CLIENT_EMAIL = getConfig(target, "FIREBASE_CLIENT_EMAIL")
+const AASA_FILE_PATH = getConfig(target, "AASA_FILE_PATH")
 
 // Returns the specified argument, or if none is found, specified environment variable
 function getConfig(target, varName) {
@@ -70,7 +71,11 @@ admin.initializeApp({
 var db = admin.database();
 var reservationsDatabaseRef = db.ref("reservations");
 
-
+app.get("/apple-app-site-association", (req, res) => {
+    // Serve a different file based on environment variable
+    console.log("at get /apple-app-site-association")
+    res.redirect(AASA_FILE_PATH)
+})
 
 // The methods below are required by the Stripe iOS SDK
 // See [STPEphemeralKeyProvider](https://github.com/stripe/stripe-ios/blob/master/Stripe/PublicHeaders/STPEphemeralKeyProvider.h)

@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "9Y8K76T269.me.puffinlabs.Tellomee",
+                "paths": [ "/stripe-connect"]
+            }
+        ]
+    }
+}
