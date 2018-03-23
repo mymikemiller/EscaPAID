@@ -15,7 +15,7 @@
 		<key>Stripe Client Id</key>
 		<string>ca_CWtSFxBQZl3nygQsSSKJJtbD8mOxNyFZ</string>
 		<key>Server URL</key>
-		<string>http://tellomee-x.herokuapp.com/api</string>
+		<string>http://renaissance-x.herokuapp.com/api</string>
 	</dict>
 	<key>Tellomee</key>
 	<dict>
@@ -30,7 +30,7 @@
 		<key>Stripe Client Id</key>
 		<string>ca_AbsKVVP7BmIJFntfSkToXhxtLSAvbIUM</string>
 		<key>Server URL</key>
-		<string>http://renaissance-x.herokuapp.com/api</string>
+		<string>http://tellomee-x.herokuapp.com/api</string>
 	</dict>
 </dict>
 </plist>
