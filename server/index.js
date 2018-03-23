@@ -136,7 +136,7 @@ app.post("/api/redeem_auth_code", (req, res) => {
 
     // Set up the request
     var post_req = request.post("https://connect.stripe.com/oauth/token",
-        { json: { client_secret: client_secret,
+        { json: { client_secret: STRIPE_SECRET_KEY,
                   grant_type: "authorization_code",
                   code: auth_code } },
         function(error, post_res, body) {
