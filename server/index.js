@@ -43,6 +43,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+// Serve public files
+app.use(express.static('public'))
+
 /* Generate the firebase service account key at https://console.firebase.google.com/project/tellomee-x/settings/serviceaccounts/adminsdk
     We would like to do the following, for example:
     var serviceAccount = require('./tellomee-x-firebase-adminsdk.json');
