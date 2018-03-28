@@ -20,6 +20,11 @@ class PostManager: NSObject {
     
     static func addPost(threadId:String, text:String, toId:String, fromId:String) {
         if (text != "") {
+            
+            if (toId == fromId) {
+                fatalError("Cannot send a message to self")
+            }
+            
             // Store the timestamp (todo: or somehow use Firebase.ServerValue.timestamp())
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"

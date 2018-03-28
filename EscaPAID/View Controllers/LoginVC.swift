@@ -79,6 +79,12 @@ class LoginVC: UIViewController {
         loginButton_click(self)
     }
     
+    @IBAction func escapaid_a_click(_ sender: Any) {
+        email.text = "escapaid.a@gmail.com"
+        password.text = "testtest"
+        loginButton_click(self)
+    }
+    
     @IBAction func cancelButton_click(_ sender: Any) {
         let originVC: OriginScreenVC = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
         // Prevent auto-login once we log out or we'll immediately be logged back in

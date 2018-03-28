@@ -13,7 +13,7 @@ class MainAPIClient: NSObject {
     
     static let shared = MainAPIClient()
     
-    //var baseURLString = "http://localhost:5000/api"
+    //var baseURLString = "http://localhost:6000/api"
     var baseURLString = Config.current.serverURL
     var baseURL: URL {
         return URL(string: baseURLString)!
@@ -22,6 +22,7 @@ class MainAPIClient: NSObject {
     enum ReservationError: Error {
         case missingBaseURL
         case invalidResponse
+        case failure
     }
     
     func bookReservation(source: String, reservation: Reservation, completion: @escaping (ReservationError?, String?) -> Void) {
@@ -33,15 +34,28 @@ class MainAPIClient: NSObject {
             "reservationId": reservation.id!
             ]
                 
-        Alamofire.request(url, method: .post, parameters: parameters).responseJSON { (response) in
-            guard let json = response.result.value as? [String: Any] else {
-                completion(.invalidResponse, nil)
-                return
+        Alamofire.request(url, method: .post, parameters: parameters).validate(statusCode: 200..<300).responseJSON { (response) in
+            
+            switch response.result {
+            case .success(let data as [String:Any]):
+                
+                guard let json = response.result.value as? [String: Any] else {
+                    print("Got invalid response from bookReservation")
+                    completion(.invalidResponse, nil)
+                    return
+                }
+                
+                let stripeChargeId = json["stripeChargeId"] as! String
+                
+                completion(nil, stripeChargeId)
+            
+            case .failure(let err):
+                print(err.localizedDescription)
+                completion(ReservationError.failure, nil)
+            default:
+                completion(ReservationError.failure, nil)
             }
             
-            let stripeChargeId = json["stripeChargeId"] as! String
-            
-            completion(nil, stripeChargeId)
         }
     }
     

@@ -54,10 +54,16 @@ class ThreadManager: NSObject {
         }
     }
     
-    static func getOrCreateThread(between user:User, and curator:User, completion: @escaping (Thread) -> ()) {
+    static func getOrCreateThread(with curator:User, completion: @escaping (Thread) -> ()) {
+        
+        let myUid = FirebaseManager.user!.uid
+        
+        if (myUid == curator.uid) {
+            fatalError("Cannot create a thread with self")
+        }
         
         // Try to find a thread that exists. Look in the user's threads and see if any thread exists that contains the curator as the other user
-        databaseRef.child("userThreads").child(user.uid).observeSingleEvent(of: .value) {
+        databaseRef.child("userThreads").child(myUid).observeSingleEvent(of: .value) {
             (snap) in
             
             var threadId:String? = nil
@@ -85,11 +91,11 @@ class ThreadManager: NSObject {
                         "read":true,
                         "lastMessageTimestamp":dateFormatter.string(from:Date())] as [String : Any]
             
-                threadId = databaseRef.child("userThreads").child(user.uid).childByAutoId().key
-                databaseRef.child("userThreads").child(user.uid).child(threadId!).setValue(newThread)
+                threadId = databaseRef.child("userThreads").child(myUid).childByAutoId().key
+                databaseRef.child("userThreads").child(myUid).child(threadId!).setValue(newThread)
                 
                 // Also add the same threadId (unread) to the curator's userThreads so the thread appears in their inbox
-                newThread["with"] = user.uid
+                newThread["with"] = myUid
                 newThread["read"] = false
                 databaseRef.child("userThreads").child(curator.uid).child(threadId!).setValue(newThread)
             }

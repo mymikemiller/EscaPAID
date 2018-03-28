@@ -139,7 +139,7 @@ class ReceiptTableVC: UITableViewController {
             
             let text = "*** \(FirebaseManager.user!.displayName) \(newStatus.rawValue) your reservation for \(reservation.experience.title) on \(reservation.dateAsPrettyString) \(includingMessage)***"
             
-            ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: reservation.user, completion: {thread in
+            ThreadManager.getOrCreateThread(with: reservation.user, completion: {thread in
                 
                 // Send the notice
                 PostManager.addPost(threadId: (thread.threadId), text: text, toId: thread.user.uid, fromId: (FirebaseManager.user?.uid)!)

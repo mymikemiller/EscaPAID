@@ -116,7 +116,6 @@ class ConfirmationTableVC: UITableViewController {
             // Perform payment request
             self.paymentContext.requestPayment()
         })
-        
     }
     
     /*
@@ -128,7 +127,6 @@ class ConfirmationTableVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 extension ConfirmationTableVC : STPPaymentContextDelegate {
@@ -177,7 +175,7 @@ extension ConfirmationTableVC : STPPaymentContextDelegate {
             }
             
             guard error == nil else {
-                // Error while requesting ride
+                // Error while booking
                 completion(error)
                 return
             }
@@ -187,6 +185,10 @@ extension ConfirmationTableVC : STPPaymentContextDelegate {
             
             // Disable the pay button
             strongSelf.refreshPayButton()
+            
+            // Post a message between the user and curator
+            ReservationProcessor.postReservationConfirmationMessage(for: strongSelf.reservation!)
+
             
             // Go to the message thread so the user can follow up
             strongSelf.goToMessageThread()
@@ -212,6 +214,10 @@ extension ConfirmationTableVC : STPPaymentContextDelegate {
                     // Missing response from backend
                     print("[ERROR]: Missing or malformed response when attempting to `MainAPIClient.shared.bookReservation`. Please check internet connection and backend response formatting.");
                     present(UIAlertController(message: "Could not book reservation."), animated: true)
+                case .failure:
+                    // Missing response from backend
+                    print("[ERROR]: Unspecified error when booking.");
+                    present(UIAlertController(message: "Unspecified error. Could not book reservation."), animated: true)
                 }
             }
             else {

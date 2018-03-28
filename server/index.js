@@ -205,8 +205,13 @@ app.post('/api/book', async (req, res, next) => {
                 statement_description: "Tellomee", 
                 amountForCurator: amountForCurator, 
                 account: curatorStripeId},
-            function(chargeId) {
-                 console.log("Created charge. ChargeId:", chargeId)
+            function(err, chargeId) {
+                if (err) {
+                    console.log("Error creating charge:", err)
+                    return res.status(500).send(err)
+                }
+
+                console.log("Created charge. ChargeId:", chargeId)
 
                 // Add the Stripe charge reference to the reservation and save it.
                 reservationsDatabaseRef.child(reservationId).update({ stripeChargeId: chargeId })
@@ -226,10 +231,8 @@ app.post('/api/book', async (req, res, next) => {
 });
 
 async function createCharge(chargeParams, callback) {
-
-    
     // Create a charge and set its destination to the pilot's account.
-    const charge = await stripe.charges.create({
+    stripe.charges.create({
         source: chargeParams.source,
         amount: chargeParams.amount,
         currency: chargeParams.currency,
@@ -240,12 +243,12 @@ async function createCharge(chargeParams, callback) {
             amount: chargeParams.amountForCurator,
             account: chargeParams.account
         }
+    }).then(function(charge) {
+        callback(null, charge.id)
+    }, function(err) {
+        callback(err, null)
+        return
     });
-
-    callback(charge.id)
-
-    return charge
-
 }
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))

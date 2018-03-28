@@ -25,7 +25,7 @@ class ThreadsNavigationController: UINavigationController {
         
         // If we have a user set, go directly to that thread
         if let userToShowOnLoad = userToShowOnLoad {
-            ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: userToShowOnLoad, completion: {thread in
+            ThreadManager.getOrCreateThread(with: userToShowOnLoad, completion: {thread in
                 
                 self.showThread(thread)
             })
@@ -59,7 +59,7 @@ class ThreadsNavigationController: UINavigationController {
         if user.uid != currentlyDisplayedUid {
         
             // Go to the message thread between the current user and the specified user
-            ThreadManager.getOrCreateThread(between: FirebaseManager.user!, and: user, completion: {thread in
+            ThreadManager.getOrCreateThread(with: user, completion: {thread in
                 
                 self.showThread(thread)
             })

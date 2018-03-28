@@ -13,7 +13,7 @@
 * Environment Variables
   * This app uses environment variables to separate the different targets and configure things such as the private key for Stripe and the URL to the firebase database.
   * The following environment variables must be set:
-    * DATABASE_URL: The url to the firebase database where the reservations are stored.
+    * DATABASE_URL: The url to the firebase database where the reservations are stored. It is of the form https://renaissance-x.firebaseio.com/
     * STRIPE_PRIVATE_KEY: The private key (client secret) from the stripe dashboard.
     * FIREBASE_PRIVATE_KEY: The value for private_key in the firebase-adminsdk.json file donwloaded from the Service Account section of the Firebase console.
     * FIREBASE_CLIENT_EMAIL: The value for client_email in the firebase-adminsdk.json file donwloaded from the Service Account section of the Firebase console.
@@ -33,3 +33,4 @@
   * git subtree push --prefix server {{target}} master
   * To set the environment variables on heroku (e.g. for the tellomee app):
     * heroku config:set DATABASE_URL="${{TARGET}}_DATABASE_URL" -a {{app name (e.g. tellomee-x)}}
+    
