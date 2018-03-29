@@ -36,14 +36,10 @@
         <scene sceneID="uvC-ad-aiV">
             <objects>
                 <viewController storyboardIdentifier="originViewController" id="9jn-rB-nLW" customClass="OriginScreenVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EeQ-RO-xed">
+                    <view key="view" contentMode="scaleToFill" id="EeQ-RO-xed" customClass="GradientView" customModule="Renaissance" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_background" translatesAutoresizingMaskIntoConstraints="NO" id="gy5-fh-Eab">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logotypeX_white" translatesAutoresizingMaskIntoConstraints="NO" id="er7-n6-I6K">
                                 <rect key="frame" x="67" y="34" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -79,7 +75,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="XzE-bw-ewD"/>
                     </view>
                     <navigationItem key="navigationItem" id="LdF-T5-Jqo"/>
@@ -89,13 +85,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYo-KF-j0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1687" y="85"/>
+            <point key="canvasLocation" x="-1687.2" y="84.107946026986511"/>
         </scene>
         <!--Create AccountVC-->
         <scene sceneID="vWt-Jc-oT9">
             <objects>
                 <viewController storyboardIdentifier="create_ShowLogin" id="KHk-ef-tzw" customClass="CreateAccountVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="c87-D0-FvY">
+                    <view key="view" contentMode="scaleToFill" id="c87-D0-FvY" customClass="GradientView" customModule="Renaissance" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -152,7 +148,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="TpV-vd-0tW"/>
                     </view>
                     <connections>
@@ -172,7 +168,7 @@
         <scene sceneID="2Br-tJ-XL1">
             <objects>
                 <viewController id="PJy-Cc-a7I" customClass="LoginVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="65O-PT-ovs">
+                    <view key="view" contentMode="scaleToFill" id="65O-PT-ovs" customClass="GradientView" customModule="Renaissance" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -239,7 +235,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="kYv-gb-T0K"/>
                     </view>
                     <toolbarItems/>
@@ -297,7 +293,6 @@
     </scenes>
     <resources>
         <image name="loginWIthFacebookButton" width="988" height="160"/>
-        <image name="login_background" width="440" height="440"/>
         <image name="logotypeX_white" width="850" height="212"/>
     </resources>
     <inferredMetricsTieBreakers>

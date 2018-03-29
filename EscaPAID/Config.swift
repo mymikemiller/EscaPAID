@@ -36,4 +36,13 @@ class Config {
     
     var categories: [String] { return dictionary.value(forKey:"Categories") as! [String] }
     
+    var gradientStartColor: UIColor {
+        let hex = dictionary.value(forKey:"Gradient Start Color") as! String
+        return UIColor(hexString: hex)! }
+    
+    var gradientEndColor: UIColor {
+        let hex = dictionary.value(forKey:"Gradient End Color") as! String
+        return UIColor(hexString: hex)! }
+
+    
 }

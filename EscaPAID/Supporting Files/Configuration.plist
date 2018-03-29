@@ -22,6 +22,10 @@
 			<string>Crafts</string>
 			<string>Hobbies</string>
 		</array>
+		<key>Gradient Start Color</key>
+		<string>#743746</string>
+		<key>Gradient End Color</key>
+		<string>#431522</string>
 	</dict>
 	<key>Tellomee</key>
 	<dict>
@@ -43,6 +47,10 @@
 			<string>Adventure</string>
 			<string>Cillinary</string>
 		</array>
+		<key>Gradient Start Color</key>
+		<string>#006600</string>
+		<key>Gradient End Color</key>
+		<string>#004d00</string>
 	</dict>
 </dict>
 </plist>
