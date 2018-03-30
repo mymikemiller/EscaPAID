@@ -115,6 +115,8 @@
 		E7CF4DEF206D512A00B7F97E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DDF206CA31B00B7F97E /* GradientView.swift */; };
 		E7CF4DF1206D5E7000B7F97E /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */; };
 		E7CF4DF2206D5E7000B7F97E /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */; };
+		E7CF4DF4206D6D9600B7F97E /* Renaissance.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7CF4DF3206D6D9600B7F97E /* Renaissance.xcassets */; };
+		E7CF4DF7206D6DF100B7F97E /* Tellomee.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7CF4DF5206D6DEC00B7F97E /* Tellomee.xcassets */; };
 		E7D0A7841FDB573D008319CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A7831FDB573D008319CF /* Constants.swift */; };
 		E7D316881FCF246A0062E178 /* ExperienceImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */; };
 		E7D316AA1FD08EF60062E178 /* ExperienceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */; };
@@ -199,6 +201,8 @@
 		E7B9F74B1FB6CAAF0058CE61 /* Tellomee-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tellomee-Info.plist"; sourceTree = "<group>"; };
 		E7CF4DDF206CA31B00B7F97E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utility.swift"; sourceTree = "<group>"; };
+		E7CF4DF3206D6D9600B7F97E /* Renaissance.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Renaissance.xcassets; sourceTree = "<group>"; };
+		E7CF4DF5206D6DEC00B7F97E /* Tellomee.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Tellomee.xcassets; sourceTree = "<group>"; };
 		E7D0A7831FDB573D008319CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceImageVC.swift; sourceTree = "<group>"; };
 		E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceImageCell.swift; sourceTree = "<group>"; };
@@ -399,6 +403,8 @@
 				E7E45984205993600077C1DE /* Config.swift */,
 				E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */,
 				E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */,
+				E7CF4DF3206D6D9600B7F97E /* Renaissance.xcassets */,
+				E7CF4DF5206D6DEC00B7F97E /* Tellomee.xcassets */,
 				E7E152A020360DA800033BEB /* EscaPAID-Bridging-Header.h */,
 				E79770E42043816700B2206C /* MainAPIClient.swift */,
 			);
@@ -565,6 +571,7 @@
 				E79F06012059700400889D14 /* Book.storyboard in Resources */,
 				E79F06042059700400889D14 /* ExperienceCell.xib in Resources */,
 				E79F06052059700400889D14 /* Assets.xcassets in Resources */,
+				E7CF4DF4206D6D9600B7F97E /* Renaissance.xcassets in Resources */,
 				E7E4599D205DCEFC0077C1DE /* GoogleService-Info.plist in Resources */,
 				E7E45983205977820077C1DE /* Configuration.plist in Resources */,
 				E79F06062059700400889D14 /* Main.storyboard in Resources */,
@@ -581,6 +588,7 @@
 			files = (
 				E71F33A620017CAA00312B91 /* TextGetter.xib in Resources */,
 				E7D3D79D20362FCC00F91CC4 /* ExperienceEditor.storyboard in Resources */,
+				E7CF4DF7206D6DF100B7F97E /* Tellomee.xcassets in Resources */,
 				E7E4598B2059BC3D0077C1DE /* Discover.storyboard in Resources */,
 				E72F64471FBBB22B0023489D /* Podfile in Resources */,
 				E7D3D79720362E0E00F91CC4 /* ProfileEditor.storyboard in Resources */,

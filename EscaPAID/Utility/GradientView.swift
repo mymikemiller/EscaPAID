@@ -8,10 +8,9 @@
 
 import UIKit
 
-@IBDesignable
 final class GradientView: UIView {
-    @IBInspectable var startColor: UIColor = Config.current.gradientStartColor
-    @IBInspectable var endColor: UIColor = Config.current.gradientEndColor
+    var startColor: UIColor = Config.current.gradientStartColor
+    var endColor: UIColor = Config.current.gradientEndColor
 
     override func draw(_ rect: CGRect) {
         let gradient: CAGradientLayer = CAGradientLayer()
