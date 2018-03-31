@@ -117,6 +117,8 @@
 		E7CF4DF2206D5E7000B7F97E /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */; };
 		E7CF4DF4206D6D9600B7F97E /* Renaissance.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7CF4DF3206D6D9600B7F97E /* Renaissance.xcassets */; };
 		E7CF4DF7206D6DF100B7F97E /* Tellomee.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7CF4DF5206D6DEC00B7F97E /* Tellomee.xcassets */; };
+		E7CF4DFB206EDF0C00B7F97E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DFA206EDF0C00B7F97E /* RoundedButton.swift */; };
+		E7CF4DFC206EDF0C00B7F97E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DFA206EDF0C00B7F97E /* RoundedButton.swift */; };
 		E7D0A7841FDB573D008319CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A7831FDB573D008319CF /* Constants.swift */; };
 		E7D316881FCF246A0062E178 /* ExperienceImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */; };
 		E7D316AA1FD08EF60062E178 /* ExperienceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */; };
@@ -203,6 +205,7 @@
 		E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utility.swift"; sourceTree = "<group>"; };
 		E7CF4DF3206D6D9600B7F97E /* Renaissance.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Renaissance.xcassets; sourceTree = "<group>"; };
 		E7CF4DF5206D6DEC00B7F97E /* Tellomee.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Tellomee.xcassets; sourceTree = "<group>"; };
+		E7CF4DFA206EDF0C00B7F97E /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		E7D0A7831FDB573D008319CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceImageVC.swift; sourceTree = "<group>"; };
 		E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceImageCell.swift; sourceTree = "<group>"; };
@@ -354,6 +357,7 @@
 				E79770E72044774000B2206C /* UIAlertController+Utility.swift */,
 				E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */,
 				E7CF4DDF206CA31B00B7F97E /* GradientView.swift */,
+				E7CF4DFA206EDF0C00B7F97E /* RoundedButton.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -812,6 +816,7 @@
 				E79F05E32059700400889D14 /* ChatVC.swift in Sources */,
 				E79F05E42059700400889D14 /* PostManager.swift in Sources */,
 				E79F05E52059700400889D14 /* LoginVC.swift in Sources */,
+				E7CF4DFC206EDF0C00B7F97E /* RoundedButton.swift in Sources */,
 				E79F05E62059700400889D14 /* TextGetterController.swift in Sources */,
 				E7E45986205993600077C1DE /* Config.swift in Sources */,
 				E79F05E72059700400889D14 /* ReservationTableViewCell.swift in Sources */,
@@ -868,6 +873,7 @@
 				E77A736B204875A200AE0DE4 /* PostManager.swift in Sources */,
 				E72D8E531FBCC5C1001026D6 /* LoginVC.swift in Sources */,
 				E71F33A520017CAA00312B91 /* TextGetterController.swift in Sources */,
+				E7CF4DFB206EDF0C00B7F97E /* RoundedButton.swift in Sources */,
 				E7E45985205993600077C1DE /* Config.swift in Sources */,
 				E79FA5A3202A6AB90060B44D /* ReservationTableViewCell.swift in Sources */,
 				E77A736A204875A200AE0DE4 /* StorageManager.swift in Sources */,
