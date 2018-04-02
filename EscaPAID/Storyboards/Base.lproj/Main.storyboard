@@ -44,7 +44,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nZ-6N-3tz" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="er7-n6-I6K">
                                                 <rect key="frame" x="37.5" y="46" width="300" height="107"/>
@@ -112,7 +112,7 @@
                                                     </attributedString>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="PJy-Cc-a7I" kind="show" identifier="origin_login" id="iFh-d8-UgR"/>
+                                                    <segue destination="PJy-Cc-a7I" kind="show" id="Yl0-Zd-n9g"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -125,7 +125,7 @@
                                             <constraint firstItem="er7-n6-I6K" firstAttribute="centerX" secondItem="6nZ-6N-3tz" secondAttribute="centerX" id="BeU-4f-hWV"/>
                                             <constraint firstItem="Isu-g8-ghk" firstAttribute="top" secondItem="vV8-jQ-U8M" secondAttribute="bottom" constant="20" id="GBL-zt-UXx"/>
                                             <constraint firstItem="er7-n6-I6K" firstAttribute="top" secondItem="6nZ-6N-3tz" secondAttribute="top" constant="46" id="MBd-Ow-Qge"/>
-                                            <constraint firstAttribute="height" constant="500" id="Mbt-Sj-oD6"/>
+                                            <constraint firstAttribute="height" constant="600" id="Mbt-Sj-oD6"/>
                                             <constraint firstItem="Isu-g8-ghk" firstAttribute="centerX" secondItem="6nZ-6N-3tz" secondAttribute="centerX" id="UAU-6J-gcO"/>
                                             <constraint firstItem="Isu-g8-ghk" firstAttribute="centerX" secondItem="6nZ-6N-3tz" secondAttribute="centerX" id="d6c-8X-hEO"/>
                                             <constraint firstItem="vV8-jQ-U8M" firstAttribute="top" secondItem="olM-eH-iRQ" secondAttribute="bottom" constant="39" id="omw-Uc-a7k"/>
@@ -616,7 +616,7 @@
         <image name="facebookIcon" width="54" height="99"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iFh-d8-UgR"/>
-        <segue reference="m3W-45-i9V"/>
+        <segue reference="Yl0-Zd-n9g"/>
+        <segue reference="OIa-MV-TGK"/>
     </inferredMetricsTieBreakers>
 </document>
