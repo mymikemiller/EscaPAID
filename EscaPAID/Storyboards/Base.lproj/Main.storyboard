@@ -52,8 +52,8 @@
                                                     <constraint firstAttribute="width" constant="300" id="gll-0g-vO8"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn a new craft, art or hobby hands-on with an artisan in your community." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olM-eH-iRQ" userLabel="Learn...">
-                                                <rect key="frame" x="37.5" y="181" width="300" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intro text" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olM-eH-iRQ" userLabel="Learn...">
+                                                <rect key="frame" x="153.5" y="181" width="68.5" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="aHt-9E-f8l"/>
                                                 </constraints>
@@ -152,6 +152,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="LdF-T5-Jqo"/>
                     <connections>
+                        <outlet property="introTextLabel" destination="olM-eH-iRQ" id="nbc-Wq-YBe"/>
                         <segue destination="F22-Gu-X0h" kind="show" identifier="origin_facebook_showApp" id="OIa-MV-TGK"/>
                     </connections>
                 </viewController>

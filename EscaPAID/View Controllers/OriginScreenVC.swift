@@ -10,10 +10,12 @@ import UIKit
 
 class OriginScreenVC: UIViewController {
     
+    @IBOutlet weak var introTextLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        introTextLabel.text = Config.current.introText
     }
     
     override func viewDidAppear(_ animated: Bool) {

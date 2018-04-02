@@ -26,6 +26,8 @@
 		<string>#743746</string>
 		<key>Gradient End Color</key>
 		<string>#431522</string>
+		<key>Intro Text</key>
+		<string>Learn a new craft, art or hobby hands-on with an artisan in your community</string>
 	</dict>
 	<key>Tellomee</key>
 	<dict>
@@ -51,6 +53,8 @@
 		<string>#006600</string>
 		<key>Gradient End Color</key>
 		<string>#004d00</string>
+		<key>Intro Text</key>
+		<string>Discover unique experiences in your city</string>
 	</dict>
 </dict>
 </plist>
