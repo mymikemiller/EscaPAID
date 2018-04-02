@@ -72,7 +72,7 @@ class FirebaseManager: NSObject {
         }
     }
     
-    static func createAccountWithEmail(email:String, phone:String, displayName:String, password:String, completion: @escaping(String?) -> Void) {
+    static func createAccountWithEmail(email:String, displayName:String, password:String, completion: @escaping(String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password, completion: {
             (user, error) in
             if let error = error {
@@ -84,7 +84,7 @@ class FirebaseManager: NSObject {
             user?.sendEmailVerification(completion: nil)
             
             // Add the user to our database (even if they're not verified) so we can associate information with the user.
-            addUser(email: email, phone: phone, displayName: displayName, profileImageUrl: "") {user in
+            addUser(email: email, displayName: displayName, profileImageUrl: "") {user in
                 
                 guard (user != nil) else {
                     // Couldn't create the user. The server may be down.
@@ -99,7 +99,7 @@ class FirebaseManager: NSObject {
         })
     }
     
-    static func addUser(email:String, phone:String, displayName: String, profileImageUrl:String, completion: @escaping (_ user:User?) -> Void) {
+    static func addUser(email:String, displayName: String, profileImageUrl:String, completion: @escaping (_ user:User?) -> Void) {
         let uid = Auth.auth().currentUser?.uid
         
         // Get the server to create a stripe customer, and set the returned stripeCustomerId
@@ -114,7 +114,6 @@ class FirebaseManager: NSObject {
             let newUser = ["uid":uid!,
                            "email":email,
                            "city": "", // Start with a blank city. The user will fill it in later
-                           "phone":phone,
                            "displayName":displayName,
                            "aboutMe":"",
                            "profileImageUrl":profileImageUrl,
@@ -142,11 +141,10 @@ class FirebaseManager: NSObject {
                 let city = value["city"] as! String
                 let email = value["email"] as! String
                 let displayName = value["displayName"] as! String
-                let phone = value["phone"] as! String
                 let aboutMe = value["aboutMe"] as! String
                 let profileImageUrl = value["profileImageUrl"] as! String
                 
-                let user = User(uid: uid, city: city, email: email, displayName: displayName, phone: phone, aboutMe: aboutMe, profileImageUrl: profileImageUrl)
+                let user = User(uid: uid, city: city, email: email, displayName: displayName, aboutMe: aboutMe, profileImageUrl: profileImageUrl)
                 
                 // Set the stripe ID if we have one (if we're a curator)
                 user.stripeCuratorId = value["stripeCuratorId"] as? String
@@ -197,7 +195,6 @@ class FirebaseManager: NSObject {
                 let phone = firebaseUser?.phoneNumber ?? ""
                 
                 addUser(email: (firebaseUser?.email!)!,
-                        phone: phone,
                         displayName: (firebaseUser?.displayName!)!,
                         profileImageUrl: (Auth.auth().currentUser?.photoURL?.absoluteString)!) { user in
                             

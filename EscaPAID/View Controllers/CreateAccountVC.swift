@@ -12,10 +12,7 @@ class CreateAccountVC: UIViewController {
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var phone: UITextField!
-    
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var verifyPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,17 +38,9 @@ class CreateAccountVC: UIViewController {
             return
         }
         
-        if (password.text != verifyPassword.text) {
-            let alertVC = UIAlertController(title: "Error", message: "Passwords don't match.", preferredStyle: .alert)
-            let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
-            alertVC.addAction(alertActionOkay)
-            self.present(alertVC, animated: true, completion: nil)
-            return
-        }
-        
         let emailAddress = self.email.text!.trimmingCharacters(in: .whitespaces)
         
-        FirebaseManager.createAccountWithEmail(email: emailAddress, phone: phone.text!, displayName: name.text!, password: password.text!) {
+        FirebaseManager.createAccountWithEmail(email: emailAddress, displayName: name.text!, password: password.text!) {
             errorString in
             
             DispatchQueue.main.async {
@@ -84,7 +73,7 @@ class CreateAccountVC: UIViewController {
     }
     
     
-    @IBAction func cancelButton_click(_ sender: Any) {
+    @IBAction func loginButton_click(_ sender: Any) {
         let originVC: OriginScreenVC = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
         // Prevent auto-login or we'll immediately be logged back in
         Constants.autoLogin = false

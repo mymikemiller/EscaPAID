@@ -11,6 +11,31 @@ import UIKit
 final class GradientView: UIView {
     var startColor: UIColor = Config.current.gradientStartColor
     var endColor: UIColor = Config.current.gradientEndColor
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+        
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+
+    func setup() {
+        
+        let didRotate: (Notification) -> Void = { notification in
+            self.setNeedsDisplay()
+        }
+        
+        NotificationCenter.default.addObserver(forName: .UIDeviceOrientationDidChange,
+                                               object: nil,
+                                               queue: .main,
+                                               using: didRotate)
+    }
+
 
     override func draw(_ rect: CGRect) {
         let gradient: CAGradientLayer = CAGradientLayer()
@@ -24,5 +49,9 @@ final class GradientView: UIView {
         gradient.zPosition = -1
         layer.addSublayer(gradient)
     }
+    
+    
+    
+    
 }
 

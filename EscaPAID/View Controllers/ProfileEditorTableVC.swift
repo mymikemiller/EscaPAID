@@ -42,7 +42,6 @@ class ProfileEditorTableVC: UITableViewController, UINavigationControllerDelegat
         
         // Set initial values
         name.text = FirebaseManager.user?.displayName
-        phone.text = FirebaseManager.user?.phone
         aboutMe.text = FirebaseManager.user?.aboutMe
     }
     
@@ -69,7 +68,6 @@ class ProfileEditorTableVC: UITableViewController, UINavigationControllerDelegat
     @IBAction func saveButton_click(_ sender: Any) {
         FirebaseManager.user?.displayName = name.text!
         FirebaseManager.user?.city = city.text!
-        FirebaseManager.user?.phone = phone.text!
         FirebaseManager.user?.aboutMe = aboutMe.text!
         FirebaseManager.user?.update()
         
