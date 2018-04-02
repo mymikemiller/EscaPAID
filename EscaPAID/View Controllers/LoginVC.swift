@@ -9,9 +9,7 @@
 import UIKit
 
 class LoginVC: UIViewController {
-    
-    @IBOutlet weak var orLogInWIthEmailLabel: UILabel!
-    
+        
     var initEmail: String = ""
     var initPassword:String = ""
     @IBOutlet weak var email: UITextField!
@@ -19,8 +17,6 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        orLogInWIthEmailLabel.drawLineOnBothSides(labelWidth: 10, color: UIColor.white)
 
         // We set initEmail when coming here after creating a new account
         if (!initEmail.isEmpty) { email.text = initEmail }
