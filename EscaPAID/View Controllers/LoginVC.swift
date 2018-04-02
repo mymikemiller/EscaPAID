@@ -42,6 +42,36 @@ class LoginVC: UIViewController {
             }
         }
     }
+    
+    @IBAction func forgotPassword_click(_ sender: Any) {
+        
+        let emailAddress = email.text ?? ""
+        
+        // Make sure they've entered an email address
+        guard emailAddress.contains("@") else {
+            let alertVC = UIAlertController(title: "Enter email", message: "Please enter your email above first.", preferredStyle: .alert)
+            let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
+            alertVC.addAction(alertActionOkay)
+            self.present(alertVC, animated: true, completion: nil)
+            return
+        }
+        
+        // Ask if they want to have an email sent
+        let alertVC = UIAlertController(title: "Forgot my password", message: "We will send an email to " + emailAddress + " with a link to reset your password.", preferredStyle: .alert)
+        let alertActionOkay = UIAlertAction(title: "Okay", style: .default) {
+            (_) in
+            
+            FirebaseManager.sendPasswordResetEmail(to: emailAddress) { error in
+                if (error != nil) {
+                    // Notify the user that there was an error sending the email (e.g. if the email address isn't registered)
+                    self.present(UIAlertController(message: error?.localizedDescription), animated: true)
+                }
+            }
+        }
+        alertVC.addAction(alertActionOkay)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
 
     
     @IBAction func loginButton_click(_ sender: Any) {

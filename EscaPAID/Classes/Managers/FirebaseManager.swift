@@ -30,6 +30,12 @@ class FirebaseManager: NSObject {
         currentFirebaseUser?.sendEmailVerification(completion: nil)
     }
     
+    static func sendPasswordResetEmail(to email: String, completion: @escaping (_ error: Error?) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            completion(error)
+        }
+    }
+    
     static func logInWithEmail(email:String, password:String, completion:
         @escaping (_ result:EmailLogInResult) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (firebaseUser, error) in
