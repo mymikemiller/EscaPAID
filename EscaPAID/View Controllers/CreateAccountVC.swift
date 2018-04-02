@@ -74,10 +74,8 @@ class CreateAccountVC: UIViewController {
     
     
     @IBAction func loginButton_click(_ sender: Any) {
-        let originVC: OriginScreenVC = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
-        // Prevent auto-login or we'll immediately be logged back in
-        Constants.autoLogin = false
-        self.present(originVC, animated: true, completion: nil)
+        let loginVC: LoginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! LoginVC
+        self.present(loginVC, animated: true, completion: nil)
 
     }
     

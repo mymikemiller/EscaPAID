@@ -31,7 +31,7 @@ class OriginScreenVC: UIViewController {
     @IBAction func facebookLogin_click(_ sender: Any) {
         FirebaseManager.logInWithFacebook(from: self) { (success:Bool) in
             if (success) {
-                self.performSegue(withIdentifier: "facebook_showProfile", sender: sender)
+                self.performSegue(withIdentifier: "origin_facebook_showApp", sender: sender)
             }
         }
     }

@@ -41,6 +41,8 @@
 		E77A736E204875A200AE0DE4 /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7368204875A200AE0DE4 /* ExperienceManager.swift */; };
 		E79770E52043816700B2206C /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E42043816700B2206C /* MainAPIClient.swift */; };
 		E79770E82044774100B2206C /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E72044774000B2206C /* UIAlertController+Utility.swift */; };
+		E79ADAFA2071BFD400C02C0A /* UILabel+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */; };
+		E79ADAFB2071E5D100C02C0A /* UILabel+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */; };
 		E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
 		E79F05C42059700400889D14 /* ExperienceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */; };
 		E79F05C52059700400889D14 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
@@ -185,6 +187,7 @@
 		E77A7368204875A200AE0DE4 /* ExperienceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceManager.swift; sourceTree = "<group>"; };
 		E79770E42043816700B2206C /* MainAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIClient.swift; sourceTree = "<group>"; };
 		E79770E72044774000B2206C /* UIAlertController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utility.swift"; sourceTree = "<group>"; };
+		E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utility.swift"; sourceTree = "<group>"; };
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
 		E79F05C020596AF500889D14 /* Renaissance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Renaissance-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/EscaPAID/Supporting Files/Renaissance-Info.plist"; sourceTree = "<absolute>"; };
 		E79F060D2059700400889D14 /* Renaissance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renaissance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -356,6 +359,7 @@
 			children = (
 				E79770E72044774000B2206C /* UIAlertController+Utility.swift */,
 				E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */,
+				E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */,
 				E7CF4DDF206CA31B00B7F97E /* GradientView.swift */,
 				E7CF4DFA206EDF0C00B7F97E /* RoundedButton.swift */,
 			);
@@ -800,6 +804,7 @@
 				E79F05D42059700400889D14 /* ThreadManager.swift in Sources */,
 				E79F05D52059700400889D14 /* ThreadsTableVC.swift in Sources */,
 				E79F05D62059700400889D14 /* ExperienceEditorTableVC.swift in Sources */,
+				E79ADAFB2071E5D100C02C0A /* UILabel+Utility.swift in Sources */,
 				E79F05D72059700400889D14 /* ProfileEditorTableVC.swift in Sources */,
 				E79F05D82059700400889D14 /* SelfContainedPickerView.swift in Sources */,
 				E79F05D92059700400889D14 /* SettingsTableVC.swift in Sources */,
@@ -857,6 +862,7 @@
 				E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */,
 				E71F33AA2004650800312B91 /* ExperienceEditorTableVC.swift in Sources */,
 				E73BDABF1FFD52D800D1F209 /* ProfileEditorTableVC.swift in Sources */,
+				E79ADAFA2071BFD400C02C0A /* UILabel+Utility.swift in Sources */,
 				E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */,
 				E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */,
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,

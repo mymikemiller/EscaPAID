@@ -10,6 +10,8 @@ import UIKit
 
 class LoginVC: UIViewController {
     
+    @IBOutlet weak var orLogInWIthEmailLabel: UILabel!
+    
     var initEmail: String = ""
     var initPassword:String = ""
     @IBOutlet weak var email: UITextField!
@@ -17,6 +19,8 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        orLogInWIthEmailLabel.drawLineOnBothSides(labelWidth: 10, color: UIColor.white)
 
         // We set initEmail when coming here after creating a new account
         if (!initEmail.isEmpty) { email.text = initEmail }
@@ -31,16 +35,24 @@ class LoginVC: UIViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func facebookLogin_click(_ sender: Any) {
+        FirebaseManager.logInWithFacebook(from: self) { (success:Bool) in
+            if (success) {
+                self.performSegue(withIdentifier: "login_facebook_showApp", sender: sender)
+            }
+        }
     }
+
     
     @IBAction func loginButton_click(_ sender: Any) {
         let email = self.email.text!.trimmingCharacters(in: .whitespaces)
         FirebaseManager.logInWithEmail(email: email, password: password.text!) { (result:FirebaseManager.EmailLogInResult) in
             if (result == FirebaseManager.EmailLogInResult.Success) {
-                self.performSegue(withIdentifier: "login_ShowProfile", sender: sender)
+                
+                // Don't perform segue here, load vc
+                self.performSegue(withIdentifier: "login_ShowApp", sender: sender)
+                
+                
             } else if (result == FirebaseManager.EmailLogInResult.EmailNotVerified) {
                 let alertVC = UIAlertController(title: "Error", message: "Sorry. Your email address has not yet been verified. Do you want us to send another verification email to \(self.email.text ?? "your email")?", preferredStyle: .alert)
                 let alertActionOkay = UIAlertAction(title: "Okay", style: .default) {
@@ -85,11 +97,9 @@ class LoginVC: UIViewController {
         loginButton_click(self)
     }
     
-    @IBAction func cancelButton_click(_ sender: Any) {
-        let originVC: OriginScreenVC = self.storyboard?.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
-        // Prevent auto-login once we log out or we'll immediately be logged back in
-        Constants.autoLogin = false
-        self.present(originVC, animated: true, completion: nil)
+    @IBAction func signUpButton_click(_ sender: Any) {
+        let createAccountVC: CreateAccountVC = self.storyboard?.instantiateViewController(withIdentifier: "createAccountViewController") as! CreateAccountVC
+        self.present(createAccountVC, animated: true, completion: nil)
     }
     
     /*
