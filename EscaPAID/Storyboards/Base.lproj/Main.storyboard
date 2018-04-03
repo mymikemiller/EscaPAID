@@ -568,6 +568,7 @@
                                         <constraints>
                                             <constraint firstItem="xSf-P9-QWd" firstAttribute="centerX" secondItem="cTE-uF-i2S" secondAttribute="centerX" id="79R-cD-S7t"/>
                                             <constraint firstItem="xSf-P9-QWd" firstAttribute="top" secondItem="cTE-uF-i2S" secondAttribute="top" constant="28" id="BHa-ki-YMk"/>
+                                            <constraint firstItem="xSf-P9-QWd" firstAttribute="top" secondItem="cTE-uF-i2S" secondAttribute="top" constant="28" id="C1a-wT-lMj"/>
                                             <constraint firstAttribute="height" constant="800" id="kgz-xo-gAn"/>
                                         </constraints>
                                     </view>
