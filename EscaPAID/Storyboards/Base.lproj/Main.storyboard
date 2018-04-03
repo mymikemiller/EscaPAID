@@ -358,7 +358,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="xSf-P9-QWd" userLabel="Container Stack View">
-                                                <rect key="frame" x="37.5" y="28" width="300" height="634.5"/>
+                                                <rect key="frame" x="37.5" y="28" width="300" height="605"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTT-44-Yuf" userLabel="Log in Label">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -388,24 +388,24 @@
                                                             <action selector="facebookLogin_click:" destination="9jn-rB-nLW" eventType="touchUpInside" id="fvp-fp-S5C"/>
                                                         </connections>
                                                     </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRd-KQ-P03" userLabel="Lined Label Holder">
-                                                        <rect key="frame" x="0.0" y="139" width="300" height="50"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-uu-eP6" userLabel="Label Stack View">
+                                                        <rect key="frame" x="0.0" y="139" width="300" height="20.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7E-9l-gYu" userLabel="Left Line">
-                                                                <rect key="frame" x="0.0" y="24" width="69" height="2"/>
+                                                                <rect key="frame" x="0.0" y="9.5" width="78" height="2"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="zf0-ik-ZUU"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or log in with email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqt-x4-weD">
-                                                                <rect key="frame" x="74" y="0.0" width="153" height="50"/>
+                                                                <rect key="frame" x="82" y="0.0" width="136" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDi-kn-HDk" userLabel="Right Line">
-                                                                <rect key="frame" x="232" y="24" width="68" height="2"/>
+                                                                <rect key="frame" x="222" y="9.5" width="78" height="2"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="2" id="x0B-oM-oQp"/>
@@ -413,20 +413,11 @@
                                                             </view>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="uqt-x4-weD" firstAttribute="centerX" secondItem="yRd-KQ-P03" secondAttribute="centerX" id="1WC-6p-Krw"/>
-                                                            <constraint firstItem="BDi-kn-HDk" firstAttribute="centerY" secondItem="yRd-KQ-P03" secondAttribute="centerY" id="F2M-m9-udg"/>
-                                                            <constraint firstAttribute="height" secondItem="uqt-x4-weD" secondAttribute="height" id="FRI-PE-sEn"/>
-                                                            <constraint firstItem="V7E-9l-gYu" firstAttribute="centerY" secondItem="yRd-KQ-P03" secondAttribute="centerY" id="K6t-Il-sty"/>
-                                                            <constraint firstItem="V7E-9l-gYu" firstAttribute="leading" secondItem="yRd-KQ-P03" secondAttribute="leading" id="USs-ji-ds0"/>
-                                                            <constraint firstItem="BDi-kn-HDk" firstAttribute="trailing" secondItem="yRd-KQ-P03" secondAttribute="trailing" id="aXI-aZ-Knk"/>
-                                                            <constraint firstItem="uqt-x4-weD" firstAttribute="centerY" secondItem="yRd-KQ-P03" secondAttribute="centerY" id="awJ-T7-VZM"/>
-                                                            <constraint firstItem="V7E-9l-gYu" firstAttribute="top" secondItem="yRd-KQ-P03" secondAttribute="top" constant="24" id="e2K-kL-w8Q"/>
-                                                            <constraint firstItem="BDi-kn-HDk" firstAttribute="leading" secondItem="uqt-x4-weD" secondAttribute="trailing" constant="5" id="ewp-zE-RCW"/>
-                                                            <constraint firstItem="V7E-9l-gYu" firstAttribute="trailing" secondItem="uqt-x4-weD" secondAttribute="leading" constant="-5" id="uxr-ZM-bch"/>
+                                                            <constraint firstItem="V7E-9l-gYu" firstAttribute="width" secondItem="BDi-kn-HDk" secondAttribute="width" id="oyT-RJ-3Ha"/>
                                                         </constraints>
-                                                    </view>
+                                                    </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CgZ-0G-6Ju" userLabel="Form Stack View">
-                                                        <rect key="frame" x="0.0" y="217" width="300" height="145"/>
+                                                        <rect key="frame" x="0.0" y="187.5" width="300" height="145"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="N1b-09-rg9" userLabel="Email Stack View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="58"/>
@@ -480,7 +471,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gD1-Nm-fi2" customClass="RoundedButton" customModule="Renaissance" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="390" width="300" height="40"/>
+                                                        <rect key="frame" x="0.0" y="360.5" width="300" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="HTZ-qT-2ns"/>
@@ -494,7 +485,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exK-Gk-ad6">
-                                                        <rect key="frame" x="0.0" y="458" width="300" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="428.5" width="300" height="28.5"/>
                                                         <state key="normal">
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="No account? ">
@@ -519,7 +510,7 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OSf-Zp-vQd" userLabel="Debug Logins Stack View">
-                                                        <rect key="frame" x="0.0" y="514.5" width="300" height="120"/>
+                                                        <rect key="frame" x="0.0" y="485" width="300" height="120"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvG-A3-6Cx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
