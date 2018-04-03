@@ -31,7 +31,7 @@ class LoginVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if (Constants.autoLogin) {
             // Automatically log the user in
-            loginButton_click(self)
+            mikem_click(self)
         }
     }
     
