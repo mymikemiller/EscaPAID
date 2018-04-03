@@ -192,7 +192,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Y7x-z7-MTI" userLabel="First Name Stack View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="58"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prx-fy-k3L" userLabel="First Name Label">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prx-fy-k3L" userLabel="First Name Label">
                                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="23"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -210,7 +210,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jbh-HC-mM2" userLabel="Last Name Stack View">
                                                                 <rect key="frame" x="0.0" y="73" width="300" height="58"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93i-jG-KXe" userLabel="Last Name Label">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93i-jG-KXe" userLabel="Last Name Label">
                                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="23"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -227,7 +227,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YiX-BV-esa" userLabel="Email Stack View">
                                                                 <rect key="frame" x="0.0" y="146" width="300" height="58"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9q-Tz-mQL" userLabel="Email Label">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9q-Tz-mQL" userLabel="Email Label">
                                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="23"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -244,7 +244,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AGQ-jx-Cpf" userLabel="Password Stack View">
                                                                 <rect key="frame" x="0.0" y="219" width="300" height="58"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt2-OO-ejD" userLabel="Password Label">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt2-OO-ejD" userLabel="Password Label">
                                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="23"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -334,7 +334,8 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="Uop-o0-9FG" id="exN-bt-0c4"/>
-                        <outlet property="name" destination="Psl-vN-zQf" id="4CZ-rj-wnH"/>
+                        <outlet property="firstName" destination="Psl-vN-zQf" id="4CZ-rj-wnH"/>
+                        <outlet property="lastName" destination="1CV-NO-beu" id="xUv-ib-xsm"/>
                         <outlet property="password" destination="cvq-M3-32b" id="jGM-AA-fXf"/>
                         <segue destination="PJy-Cc-a7I" kind="show" identifier="create_ShowLogin" id="glL-vf-AZJ"/>
                     </connections>
@@ -587,6 +588,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="867"/>
                     <connections>
+                        <outlet property="debugLoginsSection" destination="OSf-Zp-vQd" id="csH-O1-QdU"/>
                         <outlet property="email" destination="PfO-SU-a0I" id="Q3e-xU-8Qe"/>
                         <outlet property="password" destination="teg-CG-Dkq" id="TXK-Sw-NgA"/>
                         <segue destination="F22-Gu-X0h" kind="show" identifier="login_ShowApp" id="d0w-Z2-aun"/>

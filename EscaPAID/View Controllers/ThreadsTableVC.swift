@@ -67,7 +67,7 @@ class ThreadsTableVC: UITableViewController {
         let thread = threadManager.threads[indexPath.row]
         cell.cellImage.image = thread.user.getProfileImage()
         
-        cell.cellName.text = thread.user.displayName
+        cell.cellName.text = thread.user.firstName
         // Display the name in bold if the thread hasn't been read
         if (thread.read) {
             cell.cellName.font = UIFont.systemFont(ofSize: 16.0)

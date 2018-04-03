@@ -35,7 +35,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         if let experience = experience {
             experienceTitle.text = experience.title
             category.text = experience.category
-            curator.text = "By: \(experience.curator.displayName)"
+            curator.text = "By: \(experience.curator.firstName)"
             
             let includesArray = experience.includes.split(separator: ",")
             var includesText = ""

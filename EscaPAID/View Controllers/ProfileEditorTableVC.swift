@@ -14,8 +14,8 @@ class ProfileEditorTableVC: UITableViewController, UINavigationControllerDelegat
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var uploadProgressView: UIProgressView!
 
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var city: UITextField!
     @IBOutlet weak var aboutMe: UILabel!
     
@@ -41,7 +41,8 @@ class ProfileEditorTableVC: UITableViewController, UINavigationControllerDelegat
         aboutMe.lineBreakMode = NSLineBreakMode.byTruncatingTail
         
         // Set initial values
-        name.text = FirebaseManager.user?.displayName
+        firstName.text = FirebaseManager.user?.firstName
+        lastName.text = FirebaseManager.user?.lastName
         aboutMe.text = FirebaseManager.user?.aboutMe
     }
     
@@ -66,7 +67,8 @@ class ProfileEditorTableVC: UITableViewController, UINavigationControllerDelegat
     }
     
     @IBAction func saveButton_click(_ sender: Any) {
-        FirebaseManager.user?.displayName = name.text!
+        FirebaseManager.user?.firstName = firstName.text!
+        FirebaseManager.user?.lastName = lastName.text!
         FirebaseManager.user?.city = city.text!
         FirebaseManager.user?.aboutMe = aboutMe.text!
         FirebaseManager.user?.update()

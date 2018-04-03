@@ -78,7 +78,7 @@ class FirebaseManager: NSObject {
         }
     }
     
-    static func createAccountWithEmail(email:String, displayName:String, password:String, completion: @escaping(String?) -> Void) {
+    static func createAccountWithEmail(email:String, firstName:String, lastName:String, password:String, completion: @escaping(String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password, completion: {
             (user, error) in
             if let error = error {
@@ -90,7 +90,7 @@ class FirebaseManager: NSObject {
             user?.sendEmailVerification(completion: nil)
             
             // Add the user to our database (even if they're not verified) so we can associate information with the user.
-            addUser(email: email, displayName: displayName, profileImageUrl: "") {user in
+            addUser(email: email, firstName: firstName, lastName: lastName, profileImageUrl: "") {user in
                 
                 guard (user != nil) else {
                     // Couldn't create the user. The server may be down.
@@ -105,8 +105,9 @@ class FirebaseManager: NSObject {
         })
     }
     
-    static func addUser(email:String, displayName: String, profileImageUrl:String, completion: @escaping (_ user:User?) -> Void) {
+    static func addUser(email:String, firstName: String,  lastName: String, profileImageUrl:String, completion: @escaping (_ user:User?) -> Void) {
         let uid = Auth.auth().currentUser?.uid
+        let displayName = firstName + " " + lastName
         
         // Get the server to create a stripe customer, and set the returned stripeCustomerId
         MainAPIClient.shared.createCustomer(email: email, description: displayName, completion: { (customerId) in
@@ -120,7 +121,8 @@ class FirebaseManager: NSObject {
             let newUser = ["uid":uid!,
                            "email":email,
                            "city": "", // Start with a blank city. The user will fill it in later
-                           "displayName":displayName,
+                           "firstName":firstName,
+                           "lastName":lastName,
                            "aboutMe":"",
                            "profileImageUrl":profileImageUrl,
                            "stripeCustomerId": customerId]
@@ -146,11 +148,12 @@ class FirebaseManager: NSObject {
                 let uid = value["uid"] as! String
                 let city = value["city"] as! String
                 let email = value["email"] as! String
-                let displayName = value["displayName"] as! String
+                let firstName = value["firstName"] as! String
+                let lastName = value["lastName"] as! String
                 let aboutMe = value["aboutMe"] as! String
                 let profileImageUrl = value["profileImageUrl"] as! String
                 
-                let user = User(uid: uid, city: city, email: email, displayName: displayName, aboutMe: aboutMe, profileImageUrl: profileImageUrl)
+                let user = User(uid: uid, city: city, email: email, firstName: firstName, lastName: lastName, aboutMe: aboutMe, profileImageUrl: profileImageUrl)
                 
                 // Set the stripe ID if we have one (if we're a curator)
                 user.stripeCuratorId = value["stripeCuratorId"] as? String
@@ -199,10 +202,15 @@ class FirebaseManager: NSObject {
                 }
                 
                 currentFirebaseUser = firebaseUser
-                let phone = firebaseUser?.phoneNumber ?? ""
+                
+                // Split out the first and last name as Facebook only gives us the full name
+                let components = (firebaseUser?.displayName)!.components(separatedBy: " ")
+                let firstName = components[0]
+                let lastName = components.count > 1 ? components[1] : ""
                 
                 addUser(email: (firebaseUser?.email!)!,
-                        displayName: (firebaseUser?.displayName!)!,
+                        firstName: firstName,
+                        lastName: lastName,
                         profileImageUrl: (Auth.auth().currentUser?.photoURL?.absoluteString)!) { user in
                             
                             guard (user != nil) else {

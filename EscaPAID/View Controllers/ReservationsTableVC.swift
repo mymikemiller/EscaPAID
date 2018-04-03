@@ -63,7 +63,7 @@ class ReservationsTableVC: UITableViewController {
         // Configure the cell...
         cell.title.text = reservation.experience.title
         cell.date.text = reservation.dateAsPrettyString
-        cell.with.text = "With \(getWhoWith(reservation: reservation).displayName)"
+        cell.with.text = "With \(getWhoWith(reservation: reservation).firstName)"
         
         switch reservation.status {
         case .pending:

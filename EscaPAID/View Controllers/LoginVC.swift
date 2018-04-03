@@ -14,6 +14,7 @@ class LoginVC: UIViewController {
     var initPassword:String = ""
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var debugLoginsSection: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,9 @@ class LoginVC: UIViewController {
         // We set initEmail when coming here after creating a new account
         if (!initEmail.isEmpty) { email.text = initEmail }
         if (!initPassword.isEmpty) { password.text = initPassword }
+        
+        // We use autoLogin to determine if we should display all the debug login links
+        debugLoginsSection.isHidden = !Constants.autoLogin
         
     }
     

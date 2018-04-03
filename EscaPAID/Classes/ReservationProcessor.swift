@@ -22,7 +22,7 @@ class ReservationProcessor {
         // Post to to the message thread between the user and the experience curator
         ThreadManager.getOrCreateThread(with: reservation.experience.curator, completion: {thread in
             
-            let text = "*** \(FirebaseManager.user!.displayName) just booked \(reservation.experience.title) for \(reservation.dateAsPrettyString) ***"
+            let text = "*** \(FirebaseManager.user!.firstName) just booked \(reservation.experience.title) for \(reservation.dateAsPrettyString) ***"
             
             // Post a message to the experience provider.
             PostManager.addPost(threadId: (thread.threadId), text: text, toId: thread.user.uid, fromId: (FirebaseManager.user?.uid)!)

@@ -40,7 +40,7 @@ class ReceiptTableVC: UITableViewController {
         
         experienceTitle.text = reservation?.experience.title
         date.text = reservation?.dateAsPrettyString
-        user.setTitle(otherUser.displayName, for: .normal)
+        user.setTitle(otherUser.fullName, for: .normal)
         guests.text = "\(reservation!.numGuests) \(reservation!.numGuests == 1 ? " guest" : " guests")"
         
         let totalChargeString = String(format: "$%.02f", reservation!.totalCharge)
@@ -137,7 +137,7 @@ class ReceiptTableVC: UITableViewController {
             // send a message to the user notifying of the new status
             let includingMessage = message.text?.count == 0 ? "" : "with the following message "
             
-            let text = "*** \(FirebaseManager.user!.displayName) \(newStatus.rawValue) your reservation for \(reservation.experience.title) on \(reservation.dateAsPrettyString) \(includingMessage)***"
+            let text = "*** \(FirebaseManager.user!.firstName) \(newStatus.rawValue) your reservation for \(reservation.experience.title) on \(reservation.dateAsPrettyString) \(includingMessage)***"
             
             ThreadManager.getOrCreateThread(with: reservation.user, completion: {thread in
                 

@@ -45,7 +45,7 @@ class ConfirmationTableVC: UITableViewController {
         dateLabel.text = dateFormatter.string(from: (reservation?.date)!)
         
         timeLabel.text = reservation?.experience.startTime
-        providerButton.setTitle(reservation?.experience.curator.displayName, for: UIControlState.normal)
+        providerButton.setTitle(reservation?.experience.curator.firstName, for: UIControlState.normal)
         numGuestsLabel.text = String((reservation?.numGuests)!)
         
         // set the price for the Stripe charge

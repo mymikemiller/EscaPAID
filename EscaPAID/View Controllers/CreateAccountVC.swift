@@ -10,7 +10,8 @@ import UIKit
 
 class CreateAccountVC: UIViewController {
 
-    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
@@ -22,7 +23,8 @@ class CreateAccountVC: UIViewController {
     
     @IBAction func createAccountButton_click(_ sender: Any) {
         
-        if ((name.text?.isEmpty)! || (email.text?.isEmpty)! || (password.text?.isEmpty)!) {
+        if ((firstName.text?.isEmpty)! ||
+            (lastName.text?.isEmpty)!  || (email.text?.isEmpty)! || (password.text?.isEmpty)!) {
             let alertVC = UIAlertController(title: "Error", message: "Please fill in all required fields.", preferredStyle: .alert)
             let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
             alertVC.addAction(alertActionOkay)
@@ -40,7 +42,7 @@ class CreateAccountVC: UIViewController {
         
         let emailAddress = self.email.text!.trimmingCharacters(in: .whitespaces)
         
-        FirebaseManager.createAccountWithEmail(email: emailAddress, displayName: name.text!, password: password.text!) {
+        FirebaseManager.createAccountWithEmail(email: emailAddress, firstName: firstName.text!, lastName: lastName.text!, password: password.text!) {
             errorString in
             
             DispatchQueue.main.async {
