@@ -28,6 +28,8 @@ class LoginVC: UIScrollingViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         if (Constants.autoLogin) {
             // Automatically log the user in
             mikem_click(self)

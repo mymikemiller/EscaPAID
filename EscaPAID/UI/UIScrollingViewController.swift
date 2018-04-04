@@ -40,6 +40,14 @@ class UIScrollingViewController: UIViewController {
     }
     
     func adjustInsetForKeyboardShow(_ show: Bool, notification: Notification) {
+        // Return early if the keyboard's frame isn't changing.
+        let userInfo = notification.userInfo ?? [:]
+        let beginFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        guard beginFrame.equalTo(endFrame) == false else {
+            return
+        }
+
         let adjustmentHeight = (keyboardHeight + 20) * (show ? 1 : -1)
         scrollView.contentInset.bottom += adjustmentHeight
         scrollView.scrollIndicatorInsets.bottom += adjustmentHeight
