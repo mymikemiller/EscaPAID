@@ -13,6 +13,8 @@ abstract_target 'EscaPAID' do
   pod 'JTAppleCalendar', '~> 7.0'
   pod 'SDWebImage', '~> 4.0'
   pod 'RSKImageCropper'
+  pod 'NextResponderTextField'
+
 
   # Pods for Facebook
   pod 'Bolts'

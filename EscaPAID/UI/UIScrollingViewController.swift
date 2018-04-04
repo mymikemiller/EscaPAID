@@ -17,8 +17,6 @@ class UIScrollingViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        print("adding observers")
-        
         // Listen for keyboard hide/show notifications. We use these to add a bit of scrolling space when the keyboard shows so the user can scroll down to the buttons/fields at the bottom.
         NotificationCenter.default.addObserver(
             self,
@@ -37,14 +35,11 @@ class UIScrollingViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
-        print("removing observers")
         NotificationCenter.default.removeObserver(self)
     }
     
     @objc func keyboardDidShow(_ notification: Notification) {
-        print("will show")
-        
+        // Set the content insets to accomodate the keyboard's height
         let userInfo: NSDictionary = notification.userInfo! as NSDictionary
         let keyboardInfo = userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue
         let keyboardSize = keyboardInfo.cgRectValue.size
@@ -54,7 +49,7 @@ class UIScrollingViewController: UIViewController {
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
-        print("will hide")
+        // Set the content insets back to zero
         scrollView.contentInset = .zero
         scrollView.scrollIndicatorInsets = .zero
     }
