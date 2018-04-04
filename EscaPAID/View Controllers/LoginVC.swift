@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIScrollingViewController {
         
     var initEmail: String = ""
     var initPassword:String = ""
@@ -25,7 +25,6 @@ class LoginVC: UIViewController {
         
         // We use autoLogin to determine if we should display all the debug login links
         debugLoginsSection.isHidden = !Constants.autoLogin
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

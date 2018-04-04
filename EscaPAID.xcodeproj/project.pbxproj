@@ -43,6 +43,8 @@
 		E79770E82044774100B2206C /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E72044774000B2206C /* UIAlertController+Utility.swift */; };
 		E79ADAFA2071BFD400C02C0A /* UILabel+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */; };
 		E79ADAFB2071E5D100C02C0A /* UILabel+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */; };
+		E79ADAFD20743F8500C02C0A /* UIScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAFC20743F8500C02C0A /* UIScrollingViewController.swift */; };
+		E79ADAFE20743F8500C02C0A /* UIScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAFC20743F8500C02C0A /* UIScrollingViewController.swift */; };
 		E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
 		E79F05C42059700400889D14 /* ExperienceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */; };
 		E79F05C52059700400889D14 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
@@ -188,6 +190,7 @@
 		E79770E42043816700B2206C /* MainAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIClient.swift; sourceTree = "<group>"; };
 		E79770E72044774000B2206C /* UIAlertController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utility.swift"; sourceTree = "<group>"; };
 		E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utility.swift"; sourceTree = "<group>"; };
+		E79ADAFC20743F8500C02C0A /* UIScrollingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollingViewController.swift; sourceTree = "<group>"; };
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
 		E79F05C020596AF500889D14 /* Renaissance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Renaissance-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/EscaPAID/Supporting Files/Renaissance-Info.plist"; sourceTree = "<absolute>"; };
 		E79F060D2059700400889D14 /* Renaissance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renaissance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -429,6 +432,7 @@
 				E7238A632022521400496FBC /* UICalendar.xib */,
 				E7B94FA620195F4D00C5FBCB /* DateCell.swift */,
 				E7238A672022699C00496FBC /* DateCell.xib */,
+				E79ADAFC20743F8500C02C0A /* UIScrollingViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -816,6 +820,7 @@
 				E79F05DE2059700400889D14 /* ChatTableViewCell.swift in Sources */,
 				E79F05DF2059700400889D14 /* MyExperiencesTableVC.swift in Sources */,
 				E79F05E02059700400889D14 /* TabBarController.swift in Sources */,
+				E79ADAFE20743F8500C02C0A /* UIScrollingViewController.swift in Sources */,
 				E79F05E12059700400889D14 /* ThreadTableViewCell.swift in Sources */,
 				E79F05E22059700400889D14 /* ConfirmationTableVC.swift in Sources */,
 				E79F05E32059700400889D14 /* ChatVC.swift in Sources */,
@@ -874,6 +879,7 @@
 				E7FE89F61FCCF284008ADCEF /* MyExperiencesTableVC.swift in Sources */,
 				E71F33A82004509800312B91 /* TabBarController.swift in Sources */,
 				E745499A1FB8B1BE00A6A32C /* ThreadTableViewCell.swift in Sources */,
+				E79ADAFD20743F8500C02C0A /* UIScrollingViewController.swift in Sources */,
 				E79FA5912025398C0060B44D /* ConfirmationTableVC.swift in Sources */,
 				E7F9A0821FB7378B00916FBA /* ChatVC.swift in Sources */,
 				E77A736B204875A200AE0DE4 /* PostManager.swift in Sources */,

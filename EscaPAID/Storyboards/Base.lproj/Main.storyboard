@@ -337,6 +337,7 @@
                         <outlet property="firstName" destination="Psl-vN-zQf" id="4CZ-rj-wnH"/>
                         <outlet property="lastName" destination="1CV-NO-beu" id="xUv-ib-xsm"/>
                         <outlet property="password" destination="cvq-M3-32b" id="jGM-AA-fXf"/>
+                        <outlet property="scrollView" destination="IAi-S2-7nv" id="m4b-jw-Mzs"/>
                         <segue destination="PJy-Cc-a7I" kind="show" identifier="create_ShowLogin" id="glL-vf-AZJ"/>
                     </connections>
                 </viewController>
@@ -359,7 +360,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="xSf-P9-QWd" userLabel="Container Stack View">
-                                                <rect key="frame" x="37.5" y="28" width="300" height="689"/>
+                                                <rect key="frame" x="37.5" y="28" width="300" height="704"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTT-44-Yuf" userLabel="Log in Label">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -417,8 +418,8 @@
                                                             <constraint firstItem="V7E-9l-gYu" firstAttribute="width" secondItem="BDi-kn-HDk" secondAttribute="width" id="oyT-RJ-3Ha"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CgZ-0G-6Ju" userLabel="Form Stack View">
-                                                        <rect key="frame" x="0.0" y="229.5" width="300" height="145"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="CgZ-0G-6Ju" userLabel="Form Stack View">
+                                                        <rect key="frame" x="0.0" y="229.5" width="300" height="160"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="N1b-09-rg9" userLabel="Email Stack View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="58"/>
@@ -438,7 +439,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VXQ-hu-bIu" userLabel="Password Stack View">
-                                                                <rect key="frame" x="0.0" y="58" width="300" height="87"/>
+                                                                <rect key="frame" x="0.0" y="73" width="300" height="87"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Wi4-m3-BGq" userLabel="Inner Password Stack View">
                                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="58"/>
@@ -472,7 +473,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gD1-Nm-fi2" customClass="RoundedButton" customModule="Renaissance" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="416.5" width="300" height="40"/>
+                                                        <rect key="frame" x="0.0" y="431.5" width="300" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="HTZ-qT-2ns"/>
@@ -486,7 +487,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exK-Gk-ad6">
-                                                        <rect key="frame" x="0.0" y="498.5" width="300" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="513.5" width="300" height="28.5"/>
                                                         <state key="normal">
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="No account? ">
@@ -511,7 +512,7 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OSf-Zp-vQd" userLabel="Debug Logins Stack View">
-                                                        <rect key="frame" x="0.0" y="569" width="300" height="120"/>
+                                                        <rect key="frame" x="0.0" y="584" width="300" height="120"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvG-A3-6Cx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
@@ -591,6 +592,7 @@
                         <outlet property="debugLoginsSection" destination="OSf-Zp-vQd" id="csH-O1-QdU"/>
                         <outlet property="email" destination="PfO-SU-a0I" id="Q3e-xU-8Qe"/>
                         <outlet property="password" destination="teg-CG-Dkq" id="TXK-Sw-NgA"/>
+                        <outlet property="scrollView" destination="aPi-Hr-fn7" id="rGA-Zx-ZQe"/>
                         <segue destination="F22-Gu-X0h" kind="show" identifier="login_ShowApp" id="d0w-Z2-aun"/>
                         <segue destination="F22-Gu-X0h" kind="show" identifier="login_facebook_showApp" id="m3W-45-i9V"/>
                     </connections>
