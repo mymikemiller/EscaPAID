@@ -17,11 +17,13 @@ class UIScrollingViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        print("adding observers")
+        
         // Listen for keyboard hide/show notifications. We use these to add a bit of scrolling space when the keyboard shows so the user can scroll down to the buttons/fields at the bottom.
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(UIScrollingViewController.keyboardWillShow(_:)),
-            name: Notification.Name.UIKeyboardWillShow,
+            selector: #selector(UIScrollingViewController.keyboardDidShow(_:)),
+            name: Notification.Name.UIKeyboardDidShow,
             object: nil
         )
         NotificationCenter.default.addObserver(
@@ -36,32 +38,24 @@ class UIScrollingViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
+        print("removing observers")
         NotificationCenter.default.removeObserver(self)
     }
     
-    func adjustInsetForKeyboardShow(_ show: Bool, notification: Notification) {
-        // Return early if the keyboard's frame isn't changing.
-        let userInfo = notification.userInfo ?? [:]
-        let beginFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        guard beginFrame.equalTo(endFrame) == false else {
-            return
-        }
-
-        let adjustmentHeight = (keyboardHeight + 20) * (show ? 1 : -1)
-        scrollView.contentInset.bottom += adjustmentHeight
-        scrollView.scrollIndicatorInsets.bottom += adjustmentHeight
-    }
-    
-    @objc func keyboardWillShow(_ notification: Notification) {
-        let userInfo = notification.userInfo ?? [:]
-        let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        keyboardHeight = keyboardFrame.height
+    @objc func keyboardDidShow(_ notification: Notification) {
+        print("will show")
         
-        adjustInsetForKeyboardShow(true, notification: notification)
+        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardInfo = userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue
+        let keyboardSize = keyboardInfo.cgRectValue.size
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
-        adjustInsetForKeyboardShow(false, notification: notification)
+        print("will hide")
+        scrollView.contentInset = .zero
+        scrollView.scrollIndicatorInsets = .zero
     }
 }
