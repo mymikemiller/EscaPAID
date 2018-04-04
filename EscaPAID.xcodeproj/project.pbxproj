@@ -45,6 +45,12 @@
 		E79ADAFB2071E5D100C02C0A /* UILabel+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */; };
 		E79ADAFD20743F8500C02C0A /* UIScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAFC20743F8500C02C0A /* UIScrollingViewController.swift */; };
 		E79ADAFE20743F8500C02C0A /* UIScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAFC20743F8500C02C0A /* UIScrollingViewController.swift */; };
+		E79ADB1820751BDE00C02C0A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB0320751BBD00C02C0A /* Montserrat-Regular.ttf */; };
+		E79ADB1920751BDE00C02C0A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB0320751BBD00C02C0A /* Montserrat-Regular.ttf */; };
+		E79ADB3220751BDE00C02C0A /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB1020751BD900C02C0A /* Montserrat-Light.ttf */; };
+		E79ADB3320751BDE00C02C0A /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB1020751BD900C02C0A /* Montserrat-Light.ttf */; };
+		E79ADB4F20751C4500C02C0A /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB3E20751C4500C02C0A /* Lato-Regular.ttf */; };
+		E79ADB5020751C4500C02C0A /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB3E20751C4500C02C0A /* Lato-Regular.ttf */; };
 		E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
 		E79F05C42059700400889D14 /* ExperienceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */; };
 		E79F05C52059700400889D14 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
@@ -115,6 +121,8 @@
 		E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
 		E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */; };
 		E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */; };
+		E7CB84C52075229700CB91C2 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7CB84C42075229600CB91C2 /* Montserrat-Bold.ttf */; };
+		E7CB84C62075229700CB91C2 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7CB84C42075229600CB91C2 /* Montserrat-Bold.ttf */; };
 		E7CF4DE0206CA31B00B7F97E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DDF206CA31B00B7F97E /* GradientView.swift */; };
 		E7CF4DEF206D512A00B7F97E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DDF206CA31B00B7F97E /* GradientView.swift */; };
 		E7CF4DF1206D5E7000B7F97E /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */; };
@@ -191,6 +199,9 @@
 		E79770E72044774000B2206C /* UIAlertController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utility.swift"; sourceTree = "<group>"; };
 		E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utility.swift"; sourceTree = "<group>"; };
 		E79ADAFC20743F8500C02C0A /* UIScrollingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollingViewController.swift; sourceTree = "<group>"; };
+		E79ADB0320751BBD00C02C0A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		E79ADB1020751BD900C02C0A /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		E79ADB3E20751C4500C02C0A /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
 		E79F05C020596AF500889D14 /* Renaissance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Renaissance-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/EscaPAID/Supporting Files/Renaissance-Info.plist"; sourceTree = "<absolute>"; };
 		E79F060D2059700400889D14 /* Renaissance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renaissance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +218,7 @@
 		E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7B9F7491FB6CAAF0058CE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7B9F74B1FB6CAAF0058CE61 /* Tellomee-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tellomee-Info.plist"; sourceTree = "<group>"; };
+		E7CB84C42075229600CB91C2 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		E7CF4DDF206CA31B00B7F97E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utility.swift"; sourceTree = "<group>"; };
 		E7CF4DF3206D6D9600B7F97E /* Renaissance.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Renaissance.xcassets; sourceTree = "<group>"; };
@@ -369,6 +381,25 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		E79ADAFF20751B9400C02C0A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E79ADB3620751BF100C02C0A /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E79ADB3620751BF100C02C0A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E79ADB3E20751C4500C02C0A /* Lato-Regular.ttf */,
+				E79ADB1020751BD900C02C0A /* Montserrat-Light.ttf */,
+				E79ADB0320751BBD00C02C0A /* Montserrat-Regular.ttf */,
+				E7CB84C42075229600CB91C2 /* Montserrat-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		E79F056E205966E000889D14 /* Tellomee */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +433,7 @@
 		E7B9F73B1FB6CAAE0058CE61 /* EscaPAID */ = {
 			isa = PBXGroup;
 			children = (
+				E79ADAFF20751B9400C02C0A /* Resources */,
 				E7E45980205975C90077C1DE /* Supporting Files */,
 				E720AC031FC20FC700E9C2EF /* Storyboards */,
 				E7D3D79320362D6100F91CC4 /* UI */,
@@ -574,14 +606,18 @@
 			files = (
 				E79F05F72059700400889D14 /* TextGetter.xib in Resources */,
 				E79F05F82059700400889D14 /* ExperienceEditor.storyboard in Resources */,
+				E79ADB1920751BDE00C02C0A /* Montserrat-Regular.ttf in Resources */,
 				E7E4598C2059BC3D0077C1DE /* Discover.storyboard in Resources */,
 				E79F05F92059700400889D14 /* Podfile in Resources */,
 				E79F05FA2059700400889D14 /* ProfileEditor.storyboard in Resources */,
 				E79F05FD2059700400889D14 /* LaunchScreen.storyboard in Resources */,
+				E7CB84C62075229700CB91C2 /* Montserrat-Bold.ttf in Resources */,
 				E79F05FF2059700400889D14 /* Reservations.storyboard in Resources */,
 				E79F06002059700400889D14 /* DateCell.xib in Resources */,
+				E79ADB3320751BDE00C02C0A /* Montserrat-Light.ttf in Resources */,
 				E79F06012059700400889D14 /* Book.storyboard in Resources */,
 				E79F06042059700400889D14 /* ExperienceCell.xib in Resources */,
+				E79ADB5020751C4500C02C0A /* Lato-Regular.ttf in Resources */,
 				E79F06052059700400889D14 /* Assets.xcassets in Resources */,
 				E7CF4DF4206D6D9600B7F97E /* Renaissance.xcassets in Resources */,
 				E7E4599D205DCEFC0077C1DE /* GoogleService-Info.plist in Resources */,
@@ -600,14 +636,18 @@
 			files = (
 				E71F33A620017CAA00312B91 /* TextGetter.xib in Resources */,
 				E7D3D79D20362FCC00F91CC4 /* ExperienceEditor.storyboard in Resources */,
+				E79ADB1820751BDE00C02C0A /* Montserrat-Regular.ttf in Resources */,
 				E7CF4DF7206D6DF100B7F97E /* Tellomee.xcassets in Resources */,
 				E7E4598B2059BC3D0077C1DE /* Discover.storyboard in Resources */,
 				E72F64471FBBB22B0023489D /* Podfile in Resources */,
 				E7D3D79720362E0E00F91CC4 /* ProfileEditor.storyboard in Resources */,
+				E7CB84C52075229700CB91C2 /* Montserrat-Bold.ttf in Resources */,
 				E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */,
 				E7D3D79A20362EF400F91CC4 /* Reservations.storyboard in Resources */,
+				E79ADB3220751BDE00C02C0A /* Montserrat-Light.ttf in Resources */,
 				E7238A682022699C00496FBC /* DateCell.xib in Resources */,
 				E774C83E203A1B4E00F98EB2 /* Book.storyboard in Resources */,
+				E79ADB4F20751C4500C02C0A /* Lato-Regular.ttf in Resources */,
 				E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */,
 				E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */,
 				E7E4599F205DCF0F0077C1DE /* GoogleService-Info.plist in Resources */,

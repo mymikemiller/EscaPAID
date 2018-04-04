@@ -13,13 +13,13 @@
         <!--Reservations TableVC-->
         <scene sceneID="gtp-Mt-jWD">
             <objects>
-                <tableViewController id="Tza-XJ-dcJ" customClass="ReservationsTableVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Tza-XJ-dcJ" customClass="ReservationsTableVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="984-Zo-428">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reservationCell" rowHeight="112" id="WtP-xO-fvV" customClass="ReservationTableViewCell" customModule="tellomee" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reservationCell" rowHeight="112" id="WtP-xO-fvV" customClass="ReservationTableViewCell" customModule="Renaissance" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="112"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WtP-xO-fvV" id="Thz-Jm-IaY">
@@ -99,7 +99,7 @@
         <!--Receipt TableVC-->
         <scene sceneID="zhu-pz-Lnv">
             <objects>
-                <tableViewController id="uQM-xH-bxG" customClass="ReceiptTableVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="uQM-xH-bxG" customClass="ReceiptTableVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Z7-sZ-JeB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
