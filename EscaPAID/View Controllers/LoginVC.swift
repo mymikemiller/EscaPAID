@@ -23,8 +23,8 @@ class LoginVC: UIScrollingViewController {
         if (!initEmail.isEmpty) { email.text = initEmail }
         if (!initPassword.isEmpty) { password.text = initPassword }
         
-        // We use autoLogin to determine if we should display all the debug login links
-        debugLoginsSection.isHidden = !Constants.autoLogin
+        // We use debugMode to determine if we should display all the debug login links
+        debugLoginsSection.isHidden = !Constants.debugMode
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -82,6 +82,7 @@ PODS:
     - SDWebImage/Core (= 4.3.0)
   - SDWebImage/Core (4.3.0)
   - Stripe (12.1.0)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -99,6 +100,7 @@ DEPENDENCIES:
   - RSKImageCropper
   - SDWebImage (~> 4.0)
   - Stripe
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -125,7 +127,8 @@ SPEC CHECKSUMS:
   RSKImageCropper: d9a1acbc0600bf8decc8f0d21895872c99a9e4cf
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
   Stripe: de8bffa8e6813f678d526c52f416fe224141fa09
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: b7fd87240ac1733e55725d8fdbc03b15e08c2fbb
+PODFILE CHECKSUM: ac0a47f2036837a6141c416a0c634e5048e43650
 
 COCOAPODS: 1.4.0

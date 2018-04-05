@@ -15,6 +15,9 @@ class ThreadManager: NSObject {
     static let databaseRef = Database.database().reference()
     static let THREAD_UPDATED = "THREAD_UPDATED"
     
+    // Store a dictionary of callback lists to inform when a thread is created. Key the dictionary on the uid for who the created/retrieved thread. Clear that thread's list after calling all callbacks.
+    static var getOrCreateThreadCompletions: [String:[(Thread) -> ()]] = [:]
+    
     var threads = [Thread]()
     
     var observeHandle: DatabaseHandle?
@@ -56,6 +59,22 @@ class ThreadManager: NSObject {
     
     static func getOrCreateThread(with curator:User, completion: @escaping (Thread) -> ()) {
         
+        print("getOrCreateThread with " + curator.uid)
+        // Append the completion to the list of completions to call when we actually find or create the thread
+        // We have to get the array out, then append to it because Swift doesn't let us modify it until Swift 5. See
+        // https://stackoverflow.com/questions/24534229/swift-modifying-arrays-inside-dictionaries
+        if var completionsToCall = getOrCreateThreadCompletions[curator.uid] {
+            completionsToCall.append(completion)
+            getOrCreateThreadCompletions[curator.uid] = completionsToCall
+            
+            // Exit early from any attempt to find/create the second, third, etc. time. We've already added it to the list, so its completion will be called once we get/create the thread
+            if (completionsToCall.count > 1) {
+                return
+            }
+        } else {
+            getOrCreateThreadCompletions[curator.uid] = [completion]
+        }
+        
         let myUid = FirebaseManager.user!.uid
         
         if (myUid == curator.uid) {
@@ -63,22 +82,19 @@ class ThreadManager: NSObject {
         }
         
         // Try to find a thread that exists. Look in the user's threads and see if any thread exists that contains the curator as the other user
-        databaseRef.child("userThreads").child(myUid).observeSingleEvent(of: .value) {
+        databaseRef.child("userThreads").child(myUid).queryOrdered(byChild: "with").queryEqual(toValue: curator.uid).observeSingleEvent(of: .value) {
             (snap) in
             
             var threadId:String? = nil
             
-            // Only try to find the thread if we have any children
-            if (snap.childrenCount > 0) {
+            // The query should return 0 or 1 threads
+            if (snap.childrenCount > 1) {
+                fatalError("Found multiple userThreads to the same user")
+            }
+            if (snap.childrenCount == 1) {
                 let userThreads = snap.value as! [String:AnyObject]
-                for userThreadId in userThreads.keys {
-                    let otherUserUid = (userThreads[userThreadId] as! [String:AnyObject])["with"] as! String
-                    if (otherUserUid == curator.uid) {
-                        // We found the thread
-                        threadId = userThreadId
-                        break
-                    }
-                }
+                // Get the first thread (there should be only 1)
+                threadId = userThreads.keys[userThreads.keys.startIndex]
             }
             
             if (threadId == nil) {
@@ -91,17 +107,30 @@ class ThreadManager: NSObject {
                         "read":true,
                         "lastMessageTimestamp":dateFormatter.string(from:Date())] as [String : Any]
             
-                threadId = databaseRef.child("userThreads").child(myUid).childByAutoId().key
-                databaseRef.child("userThreads").child(myUid).child(threadId!).setValue(newThread)
+                let threadRef = databaseRef.child("userThreads").child(myUid).childByAutoId()
+                
+                threadRef.setValue(newThread)
+                threadId = threadRef.key
+                print("created thread", threadId!, "in user", myUid)
                 
                 // Also add the same threadId (unread) to the curator's userThreads so the thread appears in their inbox
                 newThread["with"] = myUid
                 newThread["read"] = false
                 databaseRef.child("userThreads").child(curator.uid).child(threadId!).setValue(newThread)
+                
+                print("set value on curator " + curator.uid + " for thread " + threadId!)
             }
             
             let thread = Thread(with: curator, threadId: threadId!, lastMessageTimestamp: Date(), read: true)
-            completion(thread)
+            
+            // Finally, call the completions we have queued up
+            if let completions = getOrCreateThreadCompletions[curator.uid] {
+                for completionToCall in completions {
+                    completionToCall(thread)
+                }
+                // Now clear out the completions list to prepare for next time
+                getOrCreateThreadCompletions.removeValue(forKey: curator.uid)
+            }
         }
     }
     

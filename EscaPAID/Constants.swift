@@ -12,7 +12,10 @@ import UIKit
 class Constants: NSObject {
     
     // If true, the user will automatically be logged in based on what's hardcoded in the input fields.
-    static var autoLogin = false
+    static var autoLogin = true
+    
+    // Debug mode enables things like extra login buttons for debug accounts
+    static var debugMode = true
     
     static let stripeApiVersion =  "2018-02-06"
     

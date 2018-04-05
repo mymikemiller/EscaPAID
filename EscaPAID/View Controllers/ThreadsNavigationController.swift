@@ -25,10 +25,7 @@ class ThreadsNavigationController: UINavigationController {
         
         // If we have a user set, go directly to that thread
         if let userToShowOnLoad = userToShowOnLoad {
-            ThreadManager.getOrCreateThread(with: userToShowOnLoad, completion: {thread in
-                
-                self.showThread(thread)
-            })
+            goToMessageThread(user: userToShowOnLoad)
         }
     }
     

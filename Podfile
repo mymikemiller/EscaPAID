@@ -15,7 +15,6 @@ abstract_target 'EscaPAID' do
   pod 'RSKImageCropper'
   pod 'NextResponderTextField'
 
-
   # Pods for Facebook
   pod 'Bolts'
   pod 'FBSDKCoreKit'
