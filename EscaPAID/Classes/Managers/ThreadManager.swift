@@ -59,7 +59,6 @@ class ThreadManager: NSObject {
     
     static func getOrCreateThread(with curator:User, completion: @escaping (Thread) -> ()) {
         
-        print("getOrCreateThread with " + curator.uid)
         // Append the completion to the list of completions to call when we actually find or create the thread
         // We have to get the array out, then append to it because Swift doesn't let us modify it until Swift 5. See
         // https://stackoverflow.com/questions/24534229/swift-modifying-arrays-inside-dictionaries

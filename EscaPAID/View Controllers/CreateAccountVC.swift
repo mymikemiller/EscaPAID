@@ -54,7 +54,7 @@ class CreateAccountVC: UIScrollingViewController {
                 }
                 
                 // FirebaseManager.createAccountWithEmail sent a verification email. Notify the user that they need to address the email then log in.
-                let alertVC = UIAlertController(title: "Verify your email", message: "Please verify your email address to continue.", preferredStyle: .alert)
+                let alertVC = UIAlertController(title: "Verify your email", message: "Please click the link in the email sent from us, then log in.", preferredStyle: .alert)
                 let alertActionOkay = UIAlertAction(title: "Okay", style: .default) {
                     (_) in
                     // Send the user a verification email then redirect them to the log in screen

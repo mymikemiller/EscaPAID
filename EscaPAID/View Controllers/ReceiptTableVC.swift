@@ -43,13 +43,17 @@ class ReceiptTableVC: UITableViewController {
         user.setTitle(otherUser.fullName, for: .normal)
         guests.text = "\(reservation!.numGuests) \(reservation!.numGuests == 1 ? " guest" : " guests")"
         
-        let totalChargeString = String(format: "$%.02f", reservation!.totalCharge)
+        // Convert from pennies (stripe's format) to dollars
+        let totalChargeDollars = Double(reservation!.totalCharge / 100)
+        let platformFeeDollars = Double(reservation!.fee / 100)
+        
+        let totalChargeString = String(format: "$%.02f", totalChargeDollars)
 
         // The curator sees the subtotal, fee and curator total, while the customer only sees the "subtotal" (the total that he was charged). The visibility of these rows is determined in heightForRowAt
         customerTotal.text = totalChargeString
         curatorSubtotal.text = totalChargeString
-        fee.text = String(format: "$%.02f", reservation!.fee)
-        curatorTotal.text = String(format: "$%.02f", reservation!.totalCharge - reservation!.fee)
+        fee.text = String(format: "$%.02f", platformFeeDollars)
+        curatorTotal.text = String(format: "$%.02f", totalChargeDollars - platformFeeDollars)
     }
     
     var isViewedByCurator: Bool {
