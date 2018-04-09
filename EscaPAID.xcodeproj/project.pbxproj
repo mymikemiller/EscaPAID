@@ -115,6 +115,8 @@
 		E79FA59720290EA50060B44D /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59620290EA50060B44D /* Reservation.swift */; };
 		E79FA59F202A69050060B44D /* ReservationsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59E202A69050060B44D /* ReservationsTableVC.swift */; };
 		E79FA5A3202A6AB90060B44D /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */; };
+		E7B4CDAD207BB4C400352DB1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDAC207BB4C400352DB1 /* CardView.swift */; };
+		E7B4CDAE207BB5A500352DB1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDAC207BB4C400352DB1 /* CardView.swift */; };
 		E7B94FA520195C1E00C5FBCB /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */; };
 		E7B94FA720195F4D00C5FBCB /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
 		E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
@@ -210,6 +212,7 @@
 		E79FA59620290EA50060B44D /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		E79FA59E202A69050060B44D /* ReservationsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsTableVC.swift; sourceTree = "<group>"; };
 		E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
+		E7B4CDAC207BB4C400352DB1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
 		E7B94FA620195F4D00C5FBCB /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		E7B9F7391FB6CAAE0058CE61 /* Tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -377,6 +380,7 @@
 				E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */,
 				E7CF4DDF206CA31B00B7F97E /* GradientView.swift */,
 				E7CF4DFA206EDF0C00B7F97E /* RoundedButton.swift */,
+				E7B4CDAC207BB4C400352DB1 /* CardView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -684,7 +688,6 @@
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -704,7 +707,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -734,7 +736,6 @@
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -754,7 +755,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -883,6 +883,7 @@
 				E79F05EA2059700400889D14 /* ReservationManager.swift in Sources */,
 				E79F05EB2059700400889D14 /* OriginScreenVC.swift in Sources */,
 				E79F05EC2059700400889D14 /* AppDelegate.swift in Sources */,
+				E7B4CDAE207BB5A500352DB1 /* CardView.swift in Sources */,
 				E79F05ED2059700400889D14 /* Thread.swift in Sources */,
 				E79F05EE2059700400889D14 /* ReceiptTableVC.swift in Sources */,
 				E79F05EF2059700400889D14 /* CuratorSettingsVC.swift in Sources */,
@@ -942,6 +943,7 @@
 				E77A736D204875A200AE0DE4 /* ReservationManager.swift in Sources */,
 				E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */,
 				E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */,
+				E7B4CDAD207BB4C400352DB1 /* CardView.swift in Sources */,
 				E723DD871FC3E17800B4345E /* Thread.swift in Sources */,
 				E728EA35202BB6C30041F6AC /* ReceiptTableVC.swift in Sources */,
 				E7F585F81FCCDECE00536EF5 /* CuratorSettingsVC.swift in Sources */,

@@ -31,13 +31,14 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Set up the city picker
         cityPicker.setUp(textField: nil, strings: Constants.cities)
         
+        // Set up the TableView
         let nib = UINib(nibName: "ExperienceCell",bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "experienceCell")
-        
+        tableView.layoutMargins = UIEdgeInsetsMake(0, 37, 0, 37)
+
         // Setup the Scope Bar
         searchController.searchBar.scopeButtonTitles = ["All"]
-        searchController.searchBar.scopeButtonTitles?.append(contentsOf: Config.current.categories
-        )
+        searchController.searchBar.scopeButtonTitles?.append(contentsOf: Config.current.categories)
         searchController.searchBar.delegate = self
         
         // Setup the Search Controller

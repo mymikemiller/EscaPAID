@@ -14,17 +14,24 @@ class ExperienceTableViewCell: UITableViewCell {
     var experience:Experience?
     
     @IBOutlet weak var theImage: UIImageView!
+    @IBOutlet weak var cardView: CardView!
     
     @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
+        
         if let experience = experience {
             title?.text = experience.title
+            
+            
+            // Set the size of the image so that it looks like it's being clipped by the card
+            theImage.layer.cornerRadius = cardView.cornerRadius
+            
             let placeholder = UIImage(named: "loading")
             let imageURL = URL(string: experience.imageUrls[0])
             
