@@ -32,7 +32,7 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cityPicker.setUp(textField: nil, strings: Constants.cities)
         
         // Set up the TableView
-        let nib = UINib(nibName: "ExperienceCell",bundle: nil)
+        let nib = UINib(nibName: "ExperienceTableViewCell",bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "experienceCell")
         tableView.layoutMargins = UIEdgeInsetsMake(0, 37, 0, 37)
 
@@ -118,7 +118,7 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             experience = experienceManager.experiences[indexPath.row]
         }
         
-        cell.experience = experience
+        cell.card.experience = experience
 
         return cell
     }

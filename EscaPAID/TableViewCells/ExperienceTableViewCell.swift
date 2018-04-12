@@ -11,12 +11,7 @@ import SDWebImage
 
 class ExperienceTableViewCell: UITableViewCell {
     
-    var experience:Experience?
-    
-    @IBOutlet weak var theImage: UIImageView!
-    @IBOutlet weak var cardView: CardView!
-    
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var card: ExperienceCard!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,18 +20,6 @@ class ExperienceTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if let experience = experience {
-            title?.text = experience.title
-            
-            
-            // Set the size of the image so that it looks like it's being clipped by the card
-            theImage.layer.cornerRadius = cardView.cornerRadius
-            
-            let placeholder = UIImage(named: "loading")
-            let imageURL = URL(string: experience.imageUrls[0])
-            
-            theImage.sd_setImage(with: imageURL, placeholderImage:placeholder)
-        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

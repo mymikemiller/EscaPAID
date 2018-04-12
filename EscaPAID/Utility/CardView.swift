@@ -23,6 +23,7 @@
 //
 import UIKit
 
+// Rounds and adds a 3d border to the UIView
 @IBDesignable
 class CardView: UIView {
     

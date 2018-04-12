@@ -106,7 +106,7 @@
 		E79F05FF2059700400889D14 /* Reservations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79820362EF400F91CC4 /* Reservations.storyboard */; };
 		E79F06002059700400889D14 /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7238A672022699C00496FBC /* DateCell.xib */; };
 		E79F06012059700400889D14 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774C83D203A1B4E00F98EB2 /* Book.storyboard */; };
-		E79F06042059700400889D14 /* ExperienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */; };
+		E79F06042059700400889D14 /* ExperienceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE89FD1FCDC979008ADCEF /* ExperienceTableViewCell.xib */; };
 		E79F06052059700400889D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */; };
 		E79F06062059700400889D14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
 		E79F06072059700400889D14 /* UICalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7238A632022521400496FBC /* UICalendar.xib */; };
@@ -117,6 +117,10 @@
 		E79FA5A3202A6AB90060B44D /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */; };
 		E7B4CDAD207BB4C400352DB1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDAC207BB4C400352DB1 /* CardView.swift */; };
 		E7B4CDAE207BB5A500352DB1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDAC207BB4C400352DB1 /* CardView.swift */; };
+		E7B4CDBC207C26EF00352DB1 /* ExperienceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDBB207C26EF00352DB1 /* ExperienceCard.swift */; };
+		E7B4CDBD207C26EF00352DB1 /* ExperienceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDBB207C26EF00352DB1 /* ExperienceCard.swift */; };
+		E7B4CDED207EBF7600352DB1 /* ExperienceCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B4CDEC207EBF7600352DB1 /* ExperienceCard.xib */; };
+		E7B4CDEE207EBF7600352DB1 /* ExperienceCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B4CDEC207EBF7600352DB1 /* ExperienceCard.xib */; };
 		E7B94FA520195C1E00C5FBCB /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */; };
 		E7B94FA720195F4D00C5FBCB /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
 		E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
@@ -160,7 +164,7 @@
 		E7F9A0821FB7378B00916FBA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0811FB7378B00916FBA /* ChatVC.swift */; };
 		E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */; };
 		E7FE89F61FCCF284008ADCEF /* MyExperiencesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */; };
-		E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */; };
+		E7FE89FE1FCDC979008ADCEF /* ExperienceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FE89FD1FCDC979008ADCEF /* ExperienceTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -213,6 +217,8 @@
 		E79FA59E202A69050060B44D /* ReservationsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsTableVC.swift; sourceTree = "<group>"; };
 		E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
 		E7B4CDAC207BB4C400352DB1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E7B4CDBB207C26EF00352DB1 /* ExperienceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCard.swift; sourceTree = "<group>"; };
+		E7B4CDEC207EBF7600352DB1 /* ExperienceCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCard.xib; sourceTree = "<group>"; };
 		E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
 		E7B94FA620195F4D00C5FBCB /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		E7B9F7391FB6CAAE0058CE61 /* Tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,7 +257,7 @@
 		E7F9A0811FB7378B00916FBA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		E7FE89F51FCCF284008ADCEF /* MyExperiencesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExperiencesTableVC.swift; sourceTree = "<group>"; };
-		E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCell.xib; sourceTree = "<group>"; };
+		E7FE89FD1FCDC979008ADCEF /* ExperienceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceTableViewCell.xib; sourceTree = "<group>"; };
 		EB6BDD587A2A54747961A1BE /* Pods-EscaPAID-Renaissance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance/Pods-EscaPAID-Renaissance.release.xcconfig"; sourceTree = "<group>"; };
 		ECA6BDE2DF7F3ACAE509701E /* Pods-EscaPAID-Renaissance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance/Pods-EscaPAID-Renaissance.debug.xcconfig"; sourceTree = "<group>"; };
 		F24DF35A82A749B51048B357 /* Pods_EscaPAID_Tellomee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID_Tellomee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -351,6 +357,7 @@
 			children = (
 				E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */,
 				E74549911FB758B300A6A32C /* ChatTableViewCell.swift */,
+				E7FE89FD1FCDC979008ADCEF /* ExperienceTableViewCell.xib */,
 				E7E22E8E1FC7463800FD88FF /* ExperienceTableViewCell.swift */,
 				E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */,
 				E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */,
@@ -461,7 +468,6 @@
 		E7D3D79320362D6100F91CC4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E7FE89FD1FCDC979008ADCEF /* ExperienceCell.xib */,
 				E71F33A320017CAA00312B91 /* TextGetterController.swift */,
 				E71F33A420017CAA00312B91 /* TextGetter.xib */,
 				E7238A652022524300496FBC /* UICalendar.swift */,
@@ -469,6 +475,8 @@
 				E7B94FA620195F4D00C5FBCB /* DateCell.swift */,
 				E7238A672022699C00496FBC /* DateCell.xib */,
 				E79ADAFC20743F8500C02C0A /* UIScrollingViewController.swift */,
+				E7B4CDBB207C26EF00352DB1 /* ExperienceCard.swift */,
+				E7B4CDEC207EBF7600352DB1 /* ExperienceCard.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -613,6 +621,7 @@
 				E79ADB1920751BDE00C02C0A /* Montserrat-Regular.ttf in Resources */,
 				E7E4598C2059BC3D0077C1DE /* Discover.storyboard in Resources */,
 				E79F05F92059700400889D14 /* Podfile in Resources */,
+				E7B4CDEE207EBF7600352DB1 /* ExperienceCard.xib in Resources */,
 				E79F05FA2059700400889D14 /* ProfileEditor.storyboard in Resources */,
 				E79F05FD2059700400889D14 /* LaunchScreen.storyboard in Resources */,
 				E7CB84C62075229700CB91C2 /* Montserrat-Bold.ttf in Resources */,
@@ -620,7 +629,7 @@
 				E79F06002059700400889D14 /* DateCell.xib in Resources */,
 				E79ADB3320751BDE00C02C0A /* Montserrat-Light.ttf in Resources */,
 				E79F06012059700400889D14 /* Book.storyboard in Resources */,
-				E79F06042059700400889D14 /* ExperienceCell.xib in Resources */,
+				E79F06042059700400889D14 /* ExperienceTableViewCell.xib in Resources */,
 				E79ADB5020751C4500C02C0A /* Lato-Regular.ttf in Resources */,
 				E79F06052059700400889D14 /* Assets.xcassets in Resources */,
 				E7CF4DF4206D6D9600B7F97E /* Renaissance.xcassets in Resources */,
@@ -643,6 +652,7 @@
 				E79ADB1820751BDE00C02C0A /* Montserrat-Regular.ttf in Resources */,
 				E7CF4DF7206D6DF100B7F97E /* Tellomee.xcassets in Resources */,
 				E7E4598B2059BC3D0077C1DE /* Discover.storyboard in Resources */,
+				E7B4CDED207EBF7600352DB1 /* ExperienceCard.xib in Resources */,
 				E72F64471FBBB22B0023489D /* Podfile in Resources */,
 				E7D3D79720362E0E00F91CC4 /* ProfileEditor.storyboard in Resources */,
 				E7CB84C52075229700CB91C2 /* Montserrat-Bold.ttf in Resources */,
@@ -652,7 +662,7 @@
 				E7238A682022699C00496FBC /* DateCell.xib in Resources */,
 				E774C83E203A1B4E00F98EB2 /* Book.storyboard in Resources */,
 				E79ADB4F20751C4500C02C0A /* Lato-Regular.ttf in Resources */,
-				E7FE89FE1FCDC979008ADCEF /* ExperienceCell.xib in Resources */,
+				E7FE89FE1FCDC979008ADCEF /* ExperienceTableViewCell.xib in Resources */,
 				E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */,
 				E7E4599F205DCF0F0077C1DE /* GoogleService-Info.plist in Resources */,
 				E7E45982205977820077C1DE /* Configuration.plist in Resources */,
@@ -861,6 +871,7 @@
 				E79F05D82059700400889D14 /* SelfContainedPickerView.swift in Sources */,
 				E79F05D92059700400889D14 /* SettingsTableVC.swift in Sources */,
 				E79F05DA2059700400889D14 /* User.swift in Sources */,
+				E7B4CDBD207C26EF00352DB1 /* ExperienceCard.swift in Sources */,
 				E79F05DB2059700400889D14 /* DiscoverVC.swift in Sources */,
 				E7CF4DF2206D5E7000B7F97E /* UIColor+Utility.swift in Sources */,
 				E79F05DC2059700400889D14 /* UICalendar.swift in Sources */,
@@ -921,6 +932,7 @@
 				E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */,
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,
 				E72B24891FC6539A00DE0897 /* DiscoverVC.swift in Sources */,
+				E7B4CDBC207C26EF00352DB1 /* ExperienceCard.swift in Sources */,
 				E7238A662022524300496FBC /* UICalendar.swift in Sources */,
 				E7CF4DF1206D5E7000B7F97E /* UIColor+Utility.swift in Sources */,
 				E79FA59720290EA50060B44D /* Reservation.swift in Sources */,

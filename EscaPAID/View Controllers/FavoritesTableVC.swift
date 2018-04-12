@@ -46,7 +46,7 @@ class FavoritesTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell", for: indexPath) as! ExperienceTableViewCell
         
         let experience = experienceManager.experiences[indexPath.row]
-        cell.experience = experience
+        cell.card.experience = experience
         
         return cell
     }
