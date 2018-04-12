@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 @IBDesignable class ExperienceCard: CardView {
     
@@ -17,10 +19,21 @@ import UIKit
             // Set the size of the image so that it looks like it's being clipped by the card
             image.layer.cornerRadius = cornerRadius
             
+            // Use AlamofireImage to fetch the image
+            let imageURL = URL(string: experience.imageUrls[0])!
             let placeholder = UIImage(named: "loading")
-            let imageURL = URL(string: experience.imageUrls[0])
             
-            image.sd_setImage(with: imageURL, placeholderImage:placeholder)
+            // Darken the image after fetching
+            let filter = DynamicImageFilter("darken") {image in
+                return image.darkened()!
+            }
+            
+            image.af_setImage(
+                withURL: imageURL,
+                placeholderImage: placeholder,
+                filter: filter,
+                imageTransition: .crossDissolve(0.2)
+            )
         }
     }
 
@@ -46,6 +59,7 @@ import UIKit
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
     }
 
 }

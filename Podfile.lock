@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.6.0)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -78,13 +80,11 @@ PODS:
   - NextResponderTextField (3.0.0)
   - Protobuf (3.5.0)
   - RSKImageCropper (2.0.0)
-  - SDWebImage (4.3.0):
-    - SDWebImage/Core (= 4.3.0)
-  - SDWebImage/Core (4.3.0)
   - Stripe (12.1.0)
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage (~> 3.3)
   - Bolts
   - FBSDKCoreKit
   - FBSDKLoginKit
@@ -97,11 +97,11 @@ DEPENDENCIES:
   - JTAppleCalendar (~> 7.0)
   - NextResponderTextField
   - RSKImageCropper
-  - SDWebImage (~> 4.0)
   - Stripe
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FBSDKCoreKit: 7c4bba2877781a131ab5d54c0a78c405d4307b62
   FBSDKLoginKit: fe7a7e82373dc5daad92e1623219e86224ab1fb1
@@ -123,9 +123,8 @@ SPEC CHECKSUMS:
   NextResponderTextField: 07ee7b2737981bfd402f63f390bf3de55e245ccd
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   RSKImageCropper: d9a1acbc0600bf8decc8f0d21895872c99a9e4cf
-  SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
   Stripe: de8bffa8e6813f678d526c52f416fe224141fa09
 
-PODFILE CHECKSUM: 7849d92c6a214df4e85b6ee4f8fbc65d637da7e8
+PODFILE CHECKSUM: 2895e135ecce023d329c32982f056576aa292d29
 
 COCOAPODS: 1.4.0

@@ -121,6 +121,8 @@
 		E7B4CDBD207C26EF00352DB1 /* ExperienceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDBB207C26EF00352DB1 /* ExperienceCard.swift */; };
 		E7B4CDED207EBF7600352DB1 /* ExperienceCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B4CDEC207EBF7600352DB1 /* ExperienceCard.xib */; };
 		E7B4CDEE207EBF7600352DB1 /* ExperienceCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B4CDEC207EBF7600352DB1 /* ExperienceCard.xib */; };
+		E7B4CDF0207FFBE200352DB1 /* UIImage+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDEF207FFBE200352DB1 /* UIImage+Utility.swift */; };
+		E7B4CDF1207FFBE200352DB1 /* UIImage+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDEF207FFBE200352DB1 /* UIImage+Utility.swift */; };
 		E7B94FA520195C1E00C5FBCB /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */; };
 		E7B94FA720195F4D00C5FBCB /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
 		E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
@@ -219,6 +221,7 @@
 		E7B4CDAC207BB4C400352DB1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E7B4CDBB207C26EF00352DB1 /* ExperienceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCard.swift; sourceTree = "<group>"; };
 		E7B4CDEC207EBF7600352DB1 /* ExperienceCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCard.xib; sourceTree = "<group>"; };
+		E7B4CDEF207FFBE200352DB1 /* UIImage+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utility.swift"; sourceTree = "<group>"; };
 		E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
 		E7B94FA620195F4D00C5FBCB /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		E7B9F7391FB6CAAE0058CE61 /* Tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -388,6 +391,7 @@
 				E7CF4DDF206CA31B00B7F97E /* GradientView.swift */,
 				E7CF4DFA206EDF0C00B7F97E /* RoundedButton.swift */,
 				E7B4CDAC207BB4C400352DB1 /* CardView.swift */,
+				E7B4CDEF207FFBE200352DB1 /* UIImage+Utility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -685,6 +689,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Renaissance/Pods-EscaPAID-Renaissance-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -696,7 +701,6 @@
 				"${BUILT_PRODUCTS_DIR}/NextResponderTextField/NextResponderTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -704,6 +708,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -715,7 +720,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextResponderTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -733,6 +737,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Tellomee/Pods-EscaPAID-Tellomee-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -744,7 +749,6 @@
 				"${BUILT_PRODUCTS_DIR}/NextResponderTextField/NextResponderTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -752,6 +756,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -763,7 +768,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextResponderTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -879,6 +883,7 @@
 				E79F05DE2059700400889D14 /* ChatTableViewCell.swift in Sources */,
 				E79F05DF2059700400889D14 /* MyExperiencesTableVC.swift in Sources */,
 				E79F05E02059700400889D14 /* TabBarController.swift in Sources */,
+				E7B4CDF1207FFBE200352DB1 /* UIImage+Utility.swift in Sources */,
 				E79ADAFE20743F8500C02C0A /* UIScrollingViewController.swift in Sources */,
 				E79F05E12059700400889D14 /* ThreadTableViewCell.swift in Sources */,
 				E79F05E22059700400889D14 /* ConfirmationTableVC.swift in Sources */,
@@ -940,6 +945,7 @@
 				E7FE89F61FCCF284008ADCEF /* MyExperiencesTableVC.swift in Sources */,
 				E71F33A82004509800312B91 /* TabBarController.swift in Sources */,
 				E745499A1FB8B1BE00A6A32C /* ThreadTableViewCell.swift in Sources */,
+				E7B4CDF0207FFBE200352DB1 /* UIImage+Utility.swift in Sources */,
 				E79ADAFD20743F8500C02C0A /* UIScrollingViewController.swift in Sources */,
 				E79FA5912025398C0060B44D /* ConfirmationTableVC.swift in Sources */,
 				E7F9A0821FB7378B00916FBA /* ChatVC.swift in Sources */,

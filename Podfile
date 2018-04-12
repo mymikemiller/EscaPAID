@@ -11,9 +11,9 @@ abstract_target 'EscaPAID' do
   pod 'Firebase/Storage'
   pod 'JSQMessagesViewController'
   pod 'JTAppleCalendar', '~> 7.0'
-  pod 'SDWebImage', '~> 4.0'
   pod 'RSKImageCropper'
   pod 'NextResponderTextField'
+  pod 'AlamofireImage', '~> 3.3'
 
   # Pods for Facebook
   pod 'Bolts'
