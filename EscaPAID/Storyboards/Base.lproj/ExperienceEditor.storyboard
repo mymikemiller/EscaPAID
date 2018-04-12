@@ -12,8 +12,8 @@
         <!--My Experiences-->
         <scene sceneID="PgJ-bK-v5c">
             <objects>
-                <tableViewController storyboardIdentifier="MyExperiences" id="Jjz-5s-811" customClass="MyExperiencesTableVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hGj-fe-ZdV">
+                <tableViewController storyboardIdentifier="MyExperiences" id="Jjz-5s-811" customClass="MyExperiencesTableVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="350" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hGj-fe-ZdV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,7 +40,7 @@
         <!--Edit Experience-->
         <scene sceneID="4YD-2V-ald">
             <objects>
-                <tableViewController id="P4t-FY-Kug" customClass="ExperienceEditorTableVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="P4t-FY-Kug" customClass="ExperienceEditorTableVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ttp-Wc-rkV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -347,7 +347,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExperienceImageUploadCell" id="i93-8D-h3T" customClass="ExperienceImageCell" customModule="tellomee" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExperienceImageUploadCell" id="i93-8D-h3T" customClass="ExperienceImageCell" customModule="Renaissance" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="3.5" width="96" height="96"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -425,7 +425,7 @@
         <!--Day Selector TableVC-->
         <scene sceneID="4AC-um-4Js">
             <objects>
-                <tableViewController id="yaV-b7-ZFh" customClass="DaySelectorTableVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="yaV-b7-ZFh" customClass="DaySelectorTableVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Ig-a3-iOy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

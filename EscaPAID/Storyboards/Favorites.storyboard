@@ -12,8 +12,8 @@
         <!--Favorites-->
         <scene sceneID="n9j-e2-enc">
             <objects>
-                <tableViewController storyboardIdentifier="MyExperiences" title="Favorites" id="RY8-e9-X9i" customClass="FavoritesTableVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="350" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TKE-79-nVN">
+                <tableViewController storyboardIdentifier="MyExperiences" title="Favorites" id="RY8-e9-X9i" customClass="FavoritesTableVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="350" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TKE-79-nVN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -18,7 +18,7 @@ class MyExperiencesTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: "ExperienceCell",bundle: nil)
+        let nib = UINib(nibName: "ExperienceTableViewCell",bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "experienceCell")
     }
     

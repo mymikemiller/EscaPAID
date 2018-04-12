@@ -15,7 +15,7 @@ class FavoritesTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: "ExperienceCell",bundle: nil)
+        let nib = UINib(nibName: "ExperienceTableViewCell",bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "experienceCell")
         
         // Fill the table once. New objects will appear here as they're added to the database (when the user favorites them) and removed when they're removed from the database (when the user unfavorites them)
