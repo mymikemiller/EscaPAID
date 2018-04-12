@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import AlamofireImage
 
 class ExperienceImageVC: UIViewController {
     
@@ -20,9 +20,9 @@ class ExperienceImageVC: UIViewController {
         super.viewDidLoad()
         
         let placeholder = UIImage(named: "loading")!
-        let url = URL(string: imageURL)
+        let url = URL(string: imageURL)!
         
-        imageView.sd_setImage(with: url, placeholderImage:placeholder)
+        imageView.af_setImage(withURL: url, placeholderImage: placeholder)
     }
 
     override func didReceiveMemoryWarning() {
