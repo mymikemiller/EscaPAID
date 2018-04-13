@@ -212,7 +212,7 @@
                                                                         <accessibility key="accessibilityConfiguration" hint="Username"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="given-name"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="given-name"/>
                                                                         <connections>
                                                                             <outlet property="nextResponderField" destination="1CV-NO-beu" id="QEh-2U-Vgv"/>
                                                                         </connections>
@@ -232,7 +232,7 @@
                                                                         <rect key="frame" x="0.0" y="25" width="300" height="30"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="family-name"/>
+                                                                        <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="family-name"/>
                                                                         <connections>
                                                                             <outlet property="nextResponderField" destination="Uop-o0-9FG" id="MxZ-Yv-h3P"/>
                                                                         </connections>
@@ -252,7 +252,7 @@
                                                                         <rect key="frame" x="0.0" y="23.5" width="300" height="30"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                                                         <connections>
                                                                             <outlet property="nextResponderField" destination="cvq-M3-32b" id="Bxn-wI-a4o"/>
                                                                         </connections>
@@ -272,7 +272,7 @@
                                                                         <rect key="frame" x="0.0" y="23.5" width="300" height="30"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                                                         <connections>
                                                                             <outlet property="nextResponderField" destination="StP-N1-ord" id="JaL-Ap-br3"/>
                                                                         </connections>
@@ -467,7 +467,7 @@
                                                                         <rect key="frame" x="0.0" y="25" width="300" height="30"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                                                         <connections>
                                                                             <outlet property="nextResponderField" destination="teg-CG-Dkq" id="Iqs-iX-J6C"/>
                                                                         </connections>
@@ -490,7 +490,7 @@
                                                                                 <rect key="frame" x="0.0" y="25" width="300" height="30"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="16"/>
-                                                                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                                                                 <connections>
                                                                                     <outlet property="nextResponderField" destination="gD1-Nm-fi2" id="rUo-n8-7bp"/>
                                                                                 </connections>
@@ -689,7 +689,7 @@
         <image name="facebookIcon" width="54" height="99"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yl0-Zd-n9g"/>
+        <segue reference="glL-vf-AZJ"/>
         <segue reference="m3W-45-i9V"/>
     </inferredMetricsTieBreakers>
 </document>
