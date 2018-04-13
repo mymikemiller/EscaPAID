@@ -29,7 +29,11 @@ class Constants: NSObject {
                             "8"]
     
     static let cities = ["San Francisco",
-                  "Seattle",
-                  "Salt Lake City"]
+                         "Seattle",
+                         "Salt Lake City"]
+    
+    static let skillLevels = ["Beginner",
+                              "Intermediate",
+                              "Expert"]
 
 }

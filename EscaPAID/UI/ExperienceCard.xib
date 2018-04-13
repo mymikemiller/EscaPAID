@@ -22,11 +22,13 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="_old" customModule="Renaissance" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExperienceCard" customModule="Renaissance" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Fdv-t4-0Ux"/>
                 <outlet property="image" destination="Mcr-e4-nKy" id="9gY-NR-RnG"/>
-                <outlet property="title" destination="fch-eK-5kd" id="C0Y-hD-SBG"/>
+                <outlet property="skillLevel" destination="1jq-Pf-aln" id="t19-cv-eZi"/>
+                <outlet property="summary" destination="ZPs-0Y-IYq" id="bwc-eQ-QOk"/>
+                <outlet property="title" destination="fch-eK-5kd" id="Gv3-X3-7th"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -43,7 +45,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8f1-a4-SAe">
                             <rect key="frame" x="8" y="28" width="359" height="49.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jq-Pf-aln">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jq-Pf-aln" userLabel="Skill Level">
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="20"/>
                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

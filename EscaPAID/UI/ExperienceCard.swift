@@ -14,7 +14,9 @@ import AlamofireImage
     
     var experience:Experience! {
         didSet {
+            skillLevel.text = experience.skillLevel
             title.text = experience.title
+            summary.text = experience.summary
             
             // Set the size of the image so that it looks like it's being clipped by the card
             image.layer.cornerRadius = cornerRadius
@@ -40,7 +42,9 @@ import AlamofireImage
     @IBOutlet var contentView: UIView!
     
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var skillLevel: UILabel!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var summary: UILabel!
     
     
     override init(frame: CGRect) {

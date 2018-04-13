@@ -159,7 +159,8 @@ extension ProfileEditorTableVC: RSKImageCropViewControllerDelegate {
 }
 
 extension ProfileEditorTableVC: TextGetterDelegate {
-    func didGetText(_ text: String) {
+    func didGetText(title: String, text: String) {
+        // aboutMe is the only text view using TextGetterDelegate, so we don't need to look at title here
         aboutMe.text = text
     }
     

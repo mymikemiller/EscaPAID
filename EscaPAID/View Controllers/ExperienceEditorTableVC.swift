@@ -19,6 +19,7 @@ class ExperienceEditorTableVC: UITableViewController {
     @IBOutlet weak var experiencePrice: UITextField!
     @IBOutlet weak var experienceCategory: UITextField!
     @IBOutlet weak var experienceCity: UITextField!
+    @IBOutlet weak var experienceSummary: UILabel!
     @IBOutlet weak var experienceDescription: UILabel!
     @IBOutlet weak var experienceIncludes: UITextField!
     
@@ -45,6 +46,7 @@ class ExperienceEditorTableVC: UITableViewController {
     @IBOutlet weak var endTimeLabel: UILabel!
     
     @IBOutlet weak var experienceMaxGuests: UITextField!
+    @IBOutlet weak var experienceSkillLevel: UITextField!
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var uploadProgressView: UIProgressView!
@@ -69,9 +71,10 @@ class ExperienceEditorTableVC: UITableViewController {
         // Convert price from pennies to dollars with two decimal places
         experiencePrice.text = String(format: "%.2f", Double(experience!.price) / 100.0)
         experienceDescription.text = experience!.experienceDescription
+        experienceSummary.text = experience!.summary
         experienceDays = experience!.days
         experienceMaxGuests.text = String(experience!.maxGuests)
-        
+        experienceSkillLevel.text = experience!.skillLevel
         
         // Set up the category picker
         let categoryPicker = SelfContainedPickerView()
@@ -84,6 +87,10 @@ class ExperienceEditorTableVC: UITableViewController {
         // Set up the number of guests picker
         let numGuestsPicker = SelfContainedPickerView()
         numGuestsPicker.setUp(textField: experienceMaxGuests, strings: Constants.numGuests)
+        
+        // Set up the skill level picker
+        let skillLevelPicker = SelfContainedPickerView()
+        skillLevelPicker.setUp(textField: experienceSkillLevel, strings: Constants.skillLevels)
         
         // Set up the start and end time pickers
         startTimePicker.setDate(from: experience!.startTime, format: dateFormat)
@@ -128,6 +135,8 @@ class ExperienceEditorTableVC: UITableViewController {
             (experienceCity?.text?.isEmpty)! ||
             (experiencePrice?.text?.isEmpty)! ||
             price == nil ||
+            (experienceSkillLevel?.text?.isEmpty)! ||
+            (experienceSummary?.text?.isEmpty)! ||
             (experienceDescription?.text?.isEmpty)! ||
             (experience?.imageUrls.isEmpty)! ) {
             
@@ -147,9 +156,19 @@ class ExperienceEditorTableVC: UITableViewController {
         experience?.price = Int(price! * 100)
         experience?.days = experienceDays
         experience?.maxGuests = Int(experienceMaxGuests.text!)!
+        experience?.skillLevel = experienceSkillLevel.text!
+        experience?.summary = (experienceSummary?.text)!
         experience?.experienceDescription = (experienceDescription?.text)!
         experience?.save()
         self.dismiss(animated: true, completion:nil)
+    }
+    
+    @IBAction func summaryEdit_click(_ sender: Any) {
+        let getter = TextGetterController()
+        getter.setTitle("Summary")
+        getter.setText(experienceSummary.text!)
+        getter.delegate = self
+        self.present(getter, animated: true, completion: nil)
     }
     
     @IBAction func descriptionEdit_click(_ sender: Any) {
@@ -248,11 +267,14 @@ class ExperienceEditorTableVC: UITableViewController {
 }
 
 extension ExperienceEditorTableVC: TextGetterDelegate {
-    func didGetText(_ text: String) {
-        experienceDescription.text = text
+    func didGetText(title: String, text: String) {
+        switch title {
+        case "Summary":
+            experienceSummary.text = text
+        default:
+            experienceDescription.text = text
+        }
     }
-    
-    
 }
 
 // MARK: - UICollectionViewDataSource

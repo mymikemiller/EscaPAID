@@ -128,6 +128,8 @@ class ExperienceManager: NSObject {
                 price: result["price"]! as! Int,
                 days: days,
                 maxGuests: result["maxGuests"] as! Int,
+                skillLevel: result["skillLevel"] as! String,
+                summary: result["summary"] as! String,
                 description: result["description"] as! String,
                 imageUrls: result["images"] as! [String],
                 curator: curator)

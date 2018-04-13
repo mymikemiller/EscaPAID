@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TextGetterDelegate: class {
-    func didGetText(_ text: String)
+    func didGetText(title: String, text: String)
 }
 
 class TextGetterController: UIViewController {
@@ -46,7 +46,7 @@ class TextGetterController: UIViewController {
     }
     
     @IBAction func done_click(_ sender: Any) {
-        delegate?.didGetText(textView.text)
+        delegate?.didGetText(title: self.title!, text: textView.text)
         close()
     }
     
@@ -54,17 +54,4 @@ class TextGetterController: UIViewController {
         // TODO: Possibly call a "close me" method on the delegate and let the creating ViewController close this one. Apparently that's better practice so they can handle cases when, for example, this isn't popped up modally but is part of a NavigationController.
         self.presentingViewController?.dismiss(animated: true, completion:nil)
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
