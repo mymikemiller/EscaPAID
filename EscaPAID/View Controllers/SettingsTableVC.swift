@@ -65,8 +65,7 @@ class SettingsTableVC: UITableViewController {
             
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let originVC: OriginScreenVC = storyboard.instantiateViewController(withIdentifier: "originViewController") as! OriginScreenVC
-            // Prevent auto-login once we log out or we'll immediately be logged back in
-            Constants.autoLogin = false
+            
             self.present(originVC, animated: true, completion: nil)
 
         } else {

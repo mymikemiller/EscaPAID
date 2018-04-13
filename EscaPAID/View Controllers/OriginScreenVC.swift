@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class OriginScreenVC: UIViewController {
     
@@ -16,15 +17,23 @@ class OriginScreenVC: UIViewController {
         super.viewDidLoad()
 
         introTextLabel.text = Config.current.introText
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if (Constants.autoLogin) {
-            performSegue(withIdentifier: "origin_login", sender: self)
+        
+        // Handle the case when the user is already logged in when launching the app
+        Auth.auth().addStateDidChangeListener() { auth, user in
+            
+            guard user != nil else { return }
+                
+            FirebaseManager.initializeUser(firebaseUser: user!, completion: { (result) in
+                if (result == FirebaseManager.InitializationResult.Success) {
+                    
+                    self.performSegue(withIdentifier: "origin_already_logged_in_showApp", sender: nil)
+                } else {
+                    // We failed to log in. Do nothing. The user will have to log in again.
+                }
+            })
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

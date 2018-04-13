@@ -17,10 +17,17 @@ class FirebaseManager: NSObject {
     static var user:User? = nil
     static var currentFirebaseUser:FirebaseAuth.User? = nil
     
+    // The result of attempting to log in with email
     enum EmailLogInResult {
         case Success
         case Error  
         case EmailNotVerified
+    }
+    
+    // The result of attempting to initialize the User
+    enum InitializationResult {
+        case Success
+        case Error
     }
     
     static func sendVerificationEmail() {
@@ -39,35 +46,49 @@ class FirebaseManager: NSObject {
     static func logInWithEmail(email:String, password:String, completion:
         @escaping (_ result:EmailLogInResult) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (firebaseUser, error) in
+            
             if let error = error {
                 print(error.localizedDescription)
                 completion(EmailLogInResult.Error)
             } else {
                 if let firebaseUser = firebaseUser {
+                    
                     currentFirebaseUser = firebaseUser
                     if (firebaseUser.isEmailVerified) {
                         print ("Email verified. Signing in...")
                         
-                        getUser(uid: firebaseUser.uid, completion: { (user) in
+                        initializeUser(firebaseUser: firebaseUser, completion: { (result) in
                             
-                            if let user = user {
-                                //Save the logged in user
-                                self.user = user
-                                
+                            switch result {
+                            case InitializationResult.Success:
                                 completion(EmailLogInResult.Success)
-                            } else {
-                                print("No user information found for \(firebaseUser.uid)")
+                            default:
                                 completion(EmailLogInResult.Error)
                             }
-                            
                         })
-                        
                     } else {
                         completion(EmailLogInResult.EmailNotVerified)
                     }
                 }
             }
         })
+    }
+    
+    static func initializeUser(firebaseUser: FirebaseAuth.User, completion: @escaping (InitializationResult) -> Void) {
+        getUser(uid: firebaseUser.uid, completion: { (user) in
+            
+            if let user = user {
+                //Save the logged in user
+                self.user = user
+                
+                completion(InitializationResult.Success)
+            } else {
+                print("No user information found for \(firebaseUser.uid)")
+                completion(InitializationResult.Error)
+            }
+            
+        })
+
     }
     
     static func logOut() {

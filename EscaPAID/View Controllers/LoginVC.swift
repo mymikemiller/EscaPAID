@@ -27,15 +27,6 @@ class LoginVC: UIScrollingViewController {
         debugLoginsSection.isHidden = !Constants.debugMode
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if (Constants.autoLogin) {
-            // Automatically log the user in
-            mikem_click(self)
-        }
-    }
-    
     @IBAction func facebookLogin_click(_ sender: Any) {
         FirebaseManager.logInWithFacebook(from: self) { (success:Bool) in
             if (success) {
@@ -73,16 +64,13 @@ class LoginVC: UIScrollingViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
     
-
-    
     @IBAction func loginButton_click(_ sender: Any) {
         let email = self.email.text!.trimmingCharacters(in: .whitespaces)
         FirebaseManager.logInWithEmail(email: email, password: password.text!) { (result:FirebaseManager.EmailLogInResult) in
             if (result == FirebaseManager.EmailLogInResult.Success) {
                 
-                // Don't perform segue here, load vc
+                // Now that we're logged in, show the app
                 self.performSegue(withIdentifier: "login_ShowApp", sender: sender)
-                
                 
             } else if (result == FirebaseManager.EmailLogInResult.EmailNotVerified) {
                 let alertVC = UIAlertController(title: "Error", message: "Sorry. Your email address has not yet been verified. Do you want us to send another verification email to \(self.email.text ?? "your email")?", preferredStyle: .alert)
