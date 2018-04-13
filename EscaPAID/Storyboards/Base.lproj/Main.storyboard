@@ -82,7 +82,6 @@
                                                     <color key="titleColor" red="0.23868010938167572" green="0.085285425186157227" blue="0.1334540992975235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
@@ -413,14 +412,12 @@
                                                             <color key="titleColor" red="0.23868010940000001" green="0.08528542519" blue="0.13345409929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="15"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="facebookLogin_click:" destination="PJy-Cc-a7I" eventType="touchUpInside" id="3Z3-Db-Esv"/>
-                                                            <action selector="facebookLogin_click:" destination="9jn-rB-nLW" eventType="touchUpInside" id="fvp-fp-S5C"/>
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-uu-eP6" userLabel="Label Stack View">
