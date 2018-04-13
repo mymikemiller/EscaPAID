@@ -19,12 +19,15 @@ class ExperienceManager: NSObject {
     // Keep track of when Experiences were favorited. Values here are only used for sorting favorites, therefore there may be irrelevant values here for Experiences that are not currently favorited.
     static var favoritedTimestamps = [Experience : Int]()
     
+    func emptyExperiences() {
+        experiences = [Experience]()
+    }
+    
     func fillExperiences(forCity city: String, completion: @escaping () -> Void) {
         experiences = [Experience]()
         
         ExperienceManager.databaseRef.child("experiences").queryOrdered(byChild: "city").queryEqual(toValue: city).observe(.childAdded, with: {
             snap in
-            
             
             ExperienceManager.getExperience(snap, completion: { (experience) in
                 self.experiences.append(experience)

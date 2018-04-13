@@ -48,18 +48,27 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
+        // Respond to the user changing their city by refreshing all items in the table
+        NotificationCenter.default.addObserver(self,
+                                       selector: #selector(DiscoverVC.refreshTable),
+                                       name: .cityChanged,
+                                       object: nil)
+        
         // Show "No city selected" if applicable
-        setViewVisibility()
+        setCityPickerVisibility()
+        
+        // Refresh the table once we're done loading
+        refreshTable()
     }
     
     @IBAction func cityPickerDone_click(_ sender: Any) {
         FirebaseManager.user?.city = cityPicker.selectedString
         FirebaseManager.user?.update()
-        setViewVisibility()
+        setCityPickerVisibility()
         refreshTable()
     }
     
-    func setViewVisibility() {
+    func setCityPickerVisibility() {
         if (FirebaseManager.user?.city.isEmpty)! {
             tableView.isHidden = true
             cityPicker.isHidden = false
@@ -73,16 +82,16 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        refreshTable()
-    }
-    
-    func refreshTable() {
-        // Refresh the experiences every time the view appears (in case the user changed his city)
+    @objc func refreshTable() {
+        // Empty the table
+        experienceManager.emptyExperiences()
+        self.tableView.reloadData()
+        
+        // Refresh the experiences (e.g. when the user changes their city)
         experienceManager.fillExperiences(forCity: (FirebaseManager.user?.city)!) {
             () in
             DispatchQueue.main.async {
-                // This is too big a hammer
+                // This is too big a hammer. This happens every time a new Experience is added to the database. Ideally we would only refresh that one item.
                 self.tableView.reloadData()
             }
         }

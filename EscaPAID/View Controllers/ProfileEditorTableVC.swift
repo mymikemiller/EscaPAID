@@ -9,6 +9,11 @@
 import UIKit
 import RSKImageCropper
 
+extension Notification.Name {
+    static let cityChanged = Notification.Name(
+        rawValue: "cityChanged")
+}
+
 class ProfileEditorTableVC: UITableViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
@@ -67,11 +72,19 @@ class ProfileEditorTableVC: UITableViewController, UINavigationControllerDelegat
     }
     
     @IBAction func saveButton_click(_ sender: Any) {
+        
+        let cityUpdated = FirebaseManager.user?.city != city.text!
+        
         FirebaseManager.user?.firstName = firstName.text!
         FirebaseManager.user?.lastName = lastName.text!
         FirebaseManager.user?.city = city.text!
         FirebaseManager.user?.aboutMe = aboutMe.text!
         FirebaseManager.user?.update()
+        
+        if (cityUpdated) {
+            // Send a broadcast notification to let the app know we changed the city
+            NotificationCenter.default.post(name: Notification.Name.cityChanged, object: nil)
+        }
         
         self.dismiss(animated: true, completion:nil)
     }
