@@ -161,11 +161,10 @@ class FirebaseManager: NSObject {
     }
     
     static func getUser(uid:String, completion: @escaping (User?) -> Void) {
-        databaseRef.child("users").queryOrdered(byChild: "uid").queryEqual(toValue: uid).observeSingleEvent(of: DataEventType.value, with: { (snap) in
+        databaseRef.child("users").child(uid).observeSingleEvent(of: DataEventType.value, with: { (snap) in
             
             if (snap.exists()) {
-                let item = snap.children.nextObject() as! DataSnapshot
-                let value = item.value as! NSDictionary
+                let value = snap.value as! NSDictionary
                 let uid = value["uid"] as! String
                 let city = value["city"] as! String
                 let email = value["email"] as! String
