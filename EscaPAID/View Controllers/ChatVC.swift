@@ -26,7 +26,7 @@ class ChatVC: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        senderId = FirebaseManager.currentFirebaseUser?.uid
+        senderId = FirebaseManager.user?.uid
         senderDisplayName = ""
         
         // Remove the "attachment" button
@@ -41,7 +41,7 @@ class ChatVC: JSQMessagesViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        postManager.fillPosts(uid: FirebaseManager.currentFirebaseUser?.uid, toId:(thread?.user.uid)!, threadId: (thread?.threadId)!, completion: {_ in
+        postManager.fillPosts(uid: FirebaseManager.user?.uid, toId:(thread?.user.uid)!, threadId: (thread?.threadId)!, completion: {_ in
             // Now that it's been loaded, show the messages immediately (no animation)
             self.finishReceivingMessage(animated: false)
         })

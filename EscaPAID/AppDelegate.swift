@@ -212,13 +212,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 extension AppDelegate : MessagingDelegate {
     // This callback is fired at each app startup and whenever a new token is generated.
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
         
         // Store the token so we can write it to the database once we're logged in
         TabBarController.firebaseCloudMessagingToken = fcmToken
-        
-        // Add the token to the firebase database so we know which devices to notify when messages are received
-        
     }
 }
 

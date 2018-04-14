@@ -53,7 +53,6 @@ class FirebaseManager: NSObject {
             } else {
                 if let firebaseUser = firebaseUser {
                     
-                    currentFirebaseUser = firebaseUser
                     if (firebaseUser.isEmailVerified) {
                         print ("Email verified. Signing in...")
                         
@@ -75,6 +74,10 @@ class FirebaseManager: NSObject {
     }
     
     static func initializeUser(firebaseUser: FirebaseAuth.User, completion: @escaping (InitializationResult) -> Void) {
+        // Store the firebase user
+        currentFirebaseUser = firebaseUser
+        
+        // Get and store the User object
         getUser(uid: firebaseUser.uid, completion: { (user) in
             
             if let user = user {
