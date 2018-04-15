@@ -17,7 +17,7 @@ import AlamofireImage
             skillLevel.text = experience.skillLevel
             title.text = experience.title
             
-            // Set the size of the image so that it looks like it's being clipped by the card
+            // Set the corner radius of the image so that it looks like it's being clipped by the card
             image.layer.cornerRadius = cornerRadius
             
             // Use AlamofireImage to fetch the image
@@ -28,7 +28,6 @@ import AlamofireImage
             let filter = DynamicImageFilter("darken") {image in
                 return image.darkened()!
             }
-            
             image.af_setImage(
                 withURL: imageURL,
                 placeholderImage: placeholder,
@@ -44,23 +43,48 @@ import AlamofireImage
     @IBOutlet weak var skillLevel: UILabel!
     @IBOutlet weak var title: UILabel!    
     
+    // Our custom view from the XIB file
+    var view: UIView!
+    
+    func xibSetup() {
+        view = loadViewFromNib()
+        
+        // use bounds not frame or it'll be offset
+        view.frame = bounds
+        
+        // Make the view stretch with containing view
+        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        // Adding custom subview on top of our view (over any custom drawing > see note below)
+        addSubview(view)
+    }
+    
+    func loadViewFromNib() -> UIView {
+        
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: "ExperienceCard", bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        
+        return view
+    }
+    
     override init(frame: CGRect) {
+        // 1. setup any properties here
+        
+        // 2. call super.init(frame:)
         super.init(frame: frame)
-        commonInit()
+        
+        // 3. Setup view from .xib file
+        xibSetup()
     }
     
     required init?(coder aDecoder: NSCoder) {
+        // 1. setup any properties here
+        
+        // 2. call super.init(coder:)
         super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    private func commonInit() {
-        Bundle.main.loadNibNamed("ExperienceCard", owner: self, options: nil)
         
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
+        // 3. Setup view from .xib file
+        xibSetup()
     }
 
 }

@@ -32,9 +32,10 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cityPicker.setUp(textField: nil, strings: Constants.cities)
         
         // Set up the TableView
-        let nib = UINib(nibName: "ExperienceTableViewCell",bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "experienceCell")
+        let nib = UINib(nibName: "ExperienceCardCell",bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "experienceCardCell")
         tableView.layoutMargins = UIEdgeInsetsMake(0, 37, 0, 37)
+        tableView.rowHeight = tableView.contentSize.width / CGFloat(Constants.cardRatio)
 
         // Setup the Scope Bar
         searchController.searchBar.scopeButtonTitles = ["All"]
@@ -118,7 +119,7 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell", for: indexPath) as! ExperienceTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCardCell", for: indexPath) as! ExperienceCardCell
 
         let experience: Experience
         if isFiltering() {

@@ -15,8 +15,11 @@ class FavoritesTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: "ExperienceTableViewCell",bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "experienceCell")
+        let nib = UINib(nibName: "ExperienceCardCell",bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "experienceCardCell")
+        tableView.layoutMargins = UIEdgeInsetsMake(0, 37, 0, 37)
+        tableView.rowHeight = tableView.contentSize.width / CGFloat(Constants.cardRatio)
+
         
         // Fill the table once. New objects will appear here as they're added to the database (when the user favorites them) and removed when they're removed from the database (when the user unfavorites them)
         experienceManager.fillExperiences(forFavoritesOf: FirebaseManager.user!) {
@@ -43,7 +46,7 @@ class FavoritesTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell", for: indexPath) as! ExperienceTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCardCell", for: indexPath) as! ExperienceCardCell
         
         let experience = experienceManager.experiences[indexPath.row]
         cell.card.experience = experience

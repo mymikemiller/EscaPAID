@@ -16,6 +16,9 @@ class Constants: NSObject {
     
     static let stripeApiVersion =  "2018-02-06"
     
+    // The ratio of width to height of the ExperienceCards
+    static let cardRatio = 16/9.0
+    
     static let numGuests = ["1",
                             "2",
                             "3",

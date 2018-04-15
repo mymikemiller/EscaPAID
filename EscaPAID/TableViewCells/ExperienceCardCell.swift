@@ -1,24 +1,20 @@
 //
-//  ExperienceTableViewCell.swift
+//  ExperienceCardCell.swift
 //  EscaPAID
 //
-//  Created by Michael Miller on 11/23/17.
-//  Copyright © 2017 Michael Miller. All rights reserved.
+//  Created by Michael Miller on 4/15/18.
+//  Copyright © 2018 Michael Miller. All rights reserved.
 //
 
 import UIKit
 
-class ExperienceTableViewCell: UITableViewCell {
-    
+class ExperienceCardCell: UITableViewCell {
+
     @IBOutlet weak var card: ExperienceCard!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,5 +22,5 @@ class ExperienceTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

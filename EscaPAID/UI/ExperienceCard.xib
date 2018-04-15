@@ -76,13 +76,5 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="88.5" y="229.5"/>
         </view>
-        <viewController id="6lM-kB-85w">
-            <view key="view" contentMode="scaleToFill" id="GoB-gi-B8U">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                <viewLayoutGuide key="safeArea" id="SFC-lc-j9o"/>
-            </view>
-        </viewController>
     </objects>
 </document>
