@@ -22,7 +22,6 @@ class Experience: NSObject {
     var days:Days
     var maxGuests:Int
     var skillLevel:String
-    var summary:String
     var experienceDescription:String
     var imageUrls:[String]
     var curator:User
@@ -38,7 +37,6 @@ class Experience: NSObject {
          days:Days,
          maxGuests:Int,
          skillLevel:String,
-         summary:String,
          description:String,
          imageUrls:[String],
          curator:User) {
@@ -54,7 +52,6 @@ class Experience: NSObject {
         self.days = days
         self.maxGuests = maxGuests
         self.skillLevel = skillLevel
-        self.summary = summary
         self.experienceDescription = description
         self.imageUrls = imageUrls
         self.curator = curator
@@ -73,9 +70,7 @@ class Experience: NSObject {
                           price: 0,
                           days: Days.All,
                           maxGuests: 1,
-                          skillLevel: Constants.skillLevels[0],
-                          summary: "",
-                          description: "",
+                          skillLevel: Constants.skillLevels[0],                          description: "",
                           imageUrls: [],
                           curator: FirebaseManager.user!)
     }
@@ -121,7 +116,6 @@ class Experience: NSObject {
             "skillLevel": skillLevel,
             "includes":includes,
             "price":price,
-            "summary": summary,
             "description":experienceDescription,
             "images":imageUrls,
             "uid":curator.uid])

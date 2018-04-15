@@ -526,7 +526,6 @@
 				E79F05F22059700400889D14 /* Frameworks */,
 				E79F05F52059700400889D14 /* Resources */,
 				21D94329D377E6F30CDA3E07 /* [CP] Embed Pods Frameworks */,
-				DF750A182EFC587B661757B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -546,7 +545,6 @@
 				E7B9F7361FB6CAAE0058CE61 /* Frameworks */,
 				E7B9F7371FB6CAAE0058CE61 /* Resources */,
 				51FD8F588891DC6252FD90FC /* [CP] Embed Pods Frameworks */,
-				53F505A887D5279712D229FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -783,21 +781,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Tellomee/Pods-EscaPAID-Tellomee-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		53F505A887D5279712D229FF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Tellomee/Pods-EscaPAID-Tellomee-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		88D7E47BF6E0AB7106EF73D9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -814,21 +797,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DF750A182EFC587B661757B5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Renaissance/Pods-EscaPAID-Renaissance-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F56DF82873CBF95FE874FB24 /* [CP] Check Pods Manifest.lock */ = {

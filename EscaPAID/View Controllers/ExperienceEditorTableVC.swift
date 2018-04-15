@@ -71,7 +71,6 @@ class ExperienceEditorTableVC: UITableViewController {
         // Convert price from pennies to dollars with two decimal places
         experiencePrice.text = String(format: "%.2f", Double(experience!.price) / 100.0)
         experienceDescription.text = experience!.experienceDescription
-        experienceSummary.text = experience!.summary
         experienceDays = experience!.days
         experienceMaxGuests.text = String(experience!.maxGuests)
         experienceSkillLevel.text = experience!.skillLevel
@@ -136,7 +135,6 @@ class ExperienceEditorTableVC: UITableViewController {
             (experiencePrice?.text?.isEmpty)! ||
             price == nil ||
             (experienceSkillLevel?.text?.isEmpty)! ||
-            (experienceSummary?.text?.isEmpty)! ||
             (experienceDescription?.text?.isEmpty)! ||
             (experience?.imageUrls.isEmpty)! ) {
             
@@ -157,18 +155,9 @@ class ExperienceEditorTableVC: UITableViewController {
         experience?.days = experienceDays
         experience?.maxGuests = Int(experienceMaxGuests.text!)!
         experience?.skillLevel = experienceSkillLevel.text!
-        experience?.summary = (experienceSummary?.text)!
         experience?.experienceDescription = (experienceDescription?.text)!
         experience?.save()
         self.dismiss(animated: true, completion:nil)
-    }
-    
-    @IBAction func summaryEdit_click(_ sender: Any) {
-        let getter = TextGetterController()
-        getter.setTitle("Summary")
-        getter.setText(experienceSummary.text!)
-        getter.delegate = self
-        self.present(getter, animated: true, completion: nil)
     }
     
     @IBAction func descriptionEdit_click(_ sender: Any) {
@@ -268,12 +257,7 @@ class ExperienceEditorTableVC: UITableViewController {
 
 extension ExperienceEditorTableVC: TextGetterDelegate {
     func didGetText(title: String, text: String) {
-        switch title {
-        case "Summary":
-            experienceSummary.text = text
-        default:
-            experienceDescription.text = text
-        }
+        experienceDescription.text = text
     }
 }
 
