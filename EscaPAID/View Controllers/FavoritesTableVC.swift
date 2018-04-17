@@ -8,9 +8,12 @@
 
 import UIKit
 
-class FavoritesTableVC: UITableViewController {
+class FavoritesTableVC: UIViewController {
     
+    @IBOutlet var tableView: UITableView!
     let experienceManager = ExperienceManager()
+    
+    var selectedCell: ExperienceCardCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,31 +36,6 @@ class FavoritesTableVC: UITableViewController {
         self.tableView.reloadData()
     }
     
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return experienceManager.experiences.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCardCell", for: indexPath) as! ExperienceCardCell
-        
-        let experience = experienceManager.experiences[indexPath.row]
-        cell.card.experience = experience
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showExperience", sender: self)
-    }
-    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -76,3 +54,38 @@ class FavoritesTableVC: UITableViewController {
 }
 
 
+// MARK: - Table view data source
+
+extension FavoritesTableVC : UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return experienceManager.experiences.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCardCell", for: indexPath) as! ExperienceCardCell
+        
+        let experience = experienceManager.experiences[indexPath.row]
+        cell.card.experience = experience
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Unset the hero id for the previously selected card
+        selectedCell?.card.hero.id = nil
+        
+        // Store the selected card and set its hero id
+        selectedCell = tableView.cellForRow(at: indexPath) as! ExperienceCardCell
+        selectedCell?.card.hero.id = "hero_card"
+        
+        self.performSegue(withIdentifier: "showExperience", sender: self)
+    }
+}

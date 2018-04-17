@@ -10,7 +10,7 @@ import UIKit
 import Hero
 
 
-class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DiscoverVC: UIViewController {
     
     let experienceManager = ExperienceManager()
     
@@ -106,48 +106,6 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (isFiltering()) {
-            return filteredExperiences.count
-        } else {
-            return experienceManager.experiences.count
-        }
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCardCell", for: indexPath) as! ExperienceCardCell
-        
-        let experience: Experience
-        if isFiltering() {
-            experience = filteredExperiences[indexPath.row]
-        } else {
-            experience = experienceManager.experiences[indexPath.row]
-        }
-        
-        cell.card.experience = experience
-
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Unset the hero id for the previously selected card
-        selectedCell?.card.hero.id = nil
-        
-        // Store the selected card and set its hero id
-        selectedCell = tableView.cellForRow(at: indexPath) as! ExperienceCardCell
-        selectedCell?.card.hero.id = "hero_card"
-        
-        self.performSegue(withIdentifier: "showExperience", sender: self)
-    }
-
     
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
@@ -188,6 +146,51 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 controller.experience = experience
             }
         }
+    }
+}
+
+// MARK: - Table view data source
+
+extension DiscoverVC:  UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (isFiltering()) {
+            return filteredExperiences.count
+        } else {
+            return experienceManager.experiences.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCardCell", for: indexPath) as! ExperienceCardCell
+        
+        let experience: Experience
+        if isFiltering() {
+            experience = filteredExperiences[indexPath.row]
+        } else {
+            experience = experienceManager.experiences[indexPath.row]
+        }
+        
+        cell.card.experience = experience
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Unset the hero id for the previously selected card
+        selectedCell?.card.hero.id = nil
+        
+        // Store the selected card and set its hero id
+        selectedCell = tableView.cellForRow(at: indexPath) as! ExperienceCardCell
+        selectedCell?.card.hero.id = "hero_card"
+        
+        self.performSegue(withIdentifier: "showExperience", sender: self)
     }
 }
 
