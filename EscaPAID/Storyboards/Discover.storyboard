@@ -78,9 +78,6 @@
                         <viewLayoutGuide key="safeArea" id="iZg-Jl-poZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Discover" id="5eI-JB-p8R"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="cityPicker" destination="m18-SP-hF0" id="dIC-SC-uWc"/>
                         <outlet property="cityPickerToolbar" destination="1KJ-yx-U68" id="KC3-PU-uDA"/>

@@ -40,7 +40,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o3y-Iz-maU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o3y-Iz-maU">
                                 <rect key="frame" x="16" y="524" width="343" height="103"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -77,7 +77,7 @@
                                 <rect key="frame" x="16" y="155" width="343" height="365"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="card"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="hero_card"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="qD6-7d-BzV" kind="embed" identifier="pageViewController_embed" id="XIe-Sm-nAP"/>
@@ -123,9 +123,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z7h-fx-SWE"/>
                     </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="category" destination="6td-qG-Vk7" id="hUR-Ae-bnj"/>
                         <outlet property="curator" destination="Sgx-KJ-7VR" id="SMx-br-uDD"/>

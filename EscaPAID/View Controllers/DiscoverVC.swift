@@ -139,11 +139,11 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Unset the hero id for the previously selected card
-        selectedCell?.card.hero.id = ""
+        selectedCell?.card.hero.id = nil
         
         // Store the selected card and set its hero id
         selectedCell = tableView.cellForRow(at: indexPath) as! ExperienceCardCell
-        selectedCell?.card.hero.id = "card"
+        selectedCell?.card.hero.id = "hero_card"
         
         self.performSegue(withIdentifier: "showExperience", sender: self)
     }
