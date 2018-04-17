@@ -83,6 +83,11 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     @IBAction func messageButton_click(_ sender: Any) {
         
+        guard self.experience?.curator == FirebaseManager.user else {
+            present(UIAlertController(message: "You cannot send a message to yourself."), animated: true)
+            return
+        }
+        
         let data = ["user" : (self.experience?.curator)!]
         
         // Send a broadcast notification to let the inbox know which thread to show
