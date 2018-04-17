@@ -19,15 +19,17 @@ import AlamofireImage
             
             // Set the corner radius of the image so that it looks like it's being clipped by the card
             image.layer.cornerRadius = cornerRadius
+            shadeView.layer.cornerRadius = cornerRadius
+            
             
             // Use AlamofireImage to fetch the image
             let imageURL = URL(string: experience.imageUrls[0])!
             let placeholder = UIImage(named: "loading")
             
-            // Darken the image after fetching
-            let filter = DynamicImageFilter("darken") {image in
-                return image.darkened()!
-            }
+            // For now, don't darken the image after fetching. We darken it by having a semi-transparent view on top of it.
+            let filter:DynamicImageFilter? = nil
+            //let filter = DynamicImageFilter("darken") {image in return image.darkened()! }
+            
             image.af_setImage(
                 withURL: imageURL,
                 placeholderImage: placeholder,
@@ -41,7 +43,8 @@ import AlamofireImage
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var skillLevel: UILabel!
-    @IBOutlet weak var title: UILabel!    
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var shadeView: UIView!
     
     // Our custom view from the XIB file
     var view: UIView!

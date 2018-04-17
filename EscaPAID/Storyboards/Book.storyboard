@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8jk-U6-0pk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8jk-U6-0pk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +14,7 @@
         <!--ExperienceVC-->
         <scene sceneID="AeC-4a-ib9">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-8jk-U6-0pk" id="8jk-U6-0pk" customClass="ExperienceVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-8jk-U6-0pk" id="8jk-U6-0pk" customClass="ExperienceVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pPZ-Uq-KIb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,6 +75,10 @@
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psb-Ac-Lmf">
                                 <rect key="frame" x="16" y="155" width="343" height="365"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="card"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="qD6-7d-BzV" kind="embed" identifier="pageViewController_embed" id="XIe-Sm-nAP"/>
                                 </connections>
@@ -119,6 +123,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z7h-fx-SWE"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="category" destination="6td-qG-Vk7" id="hUR-Ae-bnj"/>
                         <outlet property="curator" destination="Sgx-KJ-7VR" id="SMx-br-uDD"/>
@@ -143,12 +150,12 @@
         <!--Delegate-->
         <scene sceneID="CNd-lc-GBW">
             <objects>
-                <viewController id="RXj-YQ-jXV" customClass="ReservationVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RXj-YQ-jXV" customClass="ReservationVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NTs-Az-GYR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhB-ch-p5d" customClass="UICalendar" customModule="tellomee" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhB-ch-p5d" customClass="UICalendar" customModule="Renaissance" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="300"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -218,7 +225,7 @@
         <!--Confirmation TableVC-->
         <scene sceneID="0fO-sM-Y3q">
             <objects>
-                <tableViewController id="Oab-Oo-qV8" customClass="ConfirmationTableVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Oab-Oo-qV8" customClass="ConfirmationTableVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DLL-w3-SRE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -419,7 +426,7 @@
         <!--Experience ImageVC-->
         <scene sceneID="iTN-fi-8hd">
             <objects>
-                <viewController storyboardIdentifier="ExperienceImageVC" id="5OG-co-Rcb" customClass="ExperienceImageVC" customModule="tellomee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExperienceImageVC" id="5OG-co-Rcb" customClass="ExperienceImageVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pDJ-6X-c3E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

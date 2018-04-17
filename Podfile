@@ -14,6 +14,7 @@ abstract_target 'EscaPAID' do
   pod 'RSKImageCropper'
   pod 'NextResponderTextField'
   pod 'AlamofireImage', '~> 3.3'
+  pod 'Hero'
 
   # Pods for Facebook
   pod 'Bolts'

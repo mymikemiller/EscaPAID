@@ -35,6 +35,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="card" destination="U8j-iZ-EKz" id="Unc-Cg-BEY"/>
+                <outlet property="contentView" destination="H2p-sc-9uM" id="8mf-Jb-Tho"/>
             </connections>
             <point key="canvasLocation" x="34" y="111"/>
         </tableViewCell>

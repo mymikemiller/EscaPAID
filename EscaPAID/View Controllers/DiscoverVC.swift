@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Hero
+
 
 class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let experienceManager = ExperienceManager()
+    
+    var selectedCell: ExperienceCardCell?
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -120,6 +124,9 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCardCell", for: indexPath) as! ExperienceCardCell
+        
+        // set a unique hero Id for the card
+        cell.card.hero.id = "card\(indexPath.row)"
 
         let experience: Experience
         if isFiltering() {
@@ -134,6 +141,13 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Unset the hero id for the previously selected card
+        selectedCell?.card.hero.id = ""
+        
+        // Store the selected card and set its hero id
+        selectedCell = tableView.cellForRow(at: indexPath) as! ExperienceCardCell
+        selectedCell?.card.hero.id = "card"
+        
         self.performSegue(withIdentifier: "showExperience", sender: self)
     }
 
@@ -175,8 +189,6 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
                 let controller = segue.destination as! ExperienceVC
                 controller.experience = experience
-//                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-//                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
@@ -200,4 +212,3 @@ extension DiscoverVC: UISearchBarDelegate {
         filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
     }
 }
-

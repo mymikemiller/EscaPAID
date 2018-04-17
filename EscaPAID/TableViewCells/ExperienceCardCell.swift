@@ -17,10 +17,12 @@ class ExperienceCardCell: UITableViewCell {
         // Initialization code
     }
 
+    // We don't want to look any different when we're selected or highlighted, so intercept and don't call super for these methods
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        // Don't call super
+    }
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        // Don't call super
     }
     
 }
