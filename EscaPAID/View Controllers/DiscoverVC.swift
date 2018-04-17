@@ -125,9 +125,6 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCardCell", for: indexPath) as! ExperienceCardCell
         
-        // set a unique hero Id for the card
-        cell.card.hero.id = "card\(indexPath.row)"
-
         let experience: Experience
         if isFiltering() {
             experience = filteredExperiences[indexPath.row]
@@ -192,8 +189,6 @@ class DiscoverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    
-
 }
 
 
