@@ -28,6 +28,8 @@
 		<string>#431522</string>
 		<key>Intro Text</key>
 		<string>Learn a new craft, art or hobby hands-on with an artisan in your community</string>
+		<key>Main Color</key>
+		<string>#591D25</string>
 	</dict>
 	<key>Tellomee</key>
 	<dict>
@@ -55,6 +57,8 @@
 		<string>#004d00</string>
 		<key>Intro Text</key>
 		<string>Discover unique experiences in your city</string>
+		<key>Main Color</key>
+		<string>#1d591d</string>
 	</dict>
 </dict>
 </plist>

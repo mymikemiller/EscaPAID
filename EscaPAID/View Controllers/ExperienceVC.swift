@@ -14,7 +14,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
 
     @IBOutlet weak var experienceTitle: UILabel!
     
-    @IBOutlet weak var category: UILabel!
+    @IBOutlet weak var skillLevel: UILabel!
     
     @IBOutlet weak var curator: UIButton!
     
@@ -33,7 +33,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
 
         if let experience = experience {
             experienceTitle.text = experience.title
-            category.text = experience.category
+            skillLevel.text = experience.skillLevel + " Level"
             curator.setTitle("By: \(experience.curator.firstName)", for: .normal)
             
             let includesArray = experience.includes.split(separator: ",")

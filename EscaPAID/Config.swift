@@ -45,4 +45,8 @@ class Config {
         return UIColor(hexString: hex)! }
 
     var introText: String { return dictionary.value(forKey: "Intro Text") as! String }
+    
+    var mainColor: UIColor {
+        let hex = dictionary.value(forKey:"Main Color") as! String
+        return UIColor(hexString: hex)! }
 }
