@@ -162,6 +162,10 @@
 		E7ED3D192083D70200EBB80A /* ExperienceCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED3D162083D70200EBB80A /* ExperienceCardCell.swift */; };
 		E7ED3D1A2083D70200EBB80A /* ExperienceCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7ED3D172083D70200EBB80A /* ExperienceCardCell.xib */; };
 		E7ED3D1B2083D70200EBB80A /* ExperienceCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7ED3D172083D70200EBB80A /* ExperienceCardCell.xib */; };
+		E7ED3D1F2086907100EBB80A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7ED3D1E2086907100EBB80A /* Profile.storyboard */; };
+		E7ED3D202086907100EBB80A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7ED3D1E2086907100EBB80A /* Profile.storyboard */; };
+		E7ED3D222086D2F400EBB80A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED3D212086D2F400EBB80A /* ProfileVC.swift */; };
+		E7ED3D232086D2F400EBB80A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED3D212086D2F400EBB80A /* ProfileVC.swift */; };
 		E7F585F81FCCDECE00536EF5 /* CuratorSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */; };
 		E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */; };
 		E7F9A0821FB7378B00916FBA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0811FB7378B00916FBA /* ChatVC.swift */; };
@@ -256,6 +260,8 @@
 		E7E459A220644E740077C1DE /* Tellomee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tellomee.entitlements; sourceTree = "<group>"; };
 		E7ED3D162083D70200EBB80A /* ExperienceCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCardCell.swift; sourceTree = "<group>"; };
 		E7ED3D172083D70200EBB80A /* ExperienceCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCardCell.xib; sourceTree = "<group>"; };
+		E7ED3D1E2086907100EBB80A /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		E7ED3D212086D2F400EBB80A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuratorSettingsVC.swift; sourceTree = "<group>"; };
 		E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableVC.swift; sourceTree = "<group>"; };
 		E7F9A0811FB7378B00916FBA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
@@ -310,6 +316,7 @@
 				E7D3D79520362E0E00F91CC4 /* ProfileEditor.storyboard */,
 				E7D3D79820362EF400F91CC4 /* Reservations.storyboard */,
 				E7D3D79B20362FCC00F91CC4 /* ExperienceEditor.storyboard */,
+				E7ED3D1E2086907100EBB80A /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -338,6 +345,7 @@
 				E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */,
 				E79FA59E202A69050060B44D /* ReservationsTableVC.swift */,
 				E728EA34202BB6C30041F6AC /* ReceiptTableVC.swift */,
+				E7ED3D212086D2F400EBB80A /* ProfileVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -641,6 +649,7 @@
 				E79F06052059700400889D14 /* Assets.xcassets in Resources */,
 				E7ED3D1B2083D70200EBB80A /* ExperienceCardCell.xib in Resources */,
 				E7CF4DF4206D6D9600B7F97E /* Renaissance.xcassets in Resources */,
+				E7ED3D202086907100EBB80A /* Profile.storyboard in Resources */,
 				E7E4599D205DCEFC0077C1DE /* GoogleService-Info.plist in Resources */,
 				E7E45983205977820077C1DE /* Configuration.plist in Resources */,
 				E79F06062059700400889D14 /* Main.storyboard in Resources */,
@@ -672,6 +681,7 @@
 				E79ADB4F20751C4500C02C0A /* Lato-Regular.ttf in Resources */,
 				E7ED3D1A2083D70200EBB80A /* ExperienceCardCell.xib in Resources */,
 				E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */,
+				E7ED3D1F2086907100EBB80A /* Profile.storyboard in Resources */,
 				E7E4599F205DCF0F0077C1DE /* GoogleService-Info.plist in Resources */,
 				E7E45982205977820077C1DE /* Configuration.plist in Resources */,
 				E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */,
@@ -872,6 +882,7 @@
 				E79F05E62059700400889D14 /* TextGetterController.swift in Sources */,
 				E7E45986205993600077C1DE /* Config.swift in Sources */,
 				E79F05E72059700400889D14 /* ReservationTableViewCell.swift in Sources */,
+				E7ED3D232086D2F400EBB80A /* ProfileVC.swift in Sources */,
 				E79F05E82059700400889D14 /* StorageManager.swift in Sources */,
 				E79F05E92059700400889D14 /* FavoritesTableVC.swift in Sources */,
 				E79F05EA2059700400889D14 /* ReservationManager.swift in Sources */,
@@ -934,6 +945,7 @@
 				E7E45985205993600077C1DE /* Config.swift in Sources */,
 				E79FA5A3202A6AB90060B44D /* ReservationTableViewCell.swift in Sources */,
 				E77A736A204875A200AE0DE4 /* StorageManager.swift in Sources */,
+				E7ED3D222086D2F400EBB80A /* ProfileVC.swift in Sources */,
 				E7CF4DE0206CA31B00B7F97E /* GradientView.swift in Sources */,
 				E774C83C2037877E00F98EB2 /* FavoritesTableVC.swift in Sources */,
 				E77A736D204875A200AE0DE4 /* ReservationManager.swift in Sources */,

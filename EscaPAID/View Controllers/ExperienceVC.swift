@@ -16,7 +16,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     @IBOutlet weak var category: UILabel!
     
-    @IBOutlet weak var curator: UILabel!
+    @IBOutlet weak var curator: UIButton!
     
     @IBOutlet weak var info: UITextView!
     
@@ -34,7 +34,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         if let experience = experience {
             experienceTitle.text = experience.title
             category.text = experience.category
-            curator.text = "By: \(experience.curator.firstName)"
+            curator.setTitle("By: \(experience.curator.firstName)", for: .normal)
             
             let includesArray = experience.includes.split(separator: ",")
             var includesText = ""
@@ -144,6 +144,8 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             imagePageViewController = segue.destination as! UIPageViewController
         } else if (segue.identifier == "showReservationVC") {
             (segue.destination as! ReservationVC).experience = experience
+        } else if (segue.identifier == "showProfile") {
+            (segue.destination as! ProfileVC).user = experience!.curator
         }
     }
     
