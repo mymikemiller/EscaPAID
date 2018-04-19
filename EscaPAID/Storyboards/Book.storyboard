@@ -12,8 +12,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
         <array key="Montserrat-Bold.ttf">
             <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -22,124 +28,139 @@
             <objects>
                 <viewController storyboardIdentifier="UIViewController-8jk-U6-0pk" id="8jk-U6-0pk" customClass="ExperienceVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pPZ-Uq-KIb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="krH-WB-FEx" userLabel="Main Stack View">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayz-Rt-QDS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="980"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psb-Ac-Lmf" userLabel="Image Pager">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="235.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Psb-Ac-Lmf" secondAttribute="height" multiplier="414:260" id="EKP-vD-CWU"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="hero_card"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="qD6-7d-BzV" kind="embed" identifier="pageViewController_embed" id="XIe-Sm-nAP"/>
-                                        </connections>
-                                    </containerView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="j7N-gM-lEa" userLabel="Lower Stack View">
-                                        <rect key="frame" x="0.0" y="235.5" width="375" height="239"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hK0-am-loF" userLabel="Container">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="420.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEs-RE-VP4" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="8" width="343" height="29.5"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P10-3l-81W">
-                                                <rect key="frame" x="16" y="37.5" width="343" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VN-dH-56k">
-                                                <rect key="frame" x="132" y="58" width="111" height="40"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="krH-WB-FEx" userLabel="Main Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="420.5"/>
+                                                <subviews>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psb-Ac-Lmf" userLabel="Image Pager">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="235.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Psb-Ac-Lmf" secondAttribute="height" multiplier="414:260" id="EKP-vD-CWU"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="hero_card"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="qD6-7d-BzV" kind="embed" identifier="pageViewController_embed" id="XIe-Sm-nAP"/>
+                                                        </connections>
+                                                    </containerView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="j7N-gM-lEa" userLabel="Lower Stack View">
+                                                        <rect key="frame" x="0.0" y="235.5" width="375" height="155"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEs-RE-VP4" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
+                                                                <rect key="frame" x="16" y="8" width="343" height="29.5"/>
+                                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P10-3l-81W">
+                                                                <rect key="frame" x="16" y="37.5" width="343" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                                <color key="textColor" red="0.64705882349999999" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6y4-yg-eTu">
+                                                                <rect key="frame" x="146.5" y="57.5" width="82.5" height="19.5"/>
+                                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VN-dH-56k">
+                                                                <rect key="frame" x="132" y="77" width="111" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="6sQ-aQ-bh2"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Add to Favorites"/>
+                                                                <connections>
+                                                                    <action selector="favoritesButton_click:" destination="8jk-U6-0pk" eventType="touchUpInside" id="WTo-Su-7kR"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHM-3c-b0Y" userLabel="Curator">
+                                                                <rect key="frame" x="148.5" y="117" width="78" height="30"/>
+                                                                <state key="normal" title="By: Curator"/>
+                                                                <connections>
+                                                                    <segue destination="XKI-jc-A6l" kind="show" identifier="showProfile" id="28p-Om-uBt"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="P10-3l-81W" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="GBJ-kJ-azc"/>
+                                                            <constraint firstItem="pEs-RE-VP4" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="SS2-g9-vl3"/>
+                                                        </constraints>
+                                                        <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yYm-ZQ-vXe" userLabel="Message Reserve Stack View">
+                                                        <rect key="frame" x="0.0" y="390.5" width="375" height="30"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-Mp-ygU">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                                                                <state key="normal" title="Message"/>
+                                                                <connections>
+                                                                    <action selector="messageButton_click:" destination="8jk-U6-0pk" eventType="touchUpInside" id="a2X-Ig-lTX"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUu-xi-b7c">
+                                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
+                                                                <state key="normal" title="Reserve"/>
+                                                                <connections>
+                                                                    <segue destination="RXj-YQ-jXV" kind="show" identifier="showReservationVC" id="1Su-73-Lx5"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="6sQ-aQ-bh2"/>
+                                                    <constraint firstItem="yYm-ZQ-vXe" firstAttribute="leading" secondItem="krH-WB-FEx" secondAttribute="leading" id="1j3-4A-86e"/>
+                                                    <constraint firstItem="j7N-gM-lEa" firstAttribute="leading" secondItem="krH-WB-FEx" secondAttribute="leadingMargin" id="5Vf-ew-yif"/>
+                                                    <constraint firstItem="Psb-Ac-Lmf" firstAttribute="leading" secondItem="krH-WB-FEx" secondAttribute="leading" id="InS-mL-nqv"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="j7N-gM-lEa" secondAttribute="trailing" id="hTT-Ek-MQg"/>
+                                                    <constraint firstItem="Psb-Ac-Lmf" firstAttribute="trailing" secondItem="krH-WB-FEx" secondAttribute="trailing" id="juZ-7H-fnW"/>
+                                                    <constraint firstItem="yYm-ZQ-vXe" firstAttribute="trailing" secondItem="krH-WB-FEx" secondAttribute="trailing" id="oMw-M0-qry"/>
                                                 </constraints>
-                                                <state key="normal" title="Add to Favorites"/>
-                                                <connections>
-                                                    <action selector="favoritesButton_click:" destination="8jk-U6-0pk" eventType="touchUpInside" id="WTo-Su-7kR"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHM-3c-b0Y" userLabel="Curator">
-                                                <rect key="frame" x="148.5" y="98" width="78" height="30"/>
-                                                <state key="normal" title="By: Curator"/>
-                                                <connections>
-                                                    <segue destination="XKI-jc-A6l" kind="show" identifier="showProfile" id="28p-Om-uBt"/>
-                                                </connections>
-                                            </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o3y-Iz-maU">
-                                                <rect key="frame" x="64" y="128" width="247" height="103"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="103" id="ZEP-zo-Vqj"/>
-                                                </constraints>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Description">
-                                                        <attributes>
-                                                            <font key="NSFont" size="12" name="Helvetica"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
+                                            </stackView>
                                         </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="P10-3l-81W" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="GBJ-kJ-azc"/>
-                                            <constraint firstItem="pEs-RE-VP4" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="SS2-g9-vl3"/>
+                                            <constraint firstItem="krH-WB-FEx" firstAttribute="top" secondItem="hK0-am-loF" secondAttribute="top" id="7Qy-YL-dv0"/>
+                                            <constraint firstItem="krH-WB-FEx" firstAttribute="leading" secondItem="hK0-am-loF" secondAttribute="leading" id="DAF-aa-2uH"/>
+                                            <constraint firstAttribute="trailing" secondItem="krH-WB-FEx" secondAttribute="trailing" id="SgD-nP-f41"/>
+                                            <constraint firstAttribute="bottom" secondItem="krH-WB-FEx" secondAttribute="bottom" id="bQk-FX-hgM"/>
                                         </constraints>
-                                        <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yYm-ZQ-vXe" userLabel="Message Reserve Stack View">
-                                        <rect key="frame" x="0.0" y="474.5" width="375" height="172.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-Mp-ygU">
-                                                <rect key="frame" x="0.0" y="71.5" width="187.5" height="30"/>
-                                                <state key="normal" title="Message"/>
-                                                <connections>
-                                                    <action selector="messageButton_click:" destination="8jk-U6-0pk" eventType="touchUpInside" id="a2X-Ig-lTX"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUu-xi-b7c">
-                                                <rect key="frame" x="187.5" y="71.5" width="187.5" height="30"/>
-                                                <state key="normal" title="Reserve"/>
-                                                <connections>
-                                                    <segue destination="RXj-YQ-jXV" kind="show" identifier="showReservationVC" id="1Su-73-Lx5"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="yYm-ZQ-vXe" firstAttribute="leading" secondItem="krH-WB-FEx" secondAttribute="leading" id="1j3-4A-86e"/>
-                                    <constraint firstItem="j7N-gM-lEa" firstAttribute="leading" secondItem="krH-WB-FEx" secondAttribute="leadingMargin" id="5Vf-ew-yif"/>
-                                    <constraint firstItem="Psb-Ac-Lmf" firstAttribute="leading" secondItem="krH-WB-FEx" secondAttribute="leading" id="InS-mL-nqv"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="j7N-gM-lEa" secondAttribute="trailing" id="hTT-Ek-MQg"/>
-                                    <constraint firstItem="Psb-Ac-Lmf" firstAttribute="trailing" secondItem="krH-WB-FEx" secondAttribute="trailing" id="juZ-7H-fnW"/>
-                                    <constraint firstItem="yYm-ZQ-vXe" firstAttribute="trailing" secondItem="krH-WB-FEx" secondAttribute="trailing" id="oMw-M0-qry"/>
+                                    <constraint firstAttribute="bottom" secondItem="hK0-am-loF" secondAttribute="bottom" id="0ql-pE-iEK"/>
+                                    <constraint firstAttribute="trailing" secondItem="hK0-am-loF" secondAttribute="trailing" id="6mG-EW-IbL"/>
+                                    <constraint firstItem="hK0-am-loF" firstAttribute="leading" secondItem="ayz-Rt-QDS" secondAttribute="leading" id="8md-wL-NRR"/>
+                                    <constraint firstItem="hK0-am-loF" firstAttribute="top" secondItem="ayz-Rt-QDS" secondAttribute="top" id="EVm-dp-XVn"/>
                                 </constraints>
-                            </stackView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Z7h-fx-SWE" firstAttribute="trailing" secondItem="krH-WB-FEx" secondAttribute="trailing" id="92e-Y2-XQw"/>
-                            <constraint firstItem="krH-WB-FEx" firstAttribute="leading" secondItem="pPZ-Uq-KIb" secondAttribute="leading" id="9oI-9a-clc"/>
-                            <constraint firstItem="krH-WB-FEx" firstAttribute="top" secondItem="Z7h-fx-SWE" secondAttribute="top" id="BSr-wI-gFu"/>
-                            <constraint firstItem="Z7h-fx-SWE" firstAttribute="bottom" secondItem="krH-WB-FEx" secondAttribute="bottom" id="iNQ-4s-F4X"/>
+                            <constraint firstItem="ayz-Rt-QDS" firstAttribute="top" secondItem="Z7h-fx-SWE" secondAttribute="top" id="1ym-zl-BX0"/>
+                            <constraint firstItem="ayz-Rt-QDS" firstAttribute="leading" secondItem="Z7h-fx-SWE" secondAttribute="leading" id="Q2l-3K-ogu"/>
+                            <constraint firstItem="Z7h-fx-SWE" firstAttribute="trailing" secondItem="ayz-Rt-QDS" secondAttribute="trailing" id="e8N-ZU-i3b"/>
+                            <constraint firstItem="Z7h-fx-SWE" firstAttribute="bottom" secondItem="ayz-Rt-QDS" secondAttribute="bottom" id="g1I-de-Red"/>
+                            <constraint firstItem="hK0-am-loF" firstAttribute="width" secondItem="pPZ-Uq-KIb" secondAttribute="width" id="uvl-Rt-jbO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z7h-fx-SWE"/>
                     </view>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="curator" destination="PHM-3c-b0Y" id="Ddi-0B-Ozu"/>
+                        <outlet property="experienceDescription" destination="6y4-yg-eTu" id="Mqe-RL-en9"/>
                         <outlet property="experienceTitle" destination="pEs-RE-VP4" id="9vB-fG-6FX"/>
                         <outlet property="favoritesButton" destination="2VN-dH-56k" id="ZtK-VD-JLE"/>
-                        <outlet property="info" destination="o3y-Iz-maU" id="Xen-wJ-7Tv"/>
                         <outlet property="pagerContainer" destination="Psb-Ac-Lmf" id="5KL-eO-Ltr"/>
                         <outlet property="skillLevel" destination="P10-3l-81W" id="5mS-yL-RrY"/>
                     </connections>

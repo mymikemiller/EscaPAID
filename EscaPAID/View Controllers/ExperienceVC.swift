@@ -18,7 +18,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     @IBOutlet weak var curator: UIButton!
     
-    @IBOutlet weak var info: UITextView!
+    @IBOutlet weak var experienceDescription: UILabel!
     
     @IBOutlet weak var pagerContainer: UIView!
     
@@ -42,7 +42,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
                 includesText += str.trimmingCharacters(in: .whitespacesAndNewlines) + "\n"
             }
             
-            info.text = experience.experienceDescription + "\n\n" +
+            experienceDescription.text = experience.experienceDescription + "\n\n" +
             "INCLUDES: \n" + includesText + "\n\n" +
             "ABOUT ME: " + experience.curator.aboutMe + "\n\n" +
             String(format: "PRICE: $%.02f", experience.price)
