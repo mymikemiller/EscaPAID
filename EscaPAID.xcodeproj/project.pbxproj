@@ -43,6 +43,10 @@
 		E783B9962087DDDF00F2F769 /* ThemedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9942087DDDF00F2F769 /* ThemedLabel.swift */; };
 		E783B9982087E7A400F2F769 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9972087E7A400F2F769 /* ThemedButton.swift */; };
 		E783B9992087E7A400F2F769 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9972087E7A400F2F769 /* ThemedButton.swift */; };
+		E783B99B2088F60600F2F769 /* HexagonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B99A2088F60600F2F769 /* HexagonImageView.swift */; };
+		E783B99C2088F60600F2F769 /* HexagonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B99A2088F60600F2F769 /* HexagonImageView.swift */; };
+		E783B99E2088F67400F2F769 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B99D2088F67400F2F769 /* Utils.swift */; };
+		E783B99F2088F67400F2F769 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B99D2088F67400F2F769 /* Utils.swift */; };
 		E79770E52043816700B2206C /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E42043816700B2206C /* MainAPIClient.swift */; };
 		E79770E82044774100B2206C /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E72044774000B2206C /* UIAlertController+Utility.swift */; };
 		E79ADAFA2071BFD400C02C0A /* UILabel+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */; };
@@ -213,6 +217,8 @@
 		E77A7368204875A200AE0DE4 /* ExperienceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceManager.swift; sourceTree = "<group>"; };
 		E783B9942087DDDF00F2F769 /* ThemedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedLabel.swift; sourceTree = "<group>"; };
 		E783B9972087E7A400F2F769 /* ThemedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButton.swift; sourceTree = "<group>"; };
+		E783B99A2088F60600F2F769 /* HexagonImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonImageView.swift; sourceTree = "<group>"; };
+		E783B99D2088F67400F2F769 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E79770E42043816700B2206C /* MainAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIClient.swift; sourceTree = "<group>"; };
 		E79770E72044774000B2206C /* UIAlertController+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utility.swift"; sourceTree = "<group>"; };
 		E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Utility.swift"; sourceTree = "<group>"; };
@@ -408,6 +414,8 @@
 				E7B4CDEF207FFBE200352DB1 /* UIImage+Utility.swift */,
 				E783B9942087DDDF00F2F769 /* ThemedLabel.swift */,
 				E783B9972087E7A400F2F769 /* ThemedButton.swift */,
+				E783B99A2088F60600F2F769 /* HexagonImageView.swift */,
+				E783B99D2088F67400F2F769 /* Utils.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -860,6 +868,7 @@
 				E79F05CF2059700400889D14 /* Experience.swift in Sources */,
 				E783B9992087E7A400F2F769 /* ThemedButton.swift in Sources */,
 				E79F05D02059700400889D14 /* DaySelectorTableVC.swift in Sources */,
+				E783B99C2088F60600F2F769 /* HexagonImageView.swift in Sources */,
 				E79F05D12059700400889D14 /* ReservationProcessor.swift in Sources */,
 				E79F05D22059700400889D14 /* FirebaseManager.swift in Sources */,
 				E79F05D32059700400889D14 /* ExperienceImageVC.swift in Sources */,
@@ -880,6 +889,7 @@
 				E79F05DF2059700400889D14 /* MyExperiencesTableVC.swift in Sources */,
 				E79F05E02059700400889D14 /* TabBarController.swift in Sources */,
 				E7B4CDF1207FFBE200352DB1 /* UIImage+Utility.swift in Sources */,
+				E783B99F2088F67400F2F769 /* Utils.swift in Sources */,
 				E783B9962087DDDF00F2F769 /* ThemedLabel.swift in Sources */,
 				E79ADAFE20743F8500C02C0A /* UIScrollingViewController.swift in Sources */,
 				E79F05E12059700400889D14 /* ThreadTableViewCell.swift in Sources */,
@@ -925,6 +935,7 @@
 				E712DE4420154F1C00661DE7 /* DaySelectorTableVC.swift in Sources */,
 				E783B9982087E7A400F2F769 /* ThemedButton.swift in Sources */,
 				E79FA59520290E3D0060B44D /* ReservationProcessor.swift in Sources */,
+				E783B99B2088F60600F2F769 /* HexagonImageView.swift in Sources */,
 				E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */,
 				E7D316881FCF246A0062E178 /* ExperienceImageVC.swift in Sources */,
 				E77A7369204875A200AE0DE4 /* ThreadManager.swift in Sources */,
@@ -945,6 +956,7 @@
 				E71F33A82004509800312B91 /* TabBarController.swift in Sources */,
 				E745499A1FB8B1BE00A6A32C /* ThreadTableViewCell.swift in Sources */,
 				E7B4CDF0207FFBE200352DB1 /* UIImage+Utility.swift in Sources */,
+				E783B99E2088F67400F2F769 /* Utils.swift in Sources */,
 				E783B9952087DDDF00F2F769 /* ThemedLabel.swift in Sources */,
 				E79ADAFD20743F8500C02C0A /* UIScrollingViewController.swift in Sources */,
 				E79FA5912025398C0060B44D /* ConfirmationTableVC.swift in Sources */,

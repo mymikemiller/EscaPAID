@@ -35,13 +35,13 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="980"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hK0-am-loF" userLabel="Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="428.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="krH-WB-FEx" userLabel="Main Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="428.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                                                 <subviews>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psb-Ac-Lmf" userLabel="Image Pager">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="235.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="236"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Psb-Ac-Lmf" secondAttribute="height" multiplier="414:260" id="EKP-vD-CWU"/>
                                                         </constraints>
@@ -53,26 +53,25 @@
                                                             <segue destination="qD6-7d-BzV" kind="embed" identifier="pageViewController_embed" id="XIe-Sm-nAP"/>
                                                         </connections>
                                                     </containerView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="j7N-gM-lEa" userLabel="Lower Stack View">
-                                                        <rect key="frame" x="0.0" y="235.5" width="375" height="163"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j7N-gM-lEa" userLabel="Lower Stack View">
+                                                        <rect key="frame" x="0.0" y="236" width="375" height="343"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEs-RE-VP4" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
-                                                                <rect key="frame" x="16" y="8" width="343" height="29.5"/>
-                                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P10-3l-81W">
-                                                                <rect key="frame" x="16" y="37.5" width="343" height="20"/>
-                                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
-                                                                <color key="textColor" red="0.64705882349999999" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJx-Zx-aGU">
-                                                                <rect key="frame" x="87.5" y="57.5" width="200" height="8"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="8" id="qd9-4y-AJ4"/>
-                                                                </constraints>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jec-8q-O56" userLabel="Title &amp; Skill Level Stack View">
+                                                                <rect key="frame" x="16" y="8" width="343" height="49.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEs-RE-VP4" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="29.5"/>
+                                                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P10-3l-81W">
+                                                                        <rect key="frame" x="0.0" y="29.5" width="343" height="20"/>
+                                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                                        <color key="textColor" red="0.64705882349999999" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6y4-yg-eTu">
                                                                 <rect key="frame" x="16" y="65.5" width="343" height="19.5"/>
@@ -80,8 +79,62 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crp-MJ-b7g" userLabel="Curator View">
+                                                                <rect key="frame" x="16" y="93" width="343" height="156"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="57I-aQ-V9O" customClass="HexagonImageView" customModule="Renaissance" customModuleProvider="target">
+                                                                        <rect key="frame" x="18" y="22" width="112" height="112"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="112" id="cJX-3f-OC5"/>
+                                                                            <constraint firstAttribute="height" constant="112" id="tHw-Z9-h9H"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gQF-QD-XQI" userLabel="Name/Info Stack View">
+                                                                        <rect key="frame" x="140" y="22" width="193" height="112"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgt-dh-ids" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="193" height="29.5"/>
+                                                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGU-IT-4WU">
+                                                                                <rect key="frame" x="0.0" y="29.5" width="193" height="82.5"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsM-kv-fJq" userLabel="Curator About Me" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="193" height="20.5"/>
+                                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="OsM-kv-fJq" firstAttribute="top" secondItem="kGU-IT-4WU" secondAttribute="top" id="FhK-2E-1Xm"/>
+                                                                                    <constraint firstItem="OsM-kv-fJq" firstAttribute="leading" secondItem="kGU-IT-4WU" secondAttribute="leading" id="Y2q-RR-iPE"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="OsM-kv-fJq" secondAttribute="trailing" id="yBX-NT-qFa"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="gQF-QD-XQI" secondAttribute="trailing" constant="10" id="2tE-28-nE1"/>
+                                                                    <constraint firstItem="gQF-QD-XQI" firstAttribute="leading" secondItem="57I-aQ-V9O" secondAttribute="trailing" constant="10" id="6cy-cz-ReU"/>
+                                                                    <constraint firstAttribute="height" constant="156" id="8fR-uc-4Bd"/>
+                                                                    <constraint firstItem="57I-aQ-V9O" firstAttribute="leading" secondItem="crp-MJ-b7g" secondAttribute="leadingMargin" constant="10" id="GUC-UZ-IvM"/>
+                                                                    <constraint firstItem="57I-aQ-V9O" firstAttribute="centerY" secondItem="crp-MJ-b7g" secondAttribute="centerY" id="ncK-bG-y2p"/>
+                                                                    <constraint firstItem="gQF-QD-XQI" firstAttribute="top" secondItem="57I-aQ-V9O" secondAttribute="top" id="ueH-hF-7c3"/>
+                                                                    <constraint firstItem="gQF-QD-XQI" firstAttribute="bottom" secondItem="57I-aQ-V9O" secondAttribute="bottom" id="zc7-Ix-2Q3"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="15"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VN-dH-56k">
-                                                                <rect key="frame" x="132" y="85" width="111" height="40"/>
+                                                                <rect key="frame" x="132" y="257" width="111" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="6sQ-aQ-bh2"/>
                                                                 </constraints>
@@ -91,7 +144,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHM-3c-b0Y" userLabel="Curator">
-                                                                <rect key="frame" x="148.5" y="125" width="78" height="30"/>
+                                                                <rect key="frame" x="148.5" y="305" width="78" height="30"/>
                                                                 <state key="normal" title="By: Curator"/>
                                                                 <connections>
                                                                     <segue destination="XKI-jc-A6l" kind="show" identifier="showProfile" id="28p-Om-uBt"/>
@@ -100,13 +153,14 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="6y4-yg-eTu" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="1ai-Kd-q2P"/>
-                                                            <constraint firstItem="P10-3l-81W" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="GBJ-kJ-azc"/>
-                                                            <constraint firstItem="pEs-RE-VP4" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="SS2-g9-vl3"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="crp-MJ-b7g" secondAttribute="trailing" id="Qjh-Ez-pj6"/>
+                                                            <constraint firstItem="crp-MJ-b7g" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="bwc-gC-lTl"/>
+                                                            <constraint firstItem="jec-8q-O56" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="vkS-fO-Xw4"/>
                                                         </constraints>
                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yYm-ZQ-vXe" userLabel="Message Reserve Stack View">
-                                                        <rect key="frame" x="0.0" y="398.5" width="375" height="30"/>
+                                                        <rect key="frame" x="0.0" y="579" width="375" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-Mp-ygU">
                                                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
@@ -165,6 +219,9 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="curator" destination="PHM-3c-b0Y" id="Ddi-0B-Ozu"/>
+                        <outlet property="curatorAboutMe" destination="OsM-kv-fJq" id="fcO-iS-oq3"/>
+                        <outlet property="curatorImage" destination="57I-aQ-V9O" id="nMg-qh-9YA"/>
+                        <outlet property="curatorName" destination="Hgt-dh-ids" id="YZO-5L-zvq"/>
                         <outlet property="experienceDescription" destination="6y4-yg-eTu" id="Mqe-RL-en9"/>
                         <outlet property="experienceTitle" destination="pEs-RE-VP4" id="9vB-fG-6FX"/>
                         <outlet property="favoritesButton" destination="2VN-dH-56k" id="ZtK-VD-JLE"/>
@@ -174,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hwo-ee-WbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124" y="-1166.2668665667168"/>
+            <point key="canvasLocation" x="2124" y="-1166.7166416791606"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="pet-qg-qQn">
@@ -492,5 +549,22 @@
             </objects>
             <point key="canvasLocation" x="2902" y="-1836"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="2oF-fS-cKL">
+            <objects>
+                <viewController id="u5M-kh-F3A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QlM-h8-epe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2Wa-vb-Fkl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DCE-2W-cxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
+    <resources>
+        <image name="profile" width="208" height="208"/>
+    </resources>
 </document>

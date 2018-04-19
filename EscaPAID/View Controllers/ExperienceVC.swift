@@ -15,10 +15,13 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet weak var experienceTitle: UILabel!
     
     @IBOutlet weak var skillLevel: UILabel!
-    
     @IBOutlet weak var curator: UIButton!
     
     @IBOutlet weak var experienceDescription: UILabel!
+    
+    @IBOutlet weak var curatorImage: UIImageView!
+    @IBOutlet weak var curatorName: ThemedLabel!
+    @IBOutlet weak var curatorAboutMe: ThemedLabel!
     
     @IBOutlet weak var pagerContainer: UIView!
     
@@ -44,8 +47,15 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             
             experienceDescription.text = experience.experienceDescription + "\n\n" +
             "INCLUDES: \n" + includesText + "\n\n" +
-            "ABOUT ME: " + experience.curator.aboutMe + "\n\n" +
             String(format: "PRICE: $%.02f", experience.price)
+            
+            if let profileImageURL = URL(string: experience.curator.profileImageUrl) {
+                curatorImage.af_setImage(withURL: profileImageURL)
+            }
+            
+            curatorName.text = experience.curator.fullName
+            curatorAboutMe.text = experience.curator.aboutMe
+           
             
             setFavoritesText()
         }
