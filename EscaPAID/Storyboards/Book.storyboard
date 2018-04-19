@@ -35,10 +35,10 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="980"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hK0-am-loF" userLabel="Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="420.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="428.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="krH-WB-FEx" userLabel="Main Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="420.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="428.5"/>
                                                 <subviews>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psb-Ac-Lmf" userLabel="Image Pager">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="235.5"/>
@@ -54,7 +54,7 @@
                                                         </connections>
                                                     </containerView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="j7N-gM-lEa" userLabel="Lower Stack View">
-                                                        <rect key="frame" x="0.0" y="235.5" width="375" height="155"/>
+                                                        <rect key="frame" x="0.0" y="235.5" width="375" height="163"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEs-RE-VP4" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
                                                                 <rect key="frame" x="16" y="8" width="343" height="29.5"/>
@@ -68,14 +68,20 @@
                                                                 <color key="textColor" red="0.64705882349999999" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJx-Zx-aGU">
+                                                                <rect key="frame" x="87.5" y="57.5" width="200" height="8"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="8" id="qd9-4y-AJ4"/>
+                                                                </constraints>
+                                                            </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6y4-yg-eTu">
-                                                                <rect key="frame" x="146.5" y="57.5" width="82.5" height="19.5"/>
+                                                                <rect key="frame" x="16" y="65.5" width="343" height="19.5"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VN-dH-56k">
-                                                                <rect key="frame" x="132" y="77" width="111" height="40"/>
+                                                                <rect key="frame" x="132" y="85" width="111" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="6sQ-aQ-bh2"/>
                                                                 </constraints>
@@ -85,7 +91,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHM-3c-b0Y" userLabel="Curator">
-                                                                <rect key="frame" x="148.5" y="117" width="78" height="30"/>
+                                                                <rect key="frame" x="148.5" y="125" width="78" height="30"/>
                                                                 <state key="normal" title="By: Curator"/>
                                                                 <connections>
                                                                     <segue destination="XKI-jc-A6l" kind="show" identifier="showProfile" id="28p-Om-uBt"/>
@@ -93,13 +99,14 @@
                                                             </button>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="6y4-yg-eTu" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="1ai-Kd-q2P"/>
                                                             <constraint firstItem="P10-3l-81W" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="GBJ-kJ-azc"/>
                                                             <constraint firstItem="pEs-RE-VP4" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="SS2-g9-vl3"/>
                                                         </constraints>
                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yYm-ZQ-vXe" userLabel="Message Reserve Stack View">
-                                                        <rect key="frame" x="0.0" y="390.5" width="375" height="30"/>
+                                                        <rect key="frame" x="0.0" y="398.5" width="375" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-Mp-ygU">
                                                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
