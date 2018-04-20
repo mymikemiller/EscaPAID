@@ -37,6 +37,9 @@ class ChatVC: JSQMessagesViewController {
         // Remove avatars
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+        
+        // Add "View Profile" link
+        self.navigationItem.setRightBarButton(UIBarButtonItem(title: "View Profile", style: .plain, target: self, action: #selector(viewProfile_click)), animated: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,6 +63,10 @@ class ChatVC: JSQMessagesViewController {
             // Remove PostManager's observer so we don't keep listening for new messages
             postManager.removeObserver(threadId: thread!.threadId)
         }
+    }
+    
+    @objc func viewProfile_click() {
+        performSegue(withIdentifier: "showProfile", sender: self)
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData!
@@ -147,6 +154,12 @@ class ChatVC: JSQMessagesViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showProfile") {
+            (segue.destination as! ProfileVC).user = self.thread?.user
+        }
     }
     
 }
