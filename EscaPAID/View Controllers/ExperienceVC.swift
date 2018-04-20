@@ -90,6 +90,11 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         }
     }
     
+    @IBAction func curatorView_click(_ sender: Any) {
+        performSegue(withIdentifier: "showProfile", sender: self)
+    }
+    
+    
     
     @IBAction func messageButton_click(_ sender: Any) {
         

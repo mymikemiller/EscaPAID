@@ -12,10 +12,10 @@
 
 import UIKit
 
-class HexagonImageView: UIImageView {
+class HexagonalImageView: UIImageView {
     
-    let lineWidth: CGFloat = 0
-    let cornerRadius: CGFloat = 0
+    let lineWidth: CGFloat = 3
+    let cornerRadius: CGFloat = 10
 
     override init(frame: CGRect) {
         super.init(frame: frame)

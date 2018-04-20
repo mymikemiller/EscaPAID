@@ -82,12 +82,16 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crp-MJ-b7g" userLabel="Curator View">
                                                                 <rect key="frame" x="16" y="93" width="343" height="156"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="57I-aQ-V9O" customClass="HexagonImageView" customModule="Renaissance" customModuleProvider="target">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="57I-aQ-V9O" customClass="CircularImageView" customModule="Renaissance" customModuleProvider="target">
                                                                         <rect key="frame" x="18" y="22" width="112" height="112"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="112" id="cJX-3f-OC5"/>
                                                                             <constraint firstAttribute="height" constant="112" id="tHw-Z9-h9H"/>
                                                                         </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="hero_profileImage"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gQF-QD-XQI" userLabel="Name/Info Stack View">
                                                                         <rect key="frame" x="140" y="22" width="193" height="112"/>
@@ -97,6 +101,10 @@
                                                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="hero_name"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGU-IT-4WU">
                                                                                 <rect key="frame" x="0.0" y="29.5" width="193" height="82.5"/>
@@ -118,6 +126,7 @@
                                                                     </stackView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <gestureRecognizers/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="gQF-QD-XQI" secondAttribute="trailing" constant="10" id="2tE-28-nE1"/>
                                                                     <constraint firstItem="gQF-QD-XQI" firstAttribute="leading" secondItem="57I-aQ-V9O" secondAttribute="trailing" constant="10" id="6cy-cz-ReU"/>
@@ -132,6 +141,9 @@
                                                                         <integer key="value" value="15"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="PZ4-Jf-o8k" appends="YES" id="sBJ-wK-g3X"/>
+                                                                </connections>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VN-dH-56k">
                                                                 <rect key="frame" x="132" y="257" width="111" height="40"/>
@@ -153,7 +165,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="6y4-yg-eTu" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="1ai-Kd-q2P"/>
-                                                            <constraint firstAttribute="trailingMargin" secondItem="crp-MJ-b7g" secondAttribute="trailing" id="Qjh-Ez-pj6"/>
+                                                            <constraint firstItem="crp-MJ-b7g" firstAttribute="trailing" secondItem="j7N-gM-lEa" secondAttribute="trailingMargin" id="Qjh-Ez-pj6"/>
                                                             <constraint firstItem="crp-MJ-b7g" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="bwc-gC-lTl"/>
                                                             <constraint firstItem="jec-8q-O56" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="vkS-fO-Xw4"/>
                                                         </constraints>
@@ -230,6 +242,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hwo-ee-WbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PZ4-Jf-o8k">
+                    <connections>
+                        <action selector="curatorView_click:" destination="8jk-U6-0pk" id="Y5h-rJ-08r"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2124" y="-1166.7166416791606"/>
         </scene>

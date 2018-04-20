@@ -16,10 +16,12 @@ class ProfileVC: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var aboutMeLabel: ThemedLabel!
     
     override func viewDidLoad() {
         imageView.image = user.getProfileImage()
         nameLabel.text = user.fullName
+        aboutMeLabel.text = user.aboutMe
     }
     
 }
