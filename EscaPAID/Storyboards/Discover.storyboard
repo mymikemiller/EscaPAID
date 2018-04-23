@@ -30,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="694" y="-1155"/>
         </scene>
-        <!--Discover-->
+        <!--Experience Delegate-->
         <scene sceneID="O3y-UM-57X">
             <objects>
                 <viewController id="UTm-xN-gxT" customClass="DiscoverVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,13 +38,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IA5-3G-3Ue">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IA5-3G-3Ue" customClass="ExperienceTableView" customModule="Renaissance" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="UTm-xN-gxT" id="Nyp-rF-sUW"/>
-                                    <outlet property="delegate" destination="UTm-xN-gxT" id="oTy-6l-dUg"/>
+                                    <outlet property="experienceDelegate" destination="UTm-xN-gxT" id="art-Su-kJv"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please select a city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0e-Vb-VMB">
@@ -81,8 +80,8 @@
                     <connections>
                         <outlet property="cityPicker" destination="m18-SP-hF0" id="dIC-SC-uWc"/>
                         <outlet property="cityPickerToolbar" destination="1KJ-yx-U68" id="KC3-PU-uDA"/>
+                        <outlet property="experienceTableView" destination="IA5-3G-3Ue" id="S8f-hq-fBn"/>
                         <outlet property="selectACityLabel" destination="S0e-Vb-VMB" id="LeW-g8-3qE"/>
-                        <outlet property="tableView" destination="IA5-3G-3Ue" id="9jp-6w-wDl"/>
                         <segue destination="OVa-HN-eMR" kind="show" identifier="showExperience" id="PcZ-ta-p7D"/>
                     </connections>
                 </viewController>

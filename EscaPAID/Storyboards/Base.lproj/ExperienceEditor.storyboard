@@ -1,42 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zEs-aa-hOm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Experiences-->
-        <scene sceneID="PgJ-bK-v5c">
-            <objects>
-                <tableViewController storyboardIdentifier="MyExperiences" id="Jjz-5s-811" customClass="MyExperiencesTableVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="350" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hGj-fe-ZdV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="Jjz-5s-811" id="9Lf-h6-73v"/>
-                            <outlet property="delegate" destination="Jjz-5s-811" id="RZY-Zf-wCI"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="My Experiences" id="S3Y-m6-eLn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fVS-uS-Jj0">
-                            <connections>
-                                <action selector="addButton_click:" destination="Jjz-5s-811" id="UdB-dx-e2J"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="UTF-yx-EJE" kind="presentation" identifier="showExperienceEditor" id="LsR-YK-KqR"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fyU-CP-hAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="628" y="1764"/>
-        </scene>
         <!--Edit Experience-->
         <scene sceneID="4YD-2V-ald">
             <objects>
@@ -443,7 +416,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQ2-ic-WTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2132" y="1763.568215892054"/>
+            <point key="canvasLocation" x="1590" y="1763"/>
         </scene>
         <!--Day Selector TableVC-->
         <scene sceneID="4AC-um-4Js">
@@ -623,7 +596,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6k-rg-GQj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2876" y="1764"/>
+            <point key="canvasLocation" x="2366" y="1763"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vVB-nr-fbS">
@@ -641,7 +614,36 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IoH-ri-CHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="1764"/>
+            <point key="canvasLocation" x="783" y="1764"/>
+        </scene>
+        <!--Experience Delegate-->
+        <scene sceneID="p9F-cx-Us5">
+            <objects>
+                <viewController storyboardIdentifier="MyExperiences" id="zEs-aa-hOm" customClass="MyExperiencesVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R2I-Bo-IjQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Ef-YO-ZpO" customClass="ExperienceTableView" customModule="Renaissance" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="experienceDelegate" destination="zEs-aa-hOm" id="ypa-Rj-ysd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oKj-Po-4dP"/>
+                    </view>
+                    <connections>
+                        <outlet property="experienceTableView" destination="0Ef-YO-ZpO" id="rIp-Aj-SC2"/>
+                        <segue destination="UTF-yx-EJE" kind="presentation" identifier="showExperienceEditor" id="Pgw-f8-QlL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lT-gX-E9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-52" y="1764"/>
         </scene>
     </scenes>
 </document>

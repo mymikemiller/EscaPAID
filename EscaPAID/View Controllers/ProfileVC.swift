@@ -11,7 +11,9 @@ import UIKit
 class ProfileVC: UIViewController {
     
     var user: User!
-
+    
+    @IBOutlet weak var experiencesTableView: ExperienceTableView!
+    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -22,6 +24,8 @@ class ProfileVC: UIViewController {
         imageView.image = user.getProfileImage()
         nameLabel.text = user.fullName
         aboutMeLabel.text = user.aboutMe
+        
+        experiencesTableView.displayType = DisplayType.Curator(user)
     }
     
 }

@@ -12,17 +12,14 @@ import Hero
 
 class DiscoverVC: UIViewController {
     
-    let experienceManager = ExperienceManager()
-    
-    var selectedCell: ExperienceCardCell?
+    // Store the selected card each time the user taps a card.
+    var selectedCard: ExperienceCard?
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var experienceTableView: ExperienceTableView!
     
     @IBOutlet weak var cityPickerToolbar: UIToolbar!
     @IBOutlet weak var cityPicker: SelfContainedPickerView!
     @IBOutlet weak var selectACityLabel: UILabel!
-    
-    var filteredExperiences = [Experience]()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -34,12 +31,6 @@ class DiscoverVC: UIViewController {
         
         // Set up the city picker
         cityPicker.setUp(textField: nil, strings: Constants.cities)
-        
-        // Set up the TableView
-        let nib = UINib(nibName: "ExperienceCardCell",bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "experienceCardCell")
-        tableView.layoutMargins = UIEdgeInsetsMake(0, 37, 0, 37)
-        tableView.rowHeight = tableView.contentSize.width / CGFloat(Constants.cardRatio)
 
         // Setup the Scope Bar
         searchController.searchBar.scopeButtonTitles = ["All"]
@@ -55,51 +46,43 @@ class DiscoverVC: UIViewController {
         
         // Respond to the user changing their city by refreshing all items in the table
         NotificationCenter.default.addObserver(self,
-                                       selector: #selector(DiscoverVC.refreshTable),
+                                       selector: #selector(DiscoverVC.cityChanged),
                                        name: .cityChanged,
                                        object: nil)
         
         // Show "No city selected" if applicable
         setCityPickerVisibility()
         
-        // Refresh the table once we're done loading
-        refreshTable()
+        // Prepare the experience table
+        if FirebaseManager.user?.city != nil {
+            experienceTableView.displayType = DisplayType.City((FirebaseManager.user?.city)!)
+
+        }
     }
     
     @IBAction func cityPickerDone_click(_ sender: Any) {
         FirebaseManager.user?.city = cityPicker.selectedString
         FirebaseManager.user?.update()
         setCityPickerVisibility()
-        refreshTable()
+        cityChanged()
     }
     
     func setCityPickerVisibility() {
         if (FirebaseManager.user?.city.isEmpty)! {
-            tableView.isHidden = true
+            experienceTableView.isHidden = true
             cityPicker.isHidden = false
             selectACityLabel.isHidden = false
             cityPickerToolbar.isHidden = false
         } else {
-            tableView.isHidden = false
+            experienceTableView.isHidden = false
             cityPicker.isHidden = true
             selectACityLabel.isHidden = true
             cityPickerToolbar.isHidden = true
         }
     }
     
-    @objc func refreshTable() {
-        // Empty the table
-        experienceManager.emptyExperiences()
-        self.tableView.reloadData()
-        
-        // Refresh the experiences (e.g. when the user changes their city)
-        experienceManager.fillExperiences(forCity: (FirebaseManager.user?.city)!) {
-            () in
-            DispatchQueue.main.async {
-                // This is too big a hammer. This happens every time a new Experience is added to the database. Ideally we would only refresh that one item.
-                self.tableView.reloadData()
-            }
-        }
+    @objc func cityChanged() {
+        experienceTableView.displayType = DisplayType.City((FirebaseManager.user?.city)!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -113,21 +96,7 @@ class DiscoverVC: UIViewController {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredExperiences = experienceManager.experiences.filter({( experience : Experience) -> Bool in
-            let doesCategoryMatch = (scope == "All") || (experience.category == scope)
-            
-            if searchBarIsEmpty() {
-                return doesCategoryMatch
-            } else {
-                return doesCategoryMatch && experience.title.lowercased().contains(searchText.lowercased())
-            }
-        })
-        tableView.reloadData()
-    }
-    
-    func isFiltering() -> Bool {
-        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
-        return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
+        experienceTableView.setFilter(searchText, scope: scope)
     }
     
     // MARK: - Navigation
@@ -135,65 +104,28 @@ class DiscoverVC: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showExperience" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let experience: Experience
-                if isFiltering() {
-                    experience = filteredExperiences[indexPath.row]
-                } else {
-                    experience = experienceManager.experiences[indexPath.row]
-                }
-                let controller = segue.destination as! ExperienceVC
-                controller.experience = experience
-            }
+            (segue.destination as! ExperienceVC).experience = selectedCard?.experience
         }
     }
 }
 
-// MARK: - Table view data source
-
-extension DiscoverVC:  UITableViewDelegate, UITableViewDataSource {
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (isFiltering()) {
-            return filteredExperiences.count
-        } else {
-            return experienceManager.experiences.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCardCell", for: indexPath) as! ExperienceCardCell
-        
-        let experience: Experience
-        if isFiltering() {
-            experience = filteredExperiences[indexPath.row]
-        } else {
-            experience = experienceManager.experiences[indexPath.row]
-        }
-        
-        cell.card.experience = experience
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension DiscoverVC: ExperienceTableViewDelegate {
+    func didSelectCard(_ card: ExperienceCard) {
         // Unset the hero id for the previously selected card
-        selectedCell?.card.hero.id = nil
+        selectedCard?.hero.id = nil
         
         // Store the selected card and set its hero id
-        selectedCell = tableView.cellForRow(at: indexPath) as! ExperienceCardCell
-        selectedCell?.card.hero.id = "hero_card"
+        selectedCard = card
+        selectedCard?.hero.id = "hero_card"
         
         self.performSegue(withIdentifier: "showExperience", sender: self)
     }
+    
+    func isFiltering() -> Bool {
+        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+        return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
+    }
 }
-
 
 extension DiscoverVC: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate

@@ -10,36 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites-->
-        <scene sceneID="n9j-e2-enc">
-            <objects>
-                <tableViewController storyboardIdentifier="MyExperiences" title="Favorites" id="RY8-e9-X9i" customClass="FavoritesTableVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="47x-hn-CBg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="RY8-e9-X9i" id="DYb-qu-uH6"/>
-                            <outlet property="delegate" destination="RY8-e9-X9i" id="y0k-yz-0LR"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Favorites" id="viS-pI-4bb"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="tableView" destination="47x-hn-CBg" id="yRy-de-2R7"/>
-                        <segue destination="Pne-Wr-slf" kind="show" identifier="showExperience" id="OjX-Kb-vg2"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5rW-M0-sOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="Aot-Ys-tiz">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <viewLayoutGuide key="safeArea" id="KSj-RK-Hxx"/>
-                </view>
-            </objects>
-            <point key="canvasLocation" x="1020" y="1012.4437781109445"/>
-        </scene>
         <!--Book-->
         <scene sceneID="kgN-QF-OUa">
             <objects>
@@ -47,6 +17,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8G3-hV-hcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1544.8" y="1011.9940029985008"/>
+        </scene>
+        <!--Experience Delegate-->
+        <scene sceneID="r1t-tg-gGv">
+            <objects>
+                <viewController id="UNz-F3-0Oj" customClass="FavoritesVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d0D-rV-Hln">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g4x-9f-p3Y" customClass="ExperienceTableView" customModule="Renaissance" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="experienceDelegate" destination="UNz-F3-0Oj" id="Plc-Nj-UA2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Wav-sV-xvG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fQu-fF-CHX"/>
+                    <connections>
+                        <outlet property="experienceTableView" destination="g4x-9f-p3Y" id="CEf-ki-x8Z"/>
+                        <segue destination="Pne-Wr-slf" kind="show" identifier="showExperience" id="vVZ-td-q7g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4l-U0-Pgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066" y="1012"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="M71-5T-epN">
@@ -63,7 +63,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="RY8-e9-X9i" kind="relationship" relationship="rootViewController" id="sy5-sf-FeW"/>
+                        <segue destination="UNz-F3-0Oj" kind="relationship" relationship="rootViewController" id="nbM-bm-Rec"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3g-Z7-Sgb" userLabel="First Responder" sceneMemberID="firstResponder"/>

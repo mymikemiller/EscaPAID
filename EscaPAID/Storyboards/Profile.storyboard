@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,7 +36,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wit-c3-ir2" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
-                                <rect key="frame" x="170" y="30" width="74" height="29.5"/>
+                                <rect key="frame" x="170" y="30" width="74" height="30"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,22 +45,33 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuU-wv-KwL" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
-                                <rect key="frame" x="10" y="190" width="355" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuU-wv-KwL" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
+                                <rect key="frame" x="10" y="190" width="355" height="68"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FIN-DV-qUU" customClass="ExperienceTableView" customModule="Renaissance" customModuleProvider="target">
+                                <rect key="frame" x="16" y="258" width="343" height="429"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="429" id="m2r-Dg-MAi"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="59F-L9-QYm" firstAttribute="trailing" secondItem="MuU-wv-KwL" secondAttribute="trailing" constant="10" id="1Fy-AI-Joz"/>
+                            <constraint firstItem="FIN-DV-qUU" firstAttribute="centerX" secondItem="MuU-wv-KwL" secondAttribute="centerX" id="2hM-ev-2ZT"/>
                             <constraint firstItem="MuU-wv-KwL" firstAttribute="leading" secondItem="orL-O9-0Rj" secondAttribute="leading" id="Fap-YY-WYe"/>
                             <constraint firstItem="orL-O9-0Rj" firstAttribute="top" secondItem="59F-L9-QYm" secondAttribute="top" constant="10" id="Hse-wd-ByF"/>
+                            <constraint firstItem="FIN-DV-qUU" firstAttribute="bottom" secondItem="KO3-cE-Kj6" secondAttribute="bottom" constant="20" symbolic="YES" id="JFT-pp-I38"/>
                             <constraint firstItem="MuU-wv-KwL" firstAttribute="top" secondItem="orL-O9-0Rj" secondAttribute="bottom" constant="10" id="LN9-xY-DwN"/>
+                            <constraint firstItem="FIN-DV-qUU" firstAttribute="leading" secondItem="KO3-cE-Kj6" secondAttribute="leadingMargin" id="NJ5-vA-ecL"/>
                             <constraint firstItem="Wit-c3-ir2" firstAttribute="leading" secondItem="orL-O9-0Rj" secondAttribute="trailing" constant="10" id="QQV-Gw-IdS"/>
                             <constraint firstItem="orL-O9-0Rj" firstAttribute="leading" secondItem="59F-L9-QYm" secondAttribute="leading" constant="10" id="gKf-Pd-yuw"/>
                             <constraint firstItem="Wit-c3-ir2" firstAttribute="top" secondItem="orL-O9-0Rj" secondAttribute="top" id="w8g-DK-P6Q"/>
+                            <constraint firstItem="FIN-DV-qUU" firstAttribute="top" secondItem="MuU-wv-KwL" secondAttribute="bottom" id="zRL-Dc-sQ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="59F-L9-QYm"/>
                     </view>
@@ -68,6 +80,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="aboutMeLabel" destination="MuU-wv-KwL" id="LGn-hf-FO4"/>
+                        <outlet property="experiencesTableView" destination="FIN-DV-qUU" id="xMD-6h-RFG"/>
                         <outlet property="imageView" destination="orL-O9-0Rj" id="4xv-Mi-GjC"/>
                         <outlet property="nameLabel" destination="Wit-c3-ir2" id="KWM-oO-2Zt"/>
                     </connections>

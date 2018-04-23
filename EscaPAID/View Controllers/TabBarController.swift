@@ -73,9 +73,10 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     // called whenever a tab button is tapped
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         
-        if viewController is DiscoverVC {
-            (viewController as! DiscoverVC).refreshTable()
-        }
+        //mikem: We shouldn't need to do this, as the tableview should refresh automatically, e.g. when the user changes his city
+//        if viewController is DiscoverVC {
+//            (viewController as! DiscoverVC).refreshTable()
+//        }
     }
     
 }
