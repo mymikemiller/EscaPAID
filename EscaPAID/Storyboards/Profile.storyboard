@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--ProfileVC-->
+        <!--Experience Delegate-->
         <scene sceneID="iyB-0I-QfA">
             <objects>
                 <viewController storyboardIdentifier="Profile" id="5fu-pD-r4e" customClass="ProfileVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,6 +57,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="429" id="m2r-Dg-MAi"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="experienceDelegate" destination="5fu-pD-r4e" id="YoI-dU-cid"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,11 +86,20 @@
                         <outlet property="experiencesTableView" destination="FIN-DV-qUU" id="xMD-6h-RFG"/>
                         <outlet property="imageView" destination="orL-O9-0Rj" id="4xv-Mi-GjC"/>
                         <outlet property="nameLabel" destination="Wit-c3-ir2" id="KWM-oO-2Zt"/>
+                        <segue destination="EH1-OD-Spp" kind="show" identifier="showExperience" id="kTk-2Y-eRr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kd8-kM-7H3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="163.26836581709148"/>
+        </scene>
+        <!--Book-->
+        <scene sceneID="nbB-jg-0M5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Book" id="EH1-OD-Spp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wb0-W4-9jC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="681" y="163"/>
         </scene>
     </scenes>
 </document>

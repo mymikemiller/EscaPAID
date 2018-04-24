@@ -1,5 +1,5 @@
 //
-//  FavoritesTableVC.swift
+//  FavoritesVC.swift
 //  EscaPAID
 //
 //  Created by Michael Miller on 2/16/18.
