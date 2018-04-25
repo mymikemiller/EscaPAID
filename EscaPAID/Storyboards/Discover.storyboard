@@ -76,12 +76,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="iZg-Jl-poZ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Discover" id="5eI-JB-p8R"/>
+                    <navigationItem key="navigationItem" title="Discover" id="5eI-JB-p8R">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="KLF-H3-hHn">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="s6W-sR-dDr">
+                                <rect key="frame" x="335" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ic_favorite_border"/>
+                                <connections>
+                                    <action selector="showFavoritesButton_click:" destination="UTm-xN-gxT" eventType="touchUpInside" id="ylP-Wp-UUN"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cityPicker" destination="m18-SP-hF0" id="dIC-SC-uWc"/>
                         <outlet property="cityPickerToolbar" destination="1KJ-yx-U68" id="KC3-PU-uDA"/>
                         <outlet property="experienceTableView" destination="IA5-3G-3Ue" id="S8f-hq-fBn"/>
                         <outlet property="selectACityLabel" destination="S0e-Vb-VMB" id="LeW-g8-3qE"/>
+                        <outlet property="showFavoritesButton" destination="s6W-sR-dDr" id="tO5-2e-9eT"/>
                         <segue destination="OVa-HN-eMR" kind="show" identifier="showExperience" id="PcZ-ta-p7D"/>
                     </connections>
                 </viewController>
@@ -98,4 +110,7 @@
             <point key="canvasLocation" x="1986" y="-1157"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_favorite_border" width="24" height="24"/>
+    </resources>
 </document>

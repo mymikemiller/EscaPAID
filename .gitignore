@@ -44,3 +44,8 @@ xcuserdata/
 
 # Private keys
 *firebase-adminsdk.json
+
+# WakaTime
+XCodeSigner2018.cert
+XCodeSigner2018.p12
+XCodeSigner2018.pem

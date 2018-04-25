@@ -61,7 +61,7 @@ class ExperienceTableView: UITableView {
         }
         
         // Empty the experiences first
-        experienceManager.emptyExperiences()
+        experienceManager.clear()
         
         // Fill the experience manager with experiences to display
         switch displayType! {

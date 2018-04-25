@@ -32,7 +32,6 @@
 		E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */; };
 		E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */; };
 		E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
-		E774C83C2037877E00F98EB2 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774C83B2037877E00F98EB2 /* FavoritesVC.swift */; };
 		E774C83E203A1B4E00F98EB2 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774C83D203A1B4E00F98EB2 /* Book.storyboard */; };
 		E77A7369204875A200AE0DE4 /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7363204875A100AE0DE4 /* ThreadManager.swift */; };
 		E77A736A204875A200AE0DE4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7364204875A100AE0DE4 /* StorageManager.swift */; };
@@ -100,7 +99,6 @@
 		E79F05E62059700400889D14 /* TextGetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A320017CAA00312B91 /* TextGetterController.swift */; };
 		E79F05E72059700400889D14 /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */; };
 		E79F05E82059700400889D14 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7364204875A100AE0DE4 /* StorageManager.swift */; };
-		E79F05E92059700400889D14 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774C83B2037877E00F98EB2 /* FavoritesVC.swift */; };
 		E79F05EA2059700400889D14 /* ReservationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7367204875A200AE0DE4 /* ReservationManager.swift */; };
 		E79F05EB2059700400889D14 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
 		E79F05EC2059700400889D14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
@@ -162,8 +160,6 @@
 		E7E45986205993600077C1DE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E45984205993600077C1DE /* Config.swift */; };
 		E7E4598B2059BC3D0077C1DE /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459872059BC3D0077C1DE /* Discover.storyboard */; };
 		E7E4598C2059BC3D0077C1DE /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459872059BC3D0077C1DE /* Discover.storyboard */; };
-		E7E4598D2059BC3D0077C1DE /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459882059BC3D0077C1DE /* Favorites.storyboard */; };
-		E7E4598E2059BC3D0077C1DE /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459882059BC3D0077C1DE /* Favorites.storyboard */; };
 		E7E4598F2059BC3D0077C1DE /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459892059BC3D0077C1DE /* Inbox.storyboard */; };
 		E7E459902059BC3D0077C1DE /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459892059BC3D0077C1DE /* Inbox.storyboard */; };
 		E7E459912059BC3D0077C1DE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E4598A2059BC3D0077C1DE /* Settings.storyboard */; };
@@ -212,7 +208,6 @@
 		E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableVC.swift; sourceTree = "<group>"; };
 		E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginScreenVC.swift; sourceTree = "<group>"; };
-		E774C83B2037877E00F98EB2 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		E774C83D203A1B4E00F98EB2 /* Book.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
 		E77A7363204875A100AE0DE4 /* ThreadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadManager.swift; sourceTree = "<group>"; };
 		E77A7364204875A100AE0DE4 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -269,7 +264,6 @@
 		E7E45981205977820077C1DE /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		E7E45984205993600077C1DE /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		E7E459872059BC3D0077C1DE /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
-		E7E459882059BC3D0077C1DE /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		E7E459892059BC3D0077C1DE /* Inbox.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Inbox.storyboard; sourceTree = "<group>"; };
 		E7E4598A2059BC3D0077C1DE /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		E7E4599C205DCEFC0077C1DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -325,7 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				E7E459872059BC3D0077C1DE /* Discover.storyboard */,
-				E7E459882059BC3D0077C1DE /* Favorites.storyboard */,
 				E7E459892059BC3D0077C1DE /* Inbox.storyboard */,
 				E7E4598A2059BC3D0077C1DE /* Settings.storyboard */,
 				E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */,
@@ -347,7 +340,6 @@
 				E72D8E521FBCC5C1001026D6 /* LoginVC.swift */,
 				E71F33A72004509800312B91 /* TabBarController.swift */,
 				E72B24881FC6539A00DE0897 /* DiscoverVC.swift */,
-				E774C83B2037877E00F98EB2 /* FavoritesVC.swift */,
 				E7FE89F51FCCF284008ADCEF /* MyExperiencesVC.swift */,
 				E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */,
 				E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */,
@@ -679,7 +671,6 @@
 				E79F06062059700400889D14 /* Main.storyboard in Resources */,
 				E7E459902059BC3D0077C1DE /* Inbox.storyboard in Resources */,
 				E7E459922059BC3D0077C1DE /* Settings.storyboard in Resources */,
-				E7E4598E2059BC3D0077C1DE /* Favorites.storyboard in Resources */,
 				E79F06072059700400889D14 /* UICalendar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,7 +702,6 @@
 				E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */,
 				E7E4598F2059BC3D0077C1DE /* Inbox.storyboard in Resources */,
 				E7E459912059BC3D0077C1DE /* Settings.storyboard in Resources */,
-				E7E4598D2059BC3D0077C1DE /* Favorites.storyboard in Resources */,
 				E7238A642022521400496FBC /* UICalendar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -913,7 +903,6 @@
 				E79F05E72059700400889D14 /* ReservationTableViewCell.swift in Sources */,
 				E7ED3D232086D2F400EBB80A /* ProfileVC.swift in Sources */,
 				E79F05E82059700400889D14 /* StorageManager.swift in Sources */,
-				E79F05E92059700400889D14 /* FavoritesVC.swift in Sources */,
 				E79F05EA2059700400889D14 /* ReservationManager.swift in Sources */,
 				E79F05EB2059700400889D14 /* OriginScreenVC.swift in Sources */,
 				E79F05EC2059700400889D14 /* AppDelegate.swift in Sources */,
@@ -982,7 +971,6 @@
 				E77A736A204875A200AE0DE4 /* StorageManager.swift in Sources */,
 				E7ED3D222086D2F400EBB80A /* ProfileVC.swift in Sources */,
 				E7CF4DE0206CA31B00B7F97E /* GradientView.swift in Sources */,
-				E774C83C2037877E00F98EB2 /* FavoritesVC.swift in Sources */,
 				E77A736D204875A200AE0DE4 /* ReservationManager.swift in Sources */,
 				E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */,
 				E7B9F73D1FB6CAAE0058CE61 /* AppDelegate.swift in Sources */,

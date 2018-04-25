@@ -16,17 +16,25 @@ class ExperienceManager: NSObject {
     
     var experiences = [Experience]()
     
+    // Record the queries and observe handles we use so we can easily remove the observers when we change the query
+    var databaseQuery: DatabaseQuery?
+    var observeHandle: DatabaseHandle?
+    
     // Keep track of when Experiences were favorited. Values here are only used for sorting favorites, therefore there may be irrelevant values here for Experiences that are not currently favorited.
     static var favoritedTimestamps = [Experience : Int]()
     
-    func emptyExperiences() {
+    func clear() {
         experiences = [Experience]()
+        
+        // Also remove the observer
+        databaseQuery?.removeObserver(withHandle: observeHandle!)
     }
     
     func fillExperiences(forCity city: String, completion: @escaping () -> Void) {
-        experiences = [Experience]()
+        clear()
         
-        ExperienceManager.databaseRef.child("experiences").queryOrdered(byChild: "city").queryEqual(toValue: city).observe(.childAdded, with: {
+        databaseQuery = ExperienceManager.databaseRef.child("experiences").queryOrdered(byChild: "city").queryEqual(toValue: city)
+        observeHandle = databaseQuery?.observe(.childAdded, with: {
             snap in
             
             ExperienceManager.getExperience(snap, completion: { (experience) in
@@ -38,9 +46,10 @@ class ExperienceManager: NSObject {
     
     
     func fillExperiences(forCurator user: User, completion: @escaping () -> Void) {
-        experiences = [Experience]()
+        clear()
         
-        ExperienceManager.databaseRef.child("experiences").queryOrdered(byChild: "uid").queryEqual(toValue: user.uid).observe(.childAdded, with: {
+        databaseQuery = ExperienceManager.databaseRef.child("experiences").queryOrdered(byChild: "uid").queryEqual(toValue: user.uid)
+        observeHandle = databaseQuery?.observe(.childAdded, with: {
             snap in
             
             ExperienceManager.getExperience(snap, completion: { (experience) in
@@ -51,10 +60,11 @@ class ExperienceManager: NSObject {
     }
     
     func fillExperiences(forFavoritesOf user: User, completion: @escaping () -> Void) {
-        experiences = [Experience]()
+        clear()
         
         // Get the favorites for the user, in order of the timestamp saved as the value
-        ExperienceManager.databaseRef.child("userFavorites/\(user.uid)").queryOrderedByValue().observe(.childAdded, with: { snapshot in
+        databaseQuery = ExperienceManager.databaseRef.child("userFavorites/\(user.uid)").queryOrderedByValue()
+        observeHandle = databaseQuery?.observe(.childAdded, with: { snapshot in
             let experienceId = snapshot.key
             let timestamp = snapshot.value! as! Int
             

@@ -15,6 +15,10 @@ class DiscoverVC: UIViewController {
     // Store the selected card each time the user taps a card.
     var selectedCard: ExperienceCard?
 
+    @IBOutlet weak var showFavoritesButton: UIButton!
+    var isShowingFavorites = false
+    
+    
     @IBOutlet weak var experienceTableView: ExperienceTableView!
     
     @IBOutlet weak var cityPickerToolbar: UIToolbar!
@@ -54,10 +58,16 @@ class DiscoverVC: UIViewController {
         setCityPickerVisibility()
         
         // Prepare the experience table
-        if FirebaseManager.user?.city != nil {
-            experienceTableView.displayType = DisplayType.City((FirebaseManager.user?.city)!)
-
-        }
+        refreshDisplayType()
+    }
+    
+    func refreshDisplayType() {
+        var displayType = isShowingFavorites ?
+            DisplayType.Favorites(FirebaseManager.user!) :
+            DisplayType.City(FirebaseManager.user!.city)
+        
+        // This will cause the table to refresh
+        experienceTableView.displayType = displayType
     }
     
     @IBAction func cityPickerDone_click(_ sender: Any) {
@@ -85,10 +95,17 @@ class DiscoverVC: UIViewController {
         experienceTableView.displayType = DisplayType.City((FirebaseManager.user?.city)!)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func showFavoritesButton_click(_ sender: Any) {
+        isShowingFavorites = !isShowingFavorites
+        
+        // Refresh the display type now that we've changed isShowingFavorites
+        refreshDisplayType()
+        
+        // Change the button's image. Using a "highlighted" image doesn't work for bar button items, apparently.
+        let image = isShowingFavorites ? #imageLiteral(resourceName: "ic_favorite") : #imageLiteral(resourceName: "ic_favorite_border")
+        showFavoritesButton.setImage(image, for: .normal)
     }
+    
     
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil

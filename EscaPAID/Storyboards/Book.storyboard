@@ -105,7 +105,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crp-MJ-b7g" userLabel="Curator View">
                                                                 <rect key="frame" x="16" y="93" width="343" height="156"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="57I-aQ-V9O" customClass="CircularImageView" customModule="Renaissance" customModuleProvider="target">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_account_circle" translatesAutoresizingMaskIntoConstraints="NO" id="57I-aQ-V9O" customClass="CircularImageView" customModule="Renaissance" customModuleProvider="target">
                                                                         <rect key="frame" x="18" y="22" width="112" height="112"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="112" id="cJX-3f-OC5"/>
@@ -588,8 +588,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_account_circle" width="24" height="24"/>
         <image name="ic_favorite" width="24" height="24"/>
         <image name="ic_favorite_border" width="24" height="24"/>
-        <image name="profile" width="208" height="208"/>
     </resources>
 </document>
