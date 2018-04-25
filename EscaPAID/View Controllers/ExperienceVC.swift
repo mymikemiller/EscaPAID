@@ -13,10 +13,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     var experience:Experience?
 
     @IBOutlet weak var experienceTitle: UILabel!
-    
     @IBOutlet weak var skillLevel: UILabel!
-    @IBOutlet weak var curator: UIButton!
-    
     @IBOutlet weak var experienceDescription: UILabel!
     
     @IBOutlet weak var curatorImage: UIImageView!
@@ -37,7 +34,6 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         if let experience = experience {
             experienceTitle.text = experience.title
             skillLevel.text = experience.skillLevel + " Level"
-            curator.setTitle("By: \(experience.curator.firstName)", for: .normal)
             
             let includesArray = experience.includes.split(separator: ",")
             var includesText = ""
@@ -57,7 +53,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             curatorAboutMe.text = experience.curator.aboutMe
            
             
-            setFavoritesText()
+            setFavoritesButtonState()
         }
         
         imagePageViewController?.dataSource = self
@@ -67,16 +63,16 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         imagePageViewController?.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     }
     
-    private func setFavoritesText() {
+    private func setFavoritesButtonState() {
         if let experience = experience {
             
             ExperienceManager.onIsFavoriteChanged(experience: experience, completion: { (isFavorite) in
                 self.isFavorite = isFavorite
                 
                 if self.isFavorite {
-                    self.favoritesButton.setTitle("Remove from Favorites", for: .normal)
+                    self.favoritesButton.isHighlighted = true
                 } else {
-                    self.favoritesButton.setTitle("Add to Favorites", for: .normal)
+                    self.favoritesButton.isHighlighted = false
                 }
             })
         }

@@ -35,10 +35,10 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="980"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hK0-am-loF" userLabel="Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="523"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="krH-WB-FEx" userLabel="Main Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="523"/>
                                                 <subviews>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psb-Ac-Lmf" userLabel="Image Pager">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="236"/>
@@ -54,23 +54,46 @@
                                                         </connections>
                                                     </containerView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j7N-gM-lEa" userLabel="Lower Stack View">
-                                                        <rect key="frame" x="0.0" y="236" width="375" height="343"/>
+                                                        <rect key="frame" x="0.0" y="236" width="375" height="257"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jec-8q-O56" userLabel="Title &amp; Skill Level Stack View">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9bd-l1-VKE" userLabel="Title/Skill Level &amp; Favorite Stack View">
                                                                 <rect key="frame" x="16" y="8" width="343" height="49.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEs-RE-VP4" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="29.5"/>
-                                                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P10-3l-81W">
-                                                                        <rect key="frame" x="0.0" y="29.5" width="343" height="20"/>
-                                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
-                                                                        <color key="textColor" red="0.64705882349999999" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jec-8q-O56" userLabel="Title &amp; Skill Level Stack View">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="49.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEs-RE-VP4" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="29.5"/>
+                                                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P10-3l-81W">
+                                                                                <rect key="frame" x="0.0" y="29.5" width="78" height="20"/>
+                                                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                                                <color key="textColor" red="0.64705882349999999" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGz-rm-ggv">
+                                                                        <rect key="frame" x="300" y="0.0" width="43" height="43"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="43" id="9Y2-NW-gBC"/>
+                                                                            <constraint firstAttribute="height" constant="43" id="bK1-Hm-pra"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                        <state key="normal" image="ic_favorite_border"/>
+                                                                        <state key="highlighted" image="ic_favorite"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="imageView.contentMode">
+                                                                                <integer key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="favoritesButton_click:" destination="8jk-U6-0pk" eventType="touchUpInside" id="jV6-80-Ivb"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6y4-yg-eTu">
@@ -145,34 +168,18 @@
                                                                     <outletCollection property="gestureRecognizers" destination="PZ4-Jf-o8k" appends="YES" id="sBJ-wK-g3X"/>
                                                                 </connections>
                                                             </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VN-dH-56k">
-                                                                <rect key="frame" x="132" y="257" width="111" height="40"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="40" id="6sQ-aQ-bh2"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Add to Favorites"/>
-                                                                <connections>
-                                                                    <action selector="favoritesButton_click:" destination="8jk-U6-0pk" eventType="touchUpInside" id="WTo-Su-7kR"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHM-3c-b0Y" userLabel="Curator">
-                                                                <rect key="frame" x="148.5" y="305" width="78" height="30"/>
-                                                                <state key="normal" title="By: Curator"/>
-                                                                <connections>
-                                                                    <segue destination="XKI-jc-A6l" kind="show" identifier="showProfile" id="28p-Om-uBt"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="6y4-yg-eTu" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="1ai-Kd-q2P"/>
                                                             <constraint firstItem="crp-MJ-b7g" firstAttribute="trailing" secondItem="j7N-gM-lEa" secondAttribute="trailingMargin" id="Qjh-Ez-pj6"/>
                                                             <constraint firstItem="crp-MJ-b7g" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="bwc-gC-lTl"/>
-                                                            <constraint firstItem="jec-8q-O56" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="vkS-fO-Xw4"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="9bd-l1-VKE" secondAttribute="trailing" id="hRm-hb-84g"/>
+                                                            <constraint firstItem="9bd-l1-VKE" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="xKx-3m-yOb"/>
                                                         </constraints>
                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yYm-ZQ-vXe" userLabel="Message Reserve Stack View">
-                                                        <rect key="frame" x="0.0" y="579" width="375" height="30"/>
+                                                        <rect key="frame" x="0.0" y="493" width="375" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-Mp-ygU">
                                                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
@@ -230,13 +237,12 @@
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
-                        <outlet property="curator" destination="PHM-3c-b0Y" id="Ddi-0B-Ozu"/>
                         <outlet property="curatorAboutMe" destination="OsM-kv-fJq" id="fcO-iS-oq3"/>
                         <outlet property="curatorImage" destination="57I-aQ-V9O" id="nMg-qh-9YA"/>
                         <outlet property="curatorName" destination="Hgt-dh-ids" id="YZO-5L-zvq"/>
                         <outlet property="experienceDescription" destination="6y4-yg-eTu" id="Mqe-RL-en9"/>
                         <outlet property="experienceTitle" destination="pEs-RE-VP4" id="9vB-fG-6FX"/>
-                        <outlet property="favoritesButton" destination="2VN-dH-56k" id="ZtK-VD-JLE"/>
+                        <outlet property="favoritesButton" destination="IGz-rm-ggv" id="xO5-Op-6k9"/>
                         <outlet property="pagerContainer" destination="Psb-Ac-Lmf" id="5KL-eO-Ltr"/>
                         <outlet property="skillLevel" destination="P10-3l-81W" id="5mS-yL-RrY"/>
                     </connections>
@@ -582,6 +588,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_favorite" width="24" height="24"/>
+        <image name="ic_favorite_border" width="24" height="24"/>
         <image name="profile" width="208" height="208"/>
     </resources>
 </document>
