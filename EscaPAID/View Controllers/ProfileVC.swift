@@ -40,7 +40,7 @@ class ProfileVC: UIViewController {
 
 extension ProfileVC: ExperienceTableViewDelegate {
     func isFiltering() -> Bool {
-        // We don't filter as we're already showing only only the curator's experiences
+        // We don't filter as we're already showing only the curator's experiences
         return false
     }
     

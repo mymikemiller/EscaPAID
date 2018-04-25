@@ -39,7 +39,7 @@ class User: NSObject {
                 return UIImage(data: data as Data)!
             }
         }
-        return #imageLiteral(resourceName: "profile")
+        return #imageLiteral(resourceName: "ic_account_circle")
     }
     
     func updateProfileImageUrl(_ url:String) {
