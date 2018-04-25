@@ -15,6 +15,9 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet weak var experienceTitle: UILabel!
     @IBOutlet weak var skillLevel: UILabel!
     @IBOutlet weak var experienceDescription: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var includes: UILabel!
+    
     
     @IBOutlet weak var curatorImage: UIImageView!
     @IBOutlet weak var curatorName: ThemedLabel!
@@ -35,15 +38,9 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             experienceTitle.text = experience.title
             skillLevel.text = experience.skillLevel + " Level"
             
-            let includesArray = experience.includes.split(separator: ",")
-            var includesText = ""
-            for str in includesArray {
-                includesText += str.trimmingCharacters(in: .whitespacesAndNewlines) + "\n"
-            }
-            
-            experienceDescription.text = experience.experienceDescription + "\n\n" +
-            "INCLUDES: \n" + includesText + "\n\n" +
-            String(format: "PRICE: $%.02f", experience.price)
+            experienceDescription.text = experience.experienceDescription
+            price.text = String(format: "$%.02f", experience.price)
+            includes.text = experience.includes
             
             if let profileImageURL = URL(string: experience.curator.profileImageUrl) {
                 curatorImage.af_setImage(withURL: profileImageURL)
@@ -52,7 +49,6 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             curatorName.text = experience.curator.fullName
             curatorAboutMe.text = experience.curator.aboutMe
            
-            
             setFavoritesButtonState()
         }
         
