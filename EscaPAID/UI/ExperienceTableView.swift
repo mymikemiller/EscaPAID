@@ -51,7 +51,7 @@ class ExperienceTableView: UITableView {
         // Prepare the cell display
         let nib = UINib(nibName: "ExperienceCardCell",bundle: nil)
         register(nib, forCellReuseIdentifier: "experienceCardCell")
-        layoutMargins = UIEdgeInsetsMake(0, 37, 0, 37)
+        layoutMargins = UIEdgeInsetsMake(0, 16, 0, 16)
         rowHeight = contentSize.width / CGFloat(Constants.cardRatio)
     }
     
