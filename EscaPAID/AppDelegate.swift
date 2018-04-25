@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        // Set the tint color for things like the tab bar icons
+        UITabBar.appearance().tintColor = Config.current.mainColor
+        
         setUpPageControl()
         registerForPushNotifications(application)
         

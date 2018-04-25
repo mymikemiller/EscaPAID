@@ -186,7 +186,7 @@
         <scene sceneID="AE4-6F-8zV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bWw-b3-TgI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="n4Q-f5-Tpq"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="ic_settings" id="n4Q-f5-Tpq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NZm-s1-osZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -234,6 +234,9 @@
             <point key="canvasLocation" x="1349" y="1041"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_settings" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9QZ-wE-O4g"/>
     </inferredMetricsTieBreakers>
