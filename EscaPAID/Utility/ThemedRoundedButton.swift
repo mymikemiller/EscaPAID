@@ -1,14 +1,14 @@
 //
-//  ThemedButton.swift
+//  ThemedRoundedButton.swift
 //  EscaPAID
 //
-//  Created by Michael Miller on 4/25/18.
+//  Created by Michael Miller on 4/18/18.
 //  Copyright © 2018 Michael Miller. All rights reserved.
 //
 
 import UIKit
 
-class ThemedButton: UIButton {
+class ThemedRoundedButton: RoundedButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         sharedInit()
@@ -20,6 +20,7 @@ class ThemedButton: UIButton {
     }
     
     func sharedInit() {
-        self.backgroundColor = Config.current.mainColor
+        self.setTitleColor(Config.current.mainColor, for: .normal)
+        self.tintColor = Config.current.mainColor
     }
 }

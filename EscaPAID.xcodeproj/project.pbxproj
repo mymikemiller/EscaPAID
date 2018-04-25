@@ -40,8 +40,8 @@
 		E77A736E204875A200AE0DE4 /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7368204875A200AE0DE4 /* ExperienceManager.swift */; };
 		E783B9952087DDDF00F2F769 /* ThemedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9942087DDDF00F2F769 /* ThemedLabel.swift */; };
 		E783B9962087DDDF00F2F769 /* ThemedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9942087DDDF00F2F769 /* ThemedLabel.swift */; };
-		E783B9982087E7A400F2F769 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9972087E7A400F2F769 /* ThemedButton.swift */; };
-		E783B9992087E7A400F2F769 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9972087E7A400F2F769 /* ThemedButton.swift */; };
+		E783B9982087E7A400F2F769 /* ThemedRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9972087E7A400F2F769 /* ThemedRoundedButton.swift */; };
+		E783B9992087E7A400F2F769 /* ThemedRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9972087E7A400F2F769 /* ThemedRoundedButton.swift */; };
 		E783B99B2088F60600F2F769 /* HexagonalImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B99A2088F60600F2F769 /* HexagonalImageView.swift */; };
 		E783B99C2088F60600F2F769 /* HexagonalImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B99A2088F60600F2F769 /* HexagonalImageView.swift */; };
 		E783B99E2088F67400F2F769 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B99D2088F67400F2F769 /* Utils.swift */; };
@@ -123,6 +123,8 @@
 		E79FA59720290EA50060B44D /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59620290EA50060B44D /* Reservation.swift */; };
 		E79FA59F202A69050060B44D /* ReservationsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59E202A69050060B44D /* ReservationsTableVC.swift */; };
 		E79FA5A3202A6AB90060B44D /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */; };
+		E7B47A93209131CA00F836A1 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B47A92209131CA00F836A1 /* ThemedButton.swift */; };
+		E7B47A94209131CA00F836A1 /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B47A92209131CA00F836A1 /* ThemedButton.swift */; };
 		E7B4CDAD207BB4C400352DB1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDAC207BB4C400352DB1 /* CardView.swift */; };
 		E7B4CDAE207BB5A500352DB1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDAC207BB4C400352DB1 /* CardView.swift */; };
 		E7B4CDBC207C26EF00352DB1 /* ExperienceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDBB207C26EF00352DB1 /* ExperienceCard.swift */; };
@@ -215,7 +217,7 @@
 		E77A7367204875A200AE0DE4 /* ReservationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationManager.swift; sourceTree = "<group>"; };
 		E77A7368204875A200AE0DE4 /* ExperienceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceManager.swift; sourceTree = "<group>"; };
 		E783B9942087DDDF00F2F769 /* ThemedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedLabel.swift; sourceTree = "<group>"; };
-		E783B9972087E7A400F2F769 /* ThemedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButton.swift; sourceTree = "<group>"; };
+		E783B9972087E7A400F2F769 /* ThemedRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedRoundedButton.swift; sourceTree = "<group>"; };
 		E783B99A2088F60600F2F769 /* HexagonalImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonalImageView.swift; sourceTree = "<group>"; };
 		E783B99D2088F67400F2F769 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E783B9A3208A2E2800F2F769 /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		E79FA59620290EA50060B44D /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		E79FA59E202A69050060B44D /* ReservationsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsTableVC.swift; sourceTree = "<group>"; };
 		E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
+		E7B47A92209131CA00F836A1 /* ThemedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButton.swift; sourceTree = "<group>"; };
 		E7B4CDAC207BB4C400352DB1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E7B4CDBB207C26EF00352DB1 /* ExperienceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCard.swift; sourceTree = "<group>"; };
 		E7B4CDEC207EBF7600352DB1 /* ExperienceCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceCard.xib; sourceTree = "<group>"; };
@@ -411,7 +414,8 @@
 				E7B4CDAC207BB4C400352DB1 /* CardView.swift */,
 				E7B4CDEF207FFBE200352DB1 /* UIImage+Utility.swift */,
 				E783B9942087DDDF00F2F769 /* ThemedLabel.swift */,
-				E783B9972087E7A400F2F769 /* ThemedButton.swift */,
+				E783B9972087E7A400F2F769 /* ThemedRoundedButton.swift */,
+				E7B47A92209131CA00F836A1 /* ThemedButton.swift */,
 				E783B99A2088F60600F2F769 /* HexagonalImageView.swift */,
 				E783B9A3208A2E2800F2F769 /* CircularImageView.swift */,
 				E783B99D2088F67400F2F769 /* Utils.swift */,
@@ -864,7 +868,7 @@
 				E79F05CD2059700400889D14 /* ExperienceVC.swift in Sources */,
 				E79F05CE2059700400889D14 /* ReservationsTableVC.swift in Sources */,
 				E79F05CF2059700400889D14 /* Experience.swift in Sources */,
-				E783B9992087E7A400F2F769 /* ThemedButton.swift in Sources */,
+				E783B9992087E7A400F2F769 /* ThemedRoundedButton.swift in Sources */,
 				E79F05D02059700400889D14 /* DaySelectorTableVC.swift in Sources */,
 				E783B99C2088F60600F2F769 /* HexagonalImageView.swift in Sources */,
 				E79F05D12059700400889D14 /* ReservationProcessor.swift in Sources */,
@@ -874,6 +878,7 @@
 				E79F05D52059700400889D14 /* ThreadsTableVC.swift in Sources */,
 				E79F05D62059700400889D14 /* ExperienceEditorTableVC.swift in Sources */,
 				E79ADAFB2071E5D100C02C0A /* UILabel+Utility.swift in Sources */,
+				E7B47A94209131CA00F836A1 /* ThemedButton.swift in Sources */,
 				E79F05D72059700400889D14 /* ProfileEditorTableVC.swift in Sources */,
 				E79F05D82059700400889D14 /* SelfContainedPickerView.swift in Sources */,
 				E79F05D92059700400889D14 /* SettingsTableVC.swift in Sources */,
@@ -932,7 +937,7 @@
 				E79FA59F202A69050060B44D /* ReservationsTableVC.swift in Sources */,
 				E72B248F1FC65B3800DE0897 /* Experience.swift in Sources */,
 				E712DE4420154F1C00661DE7 /* DaySelectorTableVC.swift in Sources */,
-				E783B9982087E7A400F2F769 /* ThemedButton.swift in Sources */,
+				E783B9982087E7A400F2F769 /* ThemedRoundedButton.swift in Sources */,
 				E79FA59520290E3D0060B44D /* ReservationProcessor.swift in Sources */,
 				E783B99B2088F60600F2F769 /* HexagonalImageView.swift in Sources */,
 				E7F9A0861FB74CEB00916FBA /* FirebaseManager.swift in Sources */,
@@ -942,6 +947,7 @@
 				E71F33AA2004650800312B91 /* ExperienceEditorTableVC.swift in Sources */,
 				E73BDABF1FFD52D800D1F209 /* ProfileEditorTableVC.swift in Sources */,
 				E79ADAFA2071BFD400C02C0A /* UILabel+Utility.swift in Sources */,
+				E7B47A93209131CA00F836A1 /* ThemedButton.swift in Sources */,
 				E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */,
 				E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */,
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,
