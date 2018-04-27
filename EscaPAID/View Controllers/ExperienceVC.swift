@@ -12,6 +12,8 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     var experience:Experience?
 
+    @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var experienceTitle: UILabel!
     @IBOutlet weak var skillLevel: UILabel!
     @IBOutlet weak var experienceDescription: UILabel!
@@ -57,6 +59,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         let startingViewController:ExperienceImageVC = viewControllerAtIndex(index: 0)!
         let viewControllers = [startingViewController]
         imagePageViewController?.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        
     }
     
     private func setFavoritesButtonState() {
