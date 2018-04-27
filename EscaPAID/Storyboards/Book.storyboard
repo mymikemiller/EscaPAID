@@ -273,6 +273,9 @@
                                                     <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Psb-Ac-Lmf" firstAttribute="width" secondItem="krH-WB-FEx" secondAttribute="width" id="EVO-bB-ltU"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
