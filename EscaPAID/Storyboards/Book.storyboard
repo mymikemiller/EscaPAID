@@ -246,14 +246,6 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="6y4-yg-eTu" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="1ai-Kd-q2P"/>
-                                                            <constraint firstItem="yYm-ZQ-vXe" firstAttribute="trailing" secondItem="j7N-gM-lEa" secondAttribute="trailing" id="3jB-7E-lic"/>
-                                                            <constraint firstItem="crp-MJ-b7g" firstAttribute="trailing" secondItem="j7N-gM-lEa" secondAttribute="trailingMargin" id="Qjh-Ez-pj6"/>
-                                                            <constraint firstItem="crp-MJ-b7g" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="bwc-gC-lTl"/>
-                                                            <constraint firstAttribute="trailingMargin" secondItem="9bd-l1-VKE" secondAttribute="trailing" id="hRm-hb-84g"/>
-                                                            <constraint firstItem="9bd-l1-VKE" firstAttribute="leading" secondItem="j7N-gM-lEa" secondAttribute="leadingMargin" id="xKx-3m-yOb"/>
-                                                        </constraints>
                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
                                                     </stackView>
                                                 </subviews>
@@ -286,7 +278,7 @@
                         <constraints>
                             <constraint firstItem="ayz-Rt-QDS" firstAttribute="top" secondItem="Z7h-fx-SWE" secondAttribute="top" id="1ym-zl-BX0"/>
                             <constraint firstItem="ayz-Rt-QDS" firstAttribute="leading" secondItem="Z7h-fx-SWE" secondAttribute="leading" id="Q2l-3K-ogu"/>
-                            <constraint firstItem="Z7h-fx-SWE" firstAttribute="trailing" secondItem="ayz-Rt-QDS" secondAttribute="trailing" id="e8N-ZU-i3b"/>
+                            <constraint firstItem="ayz-Rt-QDS" firstAttribute="trailing" secondItem="Z7h-fx-SWE" secondAttribute="trailing" id="e8N-ZU-i3b"/>
                             <constraint firstItem="Z7h-fx-SWE" firstAttribute="bottom" secondItem="ayz-Rt-QDS" secondAttribute="bottom" id="g1I-de-Red"/>
                             <constraint firstItem="hK0-am-loF" firstAttribute="width" secondItem="pPZ-Uq-KIb" secondAttribute="width" id="uvl-Rt-jbO"/>
                         </constraints>
