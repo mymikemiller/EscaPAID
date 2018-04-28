@@ -14,10 +14,8 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var dummyTitle: UILabel!
-    @IBOutlet weak var dummySkillLevel: UILabel!
-    @IBOutlet weak var dummyLabel: UILabel!
-    
+    @IBOutlet weak var experienceTitle: UILabel!
+    @IBOutlet weak var skillLevel: UILabel!
     
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var includes: UILabel!
@@ -40,9 +38,8 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         super.viewDidLoad()
     
         if let experience = experience {
-            dummyTitle.text = experience.title
-            
-            dummySkillLevel.text = experience.skillLevel + " Level"
+            experienceTitle.text = experience.title
+            skillLevel.text = experience.skillLevel + " Level"
             
             
             price.text = String(format: "$%.02f", experience.price)
