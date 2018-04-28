@@ -11,6 +11,8 @@ import UIKit
 class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     var experience:Experience?
+    
+    var reviewManager: ReviewManager = ReviewManager()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -55,6 +57,11 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             curatorAboutMe.text = experience.curator.aboutMe
            
             setFavoritesButtonState()
+            
+            reviewManager.fillReviews(experienceId: experience.id) { (_) in
+                // Heavy hammer. Reload the entire table for every new review.
+                self.tableView.reloadData()
+            }
         }
         
         imagePageViewController?.dataSource = self
@@ -175,6 +182,18 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             (segue.destination as! ProfileVC).user = experience!.curator
         }
     }
-    
-
 }
+
+extension ExperienceVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviewManager.reviews.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let review = reviewManager.reviews[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath)
+        cell.textLabel?.text = review.text
+        return cell
+    }
+}
+
+
