@@ -91,7 +91,7 @@
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hWR-FA-HM9" userLabel="New Description Stack View">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hWR-FA-HM9" userLabel="Description Stack View">
                                                             <rect key="frame" x="16" y="69.5" width="343" height="47.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrC-5l-jM8" userLabel="Description Header" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
@@ -103,7 +103,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Includes}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZ5-wt-qj7">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Description}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZ5-wt-qj7">
                                                                     <rect key="frame" x="0.0" y="28" width="343" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                                     <color key="textColor" red="0.41960784309999999" green="0.44705882349999998" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -327,6 +327,7 @@
                         <outlet property="curatorAboutMe" destination="OsM-kv-fJq" id="fcO-iS-oq3"/>
                         <outlet property="curatorImage" destination="57I-aQ-V9O" id="nMg-qh-9YA"/>
                         <outlet property="curatorName" destination="Hgt-dh-ids" id="YZO-5L-zvq"/>
+                        <outlet property="experienceDescription" destination="iZ5-wt-qj7" id="0Ux-Gg-hH0"/>
                         <outlet property="experienceTitle" destination="AVS-d9-INh" id="1i6-YP-blL"/>
                         <outlet property="favoritesButton" destination="ai3-UN-I5W" id="f7g-go-Uzy"/>
                         <outlet property="includes" destination="bp9-jP-gtO" id="ica-Ck-piw"/>
@@ -334,7 +335,6 @@
                         <outlet property="price" destination="MQC-DY-VqF" id="Abq-vq-XFC"/>
                         <outlet property="skillLevel" destination="QBw-Bl-azw" id="gk3-cX-QIT"/>
                         <outlet property="tableView" destination="vM1-JZ-v23" id="kNf-dh-6de"/>
-                        <outlet property="testIncludes" destination="iZ5-wt-qj7" id="6tU-zU-b6v"/>
                         <segue destination="XKI-jc-A6l" kind="show" identifier="showProfile" id="gq1-VR-7eP"/>
                     </connections>
                 </viewController>

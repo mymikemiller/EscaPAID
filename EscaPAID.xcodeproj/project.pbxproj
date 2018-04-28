@@ -127,8 +127,6 @@
 		E7AE98A32092894C00BFFFE6 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98A12092894C00BFFFE6 /* ReviewManager.swift */; };
 		E7AE98A520928CEF00BFFFE6 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98A420928CEF00BFFFE6 /* Review.swift */; };
 		E7AE98A620928CEF00BFFFE6 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98A420928CEF00BFFFE6 /* Review.swift */; };
-		E7AE98A82092C10A00BFFFE6 /* ReviewTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98A72092C10A00BFFFE6 /* ReviewTableView.swift */; };
-		E7AE98A92092C10A00BFFFE6 /* ReviewTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98A72092C10A00BFFFE6 /* ReviewTableView.swift */; };
 		E7AE98AB2092C1F900BFFFE6 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AE98AA2092C1F900BFFFE6 /* ReviewCell.xib */; };
 		E7AE98AC2092C1F900BFFFE6 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AE98AA2092C1F900BFFFE6 /* ReviewCell.xib */; };
 		E7AE98AE2092C48C00BFFFE6 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98AD2092C48C00BFFFE6 /* ReviewCell.swift */; };
@@ -249,7 +247,6 @@
 		E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
 		E7AE98A12092894C00BFFFE6 /* ReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
 		E7AE98A420928CEF00BFFFE6 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		E7AE98A72092C10A00BFFFE6 /* ReviewTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableView.swift; sourceTree = "<group>"; };
 		E7AE98AA2092C1F900BFFFE6 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
 		E7AE98AD2092C48C00BFFFE6 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		E7B47A92209131CA00F836A1 /* ThemedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedButton.swift; sourceTree = "<group>"; };
@@ -528,7 +525,6 @@
 				E7B4CDBB207C26EF00352DB1 /* ExperienceCard.swift */,
 				E7B4CDEC207EBF7600352DB1 /* ExperienceCard.xib */,
 				E783B9A6208E3CA400F2F769 /* ExperienceTableView.swift */,
-				E7AE98A72092C10A00BFFFE6 /* ReviewTableView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -901,7 +897,6 @@
 				E79F05D62059700400889D14 /* ExperienceEditorTableVC.swift in Sources */,
 				E79ADAFB2071E5D100C02C0A /* UILabel+Utility.swift in Sources */,
 				E7B47A94209131CA00F836A1 /* ThemedButton.swift in Sources */,
-				E7AE98A92092C10A00BFFFE6 /* ReviewTableView.swift in Sources */,
 				E79F05D72059700400889D14 /* ProfileEditorTableVC.swift in Sources */,
 				E7AE98A32092894C00BFFFE6 /* ReviewManager.swift in Sources */,
 				E7AE98A620928CEF00BFFFE6 /* Review.swift in Sources */,
@@ -974,7 +969,6 @@
 				E73BDABF1FFD52D800D1F209 /* ProfileEditorTableVC.swift in Sources */,
 				E79ADAFA2071BFD400C02C0A /* UILabel+Utility.swift in Sources */,
 				E7B47A93209131CA00F836A1 /* ThemedButton.swift in Sources */,
-				E7AE98A82092C10A00BFFFE6 /* ReviewTableView.swift in Sources */,
 				E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */,
 				E7AE98A22092894C00BFFFE6 /* ReviewManager.swift in Sources */,
 				E7AE98A520928CEF00BFFFE6 /* Review.swift in Sources */,
