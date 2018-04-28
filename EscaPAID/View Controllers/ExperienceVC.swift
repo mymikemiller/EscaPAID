@@ -14,12 +14,15 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var experienceTitle: UILabel!
-    @IBOutlet weak var skillLevel: UILabel!
-    @IBOutlet weak var experienceDescription: UILabel!
+    @IBOutlet weak var dummyTitle: UILabel!
+    @IBOutlet weak var dummySkillLevel: UILabel!
+    @IBOutlet weak var dummyLabel: UILabel!
+    
+    
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var includes: UILabel!
     
+    @IBOutlet weak var testIncludes: UILabel!
     
     @IBOutlet weak var curatorImage: UIImageView!
     @IBOutlet weak var curatorName: ThemedLabel!
@@ -35,14 +38,17 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         if let experience = experience {
-            experienceTitle.text = experience.title
-            skillLevel.text = experience.skillLevel + " Level"
+            dummyTitle.text = experience.title
             
-            experienceDescription.text = experience.experienceDescription
+            dummySkillLevel.text = experience.skillLevel + " Level"
+            
+            
             price.text = String(format: "$%.02f", experience.price)
             includes.text = experience.includes
+            
+            testIncludes.text = experience.experienceDescription
             
             if let profileImageURL = URL(string: experience.curator.profileImageUrl) {
                 curatorImage.af_setImage(withURL: profileImageURL)
