@@ -102,7 +102,10 @@ class DiscoverVC: UIViewController {
         refreshDisplayType()
         
         // Change the button's image. Using a "highlighted" image doesn't work for bar button items, apparently.
-        let image = isShowingFavorites ? #imageLiteral(resourceName: "ic_favorite") : #imageLiteral(resourceName: "ic_favorite_border")
+        let image = isShowingFavorites ?
+            UIImage(named: "ic_favorite")?.withRenderingMode(.alwaysTemplate) :
+            UIImage(named: "ic_favorite_border")?.withRenderingMode(.alwaysTemplate)
+        showFavoritesButton.tintColor = Config.current.mainColor
         showFavoritesButton.setImage(image, for: .normal)
     }
     

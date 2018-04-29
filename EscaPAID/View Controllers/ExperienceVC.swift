@@ -43,6 +43,12 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             return
         }
         
+        
+        // Tint the favorite button's image.
+        favoritesButton.setImage(UIImage(named: "ic_favorite_border")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        favoritesButton.setImage(UIImage(named: "ic_favorite")?.withRenderingMode(.alwaysTemplate), for: .highlighted)
+        favoritesButton.tintColor = Config.current.mainColor
+        
         // Set the size of the imageView container. We can't use an aspect ratio constraint because systemLayoutSizeFitting (which we use to compress the empty space out of the header) doesn't play nice with that, so we calculate the height ourselves
         let imageHeight = pagerContainer.bounds.size.width
          / CGFloat(Constants.experienceImageRatio)
@@ -96,7 +102,6 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     private func setFavoritesButtonState() {
         if let experience = experience {
-            
             ExperienceManager.onIsFavoriteChanged(experience: experience, completion: { (isFavorite) in
                 self.isFavorite = isFavorite
                 

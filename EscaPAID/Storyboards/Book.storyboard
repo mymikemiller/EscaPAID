@@ -79,6 +79,7 @@
                                                                         <constraint firstAttribute="width" constant="43" id="OTV-xh-C5i"/>
                                                                         <constraint firstAttribute="height" constant="43" id="YFV-Zo-MDK"/>
                                                                     </constraints>
+                                                                    <color key="tintColor" red="0.81999999280000002" green="0.065417002860000004" blue="0.025034335830000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <state key="normal" image="ic_favorite_border"/>
                                                                     <state key="highlighted" image="ic_favorite"/>
                                                                     <connections>
