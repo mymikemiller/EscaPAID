@@ -19,6 +19,9 @@ class Constants: NSObject {
     // The ratio of width to height of the ExperienceCards
     static let cardRatio = 380/185.0
     
+    // The expected ratio of width to height of the experience images. It's ok for them to vary, but they'll be aspect fit into a space with this ratio
+    static let experienceImageRatio = 414/260.0
+    
     static let numGuests = ["1",
                             "2",
                             "3",

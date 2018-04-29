@@ -42,6 +42,12 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             // This page must have an experience set
             return
         }
+        
+        // Set the size of the imageView container. We can't use an aspect ratio constraint because systemLayoutSizeFitting (which we use to compress the empty space out of the header) doesn't play nice with that, so we calculate the height ourselves
+        let imageHeight = pagerContainer.bounds.size.width
+         / CGFloat(Constants.experienceImageRatio)
+        pagerContainer.addConstraint(NSLayoutConstraint(item: pagerContainer, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: imageHeight))
+        
         experienceTitle.text = experience.title
         skillLevel.text = experience.skillLevel + " Level"
         
@@ -78,6 +84,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         guard let headerView = tableView.tableHeaderView else {
             return
         }
+        
         let size = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
         // Avoid a layout loop by only resizing if necessary
         if headerView.frame.size.height != size.height {
