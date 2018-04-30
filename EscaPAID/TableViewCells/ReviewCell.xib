@@ -30,8 +30,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="text" destination="Bg1-dK-dFg" id="fhx-3v-fl6"/>
-                <outlet property="textLabel" destination="Bg1-dK-dFg" id="Eje-Mt-PyM"/>
+                <outlet property="reviewText" destination="Bg1-dK-dFg" id="vHE-gr-O6m"/>
             </connections>
         </view>
     </objects>

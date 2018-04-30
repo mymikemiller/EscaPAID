@@ -10,15 +10,15 @@ import UIKit
 
 class ReviewCell: UITableViewCell {
     
-    var review: Review!
     @IBOutlet weak var reviewText: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+    }
+    
+    func configure(with review: Review) {
         reviewText.text = review.text
-        
     }
     
     // We don't want to look any different when we're selected or highlighted, so intercept and don't call super for these methods

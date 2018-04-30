@@ -43,7 +43,9 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             return
         }
         
-        
+        // Register the cell for reviews
+        tableView.register(UINib(nibName: "ReviewCell", bundle: Bundle.main), forCellReuseIdentifier: "reviewCell")
+
         // Tint the favorite button's image.
         favoritesButton.setImage(UIImage(named: "ic_favorite_border")?.withRenderingMode(.alwaysTemplate), for: .normal)
         favoritesButton.setImage(UIImage(named: "ic_favorite")?.withRenderingMode(.alwaysTemplate), for: .highlighted)
@@ -201,8 +203,9 @@ extension ExperienceVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let review = reviewManager.reviews[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath)
-        cell.textLabel?.text = review.text
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) as! ReviewCell
+        cell.configure(with: review)
         return cell
     }
 }
