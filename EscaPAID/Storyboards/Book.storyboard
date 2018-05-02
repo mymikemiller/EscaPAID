@@ -228,10 +228,10 @@
                                                             </connections>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="yYm-ZQ-vXe" userLabel="Message &amp; Reserve Stack View">
-                                                            <rect key="frame" x="16" y="416" width="343" height="140.5"/>
+                                                            <rect key="frame" x="16" y="416" width="343" height="108.5"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-Mp-ygU">
-                                                                    <rect key="frame" x="0.0" y="49.5" width="165.5" height="42"/>
+                                                                    <rect key="frame" x="0.0" y="33.5" width="165.5" height="42"/>
                                                                     <color key="backgroundColor" red="0.41960784309999999" green="0.44705882349999998" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                                                     <state key="normal" title="Message">
@@ -247,7 +247,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUu-xi-b7c" customClass="ThemedButton" customModule="Renaissance" customModuleProvider="target">
-                                                                    <rect key="frame" x="177.5" y="49.5" width="165.5" height="42"/>
+                                                                    <rect key="frame" x="177.5" y="33.5" width="165.5" height="42"/>
                                                                     <color key="backgroundColor" red="0.41960784309999999" green="0.44705882349999998" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                                                     <state key="normal" title="Reserve">
@@ -262,6 +262,17 @@
                                                                         <segue destination="RXj-YQ-jXV" kind="show" identifier="showReservationVC" id="1Su-73-Lx5"/>
                                                                     </connections>
                                                                 </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="z9P-1s-zq4" userLabel="Reviews Stack View">
+                                                            <rect key="frame" x="16" y="536.5" width="343" height="20"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShW-J1-7wt" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
@@ -298,6 +309,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="1300"/>
                     <connections>
+                        <outlet property="contentStackView" destination="j7N-gM-lEa" id="TB5-72-aA9"/>
                         <outlet property="curatorAboutMe" destination="OsM-kv-fJq" id="fcO-iS-oq3"/>
                         <outlet property="curatorImage" destination="57I-aQ-V9O" id="nMg-qh-9YA"/>
                         <outlet property="curatorName" destination="Hgt-dh-ids" id="YZO-5L-zvq"/>
