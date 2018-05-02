@@ -26,41 +26,53 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="112.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DAL-x7-Fyz" userLabel="Photo/Review Stack View">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NjM-dC-yEg" userLabel="Full Stack View">
                         <rect key="frame" x="16" y="0.0" width="343" height="112.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_account_circle" translatesAutoresizingMaskIntoConstraints="NO" id="xka-BY-tni" customClass="CircularImageView" customModule="Renaissance" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="Kk8-Dk-U3E"/>
-                                    <constraint firstAttribute="height" constant="74" id="RRD-Bh-aYW"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="vwi-bA-O46" userLabel="Title/Text Stack View">
-                                <rect key="frame" x="94" y="0.0" width="249" height="44"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DAL-x7-Fyz" userLabel="Photo/Review Stack View">
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="105.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiX-PB-Udh" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="249" height="20"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bg1-dK-dFg">
-                                        <rect key="frame" x="0.0" y="27" width="249" height="17"/>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_account_circle" translatesAutoresizingMaskIntoConstraints="NO" id="xka-BY-tni" customClass="CircularImageView" customModule="Renaissance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="74" id="Kk8-Dk-U3E"/>
+                                            <constraint firstAttribute="height" constant="74" id="RRD-Bh-aYW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="vwi-bA-O46" userLabel="Title/Text Stack View">
+                                        <rect key="frame" x="94" y="0.0" width="249" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiX-PB-Udh" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="249" height="20"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bg1-dK-dFg">
+                                                <rect key="frame" x="0.0" y="27" width="249" height="17"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                                <color key="textColor" red="0.41960784309999999" green="0.44705882349999998" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGG-R9-3fz" userLabel="Spacer">
+                                <rect key="frame" x="0.0" y="105.5" width="343" height="7"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="7" id="nak-Ik-JA4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="DAL-x7-Fyz" firstAttribute="trailing" secondItem="ejA-Kv-OHC" secondAttribute="trailing" constant="-16" id="2BK-ZI-Vf5"/>
-                    <constraint firstItem="DAL-x7-Fyz" firstAttribute="bottom" secondItem="ejA-Kv-OHC" secondAttribute="bottom" id="68J-vU-oRS"/>
-                    <constraint firstItem="DAL-x7-Fyz" firstAttribute="leading" secondItem="ejA-Kv-OHC" secondAttribute="leading" constant="16" id="Mda-cr-fa5"/>
-                    <constraint firstItem="DAL-x7-Fyz" firstAttribute="top" secondItem="ejA-Kv-OHC" secondAttribute="top" id="h4s-nW-bKm"/>
+                    <constraint firstAttribute="bottom" secondItem="NjM-dC-yEg" secondAttribute="bottom" id="0Og-Iz-4NB"/>
+                    <constraint firstAttribute="trailing" secondItem="NjM-dC-yEg" secondAttribute="trailing" constant="16" id="VYY-EM-B8Y"/>
+                    <constraint firstItem="NjM-dC-yEg" firstAttribute="top" secondItem="ejA-Kv-OHC" secondAttribute="top" id="aJV-us-MzL"/>
+                    <constraint firstItem="NjM-dC-yEg" firstAttribute="leading" secondItem="ejA-Kv-OHC" secondAttribute="leading" constant="16" id="kUq-oo-DNq"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

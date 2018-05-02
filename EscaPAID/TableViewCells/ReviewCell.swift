@@ -21,6 +21,7 @@ class ReviewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    
     func configure(with review: Review) {
         reviewTitle.text = review.title
         reviewText.text = review.text

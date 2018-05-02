@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +31,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vM1-JZ-v23">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vM1-JZ-v23">
                                 <rect key="frame" x="0.0" y="20" width="375" height="1280"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="7y4-6G-hN6" userLabel="Header View">
@@ -68,7 +69,7 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="{Skill Level}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBw-Bl-azw" userLabel="Skill Level">
                                                                             <rect key="frame" x="0.0" y="29.5" width="300" height="20"/>
                                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
-                                                                            <color key="textColor" red="0.41960784309999999" green="0.44705882349999998" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="textColor" name="dark_grey"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -103,7 +104,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Description}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZ5-wt-qj7">
                                                                     <rect key="frame" x="0.0" y="28" width="343" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                                                                    <color key="textColor" red="0.41960784309999999" green="0.44705882349999998" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" name="dark_grey"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -123,7 +124,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Price}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQC-DY-VqF">
                                                                     <rect key="frame" x="0.0" y="28" width="343" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                                                                    <color key="textColor" red="0.41960784309999999" green="0.44705882349999998" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" name="dark_grey"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -143,7 +144,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Includes}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp9-jP-gtO">
                                                                     <rect key="frame" x="0.0" y="28" width="343" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                                                                    <color key="textColor" red="0.41960784309999999" green="0.44705882349999998" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" name="dark_grey"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -184,7 +185,7 @@
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="{About Me}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsM-kv-fJq" userLabel="Curator About Me" customClass="Label">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="193" height="59"/>
                                                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                                                                                    <color key="textColor" red="0.41960784309999999" green="0.44705882349999998" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="textColor" name="dark_grey"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
@@ -207,7 +208,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" name="light_grey"/>
                                                             <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstItem="gQF-QD-XQI" firstAttribute="trailing" secondItem="crp-MJ-b7g" secondAttribute="trailing" constant="-10" id="2tE-28-nE1"/>
@@ -232,7 +233,7 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-Mp-ygU">
                                                                     <rect key="frame" x="0.0" y="33.5" width="165.5" height="42"/>
-                                                                    <color key="backgroundColor" red="0.41960784309999999" green="0.44705882349999998" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" name="dark_grey"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                                                     <state key="normal" title="Message">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -309,7 +310,6 @@
                     </view>
                     <size key="freeformSize" width="375" height="1300"/>
                     <connections>
-                        <outlet property="contentStackView" destination="j7N-gM-lEa" id="TB5-72-aA9"/>
                         <outlet property="curatorAboutMe" destination="OsM-kv-fJq" id="fcO-iS-oq3"/>
                         <outlet property="curatorImage" destination="57I-aQ-V9O" id="nMg-qh-9YA"/>
                         <outlet property="curatorName" destination="Hgt-dh-ids" id="YZO-5L-zvq"/>
@@ -654,5 +654,11 @@
         <image name="ic_account_circle" width="24" height="24"/>
         <image name="ic_favorite" width="24" height="24"/>
         <image name="ic_favorite_border" width="24" height="24"/>
+        <namedColor name="dark_grey">
+            <color red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="light_grey">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
