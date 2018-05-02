@@ -10,6 +10,8 @@ import Foundation
 
 struct Review {
     var experienceId: String
-    var date: Date
+    var title: String
     var text: String
+    var reviewer: User
+    var date: Date
 }

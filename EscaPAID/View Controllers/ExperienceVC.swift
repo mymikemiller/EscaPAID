@@ -77,6 +77,10 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             self.tableView.reloadData()
         }
         
+        // Set up the tableView to auto-fit reviews
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140 // arbitrary value
+        
         imagePageViewController?.dataSource = self
         
         let startingViewController:ExperienceImageVC = viewControllerAtIndex(index: 0)!
@@ -202,7 +206,8 @@ extension ExperienceVC: UITableViewDelegate, UITableViewDataSource {
         return reviewManager.reviews.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let review = reviewManager.reviews[indexPath.row]
+        // Get the reviews in reverse order so the newest review is first
+        let review = reviewManager.reviews.reversed()[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) as! ReviewCell
         cell.configure(with: review)

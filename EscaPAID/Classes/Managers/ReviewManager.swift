@@ -47,16 +47,28 @@ class ReviewManager: NSObject {
             
             if let result = snapshot.value as? [String:AnyObject]{
                 let text = result["text"]! as! String
+                let title = result["title"]! as! String
+                let reviewerUid = result["reviewer"]! as! String
                 let dateString = result["date"]! as! String
                 
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
                 let date = dateFormatter.date(from: dateString)!
                 
-                let review = Review(experienceId: experienceId, date: date, text: text)
-                self.reviews.append(review)
+                
+                // Get the user who wrote the review
+                FirebaseManager.getUser(uid: reviewerUid, completion: { (reviewer) in
+                    
+                    if (reviewer != nil) {
+                        
+                        let review = Review(experienceId: experienceId, title: title, text: text, reviewer: reviewer!, date: date)
+                        self.reviews.append(review)
+                        
+                        // Signal that we've gotten a new review
+                        completion("")
+                    }
+                })
             }
-            completion("")
         })
     }
     
