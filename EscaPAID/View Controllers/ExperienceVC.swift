@@ -27,6 +27,8 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet weak var curatorName: ThemedLabel!
     @IBOutlet weak var curatorAboutMe: ThemedLabel!
     
+    @IBOutlet weak var reviewsLabel: ThemedLabel!
+    
     @IBOutlet weak var pagerContainer: UIView!
     
     @IBOutlet weak var favoritesButton: UIButton!
@@ -73,6 +75,9 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         setFavoritesButtonState()
         
         reviewManager.fillReviews(experienceId: experience.id) { (_) in
+            // Update the review label now that we know how many reviews there are
+            self.reviewsLabel.text = "\(self.reviewManager.reviews.count) Reviews"
+            
             // Heavy hammer. Reload the entire table for every new review.
             self.tableView.reloadData()
         }
