@@ -1,5 +1,9 @@
 # EscaPAID
 
+EscaPAID is the base marketplace app that can be customized by adding targets. Currently there are two targets:
+* Renaissance: a marketplace for craftsmen to share their craft with paying customers
+* Tellomee: a marketplace for premium experiences
+
 Development notes:
 
 * Separate apps
