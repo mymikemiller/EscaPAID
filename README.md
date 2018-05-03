@@ -1,5 +1,7 @@
 # EscaPAID
 
+Development notes:
+
 * Separate apps
   * iOS
     * The iOS project uses targets to toggle between apps
