@@ -20,6 +20,7 @@ class DiscoverVC: UIViewController {
     
     
     @IBOutlet weak var experienceTableView: ExperienceTableView!
+    @IBOutlet weak var experienceCollectionView: ExperienceCollectionView!
     
     @IBOutlet weak var cityPickerToolbar: UIToolbar!
     @IBOutlet weak var cityPicker: SelfContainedPickerView!
@@ -62,9 +63,11 @@ class DiscoverVC: UIViewController {
     }
     
     func refreshDisplayType() {
-        var displayType = isShowingFavorites ?
-            DisplayType.Favorites(FirebaseManager.user!) :
-            DisplayType.City(FirebaseManager.user!.city)
+        experienceCollectionView.displayType = .Curator(FirebaseManager.user!)
+        
+        let displayType = isShowingFavorites ?
+            ExperienceTableView.DisplayType.Favorites(FirebaseManager.user!) :
+            .City(FirebaseManager.user!.city)
         
         // This will cause the table to refresh
         experienceTableView.displayType = displayType
@@ -92,7 +95,7 @@ class DiscoverVC: UIViewController {
     }
     
     @objc func cityChanged() {
-        experienceTableView.displayType = DisplayType.City((FirebaseManager.user?.city)!)
+        experienceTableView.displayType = .City((FirebaseManager.user?.city)!)
     }
 
     @IBAction func showFavoritesButton_click(_ sender: Any) {

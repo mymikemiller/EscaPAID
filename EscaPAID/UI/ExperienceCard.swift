@@ -12,6 +12,23 @@ import AlamofireImage
 
 @IBDesignable class ExperienceCard: CardView {
     
+    enum FontSize {
+        case Large
+        case Small
+    }
+    
+    var fontSize: FontSize = FontSize.Large {
+        didSet {
+            switch fontSize {
+            case FontSize.Large:
+                skillLevel.font = skillLevel.font.withSize(16)
+                title.font = title.font.withSize(24) 
+            case FontSize.Small:
+                skillLevel.font = skillLevel.font.withSize(12)
+                title.font = title.font.withSize(16)           }
+        }
+    }
+    
     var experience:Experience! {
         didSet {
             skillLevel.text = experience.skillLevel

@@ -18,7 +18,8 @@ class MyExperiencesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        experienceTableView.displayType = DisplayType.Curator(FirebaseManager.user!)
+        experienceTableView.displayType =
+            ExperienceTableView.DisplayType.Curator(FirebaseManager.user!)
     }
     
     @IBAction func addButton_click(_ sender: Any) {

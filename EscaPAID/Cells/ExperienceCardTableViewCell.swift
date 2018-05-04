@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExperienceCardCell: UITableViewCell {
+class ExperienceCardTableViewCell: UITableViewCell {
 
     @IBOutlet weak var card: ExperienceCard!
     

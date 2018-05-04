@@ -10,18 +10,19 @@
 
 import UIKit
 
-enum DisplayType {
-    case Curator(User)
-    case City(String)
-    case Favorites(User)
-}
-
 @objc protocol ExperienceTableViewDelegate: class {
     @objc func didSelectCard(_ card: ExperienceCard)
     @objc func isFiltering() -> Bool
 }
 
 class ExperienceTableView: UITableView {
+    
+    enum DisplayType {
+        case Curator(User)
+        case City(String)
+        case Favorites(User)
+    }
+
     // The delegate that receives events such as when the user taps on a card
     @IBOutlet weak var experienceDelegate: ExperienceTableViewDelegate?
 
@@ -49,8 +50,8 @@ class ExperienceTableView: UITableView {
         self.dataSource = self
         
         // Prepare the cell display
-        let nib = UINib(nibName: "ExperienceCardCell",bundle: nil)
-        register(nib, forCellReuseIdentifier: "experienceCardCell")
+        let nib = UINib(nibName: "ExperienceCardTableViewCell",bundle: nil)
+        register(nib, forCellReuseIdentifier: "experienceCardTableViewCell")
         layoutMargins = UIEdgeInsetsMake(0, 16, 0, 16)
         rowHeight = contentSize.width / CGFloat(Constants.cardRatio)
     }
@@ -117,7 +118,7 @@ extension ExperienceTableView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCardCell", for: indexPath) as! ExperienceCardCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCardTableViewCell", for: indexPath) as! ExperienceCardTableViewCell
         
         let experience: Experience
         if (experienceDelegate == nil || !experienceDelegate!.isFiltering()) {
@@ -133,7 +134,7 @@ extension ExperienceTableView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! ExperienceCardCell
+        let cell = tableView.cellForRow(at: indexPath) as! ExperienceCardTableViewCell
         
         experienceDelegate?.didSelectCard(cell.card)
     }
