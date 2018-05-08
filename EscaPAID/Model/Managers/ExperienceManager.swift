@@ -59,6 +59,17 @@ class ExperienceManager: NSObject {
         })
     }
     
+    static func getExperiences(forCurator user: User, completion: @escaping (Experience) -> Void) {
+        ExperienceManager.databaseRef.child("experiences").queryOrdered(byChild: "uid").queryEqual(toValue: user.uid).observe(.childAdded, with: {
+            snap in
+            
+            ExperienceManager.getExperience(snap, completion: { (experience) in
+                completion(experience)
+            })
+        })
+    }
+
+    
     func fillExperiences(forFavoritesOf user: User, completion: @escaping () -> Void) {
         clear()
         

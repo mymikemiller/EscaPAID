@@ -9,7 +9,7 @@
 import Foundation
 
 struct Review {
-    var experienceId: String
+    var experience: Experience
     var title: String
     var text: String
     var reviewer: User

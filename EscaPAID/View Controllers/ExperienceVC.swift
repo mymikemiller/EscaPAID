@@ -47,6 +47,19 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         
         // Register the cell for reviews
         tableView.register(UINib(nibName: "ReviewCell", bundle: Bundle.main), forCellReuseIdentifier: "reviewCell")
+        
+        // Set up the tableView to auto-fit reviews
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140 // arbitrary value
+       
+        // Fetch the reviews
+        reviewManager.fillReviews(experience: experience) {
+            // Update the review label now that we know how many reviews there are
+            self.reviewsLabel.text = "\(self.reviewManager.reviews.count) Review\(self.reviewManager.reviews.count == 1 ? "" : "s")"
+            
+            // Heavy hammer. Reload the entire table for every new review.
+            self.tableView.reloadData()
+        }
 
         // Tint the favorite button's image.
         favoritesButton.setImage(UIImage(named: "ic_favorite_border")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -74,17 +87,6 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
        
         setFavoritesButtonState()
         
-        reviewManager.fillReviews(experienceId: experience.id) { (_) in
-            // Update the review label now that we know how many reviews there are
-            self.reviewsLabel.text = "\(self.reviewManager.reviews.count) Reviews"
-            
-            // Heavy hammer. Reload the entire table for every new review.
-            self.tableView.reloadData()
-        }
-        
-        // Set up the tableView to auto-fit reviews
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 140 // arbitrary value
         
         imagePageViewController?.dataSource = self
         
@@ -206,6 +208,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     }
 }
 
+// Handle reviews
 extension ExperienceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reviewManager.reviews.count
@@ -216,6 +219,10 @@ extension ExperienceVC: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) as! ReviewCell
         cell.configure(with: review)
+        
+        // No need to show the experience name
+        cell.hideExperienceTitle()
+        
         return cell
     }
 }

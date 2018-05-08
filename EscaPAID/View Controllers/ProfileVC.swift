@@ -16,9 +16,11 @@ class ProfileVC: UIViewController {
     
     @IBOutlet weak var experienceCollectionView: ExperienceCollectionView!
     
+    var reviewManager: ReviewManager = ReviewManager()
+    
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var profilePhoto: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -28,14 +30,31 @@ class ProfileVC: UIViewController {
             aboutMeLabel.preferredMaxLayoutWidth = UIScreen.main.bounds.width
         }
     }
-
+    
+    @IBOutlet weak var reviewsLabel: ThemedLabel!
     
     override func viewDidLoad() {
-        imageView.image = user.getProfileImage()
+        profilePhoto.image = user.getProfileImage()
         nameLabel.text = user.fullName
         aboutMeLabel.text = user.aboutMe
         
         experienceCollectionView.displayType = .Curator(user)
+        
+        // Register the cell for reviews
+        tableView.register(UINib(nibName: "ReviewCell", bundle: Bundle.main), forCellReuseIdentifier: "reviewCell")
+        
+        // Set up the tableView to auto-fit reviews
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140 // arbitrary value
+        
+        // Fetch the reviews
+        reviewManager.fillReviews(curator: user) {
+            // Update the review label now that we know how many reviews there are
+            self.reviewsLabel.text = "\(self.reviewManager.reviews.count) Review\(self.reviewManager.reviews.count == 1 ? "" : "s")"
+            
+            // Heavy hammer. Reload the entire table for every new review.
+            self.tableView.reloadData()
+        }
         
         // For some reason, setting this via IB causes the background to be black. So we set it here.
         experienceCollectionView.backgroundColor = UIColor.clear
@@ -75,3 +94,19 @@ extension ProfileVC: ExperienceCollectionViewDelegate {
         self.performSegue(withIdentifier: "showExperience", sender: self)
     }
 }
+
+
+extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviewManager.reviews.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Get the reviews in reverse order so the newest review is first
+        let review = reviewManager.reviews.reversed()[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) as! ReviewCell
+        cell.configure(with: review)
+        return cell
+    }
+}
+

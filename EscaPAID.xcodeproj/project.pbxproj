@@ -415,7 +415,7 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		E720AC071FC210AB00E9C2EF /* Classes */ = {
+		E720AC071FC210AB00E9C2EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E720AC051FC2100800E9C2EF /* Managers */,
@@ -427,7 +427,7 @@
 				E79FA59620290EA50060B44D /* Reservation.swift */,
 				E7AE98A420928CEF00BFFFE6 /* Review.swift */,
 			);
-			path = Classes;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E79770E62044772200B2206C /* Utility */ = {
@@ -508,7 +508,7 @@
 				E7D3D79320362D6100F91CC4 /* UI */,
 				E720AC041FC20FE500E9C2EF /* View Controllers */,
 				E720AC061FC2108B00E9C2EF /* Cells */,
-				E720AC071FC210AB00E9C2EF /* Classes */,
+				E720AC071FC210AB00E9C2EF /* Model */,
 				E79770E62044772200B2206C /* Utility */,
 				E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */,
 				E7D0A7831FDB573D008319CF /* Constants.swift */,
