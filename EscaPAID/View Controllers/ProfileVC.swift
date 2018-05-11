@@ -73,6 +73,18 @@ class ProfileVC: UIViewController {
         tableView.tableHeaderView = header
     }
     
+    @IBAction func messageButton_click(_ sender: Any) {
+        guard self.user.uid != FirebaseManager.user!.uid else {
+            present(UIAlertController(message: "You cannot send a message to yourself."), animated: true)
+            return
+        }
+        
+        let data = ["user" : self.user]
+        
+        // Send a broadcast notification to let the inbox know which thread to show
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: ThreadsNavigationController.SHOW_THREAD_POST), object: data)
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showExperience" {

@@ -18,6 +18,9 @@
         <array key="Montserrat-Bold.ttf">
             <string>Montserrat-Bold</string>
         </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Experience Delegate-->
@@ -32,22 +35,11 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="980"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="4r4-kh-PTf" userLabel="Header View">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultBackground" translatesAutoresizingMaskIntoConstraints="NO" id="CQY-i1-yyI" userLabel="Background Image View">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="orL-O9-0Rj" userLabel="Photo Image View" customClass="CircularImageView" customModule="Renaissance" customModuleProvider="target">
-                                            <rect key="frame" x="115.5" y="119" width="144" height="144"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="144" id="2CW-kO-Uan"/>
-                                                <constraint firstAttribute="height" constant="144" id="76F-q0-fEy"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="hero_profileImage"/>
-                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wit-c3-ir2">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
@@ -62,27 +54,57 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="orL-O9-0Rj" userLabel="Photo Image View" customClass="CircularImageView" customModule="Renaissance" customModuleProvider="target">
+                                            <rect key="frame" x="115" y="119" width="144" height="144"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="144" id="2CW-kO-Uan"/>
+                                                <constraint firstAttribute="height" constant="144" id="76F-q0-fEy"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="hero_profileImage"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="01Z-PC-lJ7">
-                                            <rect key="frame" x="0.0" y="293" width="375" height="307"/>
+                                            <rect key="frame" x="0.0" y="293" width="375" height="507"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4W-T9-QI5" customClass="ThemedButton" customModule="Renaissance" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                                    <color key="backgroundColor" name="dark_grey"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="49" id="H9Y-99-OLn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
+                                                    <state key="normal" title="Send a Message">
+                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="messageButton_click:" destination="5fu-pD-r4e" eventType="touchUpInside" id="xFj-ai-DXT"/>
+                                                    </connections>
+                                                </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXR-JG-R8h" userLabel="About Me Stack View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
+                                                    <rect key="frame" x="0.0" y="64" width="375" height="193"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mI4-ai-zGL" userLabel="Spacer View">
-                                                            <rect key="frame" x="0.0" y="0.0" width="16" height="57"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="16" height="193"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="16" id="MW8-t0-Fc9"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuU-wv-KwL" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
-                                                            <rect key="frame" x="16" y="0.0" width="343" height="57"/>
+                                                            <rect key="frame" x="16" y="0.0" width="343" height="193"/>
                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                             <color key="textColor" name="dark_grey"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Fr-uG-COM" userLabel="Spacer View">
-                                                            <rect key="frame" x="359" y="0.0" width="16" height="57"/>
+                                                            <rect key="frame" x="359" y="0.0" width="16" height="193"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="16" id="Cw1-Iy-rn9"/>
@@ -91,7 +113,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6f8-cy-i6k" customClass="ExperienceCollectionView" customModule="Renaissance" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="72" width="375" height="180"/>
+                                                    <rect key="frame" x="0.0" y="272" width="375" height="180"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="180" id="ILD-Rs-q00"/>
                                                     </constraints>
@@ -116,7 +138,7 @@
                                                     </connections>
                                                 </collectionView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbU-vr-bmG" userLabel="Reviews Label Stack View">
-                                                    <rect key="frame" x="0.0" y="267" width="375" height="40"/>
+                                                    <rect key="frame" x="0.0" y="467" width="375" height="40"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kN8-cw-NgE">
                                                             <rect key="frame" x="0.0" y="0.0" width="16" height="40"/>
@@ -201,6 +223,9 @@
     </scenes>
     <resources>
         <image name="DefaultBackground" width="576" height="573"/>
+        <namedColor name="dark_grey">
+            <color red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="dark_grey">
             <color red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
