@@ -46,7 +46,7 @@ class ExperienceCollectionView: UICollectionView {
     
     func refresh() {
         guard (displayType != nil) else {
-            fatalError("ExperienceTableView must have its displayType set.")
+            fatalError("ExperienceCollectionView must have its displayType set.")
         }
 
         // Empty the experiences first
