@@ -22,6 +22,10 @@ class ProfileVC: UIViewController {
     
     @IBOutlet weak var profilePhoto: UIImageView!
     
+    @IBOutlet weak var experiencesNumberLabel: ThemedLabel!
+    @IBOutlet weak var reviewsNumberLabel: ThemedLabel!
+    @IBOutlet weak var experiencesLabel: ThemedLabel!
+    
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var aboutMeLabel: ThemedLabel! {
@@ -38,6 +42,7 @@ class ProfileVC: UIViewController {
         nameLabel.text = user.fullName
         aboutMeLabel.text = user.aboutMe
         
+        // Configure the experience collection view
         experienceCollectionView.displayType = .Curator(user)
         
         // Register the cell for reviews
@@ -49,8 +54,10 @@ class ProfileVC: UIViewController {
         
         // Fetch the reviews
         reviewManager.fillReviews(curator: user) {
-            // Update the review label now that we know how many reviews there are
-            self.reviewsLabel.text = "\(self.reviewManager.reviews.count) Review\(self.reviewManager.reviews.count == 1 ? "" : "s")"
+            // Update the review labels now that we know how many reviews there are
+            let count = self.reviewManager.reviews.count
+            self.reviewsNumberLabel.text = String(count)
+            self.reviewsLabel.text = "\(count) Review\(count == 1 ? "" : "s")"
             
             // Heavy hammer. Reload the entire table for every new review.
             self.tableView.reloadData()
@@ -94,7 +101,6 @@ class ProfileVC: UIViewController {
 }
 
 extension ProfileVC: ExperienceCollectionViewDelegate {
-    
     func didSelectCard(_ card: ExperienceCard) {
         // Unset the hero id for the previously selected card
         selectedCard?.hero.id = nil
@@ -104,6 +110,10 @@ extension ProfileVC: ExperienceCollectionViewDelegate {
         selectedCard?.hero.id = "hero_card"
         
         self.performSegue(withIdentifier: "showExperience", sender: self)
+    }
+    
+    func newExperienceAdded(total: Int) {
+        experiencesNumberLabel.text = String(total)
     }
 }
 

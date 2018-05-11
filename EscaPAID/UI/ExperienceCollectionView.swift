@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol ExperienceCollectionViewDelegate: class {
     @objc func didSelectCard(_ card: ExperienceCard)
+    @objc optional func newExperienceAdded(total: Int)
 }
 
 class ExperienceCollectionView: UICollectionView {
@@ -63,6 +64,8 @@ class ExperienceCollectionView: UICollectionView {
     }
     
     func newExperienceAdded() {
+        experienceDelegate?.newExperienceAdded?(total: experienceManager.experiences.count)
+        
         // mikem: This is way too big a hammer. This happens every time a new Experience is added to the database. Ideally we would only refresh that one item.
         self.reloadData()
     }
