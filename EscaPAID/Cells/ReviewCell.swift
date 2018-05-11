@@ -31,8 +31,12 @@ class ReviewCell: UITableViewCell {
         reviewTitle.text = review.title
         reviewText.text = review.text
         
+        print("URL:",  review.reviewer.profileImageUrl.suffix(3))
+
         if let profileImageURL = URL(string: review.reviewer.profileImageUrl) {
-            profilePhoto.af_setImage(withURL: profileImageURL)
+            profilePhoto.af_setImage(withURL: profileImageURL, placeholderImage: #imageLiteral(resourceName: "ic_account_circle"))
+        } else {
+            profilePhoto.image = #imageLiteral(resourceName: "ic_account_circle")
         }
     }
     
