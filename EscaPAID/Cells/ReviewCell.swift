@@ -12,7 +12,7 @@ class ReviewCell: UITableViewCell {
     
     @IBOutlet weak var stackView: UIStackView!
     
-    @IBOutlet weak var experienceTitle: ThemedLabel!
+    @IBOutlet weak var experienceTitle: ThemedLabel?
     
     @IBOutlet weak var reviewTitle: ThemedLabel!
     
@@ -27,7 +27,9 @@ class ReviewCell: UITableViewCell {
     
     
     func configure(with review: Review) {
-        experienceTitle.text = review.experience.title
+        // experienceTitle may have been removed, so treat it as optional
+        experienceTitle?.text = review.experience.title
+        
         reviewTitle.text = review.title
         reviewText.text = review.text
         
@@ -39,8 +41,10 @@ class ReviewCell: UITableViewCell {
     }
     
     func hideExperienceTitle() {
-        stackView.removeArrangedSubview(experienceTitle)
-        experienceTitle.removeFromSuperview()
+        if (experienceTitle != nil) {
+            stackView.removeArrangedSubview(experienceTitle!)
+            experienceTitle!.removeFromSuperview()
+        }
     }
     
     // We don't want to look any different when we're selected or highlighted, so intercept and don't call super for these methods
