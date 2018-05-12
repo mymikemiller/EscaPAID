@@ -266,6 +266,7 @@
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                                     <integer key="value" value="15"/>
                                                                                 </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="inverted" value="YES"/>
                                                                             </userDefinedRuntimeAttributes>
                                                                             <connections>
                                                                                 <segue destination="RXj-YQ-jXV" kind="show" identifier="showReservationVC" id="1Su-73-Lx5"/>
@@ -306,6 +307,36 @@
                                         <constraint firstItem="krH-WB-FEx" firstAttribute="leading" secondItem="7y4-6G-hN6" secondAttribute="leading" id="SWy-jm-eba"/>
                                     </constraints>
                                 </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="iwc-K1-LFz" userLabel="Footer View">
+                                    <rect key="frame" x="0.0" y="872" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7x-rC-93y" customClass="ThemedButton" customModule="Renaissance" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                            <state key="normal" title="Write a Review">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="u7x-rC-93y" secondAttribute="trailing" id="6Y8-k3-sLQ"/>
+                                        <constraint firstItem="u7x-rC-93y" firstAttribute="leading" secondItem="iwc-K1-LFz" secondAttribute="leading" id="YAw-YS-BAy"/>
+                                        <constraint firstAttribute="bottom" secondItem="u7x-rC-93y" secondAttribute="bottom" id="q0g-qu-Axk"/>
+                                        <constraint firstItem="u7x-rC-93y" firstAttribute="top" secondItem="iwc-K1-LFz" secondAttribute="top" id="vOD-S8-bax"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Xm8-da-B27">
+                                        <rect key="frame" x="0.0" y="828" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xm8-da-B27" id="QU4-ju-wlV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="8jk-U6-0pk" id="uBB-jv-WmJ"/>
                                     <outlet property="delegate" destination="8jk-U6-0pk" id="2sC-bU-sXR"/>

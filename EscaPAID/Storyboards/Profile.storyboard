@@ -142,6 +142,7 @@
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                             <integer key="value" value="14"/>
                                                                         </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="inverted" value="YES"/>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <connections>
                                                                         <action selector="messageButton_click:" destination="5fu-pD-r4e" eventType="touchUpInside" id="xFj-ai-DXT"/>

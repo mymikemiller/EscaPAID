@@ -8,18 +8,31 @@
 
 import UIKit
 
-class ThemedButton: UIButton {
+@IBDesignable class ThemedButton: UIButton {
+    
+    // Normally, the button's text color becomes the main color. If the button is inverted, the background color becomes the main color.
+    @IBInspectable var inverted: Bool = false
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        sharedInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
         sharedInit()
     }
     
+    
+    
     func sharedInit() {
-        self.backgroundColor = Config.current.mainColor
+        if (inverted) {
+            self.backgroundColor = Config.current.mainColor
+        } else {
+            self.setTitleColor(Config.current.mainColor, for: .normal)
+        }
     }
 }
