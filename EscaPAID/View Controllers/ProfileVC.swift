@@ -52,6 +52,9 @@ class ProfileVC: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140 // arbitrary value
         
+        // Set the text for the Experiences label
+        experiencesLabel.text = Config.current.experiencesName
+        
         // Fetch the reviews
         reviewManager.fillReviews(curator: user) {
             // Update the review labels now that we know how many reviews there are
