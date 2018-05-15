@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThemedRoundedButton: RoundedButton {
+@IBDesignable class ThemedRoundedButton: RoundedButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         sharedInit()

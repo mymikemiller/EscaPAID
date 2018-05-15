@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircularImageView: UIImageView {
+@IBDesignable class CircularImageView: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

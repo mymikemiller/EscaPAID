@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThemedLabel: UILabel {
+@IBDesignable class ThemedLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

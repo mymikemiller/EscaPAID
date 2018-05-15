@@ -45,13 +45,13 @@ class FirebaseManager: NSObject {
     
     static func logInWithEmail(email:String, password:String, completion:
         @escaping (_ result:EmailLogInResult) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password, completion: { (firebaseUser, error) in
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (result, error) in
             
             if let error = error {
                 print(error.localizedDescription)
                 completion(EmailLogInResult.Error)
             } else {
-                if let firebaseUser = firebaseUser {
+                if let firebaseUser = result?.user {
                     
                     if (firebaseUser.isEmailVerified) {
                         print ("Email verified. Signing in...")
@@ -104,14 +104,15 @@ class FirebaseManager: NSObject {
     
     static func createAccountWithEmail(email:String, firstName:String, lastName:String, password:String, completion: @escaping(String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password, completion: {
-            (user, error) in
+            (result, error) in
             if let error = error {
                 completion(error.localizedDescription)
                 return
             }
             
+            
             // Send the verification email. We'll need to verify it before logging in fully.
-            user?.sendEmailVerification(completion: nil)
+            result?.user.sendEmailVerification(completion: nil)
             
             // Add the user to our database (even if they're not verified) so we can associate information with the user.
             addUser(email: email, firstName: firstName, lastName: lastName, profileImageUrl: "") {user in

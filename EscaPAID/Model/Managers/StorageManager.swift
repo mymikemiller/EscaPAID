@@ -23,10 +23,10 @@ class StorageManager: NSObject {
                     return
                 } else {
                     print(metadata)
-                    if let downloadUrl = metadata?.downloadURL()?.absoluteString {
-                        
-                        completion(downloadUrl)
-                    }
+//                    if let downloadUrl = metadata()?.absoluteString {
+//
+//                        completion(downloadUrl)
+//                    }
                 }
             }
         }

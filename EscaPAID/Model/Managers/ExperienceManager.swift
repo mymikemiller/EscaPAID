@@ -111,7 +111,9 @@ class ExperienceManager: NSObject {
         databaseRef.child("experiences").child(experienceId).observeSingleEvent(of: .value, with: {
             snap in
             
-            getExperience(snap, completion: completion)
+            if (snap.hasChildren()) {
+                getExperience(snap, completion: completion)
+            }
             
         })
     }
