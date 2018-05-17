@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BorderedTextField: UITextField {
+@IBDesignable class BorderedTextField: UITextField {
 
     override func awakeFromNib() {
         self.layer.borderWidth = 1

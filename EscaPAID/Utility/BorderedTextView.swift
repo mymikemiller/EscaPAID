@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BorderedTextView: UITextView {
+@IBDesignable class BorderedTextView: UITextView {
     
     override func awakeFromNib() {
         self.layer.borderWidth = 1

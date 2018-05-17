@@ -204,6 +204,8 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             (segue.destination as! ReservationVC).experience = experience
         } else if (segue.identifier == "showProfile") {
             (segue.destination as! ProfileVC).user = experience!.curator
+        } else if (segue.identifier == "showWriteReview") {
+            (segue.destination as! WriteReviewVC).experience = experience
         }
     }
 }

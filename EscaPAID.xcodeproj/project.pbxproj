@@ -37,6 +37,8 @@
 		E776BE3520AE0E0100B7C3CD /* BorderedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3320AE0E0100B7C3CD /* BorderedTextView.swift */; };
 		E776BE3720AE14D300B7C3CD /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3620AE14D300B7C3CD /* BorderedTextField.swift */; };
 		E776BE3820AE14D300B7C3CD /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3620AE14D300B7C3CD /* BorderedTextField.swift */; };
+		E776BE3A20AE1CB400B7C3CD /* WriteReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3920AE1CB400B7C3CD /* WriteReviewVC.swift */; };
+		E776BE3B20AE1CB400B7C3CD /* WriteReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3920AE1CB400B7C3CD /* WriteReviewVC.swift */; };
 		E77A7369204875A200AE0DE4 /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7363204875A100AE0DE4 /* ThreadManager.swift */; };
 		E77A736A204875A200AE0DE4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7364204875A100AE0DE4 /* StorageManager.swift */; };
 		E77A736B204875A200AE0DE4 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7365204875A100AE0DE4 /* PostManager.swift */; };
@@ -231,6 +233,7 @@
 		E774C83D203A1B4E00F98EB2 /* Book.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
 		E776BE3320AE0E0100B7C3CD /* BorderedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextView.swift; sourceTree = "<group>"; };
 		E776BE3620AE14D300B7C3CD /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
+		E776BE3920AE1CB400B7C3CD /* WriteReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewVC.swift; sourceTree = "<group>"; };
 		E77A7363204875A100AE0DE4 /* ThreadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadManager.swift; sourceTree = "<group>"; };
 		E77A7364204875A100AE0DE4 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E77A7365204875A100AE0DE4 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
@@ -386,6 +389,7 @@
 				E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */,
 				E79FA59E202A69050060B44D /* ReservationsTableVC.swift */,
 				E728EA34202BB6C30041F6AC /* ReceiptTableVC.swift */,
+				E776BE3920AE1CB400B7C3CD /* WriteReviewVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -925,6 +929,7 @@
 				E776BE3820AE14D300B7C3CD /* BorderedTextField.swift in Sources */,
 				E7AE98A620928CEF00BFFFE6 /* Review.swift in Sources */,
 				E79F05D82059700400889D14 /* SelfContainedPickerView.swift in Sources */,
+				E776BE3B20AE1CB400B7C3CD /* WriteReviewVC.swift in Sources */,
 				E79F05D92059700400889D14 /* SettingsTableVC.swift in Sources */,
 				E79F05DA2059700400889D14 /* User.swift in Sources */,
 				E7B4CDBD207C26EF00352DB1 /* ExperienceCard.swift in Sources */,
@@ -1001,6 +1006,7 @@
 				E776BE3720AE14D300B7C3CD /* BorderedTextField.swift in Sources */,
 				E7AE98A520928CEF00BFFFE6 /* Review.swift in Sources */,
 				E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */,
+				E776BE3A20AE1CB400B7C3CD /* WriteReviewVC.swift in Sources */,
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,
 				E72B24891FC6539A00DE0897 /* DiscoverVC.swift in Sources */,
 				E7B4CDBC207C26EF00352DB1 /* ExperienceCard.swift in Sources */,

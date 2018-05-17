@@ -17,19 +17,23 @@ class ReviewManager: NSObject {
     var reviews: [Review] = []
     var observeHandle: DatabaseHandle?
     
-    static func addReview(experienceId:String, text:String) {
-        if (text != "") {
+    static func add(review reviewData: Review, to experience: Experience, completion: @escaping() -> Void) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: Date())
+        
+        let review = [
+            "date": dateString,
+            "title": reviewData.title,
+            "text": reviewData.text,
+            "reviewer": reviewData.reviewer.uid] as [String: String]
+        
+        // Add the review
+        let ref = ReviewManager.databaseRef.child("experienceReviews").child(experience.id).childByAutoId()
             
-            // Store the date (todo: or somehow use Firebase.ServerValue.timestamp())
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            let dateString = dateFormatter.string(from: Date())
-            
-            let review = ["date":dateString,
-                          "text":text]
-            
-            // Add the review
-            PostManager.databaseRef.child("experienceReviews").child(experienceId).childByAutoId().setValue(review)
+        ref.setValue(review) { (error, ref) -> Void in
+            completion()
         }
     }
     

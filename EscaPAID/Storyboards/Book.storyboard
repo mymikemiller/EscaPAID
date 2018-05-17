@@ -321,7 +321,7 @@
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <segue destination="k6D-UU-cmP" kind="show" id="fcL-tL-mpe"/>
+                                                <segue destination="k6D-UU-cmP" kind="show" identifier="showWriteReview" id="fcL-tL-mpe"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -400,10 +400,10 @@
             </objects>
             <point key="canvasLocation" x="2678" y="-1120"/>
         </scene>
-        <!--View Controller-->
+        <!--Write ReviewVC-->
         <scene sceneID="mjE-Wx-DMk">
             <objects>
-                <viewController id="k6D-UU-cmP" sceneMemberID="viewController">
+                <viewController id="k6D-UU-cmP" customClass="WriteReviewVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S6M-DX-mfh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -477,6 +477,9 @@
                                                         <integer key="value" value="14"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelButton_click:" destination="k6D-UU-cmP" eventType="touchUpInside" id="eZw-5b-rv7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIm-KJ-1ai" customClass="ThemedButton" customModule="Renaissance" customModuleProvider="target">
                                                 <rect key="frame" x="176.5" y="0.0" width="164.5" height="42"/>
@@ -491,6 +494,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="inverted" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="submitButton_click:" destination="k6D-UU-cmP" eventType="touchUpInside" id="Z6g-LR-tSi"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -505,6 +511,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KJZ-mE-PU8"/>
                     </view>
+                    <connections>
+                        <outlet property="reviewTextView" destination="NzE-Pz-pVH" id="FR2-uT-aG3"/>
+                        <outlet property="titleTextField" destination="SqM-q0-Mqp" id="OCa-gB-nJM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3i-Ox-Mda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -815,9 +825,6 @@
         <image name="ic_account_circle" width="24" height="24"/>
         <image name="ic_favorite" width="24" height="24"/>
         <image name="ic_favorite_border" width="24" height="24"/>
-        <namedColor name="dark_grey">
-            <color red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="dark_grey">
             <color red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
