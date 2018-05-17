@@ -33,6 +33,10 @@
 		E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */; };
 		E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
 		E774C83E203A1B4E00F98EB2 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774C83D203A1B4E00F98EB2 /* Book.storyboard */; };
+		E776BE3420AE0E0100B7C3CD /* BorderedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3320AE0E0100B7C3CD /* BorderedTextView.swift */; };
+		E776BE3520AE0E0100B7C3CD /* BorderedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3320AE0E0100B7C3CD /* BorderedTextView.swift */; };
+		E776BE3720AE14D300B7C3CD /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3620AE14D300B7C3CD /* BorderedTextField.swift */; };
+		E776BE3820AE14D300B7C3CD /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3620AE14D300B7C3CD /* BorderedTextField.swift */; };
 		E77A7369204875A200AE0DE4 /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7363204875A100AE0DE4 /* ThreadManager.swift */; };
 		E77A736A204875A200AE0DE4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7364204875A100AE0DE4 /* StorageManager.swift */; };
 		E77A736B204875A200AE0DE4 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7365204875A100AE0DE4 /* PostManager.swift */; };
@@ -225,6 +229,8 @@
 		E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginScreenVC.swift; sourceTree = "<group>"; };
 		E774C83D203A1B4E00F98EB2 /* Book.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
+		E776BE3320AE0E0100B7C3CD /* BorderedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextView.swift; sourceTree = "<group>"; };
+		E776BE3620AE14D300B7C3CD /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
 		E77A7363204875A100AE0DE4 /* ThreadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadManager.swift; sourceTree = "<group>"; };
 		E77A7364204875A100AE0DE4 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E77A7365204875A100AE0DE4 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
@@ -446,6 +452,8 @@
 				E783B99A2088F60600F2F769 /* HexagonalImageView.swift */,
 				E783B9A3208A2E2800F2F769 /* CircularImageView.swift */,
 				E783B99D2088F67400F2F769 /* Utils.swift */,
+				E776BE3320AE0E0100B7C3CD /* BorderedTextView.swift */,
+				E776BE3620AE14D300B7C3CD /* BorderedTextField.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -896,6 +904,7 @@
 				E79F05C92059700400889D14 /* ExperienceManager.swift in Sources */,
 				E79F05CA2059700400889D14 /* UIAlertController+Utility.swift in Sources */,
 				E79F05CB2059700400889D14 /* CreateAccountVC.swift in Sources */,
+				E776BE3520AE0E0100B7C3CD /* BorderedTextView.swift in Sources */,
 				E79F05CC2059700400889D14 /* Constants.swift in Sources */,
 				E79F05CD2059700400889D14 /* ExperienceVC.swift in Sources */,
 				E79F05CE2059700400889D14 /* ReservationsTableVC.swift in Sources */,
@@ -913,6 +922,7 @@
 				E7B47A94209131CA00F836A1 /* ThemedButton.swift in Sources */,
 				E79F05D72059700400889D14 /* ProfileEditorTableVC.swift in Sources */,
 				E7AE98A32092894C00BFFFE6 /* ReviewManager.swift in Sources */,
+				E776BE3820AE14D300B7C3CD /* BorderedTextField.swift in Sources */,
 				E7AE98A620928CEF00BFFFE6 /* Review.swift in Sources */,
 				E79F05D82059700400889D14 /* SelfContainedPickerView.swift in Sources */,
 				E79F05D92059700400889D14 /* SettingsTableVC.swift in Sources */,
@@ -970,6 +980,7 @@
 				E79770E82044774100B2206C /* UIAlertController+Utility.swift in Sources */,
 				E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */,
 				E7D0A7841FDB573D008319CF /* Constants.swift in Sources */,
+				E776BE3420AE0E0100B7C3CD /* BorderedTextView.swift in Sources */,
 				E7E22E911FC74C9200FD88FF /* ExperienceVC.swift in Sources */,
 				E79FA59F202A69050060B44D /* ReservationsTableVC.swift in Sources */,
 				E72B248F1FC65B3800DE0897 /* Experience.swift in Sources */,
@@ -987,6 +998,7 @@
 				E7B47A93209131CA00F836A1 /* ThemedButton.swift in Sources */,
 				E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */,
 				E7AE98A22092894C00BFFFE6 /* ReviewManager.swift in Sources */,
+				E776BE3720AE14D300B7C3CD /* BorderedTextField.swift in Sources */,
 				E7AE98A520928CEF00BFFFE6 /* Review.swift in Sources */,
 				E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */,
 				E74549941FB78AE200A6A32C /* User.swift in Sources */,
