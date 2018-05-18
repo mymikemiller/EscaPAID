@@ -41,7 +41,7 @@ class UIScrollingViewController: UIViewController {
     @objc func keyboardDidShow(_ notification: Notification) {
         // Set the content insets to accomodate the keyboard's height
         let userInfo: NSDictionary = notification.userInfo! as NSDictionary
-        let keyboardInfo = userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue
+        let keyboardInfo = userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue
         let keyboardSize = keyboardInfo.cgRectValue.size
         let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
         scrollView.contentInset = contentInsets

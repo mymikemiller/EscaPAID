@@ -598,7 +598,6 @@
                                         <constraints>
                                             <constraint firstItem="xSf-P9-QWd" firstAttribute="centerX" secondItem="cTE-uF-i2S" secondAttribute="centerX" id="79R-cD-S7t"/>
                                             <constraint firstItem="xSf-P9-QWd" firstAttribute="top" secondItem="cTE-uF-i2S" secondAttribute="top" constant="28" id="BHa-ki-YMk"/>
-                                            <constraint firstItem="xSf-P9-QWd" firstAttribute="top" secondItem="cTE-uF-i2S" secondAttribute="top" constant="28" id="C1a-wT-lMj"/>
                                             <constraint firstAttribute="bottom" secondItem="xSf-P9-QWd" secondAttribute="bottom" constant="28" id="JzA-Zf-d6W"/>
                                         </constraints>
                                     </view>
@@ -678,7 +677,7 @@
         <image name="ic_settings" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yl0-Zd-n9g"/>
-        <segue reference="OIa-MV-TGK"/>
+        <segue reference="glL-vf-AZJ"/>
+        <segue reference="m3W-45-i9V"/>
     </inferredMetricsTieBreakers>
 </document>

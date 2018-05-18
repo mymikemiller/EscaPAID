@@ -22,11 +22,14 @@ class StorageManager: NSObject {
                     print(error?.localizedDescription)
                     return
                 } else {
-                    print(metadata)
-//                    if let downloadUrl = metadata()?.absoluteString {
-//
-//                        completion(downloadUrl)
-//                    }
+                    imageRef.downloadURL { (url, error) in
+                        guard let downloadURL = url else {
+                            // Uh-oh, an error occurred!
+                            print(error?.localizedDescription)
+                            return
+                        }
+                        completion(downloadURL.absoluteString)
+                    }
                 }
             }
         }

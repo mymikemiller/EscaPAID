@@ -25,7 +25,6 @@
 		E72D8E531FBCC5C1001026D6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D8E521FBCC5C1001026D6 /* LoginVC.swift */; };
 		E72F64471FBBB22B0023489D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E72F64461FBBB22B0023489D /* Podfile */; };
 		E732DA931FC8DCC400BCF691 /* ThreadsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */; };
-		E73BDABF1FFD52D800D1F209 /* ProfileEditorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */; };
 		E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549911FB758B300A6A32C /* ChatTableViewCell.swift */; };
 		E74549941FB78AE200A6A32C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549931FB78AE200A6A32C /* User.swift */; };
 		E745499A1FB8B1BE00A6A32C /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */; };
@@ -39,6 +38,8 @@
 		E776BE3820AE14D300B7C3CD /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3620AE14D300B7C3CD /* BorderedTextField.swift */; };
 		E776BE3A20AE1CB400B7C3CD /* WriteReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3920AE1CB400B7C3CD /* WriteReviewVC.swift */; };
 		E776BE3B20AE1CB400B7C3CD /* WriteReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3920AE1CB400B7C3CD /* WriteReviewVC.swift */; };
+		E777167B20AE349500C7C6DE /* ProfileEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E777167A20AE349500C7C6DE /* ProfileEditorVC.swift */; };
+		E777167C20AE349500C7C6DE /* ProfileEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E777167A20AE349500C7C6DE /* ProfileEditorVC.swift */; };
 		E77A7369204875A200AE0DE4 /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7363204875A100AE0DE4 /* ThreadManager.swift */; };
 		E77A736A204875A200AE0DE4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7364204875A100AE0DE4 /* StorageManager.swift */; };
 		E77A736B204875A200AE0DE4 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7365204875A100AE0DE4 /* PostManager.swift */; };
@@ -87,7 +88,6 @@
 		E79F05D42059700400889D14 /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7363204875A100AE0DE4 /* ThreadManager.swift */; };
 		E79F05D52059700400889D14 /* ThreadsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */; };
 		E79F05D62059700400889D14 /* ExperienceEditorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A92004650800312B91 /* ExperienceEditorTableVC.swift */; };
-		E79F05D72059700400889D14 /* ProfileEditorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */; };
 		E79F05D82059700400889D14 /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
 		E79F05D92059700400889D14 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */; };
 		E79F05DA2059700400889D14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549931FB78AE200A6A32C /* User.swift */; };
@@ -223,7 +223,6 @@
 		E72D8E521FBCC5C1001026D6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E72F64461FBBB22B0023489D /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsNavigationController.swift; sourceTree = "<group>"; };
-		E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorTableVC.swift; sourceTree = "<group>"; };
 		E74549911FB758B300A6A32C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		E74549931FB78AE200A6A32C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
@@ -234,6 +233,7 @@
 		E776BE3320AE0E0100B7C3CD /* BorderedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextView.swift; sourceTree = "<group>"; };
 		E776BE3620AE14D300B7C3CD /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
 		E776BE3920AE1CB400B7C3CD /* WriteReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewVC.swift; sourceTree = "<group>"; };
+		E777167A20AE349500C7C6DE /* ProfileEditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorVC.swift; sourceTree = "<group>"; };
 		E77A7363204875A100AE0DE4 /* ThreadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadManager.swift; sourceTree = "<group>"; };
 		E77A7364204875A100AE0DE4 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E77A7365204875A100AE0DE4 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
@@ -381,7 +381,6 @@
 				E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */,
 				E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */,
 				E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */,
-				E73BDABE1FFD52D800D1F209 /* ProfileEditorTableVC.swift */,
 				E7ED3D212086D2F400EBB80A /* ProfileVC.swift */,
 				E71F33A92004650800312B91 /* ExperienceEditorTableVC.swift */,
 				E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */,
@@ -390,6 +389,7 @@
 				E79FA59E202A69050060B44D /* ReservationsTableVC.swift */,
 				E728EA34202BB6C30041F6AC /* ReceiptTableVC.swift */,
 				E776BE3920AE1CB400B7C3CD /* WriteReviewVC.swift */,
+				E777167A20AE349500C7C6DE /* ProfileEditorVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -904,6 +904,7 @@
 				E79F05C52059700400889D14 /* DateCell.swift in Sources */,
 				E79F05C62059700400889D14 /* MainAPIClient.swift in Sources */,
 				E79F05C72059700400889D14 /* ReservationVC.swift in Sources */,
+				E777167C20AE349500C7C6DE /* ProfileEditorVC.swift in Sources */,
 				E7CF4DEF206D512A00B7F97E /* GradientView.swift in Sources */,
 				E79F05C92059700400889D14 /* ExperienceManager.swift in Sources */,
 				E79F05CA2059700400889D14 /* UIAlertController+Utility.swift in Sources */,
@@ -924,7 +925,6 @@
 				E79F05D62059700400889D14 /* ExperienceEditorTableVC.swift in Sources */,
 				E79ADAFB2071E5D100C02C0A /* UILabel+Utility.swift in Sources */,
 				E7B47A94209131CA00F836A1 /* ThemedButton.swift in Sources */,
-				E79F05D72059700400889D14 /* ProfileEditorTableVC.swift in Sources */,
 				E7AE98A32092894C00BFFFE6 /* ReviewManager.swift in Sources */,
 				E776BE3820AE14D300B7C3CD /* BorderedTextField.swift in Sources */,
 				E7AE98A620928CEF00BFFFE6 /* Review.swift in Sources */,
@@ -981,6 +981,7 @@
 				E7B94FA720195F4D00C5FBCB /* DateCell.swift in Sources */,
 				E79770E52043816700B2206C /* MainAPIClient.swift in Sources */,
 				E7B94FA520195C1E00C5FBCB /* ReservationVC.swift in Sources */,
+				E777167B20AE349500C7C6DE /* ProfileEditorVC.swift in Sources */,
 				E77A736E204875A200AE0DE4 /* ExperienceManager.swift in Sources */,
 				E79770E82044774100B2206C /* UIAlertController+Utility.swift in Sources */,
 				E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */,
@@ -998,7 +999,6 @@
 				E77A7369204875A200AE0DE4 /* ThreadManager.swift in Sources */,
 				E7F9A0801FB6E1C900916FBA /* ThreadsTableVC.swift in Sources */,
 				E71F33AA2004650800312B91 /* ExperienceEditorTableVC.swift in Sources */,
-				E73BDABF1FFD52D800D1F209 /* ProfileEditorTableVC.swift in Sources */,
 				E79ADAFA2071BFD400C02C0A /* UILabel+Utility.swift in Sources */,
 				E7B47A93209131CA00F836A1 /* ThemedButton.swift in Sources */,
 				E79D653C1FE9CD0000267E0C /* SelfContainedPickerView.swift in Sources */,

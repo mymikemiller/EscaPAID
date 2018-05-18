@@ -12,7 +12,7 @@ import UIKit
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        sharedInit()
+        // sharedInit() This crashes in Interface Builder for some reason
     }
     
     required init?(coder aDecoder: NSCoder) {
