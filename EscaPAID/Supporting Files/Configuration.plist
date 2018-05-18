@@ -28,8 +28,12 @@
 		<string>#431522</string>
 		<key>Intro Text</key>
 		<string>Learn a new craft, art or hobby hands-on with an artisan in your community</string>
-		<key>Experiences Name</key>
+		<key>Experiences Title</key>
 		<string>Classes</string>
+		<key>Curator Title</key>
+		<string>Instructor</string>
+		<key>Curator Article</key>
+		<string>an</string>
 		<key>Main Color</key>
 		<string>#591D25</string>
 	</dict>
@@ -59,8 +63,12 @@
 		<string>#004d00</string>
 		<key>Intro Text</key>
 		<string>Discover unique experiences in your city</string>
-		<key>Experiences Name</key>
+		<key>Experiences Title</key>
 		<string>Experiences</string>
+		<key>Curator Title</key>
+		<string>Curator</string>
+		<key>Curator Article</key>
+		<string>a</string>
 		<key>Main Color</key>
 		<string>#1d591d</string>
 	</dict>

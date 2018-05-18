@@ -12,6 +12,7 @@ import Alamofire
 class SettingsTableVC: UITableViewController {
     
     static let BECAME_CURATOR = "BECAME_CURATOR"
+    let CURATOR_SETTINGS_SECTION = 1
 
     @IBOutlet weak var editProfileCell: UITableViewCell!
     @IBOutlet weak var logOutCell: UITableViewCell!
@@ -25,6 +26,8 @@ class SettingsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setCellText()
+        
         setCuratorSettingsVisibility()
         
         // Listen for internal broadcast notifications specifying that the user became a curator, in which case we need to update the visibility of the curator related settings
@@ -34,6 +37,26 @@ class SettingsTableVC: UITableViewController {
                                                object: nil)
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        
+        header.textLabel?.textColor = Config.current.mainColor
+        header.textLabel?.font = UIFont(name: "Montserrat-Bold", size: (header.textLabel?.font.pointSize)!)
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        // I wish we could set this in setCellText(), but we can't have a reference to a section header, so we have to set the text here
+        if (section == CURATOR_SETTINGS_SECTION) {
+            return Config.current.curatorTitle + " Settings"
+        }
+        return super.tableView(tableView, titleForHeaderInSection: section)
+    }
+    
+    func setCellText() {
+        becomeACuratorCell.textLabel?.text = "Become " + Config.current.curatorArticle + " " + Config.current.curatorTitle
+        manageCuratedExperiencesCell.textLabel?.text = "Manage " + Config.current.experiencesTitle
+    }
     
     @objc func setCuratorSettingsVisibility() {
         let isCurator = FirebaseManager.user?.stripeCuratorId != nil

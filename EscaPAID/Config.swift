@@ -46,7 +46,11 @@ class Config {
 
     var introText: String { return dictionary.value(forKey: "Intro Text") as! String }
     
-    var experiencesName: String { return dictionary.value(forKey: "Experiences Name") as! String }
+    var experiencesTitle: String { return dictionary.value(forKey: "Experiences Title") as! String }
+    
+    var curatorTitle: String { return dictionary.value(forKey: "Curator Title") as! String }
+    
+    var curatorArticle: String { return dictionary.value(forKey: "Curator Article") as! String }
     
     var mainColor: UIColor {
         let hex = dictionary.value(forKey:"Main Color") as! String
