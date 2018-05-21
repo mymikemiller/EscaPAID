@@ -46,9 +46,11 @@ class Config {
 
     var introText: String { return dictionary.value(forKey: "Intro Text") as! String }
     
-    var experiencesTitle: String { return dictionary.value(forKey: "Experiences Title") as! String }
+    var experienceText: String { return dictionary.value(forKey: "Experience Text") as! String }
     
-    var curatorTitle: String { return dictionary.value(forKey: "Curator Title") as! String }
+    var experiencesText: String { return dictionary.value(forKey: "Experiences Text") as! String }
+    
+    var curatorText: String { return dictionary.value(forKey: "Curator Text") as! String }
     
     var curatorArticle: String { return dictionary.value(forKey: "Curator Article") as! String }
     

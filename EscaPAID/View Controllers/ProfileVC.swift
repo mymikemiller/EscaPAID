@@ -53,7 +53,7 @@ class ProfileVC: UIViewController {
         tableView.estimatedRowHeight = 140 // arbitrary value
         
         // Set the text for the Experiences label
-        experiencesLabel.text = Config.current.experiencesTitle
+        experiencesLabel.text = Config.current.experiencesText
         
         // Fetch the reviews
         reviewManager.fillReviews(curator: user) {

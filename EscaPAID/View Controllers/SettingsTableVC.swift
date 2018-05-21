@@ -48,14 +48,15 @@ class SettingsTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         // I wish we could set this in setCellText(), but we can't have a reference to a section header, so we have to set the text here
         if (section == CURATOR_SETTINGS_SECTION) {
-            return Config.current.curatorTitle + " Settings"
+            return Config.current.curatorText + " Settings"
         }
         return super.tableView(tableView, titleForHeaderInSection: section)
     }
     
     func setCellText() {
-        becomeACuratorCell.textLabel?.text = "Become " + Config.current.curatorArticle + " " + Config.current.curatorTitle
-        manageCuratedExperiencesCell.textLabel?.text = "Manage " + Config.current.experiencesTitle
+        becomeACuratorCell.textLabel?.text = "Become " + Config.current.curatorArticle + " " + Config.current.curatorText
+        manageCuratedExperiencesCell.textLabel?.text = "Manage " + Config.current.experiencesText
+        addExperienceCell.textLabel?.text = "Add " + Config.current.experienceText
     }
     
     @objc func setCuratorSettingsVisibility() {
