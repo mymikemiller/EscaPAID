@@ -528,67 +528,119 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhB-ch-p5d" customClass="UICalendar" customModule="Renaissance" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="300"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="4ln-U2-Tt8" userLabel="Main Stack View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="552"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4fc-iC-h5U" userLabel="Tickets Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XT-wq-eOd">
+                                                <rect key="frame" x="0.0" y="0.0" width="14.5" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Tickets:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ml-yQ-njW" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
+                                                <rect key="frame" x="34.5" y="10.5" width="237.5" height="29.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZbR-Uj-9mI">
+                                                <rect key="frame" x="292" y="8" width="49" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="49" id="aG6-5u-5pq"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="totalGuestsValueChanged:" destination="RXj-YQ-jXV" eventType="valueChanged" id="0gd-yg-gMB"/>
+                                                    <action selector="totalGuestsValueChanged:" destination="RXj-YQ-jXV" eventType="editingDidEnd" id="ljP-KS-huP"/>
+                                                </connections>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RB3-LT-oxt">
+                                                <rect key="frame" x="361" y="0.0" width="14" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="cSp-oI-0Ts"/>
+                                            <constraint firstItem="4XT-wq-eOd" firstAttribute="width" secondItem="RB3-LT-oxt" secondAttribute="width" id="cW4-bH-M0B"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhB-ch-p5d" customClass="UICalendar" customModule="Renaissance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="300"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="vTI-Sh-PR7"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="delegate" destination="RXj-YQ-jXV" id="5g1-T2-QOp"/>
+                                        </connections>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select a date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZY-Ge-udh" customClass="ThemedLabel" customModule="Renaissance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="430" width="375" height="22"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKX-pm-baX" userLabel="Next Button Stack View">
+                                        <rect key="frame" x="0.0" y="492" width="375" height="60"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2O-uG-osp">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="C6G-d1-Lvy"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXr-fZ-5hW" userLabel="Next Button" customClass="ThemedButton" customModule="Renaissance" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="0.0" width="295" height="60"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
+                                                <state key="normal" title="Next">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="14"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="inverted" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="Oab-Oo-qV8" kind="show" identifier="showConfirmationVC" id="IbM-sX-yMY"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LZ-v0-rdx">
+                                                <rect key="frame" x="335" y="0.0" width="40" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="a9m-KM-8Jg"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="rXe-Ec-RgF"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="vTI-Sh-PR7"/>
+                                    <constraint firstItem="4fc-iC-h5U" firstAttribute="width" secondItem="4ln-U2-Tt8" secondAttribute="width" id="f1t-Nd-4zh"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="RXj-YQ-jXV" id="5g1-T2-QOp"/>
-                                </connections>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select a date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZY-Ge-udh">
-                                <rect key="frame" x="16" y="328" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of guests (including self):" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ml-yQ-njW">
-                                <rect key="frame" x="16" y="408" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXr-fZ-5hW">
-                                <rect key="frame" x="16" y="598" width="343" height="30"/>
-                                <state key="normal" title="Reserve"/>
-                                <connections>
-                                    <segue destination="Oab-Oo-qV8" kind="show" identifier="showConfirmationVC" id="IbM-sX-yMY"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZbR-Uj-9mI">
-                                <rect key="frame" x="139" y="437" width="97" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8Ml-yQ-njW" firstAttribute="top" secondItem="nZY-Ge-udh" secondAttribute="bottom" constant="59" id="5tv-mv-Xu5"/>
-                            <constraint firstAttribute="trailing" secondItem="YhB-ch-p5d" secondAttribute="trailing" id="7Vp-q7-qwN"/>
-                            <constraint firstItem="nZY-Ge-udh" firstAttribute="trailing" secondItem="HXr-fZ-5hW" secondAttribute="trailing" id="8B5-w8-0UR"/>
-                            <constraint firstItem="nZY-Ge-udh" firstAttribute="centerX" secondItem="YhB-ch-p5d" secondAttribute="centerX" id="C8R-vV-cXu"/>
-                            <constraint firstItem="nZY-Ge-udh" firstAttribute="leading" secondItem="NTs-Az-GYR" secondAttribute="leadingMargin" id="HGX-b2-tmM"/>
-                            <constraint firstItem="ZbR-Uj-9mI" firstAttribute="centerX" secondItem="8Ml-yQ-njW" secondAttribute="centerX" id="Iyf-QE-5oc"/>
-                            <constraint firstItem="nZY-Ge-udh" firstAttribute="leading" secondItem="8Ml-yQ-njW" secondAttribute="leading" id="Kc3-LX-xB5"/>
-                            <constraint firstItem="YhB-ch-p5d" firstAttribute="leading" secondItem="NTs-Az-GYR" secondAttribute="leading" id="QaS-rG-PcV"/>
-                            <constraint firstItem="nZY-Ge-udh" firstAttribute="trailing" secondItem="8Ml-yQ-njW" secondAttribute="trailing" id="UfC-hZ-sKe"/>
-                            <constraint firstItem="nZY-Ge-udh" firstAttribute="leading" secondItem="HXr-fZ-5hW" secondAttribute="leading" id="Vap-lc-ceK"/>
-                            <constraint firstItem="ZbR-Uj-9mI" firstAttribute="leading" secondItem="Pdq-oo-yaI" secondAttribute="leading" constant="139" id="f0b-js-RcQ"/>
-                            <constraint firstItem="Pdq-oo-yaI" firstAttribute="bottom" secondItem="HXr-fZ-5hW" secondAttribute="bottom" constant="39" id="gJb-Fd-ArZ"/>
-                            <constraint firstItem="ZbR-Uj-9mI" firstAttribute="top" secondItem="8Ml-yQ-njW" secondAttribute="bottom" constant="8" symbolic="YES" id="jld-hj-dSk"/>
-                            <constraint firstItem="nZY-Ge-udh" firstAttribute="top" secondItem="YhB-ch-p5d" secondAttribute="bottom" constant="8" id="tyb-vj-HHT"/>
-                            <constraint firstItem="YhB-ch-p5d" firstAttribute="top" secondItem="Pdq-oo-yaI" secondAttribute="top" id="uCo-wG-KV6"/>
+                            <constraint firstItem="Pdq-oo-yaI" firstAttribute="trailing" secondItem="4ln-U2-Tt8" secondAttribute="trailing" id="AVU-u2-DuM"/>
+                            <constraint firstItem="4ln-U2-Tt8" firstAttribute="top" secondItem="Pdq-oo-yaI" secondAttribute="top" id="mmg-FQ-fYC"/>
+                            <constraint firstItem="4ln-U2-Tt8" firstAttribute="leading" secondItem="NTs-Az-GYR" secondAttribute="leading" id="ubP-Ca-LRS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pdq-oo-yaI"/>
                     </view>
                     <connections>
                         <outlet property="calendarView" destination="YhB-ch-p5d" id="7jM-co-bfN"/>
                         <outlet property="dateAndTimeLabel" destination="nZY-Ge-udh" id="5Vu-NH-dho"/>
-                        <outlet property="maxGuests" destination="ZbR-Uj-9mI" id="dSR-KB-sew"/>
                         <outlet property="reserveButton" destination="HXr-fZ-5hW" id="reU-Yh-wzN"/>
+                        <outlet property="totalGuests" destination="ZbR-Uj-9mI" id="dSR-KB-sew"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LZy-gf-QeP" userLabel="First Responder" sceneMemberID="firstResponder"/>

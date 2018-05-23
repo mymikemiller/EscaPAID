@@ -32,7 +32,7 @@ class UICalendar: UIView {
     // Days able to be selected
     let monthEnabledColor = UIColor.white
     
-    let monthDisabledColor = UIColor.gray
+    let monthDisabledColor = UIColor.black
     let selectedMonthColor = UIColor.white
     let currentDateSelectedViewColor = Config.current.mainColor
     let todaysDateColor = UIColor.blue
