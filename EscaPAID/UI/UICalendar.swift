@@ -26,11 +26,15 @@ class UICalendar: UIView {
     
     public private(set) var selectedDate: Date?
     
-    let outsideMonthColor = UIColor.lightGray
-    let monthEnabledColor = UIColor.black
+    // Days before the current day
+    let outsideMonthColor = UIColor.black
+    
+    // Days able to be selected
+    let monthEnabledColor = UIColor.white
+    
     let monthDisabledColor = UIColor.gray
-    let selectedMonthColor = UIColor.blue
-    let currentDateSelectedViewColor = UIColor.yellow
+    let selectedMonthColor = UIColor.white
+    let currentDateSelectedViewColor = Config.current.mainColor
     let todaysDateColor = UIColor.blue
     
     let formatter = DateFormatter()
@@ -58,14 +62,25 @@ class UICalendar: UIView {
         setupCalendarView()
         
         calendarView.scrollToDate(Date())
-        calendarView.selectDates([Date()])
+        //calendarView.selectDates([Date()])
     }
+    
+    @IBAction func previousMonthButton_click(_ sender: Any) {
+        calendarView.scrollToSegment(.previous)
+    }
+    
+    @IBAction func nextMonthButton_click(_ sender: Any) {
+        calendarView.scrollToSegment(.next)
+    }
+    
     
     func handleCellSelected(view: JTAppleCell?, cellState: CellState) {
         
         guard let validCell = view as? DateCell else { return }
         
-        // Set visibility for the "selected view" (the yellow circle behind the date)
+        validCell.selectedView.backgroundColor = Config.current.mainColor
+        
+        // Set visibility for the "selected view" (the colored circle behind the date)
         validCell.selectedView.isHidden = !cellState.isSelected
         
         // Cache the selected date
