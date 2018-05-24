@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class SettingsTableVC: UITableViewController {
+class SettingsTableVC: ThemedTableViewController {
     
     static let BECAME_CURATOR = "BECAME_CURATOR"
     let CURATOR_SETTINGS_SECTION = 1
@@ -35,14 +35,6 @@ class SettingsTableVC: UITableViewController {
                                                selector: #selector(setCuratorSettingsVisibility),
                                                name: Notification.Name(rawValue: SettingsTableVC.BECAME_CURATOR),
                                                object: nil)
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        
-        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        
-        header.textLabel?.textColor = Config.current.mainColor
-        header.textLabel?.font = UIFont(name: "Montserrat-Bold", size: (header.textLabel?.font.pointSize)!)
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

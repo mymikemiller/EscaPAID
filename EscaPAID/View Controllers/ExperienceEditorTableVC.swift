@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExperienceEditorTableVC: UITableViewController {
+class ExperienceEditorTableVC: ThemedTableViewController {
 
     let dateFormat = "h:mm a"
     
