@@ -30,6 +30,206 @@
 		E74549921FB758B300A6A32C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549911FB758B300A6A32C /* ChatTableViewCell.swift */; };
 		E74549941FB78AE200A6A32C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549931FB78AE200A6A32C /* User.swift */; };
 		E745499A1FB8B1BE00A6A32C /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */; };
+		E750FF1520D9849B002DE84D /* ExperienceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */; };
+		E750FF1620D9849B002DE84D /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
+		E750FF1720D9849B002DE84D /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E42043816700B2206C /* MainAPIClient.swift */; };
+		E750FF1820D9849B002DE84D /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */; };
+		E750FF1920D9849B002DE84D /* ProfileEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E777167A20AE349500C7C6DE /* ProfileEditorVC.swift */; };
+		E750FF1A20D9849B002DE84D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DDF206CA31B00B7F97E /* GradientView.swift */; };
+		E750FF1B20D9849B002DE84D /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7368204875A200AE0DE4 /* ExperienceManager.swift */; };
+		E750FF1C20D9849B002DE84D /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E72044774000B2206C /* UIAlertController+Utility.swift */; };
+		E750FF1D20D9849B002DE84D /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */; };
+		E750FF1E20D9849B002DE84D /* BorderedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3320AE0E0100B7C3CD /* BorderedTextView.swift */; };
+		E750FF1F20D9849B002DE84D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A7831FDB573D008319CF /* Constants.swift */; };
+		E750FF2020D9849B002DE84D /* ExperienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */; };
+		E750FF2120D9849B002DE84D /* ReservationsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59E202A69050060B44D /* ReservationsTableVC.swift */; };
+		E750FF2220D9849B002DE84D /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B248E1FC65B3800DE0897 /* Experience.swift */; };
+		E750FF2320D9849B002DE84D /* ThemedRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9972087E7A400F2F769 /* ThemedRoundedButton.swift */; };
+		E750FF2420D9849B002DE84D /* DaySelectorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */; };
+		E750FF2520D9849B002DE84D /* HexagonalImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B99A2088F60600F2F769 /* HexagonalImageView.swift */; };
+		E750FF2620D9849B002DE84D /* ReservationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59420290E3D0060B44D /* ReservationProcessor.swift */; };
+		E750FF2720D9849B002DE84D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */; };
+		E750FF2820D9849B002DE84D /* ExperienceImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */; };
+		E750FF2920D9849B002DE84D /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7363204875A100AE0DE4 /* ThreadManager.swift */; };
+		E750FF2A20D9849B002DE84D /* ThreadsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */; };
+		E750FF2B20D9849B002DE84D /* ExperienceEditorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A92004650800312B91 /* ExperienceEditorTableVC.swift */; };
+		E750FF2C20D9849B002DE84D /* UILabel+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */; };
+		E750FF2D20D9849B002DE84D /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B47A92209131CA00F836A1 /* ThemedButton.swift */; };
+		E750FF2E20D9849B002DE84D /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98A12092894C00BFFFE6 /* ReviewManager.swift */; };
+		E750FF2F20D9849B002DE84D /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3620AE14D300B7C3CD /* BorderedTextField.swift */; };
+		E750FF3020D9849B002DE84D /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98A420928CEF00BFFFE6 /* Review.swift */; };
+		E750FF3120D9849B002DE84D /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
+		E750FF3220D9849B002DE84D /* WriteReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3920AE1CB400B7C3CD /* WriteReviewVC.swift */; };
+		E750FF3320D9849B002DE84D /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */; };
+		E750FF3420D9849B002DE84D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549931FB78AE200A6A32C /* User.swift */; };
+		E750FF3520D9849B002DE84D /* ExperienceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDBB207C26EF00352DB1 /* ExperienceCard.swift */; };
+		E750FF3620D9849B002DE84D /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B24881FC6539A00DE0897 /* DiscoverVC.swift */; };
+		E750FF3720D9849B002DE84D /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */; };
+		E750FF3820D9849B002DE84D /* UICalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7238A652022524300496FBC /* UICalendar.swift */; };
+		E750FF3920D9849B002DE84D /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9A3208A2E2800F2F769 /* CircularImageView.swift */; };
+		E750FF3A20D9849B002DE84D /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59620290EA50060B44D /* Reservation.swift */; };
+		E750FF3B20D9849B002DE84D /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549911FB758B300A6A32C /* ChatTableViewCell.swift */; };
+		E750FF3C20D9849B002DE84D /* MyExperiencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F51FCCF284008ADCEF /* MyExperiencesVC.swift */; };
+		E750FF3D20D9849B002DE84D /* ThemedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72E992620B70073009CFACA /* ThemedTableViewController.swift */; };
+		E750FF3E20D9849B002DE84D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A72004509800312B91 /* TabBarController.swift */; };
+		E750FF3F20D9849B002DE84D /* UIImage+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDEF207FFBE200352DB1 /* UIImage+Utility.swift */; };
+		E750FF4020D9849B002DE84D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B99D2088F67400F2F769 /* Utils.swift */; };
+		E750FF4120D9849B002DE84D /* ThemedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9942087DDDF00F2F769 /* ThemedLabel.swift */; };
+		E750FF4220D9849B002DE84D /* UIScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAFC20743F8500C02C0A /* UIScrollingViewController.swift */; };
+		E750FF4320D9849B002DE84D /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98AD2092C48C00BFFFE6 /* ReviewCell.swift */; };
+		E750FF4420D9849B002DE84D /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */; };
+		E750FF4520D9849B002DE84D /* ExperienceCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E97768209CC34400DAF1C4 /* ExperienceCollectionView.swift */; };
+		E750FF4620D9849B002DE84D /* ConfirmationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */; };
+		E750FF4720D9849B002DE84D /* ExperienceCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED3D162083D70200EBB80A /* ExperienceCardTableViewCell.swift */; };
+		E750FF4820D9849B002DE84D /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0811FB7378B00916FBA /* ChatVC.swift */; };
+		E750FF4920D9849B002DE84D /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7365204875A100AE0DE4 /* PostManager.swift */; };
+		E750FF4A20D9849B002DE84D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D8E521FBCC5C1001026D6 /* LoginVC.swift */; };
+		E750FF4B20D9849B002DE84D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DFA206EDF0C00B7F97E /* RoundedButton.swift */; };
+		E750FF4C20D9849B002DE84D /* ExperienceCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9776B209CC94100DAF1C4 /* ExperienceCardCollectionViewCell.swift */; };
+		E750FF4D20D9849B002DE84D /* TextGetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A320017CAA00312B91 /* TextGetterController.swift */; };
+		E750FF4E20D9849B002DE84D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E45984205993600077C1DE /* Config.swift */; };
+		E750FF4F20D9849B002DE84D /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */; };
+		E750FF5020D9849B002DE84D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED3D212086D2F400EBB80A /* ProfileVC.swift */; };
+		E750FF5120D9849B002DE84D /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7364204875A100AE0DE4 /* StorageManager.swift */; };
+		E750FF5220D9849B002DE84D /* ReservationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7367204875A200AE0DE4 /* ReservationManager.swift */; };
+		E750FF5320D9849B002DE84D /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
+		E750FF5420D9849B002DE84D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
+		E750FF5520D9849B002DE84D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDAC207BB4C400352DB1 /* CardView.swift */; };
+		E750FF5620D9849B002DE84D /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723DD861FC3E17800B4345E /* Thread.swift */; };
+		E750FF5720D9849B002DE84D /* ExperienceTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9A6208E3CA400F2F769 /* ExperienceTableView.swift */; };
+		E750FF5820D9849B002DE84D /* ReceiptTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728EA34202BB6C30041F6AC /* ReceiptTableVC.swift */; };
+		E750FF5920D9849B002DE84D /* CuratorSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */; };
+		E750FF5A20D9849B002DE84D /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE452015622500661DE7 /* Days.swift */; };
+		E750FF5B20D9849B002DE84D /* ThreadsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */; };
+		E750FF5D20D9849B002DE84D /* Pods_EscaPAID_Renaissance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1774701BBEF4FE165FA75190 /* Pods_EscaPAID_Renaissance.framework */; };
+		E750FF5F20D9849B002DE84D /* TextGetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71F33A420017CAA00312B91 /* TextGetter.xib */; };
+		E750FF6020D9849B002DE84D /* ExperienceEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79B20362FCC00F91CC4 /* ExperienceEditor.storyboard */; };
+		E750FF6120D9849B002DE84D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB0320751BBD00C02C0A /* Montserrat-Regular.ttf */; };
+		E750FF6220D9849B002DE84D /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459872059BC3D0077C1DE /* Discover.storyboard */; };
+		E750FF6320D9849B002DE84D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E72F64461FBBB22B0023489D /* Podfile */; };
+		E750FF6420D9849B002DE84D /* ExperienceCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B4CDEC207EBF7600352DB1 /* ExperienceCard.xib */; };
+		E750FF6520D9849B002DE84D /* ProfileEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79520362E0E00F91CC4 /* ProfileEditor.storyboard */; };
+		E750FF6620D9849B002DE84D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */; };
+		E750FF6720D9849B002DE84D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7CB84C42075229600CB91C2 /* Montserrat-Bold.ttf */; };
+		E750FF6820D9849B002DE84D /* Reservations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79820362EF400F91CC4 /* Reservations.storyboard */; };
+		E750FF6920D9849B002DE84D /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7238A672022699C00496FBC /* DateCell.xib */; };
+		E750FF6A20D9849B002DE84D /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB1020751BD900C02C0A /* Montserrat-Light.ttf */; };
+		E750FF6B20D9849B002DE84D /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774C83D203A1B4E00F98EB2 /* Book.storyboard */; };
+		E750FF6C20D9849B002DE84D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB3E20751C4500C02C0A /* Lato-Regular.ttf */; };
+		E750FF6D20D9849B002DE84D /* ExperienceCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E97771209CD21300DAF1C4 /* ExperienceCardCollectionViewCell.xib */; };
+		E750FF6E20D9849B002DE84D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */; };
+		E750FF6F20D9849B002DE84D /* ExperienceCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7ED3D172083D70200EBB80A /* ExperienceCardTableViewCell.xib */; };
+		E750FF7020D9849B002DE84D /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AE98AA2092C1F900BFFFE6 /* ReviewCell.xib */; };
+		E750FF7120D9849B002DE84D /* Renaissance.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7CF4DF3206D6D9600B7F97E /* Renaissance.xcassets */; };
+		E750FF7220D9849B002DE84D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7ED3D1E2086907100EBB80A /* Profile.storyboard */; };
+		E750FF7320D9849B002DE84D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E4599C205DCEFC0077C1DE /* GoogleService-Info.plist */; };
+		E750FF7420D9849B002DE84D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E45981205977820077C1DE /* Configuration.plist */; };
+		E750FF7520D9849B002DE84D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
+		E750FF7620D9849B002DE84D /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459892059BC3D0077C1DE /* Inbox.storyboard */; };
+		E750FF7720D9849B002DE84D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E4598A2059BC3D0077C1DE /* Settings.storyboard */; };
+		E750FF7820D9849B002DE84D /* UICalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7238A632022521400496FBC /* UICalendar.xib */; };
+		E750FF8020D993A6002DE84D /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E750FF7F20D993A6002DE84D /* Manager.swift */; };
+		E750FF8120D993A6002DE84D /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E750FF7F20D993A6002DE84D /* Manager.swift */; };
+		E750FF8220D993A6002DE84D /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E750FF7F20D993A6002DE84D /* Manager.swift */; };
+		E750FF8620D99805002DE84D /* ExperienceImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316A91FD08EF60062E178 /* ExperienceImageCell.swift */; };
+		E750FF8720D99805002DE84D /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA620195F4D00C5FBCB /* DateCell.swift */; };
+		E750FF8820D99805002DE84D /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E42043816700B2206C /* MainAPIClient.swift */; };
+		E750FF8920D99805002DE84D /* ReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */; };
+		E750FF8A20D99805002DE84D /* ProfileEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E777167A20AE349500C7C6DE /* ProfileEditorVC.swift */; };
+		E750FF8B20D99805002DE84D /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7368204875A200AE0DE4 /* ExperienceManager.swift */; };
+		E750FF8C20D99805002DE84D /* UIAlertController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79770E72044774000B2206C /* UIAlertController+Utility.swift */; };
+		E750FF8D20D99805002DE84D /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */; };
+		E750FF8E20D99805002DE84D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A7831FDB573D008319CF /* Constants.swift */; };
+		E750FF8F20D99805002DE84D /* BorderedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3320AE0E0100B7C3CD /* BorderedTextView.swift */; };
+		E750FF9020D99805002DE84D /* ExperienceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */; };
+		E750FF9120D99805002DE84D /* ReservationsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59E202A69050060B44D /* ReservationsTableVC.swift */; };
+		E750FF9220D99805002DE84D /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B248E1FC65B3800DE0897 /* Experience.swift */; };
+		E750FF9320D99805002DE84D /* DaySelectorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */; };
+		E750FF9420D99805002DE84D /* ThemedRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9972087E7A400F2F769 /* ThemedRoundedButton.swift */; };
+		E750FF9520D99805002DE84D /* ReservationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59420290E3D0060B44D /* ReservationProcessor.swift */; };
+		E750FF9620D99805002DE84D /* HexagonalImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B99A2088F60600F2F769 /* HexagonalImageView.swift */; };
+		E750FF9720D99805002DE84D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */; };
+		E750FF9820D99805002DE84D /* ExperienceImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D316871FCF246A0062E178 /* ExperienceImageVC.swift */; };
+		E750FF9920D99805002DE84D /* ThreadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7363204875A100AE0DE4 /* ThreadManager.swift */; };
+		E750FF9A20D99805002DE84D /* ThreadsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A07F1FB6E1C900916FBA /* ThreadsTableVC.swift */; };
+		E750FF9B20D99805002DE84D /* ExperienceEditorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A92004650800312B91 /* ExperienceEditorTableVC.swift */; };
+		E750FF9C20D99805002DE84D /* UILabel+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAF92071BFD400C02C0A /* UILabel+Utility.swift */; };
+		E750FF9D20D99805002DE84D /* ThemedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B47A92209131CA00F836A1 /* ThemedButton.swift */; };
+		E750FF9E20D99805002DE84D /* SelfContainedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */; };
+		E750FF9F20D99805002DE84D /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98A12092894C00BFFFE6 /* ReviewManager.swift */; };
+		E750FFA020D99805002DE84D /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3620AE14D300B7C3CD /* BorderedTextField.swift */; };
+		E750FFA120D99805002DE84D /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98A420928CEF00BFFFE6 /* Review.swift */; };
+		E750FFA220D99805002DE84D /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */; };
+		E750FFA320D99805002DE84D /* WriteReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776BE3920AE1CB400B7C3CD /* WriteReviewVC.swift */; };
+		E750FFA420D99805002DE84D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549931FB78AE200A6A32C /* User.swift */; };
+		E750FFA520D99805002DE84D /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72B24881FC6539A00DE0897 /* DiscoverVC.swift */; };
+		E750FFA620D99805002DE84D /* ExperienceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDBB207C26EF00352DB1 /* ExperienceCard.swift */; };
+		E750FFA720D99805002DE84D /* UICalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7238A652022524300496FBC /* UICalendar.swift */; };
+		E750FFA820D99805002DE84D /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */; };
+		E750FFA920D99805002DE84D /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA59620290EA50060B44D /* Reservation.swift */; };
+		E750FFAA20D99805002DE84D /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9A3208A2E2800F2F769 /* CircularImageView.swift */; };
+		E750FFAB20D99805002DE84D /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549911FB758B300A6A32C /* ChatTableViewCell.swift */; };
+		E750FFAC20D99805002DE84D /* MyExperiencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE89F51FCCF284008ADCEF /* MyExperiencesVC.swift */; };
+		E750FFAD20D99805002DE84D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A72004509800312B91 /* TabBarController.swift */; };
+		E750FFAE20D99805002DE84D /* ThemedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72E992620B70073009CFACA /* ThemedTableViewController.swift */; };
+		E750FFAF20D99805002DE84D /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */; };
+		E750FFB020D99805002DE84D /* UIImage+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDEF207FFBE200352DB1 /* UIImage+Utility.swift */; };
+		E750FFB120D99805002DE84D /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E750FF7F20D993A6002DE84D /* Manager.swift */; };
+		E750FFB220D99805002DE84D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B99D2088F67400F2F769 /* Utils.swift */; };
+		E750FFB320D99805002DE84D /* ThemedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9942087DDDF00F2F769 /* ThemedLabel.swift */; };
+		E750FFB420D99805002DE84D /* UIScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79ADAFC20743F8500C02C0A /* UIScrollingViewController.swift */; };
+		E750FFB520D99805002DE84D /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AE98AD2092C48C00BFFFE6 /* ReviewCell.swift */; };
+		E750FFB620D99805002DE84D /* ConfirmationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */; };
+		E750FFB720D99805002DE84D /* ExperienceCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E97768209CC34400DAF1C4 /* ExperienceCollectionView.swift */; };
+		E750FFB820D99805002DE84D /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F9A0811FB7378B00916FBA /* ChatVC.swift */; };
+		E750FFB920D99805002DE84D /* ExperienceCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED3D162083D70200EBB80A /* ExperienceCardTableViewCell.swift */; };
+		E750FFBA20D99805002DE84D /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7365204875A100AE0DE4 /* PostManager.swift */; };
+		E750FFBB20D99805002DE84D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D8E521FBCC5C1001026D6 /* LoginVC.swift */; };
+		E750FFBC20D99805002DE84D /* TextGetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A320017CAA00312B91 /* TextGetterController.swift */; };
+		E750FFBD20D99805002DE84D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DFA206EDF0C00B7F97E /* RoundedButton.swift */; };
+		E750FFBE20D99805002DE84D /* ExperienceCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9776B209CC94100DAF1C4 /* ExperienceCardCollectionViewCell.swift */; };
+		E750FFBF20D99805002DE84D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E45984205993600077C1DE /* Config.swift */; };
+		E750FFC020D99805002DE84D /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79FA5A2202A6AB90060B44D /* ReservationTableViewCell.swift */; };
+		E750FFC120D99805002DE84D /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7364204875A100AE0DE4 /* StorageManager.swift */; };
+		E750FFC220D99805002DE84D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED3D212086D2F400EBB80A /* ProfileVC.swift */; };
+		E750FFC320D99805002DE84D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DDF206CA31B00B7F97E /* GradientView.swift */; };
+		E750FFC420D99805002DE84D /* ReservationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A7367204875A200AE0DE4 /* ReservationManager.swift */; };
+		E750FFC520D99805002DE84D /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
+		E750FFC620D99805002DE84D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */; };
+		E750FFC720D99805002DE84D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CDAC207BB4C400352DB1 /* CardView.swift */; };
+		E750FFC820D99805002DE84D /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723DD861FC3E17800B4345E /* Thread.swift */; };
+		E750FFC920D99805002DE84D /* ExperienceTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783B9A6208E3CA400F2F769 /* ExperienceTableView.swift */; };
+		E750FFCA20D99805002DE84D /* ReceiptTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728EA34202BB6C30041F6AC /* ReceiptTableVC.swift */; };
+		E750FFCB20D99805002DE84D /* CuratorSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */; };
+		E750FFCC20D99805002DE84D /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE452015622500661DE7 /* Days.swift */; };
+		E750FFCD20D99805002DE84D /* ThreadsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */; };
+		E750FFCF20D99805002DE84D /* Pods_EscaPAID_Tellomee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24DF35A82A749B51048B357 /* Pods_EscaPAID_Tellomee.framework */; };
+		E750FFD120D99805002DE84D /* TextGetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71F33A420017CAA00312B91 /* TextGetter.xib */; };
+		E750FFD220D99805002DE84D /* ExperienceEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79B20362FCC00F91CC4 /* ExperienceEditor.storyboard */; };
+		E750FFD320D99805002DE84D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB0320751BBD00C02C0A /* Montserrat-Regular.ttf */; };
+		E750FFD420D99805002DE84D /* Tellomee.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7CF4DF5206D6DEC00B7F97E /* Tellomee.xcassets */; };
+		E750FFD520D99805002DE84D /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459872059BC3D0077C1DE /* Discover.storyboard */; };
+		E750FFD620D99805002DE84D /* ExperienceCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B4CDEC207EBF7600352DB1 /* ExperienceCard.xib */; };
+		E750FFD720D99805002DE84D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E72F64461FBBB22B0023489D /* Podfile */; };
+		E750FFD820D99805002DE84D /* ProfileEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79520362E0E00F91CC4 /* ProfileEditor.storyboard */; };
+		E750FFD920D99805002DE84D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7CB84C42075229600CB91C2 /* Montserrat-Bold.ttf */; };
+		E750FFDA20D99805002DE84D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */; };
+		E750FFDB20D99805002DE84D /* Reservations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79820362EF400F91CC4 /* Reservations.storyboard */; };
+		E750FFDC20D99805002DE84D /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB1020751BD900C02C0A /* Montserrat-Light.ttf */; };
+		E750FFDD20D99805002DE84D /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7238A672022699C00496FBC /* DateCell.xib */; };
+		E750FFDE20D99805002DE84D /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774C83D203A1B4E00F98EB2 /* Book.storyboard */; };
+		E750FFDF20D99805002DE84D /* ExperienceCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E97771209CD21300DAF1C4 /* ExperienceCardCollectionViewCell.xib */; };
+		E750FFE020D99805002DE84D /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB3E20751C4500C02C0A /* Lato-Regular.ttf */; };
+		E750FFE120D99805002DE84D /* ExperienceCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7ED3D172083D70200EBB80A /* ExperienceCardTableViewCell.xib */; };
+		E750FFE220D99805002DE84D /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AE98AA2092C1F900BFFFE6 /* ReviewCell.xib */; };
+		E750FFE320D99805002DE84D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */; };
+		E750FFE420D99805002DE84D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7ED3D1E2086907100EBB80A /* Profile.storyboard */; };
+		E750FFE520D99805002DE84D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E4599E205DCF0E0077C1DE /* GoogleService-Info.plist */; };
+		E750FFE620D99805002DE84D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E45981205977820077C1DE /* Configuration.plist */; };
+		E750FFE720D99805002DE84D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
+		E750FFE820D99805002DE84D /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459892059BC3D0077C1DE /* Inbox.storyboard */; };
+		E750FFE920D99805002DE84D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E4598A2059BC3D0077C1DE /* Settings.storyboard */; };
+		E750FFEA20D99805002DE84D /* UICalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7238A632022521400496FBC /* UICalendar.xib */; };
 		E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */; };
 		E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */; };
 		E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
@@ -229,6 +429,11 @@
 		E74549911FB758B300A6A32C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		E74549931FB78AE200A6A32C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
+		E750FF7D20D9849B002DE84D /* Renaissance Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Renaissance Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E750FF7E20D9849B002DE84D /* RenaissanceDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RenaissanceDev-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/RenaissanceDev-Info.plist"; sourceTree = "<absolute>"; };
+		E750FF7F20D993A6002DE84D /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		E750FFEF20D99805002DE84D /* Tellomee Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tellomee Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E750FFF020D99805002DE84D /* TellomeeDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TellomeeDev-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/TellomeeDev-Info.plist"; sourceTree = "<absolute>"; };
 		E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableVC.swift; sourceTree = "<group>"; };
 		E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginScreenVC.swift; sourceTree = "<group>"; };
@@ -256,8 +461,8 @@
 		E79ADB1020751BD900C02C0A /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		E79ADB3E20751C4500C02C0A /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
-		E79F05C020596AF500889D14 /* Renaissance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Renaissance-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/EscaPAID/Supporting Files/Renaissance-Info.plist"; sourceTree = "<absolute>"; };
-		E79F060D2059700400889D14 /* Renaissance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renaissance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E79F05C020596AF500889D14 /* RenaissanceProd-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RenaissanceProd-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/EscaPAID/Supporting Files/RenaissanceProd-Info.plist"; sourceTree = "<absolute>"; };
+		E79F060D2059700400889D14 /* Renaissance Prod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Renaissance Prod.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTableVC.swift; sourceTree = "<group>"; };
 		E79FA59420290E3D0060B44D /* ReservationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationProcessor.swift; sourceTree = "<group>"; };
 		E79FA59620290EA50060B44D /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
@@ -274,12 +479,12 @@
 		E7B4CDEF207FFBE200352DB1 /* UIImage+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utility.swift"; sourceTree = "<group>"; };
 		E7B94FA420195C1E00C5FBCB /* ReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationVC.swift; sourceTree = "<group>"; };
 		E7B94FA620195F4D00C5FBCB /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
-		E7B9F7391FB6CAAE0058CE61 /* Tellomee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tellomee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B9F7391FB6CAAE0058CE61 /* Tellomee Prod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tellomee Prod.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B9F73C1FB6CAAE0058CE61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7B9F7411FB6CAAF0058CE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7B9F7491FB6CAAF0058CE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E7B9F74B1FB6CAAF0058CE61 /* Tellomee-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tellomee-Info.plist"; sourceTree = "<group>"; };
+		E7B9F74B1FB6CAAF0058CE61 /* TellomeeProd-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TellomeeProd-Info.plist"; sourceTree = "<group>"; };
 		E7CB84C42075229600CB91C2 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		E7CF4DDF206CA31B00B7F97E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utility.swift"; sourceTree = "<group>"; };
@@ -321,6 +526,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E750FF5C20D9849B002DE84D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E750FF5D20D9849B002DE84D /* Pods_EscaPAID_Renaissance.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E750FFCE20D99805002DE84D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E750FFCF20D99805002DE84D /* Pods_EscaPAID_Tellomee.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E79F05F22059700400889D14 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,12 +622,13 @@
 			isa = PBXGroup;
 			children = (
 				E77A7368204875A200AE0DE4 /* ExperienceManager.swift */,
+				E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */,
 				E77A7365204875A100AE0DE4 /* PostManager.swift */,
 				E77A7367204875A200AE0DE4 /* ReservationManager.swift */,
-				E77A7364204875A100AE0DE4 /* StorageManager.swift */,
-				E77A7363204875A100AE0DE4 /* ThreadManager.swift */,
-				E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */,
 				E7AE98A12092894C00BFFFE6 /* ReviewManager.swift */,
+				E77A7363204875A100AE0DE4 /* ThreadManager.swift */,
+				E77A7364204875A100AE0DE4 /* StorageManager.swift */,
+				E750FF7F20D993A6002DE84D /* Manager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -509,8 +731,10 @@
 		E7B9F73A1FB6CAAE0058CE61 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E7B9F7391FB6CAAE0058CE61 /* Tellomee.app */,
-				E79F060D2059700400889D14 /* Renaissance.app */,
+				E7B9F7391FB6CAAE0058CE61 /* Tellomee Prod.app */,
+				E79F060D2059700400889D14 /* Renaissance Prod.app */,
+				E750FF7D20D9849B002DE84D /* Renaissance Dev.app */,
+				E750FFEF20D99805002DE84D /* Tellomee Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -560,8 +784,10 @@
 		E7E45980205975C90077C1DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E79F05C020596AF500889D14 /* Renaissance-Info.plist */,
-				E7B9F74B1FB6CAAF0058CE61 /* Tellomee-Info.plist */,
+				E79F05C020596AF500889D14 /* RenaissanceProd-Info.plist */,
+				E7B9F74B1FB6CAAF0058CE61 /* TellomeeProd-Info.plist */,
+				E750FF7E20D9849B002DE84D /* RenaissanceDev-Info.plist */,
+				E750FFF020D99805002DE84D /* TellomeeDev-Info.plist */,
 				E7E45981205977820077C1DE /* Configuration.plist */,
 				E79F056E205966E000889D14 /* Tellomee */,
 				E7E45995205C85260077C1DE /* Renaissance */,
@@ -589,9 +815,47 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E79F05C12059700400889D14 /* Renaissance */ = {
+		E750FF1220D9849B002DE84D /* Renaissance Dev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E79F060A2059700400889D14 /* Build configuration list for PBXNativeTarget "Renaissance" */;
+			buildConfigurationList = E750FF7A20D9849B002DE84D /* Build configuration list for PBXNativeTarget "Renaissance Dev" */;
+			buildPhases = (
+				E750FF1320D9849B002DE84D /* [CP] Check Pods Manifest.lock */,
+				E750FF1420D9849B002DE84D /* Sources */,
+				E750FF5C20D9849B002DE84D /* Frameworks */,
+				E750FF5E20D9849B002DE84D /* Resources */,
+				E750FF7920D9849B002DE84D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Renaissance Dev";
+			productName = tellomee;
+			productReference = E750FF7D20D9849B002DE84D /* Renaissance Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E750FF8320D99805002DE84D /* Tellomee Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E750FFEC20D99805002DE84D /* Build configuration list for PBXNativeTarget "Tellomee Dev" */;
+			buildPhases = (
+				E750FF8420D99805002DE84D /* [CP] Check Pods Manifest.lock */,
+				E750FF8520D99805002DE84D /* Sources */,
+				E750FFCE20D99805002DE84D /* Frameworks */,
+				E750FFD020D99805002DE84D /* Resources */,
+				E750FFEB20D99805002DE84D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tellomee Dev";
+			productName = tellomee;
+			productReference = E750FFEF20D99805002DE84D /* Tellomee Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E79F05C12059700400889D14 /* Renaissance Prod */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E79F060A2059700400889D14 /* Build configuration list for PBXNativeTarget "Renaissance Prod" */;
 			buildPhases = (
 				88D7E47BF6E0AB7106EF73D9 /* [CP] Check Pods Manifest.lock */,
 				E79F05C32059700400889D14 /* Sources */,
@@ -603,14 +867,14 @@
 			);
 			dependencies = (
 			);
-			name = Renaissance;
+			name = "Renaissance Prod";
 			productName = tellomee;
-			productReference = E79F060D2059700400889D14 /* Renaissance.app */;
+			productReference = E79F060D2059700400889D14 /* Renaissance Prod.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E7B9F7381FB6CAAE0058CE61 /* Tellomee */ = {
+		E7B9F7381FB6CAAE0058CE61 /* Tellomee Prod */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E7B9F74E1FB6CAAF0058CE61 /* Build configuration list for PBXNativeTarget "Tellomee" */;
+			buildConfigurationList = E7B9F74E1FB6CAAF0058CE61 /* Build configuration list for PBXNativeTarget "Tellomee Prod" */;
 			buildPhases = (
 				F56DF82873CBF95FE874FB24 /* [CP] Check Pods Manifest.lock */,
 				E7B9F7351FB6CAAE0058CE61 /* Sources */,
@@ -622,9 +886,9 @@
 			);
 			dependencies = (
 			);
-			name = Tellomee;
+			name = "Tellomee Prod";
 			productName = tellomee;
-			productReference = E7B9F7391FB6CAAE0058CE61 /* Tellomee.app */;
+			productReference = E7B9F7391FB6CAAE0058CE61 /* Tellomee Prod.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -637,6 +901,12 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Michael Miller";
 				TargetAttributes = {
+					E750FF1220D9849B002DE84D = {
+						ProvisioningStyle = Automatic;
+					};
+					E750FF8320D99805002DE84D = {
+						ProvisioningStyle = Automatic;
+					};
 					E79F05C12059700400889D14 = {
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -685,13 +955,81 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E7B9F7381FB6CAAE0058CE61 /* Tellomee */,
-				E79F05C12059700400889D14 /* Renaissance */,
+				E7B9F7381FB6CAAE0058CE61 /* Tellomee Prod */,
+				E750FF8320D99805002DE84D /* Tellomee Dev */,
+				E79F05C12059700400889D14 /* Renaissance Prod */,
+				E750FF1220D9849B002DE84D /* Renaissance Dev */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E750FF5E20D9849B002DE84D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E750FF5F20D9849B002DE84D /* TextGetter.xib in Resources */,
+				E750FF6020D9849B002DE84D /* ExperienceEditor.storyboard in Resources */,
+				E750FF6120D9849B002DE84D /* Montserrat-Regular.ttf in Resources */,
+				E750FF6220D9849B002DE84D /* Discover.storyboard in Resources */,
+				E750FF6320D9849B002DE84D /* Podfile in Resources */,
+				E750FF6420D9849B002DE84D /* ExperienceCard.xib in Resources */,
+				E750FF6520D9849B002DE84D /* ProfileEditor.storyboard in Resources */,
+				E750FF6620D9849B002DE84D /* LaunchScreen.storyboard in Resources */,
+				E750FF6720D9849B002DE84D /* Montserrat-Bold.ttf in Resources */,
+				E750FF6820D9849B002DE84D /* Reservations.storyboard in Resources */,
+				E750FF6920D9849B002DE84D /* DateCell.xib in Resources */,
+				E750FF6A20D9849B002DE84D /* Montserrat-Light.ttf in Resources */,
+				E750FF6B20D9849B002DE84D /* Book.storyboard in Resources */,
+				E750FF6C20D9849B002DE84D /* Lato-Regular.ttf in Resources */,
+				E750FF6D20D9849B002DE84D /* ExperienceCardCollectionViewCell.xib in Resources */,
+				E750FF6E20D9849B002DE84D /* Assets.xcassets in Resources */,
+				E750FF6F20D9849B002DE84D /* ExperienceCardTableViewCell.xib in Resources */,
+				E750FF7020D9849B002DE84D /* ReviewCell.xib in Resources */,
+				E750FF7120D9849B002DE84D /* Renaissance.xcassets in Resources */,
+				E750FF7220D9849B002DE84D /* Profile.storyboard in Resources */,
+				E750FF7320D9849B002DE84D /* GoogleService-Info.plist in Resources */,
+				E750FF7420D9849B002DE84D /* Configuration.plist in Resources */,
+				E750FF7520D9849B002DE84D /* Main.storyboard in Resources */,
+				E750FF7620D9849B002DE84D /* Inbox.storyboard in Resources */,
+				E750FF7720D9849B002DE84D /* Settings.storyboard in Resources */,
+				E750FF7820D9849B002DE84D /* UICalendar.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E750FFD020D99805002DE84D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E750FFD120D99805002DE84D /* TextGetter.xib in Resources */,
+				E750FFD220D99805002DE84D /* ExperienceEditor.storyboard in Resources */,
+				E750FFD320D99805002DE84D /* Montserrat-Regular.ttf in Resources */,
+				E750FFD420D99805002DE84D /* Tellomee.xcassets in Resources */,
+				E750FFD520D99805002DE84D /* Discover.storyboard in Resources */,
+				E750FFD620D99805002DE84D /* ExperienceCard.xib in Resources */,
+				E750FFD720D99805002DE84D /* Podfile in Resources */,
+				E750FFD820D99805002DE84D /* ProfileEditor.storyboard in Resources */,
+				E750FFD920D99805002DE84D /* Montserrat-Bold.ttf in Resources */,
+				E750FFDA20D99805002DE84D /* LaunchScreen.storyboard in Resources */,
+				E750FFDB20D99805002DE84D /* Reservations.storyboard in Resources */,
+				E750FFDC20D99805002DE84D /* Montserrat-Light.ttf in Resources */,
+				E750FFDD20D99805002DE84D /* DateCell.xib in Resources */,
+				E750FFDE20D99805002DE84D /* Book.storyboard in Resources */,
+				E750FFDF20D99805002DE84D /* ExperienceCardCollectionViewCell.xib in Resources */,
+				E750FFE020D99805002DE84D /* Lato-Regular.ttf in Resources */,
+				E750FFE120D99805002DE84D /* ExperienceCardTableViewCell.xib in Resources */,
+				E750FFE220D99805002DE84D /* ReviewCell.xib in Resources */,
+				E750FFE320D99805002DE84D /* Assets.xcassets in Resources */,
+				E750FFE420D99805002DE84D /* Profile.storyboard in Resources */,
+				E750FFE520D99805002DE84D /* GoogleService-Info.plist in Resources */,
+				E750FFE620D99805002DE84D /* Configuration.plist in Resources */,
+				E750FFE720D99805002DE84D /* Main.storyboard in Resources */,
+				E750FFE820D99805002DE84D /* Inbox.storyboard in Resources */,
+				E750FFE920D99805002DE84D /* Settings.storyboard in Resources */,
+				E750FFEA20D99805002DE84D /* UICalendar.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E79F05F52059700400889D14 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -879,6 +1217,142 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E750FF1320D9849B002DE84D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-Renaissance-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E750FF7920D9849B002DE84D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Renaissance/Pods-EscaPAID-Renaissance-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/NextResponderTextField/NextResponderTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextResponderTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Renaissance/Pods-EscaPAID-Renaissance-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E750FF8420D99805002DE84D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-Tellomee-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E750FFEB20D99805002DE84D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Tellomee/Pods-EscaPAID-Tellomee-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/NextResponderTextField/NextResponderTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextResponderTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Tellomee/Pods-EscaPAID-Tellomee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F56DF82873CBF95FE874FB24 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -900,6 +1374,164 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E750FF1420D9849B002DE84D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E750FF1520D9849B002DE84D /* ExperienceImageCell.swift in Sources */,
+				E750FF1620D9849B002DE84D /* DateCell.swift in Sources */,
+				E750FF1720D9849B002DE84D /* MainAPIClient.swift in Sources */,
+				E750FF1820D9849B002DE84D /* ReservationVC.swift in Sources */,
+				E750FF1920D9849B002DE84D /* ProfileEditorVC.swift in Sources */,
+				E750FF1A20D9849B002DE84D /* GradientView.swift in Sources */,
+				E750FF1B20D9849B002DE84D /* ExperienceManager.swift in Sources */,
+				E750FF1C20D9849B002DE84D /* UIAlertController+Utility.swift in Sources */,
+				E750FF1D20D9849B002DE84D /* CreateAccountVC.swift in Sources */,
+				E750FF1E20D9849B002DE84D /* BorderedTextView.swift in Sources */,
+				E750FF1F20D9849B002DE84D /* Constants.swift in Sources */,
+				E750FF2020D9849B002DE84D /* ExperienceVC.swift in Sources */,
+				E750FF2120D9849B002DE84D /* ReservationsTableVC.swift in Sources */,
+				E750FF2220D9849B002DE84D /* Experience.swift in Sources */,
+				E750FF2320D9849B002DE84D /* ThemedRoundedButton.swift in Sources */,
+				E750FF2420D9849B002DE84D /* DaySelectorTableVC.swift in Sources */,
+				E750FF2520D9849B002DE84D /* HexagonalImageView.swift in Sources */,
+				E750FF2620D9849B002DE84D /* ReservationProcessor.swift in Sources */,
+				E750FF2720D9849B002DE84D /* FirebaseManager.swift in Sources */,
+				E750FF2820D9849B002DE84D /* ExperienceImageVC.swift in Sources */,
+				E750FF2920D9849B002DE84D /* ThreadManager.swift in Sources */,
+				E750FF2A20D9849B002DE84D /* ThreadsTableVC.swift in Sources */,
+				E750FF2B20D9849B002DE84D /* ExperienceEditorTableVC.swift in Sources */,
+				E750FF2C20D9849B002DE84D /* UILabel+Utility.swift in Sources */,
+				E750FF2D20D9849B002DE84D /* ThemedButton.swift in Sources */,
+				E750FF2E20D9849B002DE84D /* ReviewManager.swift in Sources */,
+				E750FF2F20D9849B002DE84D /* BorderedTextField.swift in Sources */,
+				E750FF3020D9849B002DE84D /* Review.swift in Sources */,
+				E750FF3120D9849B002DE84D /* SelfContainedPickerView.swift in Sources */,
+				E750FF3220D9849B002DE84D /* WriteReviewVC.swift in Sources */,
+				E750FF3320D9849B002DE84D /* SettingsTableVC.swift in Sources */,
+				E750FF3420D9849B002DE84D /* User.swift in Sources */,
+				E750FF3520D9849B002DE84D /* ExperienceCard.swift in Sources */,
+				E750FF3620D9849B002DE84D /* DiscoverVC.swift in Sources */,
+				E750FF3720D9849B002DE84D /* UIColor+Utility.swift in Sources */,
+				E750FF3820D9849B002DE84D /* UICalendar.swift in Sources */,
+				E750FF3920D9849B002DE84D /* CircularImageView.swift in Sources */,
+				E750FF3A20D9849B002DE84D /* Reservation.swift in Sources */,
+				E750FF3B20D9849B002DE84D /* ChatTableViewCell.swift in Sources */,
+				E750FF3C20D9849B002DE84D /* MyExperiencesVC.swift in Sources */,
+				E750FF3D20D9849B002DE84D /* ThemedTableViewController.swift in Sources */,
+				E750FF3E20D9849B002DE84D /* TabBarController.swift in Sources */,
+				E750FF3F20D9849B002DE84D /* UIImage+Utility.swift in Sources */,
+				E750FF8220D993A6002DE84D /* Manager.swift in Sources */,
+				E750FF4020D9849B002DE84D /* Utils.swift in Sources */,
+				E750FF4120D9849B002DE84D /* ThemedLabel.swift in Sources */,
+				E750FF4220D9849B002DE84D /* UIScrollingViewController.swift in Sources */,
+				E750FF4320D9849B002DE84D /* ReviewCell.swift in Sources */,
+				E750FF4420D9849B002DE84D /* ThreadTableViewCell.swift in Sources */,
+				E750FF4520D9849B002DE84D /* ExperienceCollectionView.swift in Sources */,
+				E750FF4620D9849B002DE84D /* ConfirmationTableVC.swift in Sources */,
+				E750FF4720D9849B002DE84D /* ExperienceCardTableViewCell.swift in Sources */,
+				E750FF4820D9849B002DE84D /* ChatVC.swift in Sources */,
+				E750FF4920D9849B002DE84D /* PostManager.swift in Sources */,
+				E750FF4A20D9849B002DE84D /* LoginVC.swift in Sources */,
+				E750FF4B20D9849B002DE84D /* RoundedButton.swift in Sources */,
+				E750FF4C20D9849B002DE84D /* ExperienceCardCollectionViewCell.swift in Sources */,
+				E750FF4D20D9849B002DE84D /* TextGetterController.swift in Sources */,
+				E750FF4E20D9849B002DE84D /* Config.swift in Sources */,
+				E750FF4F20D9849B002DE84D /* ReservationTableViewCell.swift in Sources */,
+				E750FF5020D9849B002DE84D /* ProfileVC.swift in Sources */,
+				E750FF5120D9849B002DE84D /* StorageManager.swift in Sources */,
+				E750FF5220D9849B002DE84D /* ReservationManager.swift in Sources */,
+				E750FF5320D9849B002DE84D /* OriginScreenVC.swift in Sources */,
+				E750FF5420D9849B002DE84D /* AppDelegate.swift in Sources */,
+				E750FF5520D9849B002DE84D /* CardView.swift in Sources */,
+				E750FF5620D9849B002DE84D /* Thread.swift in Sources */,
+				E750FF5720D9849B002DE84D /* ExperienceTableView.swift in Sources */,
+				E750FF5820D9849B002DE84D /* ReceiptTableVC.swift in Sources */,
+				E750FF5920D9849B002DE84D /* CuratorSettingsVC.swift in Sources */,
+				E750FF5A20D9849B002DE84D /* Days.swift in Sources */,
+				E750FF5B20D9849B002DE84D /* ThreadsNavigationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E750FF8520D99805002DE84D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E750FF8620D99805002DE84D /* ExperienceImageCell.swift in Sources */,
+				E750FF8720D99805002DE84D /* DateCell.swift in Sources */,
+				E750FF8820D99805002DE84D /* MainAPIClient.swift in Sources */,
+				E750FF8920D99805002DE84D /* ReservationVC.swift in Sources */,
+				E750FF8A20D99805002DE84D /* ProfileEditorVC.swift in Sources */,
+				E750FF8B20D99805002DE84D /* ExperienceManager.swift in Sources */,
+				E750FF8C20D99805002DE84D /* UIAlertController+Utility.swift in Sources */,
+				E750FF8D20D99805002DE84D /* CreateAccountVC.swift in Sources */,
+				E750FF8E20D99805002DE84D /* Constants.swift in Sources */,
+				E750FF8F20D99805002DE84D /* BorderedTextView.swift in Sources */,
+				E750FF9020D99805002DE84D /* ExperienceVC.swift in Sources */,
+				E750FF9120D99805002DE84D /* ReservationsTableVC.swift in Sources */,
+				E750FF9220D99805002DE84D /* Experience.swift in Sources */,
+				E750FF9320D99805002DE84D /* DaySelectorTableVC.swift in Sources */,
+				E750FF9420D99805002DE84D /* ThemedRoundedButton.swift in Sources */,
+				E750FF9520D99805002DE84D /* ReservationProcessor.swift in Sources */,
+				E750FF9620D99805002DE84D /* HexagonalImageView.swift in Sources */,
+				E750FF9720D99805002DE84D /* FirebaseManager.swift in Sources */,
+				E750FF9820D99805002DE84D /* ExperienceImageVC.swift in Sources */,
+				E750FF9920D99805002DE84D /* ThreadManager.swift in Sources */,
+				E750FF9A20D99805002DE84D /* ThreadsTableVC.swift in Sources */,
+				E750FF9B20D99805002DE84D /* ExperienceEditorTableVC.swift in Sources */,
+				E750FF9C20D99805002DE84D /* UILabel+Utility.swift in Sources */,
+				E750FF9D20D99805002DE84D /* ThemedButton.swift in Sources */,
+				E750FF9E20D99805002DE84D /* SelfContainedPickerView.swift in Sources */,
+				E750FF9F20D99805002DE84D /* ReviewManager.swift in Sources */,
+				E750FFA020D99805002DE84D /* BorderedTextField.swift in Sources */,
+				E750FFA120D99805002DE84D /* Review.swift in Sources */,
+				E750FFA220D99805002DE84D /* SettingsTableVC.swift in Sources */,
+				E750FFA320D99805002DE84D /* WriteReviewVC.swift in Sources */,
+				E750FFA420D99805002DE84D /* User.swift in Sources */,
+				E750FFA520D99805002DE84D /* DiscoverVC.swift in Sources */,
+				E750FFA620D99805002DE84D /* ExperienceCard.swift in Sources */,
+				E750FFA720D99805002DE84D /* UICalendar.swift in Sources */,
+				E750FFA820D99805002DE84D /* UIColor+Utility.swift in Sources */,
+				E750FFA920D99805002DE84D /* Reservation.swift in Sources */,
+				E750FFAA20D99805002DE84D /* CircularImageView.swift in Sources */,
+				E750FFAB20D99805002DE84D /* ChatTableViewCell.swift in Sources */,
+				E750FFAC20D99805002DE84D /* MyExperiencesVC.swift in Sources */,
+				E750FFAD20D99805002DE84D /* TabBarController.swift in Sources */,
+				E750FFAE20D99805002DE84D /* ThemedTableViewController.swift in Sources */,
+				E750FFAF20D99805002DE84D /* ThreadTableViewCell.swift in Sources */,
+				E750FFB020D99805002DE84D /* UIImage+Utility.swift in Sources */,
+				E750FFB120D99805002DE84D /* Manager.swift in Sources */,
+				E750FFB220D99805002DE84D /* Utils.swift in Sources */,
+				E750FFB320D99805002DE84D /* ThemedLabel.swift in Sources */,
+				E750FFB420D99805002DE84D /* UIScrollingViewController.swift in Sources */,
+				E750FFB520D99805002DE84D /* ReviewCell.swift in Sources */,
+				E750FFB620D99805002DE84D /* ConfirmationTableVC.swift in Sources */,
+				E750FFB720D99805002DE84D /* ExperienceCollectionView.swift in Sources */,
+				E750FFB820D99805002DE84D /* ChatVC.swift in Sources */,
+				E750FFB920D99805002DE84D /* ExperienceCardTableViewCell.swift in Sources */,
+				E750FFBA20D99805002DE84D /* PostManager.swift in Sources */,
+				E750FFBB20D99805002DE84D /* LoginVC.swift in Sources */,
+				E750FFBC20D99805002DE84D /* TextGetterController.swift in Sources */,
+				E750FFBD20D99805002DE84D /* RoundedButton.swift in Sources */,
+				E750FFBE20D99805002DE84D /* ExperienceCardCollectionViewCell.swift in Sources */,
+				E750FFBF20D99805002DE84D /* Config.swift in Sources */,
+				E750FFC020D99805002DE84D /* ReservationTableViewCell.swift in Sources */,
+				E750FFC120D99805002DE84D /* StorageManager.swift in Sources */,
+				E750FFC220D99805002DE84D /* ProfileVC.swift in Sources */,
+				E750FFC320D99805002DE84D /* GradientView.swift in Sources */,
+				E750FFC420D99805002DE84D /* ReservationManager.swift in Sources */,
+				E750FFC520D99805002DE84D /* OriginScreenVC.swift in Sources */,
+				E750FFC620D99805002DE84D /* AppDelegate.swift in Sources */,
+				E750FFC720D99805002DE84D /* CardView.swift in Sources */,
+				E750FFC820D99805002DE84D /* Thread.swift in Sources */,
+				E750FFC920D99805002DE84D /* ExperienceTableView.swift in Sources */,
+				E750FFCA20D99805002DE84D /* ReceiptTableVC.swift in Sources */,
+				E750FFCB20D99805002DE84D /* CuratorSettingsVC.swift in Sources */,
+				E750FFCC20D99805002DE84D /* Days.swift in Sources */,
+				E750FFCD20D99805002DE84D /* ThreadsNavigationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E79F05C32059700400889D14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -947,6 +1579,7 @@
 				E72E992820B70074009CFACA /* ThemedTableViewController.swift in Sources */,
 				E79F05E02059700400889D14 /* TabBarController.swift in Sources */,
 				E7B4CDF1207FFBE200352DB1 /* UIImage+Utility.swift in Sources */,
+				E750FF8120D993A6002DE84D /* Manager.swift in Sources */,
 				E783B99F2088F67400F2F769 /* Utils.swift in Sources */,
 				E783B9962087DDDF00F2F769 /* ThemedLabel.swift in Sources */,
 				E79ADAFE20743F8500C02C0A /* UIScrollingViewController.swift in Sources */,
@@ -1025,6 +1658,7 @@
 				E72E992720B70073009CFACA /* ThemedTableViewController.swift in Sources */,
 				E745499A1FB8B1BE00A6A32C /* ThreadTableViewCell.swift in Sources */,
 				E7B4CDF0207FFBE200352DB1 /* UIImage+Utility.swift in Sources */,
+				E750FF8020D993A6002DE84D /* Manager.swift in Sources */,
 				E783B99E2088F67400F2F769 /* Utils.swift in Sources */,
 				E783B9952087DDDF00F2F769 /* ThemedLabel.swift in Sources */,
 				E79ADAFD20743F8500C02C0A /* UIScrollingViewController.swift in Sources */,
@@ -1102,6 +1736,94 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E750FF7B20D9849B002DE84D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECA6BDE2DF7F3ACAE509701E /* Pods-EscaPAID-Renaissance.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Renaissance.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Y8K76T269;
+				INFOPLIST_FILE = "$(SRCROOT)/RenaissanceDev-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.RenaissanceDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E750FF7C20D9849B002DE84D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB6BDD587A2A54747961A1BE /* Pods-EscaPAID-Renaissance.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Renaissance.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Y8K76T269;
+				INFOPLIST_FILE = "$(SRCROOT)/RenaissanceDev-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.RenaissanceDev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E750FFED20D99805002DE84D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C84B14F7DCB2E3D31E9D8EC8 /* Pods-EscaPAID-Tellomee.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Tellomee";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Tellomee.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Y8K76T269;
+				INFOPLIST_FILE = "$(SRCROOT)/TellomeeDev-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.Tellomee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E750FFEE20D99805002DE84D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56DC2A49DCA86525E8B9F95C /* Pods-EscaPAID-Tellomee.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Tellomee";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Tellomee.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Y8K76T269;
+				INFOPLIST_FILE = "$(SRCROOT)/TellomeeDev-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.Tellomee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E79F060B2059700400889D14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ECA6BDE2DF7F3ACAE509701E /* Pods-EscaPAID-Renaissance.debug.xcconfig */;
@@ -1111,7 +1833,7 @@
 				CODE_SIGN_ENTITLEMENTS = Renaissance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/Renaissance-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/RenaissanceProd-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
@@ -1134,7 +1856,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/Renaissance-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/RenaissanceProd-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
@@ -1266,7 +1988,7 @@
 				CODE_SIGN_ENTITLEMENTS = Tellomee.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/Tellomee-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/TellomeeProd-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
@@ -1289,7 +2011,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/Tellomee-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/TellomeeProd-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
@@ -1304,7 +2026,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E79F060A2059700400889D14 /* Build configuration list for PBXNativeTarget "Renaissance" */ = {
+		E750FF7A20D9849B002DE84D /* Build configuration list for PBXNativeTarget "Renaissance Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E750FF7B20D9849B002DE84D /* Debug */,
+				E750FF7C20D9849B002DE84D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E750FFEC20D99805002DE84D /* Build configuration list for PBXNativeTarget "Tellomee Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E750FFED20D99805002DE84D /* Debug */,
+				E750FFEE20D99805002DE84D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E79F060A2059700400889D14 /* Build configuration list for PBXNativeTarget "Renaissance Prod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E79F060B2059700400889D14 /* Debug */,
@@ -1322,7 +2062,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E7B9F74E1FB6CAAF0058CE61 /* Build configuration list for PBXNativeTarget "Tellomee" */ = {
+		E7B9F74E1FB6CAAF0058CE61 /* Build configuration list for PBXNativeTarget "Tellomee Prod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E7B9F74F1FB6CAAF0058CE61 /* Debug */,

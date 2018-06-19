@@ -11,8 +11,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class ReviewManager: NSObject {
-    static let databaseRef = Database.database().reference()
+class ReviewManager: Manager {
     
     var reviews: [Review] = []
     var observeHandle: DatabaseHandle?

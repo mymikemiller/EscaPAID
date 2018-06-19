@@ -29,6 +29,8 @@
 	<string>1</string>
 	<key>Configuration</key>
 	<string>Tellomee</string>
+	<key>Database Prefix</key>
+	<string>production</string>
 	<key>FacebookAppID</key>
 	<string>747340112119855</string>
 	<key>FacebookDisplayName</key>

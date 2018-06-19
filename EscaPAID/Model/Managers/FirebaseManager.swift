@@ -12,8 +12,7 @@ import FirebaseDatabase
 import FirebaseAuth
 import FBSDKLoginKit
 
-class FirebaseManager: NSObject {
-    static let databaseRef = Database.database().reference()
+class FirebaseManager: Manager {
     static var user:User? = nil
     static var currentFirebaseUser:FirebaseAuth.User? = nil
     

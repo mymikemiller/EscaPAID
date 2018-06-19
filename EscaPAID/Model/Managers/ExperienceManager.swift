@@ -11,8 +11,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class ExperienceManager: NSObject {
-    static let databaseRef = Database.database().reference()
+class ExperienceManager: Manager {
     
     var experiences = [Experience]()
     
@@ -33,7 +32,7 @@ class ExperienceManager: NSObject {
     func fillExperiences(forCity city: String, completion: @escaping () -> Void) {
         clear()
         
-        databaseQuery = ExperienceManager.databaseRef.child("experiences").queryOrdered(byChild: "city").queryEqual(toValue: city)
+        databaseQuery = Manager.databaseRef.child("experiences").queryOrdered(byChild: "city").queryEqual(toValue: city)
         observeHandle = databaseQuery?.observe(.childAdded, with: {
             snap in
             

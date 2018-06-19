@@ -10,7 +10,7 @@ import Foundation
 
 class Config {
 
-    // Configure the app based on the target. Look in the main.infoDictionary in the Supporting Files folder (which will be {AppName}-Info.plist) for the Configuration property (which should match the app name). This will be a key for a dictionary in Configuration.plist with all the app-specific values such as server addresses.
+    // Configure the app based on the target. Look in the main.infoDictionary in the Supporting Files folder (which will be {AppName Dev/Prod}-Info.plist) for the Configuration property (which should match the app name). This will be a key for a dictionary in Configuration.plist with all the app-specific values such as server addresses.
 
     static let current = Config(dictionary: NSDictionary(contentsOfFile: Bundle.main.path(forResource: "Configuration", ofType: "plist")!)?[Bundle.main.infoDictionary!["Configuration"]] as! NSDictionary)
 
@@ -18,6 +18,17 @@ class Config {
 
     private init(dictionary: NSDictionary) {
         self.dictionary = dictionary
+    }
+    
+    // Config variables that depend on the production / development
+    
+    // "production" or "development"
+    static var stage: String {
+        return Bundle.main.infoDictionary!["Stage"] as! String
+    }
+    
+    static var databasePrefix: String {
+        return (stage.lowercased() == "production") ? "prod" : "dev";
     }
     
     // Config variables defined in Configuration.plist (i.e. they depend on the target).

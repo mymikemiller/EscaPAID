@@ -12,9 +12,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 
-class ReservationManager: NSObject {
-    
-    static let databaseRef = Database.database().reference()
+class ReservationManager: Manager {
     
     var reservations = [Reservation]()
     

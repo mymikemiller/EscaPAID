@@ -12,8 +12,7 @@ import FirebaseDatabase
 import FirebaseAuth
 import JSQMessagesViewController
 
-class PostManager: NSObject {
-    static let databaseRef = Database.database().reference()
+class PostManager: Manager {
     
     var messages = [JSQMessage]()
     var observeHandleMap = [String:DatabaseHandle]()

@@ -21,18 +21,20 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1877512232538939</string>
+				<string>fb747340112119855</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Configuration</key>
-	<string>Renaissance</string>
+	<string>Tellomee</string>
+	<key>Stage</key>
+	<string>development</string>
 	<key>FacebookAppID</key>
-	<string>1877512232538939</string>
+	<string>747340112119855</string>
 	<key>FacebookDisplayName</key>
-	<string>Renaissance</string>
+	<string>Tellomee</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>

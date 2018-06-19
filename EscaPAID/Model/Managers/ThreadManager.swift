@@ -11,8 +11,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class ThreadManager: NSObject {
-    static let databaseRef = Database.database().reference()
+class ThreadManager: Manager {
     static let THREAD_UPDATED = "THREAD_UPDATED"
     
     // Store a dictionary of callback lists to inform when a thread is created. Key the dictionary on the uid for who the created/retrieved thread. Clear that thread's list after calling all callbacks.
