@@ -13,8 +13,8 @@ class MainAPIClient: NSObject {
     
     static let shared = MainAPIClient()
     
-    //var baseURLString = "http://localhost:6000/api"
-    var baseURLString = Config.current.serverURL
+    //var baseURLString = "http://localhost:6000/api" + (Config.stage == "production" ? "" : "-test")
+    var baseURLString = Config.current.serverURL + (Config.stage == "production" ? "" : "-test") // Append -test if we're not on production
     var baseURL: URL {
         return URL(string: baseURLString)!
     }
@@ -67,8 +67,6 @@ class MainAPIClient: NSObject {
             "description": description,
             ]
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse) in
-            
-//        Alamofire.request(url, method: .post, parameters: parameters).responseJSON { (response) in
             
             guard let json = response.result.value as? [String: Any] else {
                 // TODO: Should not error out here. Should just call the completion without ever adding a stripeCustomerId. stripeCustomerId can be added once we try to create a charge.

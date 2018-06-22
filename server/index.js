@@ -12,6 +12,7 @@ if (target) {
 }
 
 const STRIPE_SECRET_KEY = getConfig(target, "STRIPE_SECRET_KEY")
+const STRIPE_TEST_SECRET_KEY = getConfig(target, "STRIPE_TEST_SECRET_KEY")
 const DATABASE_URL = getConfig(target, "DATABASE_URL")
 const FIREBASE_PRIVATE_KEY = getConfig(target, "FIREBASE_PRIVATE_KEY")
 const FIREBASE_CLIENT_EMAIL = getConfig(target, "FIREBASE_CLIENT_EMAIL")
@@ -30,8 +31,19 @@ function getConfig(target, varName) {
     return variable
 }
 
+// Respond to POSTs to both /api/ and /api-test/
+function listenForPost(app, endpoint, callback) {
+    app.post("/api-test/" + endpoint, (req, res) => {
+        callback(true, req, res);
+    });
+    app.post("/api/" + endpoint, (req, res) => {
+        callback(false, req, res);
+    });
+}
+
 const express = require('express');
 var stripe = require('stripe')(STRIPE_SECRET_KEY);
+var stripeTest = require('stripe')(STRIPE_TEST_SECRET_KEY);
 var admin = require('firebase-admin');
 var bodyParser = require('body-parser');
 var request = require('request');
@@ -67,7 +79,7 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: DATABASE_URL
 });
-// Get a database reference to our posts
+// Get a database reference to our reservations
 var db = admin.database();
 var reservationsDatabaseRef = db.ref("reservations");
 
@@ -78,11 +90,15 @@ app.get("/apple-app-site-association", (req, res) => {
 })
 
 // The methods below are required by the Stripe iOS SDK
-// See [STPEphemeralKeyProvider](https://github.com/stripe/stripe-ios/blob/master/Stripe/PublicHeaders/STPEphemeralKeyProvider.h)
-app.post("/api/create_customer", (req, res) => {
-    console.log("at /api/create_customer post")
 
-    stripe.customers.create({
+/**
+ * POST /api/create_customer
+ *
+ * Create a Stripe customer, returning the new customer id.
+ */
+listenForPost(app, "create_customer", (isTest, req, res) => {
+    var stagedStripe = isTest ? stripeTest : stripe;
+    stagedStripe.customers.create({
         email: req.body.email,
         description: req.body.description,
       }, function(err, customer) {
@@ -92,7 +108,7 @@ app.post("/api/create_customer", (req, res) => {
         console.log(err, req.body);
         res.status(500).end()
     });
-});
+})
 
 /**
  * POST /api/ephemeral_keys

@@ -25,7 +25,7 @@ Development notes:
     * FIREBASE_CLIENT_EMAIL: The value for client_email in the firebase-adminsdk.json file donwloaded from the Service Account section of the Firebase console.
 
 * Testing on local machine
-  * On your local machine, you can use "npm start --target tellomee" (for example) which will append TELLOMEE_ to each environment variable used. This way you can set up multiple sets of environment variables and easily toggle between them.
+  * On your local machine, you can use "npm start -- --target=tellomee" (for example) which will append TELLOMEE_ to each environment variable used. This way you can set up multiple sets of environment variables and easily toggle between them.
     
 * Setting environment variables for the firebase service account private key and email
   * Download the service account file from the appropriate firebase admin sdk console, for example:
