@@ -141,7 +141,7 @@ listenForPost(app, "ephemeral_keys", (stripe, req, res) => {
  * the auth_code returned during onboarding
  */
 
-app.post("/api/redeem_auth_code", (req, res) => {
+listenForPost(app, "redeem_auth_code", (stripe, req, res) => {
     console.log("at /api/redeem_auth_code post")
     var auth_code = req.body.auth_code;
 

@@ -82,10 +82,8 @@ class MainAPIClient: NSObject {
     }
     
     func redeemOnboardingAuthorizationCode(authCode:String, completion: @escaping (String?) -> Void) {
-        // Call a new function in my api to do what used to happen in penguin
         
         print("at redeemOnboardingAuthorizationCode")
-        
         
         let url = self.baseURL.appendingPathComponent("redeem_auth_code")
         let parameters: [String: Any] = [
