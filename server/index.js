@@ -34,15 +34,15 @@ function getConfig(target, varName) {
 // Respond to POSTs to both /api/ and /api-test/
 function listenForPost(app, endpoint, callback) {
     app.post("/api-test/" + endpoint, (req, res) => {
-        callback(true, req, res);
+        callback(stripeTest, req, res);
     });
     app.post("/api/" + endpoint, (req, res) => {
-        callback(false, req, res);
+        callback(stripeProd, req, res);
     });
 }
 
 const express = require('express');
-var stripe = require('stripe')(STRIPE_SECRET_KEY);
+var stripeProd = require('stripe')(STRIPE_SECRET_KEY);
 var stripeTest = require('stripe')(STRIPE_TEST_SECRET_KEY);
 var admin = require('firebase-admin');
 var bodyParser = require('body-parser');
@@ -96,9 +96,8 @@ app.get("/apple-app-site-association", (req, res) => {
  *
  * Create a Stripe customer, returning the new customer id.
  */
-listenForPost(app, "create_customer", (isTest, req, res) => {
-    var stagedStripe = isTest ? stripeTest : stripe;
-    stagedStripe.customers.create({
+listenForPost(app, "create_customer", (stripe, req, res) => {
+    stripe.customers.create({
         email: req.body.email,
         description: req.body.description,
       }, function(err, customer) {
@@ -115,9 +114,8 @@ listenForPost(app, "create_customer", (isTest, req, res) => {
  *
  * Generate an ephemeral key for the logged in customer.
  */
-
-app.post("/api/ephemeral_keys", (req, res) => {
-    console.log("at /api/ephemeral_keys post")
+listenForPost(app, "ephemeral_keys", (stripe, req, res) => {
+    console.log("at ephemeral_keys post")
     var customerId = req.body.customer_id;
     var api_version = req.body.api_version;
 
@@ -134,7 +132,7 @@ app.post("/api/ephemeral_keys", (req, res) => {
         console.log(err, req.body);
         res.status(500).end()
     });
-});
+})
 
 /**
  * POST /api/redeem_auth_code
