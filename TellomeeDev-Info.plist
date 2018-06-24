@@ -29,8 +29,6 @@
 	<string>1</string>
 	<key>Configuration</key>
 	<string>Tellomee</string>
-	<key>Stage</key>
-	<string>development</string>
 	<key>FacebookAppID</key>
 	<string>747340112119855</string>
 	<key>FacebookDisplayName</key>
@@ -53,6 +51,8 @@
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Photo for profile</string>
+	<key>Stage</key>
+	<string>development</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Lato-Regular.ttf</string>

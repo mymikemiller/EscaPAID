@@ -1793,7 +1793,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.Tellomee;
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.TellomeeDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1816,7 +1816,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.Tellomee;
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.TellomeeDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

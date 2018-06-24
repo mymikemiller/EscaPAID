@@ -153,6 +153,7 @@ listenForPost(app, "redeem_auth_code", (stripe, req, res) => {
         method: 'POST'
     };
 
+    // Use the correct secret key based on the stage
     var clientSecret = stripe == stripeProd ? STRIPE_SECRET_KEY : STRIPE_TEST_SECRET_KEY;
 
     // Set up the request
