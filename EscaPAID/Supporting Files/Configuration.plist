@@ -13,6 +13,8 @@
 		<key>Fee Percent</key>
 		<real>0.1</real>
 		<key>Stripe Client Id</key>
+		<string>ca_CWtSJPJimTanoNXJnQR4oVdCpIWXVbsd</string>
+		<key>Stripe Test Client Id</key>
 		<string>ca_CWtSFxBQZl3nygQsSSKJJtbD8mOxNyFZ</string>
 		<key>Server URL</key>
 		<string>http://renaissance-x.herokuapp.com/api</string>
@@ -50,6 +52,8 @@
 		<key>Fee Percent</key>
 		<real>0.1</real>
 		<key>Stripe Client Id</key>
+		<string>ca_AbsKEavpPwEf0779obaCNHz8YBmEIf3z</string>
+		<key>Stripe Test Client Id</key>
 		<string>ca_AbsKVVP7BmIJFntfSkToXhxtLSAvbIUM</string>
 		<key>Server URL</key>
 		<string>http://tellomee-x.herokuapp.com/api</string>

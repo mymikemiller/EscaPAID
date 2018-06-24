@@ -96,6 +96,11 @@ class MainAPIClient: NSObject {
                 fatalError("Failure redeeming onboarding authorization code. Check that the server is running at " + url.absoluteString)
                 completion(nil)
             }
+            
+            if (!json.keys.contains("curator_id")) {
+                fatalError("Failure redeeming onboarding authorization code from " + url.absoluteString + ". The response did not contain curator_id.")
+                completion(nil)
+            }
 
             // Send the returned curator id to the completion
             let curatorId = json["curator_id"] as! String
