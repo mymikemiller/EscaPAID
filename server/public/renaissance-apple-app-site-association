@@ -3,12 +3,12 @@
         "apps": [],
         "details": [
             {
-                "appID": "9Y8K76T269.me.puffinlabs.Renaissance",
-                "paths": [ "/stripe-connect"]
-            },
-            {
                 "appID": "9Y8K76T269.me.puffinlabs.RenaissanceDev",
                 "paths": [ "/stripe-connect-test"]
+            },
+            {
+                "appID": "9Y8K76T269.me.puffinlabs.Renaissance",
+                "paths": [ "/stripe-connect"]
             }
         ]
     }
