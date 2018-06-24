@@ -1,6 +1,14 @@
 'use strict';
-var argv = require('minimist')(process.argv.slice(2));
 
+const express = require('express');
+var admin = require('firebase-admin');
+var bodyParser = require('body-parser');
+var request = require('request');
+const path = require('path');
+var fs = require('fs');
+var app = express();
+
+var argv = require('minimist')(process.argv.slice(2));
 const PORT = process.env.PORT || 6000
 
 // This should never be set on the server. The target argument specifies which environment variables to use on the local machine. See README.md.
@@ -18,6 +26,9 @@ const FIREBASE_PRIVATE_KEY = getConfig(target, "FIREBASE_PRIVATE_KEY")
 const FIREBASE_CLIENT_EMAIL = getConfig(target, "FIREBASE_CLIENT_EMAIL")
 const AASA_FILE_PATH = getConfig(target, "AASA_FILE_PATH")
 
+var stripeProd = require('stripe')(STRIPE_SECRET_KEY);
+var stripeTest = require('stripe')(STRIPE_TEST_SECRET_KEY);
+
 // Returns the specified argument, or if none is found, specified environment variable
 function getConfig(target, varName) {
     if (target) {
@@ -31,25 +42,22 @@ function getConfig(target, varName) {
     return variable
 }
 
-// Respond to POSTs to both /api/ and /api-test/
-function listenForPost(app, endpoint, callback) {
-    app.post("/api-test/" + endpoint, (req, res) => {
-        callback(stripeTest, req, res);
-    });
-    app.post("/api/" + endpoint, (req, res) => {
-        callback(stripeProd, req, res);
-    });
+function getStripe(isTest) {
+    return isTest ? stripeTest : stripeProd;
+}
+function getReservationsDatabaseRef(isTest) {
+    return isTest ? reservationsDatabaseRefTest : reservationsDatabaseRefProd;
 }
 
-const express = require('express');
-var stripeProd = require('stripe')(STRIPE_SECRET_KEY);
-var stripeTest = require('stripe')(STRIPE_TEST_SECRET_KEY);
-var admin = require('firebase-admin');
-var bodyParser = require('body-parser');
-var request = require('request');
-const path = require('path');
-var fs = require('fs');
-var app = express();
+// Respond to POSTs to both /api/ and /api-test/
+function listenForPost(app, endpoint, callback) {
+    app.post("/api-test/" + endpoint, (req, res, next) => {
+        callback(true, req, res, next);
+    });
+    app.post("/api/" + endpoint, (req, res, next) => {
+        callback(false, req, res, next);
+    });
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -81,7 +89,8 @@ admin.initializeApp({
 });
 // Get a database reference to our reservations
 var db = admin.database();
-var reservationsDatabaseRef = db.ref("reservations");
+var reservationsDatabaseRefProd = db.ref("prod/reservations");
+var reservationsDatabaseRefTest = db.ref("dev/reservations");
 
 app.get("/apple-app-site-association", (req, res) => {
     // Serve a different file based on environment variable
@@ -96,8 +105,8 @@ app.get("/apple-app-site-association", (req, res) => {
  *
  * Create a Stripe customer, returning the new customer id.
  */
-listenForPost(app, "create_customer", (stripe, req, res) => {
-    stripe.customers.create({
+listenForPost(app, "create_customer", (isTest, req, res) => {
+    getStripe(isTest).customers.create({
         email: req.body.email,
         description: req.body.description,
       }, function(err, customer) {
@@ -114,7 +123,7 @@ listenForPost(app, "create_customer", (stripe, req, res) => {
  *
  * Generate an ephemeral key for the logged in customer.
  */
-listenForPost(app, "ephemeral_keys", (stripe, req, res) => {
+listenForPost(app, "ephemeral_keys", (isTest, req, res) => {
     console.log("at ephemeral_keys post")
     var customerId = req.body.customer_id;
     var api_version = req.body.api_version;
@@ -122,7 +131,7 @@ listenForPost(app, "ephemeral_keys", (stripe, req, res) => {
     console.log("customerId:", customerId)
     console.log("api_version:", api_version)
 
-    stripe.ephemeralKeys.create(
+    getStripe(isTest).ephemeralKeys.create(
         {customer : customerId},
         {stripe_version : api_version}
         ).then((key) => {
@@ -141,7 +150,7 @@ listenForPost(app, "ephemeral_keys", (stripe, req, res) => {
  * the auth_code returned during onboarding
  */
 
-listenForPost(app, "redeem_auth_code", (stripe, req, res) => {
+listenForPost(app, "redeem_auth_code", (isTest, req, res) => {
     console.log("at /api/redeem_auth_code post")
     var auth_code = req.body.auth_code;
 
@@ -179,8 +188,8 @@ listenForPost(app, "redeem_auth_code", (stripe, req, res) => {
  *
  * Pay for the reservation
  */
-app.post('/api/book', async (req, res, next) => {
-    console.log("at /api/book post")
+listenForPost(app, 'book', async (isTest, req, res, next) => {
+    console.log("at /book post")
 
     const { source, reservationId } = req.body;
   
@@ -189,7 +198,7 @@ app.post('/api/book', async (req, res, next) => {
     try {
         console.log("reservationId:", reservationId)
 
-        reservationsDatabaseRef.child(reservationId).once("value", function(snapshot) {
+        getReservationsDatabaseRef(isTest).child(reservationId).once("value", function(snapshot) {
 
             let reservation = snapshot.val();
 
@@ -212,13 +221,13 @@ app.post('/api/book', async (req, res, next) => {
             let customerStripeId = reservation.userStripeId
             let curatorStripeId = reservation.curatorStripeId
             
-            createCharge({
-                source: source, 
+            createCharge(isTest,
+                {source: source, 
                 amount: amount, 
                 currency: currency, 
                 customer: customerStripeId, 
-                description: "Tellomee", 
-                statement_description: "Tellomee", 
+                description: "EscaPAID", 
+                statement_description: "EscaPAID", 
                 amountForCurator: amountForCurator, 
                 account: curatorStripeId},
             function(err, chargeId) {
@@ -230,8 +239,8 @@ app.post('/api/book', async (req, res, next) => {
                 console.log("Created charge. ChargeId:", chargeId)
 
                 // Add the Stripe charge reference to the reservation and save it.
-                reservationsDatabaseRef.child(reservationId).update({ stripeChargeId: chargeId })
-                  
+                getReservationsDatabaseRef(isTest).child(reservationId).update({ stripeChargeId: chargeId })
+                
                 // Return the new stripe charge id
                 res.send({stripeChargeId: chargeId});
             });
@@ -243,12 +252,11 @@ app.post('/api/book', async (req, res, next) => {
       res.sendStatus(500);
       next(`Error adding token to customer: ${err.message}`);
     }
-
 });
 
-async function createCharge(chargeParams, callback) {
+async function createCharge(isTest, chargeParams, callback) {
     // Create a charge and set its destination to the pilot's account.
-    stripe.charges.create({
+    getStripe(isTest).charges.create({
         source: chargeParams.source,
         amount: chargeParams.amount,
         currency: chargeParams.currency,
