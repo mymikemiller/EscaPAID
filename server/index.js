@@ -153,15 +153,17 @@ listenForPost(app, "redeem_auth_code", (stripe, req, res) => {
         method: 'POST'
     };
 
+    var clientSecret = stripe == stripeProd ? STRIPE_SECRET_KEY : STRIPE_TEST_SECRET_KEY;
+
     // Set up the request
     var post_req = request.post("https://connect.stripe.com/oauth/token",
-        { json: { client_secret: STRIPE_SECRET_KEY,
+        { json: { client_secret: clientSecret,
                   grant_type: "authorization_code",
                   code: auth_code } },
         function(error, post_res, body) {
 
-        // console.log("error", error)
-        // console.log("body", body)
+        console.log("error", error)
+        console.log("body", body)
 
         let stripeUserId = body["stripe_user_id"]
         console.log("stripeUserId:", stripeUserId)
@@ -169,7 +171,6 @@ listenForPost(app, "redeem_auth_code", (stripe, req, res) => {
         // Return the resulting curator_id to the original caller
         res.status(200).send({"curator_id": stripeUserId});
     });
-
 });
 
 /**
