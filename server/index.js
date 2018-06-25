@@ -48,6 +48,9 @@ function getStripe(isTest) {
 function getReservationsDatabaseRef(isTest) {
     return isTest ? reservationsDatabaseRefTest : reservationsDatabaseRefProd;
 }
+function log(endpoint, isTest) {
+    console.log("At " + (isTest ? "/api-test/" : "/api/") + endpoint);
+}
 
 // Respond to POSTs to both /api/ and /api-test/
 function listenForPost(app, endpoint, callback) {
@@ -94,7 +97,7 @@ var reservationsDatabaseRefTest = db.ref("dev/reservations");
 
 app.get("/apple-app-site-association", (req, res) => {
     // Serve a different file based on environment variable
-    console.log("at get /apple-app-site-association")
+    console.log("At get /apple-app-site-association")
     res.redirect(AASA_FILE_PATH)
 })
 
@@ -124,7 +127,8 @@ listenForPost(app, "create_customer", (isTest, req, res) => {
  * Generate an ephemeral key for the logged in customer.
  */
 listenForPost(app, "ephemeral_keys", (isTest, req, res) => {
-    console.log("at ephemeral_keys post")
+    log("ephemeral_keys", isTest)
+
     var customerId = req.body.customer_id;
     var api_version = req.body.api_version;
 
@@ -151,7 +155,8 @@ listenForPost(app, "ephemeral_keys", (isTest, req, res) => {
  */
 
 listenForPost(app, "redeem_auth_code", (isTest, req, res) => {
-    console.log("at /api/redeem_auth_code post")
+    log("redeem_auth_code", isTest)
+
     var auth_code = req.body.auth_code;
 
     var post_options = {
@@ -189,7 +194,7 @@ listenForPost(app, "redeem_auth_code", (isTest, req, res) => {
  * Pay for the reservation
  */
 listenForPost(app, 'book', async (isTest, req, res, next) => {
-    console.log("at /book post")
+    log('book', isTest);
 
     const { source, reservationId } = req.body;
   
@@ -204,7 +209,7 @@ listenForPost(app, 'book', async (isTest, req, res, next) => {
 
             // Don't double charge a reservation
             if (reservation.hasOwnProperty("stripeChargeId")) {
-                let message = "Cannot process charge. Stripe charge" + reservation.stripeChargeId + " already exists for reservation " + reservation.id
+                let message = "Cannot process charge. Stripe charge " + reservation.stripeChargeId + " already exists for reservation " + reservation.id
                 res.status(400).send({error: message});
                 return
             }
