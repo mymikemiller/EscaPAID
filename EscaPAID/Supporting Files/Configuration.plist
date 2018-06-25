@@ -9,6 +9,8 @@
 		<key>Stripe Company Name</key>
 		<string>Renaissance</string>
 		<key>Stripe Publishable Key</key>
+		<string>pk_live_nYo6Dk5g1luxu56r7zum39VL</string>
+		<key>Stripe Test Publishable Key</key>
 		<string>pk_test_d2gj9eFVUJyrjVfaKkJo6Frh</string>
 		<key>Fee Percent</key>
 		<real>0.1</real>
@@ -48,6 +50,8 @@
 		<key>Stripe Company Name</key>
 		<string>Tellomee</string>
 		<key>Stripe Publishable Key</key>
+		<string>pk_live_U2scXPFO1DrYTD928mUxGJ8R</string>
+		<key>Stripe Test Publishable Key</key>
 		<string>pk_test_Qw7nfjZOYT8EyoLpE51Dm9fw</string>
 		<key>Fee Percent</key>
 		<real>0.1</real>

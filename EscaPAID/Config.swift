@@ -35,14 +35,14 @@ class Config {
     
     var stripeClientId: String { return dictionary.value(forKey: (Config.stage.lowercased() == "production") ? "Stripe Client Id" : "Stripe Test Client Id") as! String }
     
+    var stripePublishableKey: String { return dictionary.value(forKey: (Config.stage.lowercased() == "production") ? "Stripe Publishable Key" : "Stripe Test Publishable Key") as! String }
+    
     
     // Config variables defined in Configuration.plist (i.e. they depend on the target and not the stage).
     
     var appName: String { return dictionary.value(forKey: "App Name") as! String }
     
     var stripeCompanyName: String { return dictionary.value(forKey: "Stripe Company Name") as! String }
-    
-    var stripePublishableKey: String { return dictionary.value(forKey: "Stripe Publishable Key") as! String }
     
     var feePercent: Double { return dictionary.value(forKey: "Fee Percent") as! Double }
     
