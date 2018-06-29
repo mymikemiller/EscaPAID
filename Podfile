@@ -18,6 +18,8 @@ abstract_target 'EscaPAID' do
   pod 'NextResponderTextField'
   pod 'AlamofireImage', '~> 3.3'
   pod 'Hero'
+  pod 'ImageSlideshow', '~> 1.6'
+  pod 'ImageSlideshow/Alamofire'
 
   # Pods for Facebook
   pod 'Bolts'
@@ -28,19 +30,11 @@ abstract_target 'EscaPAID' do
   pod 'Alamofire'
   pod 'Stripe'
 
-  target 'Renaissance' do
-    # Comment the next line if you're not using 
-    #Swift and don't want to use dynamic frameworks
-
-    # Pods for Renaissance
-
-  end
-
-  target 'Tellomee' do
-
-    # Pods for Tellomee
-
-  end
+  target 'Renaissance Prod'
+  target 'Renaissance Dev'
+  target 'Tellomee Prod'
+  target 'Tellomee Dev'
+  
 end
 
 # Workaround for Cocoapods issue #7606

@@ -222,7 +222,6 @@ listenForPost(app, 'book', async (isTest, req, res, next) => {
             let amountForCurator = amount - fee
             console.log("amountForCurator", amountForCurator);
 
-
             let customerStripeId = reservation.userStripeId
             let curatorStripeId = reservation.curatorStripeId
             

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
@@ -15,6 +16,8 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     var reviewManager: ReviewManager = ReviewManager()
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var imageSlideshow: ImageSlideshow!
     
     @IBOutlet weak var experienceTitle: UILabel!
     @IBOutlet weak var skillLevel: UILabel!
@@ -29,13 +32,9 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     @IBOutlet weak var reviewsLabel: ThemedLabel!
     
-    @IBOutlet weak var pagerContainer: UIView!
-    
     @IBOutlet weak var favoritesButton: UIButton!
     
     var isFavorite: Bool = false
-    
-    var imagePageViewController:UIPageViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,9 +66,22 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
         favoritesButton.tintColor = Config.current.mainColor
         
         // Set the size of the imageView container. We can't use an aspect ratio constraint because systemLayoutSizeFitting (which we use to compress the empty space out of the header) doesn't play nice with that, so we calculate the height ourselves
-        let imageHeight = pagerContainer.bounds.size.width
+        let imageHeight = imageSlideshow.bounds.size.width
          / CGFloat(Constants.experienceImageRatio)
-        pagerContainer.addConstraint(NSLayoutConstraint(item: pagerContainer, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: imageHeight))
+        imageSlideshow.addConstraint(NSLayoutConstraint(item: imageSlideshow, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: imageHeight))
+        
+        // Set the images for the slideshow
+        imageSlideshow.setImageInputs(experience.imageUrls.map { (urlString) -> AlamofireSource in
+            return AlamofireSource(urlString: urlString)!;
+        })
+        
+        // Configure slideshow
+        imageSlideshow.slideshowInterval = 3
+        imageSlideshow.zoomEnabled = true
+        imageSlideshow.pageIndicator = getImagePageIndicator();
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ExperienceVC.didTapSlideshow))
+        imageSlideshow.addGestureRecognizer(gestureRecognizer)
+        
         
         experienceTitle.text = experience.title
         skillLevel.text = experience.skillLevel + " Level"
@@ -87,13 +99,15 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
        
         setFavoritesButtonState()
         
-        
-        imagePageViewController?.dataSource = self
-        
-        let startingViewController:ExperienceImageVC = viewControllerAtIndex(index: 0)!
-        let viewControllers = [startingViewController]
-        imagePageViewController?.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
-        
+    }
+    
+    func getImagePageIndicator() -> UIPageControl {
+        let indicator = UIPageControl()
+        indicator.currentPageIndicatorTintColor = UIColor.white
+        indicator.numberOfPages = imageSlideshow.images.count
+        indicator.backgroundColor = UIColor.clear
+        indicator.pageIndicatorTintColor = UIColor.lightGray
+        return indicator;
     }
     
     override func viewDidLayoutSubviews() {
@@ -111,6 +125,14 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
             tableView.tableHeaderView = headerView
             tableView.layoutIfNeeded()
         }
+    }
+    
+    @objc private func didTapSlideshow() {
+        
+        let fullScreenController = imageSlideshow.presentFullScreenController(from: self)
+        
+        // Customize the pagerIndicator
+        fullScreenController.slideshow.pageIndicator = getImagePageIndicator();
     }
     
     private func setFavoritesButtonState() {
@@ -138,8 +160,6 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     @IBAction func curatorView_click(_ sender: Any) {
         performSegue(withIdentifier: "showProfile", sender: self)
     }
-    
-    
     
     @IBAction func messageButton_click(_ sender: Any) {
         
@@ -197,10 +217,7 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "pageViewController_embed") {
-            // Handle embedding the experience images
-            imagePageViewController = segue.destination as! UIPageViewController
-        } else if (segue.identifier == "showReservationVC") {
+        if (segue.identifier == "showReservationVC") {
             (segue.destination as! ReservationVC).experience = experience
         } else if (segue.identifier == "showProfile") {
             (segue.destination as! ProfileVC).user = experience!.curator

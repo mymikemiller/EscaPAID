@@ -59,6 +59,12 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GTMSessionFetcher/Core (1.1.15)
   - Hero (1.2.0)
+  - ImageSlideshow (1.6.1):
+    - ImageSlideshow/Core (= 1.6.1)
+  - ImageSlideshow/Alamofire (1.6.1):
+    - AlamofireImage (~> 3.0)
+    - ImageSlideshow/Core
+  - ImageSlideshow/Core (1.6.1)
   - JSQMessagesViewController (7.3.5):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
@@ -86,6 +92,8 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/Storage
   - Hero
+  - ImageSlideshow (~> 1.6)
+  - ImageSlideshow/Alamofire
   - JSQMessagesViewController
   - JTAppleCalendar (~> 7.0)
   - NextResponderTextField
@@ -93,7 +101,7 @@ DEPENDENCIES:
   - Stripe
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
     - Bolts
@@ -110,6 +118,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMSessionFetcher
     - Hero
+    - ImageSlideshow
     - JSQMessagesViewController
     - JSQSystemSoundPlayer
     - JTAppleCalendar
@@ -137,6 +146,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
+  ImageSlideshow: f0f33e1a20668e83d77f5fb7729e4ae4437c0759
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
@@ -147,6 +157,6 @@ SPEC CHECKSUMS:
   RSKImageCropper: 50d5a3e4160f0309b14d75b89d5ae2f496d56e0d
   Stripe: 542f2c4493ce31a99fa041fe4973206e8c868f29
 
-PODFILE CHECKSUM: 2ffbb691764aa18519ab2af8ddd4fc45caf0d134
+PODFILE CHECKSUM: 2fdb0b7716cb00466a8a5b0b7a94202500e8df00
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
