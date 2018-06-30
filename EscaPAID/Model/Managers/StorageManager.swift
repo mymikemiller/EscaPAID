@@ -40,20 +40,22 @@ class StorageManager: NSObject {
         // Remove the .jpg from the file name
         let url = imageUrl.prefix(imageUrl.count - 3)
         
-        print(url)
-        
         let start = imageUrl.range(of: folder + "%2F")?.upperBound
-        let end = imageUrl.range(of: ".jpg")?.upperBound
-        let range = Range(uncheckedBounds: (lower: start!, upper: end!))
-        let imageName = String(imageUrl[range])
         
-        print("Deleting " + imageName)
-        Storage.storage().reference().child(folder).child(imageName).delete() {
-            error in
+        // "start" will be null for things not stored on our server (e.g. stored on FaceBook)
+        if (start != nil) {
+            let end = imageUrl.range(of: ".jpg")?.upperBound
+            let range = Range(uncheckedBounds: (lower: start!, upper: end!))
+            let imageName = String(imageUrl[range])
             
-            if let error = error {
-                print("There was an error deleting an image from storage.")
-                print(error)
+            print("Deleting " + imageName)
+            Storage.storage().reference().child(folder).child(imageName).delete() {
+                error in
+                
+                if let error = error {
+                    print("There was an error deleting an image from storage.")
+                    print(error)
+                }
             }
         }
     }
