@@ -231,10 +231,12 @@ class FirebaseManager: Manager {
                 let firstName = components[0]
                 let lastName = components.count > 1 ? components[1] : ""
                 
+                let photoUrl = getFacebookPhotoUrl(firebaseUser);
+                
                 addUser(email: (firebaseUser?.email!)!,
                         firstName: firstName,
                         lastName: lastName,
-                        profileImageUrl: (Auth.auth().currentUser?.photoURL?.absoluteString)!) { user in
+                        profileImageUrl: photoUrl) { user in
                             
                             guard (user != nil) else {
                                 // Couldn't create the user. The server may be down
@@ -250,5 +252,23 @@ class FirebaseManager: Manager {
                 }
             })
         }
+    }
+    
+    static func getFacebookPhotoUrl(_ firebaseUser: FirebaseAuth.User?) -> String {
+        var photoUrl = Auth.auth().currentUser?.photoURL?.absoluteString
+        for profile:UserInfo in (Auth.auth().currentUser?.providerData)! {
+            print(profile.providerID);
+            // check if the provider id matches "facebook.com"
+            if (profile.providerID == "facebook.com") {
+                
+                let facebookUserId:String = profile.uid;
+                // construct the URL to the profile picture, with a custom height
+                // alternatively, use '?type=small|medium|large' instead of ?height=
+                
+                photoUrl = "https://graph.facebook.com/" + facebookUserId + "/picture?height=500";
+            }
+        }
+        return photoUrl!;
+
     }
 }
