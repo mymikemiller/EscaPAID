@@ -22,9 +22,13 @@ class OriginScreenVC: UIViewController {
         Auth.auth().addStateDidChangeListener() { auth, user in
             
             guard user != nil else { return }
+            
+            print("Already logged in. Initializing.");
                 
             FirebaseManager.initializeUser(firebaseUser: user!, completion: { (result) in
                 if (result == FirebaseManager.InitializationResult.Success) {
+                    
+                    print("Got success");
                     
                     self.performSegue(withIdentifier: "origin_already_logged_in_showApp", sender: nil)
                 } else {

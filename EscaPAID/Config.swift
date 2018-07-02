@@ -20,7 +20,7 @@ class Config {
         self.dictionary = dictionary
     }
     
-    // Config variables that depend on the production / development
+    // Config variables that depend on the stage (production / development)
     
     // "production" or "development"
     static var stage: String {

@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		328A732AF55473B2F7B673CE /* Pods_EscaPAID_Renaissance_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78991BE05C7A8976D6583D94 /* Pods_EscaPAID_Renaissance_Prod.framework */; };
-		33ABBCD11F05B66CCCAAD26E /* Pods_EscaPAID_Renaissance_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE9E505B9B8AD435E092543 /* Pods_EscaPAID_Renaissance_Dev.framework */; };
-		45662C650C4D658708E4006D /* Pods_EscaPAID_Tellomee_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0E27C459EF2FA45B2975AE /* Pods_EscaPAID_Tellomee_Dev.framework */; };
-		476D1F580F88C4FE12C112C7 /* Pods_EscaPAID_Renaissance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1774701BBEF4FE165FA75190 /* Pods_EscaPAID_Renaissance.framework */; };
-		893A8D9138B742B129609914 /* Pods_EscaPAID_Tellomee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24DF35A82A749B51048B357 /* Pods_EscaPAID_Tellomee.framework */; };
-		CDBAC6B9CA98E165FD5B02B4 /* Pods_EscaPAID_Tellomee_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F43F94510C76D7FA2BA546 /* Pods_EscaPAID_Tellomee_Prod.framework */; };
+		2ABC4C39379E43BD54B9C53F /* Pods_EscaPAID_Renaissance_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF6723D2892C2A9E11DB861 /* Pods_EscaPAID_Renaissance_Dev.framework */; };
+		2BFD031D17201FC07FFB7115 /* Pods_EscaPAID_Tellomee_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE649DC6BC6384F2B688D37D /* Pods_EscaPAID_Tellomee_Dev.framework */; };
+		4FD702977066104398AC593E /* Pods_EscaPAID_Tellomee_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867B3B56639452E55EEDE432 /* Pods_EscaPAID_Tellomee_Prod.framework */; };
+		D01A3F9FD1557EDE138FA527 /* Pods_EscaPAID_Renaissance_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF155ED82046204BB38188A2 /* Pods_EscaPAID_Renaissance_Prod.framework */; };
 		E712DE4420154F1C00661DE7 /* DaySelectorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */; };
 		E712DE462015622500661DE7 /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE452015622500661DE7 /* Days.swift */; };
 		E71F33A520017CAA00312B91 /* TextGetterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F33A320017CAA00312B91 /* TextGetterController.swift */; };
@@ -105,7 +103,6 @@
 		E750FF5920D9849B002DE84D /* CuratorSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */; };
 		E750FF5A20D9849B002DE84D /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE452015622500661DE7 /* Days.swift */; };
 		E750FF5B20D9849B002DE84D /* ThreadsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */; };
-		E750FF5D20D9849B002DE84D /* Pods_EscaPAID_Renaissance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1774701BBEF4FE165FA75190 /* Pods_EscaPAID_Renaissance.framework */; };
 		E750FF5F20D9849B002DE84D /* TextGetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71F33A420017CAA00312B91 /* TextGetter.xib */; };
 		E750FF6020D9849B002DE84D /* ExperienceEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79B20362FCC00F91CC4 /* ExperienceEditor.storyboard */; };
 		E750FF6120D9849B002DE84D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB0320751BBD00C02C0A /* Montserrat-Regular.ttf */; };
@@ -207,7 +204,6 @@
 		E750FFCB20D99805002DE84D /* CuratorSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F585F71FCCDECE00536EF5 /* CuratorSettingsVC.swift */; };
 		E750FFCC20D99805002DE84D /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712DE452015622500661DE7 /* Days.swift */; };
 		E750FFCD20D99805002DE84D /* ThreadsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732DA921FC8DCC400BCF691 /* ThreadsNavigationController.swift */; };
-		E750FFCF20D99805002DE84D /* Pods_EscaPAID_Tellomee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24DF35A82A749B51048B357 /* Pods_EscaPAID_Tellomee.framework */; };
 		E750FFD120D99805002DE84D /* TextGetter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71F33A420017CAA00312B91 /* TextGetter.xib */; };
 		E750FFD220D99805002DE84D /* ExperienceEditor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D3D79B20362FCC00F91CC4 /* ExperienceEditor.storyboard */; };
 		E750FFD320D99805002DE84D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79ADB0320751BBD00C02C0A /* Montserrat-Regular.ttf */; };
@@ -410,20 +406,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0FD14F3EA72C521681EA715B /* Pods-EscaPAID-Tellomee Prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Tellomee Prod.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Tellomee Prod/Pods-EscaPAID-Tellomee Prod.debug.xcconfig"; sourceTree = "<group>"; };
-		1774701BBEF4FE165FA75190 /* Pods_EscaPAID_Renaissance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID_Renaissance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C720DA4D5AFDB1D6114EB86 /* Pods-EscaPAID-Renaissance Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance Prod.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance Prod/Pods-EscaPAID-Renaissance Prod.release.xcconfig"; sourceTree = "<group>"; };
-		2039078DB460A43C40972D6C /* Pods-EscaPAID-Renaissance Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance Dev/Pods-EscaPAID-Renaissance Dev.debug.xcconfig"; sourceTree = "<group>"; };
-		39F43F94510C76D7FA2BA546 /* Pods_EscaPAID_Tellomee_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID_Tellomee_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CDB2296FB1C8FB050950F35 /* Pods-EscaPAID-Tellomee Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Tellomee Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Tellomee Dev/Pods-EscaPAID-Tellomee Dev.debug.xcconfig"; sourceTree = "<group>"; };
-		4AE36BF9191C5936EE49DB6A /* Pods-EscaPAID-Tellomee Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Tellomee Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Tellomee Dev/Pods-EscaPAID-Tellomee Dev.release.xcconfig"; sourceTree = "<group>"; };
-		56DC2A49DCA86525E8B9F95C /* Pods-EscaPAID-Tellomee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Tellomee.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Tellomee/Pods-EscaPAID-Tellomee.release.xcconfig"; sourceTree = "<group>"; };
-		78991BE05C7A8976D6583D94 /* Pods_EscaPAID_Renaissance_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID_Renaissance_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8644351E80509A72BA292F25 /* Pods-EscaPAID-Renaissance Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance Dev/Pods-EscaPAID-Renaissance Dev.release.xcconfig"; sourceTree = "<group>"; };
-		A1EC5D19C376A8C57D17D47E /* Pods-EscaPAID-Renaissance Prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance Prod.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance Prod/Pods-EscaPAID-Renaissance Prod.debug.xcconfig"; sourceTree = "<group>"; };
-		B963810CE70396C2D1458BE3 /* Pods-EscaPAID-Tellomee Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Tellomee Prod.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Tellomee Prod/Pods-EscaPAID-Tellomee Prod.release.xcconfig"; sourceTree = "<group>"; };
-		BF0E27C459EF2FA45B2975AE /* Pods_EscaPAID_Tellomee_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID_Tellomee_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C84B14F7DCB2E3D31E9D8EC8 /* Pods-EscaPAID-Tellomee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Tellomee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Tellomee/Pods-EscaPAID-Tellomee.debug.xcconfig"; sourceTree = "<group>"; };
+		0A06778A9A5AE36C1878F025 /* Pods-EscaPAID-Tellomee Prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Tellomee Prod.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Tellomee Prod/Pods-EscaPAID-Tellomee Prod.debug.xcconfig"; sourceTree = "<group>"; };
+		2445D9A099824DEC8C62D416 /* Pods-EscaPAID-Renaissance Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance Dev/Pods-EscaPAID-Renaissance Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		4242225A8E075780148B5D30 /* Pods-EscaPAID-Tellomee Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Tellomee Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Tellomee Dev/Pods-EscaPAID-Tellomee Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		48C5A19489C2626A93657735 /* Pods-EscaPAID-Tellomee Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Tellomee Prod.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Tellomee Prod/Pods-EscaPAID-Tellomee Prod.release.xcconfig"; sourceTree = "<group>"; };
+		51A584B91F136F122187C36D /* Pods-EscaPAID-Renaissance Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance Prod.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance Prod/Pods-EscaPAID-Renaissance Prod.release.xcconfig"; sourceTree = "<group>"; };
+		867B3B56639452E55EEDE432 /* Pods_EscaPAID_Tellomee_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID_Tellomee_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD484891DBCA9EAC2C979D3E /* Pods-EscaPAID-Renaissance Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance Dev/Pods-EscaPAID-Renaissance Dev.release.xcconfig"; sourceTree = "<group>"; };
+		D5249BC9CD73C217A530072B /* Pods-EscaPAID-Tellomee Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Tellomee Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Tellomee Dev/Pods-EscaPAID-Tellomee Dev.release.xcconfig"; sourceTree = "<group>"; };
+		DE649DC6BC6384F2B688D37D /* Pods_EscaPAID_Tellomee_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID_Tellomee_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF155ED82046204BB38188A2 /* Pods_EscaPAID_Renaissance_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID_Renaissance_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E712DE4320154F1C00661DE7 /* DaySelectorTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectorTableVC.swift; sourceTree = "<group>"; };
 		E712DE452015622500661DE7 /* Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
 		E71F33A320017CAA00312B91 /* TextGetterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextGetterController.swift; sourceTree = "<group>"; };
@@ -512,6 +504,7 @@
 		E7D3D79620362E0E00F91CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProfileEditor.storyboard; sourceTree = "<group>"; };
 		E7D3D79920362EF400F91CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Reservations.storyboard; sourceTree = "<group>"; };
 		E7D3D79C20362FCC00F91CC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExperienceEditor.storyboard; sourceTree = "<group>"; };
+		E7E11637E71A3A0CD48A78D4 /* Pods-EscaPAID-Renaissance Prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance Prod.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance Prod/Pods-EscaPAID-Renaissance Prod.debug.xcconfig"; sourceTree = "<group>"; };
 		E7E152A020360DA800033BEB /* EscaPAID-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EscaPAID-Bridging-Header.h"; sourceTree = "<group>"; };
 		E7E22E901FC74C9200FD88FF /* ExperienceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceVC.swift; sourceTree = "<group>"; };
 		E7E45981205977820077C1DE /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
@@ -535,10 +528,7 @@
 		E7F9A0811FB7378B00916FBA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		E7F9A0851FB74CEB00916FBA /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		E7FE89F51FCCF284008ADCEF /* MyExperiencesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExperiencesVC.swift; sourceTree = "<group>"; };
-		EB6BDD587A2A54747961A1BE /* Pods-EscaPAID-Renaissance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance.release.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance/Pods-EscaPAID-Renaissance.release.xcconfig"; sourceTree = "<group>"; };
-		ECA6BDE2DF7F3ACAE509701E /* Pods-EscaPAID-Renaissance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EscaPAID-Renaissance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EscaPAID-Renaissance/Pods-EscaPAID-Renaissance.debug.xcconfig"; sourceTree = "<group>"; };
-		F24DF35A82A749B51048B357 /* Pods_EscaPAID_Tellomee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID_Tellomee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDE9E505B9B8AD435E092543 /* Pods_EscaPAID_Renaissance_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID_Renaissance_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF6723D2892C2A9E11DB861 /* Pods_EscaPAID_Renaissance_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EscaPAID_Renaissance_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -546,8 +536,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E750FF5D20D9849B002DE84D /* Pods_EscaPAID_Renaissance.framework in Frameworks */,
-				33ABBCD11F05B66CCCAAD26E /* Pods_EscaPAID_Renaissance_Dev.framework in Frameworks */,
+				2ABC4C39379E43BD54B9C53F /* Pods_EscaPAID_Renaissance_Dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,8 +544,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E750FFCF20D99805002DE84D /* Pods_EscaPAID_Tellomee.framework in Frameworks */,
-				45662C650C4D658708E4006D /* Pods_EscaPAID_Tellomee_Dev.framework in Frameworks */,
+				2BFD031D17201FC07FFB7115 /* Pods_EscaPAID_Tellomee_Dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,8 +552,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				476D1F580F88C4FE12C112C7 /* Pods_EscaPAID_Renaissance.framework in Frameworks */,
-				328A732AF55473B2F7B673CE /* Pods_EscaPAID_Renaissance_Prod.framework in Frameworks */,
+				D01A3F9FD1557EDE138FA527 /* Pods_EscaPAID_Renaissance_Prod.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,29 +560,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				893A8D9138B742B129609914 /* Pods_EscaPAID_Tellomee.framework in Frameworks */,
-				CDBAC6B9CA98E165FD5B02B4 /* Pods_EscaPAID_Tellomee_Prod.framework in Frameworks */,
+				4FD702977066104398AC593E /* Pods_EscaPAID_Tellomee_Prod.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		92103401D2ADCDE64E51B243 /* Pods */ = {
+		0E3181D45257418F35DAB495 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ECA6BDE2DF7F3ACAE509701E /* Pods-EscaPAID-Renaissance.debug.xcconfig */,
-				EB6BDD587A2A54747961A1BE /* Pods-EscaPAID-Renaissance.release.xcconfig */,
-				C84B14F7DCB2E3D31E9D8EC8 /* Pods-EscaPAID-Tellomee.debug.xcconfig */,
-				56DC2A49DCA86525E8B9F95C /* Pods-EscaPAID-Tellomee.release.xcconfig */,
-				2039078DB460A43C40972D6C /* Pods-EscaPAID-Renaissance Dev.debug.xcconfig */,
-				8644351E80509A72BA292F25 /* Pods-EscaPAID-Renaissance Dev.release.xcconfig */,
-				A1EC5D19C376A8C57D17D47E /* Pods-EscaPAID-Renaissance Prod.debug.xcconfig */,
-				1C720DA4D5AFDB1D6114EB86 /* Pods-EscaPAID-Renaissance Prod.release.xcconfig */,
-				3CDB2296FB1C8FB050950F35 /* Pods-EscaPAID-Tellomee Dev.debug.xcconfig */,
-				4AE36BF9191C5936EE49DB6A /* Pods-EscaPAID-Tellomee Dev.release.xcconfig */,
-				0FD14F3EA72C521681EA715B /* Pods-EscaPAID-Tellomee Prod.debug.xcconfig */,
-				B963810CE70396C2D1458BE3 /* Pods-EscaPAID-Tellomee Prod.release.xcconfig */,
+				EDF6723D2892C2A9E11DB861 /* Pods_EscaPAID_Renaissance_Dev.framework */,
+				DF155ED82046204BB38188A2 /* Pods_EscaPAID_Renaissance_Prod.framework */,
+				DE649DC6BC6384F2B688D37D /* Pods_EscaPAID_Tellomee_Dev.framework */,
+				867B3B56639452E55EEDE432 /* Pods_EscaPAID_Tellomee_Prod.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68A8E0C5B1B62BA6A8ACFCE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2445D9A099824DEC8C62D416 /* Pods-EscaPAID-Renaissance Dev.debug.xcconfig */,
+				BD484891DBCA9EAC2C979D3E /* Pods-EscaPAID-Renaissance Dev.release.xcconfig */,
+				E7E11637E71A3A0CD48A78D4 /* Pods-EscaPAID-Renaissance Prod.debug.xcconfig */,
+				51A584B91F136F122187C36D /* Pods-EscaPAID-Renaissance Prod.release.xcconfig */,
+				4242225A8E075780148B5D30 /* Pods-EscaPAID-Tellomee Dev.debug.xcconfig */,
+				D5249BC9CD73C217A530072B /* Pods-EscaPAID-Tellomee Dev.release.xcconfig */,
+				0A06778A9A5AE36C1878F025 /* Pods-EscaPAID-Tellomee Prod.debug.xcconfig */,
+				48C5A19489C2626A93657735 /* Pods-EscaPAID-Tellomee Prod.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -751,8 +744,8 @@
 				E72F64461FBBB22B0023489D /* Podfile */,
 				E7B9F73B1FB6CAAE0058CE61 /* EscaPAID */,
 				E7B9F73A1FB6CAAE0058CE61 /* Products */,
-				92103401D2ADCDE64E51B243 /* Pods */,
-				ECFECC187D036A9784751F55 /* Frameworks */,
+				68A8E0C5B1B62BA6A8ACFCE4 /* Pods */,
+				0E3181D45257418F35DAB495 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -831,19 +824,6 @@
 			path = Renaissance;
 			sourceTree = "<group>";
 		};
-		ECFECC187D036A9784751F55 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1774701BBEF4FE165FA75190 /* Pods_EscaPAID_Renaissance.framework */,
-				F24DF35A82A749B51048B357 /* Pods_EscaPAID_Tellomee.framework */,
-				FDE9E505B9B8AD435E092543 /* Pods_EscaPAID_Renaissance_Dev.framework */,
-				78991BE05C7A8976D6583D94 /* Pods_EscaPAID_Renaissance_Prod.framework */,
-				BF0E27C459EF2FA45B2975AE /* Pods_EscaPAID_Tellomee_Dev.framework */,
-				39F43F94510C76D7FA2BA546 /* Pods_EscaPAID_Tellomee_Prod.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -851,11 +831,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E750FF7A20D9849B002DE84D /* Build configuration list for PBXNativeTarget "Renaissance Dev" */;
 			buildPhases = (
-				E750FF1320D9849B002DE84D /* [CP] Check Pods Manifest.lock */,
+				6CA37D41957FB315D3DEC3D2 /* [CP] Check Pods Manifest.lock */,
 				E750FF1420D9849B002DE84D /* Sources */,
 				E750FF5C20D9849B002DE84D /* Frameworks */,
 				E750FF5E20D9849B002DE84D /* Resources */,
-				E750FF7920D9849B002DE84D /* [CP] Embed Pods Frameworks */,
+				518A0B8B576B96125A91169B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -870,11 +850,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E750FFEC20D99805002DE84D /* Build configuration list for PBXNativeTarget "Tellomee Dev" */;
 			buildPhases = (
-				E750FF8420D99805002DE84D /* [CP] Check Pods Manifest.lock */,
+				CB0D20D348964B0D5C5D8E14 /* [CP] Check Pods Manifest.lock */,
 				E750FF8520D99805002DE84D /* Sources */,
 				E750FFCE20D99805002DE84D /* Frameworks */,
 				E750FFD020D99805002DE84D /* Resources */,
-				E750FFEB20D99805002DE84D /* [CP] Embed Pods Frameworks */,
+				7CFFB8DB71F7C90D04603F0D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -889,11 +869,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E79F060A2059700400889D14 /* Build configuration list for PBXNativeTarget "Renaissance Prod" */;
 			buildPhases = (
-				88D7E47BF6E0AB7106EF73D9 /* [CP] Check Pods Manifest.lock */,
+				535FFDDAFDCD47B15A5CAE13 /* [CP] Check Pods Manifest.lock */,
 				E79F05C32059700400889D14 /* Sources */,
 				E79F05F22059700400889D14 /* Frameworks */,
 				E79F05F52059700400889D14 /* Resources */,
-				21D94329D377E6F30CDA3E07 /* [CP] Embed Pods Frameworks */,
+				7320DC76CA245FAB61C63DC2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -908,11 +888,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7B9F74E1FB6CAAF0058CE61 /* Build configuration list for PBXNativeTarget "Tellomee Prod" */;
 			buildPhases = (
-				F56DF82873CBF95FE874FB24 /* [CP] Check Pods Manifest.lock */,
+				1806A654F7CB12361E68BDE9 /* [CP] Check Pods Manifest.lock */,
 				E7B9F7351FB6CAAE0058CE61 /* Sources */,
 				E7B9F7361FB6CAAE0058CE61 /* Frameworks */,
 				E7B9F7371FB6CAAE0058CE61 /* Resources */,
-				51FD8F588891DC6252FD90FC /* [CP] Embed Pods Frameworks */,
+				F763FEED75487C063408479C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1131,111 +1111,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21D94329D377E6F30CDA3E07 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Renaissance Prod/Pods-EscaPAID-Renaissance Prod-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
-				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
-				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/NextResponderTextField/NextResponderTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
-				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextResponderTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Renaissance Prod/Pods-EscaPAID-Renaissance Prod-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		51FD8F588891DC6252FD90FC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Tellomee Prod/Pods-EscaPAID-Tellomee Prod-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
-				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
-				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/NextResponderTextField/NextResponderTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
-				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextResponderTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Tellomee Prod/Pods-EscaPAID-Tellomee Prod-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		88D7E47BF6E0AB7106EF73D9 /* [CP] Check Pods Manifest.lock */ = {
+		1806A654F7CB12361E68BDE9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1246,32 +1122,14 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-Renaissance Prod-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-Tellomee Prod-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E750FF1320D9849B002DE84D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-Renaissance Dev-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E750FF7920D9849B002DE84D /* [CP] Embed Pods Frameworks */ = {
+		518A0B8B576B96125A91169B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1323,7 +1181,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Renaissance Dev/Pods-EscaPAID-Renaissance Dev-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E750FF8420D99805002DE84D /* [CP] Check Pods Manifest.lock */ = {
+		535FFDDAFDCD47B15A5CAE13 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1334,14 +1192,84 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-Tellomee Dev-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-Renaissance Prod-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E750FFEB20D99805002DE84D /* [CP] Embed Pods Frameworks */ = {
+		6CA37D41957FB315D3DEC3D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-Renaissance Dev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7320DC76CA245FAB61C63DC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Renaissance Prod/Pods-EscaPAID-Renaissance Prod-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/NextResponderTextField/NextResponderTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextResponderTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Renaissance Prod/Pods-EscaPAID-Renaissance Prod-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CFFB8DB71F7C90D04603F0D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1393,7 +1321,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Tellomee Dev/Pods-EscaPAID-Tellomee Dev-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F56DF82873CBF95FE874FB24 /* [CP] Check Pods Manifest.lock */ = {
+		CB0D20D348964B0D5C5D8E14 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1404,11 +1332,63 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-Tellomee Prod-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EscaPAID-Tellomee Dev-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F763FEED75487C063408479C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Tellomee Prod/Pods-EscaPAID-Tellomee Prod-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/NextResponderTextField/NextResponderTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextResponderTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EscaPAID-Tellomee Prod/Pods-EscaPAID-Tellomee Prod-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1778,7 +1758,7 @@
 /* Begin XCBuildConfiguration section */
 		E750FF7B20D9849B002DE84D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2039078DB460A43C40972D6C /* Pods-EscaPAID-Renaissance Dev.debug.xcconfig */;
+			baseConfigurationReference = 2445D9A099824DEC8C62D416 /* Pods-EscaPAID-Renaissance Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
 				CLANG_ENABLE_MODULES = YES;
@@ -1800,7 +1780,7 @@
 		};
 		E750FF7C20D9849B002DE84D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8644351E80509A72BA292F25 /* Pods-EscaPAID-Renaissance Dev.release.xcconfig */;
+			baseConfigurationReference = BD484891DBCA9EAC2C979D3E /* Pods-EscaPAID-Renaissance Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
 				CLANG_ENABLE_MODULES = YES;
@@ -1822,7 +1802,7 @@
 		};
 		E750FFED20D99805002DE84D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CDB2296FB1C8FB050950F35 /* Pods-EscaPAID-Tellomee Dev.debug.xcconfig */;
+			baseConfigurationReference = 4242225A8E075780148B5D30 /* Pods-EscaPAID-Tellomee Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Tellomee";
 				CLANG_ENABLE_MODULES = YES;
@@ -1844,7 +1824,7 @@
 		};
 		E750FFEE20D99805002DE84D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4AE36BF9191C5936EE49DB6A /* Pods-EscaPAID-Tellomee Dev.release.xcconfig */;
+			baseConfigurationReference = D5249BC9CD73C217A530072B /* Pods-EscaPAID-Tellomee Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Tellomee";
 				CLANG_ENABLE_MODULES = YES;
@@ -1866,7 +1846,7 @@
 		};
 		E79F060B2059700400889D14 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1EC5D19C376A8C57D17D47E /* Pods-EscaPAID-Renaissance Prod.debug.xcconfig */;
+			baseConfigurationReference = E7E11637E71A3A0CD48A78D4 /* Pods-EscaPAID-Renaissance Prod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
 				CLANG_ENABLE_MODULES = YES;
@@ -1888,7 +1868,7 @@
 		};
 		E79F060C2059700400889D14 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C720DA4D5AFDB1D6114EB86 /* Pods-EscaPAID-Renaissance Prod.release.xcconfig */;
+			baseConfigurationReference = 51A584B91F136F122187C36D /* Pods-EscaPAID-Renaissance Prod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
 				CLANG_ENABLE_MODULES = YES;
@@ -2021,7 +2001,7 @@
 		};
 		E7B9F74F1FB6CAAF0058CE61 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FD14F3EA72C521681EA715B /* Pods-EscaPAID-Tellomee Prod.debug.xcconfig */;
+			baseConfigurationReference = 0A06778A9A5AE36C1878F025 /* Pods-EscaPAID-Tellomee Prod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Tellomee";
 				CLANG_ENABLE_MODULES = YES;
@@ -2043,7 +2023,7 @@
 		};
 		E7B9F7501FB6CAAF0058CE61 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B963810CE70396C2D1458BE3 /* Pods-EscaPAID-Tellomee Prod.release.xcconfig */;
+			baseConfigurationReference = 48C5A19489C2626A93657735 /* Pods-EscaPAID-Tellomee Prod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Tellomee";
 				CLANG_ENABLE_MODULES = YES;
