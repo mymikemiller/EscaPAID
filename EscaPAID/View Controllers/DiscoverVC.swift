@@ -41,6 +41,7 @@ class DiscoverVC: UIViewController {
         searchController.searchBar.scopeButtonTitles = ["All"]
         searchController.searchBar.scopeButtonTitles?.append(contentsOf: Config.current.categories)
         searchController.searchBar.delegate = self
+        searchController.searchBar.tintColor = Config.current.mainColor
         
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
