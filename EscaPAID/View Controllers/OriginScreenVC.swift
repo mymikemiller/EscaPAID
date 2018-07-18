@@ -13,10 +13,14 @@ class OriginScreenVC: UIViewController {
     
     @IBOutlet weak var introTextLabel: UILabel!
     
+    @IBOutlet weak var whenUsingLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         introTextLabel.text = Config.current.introText
+        
+        whenUsingLabel.text = "When using " + Config.current.appName + " you accept our"
         
         // Handle the case when the user is already logged in when launching the app
         Auth.auth().addStateDidChangeListener() { auth, user in
@@ -24,7 +28,7 @@ class OriginScreenVC: UIViewController {
             guard user != nil else { return }
             
             print("Already logged in. Initializing.");
-                
+            
             FirebaseManager.initializeUser(firebaseUser: user!, completion: { (result) in
                 if (result == FirebaseManager.InitializationResult.Success) {
                     
@@ -51,3 +55,5 @@ class OriginScreenVC: UIViewController {
         }
     }
 }
+
+
