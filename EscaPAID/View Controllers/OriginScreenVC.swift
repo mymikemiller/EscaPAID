@@ -42,11 +42,16 @@ class OriginScreenVC: UIViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func termsButton_click(_ sender: Any) {
+        if let url = URL(string: "https://mymikemiller.github.io/EscaPAID/terms") {
+            UIApplication.shared.open(url, options: [:])
+        }
     }
-    
+    @IBAction func privacyButton_click(_ sender: Any) {
+        if let url = URL(string: "https://mymikemiller.github.io/EscaPAID/privacy") {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
     @IBAction func facebookLogin_click(_ sender: Any) {
         FirebaseManager.logInWithFacebook(from: self) { (success:Bool) in
             if (success) {
