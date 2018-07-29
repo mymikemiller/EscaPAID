@@ -42,6 +42,10 @@
 		<string>an</string>
 		<key>Main Color</key>
 		<string>#591D25</string>
+		<key>Terms Link</key>
+		<string>https://mymikemiller.github.io/EscaPAID/terms-artwithme</string>
+		<key>Privacy Link</key>
+		<string>https://mymikemiller.github.io/EscaPAID/privacy-artwithme</string>
 	</dict>
 	<key>Tellomee</key>
 	<dict>
@@ -83,6 +87,10 @@
 		<string>a</string>
 		<key>Main Color</key>
 		<string>#1d591d</string>
+		<key>Terms Link</key>
+		<string>https://mymikemiller.github.io/EscaPAID/terms-tellomee</string>
+		<key>Privacy Link</key>
+		<string>https://mymikemiller.github.io/EscaPAID/privacy-tellomee</string>
 	</dict>
 </dict>
 </plist>

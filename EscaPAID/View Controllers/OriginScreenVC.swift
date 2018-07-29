@@ -43,12 +43,12 @@ class OriginScreenVC: UIViewController {
     }
     
     @IBAction func termsButton_click(_ sender: Any) {
-        if let url = URL(string: "https://mymikemiller.github.io/EscaPAID/terms") {
+        if let url = URL(string: Config.current.termsLink) {
             UIApplication.shared.open(url, options: [:])
         }
     }
     @IBAction func privacyButton_click(_ sender: Any) {
-        if let url = URL(string: "https://mymikemiller.github.io/EscaPAID/privacy") {
+        if let url = URL(string: Config.current.privacyLink) {
             UIApplication.shared.open(url, options: [:])
         }
     }

@@ -71,4 +71,8 @@ class Config {
     var mainColor: UIColor {
         let hex = dictionary.value(forKey:"Main Color") as! String
         return UIColor(hexString: hex)! }
+    
+    var termsLink: String { return dictionary.value(forKey: "Terms Link") as! String }
+
+    var privacyLink: String { return dictionary.value(forKey: "Privacy Link") as! String }
 }
