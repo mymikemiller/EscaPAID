@@ -2,7 +2,7 @@
 title: Privacy Policy
 ---
 
-# **EscaPAID** PRIVACY POLICY
+# **Art With Me** PRIVACY POLICY
 
 Last Revised: **7/28/2018**
 
@@ -38,7 +38,7 @@ We may share personal information about you as follows:
 
 * If we believe disclosure is reasonably necessary to comply with any applicable law, regulation, legal process or governmental request;
 * To enforce applicable user agreements or policies, including our Terms of Service **https://mymikemiller.github.io/EscaPAID/terms**; and to protect us, our users or the public from harm or illegal activities;
-* In connection with any merger, sale of **EscaPAID** assets, financing or acquisition of all or a portion of our business to another company; and
+* In connection with any merger, sale of **Art With Me** assets, financing or acquisition of all or a portion of our business to another company; and
 * If we notify you through our services (or in our privacy policy) that the information you provide will be shared in a particular manner and you provide such information.
 
 We may also share aggregated or anonymized information that does not directly identify you.
