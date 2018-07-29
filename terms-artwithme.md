@@ -4,7 +4,7 @@ title: Terms of Service
 
 # **ART WITH ME** TERMS OF SERVICE
 
-Last Updated: **7/28/2018**
+Last Updated: **7/29/2018**
 
 These terms of service ("Terms") apply to your access and use of **Art With Me** products (the "Service"). Please read them carefully.
 
@@ -22,7 +22,7 @@ If you continue to use the Service after the revised Terms go into effect, then 
 
 ## Privacy Policy
 
-For information about how we collect and use information about users of the Service, please check out our privacy policy available at **https://mymikemiller.github.io/EscaPAID/privacy**.
+For information about how we collect and use information about users of the Service, please check out our privacy policy available at **https://mymikemiller.github.io/EscaPAID/privacy-artwithme**.
 
 ## Third-Party Services
 
