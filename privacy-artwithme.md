@@ -2,7 +2,7 @@
 title: Privacy Policy
 ---
 
-# **Art With Me** PRIVACY POLICY
+# **ART WITH MEe** PRIVACY POLICY
 
 Last Revised: **7/28/2018**
 
