@@ -112,10 +112,10 @@ listenForPost(app, "create_customer", (isTest, req, res) => {
     getStripe(isTest).customers.create({
         email: req.body.email,
         description: req.body.description,
-      }, function(err, customer) {
+    }, function (err, customer) {
         console.log("Success! Created customer", customer.id)
-        res.status(200).send({"customerId": customer.id})
-      }).catch((err) => {
+        res.status(200).send({ "customerId": customer.id })
+    }).catch((err) => {
         console.log(err, req.body);
         res.status(500).end()
     });
@@ -136,11 +136,11 @@ listenForPost(app, "ephemeral_keys", (isTest, req, res) => {
     console.log("api_version:", api_version)
 
     getStripe(isTest).ephemeralKeys.create(
-        {customer : customerId},
-        {stripe_version : api_version}
-        ).then((key) => {
-            console.log("Ephemeral key created")
-            res.status(200).send(key)
+        { customer: customerId },
+        { stripe_version: api_version }
+    ).then((key) => {
+        console.log("Ephemeral key created")
+        res.status(200).send(key)
     }).catch((err) => {
         console.log(err, req.body);
         res.status(500).end()
@@ -168,24 +168,28 @@ listenForPost(app, "redeem_auth_code", (isTest, req, res) => {
     };
 
     // Use the correct secret key based on the stage
-    var clientSecret = stripe == stripeProd ? STRIPE_SECRET_KEY : STRIPE_TEST_SECRET_KEY;
+    var clientSecret = isTest ? STRIPE_TEST_SECRET_KEY : STRIPE_SECRET_KEY;
 
     // Set up the request
     var post_req = request.post("https://connect.stripe.com/oauth/token",
-        { json: { client_secret: clientSecret,
-                  grant_type: "authorization_code",
-                  code: auth_code } },
-        function(error, post_res, body) {
+        {
+            json: {
+                client_secret: clientSecret,
+                grant_type: "authorization_code",
+                code: auth_code
+            }
+        },
+        function (error, post_res, body) {
 
-        console.log("error", error)
-        console.log("body", body)
+            console.log("error", error)
+            console.log("body", body)
 
-        let stripeUserId = body["stripe_user_id"]
-        console.log("stripeUserId:", stripeUserId)
+            let stripeUserId = body["stripe_user_id"]
+            console.log("stripeUserId:", stripeUserId)
 
-        // Return the resulting curator_id to the original caller
-        res.status(200).send({"curator_id": stripeUserId});
-    });
+            // Return the resulting curator_id to the original caller
+            res.status(200).send({ "curator_id": stripeUserId });
+        });
 });
 
 /**
@@ -197,20 +201,20 @@ listenForPost(app, 'book', async (isTest, req, res, next) => {
     log('book', isTest);
 
     const { source, reservationId } = req.body;
-  
+
     let currency = "USD"
 
     try {
         console.log("reservationId:", reservationId)
 
-        getReservationsDatabaseRef(isTest).child(reservationId).once("value", function(snapshot) {
+        getReservationsDatabaseRef(isTest).child(reservationId).once("value", function (snapshot) {
 
             let reservation = snapshot.val();
 
             // Don't double charge a reservation
             if (reservation.hasOwnProperty("stripeChargeId")) {
                 let message = "Cannot process charge. Stripe charge " + reservation.stripeChargeId + " already exists for reservation " + reservation.id
-                res.status(400).send({error: message});
+                res.status(400).send({ error: message });
                 return
             }
 
@@ -224,37 +228,39 @@ listenForPost(app, 'book', async (isTest, req, res, next) => {
 
             let customerStripeId = reservation.userStripeId
             let curatorStripeId = reservation.curatorStripeId
-            
+
             createCharge(isTest,
-                {source: source, 
-                amount: amount, 
-                currency: currency, 
-                customer: customerStripeId, 
-                description: "EscaPAID", 
-                statement_description: "EscaPAID", 
-                amountForCurator: amountForCurator, 
-                account: curatorStripeId},
-            function(err, chargeId) {
-                if (err) {
-                    console.log("Error creating charge:", err)
-                    return res.status(500).send(err)
-                }
+                {
+                    source: source,
+                    amount: amount,
+                    currency: currency,
+                    customer: customerStripeId,
+                    description: "EscaPAID",
+                    statement_description: "EscaPAID",
+                    amountForCurator: amountForCurator,
+                    account: curatorStripeId
+                },
+                function (err, chargeId) {
+                    if (err) {
+                        console.log("Error creating charge:", err)
+                        return res.status(500).send(err)
+                    }
 
-                console.log("Created charge. ChargeId:", chargeId)
+                    console.log("Created charge. ChargeId:", chargeId)
 
-                // Add the Stripe charge reference to the reservation and save it.
-                getReservationsDatabaseRef(isTest).child(reservationId).update({ stripeChargeId: chargeId })
-                
-                // Return the new stripe charge id
-                res.send({stripeChargeId: chargeId});
-            });
-                                                
+                    // Add the Stripe charge reference to the reservation and save it.
+                    getReservationsDatabaseRef(isTest).child(reservationId).update({ stripeChargeId: chargeId })
+
+                    // Return the new stripe charge id
+                    res.send({ stripeChargeId: chargeId });
+                });
+
         }, function (errorObject) {
             console.log("Cannot find reservation " + reservationId + ": " + errorObject.code);
         });
     } catch (err) {
-      res.sendStatus(500);
-      next(`Error adding token to customer: ${err.message}`);
+        res.sendStatus(500);
+        next(`Error adding token to customer: ${err.message}`);
     }
 });
 
@@ -271,12 +277,12 @@ async function createCharge(isTest, chargeParams, callback) {
             amount: chargeParams.amountForCurator,
             account: chargeParams.account
         }
-    }).then(function(charge) {
+    }).then(function (charge) {
         callback(null, charge.id)
-    }, function(err) {
+    }, function (err) {
         callback(err, null)
         return
     });
 }
 
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+app.listen(PORT, () => console.log(`Listening on ${PORT}`))
