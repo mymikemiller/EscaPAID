@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>754930049893-4481j605p35qtbqevrind8uibt7l2tji.apps.googleusercontent.com</string>
+	<string>533784205276-blcbou7cut8gfhcthcu01mfncegl4h8j.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.754930049893-4481j605p35qtbqevrind8uibt7l2tji</string>
+	<string>com.googleusercontent.apps.533784205276-blcbou7cut8gfhcthcu01mfncegl4h8j</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCTJ5_fKtPpbMIgkyT3_d-pmt0wD9E4tFk</string>
+	<string>AIzaSyDN61jCp6U4-01n-suAjBKIYaNEz8yqgko</string>
 	<key>GCM_SENDER_ID</key>
-	<string>754930049893</string>
+	<string>533784205276</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>me.puffinlabs.Renaissance</string>
+	<string>me.puffinlabs.ArtWithMe</string>
 	<key>PROJECT_ID</key>
-	<string>renaissance-x</string>
+	<string>artwithme-x</string>
 	<key>STORAGE_BUCKET</key>
-	<string>renaissance-x.appspot.com</string>
+	<string>artwithme-x.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:754930049893:ios:cc7c3e05a113246c</string>
+	<string>1:533784205276:ios:82190eacba47f70e</string>
 	<key>DATABASE_URL</key>
-	<string>https://renaissance-x.firebaseio.com</string>
+	<string>https://artwithme-x.firebaseio.com</string>
 </dict>
 </plist>

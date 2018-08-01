@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Renaissance</string>
+	<string>Art WIth Me</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -30,11 +30,11 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Configuration</key>
-	<string>Renaissance</string>
+	<string>Art With Me</string>
 	<key>FacebookAppID</key>
 	<string>1877512232538939</string>
 	<key>FacebookDisplayName</key>
-	<string>Renaissance</string>
+	<string>Art With Me</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>

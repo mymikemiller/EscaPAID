@@ -41,7 +41,7 @@
         <!--Profile EditorVC-->
         <scene sceneID="L2o-if-bNj">
             <objects>
-                <viewController id="gGY-so-9QT" customClass="ProfileEditorVC" customModule="Renaissance_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gGY-so-9QT" customClass="ProfileEditorVC" customModule="Art_With_Me_Dev" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8EN-eV-AJe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,19 +50,19 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKs-pr-8Kj" userLabel="Container View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="744.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="752.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rsh-2g-eBn" userLabel="Main Stack View">
-                                                <rect key="frame" x="16" y="16" width="343" height="712.5"/>
+                                                <rect key="frame" x="16" y="16" width="343" height="720.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkb-Jx-iI6" customClass="ThemedLabel" customModule="Renaissance_Dev" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="37.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkb-Jx-iI6" customClass="ThemedLabel" customModule="Art_With_Me_Dev" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="39.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="32"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PfI-gT-P5p" userLabel="Photo Stack View">
-                                                        <rect key="frame" x="0.0" y="57.5" width="343" height="128"/>
+                                                        <rect key="frame" x="0.0" y="59.5" width="343" height="128"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jra-gX-kcb" userLabel="Photo/Progress Stack View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -75,12 +75,12 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6IB-QJ-HhN">
-                                                                        <rect key="frame" x="0.0" y="-137.5" width="128" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="-139.5" width="128" height="0.0"/>
                                                                     </progressView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZO-Jo-JYo" customClass="RoundedButton" customModule="Renaissance_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="191" y="0.0" width="152" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZO-Jo-JYo" customClass="RoundedButton" customModule="Art_With_Me_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="176" y="0.0" width="167" height="40"/>
                                                                 <color key="backgroundColor" name="dark_grey"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="9nn-Oe-cmr"/>
@@ -100,16 +100,16 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DP5-LY-OUu" userLabel="First Name Stack View">
-                                                        <rect key="frame" x="0.0" y="205.5" width="343" height="61"/>
+                                                        <rect key="frame" x="0.0" y="207.5" width="343" height="62"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLg-Px-wsf" userLabel="First Name Header" customClass="ThemedLabel" customModule="Renaissance_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLg-Px-wsf" userLabel="First Name Header" customClass="ThemedLabel" customModule="Art_With_Me_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEZ-OE-oTK" userLabel="FIrst Name Text Field" customClass="BorderedTextField" customModule="Renaissance_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="24" width="343" height="37"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEZ-OE-oTK" userLabel="FIrst Name Text Field" customClass="BorderedTextField" customModule="Art_With_Me_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="25" width="343" height="37"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="37" id="7tI-IQ-meV"/>
                                                                 </constraints>
@@ -120,16 +120,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4LL-BV-f74" userLabel="Last Name Stack View">
-                                                        <rect key="frame" x="0.0" y="286.5" width="343" height="61"/>
+                                                        <rect key="frame" x="0.0" y="289.5" width="343" height="62"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRw-LT-Nk2" userLabel="Last Name Header" customClass="ThemedLabel" customModule="Renaissance_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRw-LT-Nk2" userLabel="Last Name Header" customClass="ThemedLabel" customModule="Art_With_Me_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="894-6Y-gkd" userLabel="Last Name Text Field" customClass="BorderedTextField" customModule="Renaissance_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="24" width="343" height="37"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="894-6Y-gkd" userLabel="Last Name Text Field" customClass="BorderedTextField" customModule="Art_With_Me_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="25" width="343" height="37"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="37" id="wjQ-i4-2Rt"/>
                                                                 </constraints>
@@ -140,16 +140,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="l2S-QB-r36" userLabel="City Stack View">
-                                                        <rect key="frame" x="0.0" y="367.5" width="343" height="61"/>
+                                                        <rect key="frame" x="0.0" y="371.5" width="343" height="62"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfK-yR-fve" userLabel="City Header" customClass="ThemedLabel" customModule="Renaissance_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfK-yR-fve" userLabel="City Header" customClass="ThemedLabel" customModule="Art_With_Me_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gg7-50-aN4" userLabel="City Text Field" customClass="BorderedTextField" customModule="Renaissance_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="24" width="343" height="37"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gg7-50-aN4" userLabel="City Text Field" customClass="BorderedTextField" customModule="Art_With_Me_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="25" width="343" height="37"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="37" id="AFi-jx-Si8"/>
                                                                 </constraints>
@@ -160,16 +160,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JZg-Nu-bFm" userLabel="About Me Stack View">
-                                                        <rect key="frame" x="0.0" y="448.5" width="343" height="204"/>
+                                                        <rect key="frame" x="0.0" y="453.5" width="343" height="205"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOA-ZI-oli" userLabel="About Me Header" customClass="ThemedLabel" customModule="Renaissance_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOA-ZI-oli" userLabel="About Me Header" customClass="ThemedLabel" customModule="Art_With_Me_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Bm-UO-33I" userLabel="About Me Text View" customClass="BorderedTextView" customModule="Renaissance_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="24" width="343" height="180"/>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Bm-UO-33I" userLabel="About Me Text View" customClass="BorderedTextView" customModule="Art_With_Me_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="25" width="343" height="180"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="180" id="yvm-EK-MTz"/>
@@ -185,10 +185,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="AEw-0Z-qC1" userLabel="Button Stack View">
-                                                        <rect key="frame" x="0.0" y="672.5" width="343" height="40"/>
+                                                        <rect key="frame" x="0.0" y="678.5" width="343" height="42"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3E-P2-hoT">
-                                                                <rect key="frame" x="0.0" y="0.0" width="165.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="165.5" height="42"/>
                                                                 <color key="backgroundColor" name="dark_grey"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                                                 <state key="normal" title="Cancel">
@@ -203,8 +203,8 @@
                                                                     <action selector="cancelButton_click:" destination="gGY-so-9QT" eventType="touchUpInside" id="DET-eV-PWI"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmA-7u-0tA" customClass="ThemedButton" customModule="Renaissance_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="177.5" y="0.0" width="165.5" height="40"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmA-7u-0tA" customClass="ThemedButton" customModule="Art_With_Me_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="177.5" y="0.0" width="165.5" height="42"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                                                 <state key="normal" title="Submit">

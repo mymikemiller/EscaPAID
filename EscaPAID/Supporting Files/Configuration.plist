@@ -2,12 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Renaissance</key>
+	<key>Art With Me</key>
 	<dict>
 		<key>App Name</key>
-		<string>Renaissance</string>
+		<string>Art With Me</string>
 		<key>Stripe Company Name</key>
-		<string>Renaissance</string>
+		<string>Art With Me</string>
 		<key>Stripe Publishable Key</key>
 		<string>pk_live_nYo6Dk5g1luxu56r7zum39VL</string>
 		<key>Stripe Test Publishable Key</key>
@@ -19,7 +19,7 @@
 		<key>Stripe Test Client Id</key>
 		<string>ca_CWtSFxBQZl3nygQsSSKJJtbD8mOxNyFZ</string>
 		<key>Server URL</key>
-		<string>http://renaissance-x.herokuapp.com/api</string>
+		<string>http://artwithme.herokuapp.com/api</string>
 		<key>Categories</key>
 		<array>
 			<string>Arts</string>

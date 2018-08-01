@@ -123,7 +123,6 @@
 		E750FF7020D9849B002DE84D /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7AE98AA2092C1F900BFFFE6 /* ReviewCell.xib */; };
 		E750FF7120D9849B002DE84D /* Renaissance.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7CF4DF3206D6D9600B7F97E /* Renaissance.xcassets */; };
 		E750FF7220D9849B002DE84D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7ED3D1E2086907100EBB80A /* Profile.storyboard */; };
-		E750FF7320D9849B002DE84D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E4599C205DCEFC0077C1DE /* GoogleService-Info.plist */; };
 		E750FF7420D9849B002DE84D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E45981205977820077C1DE /* Configuration.plist */; };
 		E750FF7520D9849B002DE84D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
 		E750FF7620D9849B002DE84D /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459892059BC3D0077C1DE /* Inbox.storyboard */; };
@@ -355,6 +354,10 @@
 		E7B9F7421FB6CAAF0058CE61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7401FB6CAAF0058CE61 /* Main.storyboard */; };
 		E7B9F7471FB6CAAF0058CE61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */; };
 		E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B9F7481FB6CAAF0058CE61 /* LaunchScreen.storyboard */; };
+		E7C0262E210FE4AE00416B58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7C0262D210FE4AE00416B58 /* GoogleService-Info.plist */; };
+		E7C0262F210FE4AE00416B58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7C0262D210FE4AE00416B58 /* GoogleService-Info.plist */; };
+		E7C02630210FE4AE00416B58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7C0262D210FE4AE00416B58 /* GoogleService-Info.plist */; };
+		E7C02631210FE4AE00416B58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7C0262D210FE4AE00416B58 /* GoogleService-Info.plist */; };
 		E7CB84C52075229700CB91C2 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7CB84C42075229600CB91C2 /* Montserrat-Bold.ttf */; };
 		E7CB84C62075229700CB91C2 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7CB84C42075229600CB91C2 /* Montserrat-Bold.ttf */; };
 		E7CF4DE0206CA31B00B7F97E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF4DDF206CA31B00B7F97E /* GradientView.swift */; };
@@ -382,7 +385,6 @@
 		E7E459902059BC3D0077C1DE /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E459892059BC3D0077C1DE /* Inbox.storyboard */; };
 		E7E459912059BC3D0077C1DE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E4598A2059BC3D0077C1DE /* Settings.storyboard */; };
 		E7E459922059BC3D0077C1DE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E4598A2059BC3D0077C1DE /* Settings.storyboard */; };
-		E7E4599D205DCEFC0077C1DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E4599C205DCEFC0077C1DE /* GoogleService-Info.plist */; };
 		E7E4599F205DCF0F0077C1DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E4599E205DCF0E0077C1DE /* GoogleService-Info.plist */; };
 		E7E97769209CC34400DAF1C4 /* ExperienceCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E97768209CC34400DAF1C4 /* ExperienceCollectionView.swift */; };
 		E7E9776A209CC34400DAF1C4 /* ExperienceCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E97768209CC34400DAF1C4 /* ExperienceCollectionView.swift */; };
@@ -436,8 +438,8 @@
 		E74549911FB758B300A6A32C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		E74549931FB78AE200A6A32C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E74549991FB8B1BE00A6A32C /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
-		E750FF7D20D9849B002DE84D /* Renaissance Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Renaissance Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E750FF7E20D9849B002DE84D /* RenaissanceDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RenaissanceDev-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/RenaissanceDev-Info.plist"; sourceTree = "<absolute>"; };
+		E750FF7D20D9849B002DE84D /* Art With Me Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Art With Me Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E750FF7E20D9849B002DE84D /* ArtWithMeDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ArtWithMeDev-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/ArtWithMeDev-Info.plist"; sourceTree = "<absolute>"; };
 		E750FF7F20D993A6002DE84D /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		E750FFEF20D99805002DE84D /* Tellomee Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tellomee Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E750FFF020D99805002DE84D /* TellomeeDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TellomeeDev-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/TellomeeDev-Info.plist"; sourceTree = "<absolute>"; };
@@ -468,8 +470,8 @@
 		E79ADB1020751BD900C02C0A /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		E79ADB3E20751C4500C02C0A /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfContainedPickerView.swift; sourceTree = "<group>"; };
-		E79F05C020596AF500889D14 /* RenaissanceProd-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RenaissanceProd-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/EscaPAID/Supporting Files/RenaissanceProd-Info.plist"; sourceTree = "<absolute>"; };
-		E79F060D2059700400889D14 /* Renaissance Prod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Renaissance Prod.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E79F05C020596AF500889D14 /* ArtWithMeProd-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ArtWithMeProd-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/EscaPAID/Supporting Files/ArtWithMeProd-Info.plist"; sourceTree = "<absolute>"; };
+		E79F060D2059700400889D14 /* Art With Me Prod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Art With Me Prod.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79FA5902025398C0060B44D /* ConfirmationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTableVC.swift; sourceTree = "<group>"; };
 		E79FA59420290E3D0060B44D /* ReservationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationProcessor.swift; sourceTree = "<group>"; };
 		E79FA59620290EA50060B44D /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 		E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7B9F7491FB6CAAF0058CE61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7B9F74B1FB6CAAF0058CE61 /* TellomeeProd-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TellomeeProd-Info.plist"; sourceTree = "<group>"; };
+		E7C0262D210FE4AE00416B58 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7CB84C42075229600CB91C2 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		E7CF4DDF206CA31B00B7F97E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E7CF4DF0206D5E7000B7F97E /* UIColor+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utility.swift"; sourceTree = "<group>"; };
@@ -512,9 +515,8 @@
 		E7E459872059BC3D0077C1DE /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		E7E459892059BC3D0077C1DE /* Inbox.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Inbox.storyboard; sourceTree = "<group>"; };
 		E7E4598A2059BC3D0077C1DE /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		E7E4599C205DCEFC0077C1DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7E4599E205DCF0E0077C1DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E7E459A120644E650077C1DE /* Renaissance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Renaissance.entitlements; sourceTree = "<group>"; };
+		E7E459A120644E650077C1DE /* ArtWithMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtWithMe.entitlements; sourceTree = "<group>"; };
 		E7E459A220644E740077C1DE /* Tellomee.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tellomee.entitlements; sourceTree = "<group>"; };
 		E7E97768209CC34400DAF1C4 /* ExperienceCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCollectionView.swift; sourceTree = "<group>"; };
 		E7E9776B209CC94100DAF1C4 /* ExperienceCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceCardCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -740,7 +742,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E459A220644E740077C1DE /* Tellomee.entitlements */,
-				E7E459A120644E650077C1DE /* Renaissance.entitlements */,
+				E7E459A120644E650077C1DE /* ArtWithMe.entitlements */,
 				E72F64461FBBB22B0023489D /* Podfile */,
 				E7B9F73B1FB6CAAE0058CE61 /* EscaPAID */,
 				E7B9F73A1FB6CAAE0058CE61 /* Products */,
@@ -753,8 +755,8 @@
 			isa = PBXGroup;
 			children = (
 				E7B9F7391FB6CAAE0058CE61 /* Tellomee Prod.app */,
-				E79F060D2059700400889D14 /* Renaissance Prod.app */,
-				E750FF7D20D9849B002DE84D /* Renaissance Dev.app */,
+				E79F060D2059700400889D14 /* Art With Me Prod.app */,
+				E750FF7D20D9849B002DE84D /* Art With Me Dev.app */,
 				E750FFEF20D99805002DE84D /* Tellomee Dev.app */,
 			);
 			name = Products;
@@ -784,6 +786,14 @@
 			path = EscaPAID;
 			sourceTree = "<group>";
 		};
+		E7C02622210FE43F00416B58 /* ArtWithMe */ = {
+			isa = PBXGroup;
+			children = (
+				E7C0262D210FE4AE00416B58 /* GoogleService-Info.plist */,
+			);
+			path = ArtWithMe;
+			sourceTree = "<group>";
+		};
 		E7D3D79320362D6100F91CC4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,31 +815,23 @@
 		E7E45980205975C90077C1DE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E79F05C020596AF500889D14 /* RenaissanceProd-Info.plist */,
+				E79F05C020596AF500889D14 /* ArtWithMeProd-Info.plist */,
 				E7B9F74B1FB6CAAF0058CE61 /* TellomeeProd-Info.plist */,
-				E750FF7E20D9849B002DE84D /* RenaissanceDev-Info.plist */,
+				E750FF7E20D9849B002DE84D /* ArtWithMeDev-Info.plist */,
 				E750FFF020D99805002DE84D /* TellomeeDev-Info.plist */,
 				E7E45981205977820077C1DE /* Configuration.plist */,
 				E79F056E205966E000889D14 /* Tellomee */,
-				E7E45995205C85260077C1DE /* Renaissance */,
+				E7C02622210FE43F00416B58 /* ArtWithMe */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E7E45995205C85260077C1DE /* Renaissance */ = {
-			isa = PBXGroup;
-			children = (
-				E7E4599C205DCEFC0077C1DE /* GoogleService-Info.plist */,
-			);
-			path = Renaissance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E750FF1220D9849B002DE84D /* Renaissance Dev */ = {
+		E750FF1220D9849B002DE84D /* Art With Me Dev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E750FF7A20D9849B002DE84D /* Build configuration list for PBXNativeTarget "Renaissance Dev" */;
+			buildConfigurationList = E750FF7A20D9849B002DE84D /* Build configuration list for PBXNativeTarget "Art With Me Dev" */;
 			buildPhases = (
 				6CA37D41957FB315D3DEC3D2 /* [CP] Check Pods Manifest.lock */,
 				E750FF1420D9849B002DE84D /* Sources */,
@@ -841,9 +843,9 @@
 			);
 			dependencies = (
 			);
-			name = "Renaissance Dev";
+			name = "Art With Me Dev";
 			productName = tellomee;
-			productReference = E750FF7D20D9849B002DE84D /* Renaissance Dev.app */;
+			productReference = E750FF7D20D9849B002DE84D /* Art With Me Dev.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E750FF8320D99805002DE84D /* Tellomee Dev */ = {
@@ -865,9 +867,9 @@
 			productReference = E750FFEF20D99805002DE84D /* Tellomee Dev.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E79F05C12059700400889D14 /* Renaissance Prod */ = {
+		E79F05C12059700400889D14 /* Art With Me Prod */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E79F060A2059700400889D14 /* Build configuration list for PBXNativeTarget "Renaissance Prod" */;
+			buildConfigurationList = E79F060A2059700400889D14 /* Build configuration list for PBXNativeTarget "Art With Me Prod" */;
 			buildPhases = (
 				535FFDDAFDCD47B15A5CAE13 /* [CP] Check Pods Manifest.lock */,
 				E79F05C32059700400889D14 /* Sources */,
@@ -879,9 +881,9 @@
 			);
 			dependencies = (
 			);
-			name = "Renaissance Prod";
+			name = "Art With Me Prod";
 			productName = tellomee;
-			productReference = E79F060D2059700400889D14 /* Renaissance Prod.app */;
+			productReference = E79F060D2059700400889D14 /* Art With Me Prod.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E7B9F7381FB6CAAE0058CE61 /* Tellomee Prod */ = {
@@ -969,8 +971,8 @@
 			targets = (
 				E7B9F7381FB6CAAE0058CE61 /* Tellomee Prod */,
 				E750FF8320D99805002DE84D /* Tellomee Dev */,
-				E79F05C12059700400889D14 /* Renaissance Prod */,
-				E750FF1220D9849B002DE84D /* Renaissance Dev */,
+				E79F05C12059700400889D14 /* Art With Me Prod */,
+				E750FF1220D9849B002DE84D /* Art With Me Dev */,
 			);
 		};
 /* End PBXProject section */
@@ -993,6 +995,7 @@
 				E750FF6920D9849B002DE84D /* DateCell.xib in Resources */,
 				E750FF6A20D9849B002DE84D /* Montserrat-Light.ttf in Resources */,
 				E750FF6B20D9849B002DE84D /* Book.storyboard in Resources */,
+				E7C02631210FE4AE00416B58 /* GoogleService-Info.plist in Resources */,
 				E750FF6C20D9849B002DE84D /* Lato-Regular.ttf in Resources */,
 				E750FF6D20D9849B002DE84D /* ExperienceCardCollectionViewCell.xib in Resources */,
 				E750FF6E20D9849B002DE84D /* Assets.xcassets in Resources */,
@@ -1000,7 +1003,6 @@
 				E750FF7020D9849B002DE84D /* ReviewCell.xib in Resources */,
 				E750FF7120D9849B002DE84D /* Renaissance.xcassets in Resources */,
 				E750FF7220D9849B002DE84D /* Profile.storyboard in Resources */,
-				E750FF7320D9849B002DE84D /* GoogleService-Info.plist in Resources */,
 				E750FF7420D9849B002DE84D /* Configuration.plist in Resources */,
 				E750FF7520D9849B002DE84D /* Main.storyboard in Resources */,
 				E750FF7620D9849B002DE84D /* Inbox.storyboard in Resources */,
@@ -1024,6 +1026,7 @@
 				E750FFD920D99805002DE84D /* Montserrat-Bold.ttf in Resources */,
 				E750FFDA20D99805002DE84D /* LaunchScreen.storyboard in Resources */,
 				E750FFDB20D99805002DE84D /* Reservations.storyboard in Resources */,
+				E7C0262F210FE4AE00416B58 /* GoogleService-Info.plist in Resources */,
 				E750FFDC20D99805002DE84D /* Montserrat-Light.ttf in Resources */,
 				E750FFDD20D99805002DE84D /* DateCell.xib in Resources */,
 				E750FFDE20D99805002DE84D /* Book.storyboard in Resources */,
@@ -1059,6 +1062,7 @@
 				E79F06002059700400889D14 /* DateCell.xib in Resources */,
 				E79ADB3320751BDE00C02C0A /* Montserrat-Light.ttf in Resources */,
 				E79F06012059700400889D14 /* Book.storyboard in Resources */,
+				E7C02630210FE4AE00416B58 /* GoogleService-Info.plist in Resources */,
 				E79ADB5020751C4500C02C0A /* Lato-Regular.ttf in Resources */,
 				E7E97773209CD21300DAF1C4 /* ExperienceCardCollectionViewCell.xib in Resources */,
 				E79F06052059700400889D14 /* Assets.xcassets in Resources */,
@@ -1066,7 +1070,6 @@
 				E7AE98AC2092C1F900BFFFE6 /* ReviewCell.xib in Resources */,
 				E7CF4DF4206D6D9600B7F97E /* Renaissance.xcassets in Resources */,
 				E7ED3D202086907100EBB80A /* Profile.storyboard in Resources */,
-				E7E4599D205DCEFC0077C1DE /* GoogleService-Info.plist in Resources */,
 				E7E45983205977820077C1DE /* Configuration.plist in Resources */,
 				E79F06062059700400889D14 /* Main.storyboard in Resources */,
 				E7E459902059BC3D0077C1DE /* Inbox.storyboard in Resources */,
@@ -1090,6 +1093,7 @@
 				E7CB84C52075229700CB91C2 /* Montserrat-Bold.ttf in Resources */,
 				E7B9F74A1FB6CAAF0058CE61 /* LaunchScreen.storyboard in Resources */,
 				E7D3D79A20362EF400F91CC4 /* Reservations.storyboard in Resources */,
+				E7C0262E210FE4AE00416B58 /* GoogleService-Info.plist in Resources */,
 				E79ADB3220751BDE00C02C0A /* Montserrat-Light.ttf in Resources */,
 				E7238A682022699C00496FBC /* DateCell.xib in Resources */,
 				E774C83E203A1B4E00F98EB2 /* Book.storyboard in Resources */,
@@ -1760,16 +1764,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2445D9A099824DEC8C62D416 /* Pods-EscaPAID-Renaissance Dev.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-ArtWithMe";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Renaissance.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ArtWithMe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "$(SRCROOT)/RenaissanceDev-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ArtWithMeDev-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.RenaissanceDev;
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.ArtWithMeDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1782,17 +1786,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD484891DBCA9EAC2C979D3E /* Pods-EscaPAID-Renaissance Dev.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-ArtWithMe";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Renaissance.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ArtWithMe.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "$(SRCROOT)/RenaissanceDev-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ArtWithMeDev-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.RenaissanceDev;
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.ArtWithMeDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -1848,16 +1852,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E7E11637E71A3A0CD48A78D4 /* Pods-EscaPAID-Renaissance Prod.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-ArtWithMe";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Renaissance.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ArtWithMe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/RenaissanceProd-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/ArtWithMeProd-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.Renaissance;
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.ArtWithMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1870,17 +1874,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51A584B91F136F122187C36D /* Pods-EscaPAID-Renaissance Prod.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Renaissance";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-ArtWithMe";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Renaissance.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ArtWithMe.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Y8K76T269;
-				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/RenaissanceProd-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EscaPAID/Supporting Files/ArtWithMeProd-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.Renaissance;
+				PRODUCT_BUNDLE_IDENTIFIER = me.puffinlabs.ArtWithMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EscaPAID/EscaPAID-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2046,7 +2050,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E750FF7A20D9849B002DE84D /* Build configuration list for PBXNativeTarget "Renaissance Dev" */ = {
+		E750FF7A20D9849B002DE84D /* Build configuration list for PBXNativeTarget "Art With Me Dev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E750FF7B20D9849B002DE84D /* Debug */,
@@ -2064,7 +2068,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E79F060A2059700400889D14 /* Build configuration list for PBXNativeTarget "Renaissance Prod" */ = {
+		E79F060A2059700400889D14 /* Build configuration list for PBXNativeTarget "Art With Me Prod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E79F060B2059700400889D14 /* Debug */,

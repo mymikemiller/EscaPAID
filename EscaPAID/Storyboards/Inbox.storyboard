@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bW9-7N-56z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bW9-7N-56z">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--ChatVC-->
         <scene sceneID="BPP-Jz-gBm">
             <objects>
-                <viewController id="1xS-zx-OmY" customClass="ChatVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1xS-zx-OmY" customClass="ChatVC" customModule="Art_With_Me_Dev" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WIv-Th-zeq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
         <!--Inbox-->
         <scene sceneID="u6I-nQ-kzo">
             <objects>
-                <navigationController storyboardIdentifier="Inbox" id="bW9-7N-56z" customClass="ThreadsNavigationController" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Inbox" id="bW9-7N-56z" customClass="ThreadsNavigationController" customModule="Art_With_Me_Dev" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Inbox" image="ic_mail_outline" id="Ozc-Sp-wyU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PTO-A1-7fe">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -56,13 +56,13 @@
         <!--Inbox-->
         <scene sceneID="bpN-0b-Ziq">
             <objects>
-                <tableViewController storyboardIdentifier="threadsTableVC" title="Inbox" id="Nbh-kZ-Mp4" customClass="ThreadsTableVC" customModule="Renaissance" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="threadsTableVC" title="Inbox" id="Nbh-kZ-Mp4" customClass="ThreadsTableVC" customModule="Art_With_Me_Dev" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ybL-3M-enA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="68" id="I8g-fq-HOy" customClass="ThreadTableViewCell" customModule="Renaissance" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="68" id="I8g-fq-HOy" customClass="ThreadTableViewCell" customModule="Art_With_Me_Dev" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I8g-fq-HOy" id="8zn-dv-eEz">

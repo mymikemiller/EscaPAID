@@ -30,9 +30,9 @@ abstract_target 'EscaPAID' do
   pod 'Alamofire'
   pod 'Stripe'
 
-  target 'Renaissance Prod' do
+  target 'Art With Me Prod' do
       end
-  target 'Renaissance Dev'do
+  target 'Art With Me Dev'do
       end
   target 'Tellomee Prod' do
       end
