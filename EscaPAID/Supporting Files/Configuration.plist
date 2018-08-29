@@ -27,9 +27,11 @@
 			<string>Hobbies</string>
 		</array>
 		<key>Gradient Start Color</key>
-		<string>#743746</string>
+		<string>#D12F74</string>
 		<key>Gradient End Color</key>
-		<string>#431522</string>
+		<string>#EB365F</string>
+		<key>Main Color</key>
+		<string>#EA3463</string>
 		<key>Intro Text</key>
 		<string>Learn a new craft, art or hobby hands-on with an artisan in your community</string>
 		<key>Experience Text</key>
@@ -40,8 +42,6 @@
 		<string>Instructor</string>
 		<key>Curator Article</key>
 		<string>an</string>
-		<key>Main Color</key>
-		<string>#591D25</string>
 		<key>Terms Link</key>
 		<string>https://mymikemiller.github.io/EscaPAID/terms-artwithme</string>
 		<key>Privacy Link</key>
