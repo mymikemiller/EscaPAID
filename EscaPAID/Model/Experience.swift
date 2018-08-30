@@ -75,6 +75,11 @@ class Experience: NSObject {
                           curator: FirebaseManager.user!)
     }
     
+    // An Experience is "active" if it has any available days for booking
+    func isActive() -> Bool {
+        return days.Monday || days.Tuesday || days.Wednesday || days.Thursday || days.Friday || days.Saturday || days.Sunday;
+    }
+    
     func deleteSelf() {
         FirebaseManager.databaseRef.child("experiences").child(id).removeValue()
     }

@@ -175,6 +175,18 @@ class ExperienceVC: UIViewController, UIPageViewControllerDataSource {
     }
     
     
+    @IBAction func reserveButton_click(_ sender: Any) {
+        guard self.experience.isActive() else {
+            let alertVC = UIAlertController(title: "Unavailable", message: "Sorry, this \(Config.current.experienceText.lowercased()) has no availability. Try messaging the \(Config.current.curatorText.lowercased()).", preferredStyle: .alert)
+            let alertActionOkay = UIAlertAction(title: "Okay", style: .default)
+            alertVC.addAction(alertActionOkay)
+            self.present(alertVC, animated: true, completion: nil)
+            return
+        }
+        
+        performSegue(withIdentifier: "showReservationVC", sender: self)
+    }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         var index = (viewController as! ExperienceImageVC).pageIndex
