@@ -230,6 +230,8 @@
 		E750FFE920D99805002DE84D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E4598A2059BC3D0077C1DE /* Settings.storyboard */; };
 		E750FFEA20D99805002DE84D /* UICalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7238A632022521400496FBC /* UICalendar.xib */; };
 		E751E0E31FD3319400CBB416 /* SettingsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */; };
+		E76085BC21481A1D00C1D45B /* ArtWithMe.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E76085BB21481A1D00C1D45B /* ArtWithMe.xcassets */; };
+		E76085BD21481A1D00C1D45B /* ArtWithMe.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E76085BB21481A1D00C1D45B /* ArtWithMe.xcassets */; };
 		E77077321FBD0F7F00B3F2E1 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */; };
 		E77077341FBD179C00B3F2E1 /* OriginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */; };
 		E774C83E203A1B4E00F98EB2 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E774C83D203A1B4E00F98EB2 /* Book.storyboard */; };
@@ -444,6 +446,7 @@
 		E750FFEF20D99805002DE84D /* Tellomee Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tellomee Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E750FFF020D99805002DE84D /* TellomeeDev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TellomeeDev-Info.plist"; path = "/Users/mikem/OneDrive/Projects/iOS/EscaPAID/TellomeeDev-Info.plist"; sourceTree = "<absolute>"; };
 		E751E0E21FD3319400CBB416 /* SettingsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableVC.swift; sourceTree = "<group>"; };
+		E76085BB21481A1D00C1D45B /* ArtWithMe.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ArtWithMe.xcassets; sourceTree = "<group>"; };
 		E77077311FBD0F7F00B3F2E1 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		E77077331FBD179C00B3F2E1 /* OriginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginScreenVC.swift; sourceTree = "<group>"; };
 		E774C83D203A1B4E00F98EB2 /* Book.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
@@ -778,6 +781,7 @@
 				E7E45984205993600077C1DE /* Config.swift */,
 				E79D653B1FE9CD0000267E0C /* SelfContainedPickerView.swift */,
 				E7B9F7461FB6CAAF0058CE61 /* Assets.xcassets */,
+				E76085BB21481A1D00C1D45B /* ArtWithMe.xcassets */,
 				E7CF4DF3206D6D9600B7F97E /* Renaissance.xcassets */,
 				E7CF4DF5206D6DEC00B7F97E /* Tellomee.xcassets */,
 				E7E152A020360DA800033BEB /* EscaPAID-Bridging-Header.h */,
@@ -987,6 +991,7 @@
 				E750FF6120D9849B002DE84D /* Montserrat-Regular.ttf in Resources */,
 				E750FF6220D9849B002DE84D /* Discover.storyboard in Resources */,
 				E750FF6320D9849B002DE84D /* Podfile in Resources */,
+				E76085BD21481A1D00C1D45B /* ArtWithMe.xcassets in Resources */,
 				E750FF6420D9849B002DE84D /* ExperienceCard.xib in Resources */,
 				E750FF6520D9849B002DE84D /* ProfileEditor.storyboard in Resources */,
 				E750FF6620D9849B002DE84D /* LaunchScreen.storyboard in Resources */,
@@ -1054,6 +1059,7 @@
 				E79ADB1920751BDE00C02C0A /* Montserrat-Regular.ttf in Resources */,
 				E7E4598C2059BC3D0077C1DE /* Discover.storyboard in Resources */,
 				E79F05F92059700400889D14 /* Podfile in Resources */,
+				E76085BC21481A1D00C1D45B /* ArtWithMe.xcassets in Resources */,
 				E7B4CDEE207EBF7600352DB1 /* ExperienceCard.xib in Resources */,
 				E79F05FA2059700400889D14 /* ProfileEditor.storyboard in Resources */,
 				E79F05FD2059700400889D14 /* LaunchScreen.storyboard in Resources */,

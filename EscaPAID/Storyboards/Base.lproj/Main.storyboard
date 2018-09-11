@@ -21,7 +21,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Q6g-n5-jHl">
             <objects>
-                <tabBarController id="F22-Gu-X0h" customClass="TabBarController" customModule="Renaissance_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="F22-Gu-X0h" customClass="TabBarController" customModule="Art_With_Me_Dev" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="EvZ-Cz-G58">
@@ -42,8 +42,8 @@
         <!--Origin ScreenVC-->
         <scene sceneID="uvC-ad-aiV">
             <objects>
-                <viewController storyboardIdentifier="originViewController" automaticallyAdjustsScrollViewInsets="NO" id="9jn-rB-nLW" customClass="OriginScreenVC" customModule="Renaissance_Dev" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EeQ-RO-xed" customClass="GradientView" customModule="Renaissance_Dev" customModuleProvider="target">
+                <viewController storyboardIdentifier="originViewController" automaticallyAdjustsScrollViewInsets="NO" id="9jn-rB-nLW" customClass="OriginScreenVC" customModule="Art_With_Me_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EeQ-RO-xed" customClass="GradientView" customModule="Art_With_Me_Dev" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -57,6 +57,7 @@
                                                 <rect key="frame" x="37.5" y="46" width="300" height="107"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="gll-0g-vO8"/>
+                                                    <constraint firstAttribute="height" constant="107" id="pnQ-wr-FnP"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intro text" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olM-eH-iRQ" userLabel="Intro Text">
@@ -68,7 +69,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vV8-jQ-U8M" userLabel="Facebook Button" customClass="ThemedRoundedButton" customModule="Renaissance_Dev" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vV8-jQ-U8M" userLabel="Facebook Button" customClass="ThemedRoundedButton" customModule="Art_With_Me_Dev" customModuleProvider="target">
                                                 <rect key="frame" x="37.5" y="238.5" width="300" height="40"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -89,7 +90,7 @@
                                                     <action selector="facebookLogin_click:" destination="9jn-rB-nLW" eventType="touchUpInside" id="nRV-CC-Lca"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isu-g8-ghk" customClass="RoundedButton" customModule="Renaissance_Dev" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isu-g8-ghk" customClass="RoundedButton" customModule="Art_With_Me_Dev" customModuleProvider="target">
                                                 <rect key="frame" x="37.5" y="298.5" width="300" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="GX5-eo-FQK"/>
@@ -230,8 +231,8 @@
         <!--Create AccountVC-->
         <scene sceneID="vWt-Jc-oT9">
             <objects>
-                <viewController storyboardIdentifier="createAccountViewController" id="KHk-ef-tzw" customClass="CreateAccountVC" customModule="Renaissance_Dev" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="c87-D0-FvY" customClass="GradientView" customModule="Renaissance_Dev" customModuleProvider="target">
+                <viewController storyboardIdentifier="createAccountViewController" id="KHk-ef-tzw" customClass="CreateAccountVC" customModule="Art_With_Me_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c87-D0-FvY" customClass="GradientView" customModule="Art_With_Me_Dev" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -349,7 +350,7 @@
                                                             <constraint firstItem="Y7x-z7-MTI" firstAttribute="leading" secondItem="cEB-3d-b83" secondAttribute="leading" id="x0t-I7-jnU"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StP-N1-ord" customClass="ThemedRoundedButton" customModule="Renaissance_Dev" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StP-N1-ord" customClass="ThemedRoundedButton" customModule="Art_With_Me_Dev" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="390" width="300" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -438,8 +439,8 @@
         <!--LoginVC-->
         <scene sceneID="2Br-tJ-XL1">
             <objects>
-                <viewController storyboardIdentifier="loginViewController" id="PJy-Cc-a7I" customClass="LoginVC" customModule="Renaissance_Dev" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="65O-PT-ovs" customClass="GradientView" customModule="Renaissance_Dev" customModuleProvider="target">
+                <viewController storyboardIdentifier="loginViewController" id="PJy-Cc-a7I" customClass="LoginVC" customModule="Art_With_Me_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="65O-PT-ovs" customClass="GradientView" customModule="Art_With_Me_Dev" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="867"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -458,7 +459,7 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOd-eO-Y4v" userLabel="Facebook Button" customClass="ThemedRoundedButton" customModule="Renaissance_Dev" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOd-eO-Y4v" userLabel="Facebook Button" customClass="ThemedRoundedButton" customModule="Art_With_Me_Dev" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="86" width="300" height="40"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -567,7 +568,7 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gD1-Nm-fi2" customClass="ThemedRoundedButton" customModule="Renaissance_Dev" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gD1-Nm-fi2" customClass="ThemedRoundedButton" customModule="Art_With_Me_Dev" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="424" width="300" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -730,14 +731,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="250" height="107"/>
+        <image name="Logo" width="4187" height="1215"/>
         <image name="facebookIcon" width="54" height="99"/>
         <image name="ic_explore" width="24" height="24"/>
         <image name="ic_mail_outline" width="24" height="24"/>
         <image name="ic_settings" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="glL-vf-AZJ"/>
+        <segue reference="Yl0-Zd-n9g"/>
         <segue reference="OIa-MV-TGK"/>
     </inferredMetricsTieBreakers>
 </document>
