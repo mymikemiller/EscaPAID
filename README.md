@@ -1,7 +1,7 @@
 # EscaPAID
 
 EscaPAID is the base marketplace app that can be customized by adding targets. Currently there are two targets:
-* Renaissance: a marketplace for craftsmen to share their craft with paying customers
+* Art With Me: a marketplace for artists to share their art with paying customers
 * Tellomee: a marketplace for premium experiences
 
 Development notes:
@@ -9,17 +9,17 @@ Development notes:
 * Separate apps
   * iOS
     * The iOS project uses targets to toggle between apps
-      * Currently Tellomee and Renaissance
+      * Currently Tellomee and Art With Me
   * Server
     * The server folder can be deployed to different heroku apps, one remote for each, each with different environment variables set up.
-      * Currently the remotes tellomee and renaissance point to the apps tellomee-x and renaissance-x
+      * Currently the remotes tellomee and artwithme point to the apps tellomee-x and artwithme-x
     * To add a new app:
       * heroku git:remote --remote new-remote-name -a heroku-app-name
 
 * Environment Variables
   * This app uses environment variables to separate the different targets and configure things such as the private key for Stripe and the URL to the firebase database.
   * The following environment variables must be set:
-    * DATABASE_URL: The url to the firebase database where the reservations are stored. It is of the form https://renaissance-x.firebaseio.com/
+    * DATABASE_URL: The url to the firebase database where the reservations are stored. It is of the form https://artwithme-x.firebaseio.com/
     * STRIPE_SECRET_KEY and STRIPE_TEST_SECRET_KEY: The secret key (client secret) from the stripe dashboard.
     * FIREBASE_PRIVATE_KEY: The value for private_key in the firebase-adminsdk.json file donwloaded from the Service Account section of the Firebase console.
     * FIREBASE_CLIENT_EMAIL: The value for client_email in the firebase-adminsdk.json file donwloaded from the Service Account section of the Firebase console.
